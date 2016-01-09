@@ -1,60 +1,23 @@
+title:            Scribble
+description:      A jekyll theme. Because I scribble.
+url:              http://songleo.github.io
+signoff:          LEo
+disqus_shortname: # disqus comment thread for post header options. ( leave blank if unwanted. )
+facebook_appid:   # appid for like button, remove from /_includes/share.html if unwanted.
+google_analytics: # set tracking, remove from /javascripts/basic.js if unwanted.
 
-# SEO settings
-title: Simplest
-description: "A free Jekyll theme for download"
-keywords: "Jekyll, theme, free, download, SEO, blog, web"
-url: http://nandomoreira.me
-baseurl: " http://songleo.github.io"
-# baseurl: null
-
-google_analytics: UA-52446115-1
-repo: http://github.com/nandomoreirame/simplest
-disqus_shortname: "fernandomoreira"
-
-# Build settings
-permalink   : /:year/:title/
-markdown    : kramdown
-highlighter : pygments
-
-paginate: 4
-paginate_path: "/page/:num/"
-comments: true
-
-source: source
-destination: _site
-
-# Sass configuration
-sass:
-  sass_dir: assets/scss
-  style: compressed # expanded
-
-# Author settings
-author:
-  name     : Fernando Moreira
-  job      : Frontend Engineer
-  bio      : "Enthusiast performance, responsive design and usability, always looking for the best project and good coffee."
-  thumb    : /images/author.jpg
-  email    : nandomoreira.me@gmail.com
-  url      : http://nandomoreira.me
-  github   : http://github.com/nandomoreirame
-  twitter  : http://twitter.com/nandomoreirame
-  facebook : http://facebook.com/fernando.dev
-  linkedin : http://linkedin.com/in/nandomoreirame
-
-# social settings
-og_locale: "pt_BR"
-twitter_card: "summary_large_image"
-twitter_site: "@nandomoreirame"
-
-gems:
-  - bourbon
-  - jekyll-paginate
-
-# navbar pages
-navbar:
-  - slug : about
-    title: About
-  - slug : blog
-    title: Blog
-
-exclude: ["gulp", "node_modules", "bower", "bower_components", "config.rb", "src", "Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "package.json", "gulpfile.js", "README.md", "Rakefile", "changelog.md"]
+links:
+  - name:         About
+    url:          /about
+  - name:         Blog
+    url:          http://songleo.github.io
+    external:     true
+  - name:         GitHub
+    url:          http://github.com/songleo
+    external:     true
+highlighter:      pygments
+permalink:        pretty
+markdown:         redcarpet
+redcarpet:
+  extensions:
+    - smart
