@@ -4,7 +4,7 @@ title: InnoSetup功能函数合集
 date: 2016-01-10 09:11:31
 ---
 
-#1）检测系统是否win7
+#1 检测系统是否win7
 
 ```pascal
 function CheckWin7(): Boolean;
@@ -19,7 +19,7 @@ begin
   end;
 end;
 ```
-#2）检测是否是silent安装
+#2 检测是否是silent安装
 
 ```pascal
 function CheckSilentInstall():Boolean;
@@ -36,7 +36,7 @@ begin
   end;
 end;
 ```
-#3）检测端口是否被占用
+#3 检测端口是否被占用
 
 ```pascal
 function CheckPortOccupied(Port:String):Boolean;
@@ -54,7 +54,7 @@ begin
   end;
 end;
 ```
-#4）检测无效端口
+#4 检测无效端口
 
 ```pascal
 function CheckWrongPort(Port:String):Boolean;
@@ -74,7 +74,7 @@ begin
     Result := True;
 end;
 ```
-#5）检测有效端口
+#5 检测有效端口
 
 ```pascal
 function CheckValidPort(Port:String):Boolean;
@@ -90,7 +90,7 @@ begin
     Result := False;
 end;
 ```
-#6）检测用户是否域用户
+#6 检测用户是否域用户
 
 ```pascal
 function CheckDomainUser():Boolean;
@@ -110,7 +110,7 @@ begin
     Result := False;
 end;
 ```
-#7）修改环境变量
+#7 修改环境变量
 
 ```pascal
 procedure SetEnv(aEnvName, aEnvValue: string; aIsInstall, aIsInsForAllUser: Boolean);
@@ -126,7 +126,7 @@ begin
   end; 
 end;
 ```
-#8）检测中文安装路径
+#8 检测中文安装路径
 
 ```pascal
 function CheckChinesePath(Ch: Char): Boolean;
@@ -140,7 +140,7 @@ begin
     Result := True;
 end;
 ```
-#9）修改配置文件
+#9 修改配置文件
 
 ```pascal
 procedure ModConf(FileName,OldString,NewString:string);
