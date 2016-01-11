@@ -94,7 +94,7 @@ DosCmd : String;
 ResultCode: Integer;
 begin
   UserName := ExpandConstant('{username}');
-  DomainName := ExpandConstant('{%USERDOMAIN%}');
+  DomainName := ExpandConstant('{USERDOMAIN}');
   DosCmd := '/C net localgroup Administrators | findstr '+'"'+DomainName+'\'+UserName+'"';
   Exec(ExpandConstant('{cmd}'),DosCmd, '',  SW_HIDE,ewWaitUntilTerminated, ResultCode);
   if ResultCode = 0 then
