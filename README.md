@@ -1,2 +1,2 @@
-[Reborn Coding Life](http://songleo.github.io/)
+[Reborn Coding Life](http://reborncodinglife.com/)
 ==================
