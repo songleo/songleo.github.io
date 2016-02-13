@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Inno Setup功能函数合集
+title: InnoSetup功能函数合集
 date: 2016-01-10 09:11:31
 ---
 
