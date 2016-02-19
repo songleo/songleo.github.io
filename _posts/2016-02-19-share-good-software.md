@@ -29,7 +29,7 @@ kindle手机阅读软件安装在我手机上就没卸载过。这是亚马逊�
 
 4）yapf(python开发可以一试)
 
-yapf是一个python文件代码格式化工具，类似go语言的gofmt，自动重新排版python代码，即便初始代码并没有违背规范，也可使其达到遵循代码规范的最佳格式。通过yapf优化后，代码风格可统一，在每次代码审查中，也就没有必要争论风格了。yapf的终极目标是生成和遵循代码规范的程序员写出的一样的代码。可帮你减少维护代码的苦差事。当然也有不完善的地方，对于一些代码，它不会比手动格式好，特别是大的数据文字，在yapf下会变得更糟糕，我使用这个工具主要是为了写出统一风格的python代码，比如会自动在等号两边加空格，一行代码超过79个字符会提示过长等，违反编码规范的地方yapf会自动提示。具体可以参考：https://github.com/google/yapf 
+yapf是一个python文件代码格式化工具，类似go语言的gofmt，自动重新排版python代码，即便初始代码并没有违背规范，也可使其达到遵循代码规范的最佳格式。通过yapf优化后，代码风格可统一，在每次代码审查中，也就没有必要争论风格了。yapf的终极目标是生成和遵循代码规范的程序员写出的一样的代码。可帮你减少维护代码的苦差事。当然也有不完善的地方，对于一些代码，它不会比手动格式好，特别是大的数据文字，在yapf下会变得更糟糕，我使用这个工具主要是为了写出统一风格的python代码，比如会自动在等号两边加空格，一行代码超过79个字符会提示过长等，违反编码规范的地方yapf会自动提示。具体可以参考：[https://github.com/google/yapf](https://github.com/google/yapf) 
 
 同类产品：gofmt
 
@@ -42,7 +42,7 @@ yapf是一个python文件代码格式化工具，类似go语言的gofmt，自动
 
 6）free
 
-这是我自己写的一个小程序，也顺便推广下，想了下觉得free这个名字比较有意义，主要功能是自动更新电脑的hosts文件（windows的hosts在：C:\Windows\System32\drivers\etc\hosts，linux的hosts在/etc/hosts），然后就可以上谷歌了。主要是职业需要，百度有时候搜索结果太坑，谷歌又被墙，所以你懂的！更新后貌似还可以上facebook和twitter。同样附上下载链接：http://pan.baidu.com/s/1kU10Kp5 只需要下载对应系统的版本（windows有32位和64位，不要下载错了），以管理员身份运行即可，然后就可以上谷歌了，不能上谷歌的时候，点一下就可以了。源码在：https://github.com/songleo/update_hosts 感兴趣可以看看。
+这是我自己写的一个小程序，也顺便推广下，想了下觉得free这个名字比较有意义，主要功能是自动更新电脑的hosts文件（windows的hosts在：C:\Windows\System32\drivers\etc\hosts，linux的hosts在/etc/hosts），然后就可以上谷歌了。主要是职业需要，百度有时候搜索结果太坑，谷歌又被墙，所以你懂的！更新后貌似还可以上facebook和twitter。同样附上下载链接：[http://pan.baidu.com/s/1kU10Kp5](http://pan.baidu.com/s/1kU10Kp5) 只需要下载对应系统的版本（windows有32位和64位，不要下载错了），以管理员身份运行即可，然后就可以上谷歌了，不能上谷歌的时候，点一下就可以了。源码在：[https://github.com/songleo/update_hosts](https://github.com/songleo/update_hosts) 感兴趣可以看看。
 
 同类产品：不能说，关键字容易被和谐 :)
 
