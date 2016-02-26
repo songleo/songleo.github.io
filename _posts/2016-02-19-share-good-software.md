@@ -9,14 +9,14 @@ date: 2016-02-18 23:05:32
 1）listary
 
 不得不说，我第一次遇到listary时简直如获至宝！这个工具，我基本是见人就推荐，作为这个榜单的首推，必须隆重介绍下listary。它是一款非常优秀的windows文件浏览和搜索增强工具，占用内存少，搜索响应时间快，自动匹配常用文件和文件夹。现在已经被我设置成开机自启动了（我很少让一个软件开机自启动，除非开机我就会用到，不然影响开机时间）。我最常用的功能就是在电脑上查找某个文件或者文件夹，基本都是秒级响应，还能自动匹配经常打开的文件，在我写毕业论文时用得最多了，经常编辑文件的人必备利器，安装这个软件后，在电脑上打开某个文件或者文件夹基本告别鼠标了，瞬间定位打开，具体使用方法可以参考该：[http://www.iplaysoft.com/listary.html](http://www.iplaysoft.com/listary.html)。下载链接（Windows版）：[http://www.listary.com/download/Listary.exe](http://www.listary.com/download/Listary.exe)。具体效果如下图：
-![](./image/listary_demo.gif?raw=true)
+![](/images/listary_demo.gif?raw=true)
 
 同类产品：Everything
 
 2）有道云笔记
 
 我算是有道云笔记的老用户了，有道云笔记可以让你不论在电脑、手机或者网页都可以随时随地访问所有你保存的资料，你保存的笔记可以脱离设备，保存在云端，换一个手机或者电脑，同步一下，所有笔记就在手机或者电脑上了，还支持离线阅读功能，配合浏览器有道云笔记插件、微博和微信，还可以一键收藏你喜欢的网页、微博和微信上的精彩内容，我经常用有道云笔记写一些计划、博客、学习笔记、收藏一些技术资料、微博和微信上的精彩内容，比如这篇文章就是在有道云笔记里写的，随时同步不丢失，同样附上下载链接（Windows版）：[http://download.ydstatic.com/notewebsite/downloads/YNote.exe](http://download.ydstatic.com/notewebsite/downloads/YNote.exe)。并附上一张我的有道云笔记目录结构：
-![image](/_posts/image/youdao_note.png)
+![](/images/youdao_note.png)
 
 
 同类产品：印象笔记Evernote
