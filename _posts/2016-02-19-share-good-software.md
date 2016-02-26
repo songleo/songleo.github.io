@@ -36,7 +36,7 @@ yapf是一个python文件代码格式化工具，类似go语言的gofmt，自动
 5）chrome+vimium
 
 这里主要为了推荐vimium插件，但是这个插件必须配合浏览器才能使用，确切的说必须配合谷歌浏览器（当然，浏览器我也推荐chrome，强大的插件机制让chrome变得前所未有的强大）。另外必须熟悉vim编辑器，如果不熟悉，也可以学vimium插件的快捷键，我现在用得最多就是vimium提供的页面搜索功能，还有其他的快捷键功能，比如x和X分别关闭标签和回复关闭的标签，配合vim的命令基本能实现脱离鼠标浏览网页，具体使用可以参考：[http://www.iplaysoft.com/vimium-and-vimperator.html](http://www.iplaysoft.com/vimium-and-vimperator.html)，附上部分快捷键截图：
-![](image/vimium_help.png?raw=true)
+![](/images/vimium_help.png)
 
 同类产品：firefox+vimperator
 
