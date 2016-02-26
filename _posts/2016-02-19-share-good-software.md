@@ -16,6 +16,7 @@ date: 2016-02-18 23:05:32
 2）有道云笔记
 
 我算是有道云笔记的老用户了，有道云笔记可以让你不论在电脑、手机或者网页都可以随时随地访问所有你保存的资料，你保存的笔记可以脱离设备，保存在云端，换一个手机或者电脑，同步一下，所有笔记就在手机或者电脑上了，还支持离线阅读功能，配合浏览器有道云笔记插件、微博和微信，还可以一键收藏你喜欢的网页、微博和微信上的精彩内容，我经常用有道云笔记写一些计划、博客、学习笔记、收藏一些技术资料、微博和微信上的精彩内容，比如这篇文章就是在有道云笔记里写的，随时同步不丢失，同样附上下载链接（Windows版）：[http://download.ydstatic.com/notewebsite/downloads/YNote.exe](http://download.ydstatic.com/notewebsite/downloads/YNote.exe)。并附上一张我的有道云笔记目录结构：
+ {% img /images/404.png %}
 ![](./post_image/youdao_note.png?raw=true)
 
 
