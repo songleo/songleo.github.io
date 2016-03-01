@@ -64,7 +64,7 @@ ps：没找到它的二维码，搜索：ikd100 添加
 
 国内开源软件社区，经常推送开源相关软件资讯，传播开源理念，推广开源技术，关注开源新闻的可以关注下。
 
-![](/images/open_china.png)
+![](/images/open_chian.png)
 
 - 实验楼
 
@@ -86,4 +86,4 @@ ps：没找到它的二维码，搜索：ikd100 添加
 
 (ps:最后附上我的公众号，欢迎关注）
 
-![](/images/wechat.png)
+![](/images/wechat.jpg)
