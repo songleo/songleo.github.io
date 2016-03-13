@@ -11,4 +11,4 @@ Email:lisong1205@gmail.com
 
 ![](/images/wechat.jpg)
 
-Don't Repeat Yourself.
+# Don't Repeat Yourself.
