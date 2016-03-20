@@ -11,4 +11,4 @@ Email:lisong1205@gmail.com
 
 ![](/images/wechat.jpg)
 
-Make everything as simple as possible, but not simpler.
+# Don't Repeat Yourself.
