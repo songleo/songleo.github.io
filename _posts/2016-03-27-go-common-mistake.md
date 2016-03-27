@@ -36,7 +36,7 @@ go语言中字符串也是不可变的，比如当连接2个字符串：a+=b，�
 
 ```go
 var b bytes.Buffer
-...
+
 for condition {
     b.WriteString(str) // 将字符串str写入缓存buffer
 }
@@ -101,19 +101,22 @@ import (
 type nexter interface {
     next() byte
 }
-funcnextFew1(nnexter, numint) []byte {
+
+func nextFew1(nnexter, numint) []byte {
     varb []bytefori:=0; i < num; i++ {
         b[i] = n.next()
     }
     return b
 }
-funcnextFew2(n *nexter, numint) []byte {
+
+func nextFew2(n *nexter, numint) []byte {
     varb []bytefori:=0; i < num; i++ {
         b[i] = n.next() // 编译错误:n.next未定义（*nexter类型没有next成员或next方法）
     }
     return b
 }
-funcmain() {
+
+func main() {
     fmt.Println(“Hello World!”)
 }
 ```
@@ -126,6 +129,6 @@ funcmain() {
 
 如果在一个循环内部使用了协程处理某些事务。当使用break、return或者panic跳出一个循环时，很有可能会导致内存溢出，因为此时协程正在处理某事务而被阻塞。因此在实际代码中，除非此处代码并发执行显得非常重要，才使用协程和通道，否则仅需写一个简单的过程式循环即可。
 
-#参考
+# 参考
 
 《the way to go》英文版
