@@ -8,7 +8,7 @@ date: 2016-03-26 23:11:32
 
 详见：https://github.com/Unknwon/the-way-to-go_ZH_CN
 
-在翻译过程中学习了一些go使用过程中常见的错误和陷阱，特此总结一下，以便自己在今后使用go过程中少犯错误。
+在翻译过程中学习了一些go常见的错误和陷阱，特此总结一下，以便自己在今后使用go时少犯错误。
 
 # 1 误用短声明:=导致变量覆盖
 
@@ -43,7 +43,8 @@ for condition {
     return b.String()
 ```
 
-# 3 误用defer关闭文件。
+# 3 误用defer关闭文件
+
 如果在一个for循环内部处理一系列文件，我们希望使用defer确保文件处理完毕后能自动被关闭。代码如下：
 
 ```go
@@ -72,9 +73,9 @@ for_, file:=range files {
 
 例如错误的使用new初始化一个map，错误使用make创建一个数组等。new和make的使用场景如下：
 
-    - 切片、映射和通道，使用make
+- 切片、映射和通道，使用make
 
-    - 数组、结构体和所有的值类型，使用new 
+- 数组、结构体和所有的值类型，使用new 
 
 # 5 误用指向切片的指针
 
@@ -82,15 +83,15 @@ for_, file:=range files {
 
 - 正确的做法：
 
-    func findBiggest( listOfNumbers []int ) int {}
+    `func findBiggest( listOfNumbers []int ) int {}`
 
 - 错误的做法：
 
-    func findBiggest( listOfNumbers *[]int ) int {}
+    `func findBiggest( listOfNumbers *[]int ) int {}`
 
 # 6 误用指针指向一个接口类型
 
-例如以下代码，nexter是一个接口类型，并且定义了一个next()方法读取下一字节。函数nextFew将nexter接口作为参数并读取接下来的num个字节，并返回一个切片。但是nextFew2使用一个指向nexter接口类型的指针作为参数传递给函数，编译程序时，系统会给出一个编译错误：n.next undefined (type *nexter has no field or method next) ，即n.next未定义（*nexter类型没有next成员或next方法）。所以切记不要使用一个指针指向接口类型。
+例如以下代码，nexter是一个接口类型，并且定义了一个next()方法读取下一字节。函数nextFew将nexter接口作为参数并读取接下来的num个字节，并返回一个切片。但是nextFew2使用一个指向nexter接口类型的指针作为参数传递给函数，编译程序时，系统会给出一个编译错误：n.next undefined (type *nexter has no field or method next) 。所以切记不要使用一个指针指向接口类型。
 
 ```go
 package main
@@ -125,6 +126,6 @@ funcmain() {
 
 如果在一个循环内部使用了协程处理某些事务。当使用break、return或者panic跳出一个循环时，很有可能会导致内存溢出，因为此时协程正在处理某事务而被阻塞。因此在实际代码中，除非此处代码并发执行显得非常重要，才使用协程和通道，否则仅需写一个简单的过程式循环即可。
 
-# 9 参考
+#参考
 
 《the way to go》英文版
