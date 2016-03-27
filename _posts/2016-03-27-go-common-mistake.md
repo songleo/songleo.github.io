@@ -35,12 +35,14 @@ if something {
 go语言中字符串也是不可变的，比如当连接2个字符串：a+=b，尤其在一个循环中进行类似操作时，因为源字符串不可变，会导致大量的内存拷贝，造成内存开销过大。所以一般使用一个字符数组代替字符串，将字符串内容写入一个缓存中，代码如下：
 
 ```go
+
 var b bytes.Buffer
 
 for condition {
     b.WriteString(str) // 将字符串str写入缓存buffer
 }
     return b.String()
+
 ```
 
 # 3 误用defer关闭文件
@@ -48,6 +50,7 @@ for condition {
 如果在一个for循环内部处理一系列文件，我们希望使用defer确保文件处理完毕后能自动被关闭。代码如下：
 
 ```go
+
 for_, file:=range files {
     if f, err = os.Open(file); err != nil {
         return
@@ -55,11 +58,13 @@ for_, file:=range files {
     defer f.Close()
     f.Process(data)
 }
+
 ```
 
 但是，defer在循环结束后没有被执行，所以文件一直没有被关闭。因为defer仅在函数返回时才能自动执行。所以正确的写法应该是：
 
 ```go
+
 for_, file:=range files {
     if f, err = os.Open(file); err != nil {
         return
@@ -67,6 +72,7 @@ for_, file:=range files {
     f.Process(data)
     f.Close()
  }
+
  ```
 
 # 4 误用new和make
@@ -93,24 +99,30 @@ for_, file:=range files {
 
 例如以下代码，nexter是一个接口类型，并且定义了一个next()方法读取下一字节。函数nextFew将nexter接口作为参数并读取接下来的num个字节，并返回一个切片。但是nextFew2使用一个指向nexter接口类型的指针作为参数传递给函数，编译程序时，系统会给出一个编译错误：n.next undefined (type *nexter has no field or method next) 。所以切记不要使用一个指针指向接口类型。
 
+
 ```go
+
 package main
+
 import (
     “fmt”
 )
+
 type nexter interface {
     next() byte
 }
 
-func nextFew1(nnexter, numint) []byte {
-    varb []bytefori:=0; i < num; i++ {
+func nextFew1(n nexter, num int) []byte {
+    var b []byte
+    for i:=0; i < num; i++ {
         b[i] = n.next()
     }
     return b
 }
 
-func nextFew2(n *nexter, numint) []byte {
-    varb []bytefori:=0; i < num; i++ {
+func nextFew2(n *nexter, num int) []byte {
+    var b []byte
+    for i:=0; i < num; i++ {
         b[i] = n.next() // 编译错误:n.next未定义（*nexter类型没有next成员或next方法）
     }
     return b
@@ -119,6 +131,7 @@ func nextFew2(n *nexter, numint) []byte {
 func main() {
     fmt.Println(“Hello World!”)
 }
+
 ```
 
 # 7 误用指针传递值类型参数
