@@ -5,7 +5,7 @@ title: About Me
 
 LEo
 
-Email:lisong1205@gmail.com
+Email：lisong1205@gmail.com
 
 微信公众号：reborncodinglife
 
