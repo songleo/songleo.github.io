@@ -68,6 +68,8 @@ date: 2016-01-30 15:40:31
 
 31) the way to go (中文版)
 
+32) Go 指南 (《A Tour of Go》中文版)
+
 ......未完待续:)
 
 ## Bought Books
