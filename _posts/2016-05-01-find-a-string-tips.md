@@ -10,35 +10,33 @@ date: 2016-05-01 21:20:32
 
 若查找的字符串是key1，存在key1，所以key1是有效字符串，若查找的字符串是key0，不存在key0，所以key0是无效字符串。
 
-我想了3种方式实现，分别如下：
+我通过4种方式实现，分别如下：
 
 ## 方式一：使用map
 
-将有效的字符串定义成map的key，但是值都为空，如下：
+将有效的字符串定义成map的key，value都是true，如下：
 
 ```go
-var validKeyMap = map[string]string{
-    "key1": "",
-    "key2": "",
-    "key3": "",
-    "key4": "",
-    "key5": "",
-    "key6": "",
+var validKeyMap = map[string]bool{
+    "key1": true,
+    "key2": true,
+    "key3": true,
+    "key4": true,
+    "key5": true,
+    "key6": true,
 }
 ```
 
-使用map的特性查找某个键是否存在，如下：
+使用map的特性查找某个键是的值，如下：
 
 ```go
 key := "key1"
-if _, isPresent := validKeyMap[key]; isPresent {
+if validKeyMap[key] {
     fmt.Println("found via map")
 } else {
     fmt.Println("not found via map")
 }
 ```
-
-
 
 ## 方式二：遍历列表
 
@@ -60,7 +58,6 @@ var validKeyList = []string{
 ```go
 var found bool
 key := "key1"
-
 for index := range validKeyList {
     if validKeyList[index] == key {
         found = true
@@ -75,7 +72,24 @@ if found {
 }
 ```
 
-## 方式三：使用switch
+## 方式三：使用sort库
+
+借助sort库，先将切片排序，然后通过调用SearchStrings查找目标字符串：
+
+```go
+sort.Strings(validKeyList)
+index := sort.SearchStrings(validKeyList, key)
+found = (index < len(validKeyList) && validKeyList[index] == key)
+
+if found {
+    fmt.Println("found via sort lib")
+} else {
+    fmt.Println("not found via sort lib")
+}
+```
+
+
+## 方式四：使用switch
 
 使用switch语句的特性，遍历所有字符串查找，如下：
 
@@ -83,30 +97,38 @@ if found {
 key := "key1"
 
 switch key {
-case "key1":
-    fmt.Println("found via switch")
-case "key2":
-    fmt.Println("found via switch")
-case "key3":
-    fmt.Println("found via switch")
-case "key4":
-    fmt.Println("found via switch")
-case "key5":
-    fmt.Println("found via switch")
-case "key6":
-    fmt.Println("found via switch")
-default:
-    fmt.Println("not found via switch")
-}
+
+    case "key1":
+        fallthrough
+
+    case "key2":
+        fallthrough
+
+    case "key3":
+        fallthrough
+
+    case "key4":
+        fallthrough
+
+    case "key5":
+        fallthrough
+
+    case "key6":
+        fmt.Println("found via switch")
+    default:
+        fmt.Println("not found via switch")
+    }
 ```
 
 ## 总结
 
-方式一由于定义了一个值都为空字符串的map，可读性不是太好，但是该方式查找效率最高，时间复杂度为常数O(1)，所以一般推荐使用。
+方式一由于定义一个map，内存相对其他方式有一定的开销，但是该方式查找效率最高，时间复杂度为常数O(1)，所以一般推荐使用；
 
-方式二由于需要遍历所有字符串，时间复杂度是O(N)，N是切片的长度，随着长度增大，查找时间越长，但是相比方式三，代码少了很多，代码越少出错概率越小。
+方式二由于需要遍历所有字符串，时间复杂度是O(N)，N是切片的长度，随着长度增大，查找时间越长，但是相比方式四，代码少了很多，谨记代码越少出错概率越小，要想软件没有bug，唯一的方法就是不写代码；
 
-方式三借助switch语句特性，时间复杂度不定。若查找的字符串是key1，则时间复杂度O(1)，但是若查找的字符串是最后一个字符串时，时间复杂度和方式二一样，都是O(N)，N表示字符串个数，若追求可读性，对查找效率要求不是很高情况下，也可以使用。
+方式三通过使用go标准库sort，将切片先排序后，使用二分法查找目标字符串，算法复杂读相对方式二和方式四较好，为O(logN)，N为切片长度，可读性较好，比方式二更优；
+
+方式四借助switch语句特性，时间复杂度不定。若查找的字符串是key1，则时间复杂度O(1)，但是若查找的字符串是最后一个字符串时，时间复杂度和方式二一样，都是O(N)，N表示字符串个数，但是该方式没有没有使用任何数据结构，如果对内存开销要求高，可以推荐使用。
 
 ### 附上完整代码
 
@@ -115,30 +137,31 @@ package main
 
 import (
     "fmt"
+    "sort"
 )
-
-var validKeyList = []string{
-    "key1",
-    "key2",
-    "key3",
-    "key4",
-    "key5",
-    "key6",
-}
-
-var validKeyMap = map[string]string{
-    "key1": "",
-    "key2": "",
-    "key3": "",
-    "key4": "",
-    "key5": "",
-    "key6": "",
-}
 
 func main() {
 
+    var validKeyList = []string{
+        "key1",
+        "key2",
+        "key3",
+        "key4",
+        "key5",
+        "key6",
+    }
+
+    var validKeyMap = map[string]bool{
+        "key1": true,
+        "key2": true,
+        "key3": true,
+        "key4": true,
+        "key5": true,
+        "key6": true,
+    }
+
     key := "key1"
-    if _, isPresent := validKeyMap[key]; isPresent {
+    if validKeyMap[key] {
         fmt.Println("found via map")
     } else {
         fmt.Println("not found via map")
@@ -160,17 +183,33 @@ func main() {
         fmt.Println("not found via list")
     }
 
+    sort.Strings(validKeyList)
+    index := sort.SearchStrings(validKeyList, key)
+    found = (index < len(validKeyList) && validKeyList[index] == key)
+
+    if found {
+        fmt.Println("found via sort lib")
+    } else {
+        fmt.Println("not found via sort lib")
+    }
+
     switch key {
+
     case "key1":
-        fmt.Println("found via switch")
+        fallthrough
+
     case "key2":
-        fmt.Println("found via switch")
+        fallthrough
+
     case "key3":
-        fmt.Println("found via switch")
+        fallthrough
+
     case "key4":
-        fmt.Println("found via switch")
+        fallthrough
+
     case "key5":
-        fmt.Println("found via switch")
+        fallthrough
+
     case "key6":
         fmt.Println("found via switch")
     default:
@@ -178,3 +217,10 @@ func main() {
     }
 }
 ```
+
+### 输出
+
+    found via map
+    found via list
+    found via sort lib
+    found via switch
