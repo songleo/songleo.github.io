@@ -69,4 +69,4 @@ func main() {
     mac addrs: ["00:e0:66:07:5c:97:00:00" "08:00:27:00:d8:94:00:00"]
     ips: ["192.168.1.101" "169.254.167.46"]
 
-(**特别指出**：go语言在获取机器的mac地址和ip时，windows和linux输出格式不一样，比如windows获取的mac地址是8个字节，而linux获取的mac是6个字节，ip异同可以参考这篇博客(go获取windows的hostid)[/_posts/2016-05-19-get-hostid-from-windows.md]，所以不同平台需做不同处理。)
+(**特别指出**：go语言在获取机器的mac地址和ip时，windows和linux输出格式不一样，比如windows获取的mac地址是8个字节，而linux获取的mac是6个字节，ip异同可以参考这篇博客(go获取windows的hostid)[_posts/2016-05-19-get-hostid-from-windows.md]，所以不同平台需做不同处理。)
