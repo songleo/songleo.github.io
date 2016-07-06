@@ -90,10 +90,12 @@ date: 2016-07-05 20:43:32
 
     cdl(){ cd "$1"; ls;}
 
-将以上的例子加入到你的`home`目录下的`.bashrc`或者`/etc/profile`文件，然后source一下即可生效。
+将以上的例子加入到你的`home`目录下的`.bashrc`或者`/etc/profile`文件，然后source一下即可生效，
 
-## 我的shell配置文件：
+## 总结
+
+我的`shell`配置文件见：
 
     https://github.com/songleo/bashrc/blob/master/.bashrc
 
-如果你感兴趣可以下载使用，欢迎分享交流！
+如果你感兴趣可以下载使用，在工作中，如果电脑能自动帮你完成的工作，就尽量让电脑完成，以节约你的时间，提高工作效率。所以你也可以创建属于自己的`shell`别名，欢迎分享交流！
