@@ -52,7 +52,7 @@ date: 2016-07-05 20:43:32
     alias ifconfig='ifconfig | awk -F"[: ]+" "/inet addr/ {print $4}"' # 查看ip地址更方面了
     alias lsrc="source ~/.bashrc" # 自动source当前用户的.bashrc文件
 
-# 函数
+## 函数
 
 解压各种常见格式的压缩包，例如解压一个名为`package.tar.gz`的压缩包，只需要执行`ltar package.tar.gz`即可，你只需记住`ltar`命令：
 
@@ -92,7 +92,7 @@ date: 2016-07-05 20:43:32
 
 将以上的例子加入到你的`home`目录下的`.bashrc`或者`/etc/profile`文件，然后source一下即可生效。
 
-# 我的shell配置文件：
+## 我的shell配置文件：
 
     https://github.com/songleo/bashrc/blob/master/.bashrc
 
