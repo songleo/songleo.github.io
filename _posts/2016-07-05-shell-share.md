@@ -4,25 +4,27 @@ title: shell相关分享
 date: 2016-07-05 20:43:32
 ---
 
-由于工作原因，基本每天都会使用shell，有时难免会有很多重复性的命令操作，于是积累了一些shell技巧 ，特此分享，希望你能有所收获！
+由于工作原因，每天都会使用shell，有时难免会有很多重复性的命令操作，于是积累了一些shell技巧 ，特此分享，希望你能有所收获！
 
 ## 自动source环境变量
 
-某些软件运行之前需要`source`环境变量，我一般是将该环境变量添加到用户`home`目录下的`.bashrc`或者`/etc/profile`文件中，例如：
+某些软件运行之前需要source环境变量，但是每次打开新终端都要去source环境变量太麻烦，所以我一般是将该软件所需的环境变量添加到`~/.bashrc`或者`/etc/profile`文件中，例如：
 
     export TEST_ENV=/path/to/dir
 
+然后每次打开新终端都会自动source环境变量。
+
 ## 修改PATH
 
-若经常需要执行某个目录下的可执行文件，可以将该目录添加到`PATH`中，每次执行时直接输入可执行文件名称即可，例如：
+若经常需要执行某个目录下的可执行文件，可以将该目录添加到PATH中，每次执行时直接输入可执行文件名称即可，例如：
 
     export PATH=/path/to/bin:$PATH
 
-然后在终端中就可以执行`/path/to/bin`目录中的可执行文件了，而不是每次都要进入该目录，然后执行`./cmd`。
+然后在终端就可以直接执行/path/to/bin目录中的可执行文件了，而不是每次都要进入该目录，然后执行`./cmd`，这里需要指出的是，切记将`$PATH`附在最后，因为shell在PATH中搜索可执行文件顺序是从前往后，如果将`$PATH`放在最前面，如果有2个同名的命令行，那么你执行的可能是另外一个命令。
 
 ## 常用别名
 
-在使用shell的过程中，经常会频繁的执行一些命令，我的做法是设置一个别名，提高工作效率，例如我使用`cdd`进入我的日常开发目录`developing`，使用`cdc`进入经常需要修改配置文件的目录，`cdg`进入`git`的工作目录：
+在使用shell的过程中，经常会频繁的执行一些命令，我的做法是设置一个别名，提高工作效率，例如我使用`cdd`进入我的日常开发目录developing，使用`cdc`进入经常需要修改配置文件的目录，`cdg`进入git的工作目录：
 
     alias cdd='cd /media/sf_share/git/developing'
     alias cdc='cd /path/to/config'
@@ -30,7 +32,7 @@ date: 2016-07-05 20:43:32
 
 ## git别名
 
-每天都需要执行`git`命令，但是`git`命令实在太长，每次都输入那么长命令太费事，这里是一些我的`git`别名，希望对你也有用：
+每天都需要执行git命令，但是git命令实在太长，每次都输入那么长命令太费事，这里是一些我的git别名，希望对你也有用：
 
     alias gco='git commit'
     alias gcl='git clone'
@@ -49,12 +51,12 @@ date: 2016-07-05 20:43:32
     alias ...='cd ../.. && ls' # 进入上上级目录并执行ls命令
     alias :q='exit' # 以vi方式退出当前终端
     alias psg='ps -ef | grep' # 查找进程时不需要输入ps -ef | grep了
-    alias ifconfig='ifconfig | awk -F"[: ]+" "/inet addr/ {print $4}"' # 查看ip地址更方面了
+    alias ifconfig='ifconfig | awk -F"[: ]+" "/inet addr/ {print $4}"' # 查看ip地址更方便了
     alias lsrc="source ~/.bashrc" # 自动source当前用户的.bashrc文件
 
 ## 函数
 
-解压各种常见格式的压缩包，例如解压一个名为`package.tar.gz`的压缩包，只需要执行`ltar package.tar.gz`即可，你只需记住`ltar`命令：
+我们经常需要解压各种格式的压缩包，但是又记不住用哪个选项。可以将常见的解压命令封装成一个函数`ltar`。例如解压一个名为`package.tar.gz`的压缩包，只需要执行`ltar package.tar.gz`即可，你只需记住`ltar`命令：
 
     ltar(){
     if [ -f $1 ]; then
@@ -90,12 +92,14 @@ date: 2016-07-05 20:43:32
 
     cdl(){ cd "$1"; ls;}
 
-将以上的例子加入到你的`home`目录下的`.bashrc`或者`/etc/profile`文件，然后source一下即可生效，
+将上面的例子添加到`~/.bashrc`或者`/etc/profile`文件中，然后source一下即可生效。
 
 ## 总结
 
-我的`shell`配置文件见：
+作为一名软件开发人员，其目的就是为了让电脑帮我们干更多的事，如果电脑能搞定的事，就不要自己动手了，节约你的时间，干更有意义的事，所以你也可以定制自己的shell配置文件，将那些重复性的工作交给电脑。
+
+我的shell配置文件在我的github：
 
     https://github.com/songleo/bashrc/blob/master/.bashrc
 
-如果你感兴趣可以下载使用，在工作中，如果电脑能自动帮你完成的工作，就尽量让电脑完成，以节约你的时间，提高工作效率。所以你也可以创建属于自己的`shell`别名，欢迎分享交流！
+如果你感兴趣可以下载使用，欢迎分享交流！
