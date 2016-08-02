@@ -8,7 +8,7 @@ signoff:          LEo
 
 links:
   - name:         About
-    url:          /about
+    url:          http://reborncodinglife.com/about
   - name:         Blog
     url:          http://reborncodinglife.com
     external:     true
