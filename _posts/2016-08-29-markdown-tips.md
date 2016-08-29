@@ -293,8 +293,8 @@ B-->D
 
     ```
     sequenceDiagram
-    A->>B: How are you?
-    B->>A: Great!
+    Client->>Server: How are you?
+    Server->>Client: Great!
     ```
 
 效果如下：
