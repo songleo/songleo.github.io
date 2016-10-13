@@ -13,12 +13,12 @@ date: 2016-09-03 20:08:32
 另外，有一次亚马逊电子书做活动，各种优惠活动，我买了一批书，如下图：
 
 
-![image](https://mmbiz.qlogo.cn/mmbiz_jpg/LibBVJDTvZatwClVNlZ3IOYfKUE8qnDIvZ6bvOJ1dEBm5r34xPtkVOd5om7wJSLSb3ibT8C7tlzE7ZDJY53fQcHg/0?wx_fmt=jpeg)
+![image](http://mmbiz.qpic.cn/mmbiz_jpg/LibBVJDTvZatwClVNlZ3IOYfKUE8qnDIvZ6bvOJ1dEBm5r34xPtkVOd5om7wJSLSb3ibT8C7tlzE7ZDJY53fQcHg/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
 
 
 这么多书，只花了49.99！也许这批书有些我永远不会看，但我觉得只花不到50块钱就能买那么多动物出版社(O'Reilly出版社，如果你不知道这个出版社，请自行Google)发行的书，我就忍不住了，现在你相信了吧，不是我先动的手，是打折活动从中挑拨，不怪我。但是，其中有一本书书<<编写可读代码的艺术>>，我后面买了纸质版收藏，原价59，也送了一本给朋友。也许你会觉得很贵，那么你看看这本书英文原版的价格（不含运费：362）：
 
-![image](https://mmbiz.qlogo.cn/mmbiz_jpg/LibBVJDTvZatwClVNlZ3IOYfKUE8qnDIvjl5zIIJUJ1XG8V9gcts694jLZYPicVJY9HYgicHo6voLzRKeibbXzd7XA/0?wx_fmt=jpeg)
+![image](http://mmbiz.qpic.cn/mmbiz_jpg/LibBVJDTvZatwClVNlZ3IOYfKUE8qnDIvjl5zIIJUJ1XG8V9gcts694jLZYPicVJY9HYgicHo6voLzRKeibbXzd7XA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1)
 
 这本书我看了2遍(好书需要重复阅读)，可能由于我是菜鸟，看完后把我的代码改了又改，从变量命名到函数封装，学到的东西远远不止值50块钱，可以说在以后的编程生涯中将一直受用。最后还安利同事买了一本，据同事反馈确实不错。
 
