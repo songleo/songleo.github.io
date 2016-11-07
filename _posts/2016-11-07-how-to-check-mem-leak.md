@@ -48,7 +48,8 @@ int main () {
 
 ```
 root@leo:demo# gcc valgrind_demo.c -o valgrind_demo 
-root@leo:demo# valgrind --leak-check=full ./valgrind_demo 1 > valgrind_demo.log 2>&1
+root@leo:demo# valgrind --leak-check=full 
+./valgrind_demo 1 > valgrind_demo.log 2>&1
 ```
 
 ### 查看检测结果
@@ -111,6 +112,7 @@ root@leo:demo# cat valgrind_demo.log
 ## 参考
 
 c程序设计语言
+
 
 本次荐书：程序员的呐喊
 
