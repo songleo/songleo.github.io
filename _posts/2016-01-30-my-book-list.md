@@ -156,6 +156,8 @@ date: 2016-01-30 15:40:31
 
 - beej-s-guide-to-network-programming-Chinese-zh
 
+- 像程序员一样思考（修订版）
+
 ## 已经购买的书
 
 - 科学素养文库·科学元典丛书:自然哲学之数学原理
