@@ -7,13 +7,13 @@ date: 2016-11-07 20:30:32
 
 本文简单介绍c开发中的内存泄漏和动态内存分配函数，并使用valgrind分析c程序的内存泄漏问题。
 
-## 什么是内存泄漏
+## 1 什么是内存泄漏
 
 c语言中，需由开发者负责内存的申请和释放，内存泄漏是指开发者在程序中使用动态内存分配函数**xxlloc**在堆(heap)上申请内存，内存在使用完毕后未使用free函数释放，那么这块内存在程序退出前都不能再次使用，导致内存使用逐渐增大，直至耗尽，程序异常退出。
 
 > xxlloc函数指malloc、realloc和calloc
 
-## c动态内存分配函数有哪些
+## 2 c动态内存分配函数有哪些
 
 - void *malloc(size_t size): 分配大小为size字节的内存空间，并返回指向分配内存的指针。若分配内存失败，返回NULL，该函数不初始化其分配的内存空间。
 
@@ -25,7 +25,7 @@ c语言中，需由开发者负责内存的申请和释放，内存泄漏是指�
 
 - void free(void *p): 释放p指向的内存空间，在使用free函数前，必须确保p是指向由xxlloc分配的内存空间。当p=NULL，该函数不执行任何操作。
 
-## 使用valgrind检测内存泄漏
+## 3 使用valgrind检测内存泄漏
 
 示例代码如下：
 
@@ -44,7 +44,7 @@ int main () {
 }
 ```
 
-### 编译并使用valgrind检测内存
+### 4 编译并使用valgrind检测内存
 
 ```
 root@leo:demo# gcc valgrind_demo.c -o valgrind_demo 
@@ -52,7 +52,7 @@ root@leo:demo# valgrind --leak-check=full
 ./valgrind_demo 1 > valgrind_demo.log 2>&1
 ```
 
-### 查看检测结果
+### 5 查看检测结果
 
 ```
 root@leo:demo# cat valgrind_demo.log 
@@ -85,7 +85,7 @@ root@leo:demo# cat valgrind_demo.log
 由日志可以看出，函数`my_malloc`分配了1024字节内存，直到程序退出都没有释放内存，造成内存泄漏。
 
 
-### 没有内存泄漏的检测结果
+### 6 没有内存泄漏的检测结果
 
 将函数`my_malloc`中的注释语句打开，检测结果如下：
 
@@ -109,12 +109,12 @@ root@leo:demo# cat valgrind_demo.log
 
 由日志可以看出没有造成内存泄漏，因为分配的内存被正确释放了。
 
-## 参考
+## 7 参考
 
 c程序设计语言
 
 
-本次荐书：程序员的呐喊
+## 本次荐书：程序员的呐喊
 
 ![image](http://img10.360buyimg.com/n1/s200x200_jfs/t1588/15/333780144/52388/20c263a8/5577937bN85d703f0.jpg)
 
