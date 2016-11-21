@@ -92,7 +92,7 @@ root@leo:demo# gcc getenv.c -o getenv && ./getenv
 - 遇到问题一定要搞明白，不然下次还是不明白(这个是同事兼球友祁大神经常说的)
 - 学编程实践很重要(大道理大家都懂Orz)
 
-本次荐书：黑客与画家
+## 本次荐书：黑客与画家
 
 ![image](https://img10.360buyimg.com/n1/jfs/t673/9/1408715732/231177/a7d09775/54ddac23Nde0e51fa.jpg)
 
