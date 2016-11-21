@@ -144,25 +144,25 @@ date: 2016-01-30 15:40:31
 
 - head first java
 
-- c程序设计语言
+- ~~c程序设计语言~~
 
 - 算法精解: c语言描述
 
-- 数据结构与算法分析: c语言描述
+- ~~数据结构与算法分析: c语言描述~~
 
 - 人性的弱点
 
-- head first 设计模式
+- ~~head first 设计模式~~
 
-- c缺陷与陷进（重读）
+- ~~c缺陷与陷进（重读）~~
 
 - 数学之美（重读）
 
-- beej-s-guide-to-network-programming-chinese-zh
+- ~~beej-s-guide-to-network-programming-chinese-zh~~
 
 - 像程序员一样思考（修订版）
 
-- jstraining （https://github.com/ruanyf/jstraining）
+- ~~jstraining （https://github.com/ruanyf/jstraining）~~
 
 ## 已经购买的书
 
