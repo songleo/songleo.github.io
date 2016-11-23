@@ -146,8 +146,6 @@ date: 2016-01-30 15:40:31
 
 - head first java
 
-- 算法精解: c语言描述
-
 - 人性的弱点
 
 - ~~the little go book~~
