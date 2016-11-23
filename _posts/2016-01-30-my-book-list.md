@@ -150,7 +150,7 @@ date: 2016-01-30 15:40:31
 
 - 人性的弱点
 
-- ~the little go book~
+- ~~the little go book~~
 
 - ~~像程序员一样思考（修订版）~~
 
