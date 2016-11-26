@@ -48,11 +48,14 @@ alias llg='ll | grep'
 
 - 如果经常搜索bugzilla，可以将每次搜索保存，以便下次继续使用
 
-具体步骤是搜索完bug后，点击Saved Searches即可保存本次搜索实用的条件。比如我做MIC调度项目时，我专门定制了以下几个bugzilla搜索：
+具体步骤是搜索完bug后，点击Saved Searches即可保存本次搜索使用的条件和关键字。比如我做MIC调度项目时，我专门定制了以下几个bugzilla搜索：
 
 > mic_unfix_bug：所有未fix的MIC调度bug
+>
 > mic_verify_bug：所有已经验证的MIC调度bug
+>
 > mic_fixed_bug：所有已经fix的MIC调度bug
+>
 > mic_bug: 所有MIC调度相关的bug
 
 通过定制自己的搜索，可以很方面的查找符合特定条件的bug，实现一键搜索，尤其适合QA统计bug，开发在查找bug时也很实用。
