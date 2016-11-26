@@ -11,7 +11,7 @@ date: 2016-11-25 22:24:32
 - 如果需要频繁的进入某个目录，alias一个命令以达到一键进入的目的，例如：
 
 ```bash
-alias cdc='cd /apps/unischeduler/conf && source /apps/unischeduler/conf/profile.jhscheduler && ls'
+alias cdc='cd ${JHSCHEDULER_TOP}/conf && source ${JHSCHEDULER_TOP}/conf/profile.jhscheduler && ls'
 ```
 
 当在终端输入命令cdc时，首先会进入我们经常进入的配置文件目录，自动source环境变量，然后执行ls命令列出当前目录下文件。
@@ -19,8 +19,8 @@ alias cdc='cd /apps/unischeduler/conf && source /apps/unischeduler/conf/profile.
 所以，你可以alias以下命令：
 
 ```bash
-alias cdl='cd /apps/unischeduler/log && ls' # 进入日志目录
-alias cdu='cd /apps/unischeduler && ls' # 进入unischeduler目录
+alias cdl='cd ${JHSCHEDULER_TOP}/log && ls' # 进入日志目录
+alias cdu='cd ${JHSCHEDULER_TOP} && ls' # 进入unischeduler目录
 alias cds='cd /media/sf_share' # 进入虚拟机和物理机的共享文件目录
 ```
 
