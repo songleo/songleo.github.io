@@ -4,7 +4,7 @@ title: 工作中的小技巧分享
 date: 2016-11-25 22:24:32
 ---
 
-本文是为了给dev2做一个knowledge share，分享一些我日常工作中总结的小技巧和工具，主要是一些命令行的改造和定义，因为经常执行某一个命令，如果重复几次以后我就想把命令改造得短一些，方便再次执行以节约时间。所以分享出来希望对大家能有所帮助。
+本文是为了给dev2做一个knowledge share，分享一些我日常工作中总结的小技巧和工具，主要是一些命令行的改造和定义，因为经常执行某一个命令，如果重复几次以后我就想把命令改造得短一些，方便再次执行以节约时间，所以分享出来希望对大家能有所帮助。
 
 >Don't Repeat Yourself（不要重复你自己）
 
@@ -83,12 +83,12 @@ ldkill()
 
 ### 4 编译和换包
 
-如果经常需要换包或者编译代码，可以定义一些命令实现，比如做4.0开发时，每次都需要通过登录网页或者服务器获取最新的安装包，很不方便。所以我定义了一个命令lget4，执行该命令会将当天最新4.0包复制到当前目录，这个命令应该大家都有使用过，如下：
+如果经常需要换包或者编译代码，可以定义一些命令实现，比如做某项目时，每次都需要通过登录网页或者服务器获取最新的安装包，很不方便。所以我定义了一个命令lget4，执行该命令会将当天最新包复制到当前目录，这个命令应该大家都有使用过，如下：
 
 ```
 lget4(){
     PACKAGE=`date +"%F"`
-    wget http://192.168.0.43/build/jhinno_ext/jh_unischeduler_ext/trunk/$PACKAGE/unischeduler-4.0.tar.gz
+    wget http://192.168.0.43/build/jhinno_ext/jh_unischeduler_ext/trunk/$PACKAGE/unischeduler.tar.gz
 }
 ```
 
@@ -101,24 +101,24 @@ alias cp3lic="cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
 但是一般我很少执行这个命令，因为每次拷贝安装包时，我就自动将许可证文件拷贝到conf目录，例如下面定义的命令是编译完代码后，执行该命令可以拷贝最新的安装包到apps目录：
 
 ```
-alias cp3pkg="cp -rf  /apps/code/trunk_3.2/dist/linux-x86_64/* /apps/ && cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
+alias cp3pkg="cp -rf  /apps/code/trunk/dist/linux-x86_64/* /apps/ && cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
 ```
 
 如果需要更换某个binary文件，比如fix bug时，编译完修改的代码后，想更换某个binary如LIM和MBD等，可以alias几个命令实现，如下：
 
 ```
-alias cplim="cp -rf /apps/code/trunk_3.2/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/lim  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/lim"
-alias cpmbd="cp -rf /apps/code/trunk_3.2/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/mbatchd  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/mbatchd"
-alias cpsched="cp -rf /apps/code/trunk_3.2/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/sched  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/sched"
-alias cpsbd="cp -rf /apps/code/trunk_3.2/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/sbatchd  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/sbatchd"
+alias cplim="cp -rf /apps/code/trunk/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/lim  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/lim"
+alias cpmbd="cp -rf /apps/code/trunk/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/mbd  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/mbd"
+alias cpsched="cp -rf /apps/code/trunk/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/sched  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/sched"
+alias cpsbd="cp -rf /apps/code/trunk/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/sbd  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/sbd"
 alias cpall="cplim && cpmbd && cpsbd && cpres && cppim && cpjcmd && cpbcmd" # 更换所有的binary
 ```
 
 每次fix bug或者调试代码时，经常需要重新编译代码，所以我定义了2个命令实现自动编译4.0和3.2，如下：
 
 ```
-alias lbuild4='curl --user jhadmin:jhadmin -d delay=0sec http://192.168.0.43:8888/view/jh_unischeduler/job/unischeduler-trunk/build' # build 4.0
-alias lbuild3="cd /apps/code/trunk_3.2 && make -j 4 clean && make -j 4 && rm -rf ./dist/ && make -j 4 package && cd -" # build 3.2
+alias lbuild4='curl --user username:password -d delay=0sec http://192.168.0.43:8888/view/jh_unischeduler/job/unischeduler-trunk/build'
+alias lbuild3="cd /apps/code/trunk && make -j 4 clean && make -j 4 && rm -rf ./dist/ && make -j 4 package && cd -"
 ```
 
 ### 5 代码运行
