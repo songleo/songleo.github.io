@@ -6,6 +6,8 @@ date: 2016-11-25 22:24:32
 
 本文是为了给dev2做一个knowledge share，分享一些工作中常使用的小技巧，主要是一些命令行的操作，希望对大家能有所帮助。
 
+>Don't Repeat Yourself
+
 ### 1 进入目录
 
 如果需要频繁的进入某个目录，alias一个命令以达到目的，例如：
@@ -171,8 +173,6 @@ fi
 最后附上我的bash配置，如果感兴趣可以参考。
 
 https://github.com/songleo/bashrc/blob/master/.bashrc
-
->Don't Repeat Yourself
 
 #### 本次荐书：代码大全
 
