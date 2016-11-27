@@ -12,7 +12,7 @@ date: 2016-11-25 22:24:32
 
 如果需要频繁的进入某个目录，alias一个命令以达到目的，例如：
 
-```bash
+```
 alias cdc='cd ${JHSCHEDULER_TOP}/conf && source ${JHSCHEDULER_TOP}/conf/profile.jhscheduler && ls'
 ```
 
@@ -20,13 +20,13 @@ alias cdc='cd ${JHSCHEDULER_TOP}/conf && source ${JHSCHEDULER_TOP}/conf/profile.
 
 我更喜欢将source环境变量单独写入bash配置文件，以便每次登陆时自动source环境变量。例如：
 
-```bash
+```
 source  ${JHSCHEDULER_TOP}/conf/profile.jhscheduler
 ```
 
 所以，你也可以alias以下命令：
 
-```bash
+```
 alias cdl='cd ${JHSCHEDULER_TOP}/log && ls' # 进入日志目录
 alias cdu='cd ${JHSCHEDULER_TOP} && ls' # 进入unischeduler目录
 alias cds='cd /media/sf_share' # 进入虚拟机和物理机的共享文件目录
@@ -40,14 +40,14 @@ alias ...='cd ../.. && ls' # 进入上上层目录，并执行ls命令
 
 如果你频繁的执行某些命令，可以将这些命令alias为一个简短的命令，例如：
 
-```bash
+```
 alias limreconfig="echo y | jadmin limreconfig "
 alias mbdreconfig="jadmin schedreconfig "
 ```
 
 执行limreconfig直接重置lim，省去输入jadmin和进入交互模式输入的y。执行mbdreconfig重置mbd。所以，你也可以alias以下命令：
 
-```bash
+```
 alias jhstart="jhscheduler start"
 alias jhstop="jhscheduler stop"
 alias jhrestart="jhscheduler stop && jhscheduler start"
@@ -85,7 +85,7 @@ ldkill()
 
 如果经常需要换包或者编译代码，可以定义一些命令实现，比如做4.0开发时，每次都需要通过登录网页或者服务器获取最新的安装包，很不方便。所以我定义了一个命令lget4，执行该命令会将当天最新4.0包复制到当前目录，这个命令应该大家都有使用过，如下：
 
-```bash
+```
 lget4(){
     PACKAGE=`date +"%F"`
     wget http://192.168.0.43/build/jhinno_ext/jh_unischeduler_ext/trunk/$PACKAGE/unischeduler-4.0.tar.gz
@@ -94,19 +94,19 @@ lget4(){
 
 由于每次换包需要复制许可证文件，我定义了一个命令cplic，将许可证文件放在一个固定的位置，执行该命令可以将许可证文件拷贝到conf目录：
 
-```bash
+```
 alias cp3lic="cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
 ```
 
 但是一般我很少执行这个命令，因为每次拷贝安装包时，我就自动将许可证文件拷贝到conf目录，例如下面定义的命令是编译完代码后，执行该命令可以拷贝最新的安装包到apps目录：
 
-```bash
+```
 alias cp3pkg="cp -rf  /apps/code/trunk_3.2/dist/linux-x86_64/* /apps/ && cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
 ```
 
 如果需要更换某个binary文件，比如fix bug时，编译完修改的代码后，想更换某个binary如LIM和MBD等，可以alias几个命令实现，如下：
 
-```bash
+```
 alias cplim="cp -rf /apps/code/trunk_3.2/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/lim  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/lim"
 alias cpmbd="cp -rf /apps/code/trunk_3.2/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/mbatchd  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/mbatchd"
 alias cpsched="cp -rf /apps/code/trunk_3.2/dist/linux-x86_64/unischeduler/sbin/linux-x86_64/sched  ${JHSCHEDULER_TOP}/sbin/linux-x86_64/sched"
@@ -116,7 +116,7 @@ alias cpall="cplim && cpmbd && cpsbd && cpres && cppim && cpjcmd && cpbcmd" # �
 
 每次fix bug或者调试代码时，经常需要重新编译代码，所以我定义了2个命令实现自动编译4.0和3.2，如下：
 
-```bash
+```
 alias lbuild4='curl --user jhadmin:jhadmin -d delay=0sec http://192.168.0.43:8888/view/jh_unischeduler/job/unischeduler-trunk/build' # build 4.0
 alias lbuild3="cd /apps/code/trunk_3.2 && make -j 4 clean && make -j 4 && rm -rf ./dist/ && make -j 4 package && cd -" # build 3.2
 ```
@@ -125,7 +125,7 @@ alias lbuild3="cd /apps/code/trunk_3.2 && make -j 4 clean && make -j 4 && rm -rf
 
 开发过程中，经常需要写一个简单的程序验证某个API，比如c语言，要编译运行c文件，需要执行gcc demo.c -o demo.c，编译完成后才能运行代码，这样每次编译比较麻烦且费时，于是我参考go语言的go run命令，定义一个crun命令直接运行c源代码，如下：
 
-```bash
+```
 crun(){
     gcc $* -g;
     if [ $? -ne 0 ]; then
@@ -147,7 +147,7 @@ alias gtest='go test'
 
 每次换包时，都要解压压缩包，但是压缩格式很多，要记住那么多解压选项和命令不容易，可以定义如下命令，一个命令解压常见压缩格式：
 
-```bash
+```
 ltar(){
 if [ -f $1 ]; then
 case $1 in
