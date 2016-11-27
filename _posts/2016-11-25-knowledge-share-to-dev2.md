@@ -32,7 +32,7 @@ alias ..='cd .. && ls' # 进入上层目录，并执行ls命令
 alias ...='cd ../.. && ls' # 进入上上层目录，并执行ls命令
 ```
 
-举这几个例子，是想抛砖引玉，你可以alias属于你自己的命令行，除非你愿意重复性的执行一些命令。
+举这几个例子，只是为了达到抛砖引玉的目的，你可以alias属于你自己的命令行，除非你愿意重复性的执行一些命令。
 
 ### 2 命令行改造
 
@@ -61,7 +61,7 @@ ssh0()
 { ssh "192.168.0.$1";} # ssh连接时不用每次输入192.168.0.
 
 ldkill()
-{ ps -ef | grep unischeduler |awk '{print $2}' | xargs kill -9; } # 在从节点删除unischeduler相关进程，这个命令我经常使用，很方便
+{ ps -ef | grep unischeduler |awk '{print $2}' | xargs kill -9; } # 在从节点删除unischeduler相关进程
 ```
 
 ### 3 bugzilla搜索定制
