@@ -4,9 +4,7 @@ title: 工作中的小技巧分享
 date: 2016-11-25 22:24:32
 ---
 
-本文是为为了给dev2做一个knowledge share，分享一些工作中常使用的小技巧，主要是一些命令行的操作，希望能有帮助。
-
->Don't Repeat Yourself
+本文是为了给dev2做一个knowledge share，分享一些工作中常使用的小技巧，主要是一些命令行的操作，希望对大家能有所帮助。
 
 ### 1 进入目录
 
@@ -80,7 +78,7 @@ alias llg='ll | grep'
 
 比如做4.0开发时，每次需要通过登录网页或者服务器获取最新的安装包，很不方便。所以我定义了一个命令lget4，执行该命令会将当天最新4.0包复制到当前目录。
 
-```
+```bash
 lget4(){
     PACKAGE=`date +"%F"`
     wget http://192.168.0.43/build/jhinno_ext/jh_unischeduler_ext/trunk/$PACKAGE/unischeduler-4.0.tar.gz
@@ -89,13 +87,13 @@ lget4(){
 
 由于每次换包需要复制许可证文件，我定义了一个命令cplic，将许可证文件放在一个固定的位置，执行该命令可以将许可证文件拷贝到conf目录：
 
-```
+```bash
 alias cp3lic="cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
 ```
 
 一般我很少执行这个命令，因为每次拷贝安装包时，我就自动将许可证文件拷贝到conf目录，例如下面定义的命令是每次编译完后，执行cp3pkg命令可以拷贝最新的安装包到apps目录：
 
-```
+```bash
 alias cp3pkg="cp -rf  /apps/code/trunk_3.2/dist/linux-x86_64/* /apps/ && cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
 ```
 
@@ -166,13 +164,15 @@ fi
 
 最后分享一个小插件listary（极力推荐），在Windows上能快速定位某个文件，极其方便快速。比如每次我需要打开我们3.2的管理员手册时，我只需要在桌面输入glysc，即管理员手册的首字母，listary就马上定位到我经常打开的管理员手册，回车就直接打开。不需要去打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考连接http://www.iplaysoft.com/listary.html。
 
-### 总结
+### 8 总结
 
-这次分享的目的主要是建议我们工作中少做一些无意义且重复性的动作，重复性的工作应该想办法自动化，节约时间，进而提高工作效率。如果大家有什么好的技巧或者方法，可以分享出来，欢迎补充讨论。
+我们工作中尽量少做一些无意义且重复性的操作，重复性的工作能自动化就让电脑自动完成，节约我们时间，提高工作效率。如果大家有什么好的技巧或者方法，可以分享出来，欢迎补充讨论。
 
-最后附上我的bash配置，感兴趣可以看看。
+最后附上我的bash配置，如果感兴趣可以参考。
 
 https://github.com/songleo/bashrc/blob/master/.bashrc
+
+>Don't Repeat Yourself
 
 #### 本次荐书：代码大全
 
