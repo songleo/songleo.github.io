@@ -4,9 +4,11 @@ title: 工作中的小技巧分享
 date: 2016-11-25 22:24:32
 ---
 
-本文是为为了给dev2做一个knowledge share，分享一些工作中常使用的小技巧，主要是一些命令行的操作。
+本文是为为了给dev2做一个knowledge share，分享一些工作中常使用的小技巧，主要是一些命令行的操作，希望能有帮助。
 
 >Don't Repeat Yourself
+
+### 1 进入目录
 
 如果需要频繁的进入某个目录，alias一个命令以达到目的，例如：
 
@@ -20,7 +22,7 @@ alias cdc='cd ${JHSCHEDULER_TOP}/conf && source ${JHSCHEDULER_TOP}/conf/profile.
 source  ${JHSCHEDULER_TOP}/conf/profile.jhscheduler
 ```
 
-所以，你可以alias以下命令：
+所以，你也可以alias以下命令：
 
 ```bash
 alias cdl='cd ${JHSCHEDULER_TOP}/log && ls' # 进入日志目录
@@ -31,6 +33,8 @@ alias ...='cd ../.. && ls' # 进入上上层目录，并执行ls命令
 ```
 
 举这几个例子，是想抛砖引玉，你可以alias属于你自己的快捷键，除非你愿意重复进行一些无意义的机械操作。
+
+### 2 命令行改造
 
 如果你频繁的执行某些命令，可以将这些命令alias为一个简短的命令，例如：
 
@@ -52,6 +56,8 @@ alias lsg='ls | grep'
 alias llg='ll | grep'
 ```
 
+### 3 bugzilla搜索定制
+
 如果经常搜索bugzilla，可以将每次搜索保存，以便下次继续使用
 
 具体步骤是搜索完bug后，点击Saved Searches即可保存本次搜索使用的条件和关键字。比如我做MIC调度项目时，我专门定制了以下几个bugzilla搜索：
@@ -67,6 +73,8 @@ alias llg='ll | grep'
 通过定制自己的搜索，可以很方面的查找符合特定条件的bug，实现一键搜索，尤其适合QA统计bug，开发在查找bug时也很实用。
 
 在这里顺便提及一句，我们经常使用xshell连接某个虚拟机，可以通过类似的方法定义，保存连接后，下次ssh连接虚拟机时就可以一键连接，省去输入用户名和密码的步骤。
+
+### 4 编译和换包
 
 如果经常需要换包或者编译包，可以定义一些命令实现
 
@@ -85,7 +93,7 @@ lget4(){
 alias cp3lic="cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
 ```
 
-一般我很少执行这个命令，因为每次拷贝安装包时，我就自动将许可证文件拷贝到conf目录，例如下面定义的命令时每次编译完后，执行cp3pkg命令可以拷贝最新的安装包到apps目录：
+一般我很少执行这个命令，因为每次拷贝安装包时，我就自动将许可证文件拷贝到conf目录，例如下面定义的命令是每次编译完后，执行cp3pkg命令可以拷贝最新的安装包到apps目录：
 
 ```
 alias cp3pkg="cp -rf  /apps/code/trunk_3.2/dist/linux-x86_64/* /apps/ && cp /apps/license.dat ${JHSCHEDULER_TOP}/conf/"
@@ -108,6 +116,7 @@ alias lbuild4='curl --user jhadmin:jhadmin -d delay=0sec http://192.168.0.43:888
 alias lbuild3="cd /apps/code/trunk_3.2 && make -j 4 clean && make -j 4 && rm -rf ./dist/ && make -j 4 package && cd -" # build 3.2
 ```
 
+### 5 代码运行
 
 开发过程中，经常需要写一个简单的程序验证某个API，比如c语言，要编译运行c文件，需要执行gcc demo.c -o demo.c，编译完后才运行代码，比较麻烦，可以参考go语言的go run，一个命令运行源代码，如下：
 
@@ -125,6 +134,8 @@ alias grun='go run'
 alias gbuild='go build'
 alias gtest='go test'
 ```
+
+### 6 解压
 
 每次换包时，都要解压压缩包，但是压缩格式很多，要记住那么多解压选项和命令不容易，可以定义如下命令，一个命令解压常见压缩格式：
 
@@ -151,11 +162,13 @@ fi
 }
 ```
 
-最后分享一个小插件listary（极力推荐！！！），在Windows上能快速定位某个文件，极其方便快速。比如每次我需要打开我们3.2的管理员手册时，我只需要在桌面输入glysc，listary就马上定位到我经常打开的管理员手册，回车就直接打开，不需要去打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考连接http://www.iplaysoft.com/listary.html。
+### 7 文件查询
 
-### 明天继续写......
+最后分享一个小插件listary（极力推荐），在Windows上能快速定位某个文件，极其方便快速。比如每次我需要打开我们3.2的管理员手册时，我只需要在桌面输入glysc，即管理员手册的首字母，listary就马上定位到我经常打开的管理员手册，回车就直接打开。不需要去打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考连接http://www.iplaysoft.com/listary.html。
 
-这次分享的目的：重复性无意义的动作，想办法自动化，节约时间，提高工作效率。如果大家有什么好的技巧或者方法，可以分享出来，欢迎补充讨论。
+### 总结
+
+这次分享的目的主要是建议我们工作中少做一些无意义且重复性的动作，重复性的工作应该想办法自动化，节约时间，进而提高工作效率。如果大家有什么好的技巧或者方法，可以分享出来，欢迎补充讨论。
 
 最后附上我的bash配置，感兴趣可以看看。
 
