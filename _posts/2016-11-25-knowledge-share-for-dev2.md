@@ -59,7 +59,7 @@ alias lsg='ls | grep'
 alias llg='ll | grep'
 alias lping='ping www.baidu.com' # 检测网络连接是否正常
 ssh0()
-{ ssh "192.168.0.$1";} # ssh连接时不用每次输入192.168.0.
+{ ssh "192.168.12.$1";} # ssh连接时不用每次输入192.168.12.
 
 ldkill()
 { ps -ef | grep scheduler |awk '{print $2}' | xargs kill -9; } # 在从节点删除scheduler相关进程
@@ -95,13 +95,13 @@ lget(){
 由于每次换包需要复制许可证文件，我定义了一个命令cplic，将许可证文件放在一个固定的位置，执行该命令可以将许可证文件拷贝到conf目录：
 
 ```
-alias cp3lic="cp /apps/license.dat ${SCHEDULER_TOP}/conf/"
+alias cplic="cp /apps/license.dat ${SCHEDULER_TOP}/conf/"
 ```
 
 但是一般我很少执行这个命令，因为每次拷贝安装包时，我就自动将许可证文件拷贝到conf目录，例如下面定义的命令是编译完代码后，执行该命令可以拷贝最新的安装包到apps目录：
 
 ```
-alias cp3pkg="cp -rf  /apps/code/trunk/dist/linux-x86_64/* /apps/ && cp /apps/license.dat ${SCHEDULER_TOP}/conf/"
+alias cppkg="cp -rf  /apps/code/trunk/dist/linux-x86_64/* /apps/ && cp /apps/license.dat ${SCHEDULER_TOP}/conf/"
 ```
 
 在fix bug时，编译完修改的代码后，如果想更换某个binary，可以alias几个命令实现，如下：
@@ -169,7 +169,7 @@ fi
 
 ### 7 文件查询
 
-最后分享一个小插件[listary](http://www.listary.com/)（极力推荐），在Windows上能快速定位某个文件。比如每次我需要打开我们3.2的管理员手册时，我只需要在桌面输入glysc，即管理员手册汉字的首字母，listary就马上定位到我经常打开的管理员手册，回车就直接打开。不需要打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考http://www.iplaysoft.com/listary.html。
+最后分享一个小插件[listary](http://www.listary.com/)（极力推荐），在Windows上能快速定位某个文件。比如每次我需要打开我们的管理员手册时，我只需要在桌面输入glysc，即管理员手册汉字的首字母，listary就马上定位到我经常打开的管理员手册，回车就直接打开。不需要打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考http://www.iplaysoft.com/listary.html。
 
 ### 8 总结
 
