@@ -65,7 +65,7 @@ ldkill()
 { ps -ef | grep unischeduler |awk '{print $2}' | xargs kill -9; } # 在从节点删除unischeduler相关进程
 ```
 
-### 3 bugzilla搜索定制
+### 3 定制bugzilla搜索
 
 如果需要经常在bugzilla搜索bug，可以保存每次搜索，以便下次继续使用，具体步骤是搜索完bug后，点击Saved Searches即可保存本次搜索使用的条件和关键字。比如我做MIC调度项目时，我专门定制了以下几个bugzilla搜索：
 
