@@ -32,7 +32,7 @@ alias ..='cd .. && ls' # 进入上层目录，并执行ls命令
 alias ...='cd ../.. && ls' # 进入上上层目录，并执行ls命令
 ```
 
-举这几个例子，是想抛砖引玉，你可以alias属于你自己的快捷键，除非你愿意重复进行一些无意义的机械操作。
+举这几个例子，是想抛砖引玉，你可以alias属于你自己的命令行，除非你愿意重复性的执行一些命令。
 
 ### 2 命令行改造
 
@@ -50,10 +50,18 @@ alias mbdreconfig="jadmin schedreconfig "
 alias jhstart="jhscheduler start"
 alias jhstop="jhscheduler stop"
 alias jhrestart="jhscheduler stop && jhscheduler start"
+alias lsub="su jhadmin -c 'jsub sleep 10000'" # 以jhadmin用户提交一个作业
+alias ljobs="su jhadmin -c 'jjobs -u all 0'" # 查询所有用户作业
 alias ip='ifconfig | awk -F"[: ]+" "/inet addr/ {print $4}"' # 查询ip，去掉无关信息
 alias psg='ps -ef | grep' # 查看特定进程
 alias lsg='ls | grep'
 alias llg='ll | grep'
+alias lping='ping www.baidu.com' # 检测网络连接是否正常
+ssh0()
+{ ssh "192.168.0.$1";} # ssh连接时不用每次输入192.168.0.
+
+ldkill()
+{ ps -ef | grep unischeduler |awk '{print $2}' | xargs kill -9; } # 在从节点删除unischeduler相关进程，这个命令我经常使用，很方便
 ```
 
 ### 3 bugzilla搜索定制
@@ -76,9 +84,7 @@ alias llg='ll | grep'
 
 ### 4 编译和换包
 
-如果经常需要换包或者编译包，可以定义一些命令实现
-
-比如做4.0开发时，每次需要通过登录网页或者服务器获取最新的安装包，很不方便。所以我定义了一个命令lget4，执行该命令会将当天最新4.0包复制到当前目录。
+如果经常需要换包或者编译包，可以定义一些命令实现，比如做4.0开发时，每次需要通过登录网页或者服务器获取最新的安装包，很不方便。所以我定义了一个命令lget4，执行该命令会将当天最新4.0包复制到当前目录。
 
 ```bash
 lget4(){
@@ -164,7 +170,7 @@ fi
 
 ### 7 文件查询
 
-最后分享一个小插件listary（极力推荐），在Windows上能快速定位某个文件，极其方便快速。比如每次我需要打开我们3.2的管理员手册时，我只需要在桌面输入glysc，即管理员手册的首字母，listary就马上定位到我经常打开的管理员手册，回车就直接打开。不需要去打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考连接http://www.iplaysoft.com/listary.html。
+最后分享一个小插件[listary](http://www.listary.com/)（极力推荐），在Windows上能快速定位某个文件。比如每次我需要打开我们3.2的管理员手册时，我只需要在桌面输入glysc，即管理员手册的首字母，listary就马上定位到我经常打开的管理员手册，回车就直接打开。不需要去打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考连接http://www.iplaysoft.com/listary.html。
 
 ### 8 总结
 
