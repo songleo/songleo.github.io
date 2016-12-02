@@ -8,7 +8,7 @@ date: 2016-12-02 20:00:32
 
 ## 1 安装Python
 
-首先在Windows上先安装Python，这里需要特别指出，如果编译的Python可执行文件要运行在64位系统，那么需要安装对于64位版本Python，否则后面编译时会有错。Windows的Python安装比较简单，直接下载相应的软件包，运行安装即可。下载链接:
+首先在Windows上先安装Python，这里需要特别指出，如果编译的Python可执行文件要运行在64位系统，那么需要安装对应64位版本Python，否则后面编译时会有错。Windows的Python安装比较简单，直接下载相应的软件包，运行安装即可。下载链接:
 
 >https://www.python.org/downloads/windows/
 
@@ -30,7 +30,7 @@ PyInstaller是将Python打包成可执行文件的工具，下载后解压即可
 
 我下载是最新版PyInstaller-3.2.tar.gz。
 
-## 3 需要打包的Python程序
+## 3 需要打包的Python脚本
 
 下面这段代码是要打包的Python脚本，主要功能是检测系统的物理cpu核数、逻辑cpu核数和cpu是否开启超线程功能：
 
@@ -91,7 +91,7 @@ D:\Program Files\PyInstaller-3.2>pip install pefile
 
 >注：直接使用pip安装pywintypes会提示找不到该库，因为该库从属于pypiwin32，所以直接安装pypiwin32即可
 
-依次安装缺少的库后，再次执行打包命令。在PyInstaller目录下会生成相应Python脚本名称的目录，进入该目录下的dist目录，就可以找到打包完的可执行文件。例如示例中打包生成的可执行文件在目录D:\Program Files\PyInstaller-3.2\get_cpu_info\dist下，进入该目录，直接运行可执行文件，输出如下：
+依次安装缺少的库后，再次执行打包命令。在PyInstaller目录下会生成相应Python脚本名称的目录，进入该目录下的dist目录，就可以找到打包好的可执行文件。例如示例中打包生成的可执行文件在目录D:\Program Files\PyInstaller-3.2\get_cpu_info\dist下，进入该目录，直接运行可执行文件，输出如下：
 
 ```
 D:\Program Files\PyInstaller-3.2\get_cpu_info\dist>get_cpu_info.exe
