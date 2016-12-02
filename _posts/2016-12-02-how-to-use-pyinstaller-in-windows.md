@@ -4,7 +4,7 @@ title: 使用PyInstaller将python编译成可执行文件（Windows版）
 date: 2016-12-02 20:00:32
 ---
 
-平时工作中，有时候需要将自己写的python脚本在Windows系统运行，但是若Windows平台没有安装python，那么就不能直接运行python脚本文件。本文介绍如何将一个python脚本编译成一个可执行文件，直接在Windows平台运行，而不依赖系统是否已经安装python。
+平时工作中，有时候需要将自己写的python脚本在Windows平台运行，但是若Windows平台没有安装python，那么就不能直接运行python脚本。本文介绍一种方法，通过PyInstaller工具将一个python脚本打包成一个可执行文件，可以直接在Windows平台运行，不管Windows平台是否安装python都可以运行该可执行文件。
 
 ## 1 安装python
 
@@ -32,7 +32,7 @@ PyInstaller是将python打包成可执行文件的工具，下载后解压即可
 
 ## 3 需要打包的python程序
 
-下面这段代码时要打包的python脚本，主要功能是检测系统的物理cpu核数、逻辑cpu核数和是否开启超线程功能。
+下面这段代码是要打包的python脚本，主要功能是检测系统的物理cpu核数、逻辑cpu核数和是否开启超线程功能：
 
 ```
 #!/usr/bin/python
@@ -52,7 +52,7 @@ else:
     print "hyper threading: disable"
 ```
 
-在命令行该输出如下：
+使用python运行该脚本输出如下：
 
 ```
 E:\share\git\python_practice\demo>python get_cpu_info.py
@@ -63,7 +63,7 @@ hyper threading: disable
 
 >如果打开超线程，逻辑cpu数是物理cpu数的两倍
 
-一般会提示缺少psutil库，使用pip安装，如下：
+一般会提示缺少psutil库，使用pip安装即可，如下：
 
 ```
 D:\Program Files\PyInstaller-3.2>pip install psutil
@@ -86,7 +86,7 @@ D:\Program Files\PyInstaller-3.2>pip install pefile
 
 >注：直接使用pip安装pywintypes会提示找不到该库，因为该库从属于pypiwin32，所以直接安装pypiwin32即可
 
-依次安装缺少的库后，再次执行打包命令。在PyInstaller目录下会生成相应脚本名称的目录，进入该目录下的dist目录，就可以找到打包完的可执行文件。例如示例中打包生成的可执行文件在目录D:\Program Files\PyInstaller-3.2\get_cpu_info\dist下，进入该目录，直接运行可执行文件。输出如下：
+依次安装缺少的库后，再次执行打包命令。在PyInstaller目录下会生成相应脚本名称的目录，进入该目录下的dist目录，就可以找到打包完的可执行文件。例如示例中打包生成的可执行文件在目录D:\Program Files\PyInstaller-3.2\get_cpu_info\dist下，进入该目录，直接运行可执行文件，输出如下：
 
 ```
 D:\Program Files\PyInstaller-3.2\get_cpu_info\dist>get_cpu_info.exe
