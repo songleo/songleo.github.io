@@ -12,7 +12,7 @@ date: 2016-12-02 20:00:32
 
 >https://www.python.org/downloads/windows/
 
-选择对应的系统版本和Python版本下载即可。由于我系统是64位，所以我选择了Python2.7的最新版本Python-2.7.12。下载后直接运行安装，安装完成后，将Python和pip安装路径添加到系统PATH，就可以直接在命令行执行Python和安装Python库，执行Python命令输出如下：
+选择对应的系统版本和Python版本下载即可。由于我系统是64位，所以我选择了Python2.7的最新版本Python-2.7.12。下载后直接运行安装，安装完成后，将Python和pip安装路径添加到系统PATH，就可以直接在命令行执行Python和使用pip安装Python库，执行Python输出如下：
 
 ```
 C:\Users\Administrator>python
@@ -41,7 +41,12 @@ PyInstaller是将Python打包成可执行文件的工具，下载后解压即可
 import psutil
 
 logical_cores = psutil.cpu_count(logical=True)
+if logical_cores is None:
+    logical_cores = 1
+
 physical_cores = psutil.cpu_count(logical=False)
+if physical_cores is None:
+    physical_cores = 1
 
 print "logical_cores: %d" % (logical_cores)
 print "physical_cores: %d" % (physical_cores)
