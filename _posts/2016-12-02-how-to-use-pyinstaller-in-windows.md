@@ -4,7 +4,7 @@ title: Windows平台使用PyInstaller将Python脚本打包成可执行文件
 date: 2016-12-02 20:00:32
 ---
 
-平时工作中，有时候需要将自己写的Python脚本在Windows运行，但是若Windows没有安装python，那么就不能直接运行Python脚本。本文介绍一种方法，通过PyInstaller工具将一个Python脚本打包成一个可执行文件，可以直接在Windows运行，不管Windows是否安装Python都可以运行该可执行文件，详细步骤如下：
+平时工作中，有时候需要将自己写的Python脚本在Windows运行，但是若Windows没有安装python，那么就不能直接运行Python脚本。本文介绍一种方法，通过PyInstaller工具将Python脚本打包成一个可执行文件，可以直接在Windows运行，不管Windows是否安装Python都可以运行该可执行文件，详细步骤如下：
 
 ## 1 安装Python
 
