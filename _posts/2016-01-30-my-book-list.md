@@ -68,7 +68,7 @@ date: 2016-01-30 15:40:31
 
 - the way to go （中文版）
 
-- go 指南（《a tour of go》中文版）
+- [a tour of go (中文版）](https://tour.go-zh.org/welcome/1)
 
 - 写给大家看的设计书（第4版）
 
@@ -149,6 +149,8 @@ date: 2016-01-30 15:40:31
 - 麦田里的守望者 2016-12-11
 
 - ruby基础教程(第4版) 2016-12-15
+
+- [effective go 中英双语版](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details) 2016-12-27
 
 > :) 未完待续......
 
