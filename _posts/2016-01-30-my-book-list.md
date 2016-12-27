@@ -66,7 +66,7 @@ date: 2016-01-30 15:40:31
 
 - git教程（廖雪峰）
 
-- the way to go （中文版）
+- [the way to go （中文版）](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md)
 
 - [a tour of go (中文版）](https://tour.go-zh.org/welcome/1)
 
