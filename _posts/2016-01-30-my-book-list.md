@@ -152,7 +152,9 @@ date: 2016-01-30 15:40:31
 
 - [effective go 中英双语版](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details) 2016-12-27
 
-- [HTTP 下午茶](https://ccbikai.gitbooks.io/http-book/content/index.html) [(英文版)](https://launchschool.com/books/http)
+- [HTTP 下午茶](https://ccbikai.gitbooks.io/http-book/content/index.html) 2016-12-28
+
+- 松本行弘的程序世界 2016-12-28
 
 > :) 未完待续......
 
