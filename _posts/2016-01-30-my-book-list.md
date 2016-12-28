@@ -120,7 +120,7 @@ date: 2016-01-30 15:40:31
 
 - 自控力 2016-10-13
 
-- Head First HTML与CSS(第2版) 2016-10-13
+- head first html与css(第2版) 2016-10-13
 
 - 程序员的呐喊 2016-10-17
 
@@ -152,35 +152,11 @@ date: 2016-01-30 15:40:31
 
 - [effective go 中英双语版](https://www.gitbook.com/book/bingohuang/effective-go-zh-en/details) 2016-12-27
 
-- [HTTP 下午茶](https://ccbikai.gitbooks.io/http-book/content/index.html) 2016-12-28
+- [http下午茶](https://ccbikai.gitbooks.io/http-book/content/index.html) 2016-12-28
 
 - 松本行弘的程序世界 2016-12-28
 
 > :) 未完待续......
-
-## 正在读的书
-
-- head first java
-
-- 人性的弱点
-
-- ~~the little go book~~
-
-- ~~像程序员一样思考（修订版）~~
-
-- ~~c程序设计语言~~
-
-- ~~数据结构与算法分析: c语言描述~~
-
-- ~~head first 设计模式~~
-
-- ~~c缺陷与陷进（重读）~~
-
-- ~~数学之美（重读）~~
-
-- ~~beej-s-guide-to-network-programming-chinese-zh~~
-
-- ~~jstraining （https://github.com/ruanyf/jstraining）~~
 
 ## 已经购买的书
 
