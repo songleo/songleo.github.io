@@ -79,7 +79,7 @@ int f2() {
 在命令行中运行该示例程序，输出如下：
 
 ```
->core_dump_demo.exe
+E:\share>core_dump_demo.exe
 entering main...
 entering f1...
 entering f2...
@@ -111,9 +111,7 @@ Frame        Function    Args
 End of stack trace (more stack frames may be present)
 ```
 
-可以看到，该文件只提供了程序在coredump时的函数调用栈信息。如果只看这个stackdump文件，没法看出程序具体在哪个位置coredump。
-
-分析该文件，可以看见文件中的函数地址主要有2个段，分别是：
+可以看到，该文件只提供了程序在coredump时函数调用的栈信息。如果只看这个stackdump文件，没法看出程序具体在哪个位置coredump。通过分析该文件，可以看见文件中的函数地址主要有2个段，分别是：
 
     00180xxxxxx
     00100xxxxxx
@@ -129,7 +127,7 @@ printf("leaving %s...\n", __func__);
 100401112:   48 8d 15 41 1f 00 00    lea    0x1f41(%rip),%rdx        # 10040305a <__func__.3391>
 ```
 
-至此，就可以知道coredump位置位于地址00100401112的上一句代码，即调用free函数时coredump，如下：
+至此，就可以知道coredump位置位于地址00100401112的上一行代码，即调用free函数时coredump，如下：
 
 ```
 10040110d:   e8 ce 00 00 00          callq  1004011e0 <free>
