@@ -119,12 +119,12 @@ End of stack trace (more stack frames may be present)
 从反汇编文件中可以看到，00100xxxxxx地址段才是我们的程序中函数地址，而00180xxxxxx地址段应该是Cygwin库函数地址段。由于栈是先进后出，所以在stackdump文件中，从下往上才是函数的调用顺序。在反汇编文件中查找coredump时最后调用的地址00100401112，就可以定位出具体的coredump位置了。这里需要指出，反汇编文件中的函数地址段没有前2个0，所以在反汇编文件查找00100401112要省去前面2个0，经过查找，可以看到该地址位于函数f2。如下所示：
 
 ```
-    free(buff);  // core dump location
-   100401106:   48 8b 45 f8             mov    -0x8(%rbp),%rax
-   10040110a:   48 89 c1                mov    %rax,%rcx
-   10040110d:   e8 ce 00 00 00          callq  1004011e0 <free>
-    printf("leaving %s...\n", __func__);
-   100401112:   48 8d 15 41 1f 00 00    lea    0x1f41(%rip),%rdx        # 10040305a <__func__.3391>
+free(buff);  // coredump
+100401106:   48 8b 45 f8             mov    -0x8(%rbp),%rax
+10040110a:   48 89 c1                mov    %rax,%rcx
+10040110d:   e8 ce 00 00 00          callq  1004011e0 <free>
+printf("leaving %s...\n", __func__);
+100401112:   48 8d 15 41 1f 00 00    lea    0x1f41(%rip),%rdx        # 10040305a <__func__.3391>
 ```
 
 至此，就可以知道coredump位置就是在地址00100401112上一句代码，即调用free函数时coredump，如下：
