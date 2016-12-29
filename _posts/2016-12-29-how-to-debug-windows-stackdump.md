@@ -36,13 +36,13 @@ int main()
 }
 ```
 
-该程序在运行时，会产生stackdump文件，因为在f2函数中，调用free释放的内存不是由malloc分配，所以导致程序coredump。当然，这个示例程序比较简答，很容易就知道是由于free非法内存导致。但如果在一个大项目中，定位coredump位置就没那么容易了。
+该程序在运行时，会产生stackdump文件。因为在f2函数中，调用free释放的内存不是由malloc分配，所以导致程序coredump。当然，这个示例程序比较简答，很容易就知道是由于free非法内存导致coredump。但如果在一个大项目中，定位coredump位置就没那么容易了。
 
 使用Cygwin的gcc编译该程序：
 
     gcc core_dump_demo.c -g -o core_dump_demo
 
-这里需要使用-g选项，编译时添加调试信息，编译成功会生成一个可执行文件core_dump_demo.exe，然后使用反汇编工具objdump，将c程序反汇编，运行下面命令反汇编该示例程序：
+这里需要使用-g选项，编译时添加调试信息，编译成功会生成一个可执行文件core_dump_demo.exe，然后使用反汇编工具objdump，将该可执行文件反汇编，运行下面命令反汇编该示例程序：
 
     objdump -D -S core_dump_demo.exe > core_dump_demo.rasm
 
@@ -111,12 +111,14 @@ Frame        Function    Args
 End of stack trace (more stack frames may be present)
 ```
 
-可以看到，该文件只提供了程序在coredump时的函数调用栈信息。如果只看这个stackdump文件，没法看出程序具体在哪个位置coredump。分析该文件，可以看见文件中的函数地址主要有2个段，分别是：
+可以看到，该文件只提供了程序在coredump时的函数调用栈信息。如果只看这个stackdump文件，没法看出程序具体在哪个位置coredump。
+
+分析该文件，可以看见文件中的函数地址主要有2个段，分别是：
 
     00180xxxxxx
     00100xxxxxx
 
-从反汇编文件中可以看到，00100xxxxxx地址段才是我们的程序中函数地址，而00180xxxxxx地址段应该是Cygwin库函数地址段。由于栈是先进后出，所以在stackdump文件中，从下往上才是函数的调用顺序。在反汇编文件中查找coredump时最后调用的地址00100401112，就可以定位出具体的coredump位置了。这里需要指出，反汇编文件中的函数地址段没有前2个0，所以在反汇编文件查找00100401112要省去前面2个0，经过查找，可以看到该地址位于函数f2。如下所示：
+从反汇编文件中可以看到，00100xxxxxx地址段是示例程序中函数地址，而00180xxxxxx地址段应该是Cygwin库函数地址段。由于栈是先进后出，所以在stackdump文件中，从下往上才是函数的调用顺序。在反汇编文件中查找coredump时最后调用的地址00100401112，就可以定位出具体的coredump位置了。这里需要指出，反汇编文件中的函数地址段没有前2个0，所以在反汇编文件查找00100401112时要省去前面2个0，经过查找，可以看到该地址位于函数f2。如下所示：
 
 ```
 free(buff);  // coredump
@@ -127,7 +129,7 @@ printf("leaving %s...\n", __func__);
 100401112:   48 8d 15 41 1f 00 00    lea    0x1f41(%rip),%rdx        # 10040305a <__func__.3391>
 ```
 
-至此，就可以知道coredump位置就是在地址00100401112上一句代码，即调用free函数时coredump，如下：
+至此，就可以知道coredump位置位于地址00100401112的上一句代码，即调用free函数时coredump，如下：
 
 ```
 10040110d:   e8 ce 00 00 00          callq  1004011e0 <free>
