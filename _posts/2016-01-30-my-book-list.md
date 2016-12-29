@@ -74,7 +74,7 @@ date: 2016-01-30 15:40:31
 
 - 程序员修炼之道-从小工到专家
 
-- how to be a programmer 中文版 2016-05-03
+- [how to be a programmer 中文版](https://github.com/braydie/HowToBeAProgrammer/blob/master/zh/README.md) 2016-05-03
 
 - 盖茨是这样培养的 2016-05-21
 
