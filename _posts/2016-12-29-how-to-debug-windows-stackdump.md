@@ -15,7 +15,7 @@ date: 2016-12-29 20:52:32
 int f2() {
     printf("entering %s...\n", __func__);
     char *buff = "0123456789";
-    free(buff);  // core dump location
+    free(buff);  // coredump
     printf("leaving %s...\n", __func__);
     return 0;
 }
@@ -102,7 +102,7 @@ Frame        Function    Args
 000FFFFCB80  00180154325 (001801FB870, 00100403030, 000FFFFCB60, 00000000000)
 000FFFFCB80  001800B9A63 (0010040305A, 000FFFFC8CC, 0018013D2D0, 00180219E83)
 000FFFFCB80  00180117A4B (0010040305A, 000FFFFC8CC, 0018013D2D0, 00180219E83)
-000FFFFCB80  **00100401112** (0010040305D, 000FFFFC8FC, 0018013D2D0, 000FFFFCBE0)
+000FFFFCB80  00100401112 (0010040305D, 000FFFFC8FC, 0018013D2D0, 000FFFFCBE0)
 000FFFFCBB0  00100401150 (00100403060, 00000000000, 00000000000, 000FFFFCCC0)
 000FFFFCBE0  00100401193 (00000000020, FF06FF010000FF00, 00180047931, 000FFFFCDF0)
 000FFFFCCC0  001800479A2 (00000000000, 00000000000, 00000000000, 00000000000)
@@ -115,10 +115,10 @@ End of stack trace (more stack frames may be present)
 
 分析该core_dump_demo.exe.stackdump文件，可以看见文件中的函数地址主要有2个段，分别是：
 
-    00180xxxxxx：库函数地址段
-    00100xxxxxx：示例程序函数地址段
+    00180xxxxxx
+    00100xxxxxx
 
-从反汇编文件中可以看到，00100xxxxxx地址段才是我们的程序中函数。00180xxxxxx地址段是库函数。在反汇编文件中查找coredump时调用第一个函数地址00100401112，就可以定位出具体的coredump位置了。这里需要指出的时，反汇编文件中的函数地址没有前2个0，所以在反汇编文件查找00100401112要省去前面2个0。可以看到该地址位于函数f2。如下所示：
+从反汇编文件中可以看到，00100xxxxxx地址段才是我们的程序中函数。00180xxxxxx地址段应该是Cygwin库函数地址段。由于栈是先进后出，所以在stackdump文件中，从下往上才是函数的调用顺序，在反汇编文件中查找coredump时最后调用的地址00100401112，就可以定位出具体的coredump位置了。这里需要指出的时，反汇编文件中的地址段没有前2个0，所以在反汇编文件查找00100401112要省去前面2个0，经过查找，可以看到该地址位于函数f2。如下所示：
 
 ```
     free(buff);  // core dump location
@@ -126,10 +126,10 @@ End of stack trace (more stack frames may be present)
    10040110a:   48 89 c1                mov    %rax,%rcx
    10040110d:   e8 ce 00 00 00          callq  1004011e0 <free>
     printf("leaving %s...\n", __func__);
-   **100401112**:   48 8d 15 41 1f 00 00    lea    0x1f41(%rip),%rdx        # 10040305a <__func__.3391>
+   100401112:   48 8d 15 41 1f 00 00    lea    0x1f41(%rip),%rdx        # 10040305a <__func__.3391>
 ```
 
-至此，就可以定位到coredump位置了。coredump位置就是在地址00100401112上一句代码，调用free函数时coredump。
+至此，就可以知道coredump位置就是在地址00100401112上一句代码，即调用free函数时coredump。
 
 ```
 10040110d:   e8 ce 00 00 00          callq  1004011e0 <free>
