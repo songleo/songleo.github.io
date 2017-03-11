@@ -65,7 +65,7 @@ type testData struct {
         {"hostbb", true},
         {"host cc", true},
 
-        //负向case,每行是一个case
+        // 负向case,每行是一个case
         {"Hostaa", false},
         {"host123", false},
         {"host!", false},
@@ -101,6 +101,7 @@ func myTestFail(
     }
 }
 ```
+
 当某个测试case失败时，打印如下：
 
 ```
