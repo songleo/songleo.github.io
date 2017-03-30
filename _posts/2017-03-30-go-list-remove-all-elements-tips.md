@@ -4,7 +4,7 @@ title: go语言坑之list删除所有元素
 date: 2017-03-30 21:05:32
 ---
 
-go提供了[list包](https://golang.org/pkg/container/list/)，类似Python的list，可以存储任意类型的数据，并提供了相应的API操作list，API如下所示：
+go提供了[list包](https://golang.org/pkg/container/list/)，类似Python的list，可以存储任意类型的数据，并提供了相应的API，list的API如下：
 
 ```
 type Element
@@ -29,7 +29,7 @@ type List
     func (l *List) Remove(e *Element) interface{}
 ```
 
-借助list包提供的API，go list用起来确实挺方便。但是在使用过程中，如果不注意就会遇到一些难以发现的坑，导致程序结果不是预想的那样。这里要说的坑通过for循环遍历list，并删除所有元素时会遇到的问题。例如，下面这个示例程序创建了一个list，将0,1,2,3分别按顺序存入list，然后遍历list删除所有元素：
+借助list包提供的API，list用起来确实挺方便，但是在使用过程中，如果不注意就会遇到一些难以发现的坑，导致程序结果不是预想的那样。这里要说的坑通过for循环遍历list，并删除所有元素时会遇到的问题。例如，下面这个示例程序创建了一个list，并依次将0-3存入list，然后遍历list删除所有元素：
 
 ```
 package main
@@ -84,7 +84,7 @@ deleted list:
     }
 ```
 
-但是根据上面代码的实际输出，这样删除list所有元素是无效的，那么问题出在哪呢？由for循环的机制可以知道，既然删除了第一个元素，没有删除第二个元素，肯定是第二次循环的条件无效，才导致循环退出，即执行完下面语句后：
+但是根据上面示例代码的输出，这样删除list所有元素是无效的，那么问题出在哪呢？由for循环的机制可以知道，既然删除了第一个元素，没有删除第二个元素，肯定是第二次循环的条件无效，才导致循环退出，即执行完下面语句后：
 
 ```
 l.Remove(e)
@@ -106,7 +106,7 @@ delete a element from list
 1 2 3 
 ```
 
-问题找到了，确实只循环了一次，循环就结束了。即当执行完语句l.Remove(e)后，e = e.Next()，因为e.Next()为nil，导致e为nil，循环退出。为什么e.Next()会是nil呢？通过查看[go list源码](https://golang.org/src/container/list/list.go?s=2989:3034#L111)，如下所示：
+可以看到，确实只循环了一次，循环就结束了。即当执行完语句l.Remove(e)后，e等于e.Next()，因为e.Next()为nil，导致e为nil，循环退出。为什么e.Next()会是nil呢？通过查看[go list源码](https://golang.org/src/container/list/list.go?s=2989:3034#L111)，如下所示：
 
 ```
 // remove removes e from its list, decrements l.len, and returns e.
@@ -132,7 +132,9 @@ func (l *List) Remove(e *Element) interface{} {
 }
 ```
 
-由源码中可以看到，当执行l.Remove(e)后，会在内部调用l.remove(e)方法，然后会将e.next赋值为nil，这就是问题根源。找到真正原因后，修正程序如下：
+由源码中可以看到，当执行l.Remove(e)后，会在内部调用l.remove(e)方法删除元素e，为了避免内存泄漏，会将e.next和e.prev赋值为nil，这就是问题根源。
+
+修正程序如下：
 
 ```
 package main
