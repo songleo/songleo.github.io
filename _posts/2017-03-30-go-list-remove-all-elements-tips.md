@@ -4,7 +4,7 @@ title: go语言坑之list删除所有元素
 date: 2017-03-30 21:05:32
 ---
 
-go提供了[list](https://golang.org/pkg/container/list/)包，类似Python的list，可以存储任意类型的数据，并提供了相应的API操作list，API如下所示：
+go提供了[list包](https://golang.org/pkg/container/list/)，类似Python的list，可以存储任意类型的数据，并提供了相应的API操作list，API如下所示：
 
 ```
 type Element
@@ -132,7 +132,7 @@ func (l *List) Remove(e *Element) interface{} {
 }
 ```
 
-由源码中可以看到，当执行l.Remove(e)后，会在内部调用l.remove(e)方法，然后会将e.next赋值为nil，这就是问题根源。知道原因后，我们这样遍历删除list所有元素，修正后程序如下：
+由源码中可以看到，当执行l.Remove(e)后，会在内部调用l.remove(e)方法，然后会将e.next赋值为nil，这就是问题根源。找到真正原因后，修正程序如下：
 
 ```
 package main
@@ -168,8 +168,6 @@ func prtList(l *list.List) {
     }
     fmt.Printf("\n")
 }
-
-
 ```
 
 输出如下：
