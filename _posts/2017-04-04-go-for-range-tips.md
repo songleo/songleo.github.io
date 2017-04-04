@@ -12,7 +12,7 @@ package main
 import "fmt"
 
 func main() {
-    slice := [4]int{0, 1, 2, 3}
+    slice := []int{0, 1, 2, 3}
     myMap := make(map[int]*int)
 
     for index, value := range slice {
@@ -60,7 +60,7 @@ package main
 import "fmt"
 
 func main() {
-    slice := [4]int{0, 1, 2, 3}
+    slice := []int{0, 1, 2, 3}
     myMap := make(map[int]*int)
 
     for index, value := range slice {
