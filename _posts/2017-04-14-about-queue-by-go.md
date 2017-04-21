@@ -45,14 +45,12 @@ import "fmt"
 
 type Queue struct {
     elements []interface{}
-    capacity int
     size     int
 }
 
-func NewQueue(capacity int) *Queue {
+func NewQueue(cap int) *Queue {
     q := new(Queue)
-    q.elements = make([]interface{}, 0, capacity)
-    q.capacity = capacity
+    q.elements = make([]interface{}, 0, cap)
     q.size = 0
     return q
 }
