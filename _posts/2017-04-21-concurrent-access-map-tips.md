@@ -121,7 +121,7 @@ go官方博客：https://blog.golang.org/go-maps-in-action
 
 go FAQ：https://golang.org/doc/faq#atomic_maps
 
-##### 本次荐书：买个好房子
+##### 本次荐书：[买个好房子](https://www.amazon.cn/%E4%B9%B0%E4%B8%AA%E5%A5%BD%E6%88%BF%E5%AD%90-%E7%9F%A5%E4%B9%8E%E5%BE%90%E6%96%8C%E4%BD%9C%E5%93%81-%E5%BE%90%E6%96%8C/dp/B01EH0JKFY/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1492779158&sr=1-1)
 
 ![买个好房子](https://images-cn.ssl-images-amazon.com/images/I/410CZW0u8OL._AA160_.jpg)
 
