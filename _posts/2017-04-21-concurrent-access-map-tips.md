@@ -70,7 +70,7 @@ func writeMap(Map map[int]int, key int, value int) {
 
 > After long discussion it was decided that the typical use of maps did not require safe access from multiple goroutines, and in those cases where it did, the map was probably part of some larger data structure or computation that was already synchronized. Therefore requiring that all map operations grab a mutex would slow down most programs and add safety to few. This was not an easy decision, however, since it means uncontrolled map access can crash the program.
 
-大致意思就是说，并发访问map是不安全的，当你并发访问map时，会出现未定义行为，导致程序退出。所以如果希望在多协程中并发访问map，必须提供某种同步机制，一般情况下通过读写锁`sync.RWMutex`实现对map的并发访问控制。因为如果为map的并发访问提供安全机制，可能会导致一些性能问题，所以如果需要安全的并发访问map，可以将map封装下，示例代码如下：
+大致意思就是说，并发访问map是不安全的，当你并发访问map时，会出现未定义行为，导致程序退出。所以如果希望在多协程中并发访问map，必须提供某种同步机制，一般情况下通过读写锁sync.RWMutex实现对map的并发访问控制。由于加入了读写锁，会导致使用map时性能下降，可以将map和sync.RWMutex封装一下实现对map的安全并发访问，示例代码如下：
 
 ```
 package main
