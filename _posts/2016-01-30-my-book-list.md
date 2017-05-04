@@ -206,6 +206,8 @@ date: 2016-01-30 15:40:31
 
 - [以色列：一个国家的诞生](https://www.amazon.cn/%E4%BB%A5%E8%89%B2%E5%88%97-%E4%B8%80%E4%B8%AA%E5%9B%BD%E5%AE%B6%E7%9A%84%E8%AF%9E%E7%94%9F-%E5%8D%81%E4%B8%80%E7%82%B9%E5%8D%8A/dp/B01C30EMLC/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1493863638&sr=1-1) 2017-05-04
 
+- [以色列2：在危机中生存](https://www.amazon.cn/%E4%BB%A5%E8%89%B2%E5%88%97-2-%E5%9C%A8%E5%8D%B1%E6%9C%BA%E4%B8%AD%E7%94%9F%E5%AD%98-%E5%8D%81%E4%B8%80%E7%82%B9%E5%8D%8A/dp/B01JI1LQAE/ref=sr_1_2?s=digital-text&ie=UTF8&qid=1493863638&sr=1-2) 2017-05-04
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
@@ -377,5 +379,3 @@ date: 2016-01-30 15:40:31
 - 斯坦福极简经济学 2017-04-20
 
 - 超体能健身 2017-04-25
-
-- [以色列2：在危机中生存](https://www.amazon.cn/%E4%BB%A5%E8%89%B2%E5%88%97-2-%E5%9C%A8%E5%8D%B1%E6%9C%BA%E4%B8%AD%E7%94%9F%E5%AD%98-%E5%8D%81%E4%B8%80%E7%82%B9%E5%8D%8A/dp/B01JI1LQAE/ref=sr_1_2?s=digital-text&ie=UTF8&qid=1493863638&sr=1-2) 2017-05-03
