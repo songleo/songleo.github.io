@@ -208,7 +208,9 @@ date: 2016-01-30 15:40:31
 
 - [以色列2：在危机中生存](https://www.amazon.cn/%E4%BB%A5%E8%89%B2%E5%88%97-2-%E5%9C%A8%E5%8D%B1%E6%9C%BA%E4%B8%AD%E7%94%9F%E5%AD%98-%E5%8D%81%E4%B8%80%E7%82%B9%E5%8D%8A/dp/B01JI1LQAE/ref=sr_1_2?s=digital-text&ie=UTF8&qid=1493863638&sr=1-2) 2017-05-04
 
-- 以色列3：赎罪日 2017-05-04
+- [以色列3：赎罪日](https://www.amazon.cn/%E4%BB%A5%E8%89%B2%E5%88%97-3-%E8%B5%8E%E7%BD%AA%E6%97%A5-%E5%8D%81%E4%B8%80%E7%82%B9%E5%8D%8A/dp/B0716HQPM9/ref=sr_1_3?s=digital-text&ie=UTF8&qid=1493949827&sr=1-3) 2017-05-04
+
+- [迷思印度：七座圣城和她们的神话故事](https://www.amazon.cn/%E8%BF%B7%E6%80%9D%E5%8D%B0%E5%BA%A6-%E4%B8%83%E5%BA%A7%E5%9C%A3%E5%9F%8E%E5%92%8C%E5%A5%B9%E4%BB%AC%E7%9A%84%E7%A5%9E%E8%AF%9D%E6%95%85%E4%BA%8B-%E7%9F%A5%E4%B9%8E/dp/B06WVD6YTN/ref=sr_1_25?s=digital-text&ie=UTF8&qid=1493949856&sr=1-25) 2017-05-05
 
 > :) 未完待续......
 
