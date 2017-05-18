@@ -59,7 +59,7 @@ alias lsg='ls | grep'
 alias llg='ll | grep'
 alias lping='ping www.baidu.com' # 检测网络连接是否正常
 ssh0()
-{ ssh "192.168.12.$1";} # ssh连接时不用每次输入192.168.12.
+{ ssh "192.168.0.$1";} # ssh连接时不用每次输入192.168.0.
 
 ldkill()
 { ps -ef | grep scheduler |awk '{print $2}' | xargs kill -9; } # 在从节点删除scheduler相关进程
@@ -88,7 +88,7 @@ ldkill()
 ```
 lget(){
     PACKAGE=`date +"%F"`
-    wget http://192.168.12.5/build/jhinno_ext/scheduler_ext/trunk/$PACKAGE/scheduler.tar.gz
+    wget http://192.168.0.5/build/jhinno_ext/scheduler_ext/trunk/$PACKAGE/scheduler.tar.gz
 }
 ```
 
@@ -114,7 +114,7 @@ alias cpall="cpbin && cpcmd" # 更换所有的binary
 每次fix bug或者调试代码时，经常需要重新编译代码，所以我定义了2个命令实现自动编译，如下：
 
 ```
-alias lbuild4='curl --user username:password -d delay=0sec http://192.168.12.46:8088/view/scheduler/job/scheduler-trunk/build'
+alias lbuild4='curl --user username:password -d delay=0sec http://192.168.0.46:8088/view/scheduler/job/scheduler-trunk/build'
 alias lbuild3="cd /apps/code/trunk && make -j 4 clean && make -j 4 && rm -rf ./dist/ && make -j 4 package && cd -"
 ```
 
