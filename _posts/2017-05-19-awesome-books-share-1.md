@@ -15,7 +15,7 @@ date: 2017-05-19 22:05:32
 
 ### 1 知乎 「一小时 」系列电子书
 
-知乎推出的 「一小时 」系列电子书。 「一小时 」系列是什么？这是一系列短小精炼的电子书 。知乎邀请了各专业领域的知友在书中分享他们的知识 、经验和见解。如果你足够认真 ，便可以在一个小时内读完一本书。从接触这个系列的电子书以来，我读了8本自己感兴趣的书籍，有介绍求职面试、印度旅游、微积分八卦等等，但是我个人比较推荐以下4本，当然，我分享的书，你未必喜欢，如果对这个系列感兴趣，可以去[亚马逊](https://www.amazon.cn/s?ref=series_rw_dp_labf&_encoding=UTF8&field-collection=%E7%9F%A5%E4%B9%8E%E3%80%8C%E4%B8%80%E5%B0%8F%E6%97%B6%E3%80%8D%E7%B3%BB%E5%88%97&url=search-alias%3Ddigital-text)或者[微信读书](https://weread.qq.com/wrpage/invite/share?time=134067&senderId=1715518&bookCount=7&weibi=30&bookIds=635800,701342,851729&code=031Ed8p80ODmgJ18HEo80gDWo80Ed8pC&state=&winzoom=1)，也许有你想要的书。
+知乎推出的 「一小时 」系列电子书。 「一小时 」系列是什么？这是一系列短小精炼的电子书 。知乎邀请了各专业领域的知友在书中分享他们的知识 、经验和见解。如果你足够认真，便可以在一个小时内读完一本书。从接触这个系列的电子书以来，我读了8本自己感兴趣的书籍，有介绍以色列历史、如何买房、印度旅游经典和微积分八卦等等，但是我个人比较推荐以下4本，当然，我分享的书，你未必喜欢，如果对这个系列感兴趣，可以去[亚马逊](https://www.amazon.cn/s?ref=series_rw_dp_labf&_encoding=UTF8&field-collection=%E7%9F%A5%E4%B9%8E%E3%80%8C%E4%B8%80%E5%B0%8F%E6%97%B6%E3%80%8D%E7%B3%BB%E5%88%97&url=search-alias%3Ddigital-text)或者[微信读书](https://weread.qq.com/wrpage/invite/share?time=134067&senderId=1715518&bookCount=7&weibi=30&bookIds=635800,701342,851729&code=031Ed8p80ODmgJ18HEo80gDWo80Ed8pC&state=&winzoom=1)，也许有你想要的书。
 
 - 以色列系列
 
