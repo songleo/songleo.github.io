@@ -19,11 +19,11 @@ date: 2017-05-19 22:05:32
 
 - 以色列系列
 
-![image](https://images-cn.ssl-images-amazon.com/images/I/51PMXkfwrgL._SY346_.jpg)
+![以色列：一个国家的诞生](https://images-cn.ssl-images-amazon.com/images/I/51PMXkfwrgL._SY346_.jpg)
 
-![image](https://images-cn.ssl-images-amazon.com/images/I/51S%2BuSZc1EL._SY346_.jpg)
+![以色列2：在危机中生存 ](https://images-cn.ssl-images-amazon.com/images/I/51S%2BuSZc1EL._SY346_.jpg)
 
-![image](https://images-cn.ssl-images-amazon.com/images/I/419M1Svf1JL.jpg)
+![以色列3：赎罪日](https://images-cn.ssl-images-amazon.com/images/I/419M1Svf1JL.jpg)
 
 这个系列的书是在同事的推荐下才阅读的，主要是最近刚好读了一些历史书籍，对历史很感兴趣，就一口气读完了这个系列中三本关于以色列的书籍，书中介绍了犹太人从无到有创建以色列的过程，以及以色列在建国过程中经历的各种战事和趣闻，很是佩服作者讲故事的能力，三本小书读完后意犹未尽。看完这个系列的书籍，你会明白以色列为什么那么牛逼，巴勒斯坦和以色列是什么关系，阿拉伯国家为什么不欢迎以色列，中东地区局势相关历史知识。如果你对犹太人和以色列感兴趣，推荐阅读。
 
