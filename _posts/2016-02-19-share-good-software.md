@@ -47,7 +47,7 @@ yapf是一个python文件代码格式化工具，类似go语言的gofmt，自动
 
 6）free
 
-这是我自己写的一个小程序，也顺便推广下，想了下觉得free这个名字比较有意义，主要功能是自动更新电脑的hosts文件（windows的hosts在：C:\Windows\System32\drivers\etc\hosts，linux的hosts在/etc/hosts），然后就可以上谷歌了。主要是职业需要，百度有时候搜索结果太坑，谷歌又被墙，所以你懂的！更新后貌似还可以上facebook和twitter。同样附上下载链接：[http://pan.baidu.com/s/1kU10Kp5](http://pan.baidu.com/s/1kU10Kp5) 只需要下载对应系统的版本（windows有32位和64位，不要下载错了），以管理员身份运行即可，然后就可以上谷歌了，不能上谷歌的时候，点一下就可以了。源码在：[https://github.com/songleo/update_hosts](https://github.com/songleo/update_hosts) 感兴趣可以看看。
+这是我自己写的一个小程序，也顺便推广下，想了下觉得free这个名字比较有意义，主要功能是自动更新电脑的hosts文件（windows的hosts在：C:\Windows\System32\drivers\etc\hosts，linux的hosts在/etc/hosts），然后就可以上谷歌了。主要是职业需要，百度有时候搜索结果太坑，谷歌又被墙，所以你懂的！更新后貌似还可以上facebook和twitter。同样附上下载链接：[http://pan.baidu.com/s/1i5EWLSD](http://pan.baidu.com/s/1i5EWLSD) ，提取密码：tfhb。只需要下载对应系统的版本（windows有32位和64位，不要下载错了），以管理员身份运行即可，然后就可以上谷歌了，不能上谷歌的时候，点一下就可以了。源码在：[https://github.com/songleo/update_hosts](https://github.com/songleo/update_hosts) 感兴趣可以看看。
 
 同类产品：不能说，关键字容易被和谐 :)
 
