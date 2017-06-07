@@ -57,7 +57,6 @@ func bubbleSort(array []int) {
 ```
 array: [3 2 1 0]
 bubble sort: [0 1 2 3]
-
 ```
 
 ##### 本次荐书：[人类简史：从动物到上帝](http://item.jd.com/11549140.html)
