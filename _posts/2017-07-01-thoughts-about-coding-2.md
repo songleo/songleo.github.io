@@ -26,12 +26,12 @@ date: 2017-07-01 19:56:32
 ```
 // get host name
 func getHostName() {
-    ...
+
 }
 
 // initialize environment
 func initEnv() {
-    ...
+
 }
 ```
 
