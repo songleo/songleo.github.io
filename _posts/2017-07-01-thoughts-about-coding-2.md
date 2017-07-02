@@ -91,5 +91,5 @@ update_interval = 5 * TIME_SECOND
 
 #### 本次荐书：未来简史
 
-![image](https://images-cn.ssl-images-amazon.com/images/I/51VxvBgouTL._AA160_.jpg)
+![未来简史](https://images-cn.ssl-images-amazon.com/images/I/51VxvBgouTL._AA160_.jpg)
 
