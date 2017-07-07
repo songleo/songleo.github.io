@@ -238,6 +238,8 @@ date: 2016-01-30 15:40:31
 
 - [阿米尔·汗：我行我素](https://www.amazon.cn/%E9%98%BF%E7%B1%B3%E5%B0%94-%E6%B1%97-%E6%88%91%E8%A1%8C%E6%88%91%E7%B4%A0-%E5%85%8B%E9%87%8C%E6%96%AF%E8%92%82%E5%A8%9C-%E4%B8%B9%E5%B0%BC%E5%B0%94%E6%96%AF/dp/B071KKNFGJ/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1498715630&sr=1-1) 2017-06-28
 
+- [MacTalk·人生元编程](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00ID5UV30/ref=sr_1_2?s=books&ie=UTF8&qid=1499089857&sr=1-2) 2017-07-03
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
