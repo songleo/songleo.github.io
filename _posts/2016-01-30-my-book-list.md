@@ -240,6 +240,8 @@ date: 2016-01-30 15:40:31
 
 - [MacTalk·人生元编程](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00ID5UV30/ref=sr_1_2?s=books&ie=UTF8&qid=1499089857&sr=1-2) 2017-07-03
 
+- [MacTalk跨越边界](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B018R5L1UC/ref=sr_1_3?s=books&ie=UTF8&qid=1499651092&sr=1-3) 2017-07-07
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
