@@ -242,9 +242,11 @@ date: 2016-01-30 15:40:31
 
 - [mactalk跨越边界](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B018R5L1UC/ref=sr_1_3?s=books&ie=UTF8&qid=1499651092&sr=1-3) 2017-07-07
 
-- 鱼羊野史·第1卷 2017-07-12
+- [鱼羊野史·第1卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00IZSPDRY/ref=sr_1_4?ie=UTF8&qid=1500344370&sr=8-4&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-12
 
-- 鱼羊野史·第2卷 2017-07-17
+- [鱼羊野史·第2卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00M2E55HU/ref=sr_1_9?ie=UTF8&qid=1500344370&sr=8-9&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-17
+
+- [http小书](http://www.ituring.com.cn/book/1791) 2017-07-18
 
 > :) 未完待续......
 
