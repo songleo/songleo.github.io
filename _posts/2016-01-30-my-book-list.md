@@ -248,6 +248,8 @@ date: 2016-01-30 15:40:31
 
 - [http小书](http://www.ituring.com.cn/book/1791) 2017-07-18
 
+- [鱼羊野史·第3卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00VDOJH1U/ref=sr_1_8?ie=UTF8&qid=1500549227&sr=8-8&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-20
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
