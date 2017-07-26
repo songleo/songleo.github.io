@@ -250,6 +250,8 @@ date: 2016-01-30 15:40:31
 
 - [鱼羊野史·第3卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00VDOJH1U/ref=sr_1_8?ie=UTF8&qid=1500549227&sr=8-8&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-20
 
+- [半小时漫画中国史](https://www.amazon.cn/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2-%E4%BA%8C%E6%B7%B7%E5%AD%90/dp/B072ZVV8CK/ref=sr_1_1?ie=UTF8&qid=1501045665&sr=8-1&keywords=%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2) 2017-07-26
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
