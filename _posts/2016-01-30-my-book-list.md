@@ -254,6 +254,10 @@ date: 2016-01-30 15:40:31
 
 - [鱼羊野史·第4卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B013SE3JRK/ref=sr_1_7?ie=UTF8&qid=1501121012&sr=8-7&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-27
 
+- [半小时漫画中国史](https://www.amazon.cn/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2-%E4%BA%8C%E6%B7%B7%E5%AD%90/dp/B072ZVV8CK/ref=sr_1_1?ie=UTF8&qid=1501045665&sr=8-1&keywords=%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2)（二次阅读） 2017-07-28
+
+- [像计算机科学家一样思考java](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00D36S64K/ref=sr_1_1?ie=UTF8&qid=1501424506&sr=8-1&keywords=%E5%83%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%AE%B6%E4%B8%80%E6%A0%B7%E6%80%9D%E8%80%83java) 2017-07-29
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
