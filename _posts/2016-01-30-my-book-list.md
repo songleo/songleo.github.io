@@ -268,6 +268,8 @@ date: 2016-01-30 15:40:31
 
 - [万万没想到:用理工科思维理解世界](https://www.amazon.cn/%E4%B8%87%E4%B8%87%E6%B2%A1%E6%83%B3%E5%88%B0-%E7%94%A8%E7%90%86%E5%B7%A5%E7%A7%91%E6%80%9D%E7%BB%B4%E7%90%86%E8%A7%A3%E4%B8%96%E7%95%8C-%E4%B8%87%E7%BB%B4%E9%92%A2/dp/B015DLP55A/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1502432648&sr=1-1) 2017-08-10
 
+- [活着](https://www.amazon.cn/%E6%B4%BB%E7%9D%80-%E4%BD%99%E5%8D%8E/dp/B01ARNQKG2/ref=sr_1_1?ie=UTF8&qid=1502676601&sr=8-1&keywords=%E6%B4%BB%E7%9D%80) 2017-08-12
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
