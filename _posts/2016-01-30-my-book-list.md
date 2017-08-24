@@ -272,6 +272,8 @@ date: 2016-01-30 15:40:31
 
 - [哲学家们都干了些什么?](https://www.amazon.cn/%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88-%E6%9E%97%E6%AC%A3%E6%B5%A9/dp/B0123MCPXM/ref=sr_1_1?ie=UTF8&qid=1502948615&sr=8-1&keywords=%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88) 2017-08-17
 
+- 黄金时代 2017-08-24
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
