@@ -270,9 +270,11 @@ date: 2016-01-30 15:40:31
 
 - [活着](https://www.amazon.cn/%E6%B4%BB%E7%9D%80-%E4%BD%99%E5%8D%8E/dp/B01ARNQKG2/ref=sr_1_1?ie=UTF8&qid=1502676601&sr=8-1&keywords=%E6%B4%BB%E7%9D%80) 2017-08-12
 
-- [哲学家们都干了些什么?](https://www.amazon.cn/%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88-%E6%9E%97%E6%AC%A3%E6%B5%A9/dp/B0123MCPXM/ref=sr_1_1?ie=UTF8&qid=1502948615&sr=8-1&keywords=%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88) 2017-08-17
+- [哲学家们都干了些什么？](https://www.amazon.cn/%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88-%E6%9E%97%E6%AC%A3%E6%B5%A9/dp/B0123MCPXM/ref=sr_1_1?ie=UTF8&qid=1502948615&sr=8-1&keywords=%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88) 2017-08-17
 
 - 黄金时代 2017-08-24
+
+- 老人与海 2017-09-07
 
 - 沉默的大多数 2017-09-07
 
@@ -451,5 +453,7 @@ date: 2016-01-30 15:40:31
 - 正则表达式必知必会 2017-06-02
 
 - 鱼羊野史（第1卷-第6卷）套装 2017-07-31
+
+- 用户思维+：好产品让用户为自己尖叫 2017-09-06
 
 - 硅谷革命：成就苹果公司的疯狂往事 2017-09-11
