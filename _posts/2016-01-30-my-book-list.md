@@ -294,7 +294,7 @@ date: 2016-01-30 15:40:31
 
 - 漫步到宇宙尽头 2017-11-18
 
-- [半小时漫画中国史](https://www.amazon.cn/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2-%E4%BA%8C%E6%B7%B7%E5%AD%90/dp/B072ZVV8CK/ref=sr_1_1?ie=UTF8&qid=1501045665&sr=8-1&keywords=%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2)（三次阅读） 2017-11-23
+- :+1: [半小时漫画中国史](https://www.amazon.cn/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2-%E4%BA%8C%E6%B7%B7%E5%AD%90/dp/B072ZVV8CK/ref=sr_1_1?ie=UTF8&qid=1501045665&sr=8-1&keywords=%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2)（三次阅读） 2017-11-23
 
 ### 2018年
 
@@ -492,3 +492,4 @@ date: 2016-01-30 15:40:31
 
 - 十年一觉电影梦：李安传 2017-09-29
 
+- 编写高质量代码：改善Python程序的91个建议 2018-01-16
