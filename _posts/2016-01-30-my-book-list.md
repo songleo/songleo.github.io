@@ -308,6 +308,8 @@ date: 2016-01-30 15:40:31
 
 -  :+1: 编写高质量代码：改善Python程序的91个建议 2018-01-13
 
+- :+1: [writing idiomatic python](https://jeffknupp.com/writing-idiomatic-python-ebook/) 2018-01-19
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
