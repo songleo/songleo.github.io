@@ -310,6 +310,8 @@ date: 2016-01-30 15:40:31
 
 - :+1: [writing idiomatic python](https://jeffknupp.com/writing-idiomatic-python-ebook/) 2018-01-19
 
+- :+1: 创京东：刘强东亲述创业之路 2018-01-25
+
 > :) 未完待续......
 
 ## 已经购买的书（未读）
