@@ -6,7 +6,7 @@ date: 2018-01-26 22:13:32
 
 这是一个系列文章，主要分享python的使用建议和技巧，每次分享3点，希望你能有所收获。
 
-### 1 如何在if语句中同时检测多个条件
+### 1 如何在if语句中检测多个条件
 
 - 不推荐方式
 
@@ -79,8 +79,8 @@ def func1():
 
 begin_time = time.time()
 func1()
-pass_time = time.time() - begin_time
-print pass_time
+passed_time = time.time() - begin_time
+print passed_time
 # 2.00099992752
 ```
 
@@ -101,4 +101,4 @@ print timeit(stmt="func1()",
 # 2.00122451254
 ```
 
-借助python的timeit模块，可以很轻易的测试出函数运行时间。在不知道timeit模块之前，我就是用前一种方式测试函数运行时间的。
+借助python的timeit模块，可以很轻易的测试出函数运行时间。在不知道timeit模块之前，我就是用前一种方式测试函数运行时间的，别笑。
