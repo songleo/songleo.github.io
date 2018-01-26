@@ -44,6 +44,7 @@ if any((flag1, flag2, flag3)):
 ```
 import random
 
+
 all_data = [num for num in range(100)]
 sample_data = random.sample(all_data, 20)
 print sample_data
@@ -55,12 +56,13 @@ print sample_data
 ```
 import random
 
+
 order_list = range(10)
 print order_list
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 random.shuffle(order_list)
 print order_list
-# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-# [0, 9, 6, 1, 3, 5, 7, 4, 2, 8]
+# [3, 5, 9, 0, 8, 7, 1, 2, 6, 4]
 ```
 
 ### 3 如何测试函数运行时间
