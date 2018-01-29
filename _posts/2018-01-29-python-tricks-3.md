@@ -98,4 +98,4 @@ print sorted(unordered_dict.items(), key=lambda e: e[1], reverse=True)
 # [('a', 3), ('b', 2), ('c', 1)]
 ```
 
-第一种方式是按字典的value升序排序，第二种方式是按字典的key升序排序，第三种方式是按字典的value降序排序，和第一种方式相反，因为指定了参数reverse为True。sorted函数功能挺强大，不止可以排序字典，任何iterable对象都可以排序。
+第一种方式是按字典的value升序排序，第二种方式是按字典的key升序排序，第三种方式是按字典的value降序排序，和第一种方式相反，因为指定了参数reverse为True。sorted函数功能挺强大，不止可以排序字典，任何iterable对象都可以排序，如果想深入了解请戳https://docs.python.org/2.7/howto/sorting.html#sortinghowto。
