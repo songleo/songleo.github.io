@@ -79,7 +79,7 @@ print url_dict.get('baidu', 'https://www.google.com/')
 # https://www.google.com/
 ```
 
-前一种方式读取一个不存在的key时，回导致KeyError，例如print url_dict['baidu']，因为字典中不存在baidu，所以会导致KeyError。后一种方式使用字典的get方法，如果key不存在，不会产生KeyError，如果给了默认值，会返回默认值，否则返回None。
+前一种方式读取一个不存在的key时，会导致KeyError，例如print url_dict['baidu']，因为字典中不存在baidu，所以会导致KeyError。后一种方式使用字典的get方法，如果key不存在，不会产生KeyError，如果给了默认值，会返回默认值，否则返回None。
 
 ### 3 如何排序字典
 
