@@ -10,7 +10,7 @@ date: 2018-01-26 22:13:32
 
 - 不推荐方式
 
-```
+```python
 flag1 = 1
 flag2 = 0
 flag3 = 0
@@ -21,7 +21,7 @@ if flag1 == 1 or flag2 == 1 or flag3 == 1:
 
 - 推荐方式
 
-```
+```python
 flag1 = 1
 flag2 = 0
 flag3 = 0
@@ -32,7 +32,7 @@ if 1 in (flag1, flag2, flag3):
 
 可以看到，前一种方式重复代码太多，不推荐。后一种写法更简洁、易读。另外，其实也可以通过any函数实现，如下：
 
-```
+```python
 if any((flag1, flag2, flag3)):
     print 'ok'
 ```
@@ -41,7 +41,7 @@ if any((flag1, flag2, flag3)):
 
 - 推荐方式
 
-```
+```python
 import random
 
 
@@ -53,7 +53,7 @@ print sample_data
 
 这里是从100个元素中，随机采样20个元素。可以看到，借助random模块的sample函数可以很轻易实现采样功能。python的random模块很有意思，大家感兴趣可以看看，能实现很多有趣的功能。比如可以轻易实现“洗牌”功能：
 
-```
+```python
 import random
 
 
@@ -69,7 +69,7 @@ print order_list
 
 - 不推荐方式
 
-```
+```python
 import time
 
 
@@ -86,7 +86,7 @@ print passed_time
 
 - 推荐方式
 
-```
+```python
 import time
 from timeit import timeit
 

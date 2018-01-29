@@ -10,7 +10,7 @@ date: 2018-01-25 21:55:32
 
 - 不推荐方式
 
-```
+```python
 list1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 print list1
 # [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -18,7 +18,7 @@ print list1
 
 - 推荐方式
 
-```
+```python
 list1 = [0] * 10
 print list1
 # [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -26,7 +26,7 @@ print list1
 
 其实，前一种方式一看就不符合DRY（Don’t Repeat Yourself）原则，稍微想想就知道还有更优雅的做法。如果是元组呢？只需要将[0]改成(0,)即可，千万不要忘记0后面的逗号。另外，这里不止支持数字，其实可以是任意对象组成的list或者tuple。例如：
 
-```
+```python
 class User(object):
     pass
 
@@ -38,7 +38,7 @@ user_list = [User()] * 10
 
 - 不推荐方式
 
-```
+```python
 def plus_str():
     str_list = ['1'] * 10000
     long_str = ''
@@ -49,7 +49,7 @@ def plus_str():
 
 - 推荐方式
 
-```
+```python
 def join_str():
     str_list = ['1'] * 10000
     return ''.join(str_list)
@@ -57,7 +57,7 @@ def join_str():
 
 使用加号方式连接字符串，效率底下，因为会频繁的拷贝字符串和分配内存，比较耗时。但是使用join方式连接字符串，只需要分配一次内存，并将所有待连接的字符串拷贝到内存空间，效率更高。在我的电脑上，测试2个函数的耗时，当执行10000次时，前者耗时是后者约24倍，代码如下：
 
-```
+```python
 print timeit(stmt="plus_str()",
              setup="from __main__ import plus_str",
              number=10000)
@@ -76,7 +76,7 @@ print timeit(stmt="join_str()",
 
 - 不推荐方式
 
-```
+```python
 dict1 = {'a': 1, 'b': 2, 'c': 3}
 dict2 = {'a': 4, 'b': 5, 'g': 6}
 dict1.update(dict2)
@@ -87,7 +87,7 @@ print merged_dict
 
 - 推荐方式
 
-```
+```python
 dict1 = {'a': 1, 'b': 2, 'c': 3}
 dict2 = {'d': 4, 'f': 5, 'g': 6}
 merged_dict = dict(dict1, **dict2)
@@ -97,7 +97,7 @@ print merged_dict
 
 前一种方式会将源字典dict1修改，有一定的副作用，如果不在乎源字典被修改，前一种方式更简洁一些。后一种方式不会修改源字典，没有副作用。如果有重复的key值，按从右到左的顺序覆盖，例如：
 
-```
+```python
 dict1 = {'a': 1, 'b': 2, 'c': 3}
 dict2 = {'a': 4, 'b': 5, 'g': 6}
 merged_dict = dict(dict1, **dict2)

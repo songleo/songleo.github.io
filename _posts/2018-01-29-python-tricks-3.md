@@ -10,7 +10,7 @@ date: 2018-01-29 12:05:01
 
 - 推荐方式
 
-```
+```python
 my_list = [3, 2, 1, 1, 2, 3]
 print my_list
 # [3, 2, 1, 1, 2, 3]
@@ -21,7 +21,7 @@ print unique_list
 
 或者
 
-```
+```python
 from collections import OrderedDict
 
 
@@ -39,7 +39,7 @@ print unique_list
 
 - 不推荐方式
 
-```
+```python
 url_dict = {
     'google': 'https://www.google.com/',
     'github': 'https://github.com/',
@@ -60,7 +60,7 @@ print url_dict['github']
 
 - 推荐方式
 
-```
+```python
 url_dict = {
     'google': 'https://www.google.com/',
     'github': 'https://github.com/',
@@ -84,7 +84,7 @@ print url_dict.get('baidu', 'https://www.google.com/')
 
 - 推荐方式
 
-```
+```python
 unordered_dict = {'c': 1, 'b': 2, 'a': 3}
 
 print sorted(unordered_dict.items(), key=lambda e: e[1])
