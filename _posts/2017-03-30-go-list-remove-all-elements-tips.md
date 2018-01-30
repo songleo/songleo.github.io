@@ -6,7 +6,7 @@ date: 2017-03-30 21:05:32
 
 go提供了一个[list包](https://golang.org/pkg/container/list/)，类似python的list，可以存储任意类型的数据，并提供了相应的API，如下：
 
-```
+```go
 type Element
     func (e *Element) Next() *Element
     func (e *Element) Prev() *Element
@@ -31,7 +31,7 @@ type List
 
 借助list包提供的API，list用起来确实挺方便，但是在使用过程中，如果不注意就会遇到一些难以发现的坑，导致程序结果不是预想的那样。这里要说的坑是通过for循环遍历list，并删除所有元素时会遇到的问题。例如，下面这个示例程序创建了一个list，并依次将0-3存入，然后通过for循环遍历list删除所有元素：
 
-```
+```go
 package main
 
 import (
@@ -71,14 +71,14 @@ func prtList(l *list.List) {
 
 ```
 original list:
-0 1 2 3 
+0 1 2 3
 deleted list:
-1 2 3 
+1 2 3
 ```
 
 从输出可以知道，list中的元素并没有被完全删除，仅删除了第一个元素0，和最初设想不一样，按照go的使用习惯，遍历一个list并删除所有元素写法应该如下：
 
-```
+```go
 for e := l.Front(); e != nil; e = e.Next() {
     l.Remove(e)
 }
@@ -86,13 +86,13 @@ for e := l.Front(); e != nil; e = e.Next() {
 
 但是根据上面示例代码的输出，这样删除list所有元素是无效的，那么问题出在哪呢？由for循环的机制可以知道，既然删除了第一个元素，没有删除第二个元素，肯定是第二次循环的条件无效，才导致循环退出，即执行完下面语句后：
 
-```
+```go
 l.Remove(e)
 ```
 
 e应该为nil，所以循环退出。在for循环中的l.Remove(e)语句前添加打印语句验证，例如添加如下语句：
 
-```
+```go
 fmt.Println("delete a element from list")
 ```
 
@@ -100,15 +100,15 @@ fmt.Println("delete a element from list")
 
 ```
 original list:
-0 1 2 3 
+0 1 2 3
 deleted list:
 delete a element from list
-1 2 3 
+1 2 3
 ```
 
 可以看到，确实只循环了一次，循环就结束了。即当执行完语句l.Remove(e)后，e等于e.Next()，因为e.Next()为nil，导致e为nil，循环退出。为什么e.Next()会是nil呢？通过查看[go list源码](https://golang.org/src/container/list/list.go?s=2989:3034#L111)，如下所示：
 
-```
+```go
 // remove removes e from its list, decrements l.len, and returns e.
 func (l *List) remove(e *Element) *Element {
     e.prev.next = e.next
@@ -136,7 +136,7 @@ func (l *List) Remove(e *Element) interface{} {
 
 修正程序如下：
 
-```
+```go
 package main
 
 import (
@@ -176,7 +176,7 @@ func prtList(l *list.List) {
 
 ```
 original list:
-0 1 2 3 
+0 1 2 3
 deleted list:
 
 ```

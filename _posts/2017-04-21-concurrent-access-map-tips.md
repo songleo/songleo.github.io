@@ -12,7 +12,7 @@ fatal error: concurrent map read and map write
 
 上面的这个错误不是每次都会遇到的，如果并发访问的协程数不大，遇到的可能性就更小了。例如下面的程序：
 
-```
+```go
 package main
 
 func main() {
@@ -36,7 +36,7 @@ func writeMap(Map map[int]int, key int, value int) {
 
 只循环了10次，产生了20个协程并发访问map，程序基本不会出错，但是如果将循环次数变大，比如10万，运行下面程序基本每次都会出错：
 
-```
+```go
 package main
 
 func main() {
@@ -72,7 +72,7 @@ func writeMap(Map map[int]int, key int, value int) {
 
 大致意思就是说，并发访问map是不安全的，会出现未定义行为，导致程序退出。所以如果希望在多协程中并发访问map，必须提供某种同步机制，一般情况下通过读写锁sync.RWMutex实现对map的并发访问控制，将map和sync.RWMutex封装一下，可以实现对map的安全并发访问，示例代码如下：
 
-```
+```go
 package main
 
 import "sync"

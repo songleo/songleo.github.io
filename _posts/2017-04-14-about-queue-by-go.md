@@ -38,7 +38,7 @@ date: 2017-04-14 22:35:32
 
 队列的实现代码如下：
 
-```
+```go
 package main
 
 import "fmt"

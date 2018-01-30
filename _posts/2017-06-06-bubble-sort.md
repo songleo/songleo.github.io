@@ -28,7 +28,7 @@ date: 2017-06-06 22:26:32
 
 附上go实现的冒泡排序代码：
 
-```
+```go
 package main
 
 import "fmt"

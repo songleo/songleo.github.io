@@ -34,7 +34,7 @@ PyInstaller是将Python打包成可执行文件的工具，下载后解压即可
 
 下面这段代码是要打包的Python脚本，主要功能是检测系统的物理cpu核数、逻辑cpu核数和cpu是否开启超线程功能：
 
-```
+```python
 #!/usr/bin/python
 # coding:utf8
 

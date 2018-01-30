@@ -23,7 +23,7 @@ date: 2017-07-01 19:56:32
 
 代码看多了，多少会看到一些“无脑”注释，比如：
 
-```
+```go
 // get host name
 func getHostName() {
 
@@ -37,7 +37,7 @@ func initEnv() {
 
 函数名已经自注释了，还多此一举，废话连篇。最反感的就是这类注释，写代码的人就是为了注释而注释，一点都不动脑子。我看到这类注释，一般就是直接删除或者修改变量名，把更多信息装到名字里面。比如下面这个注释：
 
-```
+```go
 // download page
 func getPage(url string) {
 
@@ -46,7 +46,7 @@ func getPage(url string) {
 
 改成这样就更易读：
 
-```
+```go
 func downloadPage(url string) {
 
 }

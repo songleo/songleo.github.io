@@ -8,7 +8,7 @@ date: 2016-12-29 20:52:32
 
 示例c程序如下：
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -73,7 +73,7 @@ int f2() {
 }
    10040112a:   48 83 c4 30             add    $0x30,%rsp
    10040112e:   5d                      pop    %rbp
-   10040112f:   c3                      retq   
+   10040112f:   c3                      retq
 ```
 
 在命令行中运行该示例程序，输出如下：
