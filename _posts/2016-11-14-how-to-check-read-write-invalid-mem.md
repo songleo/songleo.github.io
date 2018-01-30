@@ -20,7 +20,7 @@ date: 2016-11-14 21:47:32
 
 示例代码如下：
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -50,61 +50,61 @@ buffer[1] = 1
 buffer[2] = 2
 buffer[3] = 3
 buffer[4] = 4
-buffer[5] = 
-buffer[6] = 
+buffer[5] =
+buffer[6] =
 
 ```
 
 ### 2.2 编译并使用valgrind检测非法读写内存
 
 ```
-root@leo:demo# gcc -o valgrind_test_for_read_invalid_mem 
+root@leo:demo# gcc -o valgrind_test_for_read_invalid_mem
 valgrind_test_for_read_invalid_mem.c
-root@leo:demo# valgrind --leak-check=full 
+root@leo:demo# valgrind --leak-check=full
 ./valgrind_test_for_read_invalid_mem 1 > valgrind_demo.log 2>&1
 ```
 
 ### 2.3 查看检测结果
 
 ```
-root@leo:demo# cat valgrind_demo.log 
+root@leo:demo# cat valgrind_demo.log
 ==3879== Memcheck, a memory error detector
 ==3879== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
 ==3879== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
 ==3879== Command: ./valgrind_test_for_read_invalid_mem 1
-==3879== 
+==3879==
 ==3879== Invalid write of size 2
 ==3879==    at 0x4005DD: main (valgrind_test_for_read_invalid_mem.c:8)
 ==3879==  Address 0x51fc044 is 4 bytes inside a block of size 5 alloc'd
 ==3879==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
 ==3879==    by 0x4005CE: main (valgrind_test_for_read_invalid_mem.c:7)
-==3879== 
+==3879==
 ==3879== Invalid read of size 1
 ==3879==    at 0x400625: main (valgrind_test_for_read_invalid_mem.c:15)
 ==3879==  Address 0x51fc045 is 0 bytes after a block of size 5 alloc'd
 ==3879==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
 ==3879==    by 0x4005CE: main (valgrind_test_for_read_invalid_mem.c:7)
-==3879== 
+==3879==
 ==3879== Invalid read of size 1
 ==3879==    at 0x400649: main (valgrind_test_for_read_invalid_mem.c:16)
 ==3879==  Address 0x51fc046 is 1 bytes after a block of size 5 alloc'd
 ==3879==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
 ==3879==    by 0x4005CE: main (valgrind_test_for_read_invalid_mem.c:7)
-==3879== 
+==3879==
 buffer[0] = 0
 buffer[1] = 1
 buffer[2] = 2
 buffer[3] = 3
 buffer[4] = 4
-buffer[5] = 
-buffer[6] = 
-==3879== 
+buffer[5] =
+buffer[6] =
+==3879==
 ==3879== HEAP SUMMARY:
 ==3879==     in use at exit: 0 bytes in 0 blocks
 ==3879==   total heap usage: 1 allocs, 1 frees, 5 bytes allocated
-==3879== 
+==3879==
 ==3879== All heap blocks were freed -- no leaks are possible
-==3879== 
+==3879==
 ==3879== For counts of detected and suppressed errors, rerun with: -v
 ==3879== ERROR SUMMARY: 4 errors from 3 contexts (suppressed: 0 from 0)
 ```

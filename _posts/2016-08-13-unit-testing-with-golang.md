@@ -18,7 +18,7 @@ date: 2016-08-13 23:57:32
 
 这里以一个判断有效机器名的函数为例，函数声明如下：
 
-```
+```go
 func IsValidHostName(hostName string) bool
 ```
 
@@ -49,7 +49,7 @@ func IsValidHostName(hostName string) bool
 
 基于以上2个条件，我们开始构造测试数据，先定义一个测试数据的结构体，该结构体包含2个字段，输入`input`和期待输出`expectedOutput`，这里定义成空接口`interface{}`方便构造任何类型的输入和输出数据。
 
-```
+```go
 type testData struct {
     input          interface{}
     expectedOutput interface{}
@@ -58,7 +58,7 @@ type testData struct {
 
 按照3中列出的case，测试case如下(注：可以看到每行都是是一个完整的测试case，添加测试case极其容易)：
 
-```
+```go
     testCaseList := []testData{
         // 正向case,每行是一个case
         {"hostaa", true},
@@ -86,7 +86,7 @@ type testData struct {
 
 基于此，可以构造一个测试失败时的打印函数，例如：
 
-```
+```go
 func myTestFail(
     t *testing.T,
     testCase testData,
@@ -104,7 +104,7 @@ func myTestFail(
 
 当某个测试case失败时，打印如下：
 
-```
+```go
 --- FAIL: TestIsValidHostName (0.00s)
         demo_test.go:17:
 
@@ -120,7 +120,7 @@ func myTestFail(
 
 - demo.go(需要进行单元测试的代码)
 
-```
+```go
 package demo
 
 import "unicode"
@@ -151,7 +151,7 @@ func IsValidHostName(hostName string) bool {
 - demo_test.go(单元测试代码)
 
 
-```
+```go
 package demo
 
 import "testing"

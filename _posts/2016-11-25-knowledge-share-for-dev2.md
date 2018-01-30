@@ -12,7 +12,7 @@ date: 2016-11-25 22:24:32
 
 如果需要频繁的进入某个目录，可以alias一个命令以达到目的，例如：
 
-```
+```bash
 alias cdc='cd ${SCHEDULER_TOP}/conf && source ${SCHEDULER_TOP}/conf/profile.scheduler && ls'
 ```
 
@@ -20,13 +20,13 @@ alias cdc='cd ${SCHEDULER_TOP}/conf && source ${SCHEDULER_TOP}/conf/profile.sche
 
 其实我更喜欢将source环境变量单独写入bash配置文件，以便每次登陆时自动source环境变量。例如：
 
-```
+```bash
 source  ${SCHEDULER_TOP}/conf/profile.scheduler
 ```
 
 所以，你也可以alias以下命令：
 
-```
+```bash
 alias cdl='cd ${SCHEDULER_TOP}/log && ls' # 进入日志目录
 alias cdu='cd ${SCHEDULER_TOP} && ls' # 进入scheduler目录
 alias cds='cd /media/sf_share' # 进入虚拟机和物理机的共享文件目录
@@ -40,14 +40,14 @@ alias ...='cd ../.. && ls' # 进入上上层目录，并执行ls命令
 
 如果你频繁的执行某些命令，可以将这些命令alias为一个简短的命令，例如：
 
-```
+```bash
 alias limreconfig="echo y | jadmin limreconfig "
 alias mbdreconfig="jadmin schedreconfig "
 ```
 
 执行limreconfig直接重置lim，省去输入jadmin和进入交互模式输入的y。执行mbdreconfig重置mbd。所以，你也可以alias以下命令：
 
-```
+```bash
 alias jhstart="scheduler start"
 alias jhstop="scheduler stop"
 alias jhrestart="scheduler stop && scheduler start"
@@ -85,7 +85,7 @@ ldkill()
 
 如果经常需要换包或者编译代码，可以定义一些命令实现，比如做某项目时，每次都需要通过登录网页或者服务器获取最新的安装包，很不方便。所以我定义了一个命令lget，执行该命令会将当天最新包复制到当前目录，这个命令应该大家都有使用过，如下：
 
-```
+```bash
 lget(){
     PACKAGE=`date +"%F"`
     wget http://192.168.0.5/build/jhinno_ext/scheduler_ext/trunk/$PACKAGE/scheduler.tar.gz
@@ -94,26 +94,26 @@ lget(){
 
 由于每次换包需要复制许可证文件，我定义了一个命令cplic，将许可证文件放在一个固定的位置，执行该命令可以将许可证文件拷贝到conf目录：
 
-```
+```bash
 alias cplic="cp /apps/license.dat ${SCHEDULER_TOP}/conf/"
 ```
 
 但是一般我很少执行这个命令，因为每次拷贝安装包时，我就自动将许可证文件拷贝到conf目录，例如下面定义的命令是编译完代码后，执行该命令可以拷贝最新的安装包到apps目录：
 
-```
+```bash
 alias cppkg="cp -rf  /apps/code/trunk/dist/linux-x86_64/* /apps/ && cp /apps/license.dat ${SCHEDULER_TOP}/conf/"
 ```
 
 在fix bug时，编译完修改的代码后，如果想更换某个binary，可以alias几个命令实现，如下：
 
-```
+```bash
 alias cpbin="cp -rf /apps/code/trunk/dist/linux-x86_64/scheduler/sbin/linux-x86_64/bin  ${SCHEDULER_TOP}/sbin/linux-x86_64/bin"
 alias cpall="cpbin && cpcmd" # 更换所有的binary
 ```
 
 每次fix bug或者调试代码时，经常需要重新编译代码，所以我定义了2个命令实现自动编译，如下：
 
-```
+```bash
 alias lbuild4='curl --user username:password -d delay=0sec http://192.168.0.46:8088/view/scheduler/job/scheduler-trunk/build'
 alias lbuild3="cd /apps/code/trunk && make -j 4 clean && make -j 4 && rm -rf ./dist/ && make -j 4 package && cd -"
 ```
@@ -122,7 +122,7 @@ alias lbuild3="cd /apps/code/trunk && make -j 4 clean && make -j 4 && rm -rf ./d
 
 开发过程中，经常需要写一个简单的程序验证某个API，比如c语言，要编译运行c文件，需要执行gcc demo.c -o demo.c，编译完成后才能运行代码，这样每次编译比较麻烦且费时，于是我参考go语言的go run命令，定义一个crun命令直接运行c源代码，如下：
 
-```
+```bash
 crun(){
     gcc $* -g;
     if [ $? -ne 0 ]; then
@@ -144,7 +144,7 @@ alias gtest='go test'
 
 每次换包时，都要解压压缩包，但是压缩格式很多，要记住那么多解压选项和命令不容易，可以定义如下命令，一个命令解压常见压缩格式的包：
 
-```
+```bash
 ltar(){
 if [ -f $1 ]; then
 case $1 in

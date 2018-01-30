@@ -10,7 +10,7 @@ date: 2016-09-24 20:21:32
 
 其实意思就是学习编程语言，只看书还是不行的(当然不看书也不行)。也正是由于我实践经验少，在使用c库函数getenv()获取系统环境变量时，由于使用不当导致`Segmentation fault (core dumped)`错误。当时想不通为什么如此简单的库函数怎么就会引起`core dumped`呢？感兴趣可以看看，代码如下：
 
-```
+```c
 #include <stdio.h>
 int main ()
 {
@@ -67,7 +67,7 @@ RETURN VALUE
 
 正确代码如下：
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 int main ()
