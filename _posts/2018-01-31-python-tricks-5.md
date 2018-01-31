@@ -32,7 +32,7 @@ sorted(...)
 
 第一个命令pydoc sys.exit查看sys模块的exit函数文档信息，第二个命令pydoc sorted查看了内建函数sorted的文档信息。
 
-### 2 如何将python打包成独立的二进制文件
+### 2 如何将python代码打包成独立的二进制文件
 
 - 推荐方式
 
@@ -45,7 +45,7 @@ sorted(...)
 print 'hello, world!'
 ```
 
-将python打包成独立的二进制文件步骤：
+将python代码打包成独立的二进制文件步骤：
 
 ```bash
 root@master:demo$ python hello_world.py
@@ -57,7 +57,7 @@ root@master:dist$ ./hello_world
 hello, world!
 ```
 
-我解释下上面命令行，首先使用python直接运行需要编译成独立二进制文件的python脚本hello_world.py，程序正常打印hello, world!，然后使用pip安装pyinstaller，通过pyinstaller将python脚本hello_world.py打包成独立的二进制文件，然后进入当前目录下的dist目录，运行打包成功的二进制文件hello_world，程序正常打印hello, world!。除了pyinstaller，还有其他工具可以实现类似功能，比如[py2exe](http://www.py2exe.org/)和[cx_Freeze](https://anthony-tuininga.github.io/cx_Freeze/)，如果感兴趣，可以看看。
+我解释下上面命令行，首先使用python直接运行需要编译成独立二进制文件的hello_world.py，程序正常打印hello, world!，然后使用pip安装pyinstaller，通过pyinstaller将hello_world.py打包成独立的二进制文件，然后进入当前目录下的dist目录，运行打包成功的二进制文件hello_world，程序正常打印hello, world!。除了pyinstaller，还有其他工具可以实现类似功能，比如[py2exe](http://www.py2exe.org/)和[cx_Freeze](https://anthony-tuininga.github.io/cx_Freeze/)，如果感兴趣，可以看看。
 
 ### 3 如何自动格式化python代码
 
