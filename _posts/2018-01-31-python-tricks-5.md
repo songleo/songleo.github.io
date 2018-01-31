@@ -100,7 +100,7 @@ root@master:demo$ pip install autopep8
 root@master:demo$ autopep8 --in-place --aggressive --aggressive demo.py
 ```
 
-格式化后的python代码demo.py：
+格式化后的demo.py代码：
 
 ```python
 #!/usr/bin/env python
