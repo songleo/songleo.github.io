@@ -10,7 +10,7 @@ date: 2018-01-31 22:59:00
 
 - 推荐方式
 
-```bash
+```
 root@master:~$ pydoc sys.exit
 Help on built-in function exit in sys:
 
@@ -47,7 +47,7 @@ print 'hello, world!'
 
 将python代码打包成独立的二进制文件步骤：
 
-```bash
+```
 root@master:demo$ python hello_world.py
 hello, world!
 root@master:demo$ pip install pyinstaller
@@ -95,7 +95,7 @@ Only actual code should be reindented.
 
 安装autopep8，并使用autopep8格式化demo.py代码：
 
-```bash
+```
 root@master:demo$ pip install autopep8
 root@master:demo$ autopep8 --in-place --aggressive --aggressive demo.py
 ```
