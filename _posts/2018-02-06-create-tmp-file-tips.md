@@ -4,7 +4,7 @@ title: tempfile.NamedTemporaryFile创建临时文件在windows没有权限打开
 date: 2018-02-06 12:05:00
 ---
 
-通过tempfile.NamedTemporaryFile()，可以轻易的创建临时文件，并返回一个文件对象，通过该对象的name属性可以获取临时文件名，且创建的临时文件会在关闭后自动删除。下面这段python代码创建一个临时文件，并再次打开该临时文件，写入数据，然后再次打开，读取文件，并按行打印文件内容。
+通过tempfile.NamedTemporaryFile，可以轻易的创建临时文件，并返回一个文件对象，通过该对象的name属性可以获取临时文件名，且创建的临时文件会在关闭后自动删除。下面这段python代码创建一个临时文件，并再次打开该临时文件，写入数据，然后再次打开，读取文件，并按行打印文件内容。
 
 ```python
 #!/usr/bin/env python
