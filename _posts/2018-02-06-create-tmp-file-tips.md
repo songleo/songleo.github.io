@@ -4,7 +4,7 @@ title: tempfile.NamedTemporaryFile创建临时文件在windows没有权限打开
 date: 2018-02-06 12:05:00
 ---
 
-通过tempfile.NamedTemporaryFile，可以轻易的创建临时文件，并返回一个文件对象，通过该对象的name属性可以获取临时文件名，且创建的临时文件会在关闭后自动删除。下面这段python代码创建一个临时文件，并再次打开该临时文件，写入数据，然后再次打开，读取文件，并按行打印文件内容。
+通过tempfile.NamedTemporaryFile，可以轻易的创建临时文件，并返回一个文件对象，对象的name属性可以获取临时文件名，且创建的临时文件会在关闭后自动删除。下面这段python代码创建一个临时文件，并再次打开该临时文件，写入数据，然后再次打开，读取文件，并按行打印文件内容。
 
 ```python
 #!/usr/bin/env python
@@ -41,7 +41,7 @@ line 3
 
 ```
 
-但是在windows上运行时，提示没有权限，不能打开创建的临时文件。
+但是在windows上运行时，提示没有权限，不能打开创建的临时文件，是不是感觉很奇怪。
 
 ```
 E:\share\git\python_practice\demo>tmp_file.py
@@ -70,6 +70,6 @@ New in version 2.6: The delete parameter.
 Whether the name can be used to open the file a second time, while the named temporary file is still open, varies across platforms (it can be so used on Unix; it cannot on Windows NT or later).
 ```
 
-大概意思是，当这个临时文件处于打开状态，在unix平台，该名字可以用于再次打开临时文件，但是在windows不能。所以，如果要再windows打开该临时文件，需要将文件关闭，然后再打开，操作完文件后，再调用os.remove删除临时文件。
+大概意思是，当这个临时文件处于打开状态，在unix平台，该名字可以用于再次打开临时文件，但是在windows不能。所以，如果要在windows打开该临时文件，需要将文件关闭，然后再打开，操作完文件后，再调用os.remove删除临时文件。
 
 ##### 参考：https://docs.python.org/2/library/tempfile.html
