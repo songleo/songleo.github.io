@@ -15,7 +15,7 @@ The Redis project does not officially support Windows. However, the Microsoft Op
 
 或者直接下载[redis的zip格式的安装包](https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.zip)，解压即可使用，不需安装。
 
-下面是一些使用示例：
+下面是一些使用建议：
 
 ### 1 将redis注册成系统服务
 
