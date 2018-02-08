@@ -5,13 +5,13 @@ date: 2018-02-08 12:05:00
 ---
 
 
-[redis官方网站](https://redis.io/download)专门说明了，redis官方不支持windows平台，但是 Microsoft Open Tech开发并维护了一个windows版的redis，如下：
+[redis官方网站](https://redis.io/download)专门说明了，redis不支持windows平台，但是Microsoft Open Tech开发并维护了一个windows版的redis，如下：
 
 ```
 The Redis project does not officially support Windows. However, the Microsoft Open Tech group develops and maintains this Windows port targeting Win64. Learn more
 ```
 
-找到Microsoft Open Tech的[github](https://github.com/MicrosoftArchive/redis/releases)，下载redis安装包[Redis-x64-3.2.100.msi](https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi)，下载完毕后，运行安装程序，如果出错，一般是系统的 .NET Framework版本过低，更新.NET Framework即可。我这里下载的是[.NET Framework 4.5](https://www.microsoft.com/en-us/download/confirmation.aspx?id=30653)，下载完毕，直接运行安装更新。更新完.NET Framework，再次运行redis安装程序。成功安装后，找到安装目录，运行redis-server.exe启动redis。
+找到Microsoft Open Tech的[github](https://github.com/MicrosoftArchive/redis/releases)，下载redis安装包[Redis-x64-3.2.100.msi](https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi)，下载完毕后，运行安装程序，如果出错，一般是系统的 .NET Framework版本过低，更新.NET Framework即可。我这里下载的是[.NET Framework 4.5](https://www.microsoft.com/en-us/download/confirmation.aspx?id=30653)，下载完毕，直接运行安装更新。更新完.NET Framework，再次运行redis安装程序，成功安装后redis，找到安装目录，运行redis-server.exe启动redis。
 
 或者直接下载[redis的zip格式的安装包](https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.zip)，解压即可使用，不需安装。
 
@@ -19,7 +19,7 @@ The Redis project does not officially support Windows. However, the Microsoft Op
 
 ### 1 将redis注册成系统服务
 
-将redis注册成Windows系统服务，让redis实现开机自启动。
+将redis注册成Windows系统服务，让redis开机自启动。
 
 ```
 C:\redis\Redis-x64-3.2.100>redis-server.exe --service-install "c:\redis\Redis-x64-3.2.100\redis.windows.conf" --loglevel verbose
@@ -55,14 +55,14 @@ SERVICE_NAME: redis
 
 ```
 
-### 2 将redis绑定到指定IP
+### 2 将redis绑定到指定ip
 
-redis的配置文件中默认值绑定了环回地址（127.0.0.1），这样会导致非本机的客户端链接不上redis，需要将本机的IP绑定，比如这里绑定了IP：192.168.63.7，这样就可以从其他机器链接本机的redis。
+redis的配置文件中默认绑定了环回地址（127.0.0.1），这样会导致非本机的客户端链接不上redis，需要将本机的ip绑定，比如这里绑定了ip：192.168.63.7，这样就可以从其他机器链接本机的redis。
 
 ```
 bind 127.0.0.1 192.168.63.7
 ```
-或者将bind配置注释，这样redis会监听本机所有的IP地址，但是这样做有安全风险，一般不推荐。
+或者将bind配置注释，这样redis会监听本机所有的ip地址，但是这样做有安全风险，一般不推荐。
 
 ### 3 加入认证机制
 
