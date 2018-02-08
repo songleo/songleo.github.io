@@ -69,10 +69,10 @@ bind 127.0.0.1 192.168.63.7
 如果需要添加认证机制，让经过认证的redis节点之间同步数据和经过认证的客户端链接redis，可以通过添加一下字段：
 
 ```
-masterauth YOU_PASSWORD
-requirepass YOU_PASSWORD
+masterauth your_password
+requirepass your_password
 ```
-将YOU_PASSWORD更换成你的密码即可，这样没有密码的客户端就会被拒绝链接。
+将your_password更换成你的密码即可，这样没有密码的客户端就会被拒绝链接。
 
 ### 4 以特定的配置文件启动redis
 
