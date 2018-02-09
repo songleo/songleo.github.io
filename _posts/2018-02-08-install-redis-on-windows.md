@@ -27,7 +27,7 @@ C:\redis\Redis-x64-3.2.100>redis-server.exe --service-install "c:\redis\Redis-x6
 [2568] 08 Feb 11:23:52.441 # Redis successfully installed as a service.
 ```
 
-查询注册的redis服务，并启动redis服务：
+查询注册的redis服务，并启动redis服务。
 
 ```
 C:\redis\Redis-x64-3.2.100>sc query redis
