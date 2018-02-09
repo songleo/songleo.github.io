@@ -11,7 +11,7 @@ date: 2018-02-08 12:05:00
 The Redis project does not officially support Windows. However, the Microsoft Open Tech group develops and maintains this Windows port targeting Win64. Learn more
 ```
 
-找到Microsoft Open Tech的[github](https://github.com/MicrosoftArchive/redis/releases)，下载redis安装包[Redis-x64-3.2.100.msi](https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi)，下载完毕后，运行安装程序，如果出错，一般是系统的 .NET Framework版本过低，更新.NET Framework即可。我这里下载的是[.NET Framework 4.5](https://www.microsoft.com/en-us/download/confirmation.aspx?id=30653)，下载完毕，直接运行安装更新。更新完.NET Framework，再次运行redis安装程序，成功安装后redis，找到安装目录，运行redis-server.exe启动redis。
+找到Microsoft Open Tech的[github](https://github.com/MicrosoftArchive/redis/releases)，下载redis安装包[Redis-x64-3.2.100.msi](https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi)，下载完毕后，运行安装程序，如果出错，一般是系统的.NET Framework版本过低，更新.NET Framework即可。我这里下载的是[.NET Framework 4.5](https://www.microsoft.com/en-us/download/confirmation.aspx?id=30653)，下载完毕，直接运行安装更新，更新完.NET Framework，再次运行redis安装程序，成功安装redis后，找到安装目录，运行redis-server.exe启动redis。
 
 或者直接下载[redis的zip格式的安装包](https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.zip)，解压即可使用，不需安装。
 
@@ -19,7 +19,7 @@ The Redis project does not officially support Windows. However, the Microsoft Op
 
 ### 1 将redis注册成系统服务
 
-将redis注册成Windows系统服务，让redis开机自启动。
+将redis注册成windows系统服务，让redis开机自启动。
 
 ```
 C:\redis\Redis-x64-3.2.100>redis-server.exe --service-install "c:\redis\Redis-x64-3.2.100\redis.windows.conf" --loglevel verbose
@@ -76,7 +76,7 @@ requirepass your_password
 
 ### 4 以特定的配置文件启动redis
 
-启动redis时，可以指定特定的配置文件，例如：
+启动redis时，可以指定相应的配置文件，例如：
 
 ```
 C:\redis\Redis-x64-3.2.100>redis-server.exe "c:\redis\Redis-x64-3.2.100\redis.windows.conf"
