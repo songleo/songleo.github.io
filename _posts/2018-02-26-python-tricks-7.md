@@ -14,9 +14,9 @@ import os
 str1 = os.__name__
 str2 = "os"
 
-print(str1)
+print str1
 # os
-print(str2)
+print str2
 # os
 
 print str1 == str2
@@ -32,10 +32,10 @@ print str1 is str2
 str1 = "os"
 str2 = "os"
 
-print(str1)
+print str1
 # os
 
-print(str2)
+print str2
 # os
 
 print str1 == str2
