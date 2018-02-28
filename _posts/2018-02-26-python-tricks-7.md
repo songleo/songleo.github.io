@@ -65,6 +65,7 @@ def demo():
 
 
 multi_values = demo()
+
 print multi_values[1]
 # 1
 ```
