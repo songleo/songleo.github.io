@@ -66,4 +66,4 @@ root@master:conf$ python -m SimpleHTTPServer 8080
 Serving HTTP on 0.0.0.0 port 8080 ...
 ```
 
-在本机浏览器中输入 http://localhost:8080/，会看到命令启动路径下的所有文件及目录，单击文件可以直接下载文件，很适合用于将某目录分享出去，供其他人访问。
+在本机浏览器中输入[http://localhost:8080/](http://localhost:8080/)，会看到命令启动路径下的所有文件及目录，单击文件可以直接下载文件，很适合用于将某目录分享出去，供其他人访问。
