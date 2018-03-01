@@ -52,7 +52,6 @@ Successfully installed redis-2.7.6
 
 ### 2 以脚本形式运行python模块
 
-- 推荐方式
 
 ```
 root@master:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
@@ -63,7 +62,6 @@ root@master:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 
 ### 3 python快速启动一个web服务器
 
-- 推荐方式
 
 ```
 root@master:conf$ python -m SimpleHTTPServer 8080
