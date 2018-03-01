@@ -54,7 +54,7 @@ Successfully installed redis-2.7.6
 
 - 推荐方式
 
-```python
+```bash
 root@ssli_RHEL64:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 1 loops, best of 3: 881 msec per loop
 ```
