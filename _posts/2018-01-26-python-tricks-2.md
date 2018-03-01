@@ -39,7 +39,6 @@ if any((flag1, flag2, flag3)):
 
 ### 2 如何从list中随机采样元素
 
-- 推荐方式
 
 ```python
 import random

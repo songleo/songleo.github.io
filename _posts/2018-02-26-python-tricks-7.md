@@ -87,7 +87,6 @@ print one
 
 ### 3 如何判断文件是否被打开
 
-- 推荐方式
 
 ```python
 with open("tmp") as f:

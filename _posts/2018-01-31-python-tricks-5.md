@@ -8,7 +8,6 @@ date: 2018-01-31 22:59:00
 
 ### 1 如何在命令行查看python文档
 
-- 推荐方式
 
 ```
 root@master:~$ pydoc sys.exit
@@ -34,7 +33,6 @@ sorted(...)
 
 ### 2 如何将python代码打包成独立的二进制文件
 
-- 推荐方式
 
 需要编译的python代码如下：
 
@@ -61,7 +59,6 @@ hello, world!
 
 ### 3 如何自动格式化python代码
 
-- 推荐方式
 
 格式化前的demo.py代码：
 

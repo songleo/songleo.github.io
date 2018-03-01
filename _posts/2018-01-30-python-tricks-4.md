@@ -52,7 +52,6 @@ print p.__dict__
 
 ### 2 如何将类打印成json字符串
 
-- 推荐方式
 
 ```python
 import json
@@ -79,7 +78,6 @@ print json.dumps(u.__dict__, indent=4)
 
 ### 3 如何排序类列表
 
-- 推荐方式
 
 ```python
 class User:

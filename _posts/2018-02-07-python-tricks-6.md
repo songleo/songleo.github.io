@@ -76,7 +76,6 @@ print gen_list(b=3)
 
 ### 3 利用元组传递多个函数参数
 
-- 推荐方式
 
 ```python
 def demo(a, b, c, d):

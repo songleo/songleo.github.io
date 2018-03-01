@@ -8,7 +8,6 @@ date: 2018-01-29 12:05:01
 
 ### 1 如何去掉list中重复元素
 
-- 推荐方式
 
 ```python
 my_list = [3, 2, 1, 1, 2, 3]
@@ -82,7 +81,6 @@ print url_dict.get('baidu', 'https://www.google.com/')
 
 ### 3 如何排序字典
 
-- 推荐方式
 
 ```python
 unordered_dict = {'c': 1, 'b': 2, 'a': 3}
