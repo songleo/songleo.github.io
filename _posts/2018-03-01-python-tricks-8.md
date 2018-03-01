@@ -9,13 +9,13 @@ date: 2018-03-01 12:05:00
 ### 1 pip安装特定版本号的包
 
 ```
-root@ssli_RHEL64:demo$ pip install redis==2.7.4
+root@master:demo$ pip install redis==2.7.4
 OK
 CLOSED
 Collecting redis==2.7.4
 Installing collected packages: redis
 Successfully installed redis-2.7.4
-root@ssli_RHEL64:demo$ pip uninstall redis
+root@master:demo$ pip uninstall redis
 OK
 CLOSED
 Uninstalling redis-2.7.4:
@@ -40,7 +40,7 @@ Uninstalling redis-2.7.4:
   /opt/python-2.7.10/lib/python2.7/site-packages/redis/utils.pyc
 Proceed (y/n)? y
   Successfully uninstalled redis-2.7.4
-root@ssli_RHEL64:demo$ pip install redis==2.7.6
+root@master:demo$ pip install redis==2.7.6
 OK
 CLOSED
 Collecting redis==2.7.6
@@ -55,7 +55,7 @@ Successfully installed redis-2.7.6
 - 推荐方式
 
 ```
-root@ssli_RHEL64:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
+root@master:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 1 loops, best of 3: 881 msec per loop
 ```
 
@@ -66,7 +66,7 @@ root@ssli_RHEL64:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 - 推荐方式
 
 ```
-root@ssli_RHEL64:conf$ python -m SimpleHTTPServer 8080
+root@master:conf$ python -m SimpleHTTPServer 8080
 Serving HTTP on 0.0.0.0 port 8080 ...
 ```
 
