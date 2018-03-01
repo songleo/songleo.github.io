@@ -48,7 +48,7 @@ Installing collected packages: redis
 Successfully installed redis-2.7.6
 ```
 
-运行pip install redis -v命令，可以看到所有可用版本的redis包，这里先安装redis-2.7.4，卸载后，再安装redis-2.7.6。
+未安装redis包时，运行pip install redis -v命令，可以看到所有可用版本的redis包，这里先安装redis-2.7.4，卸载后，再安装redis-2.7.6。
 
 ### 2 以脚本形式运行python模块
 
