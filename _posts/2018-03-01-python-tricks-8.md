@@ -52,20 +52,18 @@ Successfully installed redis-2.7.6
 
 ### 2 以脚本形式运行python模块
 
-
 ```
 root@master:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 1 loops, best of 3: 881 msec per loop
 ```
 
-这里通过python的-m选项，将timeit模块以脚本方式直接运行。
+通过python的-m选项，将timeit模块以脚本方式直接运行，这段代码意思是计算time.sleep(0.88)的运行时间，由输出可以看到，运行时间为881毫秒。
 
 ### 3 python快速启动一个web服务器
-
 
 ```
 root@master:conf$ python -m SimpleHTTPServer 8080
 Serving HTTP on 0.0.0.0 port 8080 ...
 ```
 
-在本机浏览器中输入http://localhost:8080/，会看到命令启动路径下的所有文件及目录，单击文件可以直接下载文件，很适合将某目录分享出去，供其他人访问。
+在本机浏览器中输入http://localhost:8080/，会看到命令启动路径下的所有文件及目录，单击文件可以直接下载文件，很适合用于将某目录分享出去，供其他人访问。
