@@ -57,7 +57,7 @@ root@master:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 1 loops, best of 3: 881 msec per loop
 ```
 
-通过python的-m选项，将timeit模块以脚本方式直接运行，这段代码意思是计算time.sleep(0.88)的运行时间，由输出可以看到，运行时间为881毫秒。
+通过python的-m选项，将timeit模块以脚本方式直接运行。这段代码意思是计算time.sleep(0.88)的运行时间，由输出可以看到，运行时间为881毫秒。
 
 ### 3 python快速启动一个web服务器
 
