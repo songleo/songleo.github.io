@@ -8,7 +8,7 @@ date: 2018-03-01 12:05:00
 
 ### 1 pip安装特定版本号的包
 
-```bash
+```
 root@ssli_RHEL64:demo$ pip install redis==2.7.4
 OK
 CLOSED
@@ -54,7 +54,7 @@ Successfully installed redis-2.7.6
 
 - 推荐方式
 
-```bash
+```
 root@ssli_RHEL64:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 1 loops, best of 3: 881 msec per loop
 ```
@@ -65,7 +65,7 @@ root@ssli_RHEL64:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 
 - 推荐方式
 
-```bash
+```
 root@ssli_RHEL64:conf$ python -m SimpleHTTPServer 8080
 Serving HTTP on 0.0.0.0 port 8080 ...
 ```
