@@ -8,11 +8,11 @@ date: 2018-03-04 32:31:00
 
 1） 创建虚拟机，选择centos系统镜像，比如CentOS-7-x86_64-DVD-1708.iso，务必使用官方最新支持的版本，如果选择的镜像版本不对，会导致安装完docker无法运行。
 
-2）开始安装，如果需要图形化界面，在安装最后一步记得选择带图形安装。
+2）开始安装虚拟机，如果需要图形化界面，在安装最后一步记得选择带图形安装。
 
-3）安装完毕，重启后，需要同意许可才能进入系统。如果是命令行界面，需要输入相应的选项同意许可才能进入。
+3）安装完毕，重启后，需要同意许可才能进入系统，如果是命令行界面，需要输入相应的选项同意许可才能进入。
 
-4）安装virtualbox增强功能，一般会提示缺少gcc、make、perl和其他库文件，需安装和系统内核版本一致的库文件，否则virtualbox增强功能不能正确安装。如下：
+4）安装virtualbox增强功能，一般会提示缺少gcc、make、perl和其他库文件，需安装和系统内核版本一致的库文件，否则不能安装virtualbox增强功能，例如：
 
 ```
 Verifying archive integrity... All good.
@@ -38,7 +38,7 @@ The distribution packages containing the headers are probably:
 Press Return to close this window...
 ```
 
-安装所需工具和库：
+按照提示信息，安装所需工具和库：
 
 ```
 [root@ssli-centos7 ~]# yum install gcc make perl
@@ -61,6 +61,8 @@ root@ssli-centos7:~$ systemctl start docker
 root@ssli-centos7:~$ systemctl status docker
 root@ssli-centos7:~$ systemctl enable docker
 ```
+
+安装docker，并启动docker，然后将docker服务设置成开机自启动。
 
 6）运行docker hello world示例
 
