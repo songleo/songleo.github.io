@@ -10,7 +10,7 @@ date: 2018-04-03 12:05:01
 
 ### 1 sed替换文件内容
 
-```shell
+```
 root@ssli_centos7:bash_practice$ cat demo
 this is demo
 root@ssli_centos7:bash_practice$ sed -i s/demo/test/g demo
@@ -22,7 +22,7 @@ this is test
 
 ### 2 自动填充上一个命令的最后一个参数
 
-```shell
+```
 root@ssli_centos7:bash_practice$ cd /media/sf_share/git/python_practice/
 root@ssli_centos7:python_practice$ ls /media/sf_share/git/python_practice/
 demo  dsa  euler  fluent_python_demo  README.md  tool
@@ -32,7 +32,7 @@ demo  dsa  euler  fluent_python_demo  README.md  tool
 
 ### 3 ls + grep命令
 
-```shell
+```
 root@ssli_centos7:bash_practice$ alias | grep lsg
 alias lsg='ls | grep'
 root@ssli_centos7:bash_practice$ ls | grep demo
