@@ -28,7 +28,7 @@ root@ssli_centos7:python_practice$ ls /media/sf_share/git/python_practice/
 demo  dsa  euler  fluent_python_demo  README.md  tool
 ```
 
-在输入命令时，有时候需要上一个命令行的最后一个参数，比如示例中的第一个命令的最后一个参数是/media/sf_share/git/python_practice/，如果下一个命令需要使用该参数，那么执行ALT+.就会自动填充/media/sf_share/git/python_practice/到命令后面，不用再次输入该路径。
+在输入命令时，有时候需要上一个命令行的最后一个参数，比如示例中的第一个命令的最后一个参数是/media/sf_share/git/python_practice/，如果下一个命令需要使用该参数，那么执行Alt+.就会自动填充/media/sf_share/git/python_practice/到命令后面，不用再次输入该路径。
 
 ### 3 ls + grep命令
 
