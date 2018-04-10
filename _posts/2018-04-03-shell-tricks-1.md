@@ -47,4 +47,4 @@ valgrind_demo
 
 通过系统提供的alias命令将ls和grep命令合成一个命令lsg，实现快速搜索ls输出内容的目的。比如前一个命令是列出当前目录下所有名字包括demo字符的文件。通过执行`alias lsg='ls | grep'`命令，定义一个新命令lsg实现相同功能，输入的字符更少，效率也就更高了。
 
-> 注：将分享的的alias或者函数写入你的shell配置文件（如：~/.bashrc或/etc/profile）中，这样每次打开终端都能使用。
+> 注：将分享的alias或者函数写入你的shell配置文件（如：~/.bashrc或/etc/profile）中，这样每次打开终端都能使用。
