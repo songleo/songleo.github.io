@@ -29,7 +29,7 @@ root     19344  2159  0 14:22 pts/1    00:00:00 sleep 1234
 root     19366  2159  0 14:23 pts/1    00:00:00 grep --color=auto --color=auto 1234
 ```
 
-通过系统提供的alias命令将ps和grep命令合成一个命令psg，实现快速查找含有特定字符串的相关进程。比如执行`ps -ef | grep 1234`命令查找包含1234字符串的相关进程，通过执行`alias psg='ps -ef | grep --color=auto'`命令，定义一个新命令psg实现相同功能，更方便快捷。
+通过系统提供的alias命令将ps和grep命令合成一个命令psg，实现快速查找特定字符串的相关进程。比如执行`ps -ef | grep 1234`命令查找包含1234字符串的相关进程，通过执行`alias psg='ps -ef | grep --color=auto'`命令，定义一个新命令psg实现相同功能，更加方便快捷。
 
 ### 2 ps + kill命令
 
