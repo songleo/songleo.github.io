@@ -1,7 +1,7 @@
 ---
 layout: post
 title: tempfile.NamedTemporaryFile创建临时文件在windows没有权限打开
-date: 2018-02-06 12:05:00
+date: 2018-02-06 00:05:00
 ---
 
 记录下来是因为当时谷歌这个问题时发现，网上也有很多人遇到这个问题，我也因为这个问题导致了一个bug，所以告诫自己以后使用API多仔细看看文档。

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: windows安装redis
-date: 2018-02-08 12:05:00
+date: 2018-02-08 00:05:00
 ---
 
 
