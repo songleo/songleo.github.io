@@ -41,9 +41,9 @@ Press Return to close this window...
 按照提示信息，安装所需的工具和库：
 
 ```
-[root@ssli-centos7 ~]# yum install gcc make perl
-[root@ssli-centos7 ~]# yum install kernel-devel-$(uname -r)
-[root@ssli-centos7 ~]# rpm -qa kernel\*
+# yum install gcc make perl
+# yum install kernel-devel-$(uname -r)
+# rpm -qa kernel\*
 kernel-3.10.0-693.el7.x86_64
 kernel-tools-3.10.0-693.el7.x86_64
 kernel-headers-3.10.0-693.el7.x86_64
@@ -56,10 +56,10 @@ kernel-tools-libs-3.10.0-693.el7.x86_64
 5）安装docker：
 
 ```
-root@ssli-centos7:~$ curl -fsSL https://get.docker.com/ | sh
-root@ssli-centos7:~$ systemctl start docker
-root@ssli-centos7:~$ systemctl status docker
-root@ssli-centos7:~$ systemctl enable docker
+$ curl -fsSL https://get.docker.com/ | sh
+$ systemctl start docker
+$ systemctl status docker
+$ systemctl enable docker
 ```
 
 安装docker，并启动docker，然后将docker服务设置成开机自启动。
@@ -67,7 +67,7 @@ root@ssli-centos7:~$ systemctl enable docker
 6）运行docker hello world示例：
 
 ```
-root@ssli-centos7:~$ docker pull hello-world
+$ docker pull hello-world
 Using default tag: latest
 latest: Pulling from library/hello-world
 ca4f61b1923c: Pull complete
@@ -76,7 +76,7 @@ Status: Downloaded newer image for hello-world:latest
 ```
 
 ```
-root@ssli-centos7:~$ docker run hello-world
+$ docker run hello-world
 
 Hello from Docker!
 This message shows that your installation appears to be working correctly.

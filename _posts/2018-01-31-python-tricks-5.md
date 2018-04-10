@@ -10,7 +10,7 @@ date: 2018-01-31 22:59:00
 
 
 ```
-root@master:~$ pydoc sys.exit
+$ pydoc sys.exit
 Help on built-in function exit in sys:
 
 sys.exit = exit(...)
@@ -22,7 +22,7 @@ sys.exit = exit(...)
     If it is another kind of object, it will be printed and the system
     exit status will be one (i.e., failure).
 
-root@master:~$ pydoc sorted
+$ pydoc sorted
 Help on built-in function sorted in module __builtin__:
 
 sorted(...)
@@ -46,11 +46,11 @@ print 'hello, world!'
 将python代码打包成独立的二进制文件步骤：
 
 ```
-root@master:demo$ python hello_world.py
+$ python hello_world.py
 hello, world!
-root@master:demo$ pip install pyinstaller
-root@master:demo$ pyinstaller -F hello_world.py
-root@master:demo$ cd ./dist/
+$ pip install pyinstaller
+$ pyinstaller -F hello_world.py
+$ cd ./dist/
 root@master:dist$ ./hello_world
 hello, world!
 ```
@@ -93,8 +93,8 @@ Only actual code should be reindented.
 安装autopep8，并使用autopep8格式化demo.py代码：
 
 ```
-root@master:demo$ pip install autopep8
-root@master:demo$ autopep8 --in-place --aggressive --aggressive demo.py
+$ pip install autopep8
+$ autopep8 --in-place --aggressive --aggressive demo.py
 ```
 
 格式化后的demo.py代码：

@@ -9,13 +9,13 @@ date: 2018-03-01 12:05:00
 ### 1 pip安装指定版本号的包
 
 ```
-root@master:demo$ pip install redis==2.7.4
+$ pip install redis==2.7.4
 OK
 CLOSED
 Collecting redis==2.7.4
 Installing collected packages: redis
 Successfully installed redis-2.7.4
-root@master:demo$ pip uninstall redis
+$ pip uninstall redis
 OK
 CLOSED
 Uninstalling redis-2.7.4:
@@ -40,7 +40,7 @@ Uninstalling redis-2.7.4:
   /opt/python-2.7.10/lib/python2.7/site-packages/redis/utils.pyc
 Proceed (y/n)? y
   Successfully uninstalled redis-2.7.4
-root@master:demo$ pip install redis==2.7.6
+$ pip install redis==2.7.6
 OK
 CLOSED
 Collecting redis==2.7.6
@@ -53,7 +53,7 @@ Successfully installed redis-2.7.6
 ### 2 以脚本形式运行python模块
 
 ```
-root@master:demo$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
+$ python -m timeit -s 'import time' -n 1 'time.sleep(0.88)'
 1 loops, best of 3: 881 msec per loop
 ```
 
