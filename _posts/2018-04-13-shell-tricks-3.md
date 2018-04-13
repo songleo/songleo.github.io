@@ -73,7 +73,7 @@ Proceed (y/n)?   Successfully uninstalled redis-2.10.6
 
 ### 2 运行c代码
 
-```c
+```
 $ cat helloworld.c
 
 #include <stdio.h>
@@ -98,7 +98,7 @@ helloworld.c
 
 定义的crn函数如下：
 
-```
+```bash
 crn(){
     gcc $* -g;
     if [ $? -ne 0 ]; then
@@ -114,7 +114,7 @@ crn(){
 
 ### 3 解压常见格式的压缩包
 
-```
+```bash
 ltar(){
 if [ -f $1 ]; then
 case $1 in
