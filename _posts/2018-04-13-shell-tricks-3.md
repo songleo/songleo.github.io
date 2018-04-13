@@ -73,7 +73,7 @@ Proceed (y/n)?   Successfully uninstalled redis-2.10.6
 
 ### 2 运行c代码
 
-```
+```c
 $ cat helloworld.c
 
 #include <stdio.h>
