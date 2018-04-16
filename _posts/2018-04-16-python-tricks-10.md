@@ -20,7 +20,7 @@ print my_list
 # [0, 1, 2, 3, 4, 8]
 ```
 
-示例中，通过del语句，可以很方便删除列表中的某个元素和部分元素。这里需要注意，指定的索引值不能大于列表最大长度-1，否则会抛出IndexError异常，另外，list对象的pop方法和remove方法也可以删除元素。
+示例中，通过del语句，可以很方便删除列表中的某个元素或者部分元素。这里需要注意，指定的索引值不能大于列表最大长度-1，否则会抛出IndexError异常，另外，list对象的pop方法和remove方法也可以删除元素。
 
 ### 2 清空列表元素
 
@@ -61,8 +61,6 @@ print odd_num_list
 
 - lc-clauses表示以下语句，可以是0个或者多个：
 
-```
-  for target in iterable if expression
-```
+> for target in iterable if expression
 
 列表解析详见：https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
