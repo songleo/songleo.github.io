@@ -59,7 +59,7 @@ print odd_num_list
 
 > [ expression for target in iterable lc-clauses ]
 
-- lc-clauses表示以下语句，可以是0个或者多个：
+lc-clauses表示以下语句（可以是0个或者多个）：
 
 > for target in iterable if expression
 
