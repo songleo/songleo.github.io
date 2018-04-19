@@ -64,3 +64,5 @@ lc-clauses表示以下语句（可以是0个或者多个）：
 > for target in iterable if expression
 
 列表解析详见：https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
+
+我的博客即将搬运同步至腾讯云+社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=vfw3ljg3d9co
