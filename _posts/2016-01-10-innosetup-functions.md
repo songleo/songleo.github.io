@@ -12,7 +12,7 @@ begin
   GetWindowsVersionEx(Version);
   if Version.Major = 6 then
   begin
-    Result := True;   
+    Result := True;
   end else
   begin
       Result := False;
