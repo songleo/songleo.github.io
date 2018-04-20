@@ -42,7 +42,7 @@ $ ./get_cur_dir.sh
 script dir is </media/sf_share/git/bash_practice>
 ```
 
-通过在脚本顶部添加-x选项，当运行脚本时会打印出了每一行命令，输出的+号个数表示命令的嵌套层数。从示例中可以，添加-x选项后，执行该脚本输出可以清楚看到每条命令执行的情况，方便调试脚本。如果去掉-x选项，运行脚本的只会打印：script dir is </media/sf_share/git/bash_practice>
+通过在脚本顶部添加-x选项，运行脚本时会打印出每一行命令，输出的+号个数表示命令的嵌套层数，从输出可以清楚看到每条命令执行的情况，方便调试脚本。如果去掉-x选项，运行脚本的只会打印：script dir is </media/sf_share/git/bash_practice>
 
 ### 3 获取脚本所在目录
 
