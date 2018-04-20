@@ -21,14 +21,14 @@ date: 2018-04-20 00:05:00
 
 ### 2 bash调试模式
 
-```
+```bash
 #!/bin/bash -x
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo script dir is "<$script_dir>"
 ```
 
-```
+```bash
 $ ./get_cur_dir.sh
 +++ dirname ./get_cur_dir.sh
 ++ cd .
@@ -42,7 +42,7 @@ script dir is </media/sf_share/git/bash_practice>
 
 ### 3 获取脚本所在目录
 
-```
+```bash
 #!/bin/bash
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -51,7 +51,7 @@ echo script dir is "<$script_dir>"
 
 运行脚本如下：
 
-```
+```bash
 $ . ./get_cur_dir.sh
 script dir is </media/sf_share/git/bash_practice>
 $ source ./get_cur_dir.sh
