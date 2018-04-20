@@ -17,9 +17,11 @@ date: 2018-04-20 00:05:00
 - Ctrl+A：移动光标到行首
 - Ctrl+E：移动光标到行尾
 
-这8个快捷键在命令行操作时会经常用到，如果你没有使用过，多用几次就习惯了，另外，多记住几个快捷键没有什么坏处。
+这8个快捷键在命令行操作时会经常用到，如果你没有使用过，多用几次就习惯了，另外，多记住几个快捷键没什么坏处。
 
 ### 2 bash调试模式
+
+示例脚本：
 
 ```bash
 #!/bin/bash -x
@@ -27,6 +29,8 @@ date: 2018-04-20 00:05:00
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo script dir is "<$script_dir>"
 ```
+
+运行脚本：
 
 ```bash
 $ ./get_cur_dir.sh
@@ -42,6 +46,8 @@ script dir is </media/sf_share/git/bash_practice>
 
 ### 3 获取脚本所在目录
 
+示例脚本：
+
 ```bash
 #!/bin/bash
 
@@ -49,7 +55,7 @@ script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo script dir is "<$script_dir>"
 ```
 
-运行脚本如下：
+运行脚本：
 
 ```bash
 $ . ./get_cur_dir.sh
