@@ -106,7 +106,7 @@ e\pkg\windows_amd64 main.o
 call demo ...
 ```
 
-但是，如果删除了静态库demo.a，就不能编译链接main.go了，如下：
+但是，如果删除了静态库demo.a，就不能编译main.go了，如下：
 
 ```
 >go tool compile -I E:\share\git\go_practice\pkg\win
