@@ -75,7 +75,7 @@ dows_amd64 main.go
 ```
 
 -I选项指定了demo包安装的路径，供main.go导入使用，即E:\share\git\go_practice\pkg\win
-dows_amd64目录，编译成功后会生成相应的main.go文件。
+dows_amd64目录，编译成功后会生成相应的main.o文件。
 
 ### 3 链接main.o
 
