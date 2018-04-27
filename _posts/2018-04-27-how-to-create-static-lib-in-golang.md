@@ -70,8 +70,7 @@ call demo ...
 进入main.go所在目录，编译main.go：
 
 ```
->go tool compile -I E:\share\git\go_practice\pkg\win
-dows_amd64 main.go
+>go tool compile -I E:\share\git\go_practice\pkg\windows_amd64 main.go
 ```
 
 -I选项指定了demo包安装的路径，供main.go导入使用，即E:\share\git\go_practice\pkg\win
@@ -96,11 +95,9 @@ call demo ...
 现在，就算把demo目录删除，再次编译链接main.go，也能正确生成main.exe:
 
 ```
->go tool compile -I E:\share\git\go_practice\pkg\win
-dows_amd64 main.go
+>go tool compile -I E:\share\git\go_practice\pkg\windows_amd64 main.go
 
->go tool link -o main.exe -L E:\share\git\go_practic
-e\pkg\windows_amd64 main.o
+>go tool link -o main.exe -L E:\share\git\go_practice\pkg\windows_amd64 main.o
 
 >main.exe
 call demo ...
@@ -109,8 +106,7 @@ call demo ...
 但是，如果删除了静态库demo.a，就不能编译main.go了，如下：
 
 ```
->go tool compile -I E:\share\git\go_practice\pkg\win
-dows_amd64 main.go
+>go tool compile -I E:\share\git\go_practice\pkg\windows_amd64 main.go
 main.go:3: can't find import: "demo"
 ```
 
