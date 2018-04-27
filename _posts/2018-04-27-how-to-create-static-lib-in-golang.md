@@ -75,7 +75,7 @@ dows_amd64 main.go
 ```
 
 -I选项指定了demo包安装的路径，供main.go导入使用，即E:\share\git\go_practice\pkg\win
-dows_amd64目录，编译成功后会生成相应的main.o文件。
+dows_amd64目录，编译成功后会生成相应的目标文件main.o。
 
 ### 3 链接main.o
 
@@ -84,7 +84,7 @@ dows_amd64目录，编译成功后会生成相应的main.o文件。
 ```
 
 -L选项指定了静态库demo.a所在路径，即E:\share\git\go_practice\pkg\win
-dows_amd64目录，链接成功后生成相应的main.exe。
+dows_amd64目录，链接成功后生成相应的可执行文件main.exe。
 
 ### 4 运行main.exe
 
