@@ -67,7 +67,7 @@ call demo ...
 
 ### 2 编译main.go
 
-进入main.go所在目录，编译main.go。
+进入main.go所在目录，编译main.go：
 
 ```
 >go tool compile -I E:\share\git\go_practice\pkg\win
