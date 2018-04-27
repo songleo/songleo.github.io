@@ -24,7 +24,7 @@ E:\SHARE\GIT\GO_PRACTICE\SRC
 
 ```
 
-在GOPATH下的src目录，有demo包和使用demo包的应用程序main.go，main.go代码如下：
+在GOPATH下\src目录，有demo包和使用demo包的应用程序main.go，main.go代码如下：
 
 ```go
 package main
