@@ -4,7 +4,7 @@ title: go语言静态库制作和使用
 date: 2018-04-27 22:30:00
 ---
 
-这里以windows平台作为示例，linux平台步骤一样，具体环境如下：
+本文主要介绍go语言静态库的制作和使用方法，以windows平台为例，linux平台步骤一样，具体环境如下：
 
 ```
 >echo %GOPATH%
@@ -24,7 +24,7 @@ E:\SHARE\GIT\GO_PRACTICE\SRC
 
 ```
 
-这是需要引用demo.go的main.go：
+在GOPATH目录下的src目录，有demo包和使用demo包的应用程序main.go，main.go代码如下：
 
 ```go
 package main
@@ -36,7 +36,7 @@ func main() {
 }
 ```
 
-这是需要编译成静态库的demo.go：
+demo包中的demo.go代码如下：
 
 ```go
 package demo
@@ -48,7 +48,7 @@ func Demo() {
 }
 ```
 
-demo.go是在GOPATH\src目录下的一个包，main.go可以直接使用该包，运行main.go如下：
+由于demo.go是在GOPATH\src目录下的一个包，main.go在import该包后，可以直接使用，运行main.go：
 
 ```
 >go run main.go
@@ -74,8 +74,8 @@ call demo ...
 dows_amd64 main.go
 ```
 
--I选项指定了demo包安装的安装路径，供main.go导入使用，即E:\share\git\go_practice\pkg\win
-dows_amd64目录。
+-I选项指定了demo包安装的路径，供main.go导入使用，即E:\share\git\go_practice\pkg\win
+dows_amd64目录，编译成功后会生成相应的main.go文件。
 
 ### 3 链接main.o
 
@@ -84,7 +84,7 @@ dows_amd64目录。
 ```
 
 -L选项指定了静态库demo.a所在路径，即E:\share\git\go_practice\pkg\win
-dows_amd64目录。链接静态库demo.a，生成相应的二进制文件main.exe。
+dows_amd64目录，链接成功后生成相应的main.exe。
 
 ### 4 运行main.exe
 
