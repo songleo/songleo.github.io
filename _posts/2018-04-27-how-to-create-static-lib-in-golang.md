@@ -24,7 +24,7 @@ E:\SHARE\GIT\GO_PRACTICE\SRC
 
 ```
 
-在GOPATH\src目录，有demo包和使用demo包的应用程序main.go，main.go代码如下：
+在%GOPATH%\src目录，有demo包和使用demo包的应用程序main.go，main.go代码如下：
 
 ```go
 package main
@@ -48,7 +48,7 @@ func Demo() {
 }
 ```
 
-由于demo.go是在GOPATH\src目录下的一个包，main.go在import该包后，可以直接使用，运行main.go：
+由于demo.go是在%GOPATH%\src目录下的一个包，main.go在import该包后，可以直接使用，运行main.go：
 
 ```
 >go run main.go
@@ -63,7 +63,7 @@ call demo ...
 >go install demo
 ```
 
-在命令行运行go install demo命令，会在GOPATH目录下生相应的静态库文件demo.a（windows平台一般在GOPATH\pkg\windows_amd64目录）。
+在命令行运行go install demo命令，会在%GOPATH%目录下生相应的静态库文件demo.a（windows平台一般在%GOPATH%\src\pkg\windows_amd64目录）。
 
 ### 2 编译main.go
 
