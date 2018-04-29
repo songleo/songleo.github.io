@@ -44,7 +44,7 @@ func Demo() {
 }
 ```
 
-由于demo.go是在$GOPATH/src目录下的一个包，main.go在import该包后，可以直接使用，运行main.go：
+由于demo.go是$GOPATH/src目录下的一个包，main.go在import该包后，可以直接使用，运行main.go：
 
 ```
 $ go run main.go
@@ -94,7 +94,7 @@ $ ./main
 call demo ...
 ```
 
-示例中可以看到，以动态库方式编译生成的可执行文件大小才16K。如果以静态库方式编译，可执行文件大小为1.5M，如下所示：
+从示例中可以看到，以动态库方式编译生成的可执行文件main大小才16K。如果以静态库方式编译，可执行文件main大小为1.5M，如下所示：
 
 ```
 $ go build main.go

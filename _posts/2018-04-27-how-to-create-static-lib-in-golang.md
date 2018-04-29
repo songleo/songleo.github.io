@@ -48,7 +48,7 @@ func Demo() {
 }
 ```
 
-由于demo.go是在%GOPATH%\src目录下的一个包，main.go在import该包后，可以直接使用，运行main.go：
+由于demo.go是%GOPATH%\src目录下的一个包，main.go在import该包后，可以直接使用，运行main.go：
 
 ```
 >go run main.go
