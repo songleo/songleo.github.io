@@ -82,8 +82,8 @@ dows_amd64目录，编译成功后会生成相应的目标文件main.o。
 >go tool link -o main.exe -L E:\share\git\go_practice\pkg\windows_amd64 main.o
 ```
 
--L选项指定了静态库demo.a所在路径，即E:\share\git\go_practice\pkg\win
-dows_amd64目录，链接成功后生成相应的可执行文件main.exe。
+-L选项指定了静态库demo.a的路径，即E:\share\git\go_practice\pkg\win
+dows_amd64目录，链接成功后会生成相应的可执行文件main.exe。
 
 ### 4 运行main.exe
 
