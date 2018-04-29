@@ -1,6 +1,6 @@
 ---
 layout: post
-title: go语言静态库创建和使用
+title: go语言静态库的创建和使用
 date: 2018-04-27 22:30:00
 ---
 
