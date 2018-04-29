@@ -103,11 +103,11 @@ call demo ...
 call demo ...
 ```
 
-但是，如果删除了静态库demo.a，就不能编译main.go了，如下：
+但是，如果删除了静态库demo.a，就不能编译main.go，如下：
 
 ```
 >go tool compile -I E:\share\git\go_practice\pkg\windows_amd64 main.go
 main.go:3: can't find import: "demo"
 ```
 
-这就是go语言静态库的编译和使用方法，下次介绍动态库的编译和使用方法。
+以上就是go语言静态库的编译和使用方法，下次介绍动态库的编译和使用方法。
