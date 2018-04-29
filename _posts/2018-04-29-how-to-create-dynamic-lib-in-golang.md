@@ -130,4 +130,4 @@ main.go:3:8: no buildable Go source files in /media/sf_share/git/go_practice/src
 
 相关文章：
 
-- [go语言静态库的编译和使用](http://reborncodinglife.com/2018/04/27/how-to-create-static-lib-in-golang/)
+> [go语言静态库的编译和使用](http://reborncodinglife.com/2018/04/27/how-to-create-static-lib-in-golang/)
