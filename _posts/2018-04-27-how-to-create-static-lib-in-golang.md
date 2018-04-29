@@ -73,7 +73,7 @@ call demo ...
 >go tool compile -I E:\share\git\go_practice\pkg\windows_amd64 main.go
 ```
 
--I选项指定了demo包安装的路径，供main.go导入使用，即E:\share\git\go_practice\pkg\win
+-I选项指定了demo包的安装路径，供main.go导入使用，即E:\share\git\go_practice\pkg\win
 dows_amd64目录，编译成功后会生成相应的目标文件main.o。
 
 ### 3 链接main.o
@@ -110,4 +110,4 @@ call demo ...
 main.go:3: can't find import: "demo"
 ```
 
-这就是go语言静态库的编译和使用方法，下次介绍动态库的编译和使用方式。
+这就是go语言静态库的编译和使用方法，下次介绍动态库的编译和使用方法。
