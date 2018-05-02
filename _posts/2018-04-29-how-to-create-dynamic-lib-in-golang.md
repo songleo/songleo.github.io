@@ -109,7 +109,7 @@ $ ./main
 call demo ...
 ```
 
-以动态库方式编译时，如果删除动态库libdemo.so或者标准动态库libstd.so，运行main都会由于找不到动态库导致出错，例如删除动态库libdemo.so：
+以动态库方式编译时，如果删除动态库libdemo.so或者动态库libstd.so，运行main都会由于找不到动态库导致出错，例如删除动态库libdemo.so：
 
 ```
 $ rm ../pkg/linux_amd64_dynlink/libdemo.so
