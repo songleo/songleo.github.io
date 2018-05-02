@@ -59,7 +59,7 @@ call demo ...
 $ go install -buildmode=shared -linkshared  std
 ```
 
-在命令行运行go install -buildmode=shared -linkshared  std命令，-buildmode指定编译模式为共享模式，-linkshared表示链接动态库，成功编译会在$GOROOT目录下生标准库的动态库文件libstd.so，一般位于$GOROOT/pkg/linux_amd64_dynlink目录：
+在命令行运行go install -buildmode=shared -linkshared  std命令，-buildmode指定编译模式为共享模式，-linkshared表示链接动态库，成功编译后会在$GOROOT目录下生标准库的动态库文件libstd.so，一般位于$GOROOT/pkg/linux_amd64_dynlink目录：
 
 ```
 $ cd $GOROOT/pkg/linux_amd64_dynlink
