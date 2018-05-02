@@ -117,7 +117,7 @@ $ ./main
 ./main: error while loading shared libraries: libdemo.so: cannot open shared object file: No such file or directory
 ```
 
-以上就是go语言动态库的编译和使用方法，需要注意的是，其他go程序在使用go动态库时，必须提供动态库的源码，否则会编译失败。例如，这里将demo.go代码删除，再以动态库方式编译main.go时，就会编译失败：
+以上就是go语言动态库的编译和使用方法，需要注意的是，其他go程序在使用go动态库时，必须提供动态库的源码，否则会编译失败。例如，这里将demo.go代码删除，再以动态库方式编译main.go时，会编译失败：
 
 ```
 $ go install  -buildmode=shared -linkshared demo
@@ -126,7 +126,7 @@ $ go build -linkshared main.go
 main.go:3:8: no buildable Go source files in /media/sf_share/git/go_practice/src/demo
 ```
 
-动态库编译方式和静态库不一样，静态库可以不提供源码，直接使用静态库编译，而动态库就不行。
+动态库编译方式和静态库不一样，静态库可以不提供源码，直接使用静态库编译，而动态库不行。
 
 相关文章：
 
