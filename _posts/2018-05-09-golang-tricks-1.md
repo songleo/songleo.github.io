@@ -22,7 +22,11 @@ func Exit(code int)
 
 ```
 
-通过go doc命令，可以很方便查看go语言相关API的文档信息。例如示例中查看了strings.Trim和os.Exit的文档信息。
+go doc命令会从go程序和包文件中提取顶级声明的首行注释以及每个对象的相关注释，并生成相关文档，通过go doc命令，可以很方便查看go语言相关API的文档信息，例如示例中查看了strings.Trim和os.Exit的文档信息。使用示例：
+
+- go doc package：获取包的文档信息
+- go doc package/subpackage：获取子包的文档信息
+- go doc package.function：获取包中函数的文档信息
 
 ### 2 检测代码错误
 
