@@ -26,7 +26,7 @@ func Exit(code int)
 
 ### 2 检测代码错误
 
-示例代码vet_demo.go如下：
+示例代码demo.go如下：
 
 ```go
 package main
@@ -47,10 +47,10 @@ func main() {
 使用vet工具检测代码：
 
 ```
-$ go build vet_demo.go
-$ go tool vet vet_demo.go
-vet_demo.go:7: arg num for printf verb %s of wrong type: int
-vet_demo.go:8: wrong number of args for format in Printf call: 1 needed but 3 args
+$ go build demo.go
+$ go tool vet demo.go
+demo.go:7: arg num for printf verb %s of wrong type: int
+demo.go:8: wrong number of args for format in Printf call: 1 needed but 3 args
 ```
 
 通过go tool vet工具，可以检测到go代码中一些可疑的结构，虽然vet不确保发现的问题都是真正的错误，但是它可以发现一些编译器无法捕获到的错误。例如在示例中，这段代码能正常的编译通过，但是通过vet检测出2个问题，第一个问题是打印的格式与参数类型不匹配，第二个问题需要打印的参数和所给参数数量不一致。
