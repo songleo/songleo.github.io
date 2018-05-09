@@ -83,7 +83,7 @@ type SafeMap struct {
 }
 
 func main() {
-    safeMap := newSafeMap(10)
+    safeMap := newSafeMap()
 
     for i := 0; i < 100000; i++ {
         go safeMap.writeMap(i, i)
@@ -92,7 +92,7 @@ func main() {
 
 }
 
-func newSafeMap(size int) *SafeMap {
+func newSafeMap() *SafeMap {
     sm := new(SafeMap)
     sm.Map = make(map[int]int)
     return sm

@@ -30,7 +30,7 @@ go doc命令会从go代码中提取顶级声明的首行注释以及每个对象
 - go doc package/subpackage：获取子包的文档信息
 - go doc package.function：获取包中函数的文档信息
 
-或者通过godoc，可以生成web版的文档信息，在命令行输入godoc -http=:6060，然后使用浏览器打开http://localhost:6060， 就可以看到web版的文档信息。
+或者通过godoc，可以生成web版的文档信息，在命令行输入godoc -http=:6060，然后使用浏览器打开[http://localhost:6060](http://localhost:6060)，就可以看到web版的文档信息。
 
 ### 2 检测代码错误
 
