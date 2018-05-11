@@ -42,7 +42,9 @@ func (m *Map) Write(key int, value int) {
 }
 ```
 
-```
+错误示例：
+
+```go
 func (m *Map) Read(key int) int {
     // m.RLock()
     value := m.Data[key]
@@ -63,7 +65,7 @@ fatal error: concurrent map writes
 */
 ```
 
-多协程并发访问map时，有可能会导致程序退出，错误信息为：fatal error: concurrent map read and map write或者fatal error: concurrent map writes，所以如果希望在多协程中并发访问map，必须提供某种同步机制，一般情况下通过读写锁sync.RWMutex实现对map的并发访问控制，将map和sync.RWMutex封装一下，可以实现对map的安全并发访问。示例中，如果注释掉加锁和解锁的代码，运行时就会出现并发访问map错误。
+多协程并发访问map时，有可能会导致程序退出，错误信息为：fatal error: concurrent map read and map write 或者 fatal error: concurrent map writes，所以如果希望在多协程中并发访问map，必须提供某种同步机制，一般情况下通过读写锁sync.RWMutex实现对map的并发访问控制，将map和sync.RWMutex封装一下，可以实现对map的安全并发访问。示例中，如果注释掉加锁和解锁的代码，运行时就会出现并发访问map错误。
 
 ### 2 结构体转换成json字符串时忽略字段
 
