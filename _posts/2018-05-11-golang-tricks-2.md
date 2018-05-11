@@ -137,5 +137,5 @@ true
 */
 ```
 
-在使用go语言过程中，有时需要比较2个结构体是否“相等”，即结构体字段和字段值都相同。如果自己实现比较函数，当结构体字段比较多时比较麻烦。通过使用[reflect.DeepEqual](https://golang.org/pkg/reflect/#DeepEqual)可以实现判断2个结构体是否相等，但会有一定的性能影响。另外，reflect.DeepEqual不但可以比较结构体，像切片、数组和字典等都可以比较。
+在使用go语言过程中，有时需要比较2个结构体是否“相等”，即结构体字段和字段值都相同。如果自己实现比较函数，当结构体字段多时比较麻烦。通过使用[reflect.DeepEqual](https://golang.org/pkg/reflect/#DeepEqual)可以实现判断2个结构体是否相等，但会有一定的性能影响。另外，reflect.DeepEqual不但可以比较结构体，像切片、数组和字典等都可以比较。
 
