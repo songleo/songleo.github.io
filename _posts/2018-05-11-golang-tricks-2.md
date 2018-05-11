@@ -42,7 +42,7 @@ func (m *Map) Write(key int, value int) {
 }
 ```
 
-错误示例：
+注释掉加锁和解锁的代码：
 
 ```go
 func (m *Map) Read(key int) int {
