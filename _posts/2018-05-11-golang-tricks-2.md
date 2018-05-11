@@ -8,7 +8,7 @@ date: 2018-05-11 00:05:00
 
 ### 1 并发访问map
 
-```
+```go
 package main
 
 import "sync"
