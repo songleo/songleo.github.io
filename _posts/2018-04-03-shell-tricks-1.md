@@ -13,7 +13,7 @@ date: 2018-04-03 00:05:01
 ```
 $ cat demo
 this is demo
-$ sed -i s/demo/test/g demo
+$ sed -i "s/demo/test/g" demo
 $ cat demo
 this is test
 ```
