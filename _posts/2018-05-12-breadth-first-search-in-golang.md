@@ -6,7 +6,7 @@ date: 2018-05-12 00:05:00
 
 本文通过go实现广度优先搜索算法，如下图：
 
-![](/images/bfs_graph.png)
+![](/images/bfs_graph.jpg)
 
 ```go
 package main
