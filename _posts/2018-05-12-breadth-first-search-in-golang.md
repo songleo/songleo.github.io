@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 广度优先搜索算法（golang）
+title: 广度优先搜索算法（go）
 date: 2018-05-12 00:05:00
 ---
 
-本文通过go实现广度优先搜索算法，如下图：
+本文主要介绍go语言实现广度优先搜索算法，借助该算法从下图中寻找出一个芒果销售商（名字以字母`m`结尾）：
 
 ![](./image/bfs_graph.jpg)
 
@@ -67,3 +67,5 @@ func breadthFirstSearch(graph map[string][]string, name string) bool {
     return false
 }
 ```
+
+## 参考：《算法图解》
