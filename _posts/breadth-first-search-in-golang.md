@@ -35,16 +35,16 @@ func personIsSeller(name string) bool {
 }
 
 func createFriendCircle() map[string][]string {
-    friendCircle := make(map[string][]string)
-    friendCircle["you"] = []string{"alice", "bob", "claire"}
-    friendCircle["bob"] = []string{"anuj", "peggy"}
-    friendCircle["alice"] = []string{"peggy"}
-    friendCircle["claire"] = []string{"thom", "jonny"}
-    friendCircle["anuj"] = []string{}
-    friendCircle["peggy"] = []string{}
-    friendCircle["thom"] = []string{}
-    friendCircle["jonny"] = []string{}
-    return friendCircle
+    fc := make(map[string][]string)
+    fc["you"] = []string{"alice", "bob", "claire"}
+    fc["bob"] = []string{"anuj", "peggy"}
+    fc["alice"] = []string{"peggy"}
+    fc["claire"] = []string{"thom", "jonny"}
+    fc["anuj"] = []string{}
+    fc["peggy"] = []string{}
+    fc["thom"] = []string{}
+    fc["jonny"] = []string{}
+    return fc
 }
 
 func breadthFirstSearch(friendCircle map[string][]string) bool {
