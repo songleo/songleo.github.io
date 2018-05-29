@@ -70,7 +70,7 @@ total 12
 -rwxr-x---. 1 root root 8576 May 29 10:44 checkpoint_demo
 ```
 
-可以看到，在/root/chkpnt_dir目录下面只有一个文件checkpoint_demo，运行示例程序：
+可以看到，在/root/chkpnt_dir目录下只有一个文件checkpoint_demo，运行示例程序：
 
 ```
 $ ./checkpoint_demo
@@ -171,4 +171,4 @@ root     15748 15749  0 11:05 pts/2    00:00:00 ./checkpoint_demo
 root     15759 15340  0 11:05 pts/1    00:00:00 grep --color=auto checkpoint_demo
 ```
 
-通过criu的restore命令，-D选项指定应用的快照文件保存目录，checkpoint时指定的应用程序是由shell启动，所以restore时需要指定相应的-j选项，由示例中可以看到，恢复后的程序从设置checkpoint的时间点继续运行，程序在输出26时被kill掉，恢复后继续输出27，恢复后查找进程15748，发现进程使用原来的进程号继续执行。
+通过criu的restore命令，-D选项指定应用的快照文件保存目录，checkpoint时指定的应用程序是由shell启动，所以restore时需要指定相应的-j选项，由示例中可以看到，恢复后的程序从设置checkpoint的时间点继续运行，程序在输出26时被kill掉，恢复后继续输出27，恢复后查找进程15748，发现进程使用原来的进程号继续运行。
