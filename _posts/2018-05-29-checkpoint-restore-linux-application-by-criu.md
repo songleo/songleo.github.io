@@ -4,7 +4,7 @@ title: 如何通过criu checkpoint/restore应用
 date: 2018-05-29 00:05:00
 ---
 
-[criu](https://criu.org/Main_Page)是linux平台在用户空间实现checkpoint/restore功能的工具软件。通过该工具，可以冻结正在运行的应用程序或者其中的一部分，并将应用程序的执行状态以文件形式保存在磁盘上，然后通过这些快照文件，可以将应用程序从冻结的时间点恢复回来继续运行。借助该软件，可以实现应用的实时迁移、应用快照和远程调试等功能。criu最显著的特点是在用户空间实现checkpoint/restore，不需要修改应用程序的代码或者修改操作系统，并且也是内核中功能最丰富和最活跃的。
+[criu](https://criu.org/Main_Page)是linux平台在用户空间实现checkpoint/restore功能的工具软件。通过该工具，可以冻结正在运行的应用程序或者其中的一部分，并将应用程序的执行状态以文件形式保存在磁盘上，然后通过这些快照文件，可以将应用程序从冻结的时间点恢复回来继续运行。借助该软件，可以实现应用的实时迁移、应用快照和远程调试等功能。criu最显著的特点是在用户空间实现checkpoint/restore，不需要修改应用程序或者操作系统，并且也是内核中功能最丰富和最活跃的。
 
 本文主要介绍如何在centos7安装criu，并通过criu checkpoint冻结应用，然后restore恢复应用。
 
@@ -29,7 +29,7 @@ Resolving Dependencies
 
 ### 2 设置应用的checkpoint
 
-示例程序是一个不断打印数字的c程序，checkpoint_demo代码如下：
+示例程序是一个不断打印数字的c程序，checkpoint_demo.c代码如下：
 
 ```c
 #include <stdio.h>
@@ -60,7 +60,7 @@ $ ./checkpoint_demo
 6
 ```
 
-将示例程序编译后复制到/root/chkpnt_dir目录。
+将示例程序复制到/root/chkpnt_dir目录。
 
 ```
 $ pwd
@@ -70,7 +70,7 @@ total 12
 -rwxr-x---. 1 root root 8576 May 29 10:44 checkpoint_demo
 ```
 
-可以看到，在/root/chkpnt_dir下面只有一个文件，即checkpoint_demo，运行示例程序：
+可以看到，在/root/chkpnt_dir目录下面只有一个文件，即checkpoint_demo，运行示例程序：
 
 ```
 $ ./checkpoint_demo
@@ -113,7 +113,7 @@ total 164
 -rw-r--r--. 1 root root    177 May 29 10:56 tty-info.img
 ```
 
-通过criu的-D选项指定应用的快照文件保存目录，-j表示该应用是一个通过shell启动的作业，通过-t指定需要checkpoint的pid。当对应用设置checkpoint后，应用会自动退出，如果希望应用继续执行，需指定-R选项或者--leave-running选项。由示例中可以看到，当设置进程15748的checkpoint后，再查找该进程，发现进程不存在，即进程已经退出。查看快照文件目录，生成很多img文件，这些文件主要用于恢复应用。这时候查看运行示例程序的终端，会发现程序已经终止运行，如下：
+通过criu的dump命令，-D选项指定应用的快照文件保存目录，-j表示该应用是一个通过shell启动的作业，通过-t指定需要checkpoint的应用pid。当对应用设置checkpoint后，应用会自动退出，如果希望应用继续执行，需指定-R或--leave-running选项。由示例中可以看到，当设置进程15748的checkpoint后，再查找该进程，发现进程不存在，即进程已经退出。查看快照文件目录，生成很多img文件，这些文件主要用于恢复应用。这时候查看运行示例程序的终端，会发现程序已经终止运行，如下：
 
 ```
 $ ./checkpoint_demo
@@ -171,4 +171,4 @@ root     15748 15749  0 11:05 pts/2    00:00:00 ./checkpoint_demo
 root     15759 15340  0 11:05 pts/1    00:00:00 grep --color=auto checkpoint_demo
 ```
 
-通过criu的restore命令，-D选项指定应用的快照文件保存目录，checkpoint应用时指定应用属于shell启动的应用，所以restore时需要指定相应的-j选项，由示例中可以看到，恢复后的程序从设置checkpoint的时间点继续运行，程序在输出26时被kill掉，恢复后继续输出27，恢复后查找进程15748，发现进程继续执行，进程号都没有变，继续使用原来的进程号继续运行。
+通过criu的restore命令，-D选项指定应用的快照文件保存目录，checkpoint时指定的应用程序是由shell启动，所以restore时需要指定相应的-j选项，由示例中可以看到，恢复后的程序从设置checkpoint的时间点继续运行，程序在输出26时被kill掉，恢复后继续输出27，恢复后查找进程15748，发现进程使用原来的进程号继续执行。
