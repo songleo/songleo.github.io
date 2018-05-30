@@ -67,7 +67,7 @@ $ pwd
 /root/chkpnt_dir
 $ ls -l
 total 12
--rwxr-x---. 1 root root 8576 May 29 10:44 checkpoint_demo
+-rwxr-x---. 1 root root 8576 May 29 20:44 checkpoint_demo
 ```
 
 可以看到，在/root/chkpnt_dir目录下只有一个文件checkpoint_demo，运行示例程序：
@@ -89,28 +89,28 @@ $ ./checkpoint_demo
 
 ```
 $ ps -ef | grep checkpoint_demo
-root     15748 15340  0 10:56 pts/1    00:00:00 ./checkpoint_demo
-root     15751 15479  0 10:56 pts/2    00:00:00 grep --color=auto checkpoint_demo
+root     15748 15340  0 20:56 pts/1    00:00:00 ./checkpoint_demo
+root     15751 15479  0 20:56 pts/2    00:00:00 grep --color=auto checkpoint_demo
 $ criu dump -D /root/chkpnt_dir/ -j -t 15748
 Warn  (compel/arch/x86/src/lib/infect.c:249): Will restore 15748 with interrupted system call
 $ ps -ef | grep checkpoint_demo
 root     15963 15479  0 11:03 pts/2    00:00:00 grep --color=auto checkpoint_demo
 $ ls -l
 total 164
--rw-r--r--. 1 root root   3475 May 29 10:56 cgroup.img
--rwxr-x---. 1 root root   8576 May 29 10:44 checkpoint_demo
--rw-r--r--. 1 root root   1778 May 29 10:56 core-15748.img
--rw-r--r--. 1 root root     44 May 29 10:56 fdinfo-2.img
--rw-r--r--. 1 root root    359 May 29 10:56 files.img
--rw-r--r--. 1 root root     18 May 29 10:56 fs-15748.img
--rw-r--r--. 1 root root     32 May 29 10:56 ids-15748.img
--rw-r--r--. 1 root root     40 May 29 10:56 inventory.img
--rw-r--r--. 1 root root    747 May 29 10:56 mm-15748.img
--rw-r--r--. 1 root root    184 May 29 10:56 pagemap-15748.img
--rw-r--r--. 1 root root 106496 May 29 10:56 pages-1.img
--rw-r--r--. 1 root root     26 May 29 10:56 pstree.img
--rw-r--r--. 1 root root     37 May 29 10:56 stats-dump
--rw-r--r--. 1 root root    177 May 29 10:56 tty-info.img
+-rw-r--r--. 1 root root   3475 May 29 20:56 cgroup.img
+-rwxr-x---. 1 root root   8576 May 29 20:44 checkpoint_demo
+-rw-r--r--. 1 root root   1778 May 29 20:56 core-15748.img
+-rw-r--r--. 1 root root     44 May 29 20:56 fdinfo-2.img
+-rw-r--r--. 1 root root    359 May 29 20:56 files.img
+-rw-r--r--. 1 root root     18 May 29 20:56 fs-15748.img
+-rw-r--r--. 1 root root     32 May 29 20:56 ids-15748.img
+-rw-r--r--. 1 root root     40 May 29 20:56 inventory.img
+-rw-r--r--. 1 root root    747 May 29 20:56 mm-15748.img
+-rw-r--r--. 1 root root    184 May 29 20:56 pagemap-15748.img
+-rw-r--r--. 1 root root 106496 May 29 20:56 pages-1.img
+-rw-r--r--. 1 root root     26 May 29 20:56 pstree.img
+-rw-r--r--. 1 root root     37 May 29 20:56 stats-dump
+-rw-r--r--. 1 root root    177 May 29 20:56 tty-info.img
 ```
 
 通过criu的dump命令，-D选项指定应用的快照文件保存目录，-j表示该应用是一个通过shell启动的作业，通过-t指定需要checkpoint的应用pid。当对应用设置checkpoint后，应用会自动退出，如果希望应用继续执行，需指定-R或--leave-running选项。由示例中可以看到，当设置进程15748的checkpoint后，再查找该进程，发现进程不存在，即进程已经退出。查看快照文件目录，生成很多img文件，这些文件主要用于恢复应用。这时候查看运行示例程序的终端，会发现程序已经终止运行，如下：
@@ -167,8 +167,8 @@ $ criu restore -D /root/chkpnt_dir/ -j
 
 ```
 $ ps -ef | grep checkpoint_demo
-root     15748 15749  0 11:05 pts/2    00:00:00 ./checkpoint_demo
-root     15759 15340  0 11:05 pts/1    00:00:00 grep --color=auto checkpoint_demo
+root     15748 15749  0 21:05 pts/2    00:00:00 ./checkpoint_demo
+root     15759 15340  0 21:05 pts/1    00:00:00 grep --color=auto checkpoint_demo
 ```
 
 通过criu的restore命令，-D选项指定应用的快照文件保存目录，checkpoint时指定的应用程序是由shell启动，所以restore时需要指定相应的-j选项。由示例中可以看到，恢复后的程序从设置checkpoint的时间点继续运行，程序在输出26时被kill掉，恢复后继续输出27，恢复后查找进程15748，发现进程使用原来的进程号继续运行。
