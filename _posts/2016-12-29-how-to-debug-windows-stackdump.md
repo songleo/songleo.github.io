@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 如何调试Windows的stackdump文件
+title: 如何调试windows的stackdump文件
 date: 2016-12-29 20:52:32
 ---
 
-在Windows上，通过Cygwin编译的c程序在运行时，若有内存错误也会产生类似Linux上的core文件，但是该文件一般是以stackdump为后缀的文本文件，且文件提供的信息有限，只包含了程序coredump时函数调用的栈信息，不能像Linux一样使用gdb调试。所以，在Windows平台调试Cygwin编译的c程序不太方便。本文介绍一种方法，通过反汇编c程序，结合程序coredump时生成的stackdump文件，可以快速定位出程序的coredump位置。
+在windows上，通过cygwin编译的c程序在运行时，若有内存错误也会产生类似linux上的core文件，但是该文件一般是以stackdump为后缀的文本文件，且文件提供的信息有限，只包含了程序coredump时函数调用的栈信息，不能像linux一样使用gdb调试。所以，在windows平台调试cygwin编译的c程序不太方便。本文介绍一种方法，通过反汇编c程序，结合程序coredump时生成的stackdump文件，可以快速定位出程序的coredump位置。
 
 示例c程序如下：
 
@@ -38,7 +38,7 @@ int main()
 
 该程序在运行时，会产生stackdump文件。因为在f2函数中，调用free释放的内存不是由malloc分配，所以导致程序coredump。当然，这个示例程序比较简答，很容易就知道是由于free非法内存导致coredump。但如果在一个大项目中，定位coredump位置就没那么容易了。
 
-使用Cygwin的gcc编译该程序：
+使用cygwin的gcc编译该程序：
 
     gcc core_dump_demo.c -g -o core_dump_demo
 
@@ -116,7 +116,7 @@ End of stack trace (more stack frames may be present)
     00180xxxxxx
     00100xxxxxx
 
-从反汇编文件中可以看到，00100xxxxxx地址段是示例程序中函数地址，而00180xxxxxx地址段应该是Cygwin库函数地址段。由于栈是先进后出，所以在stackdump文件中，从下往上才是函数的调用顺序。在反汇编文件中查找coredump时最后调用的地址00100401112，就可以定位出具体的coredump位置了。这里需要指出，反汇编文件中的函数地址段没有前2个0，所以在反汇编文件查找00100401112时要省去前面2个0，经过查找，可以看到该地址位于函数f2。如下所示：
+从反汇编文件中可以看到，00100xxxxxx地址段是示例程序中函数地址，而00180xxxxxx地址段应该是cygwin库函数地址段。由于栈是先进后出，所以在stackdump文件中，从下往上才是函数的调用顺序。在反汇编文件中查找coredump时最后调用的地址00100401112，就可以定位出具体的coredump位置了。这里需要指出，反汇编文件中的函数地址段没有前2个0，所以在反汇编文件查找00100401112时要省去前面2个0，经过查找，可以看到该地址位于函数f2。如下所示：
 
 ```
 free(buff);  // coredump
