@@ -27,7 +27,7 @@ $ taskset -cp 14795
 pid 14795's current affinity list: 0,1
 ```
 
-示例中，先查看进程14795的cpu亲和力，使用-p选项指定需要查询的进程号，默认打印的是一个十六进制数3，如果使用-cp选项打印的是一个cpu列表，表示相应的cpu核。3的二进制形式是0011，相应的第0位和第1位都是1，对应了-cp打印的0和1，表示14795进程可以运行在cpu的第0个核和第1个核。
+示例中，查看进程14795的cpu亲和力，使用-p选项指定需要查询的进程号，默认打印的是一个十六进制数，如果使用-cp选项打印的是一个cpu列表，表示相应的cpu核。3的二进制形式是0011，相应的第0位和第1位都是1，对应了-cp打印的0和1，表示14795进程可以运行在cpu的第0个核和第1个核。
 
 ### 3 将应用绑定到指定的cpu运行
 
@@ -45,7 +45,7 @@ pid 14795's current affinity list: 0,1
 pid 14795's new affinity list: 0
 ```
 
-示例中，通过taskset命令重新设置了进程14795的cpu亲和力，前后2种方式设置效果一样，都表示进程14795只能运行在cpu的第0个核。因为-p指定的0x01二进制形式为0001，第0位是1，表示第0个cpu核。-cp直接指定了0，也表示第0个cpu核，两种设置方式都表示指定进程运行在第0个cpu核上面。
+示例中，通过taskset命令重新设置了进程14795的cpu亲和力，前后2种方式设置效果一样，都表示进程14795只能运行在cpu的第0个核。因为-p指定的0x01二进制形式为0001，第0位是1，表示第0个cpu核。-cp直接指定了0，也表示第0个cpu核。
 
 除了通过taskset命令绑定应用到指定的cpu上，也可以通过taskset命令启动应用，并指定应用运行的cpu，例如：
 
@@ -60,4 +60,4 @@ pid 14925's current affinity list: 0
 
 示例中，通过taskset启动应用（使用sleep命令模拟应用），并设置相应的cpu亲和力，即进程14925只能运行在cpu的第0个核。启动程序后查看进程的cpu亲和力，和启动时设置的相同。
 
-另外，除了通过taskset命令实现cpu绑定，很多语言都提供了相应的api实现cpu绑定功能，例如c的`sched_setaffinity`和`sched_getaffinity`，python的`os.sched_setaffinity`和`os.sched_getaffinity`。
+另外，除了通过taskset命令实现cpu绑定，很多语言都提供了相应的api实现cpu绑定功能，例如c的`sched_setaffinity`和`sched_getaffinity`，python 3的`os.sched_setaffinity`和`os.sched_getaffinity`。
