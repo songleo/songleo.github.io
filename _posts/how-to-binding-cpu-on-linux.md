@@ -4,7 +4,7 @@ title: linux应用如何进行cpu绑定
 date: 2018-05-31 00:05:00
 ---
 
-所谓cpu绑定，其实就是对进程或线程设置相应的cpu亲和力（affinity），确保进程或线程只会在设置了相应标志位的cpu上运行，进而提高应用对cpu的使用效率。如果应用可以在多个cpu上运行，操作系统会将应用在各个cpu之间频繁切换，引起cpu缓存失效，降低缓存的命中率，导致cpu的使用效率下降。所以，如果使用cpu绑定技术，在一定程度上会避免上述问题，提升系统性能，类似技术还有gpu绑定、mic绑定等等。
+所谓cpu绑定，其实就是对进程或线程设置相应的cpu亲和力（affinity），确保进程或线程只会在设置了相应标志位的cpu上运行，进而提高应用对cpu的使用效率。如果应用可以在多个cpu上运行，操作系统会在cpu之间频繁切换应用，引起cpu缓存失效，降低缓存的命中率，导致cpu的使用效率下降。所以，如果使用cpu绑定技术，在一定程度上会避免上述问题，提升系统性能，类似技术还有gpu绑定、mic绑定等等。
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
 >
