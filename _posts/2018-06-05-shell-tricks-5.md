@@ -36,7 +36,7 @@ line1
 ```bash
 $ echo line1 2>&1
 line1
-```bash
+```
 
 - 重定向标准输出和标准错误到文件
 
