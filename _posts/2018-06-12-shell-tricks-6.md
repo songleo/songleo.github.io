@@ -30,7 +30,7 @@ $ grep -n "Failed" boot.log
 252:[FAILED] Failed to start Crash recovery kernel arming.
 ```
 
-示例中查询boot.log文件中是否包含字符串Failed，-n选项是为了打印匹配行的行号。
+示例中查询boot.log文件是否包含字符串Failed，-n选项是为了打印匹配行的行号。
 
 ### 2 查询目录或文件
 
@@ -42,7 +42,7 @@ $ find ./python_practice/ -type d -name "*demo*"
 ./python_practice/fluent_python_demo
 ```
 
-示例中，查询python_practice目录下，名字包含字符串demo的所有目录。-type d指定查询类型是目录，-name指定名称包含字符串demo，星号（*）是通配符，表示任意字符。
+示例中查询python_practice目录下，名字包含字符串demo的所有目录。-type d指定查询类型是目录，-name指定名称包含字符串demo，星号（*）是通配符，表示任意字符。
 
 - 查询文件
 
@@ -58,7 +58,7 @@ $ find ./python_practice/ -type f -name "*tips*"
 ./python_practice/demo/python-tips-9.py
 ```
 
-示例中，查询python_practice目录下，名字包含字符串demo的所有文件。-type f指定查询类型是文件，-name指定名称包含字符串tips，星号（*）是通配符，表示任意字符。
+示例中查询python_practice目录下，名字包含字符串demo的所有文件。-type f指定查询类型是文件，-name指定名称包含字符串tips，星号（*）是通配符，表示任意字符。
 
 ### 3 查看机器ip
 
@@ -70,7 +70,7 @@ $ ip
 192.168.122.1
 ```
 
-linux一般通过ifconfig命令查看机器ip，但是如果机器有多块网卡，从ifconfig的输出信息中不容易找到所有ip地址。借助alias命令，定义一个新命令ip，可以快速查看机器的ip地址。示例中，-o选项是为了只打印匹配的字符串，-v选项反向匹配，即不匹配指定的字符串，去除包含数字255和127的ip地址，-E选项是为了使用扩展的正则表达式。由示例中可以看到，通过新命令ip查询机器ip地址时，输出信息更易读。或者直接执行hostname -i命令，也可以查看当前机器使用的ip地址，如下：
+linux一般通过ifconfig命令查看机器ip，但是如果机器有多块网卡，从ifconfig的输出信息中不容易找到所有ip。借助alias命令，定义一个新命令ip，可以快速查看机器的ip。示例中，-o选项是为了只打印匹配的字符串，-v选项反向匹配，即不匹配指定的字符串，去除包含数字255和127的ip，-E选项是为了使用扩展的正则表达式。由示例中可以看到，通过新命令ip查询机器ip时，输出信息更易读。或者直接执行hostname -i命令，也可以查看当前机器使用的ip，如下：
 
 ```bash
 $ hostname -i
