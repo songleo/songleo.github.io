@@ -42,7 +42,7 @@ $ find ./python_practice/ -type d -name "*demo*"
 ./python_practice/fluent_python_demo
 ```
 
-示例中查询python_practice目录下，名字包含字符串demo的所有目录。-type d指定查询类型是目录，-name指定名称包含字符串demo，星号（*）是通配符，表示任意字符。
+示例中查询python_practice目录下，名字包含字符串demo的所有目录。-type d指定查询类型为目录，-name指定名称包含字符串demo，星号（*）是通配符，表示任意字符。
 
 - 查询文件
 
@@ -58,7 +58,7 @@ $ find ./python_practice/ -type f -name "*tips*"
 ./python_practice/demo/python-tips-9.py
 ```
 
-示例中查询python_practice目录下，名字包含字符串demo的所有文件。-type f指定查询类型是文件，-name指定名称包含字符串tips，星号（*）是通配符，表示任意字符。
+示例中查询python_practice目录下，名字包含字符串demo的所有文件。-type f指定查询类型为文件，-name指定名称包含字符串tips，星号（*）是通配符，表示任意字符。
 
 ### 3 查看机器ip
 
