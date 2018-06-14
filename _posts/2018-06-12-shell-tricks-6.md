@@ -58,7 +58,7 @@ $ find ./python_practice/ -type f -name "*tips*"
 ./python_practice/demo/python-tips-9.py
 ```
 
-示例中查询python_practice目录下，名字包含字符串demo的所有文件。-type f指定查询类型为文件，-name指定名称包含字符串tips，星号（*）是通配符，表示任意字符。
+示例中查询python_practice目录下，名字包含字符串tips的所有文件。-type f指定查询类型为文件，-name指定名称包含字符串tips，星号（*）是通配符，表示任意字符。
 
 ### 3 查看机器ip
 
