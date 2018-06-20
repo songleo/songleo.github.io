@@ -75,7 +75,7 @@ name = input()
 greet(name)
 ```
 
-python2和python3的语法有一定的区别，不能直接在python3上面运行python2代码，官方提供了2to3工具，通过该工具（运行yum install python-tools命令安装），可以将python2代码自动转换成python3代码。由示例中可以看到，使用该工具转换后（-w表示将转换后的python代码写入文件），python代码就可以在python3上运行，否则会报语法错误。
+python2和python3的语法有一定的区别，不能直接使用python3运行python2的代码，官方提供了2to3工具，通过该工具（运行yum install python-tools命令安装），可以将python2代码自动转换成python3代码。由示例中可以看到，使用该工具转换后（-w表示将转换后的python代码写入文件），python代码就可以在python3上运行，否则会报语法错误。
 
 ### 2 python代码反汇编
 
@@ -201,4 +201,4 @@ No config file found, using default configuration
 Your code has been rated at 10.00/10 (previous run: 6.32/10, +3.68)
 ```
 
-由示例中可以看到，通过pylint（通过运行pip install pylint命令安装）工具，在一定程度上可以检测python代码是否符合规范。
+由示例中可以看到，通过pylint（运行pip install pylint命令安装）工具，在一定程度上可以检测python代码是否符合规范。
