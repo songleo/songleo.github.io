@@ -34,6 +34,8 @@ $ python3 2to3_demo.py
     print "Hello, {0}!".format(name)
                       ^
 SyntaxError: invalid syntax
+
+
 $ 2to3 -w 2to3_demo.py
 RefactoringTool: Skipping implicit fixer: buffer
 RefactoringTool: Skipping implicit fixer: idioms
@@ -55,6 +57,8 @@ RefactoringTool: Refactored 2to3_demo.py
  greet(name)
 RefactoringTool: Files that were modified:
 RefactoringTool: 2to3_demo.py
+
+
 $ python3 2to3_demo.py
 What's your name?
 LEo
