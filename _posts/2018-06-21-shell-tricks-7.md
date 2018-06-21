@@ -25,7 +25,7 @@ lbak函数定义：
 ```bash
 lbak(){
     if [[ $# -ge 1 ]]; then
-        cp -rf $1 $1.bak~
+        cp -rf $1 $1.bak
     fi
 }
 ```
@@ -40,12 +40,12 @@ $ cat test
 123
 $ lbak test 
 $ ls
-test  test.bak~
-$ cat test.bak~ 
+test  test.bak
+$ cat test.bak 
 123
 ```
 
-在linux上修改某些关键文件时，建议先将原文件备份再修改，不然修改后出问题，想恢复比较不易。通过定义一个lbak函数，自动实现文件备份，生成后缀名为`bak~`的文件。由示例中可以看到，创建的test文件，在修改之前，通过lbak函数备份该文件，在当前目录自动生成一个`test.bak~`文件，如果修改完文件test后，需要恢复该文件，直接将`test.bak~`覆盖test文件即可。
+在linux上修改某些关键文件时，建议先将原文件备份再修改，不然修改后出问题，想恢复比较不易。通过定义一个lbak函数，自动实现文件备份，生成后缀名为bak的文件。由示例中可以看到，创建的test文件，在修改之前，通过lbak函数备份该文件，在当前目录自动生成一个test.bak文件，如果修改完文件test后，需要恢复该文件，直接将test.bak覆盖test文件即可。
 
 ### 3 自定义命令自动补齐
 
