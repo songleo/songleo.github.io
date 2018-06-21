@@ -65,7 +65,7 @@ RefactoringTool: Files that were modified:
 RefactoringTool: 2to3_demo.py
 ```
 
-使用python3运行转换后的代码:
+使用python3运行转换后的代码：
 
 ```bash
 $ python3 2to3_demo.py
