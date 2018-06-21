@@ -39,7 +39,7 @@ $ python3 2to3_demo.py
 SyntaxError: invalid syntax
 ```
 
-转换步骤：
+转换步骤如下：
 
 ```bash
 $ 2to3 -w 2to3_demo.py
