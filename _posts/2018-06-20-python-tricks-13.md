@@ -22,19 +22,24 @@ name = raw_input()
 greet(name)
 ```
 
-转换步骤：
+分别使用python2和python3运行python2代码：
 
 ```bash
 $ python2 2to3_demo.py
 What's your name?
 LEo
 Hello, LEo!
+```
+
+```bash
 $ python3 2to3_demo.py
   File "2to3_demo.py", line 6
     print "Hello, {0}!".format(name)
                       ^
 SyntaxError: invalid syntax
 ```
+
+转换步骤：
 
 ```bash
 $ 2to3 -w 2to3_demo.py
@@ -59,6 +64,8 @@ RefactoringTool: Refactored 2to3_demo.py
 RefactoringTool: Files that were modified:
 RefactoringTool: 2to3_demo.py
 ```
+
+转换使用python3运行:
 
 ```bash
 $ python3 2to3_demo.py
