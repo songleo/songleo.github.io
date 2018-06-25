@@ -22,7 +22,7 @@ $ tar -zxvf openmpi-3.1.0.tar.gz
 
 ### 3 安装openmpi
 
-解压完成后，按照linux平台软件的标准安装方式：`./configure && make && make install `安装openmpi，步骤如下：
+解压完毕后，按照linux平台软件的标准安装步骤：`./configure && make && make install `安装openmpi，步骤如下：
 
 ```bash
 $ cd openmpi-3.1.0/
@@ -32,7 +32,7 @@ $ make && make install
 
 ### 4 验证安装
 
-安装完毕后，进入openmpi-3.1.0目录下的examples目录，执行make命令编译示例程序，通过运行示例程序验证是否成功安装，如下所示：
+安装完毕后，进入openmpi-3.1.0目录下的examples目录，执行make命令编译示例程序，通过运行示例程序验证是否成功安装openmpi，如下所示：
 
 ```bash
 $ cd examples/
@@ -41,4 +41,4 @@ $ ./hello_c
 Hello, world, I am 0 of 1, (Open MPI v3.1.0, package: Open MPI root@ssli_centos7 Distribution, ident: 3.1.0, repo rev: v3.1.0, May 07, 2018, 112)
 ```
 
-正确的运行示例程序，说明安装成功。
+示例程序正确运行，说明安装成功。
