@@ -6,7 +6,7 @@ date: 2018-06-25 00:05:00
 
 ### 1 下载openmpi源码
 
-通过官方网站提供的[下载地址](https://download.open-mpi.org/release/open-mpi/v3.1/openmpi-3.1.0.tar.gz)：https://download.open-mpi.org/release/open-mpi/v3.1/openmpi-3.1.0.tar.gz，下载3.1版的openmpi，在命令行执行如下命令，会将openmpi-3.1.0.tar.gz文件下载到当前目录：
+通过官方网站提供的[下载地址](https://download.open-mpi.org/release/open-mpi/v3.1/openmpi-3.1.0.tar.gz)：https://download.open-mpi.org/release/open-mpi/v3.1/openmpi-3.1.0.tar.gz， 下载3.1版的openmpi，在命令行执行如下命令，会将openmpi-3.1.0.tar.gz文件下载到当前目录：
 
 ```bash
 $ wget https://download.open-mpi.org/release/open-mpi/v3.1/openmpi-3.1.0.tar.gz
@@ -22,8 +22,7 @@ $ tar -zxvf openmpi-3.1.0.tar.gz
 
 ### 3 安装openmpi
 
-解压完成后，按照linux平台软件的标准安装方式：./configure && make && make install `，
-安装openmpi，步骤如下：
+解压完成后，按照linux平台软件的标准安装方式：`./configure && make && make install `安装openmpi，步骤如下：
 
 ```bash
 $ cd openmpi-3.1.0/
