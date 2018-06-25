@@ -35,9 +35,9 @@ $ make && make install
 安装完毕后，进入openmpi-3.1.0目录下的examples目录，执行make命令编译示例程序，通过运行示例程序验证是否成功安装，如下所示：
 
 ```bash
-root@ssli_centos7:openmpi-3.1.0$ cd examples/
-root@ssli_centos7:examples$ make
-root@ssli_centos7:examples$ ./hello_c 
+$ cd examples/
+$ make
+$ ./hello_c
 Hello, world, I am 0 of 1, (Open MPI v3.1.0, package: Open MPI root@ssli_centos7 Distribution, ident: 3.1.0, repo rev: v3.1.0, May 07, 2018, 112)
 ```
 
