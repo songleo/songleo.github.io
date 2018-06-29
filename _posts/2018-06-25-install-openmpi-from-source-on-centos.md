@@ -22,7 +22,7 @@ $ tar -zxvf openmpi-3.1.0.tar.gz
 
 ### 3 安装openmpi
 
-解压完毕后，按照linux软件的标准安装步骤：`./configure && make && make install `安装openmpi，步骤如下：
+解压完毕后，按照linux软件的标准安装步骤：`./configure && make && make install `，安装openmpi，步骤如下：
 
 ```bash
 $ cd openmpi-3.1.0/
