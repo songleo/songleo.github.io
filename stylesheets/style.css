@@ -28,7 +28,7 @@ img {
   text-transform: capitalize; }
 
 .upcase {
-  text-transform: uppercase; }
+  text-transform: lowercase; }
 
 .downcase {
   text-transform: lowercase; }
@@ -177,7 +177,7 @@ a, .as-link {
     font-size: 12px;
     line-height: 24px;
     padding: 8px 17px;
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 2px;
     font-weight: bold;
     display: block;
@@ -231,7 +231,7 @@ ul.posts .datetime {
   *display: inline;
   *vertical-align: auto;
   width: 130px;
-  text-transform: uppercase;
+  text-transform: lowercase;
   float: right;
   color: #999;
   font-size: 10px;
@@ -248,7 +248,7 @@ section.post {
     margin-left: 20px;
     padding: 0; }
   section.post h1 {
-    text-transform: uppercase;
+    text-transform: lowercase;
     text-align: center;
     line-height: 1.5em;
     margin-bottom: 60px; }
