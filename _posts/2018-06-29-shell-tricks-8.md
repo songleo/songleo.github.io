@@ -48,6 +48,8 @@ ok
 
 三种符号的作用总结如下：
 
-- cmdA `&&` cmdB：只有cmdA执行成功，才会执行cmdB
-- cmdA `||`` cmdB：只有cmdA执行失败，才会执行cmdB
-- cmdA ; cmdB：不管cmdA是否执行成功，都会执行cmdB
+```
+cmdA && cmdB：只有cmdA执行成功，才会执行cmdB
+cmdA || cmdB：只有cmdA执行失败，才会执行cmdB
+cmdA ; cmdB：不管cmdA是否执行成功，都会执行cmdB
+```
