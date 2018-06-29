@@ -12,7 +12,7 @@ date: 2018-06-29 00:05:00
 $ touch test.log
 $ cat test.log && echo ok
 ok
-$ rm test.log 
+$ rm test.log
 $ cat test.log && echo ok
 cat: test.log: No such file or directory
 ```
