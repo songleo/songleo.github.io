@@ -54,7 +54,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_112-b15)
 Java HotSpot(TM) 64-Bit Server VM (build 25.112-b15, mixed mode)
 ```
 
-修改PATH的配置顺序，打开一个新终端执行java -version：
+修改PATH的配置顺序，再打开一个终端执行java -version：
 
 ```bash
 # grep "JAVA" /etc/profile
@@ -67,4 +67,4 @@ OpenJDK Runtime Environment (build 1.8.0_131-b12)
 OpenJDK 64-Bit Server VM (build 25.131-b12, mixed mode)
 ```
 
-linux执行命令时，是按顺序从PATH中的路径依次查找，如果找到相应的可执行文件，就不会继续查找后面的目录。由示例中可以看到，当配置的PATH为$JAVA_HOME/bin:$PATH时，将JAVA_HOME放置在PATH的最前面，此时执行的java版本是1.8.0_112。如果配置的PATH为$PATH:$JAVA_HOME/bin，将JAVA_HOME附在PATH后面，再打开一个终端执行java -version时，发现java版本是1.8.0_131，不是配置的JAVA_HOME指定的java版本。所以安装新软件修改PATH时，一定要注意顺序，否则有可能执行的命令不是新安装的软件命令，从而导致其他问题。我在公司已经听说过2个bug是由于这个原因导致，很不容易发现，希望对大家也有帮助。
+linux执行命令时，是按顺序从PATH中的路径依次查找，如果找到相应的可执行文件，就不会继续查找后面的目录。由示例中可以看到，当配置的PATH为$JAVA_HOME/bin:$PATH时，将JAVA_HOME放置在PATH的最前面，此时执行的java版本是1.8.0_112。如果配置的PATH为$PATH:$JAVA_HOME/bin，将JAVA_HOME附在PATH后面，再打开一个终端执行java -version时，发现java版本是1.8.0_131，不是配置的JAVA_HOME指定的java版本。所以安装新软件修改PATH时，一定要注意顺序，否则有可能执行的命令不是新安装的软件命令，从而导致其他问题。我在公司已经听说过2个bug是由于这个原因导致，很不容易发现，希望对大家有所帮助。
