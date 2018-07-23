@@ -85,7 +85,7 @@ $ /usr/local/hadoop-2.7.6/sbin/start-dfs.sh
 在HDFS上创建相应目录，并上传相应的文件到该目录：
 
 ```
-$ cat log 
+$ cat log
 hello hadoop
 hello hdfs
 hello mapreduce
