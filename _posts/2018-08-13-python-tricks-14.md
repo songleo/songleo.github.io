@@ -36,7 +36,7 @@ for c in itertools.combinations('ABC', 2):
 '''
 ```
 
-通过itertools模块，可以很方便实现元素的排列和组合。由示例中可以看到，这里分别从ABC三个元素中取2个元素，计算其排列和组合。
+通过itertools模块，可以很方便实现元素的排列和组合。由示例中可以看到，分别从ABC三个字母中取2个字母，实现其排列和组合，itertools模块还有很多有用功能，感兴趣可以看看。
 
 ### 2 创建临时文件
 
@@ -76,7 +76,7 @@ $ ls /tmp/tmpVSppeA
 ls: cannot access /tmp/tmpVSppeA: No such file or directory
 ```
 
-借助tempfile模块，可以很方便的操作临时文件。由示例中可以看到，创建的临时文件/tmp/tmpVSppeA在使用完毕后会自动删除，不需要手动删除该文件。
+借助tempfile模块，可以很方便的操作临时文件。由示例中可以看到，创建的临时文件/tmp/tmpVSppeA在使用完毕后会自动删除，不需要手动删除该文件，tempfile模块还有很多有用功能，感兴趣可以看看。
 
 ### 3 打印信息到标准错误
 
