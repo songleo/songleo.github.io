@@ -36,7 +36,7 @@ for c in itertools.combinations('ABC', 2):
 '''
 ```
 
-
+通过itertools模块，可以很方便实现元素的排列和组合。由示例中可以看到，这里分别从ABC三个元素中取2个元素，计算其排列和组合。
 
 ### 2 创建临时文件
 
@@ -63,7 +63,7 @@ with open(TEMP_FILE.name) as f:
 运行示例：
 
 ```bash
-$ python tmp_file_demo.py 
+$ python tmp_file_demo.py
 temp file name: </tmp/tmpVSppeA>
 
 line 1
@@ -76,9 +76,9 @@ $ ls /tmp/tmpVSppeA
 ls: cannot access /tmp/tmpVSppeA: No such file or directory
 ```
 
+借助tempfile模块，可以很方便的操作临时文件。由示例中可以看到，创建的临时文件/tmp/tmpVSppeA在使用完毕后会自动删除，不需要手动删除该文件。
 
-
-### 3 打印信息到stderr
+### 3 打印信息到标准错误
 
 示例程序：
 
@@ -106,7 +106,7 @@ print to stdout
 运行示例：
 
 ```bash
-$ python print_stderr.py 
+$ python print_stderr.py
 print to stderr
 print to stdout
 $ python print_stderr.py > /tmp/stdout.log
@@ -123,4 +123,5 @@ print to stderr
 print to stdout
 ```
 
+通过导入__future__模块的print_function，将print函数改造成python3的print，就可以方便实现将输出打印到标准错误。由示例中可以看到，通过封装一个新的函数eprint，实现类似print的打印功能，唯一区别就是eprint函数将输出打印到标准错误，而不是标准输出。
 
