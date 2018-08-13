@@ -21,7 +21,7 @@ export JRE_HOME=$JAVA_HOME/jre
 export PATH=$JAVA_HOME/bin:$PATH
 ```
 
-如果系统没有安装java，下载相应java安装，然后设置相应的java环境变量即可。
+如果系统没有安装java，下载相应java版本进行安装，然后设置java相关环境变量即可。
 
 2）设置ssh免登录
 
@@ -35,14 +35,14 @@ $ chmod 0600 ~/.ssh/authorized_keys
 
 从官方网站下载hadoop 2.7.6：https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-2.7.6/hadoop-2.7.6.tar.gz
 
-将hadoop-2.7.6.tar.gz拷贝到/usr/local，解压即可。然后设置相应的环境变量：
+将hadoop-2.7.6.tar.gz文件拷贝到/usr/local并解压，然后设置相关的环境变量：
 
 ```
 export HADOOP_HOME=/usr/local/hadoop-2.7.6
 export PATH=$HADOOP_HOME/bin:$PATH
 ```
 
-这里以伪分布式安装为例，进入/usr/local/hadoop-2.7.6/etc，依次修改以下配置文件：
+进入/usr/local/hadoop-2.7.6/etc，依次修改以下配置文件：
 
 - core-site.xml
 
@@ -66,7 +66,7 @@ export PATH=$HADOOP_HOME/bin:$PATH
 </configuration>
 ```
 
-格式化文件系统：
+格式化hdfs文件系统：
 
 ```
 $ hdfs namenode -format
@@ -78,11 +78,11 @@ $ hdfs namenode -format
 $ /usr/local/hadoop-2.7.6/sbin/start-dfs.sh
 ```
 
-在浏览器输入：`http://localhost:50070/`，可以看到NameNode相关信息。
+在浏览器输入：`http://localhost:50070/`，可以看到NameNode的相关信息。
 
 4）运行示例程序
 
-在HDFS上创建相应目录，并上传相应的文件到该目录：
+在hdfs上创建相应目录，并上传相应的文件到该目录：
 
 ```
 $ cat log
