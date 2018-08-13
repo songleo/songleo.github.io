@@ -35,14 +35,14 @@ $ chmod 0600 ~/.ssh/authorized_keys
 
 从官方网站下载hadoop 2.7.6：https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-2.7.6/hadoop-2.7.6.tar.gz
 
-将hadoop-2.7.6.tar.gz文件拷贝到/usr/local并解压，然后设置相关的环境变量：
+将hadoop-2.7.6.tar.gz文件拷贝到/usr/local目录并解压，然后设置相关的环境变量：
 
 ```
 export HADOOP_HOME=/usr/local/hadoop-2.7.6
 export PATH=$HADOOP_HOME/bin:$PATH
 ```
 
-进入/usr/local/hadoop-2.7.6/etc，依次修改以下配置文件：
+进入/usr/local/hadoop-2.7.6/etc目录，依次修改以下配置文件：
 
 - core-site.xml
 
