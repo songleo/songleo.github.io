@@ -8,6 +8,8 @@ date: 2018-08-13 00:12:05
 
 ### 1 排列组合
 
+示例程序：
+
 ```python
 #!/usr/bin/env python
 # coding=utf8
@@ -123,5 +125,5 @@ print to stderr
 print to stdout
 ```
 
-通过导入__future__模块的print_function，将print函数改造成python3的print，就可以方便实现将输出打印到标准错误。由示例中可以看到，通过封装一个新的函数eprint，实现类似print的打印功能，唯一区别就是eprint函数将输出打印到标准错误，而不是标准输出。
+通过导入__future__模块的print_function，将print函数改造成python3的print，就可以实现将输出打印到标准错误。由示例中可以看到，通过封装一个新的函数eprint，实现类似print的打印功能，唯一区别就是eprint函数将输出打印到标准错误，而不是标准输出。
 
