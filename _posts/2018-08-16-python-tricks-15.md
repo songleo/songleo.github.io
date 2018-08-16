@@ -6,7 +6,7 @@ date: 2018-08-16 00:12:05
 
 这是一个系列文章，主要分享python的使用建议和技巧，每次分享3点，希望你能有所收获。
 
-### 1 lambda函数
+### 1 lambda
 
 ```python
 #!/usr/bin/env python
