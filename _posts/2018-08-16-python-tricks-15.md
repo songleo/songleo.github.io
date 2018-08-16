@@ -67,4 +67,4 @@ print list_counter.most_common(3)
 # [('d', 4), ('c', 3), ('b', 2)]
 ```
 
-借助collections模块，可以实现一个可迭代对象的计数功能。由示例中可以看到，这里分别计算出了列表l中每个字母出现的次数。通过调用most_common方法，还可以找出出现次数最多的前三个字母。详情请参考：https://docs.python.org/2/library/collections.html
+借助collections模块，可以实现一个可迭代对象的计数功能。由示例中可以看到，这里分别计算出了列表l中每个字母出现的次数。通过调用most_common方法，还可以得到出现次数最多的前三个字母。详情请参考：https://docs.python.org/2/library/collections.html
