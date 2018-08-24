@@ -65,7 +65,7 @@ Ran 1 test in 0.002s
 OK
 ```
 
-示例中定义了一个add函数，参数x和y的和，由于x和y没有指定类型，所以给定不同类型的输入会导致不同的输出，通过python的单元测试框架，定义好相应的测试类和测试函数，将所有的输入和输出定义在一个list中，添加一个case只需要往list中添加相应的输入和输出即可，很方便就实现了对add函数的单元测试。由示例中可以看到，这里的case3测试失败，因为0加0应该是0，输出是1，示例中将断言失败的异常捕获，打印相应的异常信息。
+示例中定义一个add函数，用于计算参数x和y的和，由于x和y没有指定类型，所以给定不同类型的输入会导致不同的输出。通过python的单元测试框架，定义相应的测试类和函数对add函数进行单元测试。示例中，将所有的输入和输出定义在一个list中，添加一个case只需要往list中添加相应的输入和输出即可。由输出结果可以看到，这里的case 3测试失败，因为0加0应该是0，实际输出是1，示例中将断言失败的异常捕获，打印相应的异常信息。
 
 ### 2 配置解析
 
@@ -97,7 +97,7 @@ ps
 '''
 ```
 
-文件demo.conf内容如下：
+配置文件demo.conf的内容如下：
 
 ```
 [section1]
@@ -111,7 +111,7 @@ job = ps
 id = 2
 ```
 
-借助python的ConfigParser模块，可以很方便实现配置文件的解析。由示例中可以看到，使用ConfigParser可以很方便就解析配置文件demo.conf，并按不同的配置断打印配置信息。ConfigParser模块还有很多有用功能，感兴趣可以看看。
+借助ConfigParser模块，可以很方便实现配置文件的解析。由示例中可以看到，使用ConfigParser解析配置文件demo.conf，并按不同的配置段打印配置信息。ConfigParser模块还有很多有用功能，感兴趣可以看看，具体可以参考：https://docs.python.org/2/library/configparser.html。
 
 ### 3 类的三种方法
 
@@ -159,4 +159,4 @@ Traceback (most recent call last):
 TypeError: unbound method instance_method() must be called with DemoClass instance as first argument (got nothing instead)
 ```
 
-示例中定义了三种不同的方法，分别是类方法、静态方法和实例方法，运行结果可以看出，类不能调用实例方法instance_method，可以调用类方法class_method和静态方法static_method，而实例可以调用类方法class_method、静态方法static_method和实例方法instance_method。
+示例中定义了三种不同的方法，分别是类方法、静态方法和实例方法，由运行结果可以看到，类不能调用实例方法instance_method，可以调用类方法class_method和静态方法static_method，而实例可以调用类方法class_method、静态方法static_method和实例方法instance_method。
