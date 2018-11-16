@@ -65,6 +65,9 @@ func main() {
     str := "string"
     fmt.Println(str)
 
+    str = "new string"
+    fmt.Println(str)
+
     var foo int
     foo = 123
     var bar int = 456
@@ -86,13 +89,43 @@ func main() {
 }
 ```
 
+## 2 变量
+
+- 声明的变量必须使用（导入的包也必须使用）
+
+- 多个变量赋值
+
+- `:=`声明变量
+
+
+```golang
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    a, b := 1, 2
+    fmt.Println(a, b)
+
+    var num int
+    num = 10
+    fmt.Println(num)
+
+    var test string = "test"
+    fmt.Println(test)
+}
+```
+
+
 ## 2 函数
 
 - 支持多值返回，具名返回
 
 - 使用`_`丢弃返回值
 
-```
+```golang
 func log(message string) {
 }
 
