@@ -6,7 +6,7 @@ date: 2018-11-16 00:12:05
 
 ## 1 基础知识
 
-go语言有以下特点：
+### go语言有以下特点：
 
 - 编译型语言，编译速度快
 
@@ -20,7 +20,7 @@ go语言有以下特点：
 
 - 跨平台编译
 
-著名的go项目：
+### 著名的go项目：
 
 - docker：开源的应用容器引擎
 
@@ -44,7 +44,7 @@ func main() {
 }
 ```
 
-简单的go demo:
+### 简单的go demo:
 
 ```golang
 package main
@@ -89,7 +89,7 @@ func main() {
 }
 ```
 
-## 2 变量
+## 变量
 
 - 声明的变量必须使用（导入的包也必须使用）
 
@@ -119,7 +119,7 @@ func main() {
 ```
 
 
-## 2 函数
+## 函数
 
 - 支持多值返回，具名返回
 
@@ -139,6 +139,72 @@ func power(name string) (int, bool) {
 ```
 
 ##  结构体
+
+- 不支持重装
+
+- 通过组合实现继承
+
+- 没有构造函数
+
+- 可以匿名组合和具名组合
+
+- 使用new创建一个结构体指针
+
+```golang
+package main
+
+import (
+    "fmt"
+)
+
+type Demo1 struct {
+    id   int
+    name string
+}
+
+type Demo struct {
+    id   int
+    name string
+    d1   Demo1
+    // Demo1
+}
+
+func (d *Demo) change(name string) {
+    d.name = name
+}
+
+func (d Demo) unchange(name string) {
+    d.name = name
+}
+
+func main() {
+    d := Demo{}
+    fmt.Println(d)
+    d.name = "demo1"
+    fmt.Println(d)
+    d.change("name2")
+    fmt.Println(d)
+    d.unchange("name3")
+    fmt.Println(d)
+
+    dptr := new(Demo)
+    // dptr := &Demo{}
+
+    fmt.Println(dptr)
+    dptr.name = "demo1"
+    fmt.Println(dptr)
+    dptr.change("name2")
+    fmt.Println(dptr)
+    dptr.unchange("name3")
+    fmt.Println(dptr)
+
+    d1 := Demo{1, "test", Demo1{}}
+    fmt.Println(d1)
+    println(d1.name)
+    println(d1.d1.name)
+}
+
+```
 
 ##  映射、数组和切片
 
