@@ -21,6 +21,8 @@ date: 2018-11-16 00:12:05
 
 # 7 使用进程池
 
+# 7 僵尸进程
+
 ```python
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-

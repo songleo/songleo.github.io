@@ -118,12 +118,13 @@ func main() {
 }
 ```
 
-
 ## 函数
 
 - 支持多值返回，具名返回
 
 - 使用`_`丢弃返回值
+
+- 以大写字母开头包级别的函数供外部访问
 
 ```golang
 func log(message string) {
@@ -149,6 +150,8 @@ func power(name string) (int, bool) {
 - 可以匿名组合和具名组合
 
 - 使用new创建一个结构体指针
+
+- 大写字母开头的变量可以访问
 
 ```golang
 package main
@@ -206,8 +209,90 @@ func main() {
 
 ```
 
-##  映射、数组和切片
+##  字典、数组和切片
+
+- 字典
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+    // d := make(map[string]int)
+    // d := map[string]int{"1": 1, "2": 2}
+    d := map[string]int{}
+    d["1"] = 1
+    d["2"] = 2
+    d["3"] = 3
+
+    for k, v := range d {
+        fmt.Println(k, v)
+    }
+
+    v, exists := d["3"]
+    fmt.Println(v, exists)
+}
+
+```
+
+- 数组
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+    // s := [3]int{1, 2, 3}
+    // s := [...]int{1, 2, 3}
+    var s [3]int
+    fmt.Println(len(s))
+    fmt.Println(cap(s))
+
+    s[0] = 0
+    s[1] = 1
+    s[2] = 2
+    // s[3] = 4
+
+    for idx, v := range s {
+        fmt.Println(idx, v)
+    }
+}
+```
+
+- 切片
+
+```golang
+package main
+
+import "fmt"
+
+func main() {
+    // s := []int{0, 1, 2}
+    var s []int
+    s = make([]int, 3, 4)
+    // s := make([]int, 3, 5)
+    fmt.Println(len(s))
+    fmt.Println(cap(s))
+
+    s[0] = 0
+    s[1] = 1
+    s[2] = 2
+
+    s = append(s, 3)
+
+    for idx, v := range s {
+        fmt.Println(idx, v)
+    }
+
+    fmt.Println(s[1:3])
+}
+
+```
 
 ##  代码组织和接口
 
 ##  并发
+
+
