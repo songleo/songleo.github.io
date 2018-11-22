@@ -478,3 +478,9 @@ func (w *Worker) process(c chan int) {
     }
 }
 ```
+
+## next
+
+- python多进程之multiprocessing
+
+- python小技巧分享
