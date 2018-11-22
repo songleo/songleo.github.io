@@ -6,7 +6,7 @@ date: 2018-11-22 00:12:05
 
 ## 1 基础知识
 
-### go语言有以下特点：
+#### go语言有以下特点：
 
 - 编译型语言，编译速度快
 
@@ -20,7 +20,7 @@ date: 2018-11-22 00:12:05
 
 - 跨平台编译
 
-### 2 著名的go项目：
+## 2 著名的go项目：
 
 - docker：开源的应用容器引擎
 
@@ -32,7 +32,7 @@ date: 2018-11-22 00:12:05
 
 - beego：一个快速开发go应用的http框架
 
-hellow world:
+#### hellow world:
 
 ```golang
 package main
@@ -44,7 +44,7 @@ func main() {
 }
 ```
 
-### 3 简单的go demo:
+## 3 简单的go demo:
 
 ```golang
 package main
@@ -105,6 +105,11 @@ import (
     "fmt"
 )
 
+var N int = 100
+
+// N := 100
+
+// var N int
 func main() {
     a, b := 1, 2
     fmt.Println(a, b)
@@ -115,6 +120,8 @@ func main() {
 
     var test string = "test"
     fmt.Println(test)
+
+    fmt.Println(N)
 }
 ```
 
@@ -297,7 +304,7 @@ func main() {
 
 - 实现多态
 
-- duck-typing：如果一个对象走路像鸭子，游泳也像鸭子，叫声也像鸭子
+- duck-typing：如果一个对象走路像鸭子，游泳也像鸭子，叫声也像鸭子，那么该对象就可以被称作为鸭子
 
 ```golang
 package main
@@ -419,6 +426,7 @@ func main() {
     }
     time.Sleep(time.Millisecond * 10)
 }
+
 func incr() {
     lock.Lock()
     defer lock.Unlock()
