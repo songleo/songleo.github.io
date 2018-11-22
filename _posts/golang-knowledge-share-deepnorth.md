@@ -291,8 +291,182 @@ func main() {
 
 ```
 
-##  代码组织和接口
+## 接口
 
-##  并发
+- 接口只声明，不实现
 
+- 实现多态
 
+- duck-typing：如果一个对象走路像鸭子，游泳也像鸭子，叫声也像鸭子
+
+```golang
+package main
+
+import (
+    "fmt"
+)
+
+type Square struct {
+    a int
+}
+
+func (s *Square) Area() int {
+    return s.a * s.a
+}
+
+func (s *Square) Perimeter() int {
+    return s.a * 4
+}
+
+type Rectangle struct {
+    a int
+    b int
+}
+
+func (r *Rectangle) Area() int {
+    return r.a * r.b
+}
+
+func (r *Rectangle) Perimeter() int {
+    return (r.a + r.b) * 2
+}
+
+type Shaper interface {
+    Area() int
+    Perimeter() int
+}
+
+type AnyShape interface{}
+
+func main() {
+
+    square := new(Square)
+    square.a = 2
+
+    rectangle := new(Rectangle)
+    rectangle.a = 2
+    rectangle.b = 3
+
+    fmt.Println("(1) call struct method:")
+    fmt.Println("square area is: ", square.Area())
+    fmt.Println("rectangle area is: ", rectangle.Area())
+
+    fmt.Println("\n(2) via interface:")
+    var shape Shaper
+    shape = square
+    fmt.Println("square area is: ", shape.Area())
+    shape = rectangle
+    fmt.Println("rectangle area is: ", shape.Area())
+
+    fmt.Println("\n(3) via empty interface:")
+    var anyShape AnyShape
+    anyShape = square
+    fmt.Println("square area is: ", anyShape.(*Square).Area())
+    anyShape = rectangle
+    fmt.Println("rectangle area is: ", anyShape.(*Rectangle).Area())
+
+    fmt.Println("\n(4) type assertions via switch:")
+    switch shape := anyShape.(type) {
+    case *Rectangle:
+        fmt.Printf("shape type is: %T\n", shape)
+        fmt.Println("rectangle area is: ", shape.Area())
+    default:
+        fmt.Printf("unknown type %T\n", shape)
+    }
+
+    fmt.Println("\n(5) type assertions via comma, ok pattern:")
+    anyShape = rectangle
+    if shape, ok := anyShape.(*Rectangle); ok {
+        fmt.Printf("shape type is: %T\n", shape)
+        fmt.Println("rectangle area is: ", shape.Area())
+    } else {
+        fmt.Printf("unknown type %T\n", shape)
+    }
+}
+```
+
+## 包管理
+
+- go get: go get github.com/mattn/go-sqlite3
+
+- 大写字母开头的变量或者函数对外可见
+
+- 标准库结构
+
+- demo pkg
+
+##  协程
+
+一个简单的协程：
+
+```golang
+package main
+
+import (
+    "fmt"
+    "sync"
+    "time"
+)
+
+var (
+    counter = 0
+    lock    sync.Mutex
+)
+
+func main() {
+    for i := 0; i < 3; i++ {
+        go incr()
+    }
+    time.Sleep(time.Millisecond * 10)
+}
+func incr() {
+    lock.Lock()
+    defer lock.Unlock()
+    counter++
+    fmt.Println(counter)
+}
+```
+
+使用通道进行协程间通信：
+
+- 通道支持select
+
+- 通道有类型
+
+- 通道大小
+
+- go确保任意时刻只有一个协程可以访问数据
+
+```golang
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    c := make(chan int)
+
+    for i := 0; i < 5; i++ {
+        worker := &Worker{id: i}
+        go worker.process(c)
+    }
+
+    for i := 0; i < 5; i++ {
+        c <- i
+        time.Sleep(time.Millisecond * 50)
+    }
+}
+
+type Worker struct {
+    id int
+}
+
+func (w *Worker) process(c chan int) {
+    for i := 0; i < 5; i++ {
+        data := <-c
+        fmt.Printf("worker %d got %d\n", w.id, data)
+    }
+}
+```
