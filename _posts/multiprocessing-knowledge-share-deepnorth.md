@@ -21,7 +21,11 @@ date: 2018-11-16 00:12:05
 
 # 7 使用进程池
 
-# 7 僵尸进程
+ - 多进程并发处理
+
+ - 自动处理list中的每个元素
+
+ - 自动将结果汇总成list
 
 ```python
 #!/usr/bin/env python
@@ -50,13 +54,12 @@ if __name__ == '__main__':
 ```
 # time python process_pool.py 1
 
-real    0m10.818s
-user    0m0.020s
-sys 0m0.128s
+real    0m10.503s
+user    0m0.016s
+sys 0m0.152s
 # time python process_pool.py 100
 
-real    0m0.843s
-user    0m0.032s
-sys 0m0.160s
-
+real    0m0.897s
+user    0m0.044s
+sys 0m0.172s
 ```
