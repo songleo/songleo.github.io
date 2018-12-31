@@ -1,5 +1,5 @@
 title:            LEo的网络日志
-description:      LEo's Blog
+description:      LEo's blog
 url:              http://reborncodinglife.com
 signoff:          LEo
 
@@ -10,7 +10,7 @@ links:
   - name:         blog
     url:          http://reborncodinglife.com
     external:     true
-  - name:         gitHub
+  - name:         github
     url:          http://github.com/songleo
     external:     true
 highlighter:      rouge
