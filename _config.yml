@@ -5,12 +5,12 @@ signoff:          LEo
 
 
 links:
-  - name:         About
+  - name:         about
     url:          /about
-  - name:         Blog
+  - name:         blog
     url:          http://reborncodinglife.com
     external:     true
-  - name:         GitHub
+  - name:         gitHub
     url:          http://github.com/songleo
     external:     true
 highlighter:      rouge
