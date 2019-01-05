@@ -25,6 +25,8 @@ $ ./python-tips-17.py
 /media/sf_share/git/python_practice/demo
 ```
 
+由示例中可以看到，正确的输出文件的绝对路径。
+
 
 ### 2 修改进程名字
 
@@ -61,15 +63,14 @@ root@ssli-ubtu1604:demo$ ./python-tips-17.py
 starting process name <test_process>, pid <4281>
 ```
 
-在另外一个终端查看进程名如下：
+在另外一个终端查看进程名为test_process，如下：
 
 ```
 root@ssli-ubtu1604:matching$ ps -ef | grep [4]281
 root      4281  4280  0 17:04 pts/20   00:00:00 test_process
 ```
 
-
-如果注释掉setproctitle.setproctitle(p.name)，运行效果如下：
+如果注释掉setproctitle.setproctitle(p.name)，运行示例如下：
 
 ```
 root@ssli-ubtu1604:demo$ ./python-tips-17.py
@@ -82,6 +83,8 @@ starting process name <test_process>, pid <4700>
 root@ssli-ubtu1604:matching$ ps -ef | grep [4]700
 root      4700  4699  0 17:06 pts/20   00:00:00 /usr/bin/python ./python-tips-17.py
 ```
+
+即通过setproctitle.setproctitle实现了修改python进程的名字。
 
 ### 3 多行字符串写法
 
@@ -102,3 +105,5 @@ print long_str
 $ ./python-tips-17.py
 this is a very long string
 ```
+
+由于pep8建议代码长度不超过79个字符，有时候如果需要写一个长字符串时，往往会超过79个字符，由示例中可以看到，通过该方式可以实现长字符串的书写。
