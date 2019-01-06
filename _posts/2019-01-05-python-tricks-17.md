@@ -14,7 +14,7 @@ date: 2019-01-05 00:12:05
 
 import os
 
-absolute_path = os.path.dirname(os.path.realpath(__file__))
+absolute_path = os.path.realpath(__file__)
 print absolute_path
 ```
 
@@ -22,10 +22,10 @@ print absolute_path
 
 ```
 $ ./python-tips-17.py
-/media/sf_share/git/python_practice/demo
+/git/python_practice/demo/python-tips-17.py
 ```
 
-由示例中可以看到，正确的输出文件的绝对路径。
+由示例中可以看到，输出文件的绝对路径。
 
 
 ### 2 修改进程名字
@@ -106,4 +106,4 @@ $ ./python-tips-17.py
 this is a very long string
 ```
 
-由于pep8建议代码长度不超过79个字符，有时候如果需要写一个长字符串时，往往会超过79个字符，由示例中可以看到，通过该方式可以实现长字符串的书写。
+由于pep8建议代码长度不超过79个字符，有时候如果需要写一个长字符串时，往往会超过79个字符，由示例中可以看到，通过该方式可以实现多行字符串的书写。
