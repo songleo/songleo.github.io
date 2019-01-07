@@ -35,28 +35,32 @@ $ ./python-tips-18.py
 
 通过具名元组，可以实现常量的定义。如果你试图修改其中的属性，比如rgb.RED = 3，会发现程序抛出AttributeError异常，即实现了不能修改常量的目的。
 
-### 2 去除list中重复元素
+### 2 终端打印带颜色字体
 
 ```python
 #!/usr/bin/python
 # coding=utf-8
 
-repeated_list = [0, 0, 0, 1, 1, 1, 2, 2, 2]
-print repeated_list
 
-unique_list = list(set(repeated_list))
-print unique_list
+import termcolor
+
+print termcolor.colored('red line', 'red')
+print termcolor.colored('green line and blink', 'green', attrs=['blink'])
+termcolor.cprint('red line and white background', 'red', 'on_white')
 ```
 
 运行示例代码输出如下：
 
 ```
 $ ./python-tips-18.py
-repeated_list = [0, 0, 0, 1, 1, 1, 2, 2, 2]
-unique_list = [0, 1, 2]
+red line
+green line and blink
+red line and white background
+
 ```
 
-由示例可以看到，通过借助set的唯一性，将list中重复元素除去，确保每个元素只出现一次。
+需要安装termcolor模块，且该示例必须在终端执行。输出的第一行是红色，第二行是绿色且有闪烁效果，第三行是红色字体，白色背景。
+
 
 ### 3 函数调用时传递list的拷贝
 
