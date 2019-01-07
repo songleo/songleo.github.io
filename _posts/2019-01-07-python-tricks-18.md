@@ -95,4 +95,4 @@ $ ./python-tips-18.py
 [1, 2, 2, 3, 4]
 ```
 
-由示例中可以看到，如果传递my_list[:]给mod_list函数，源list不会受到影响，如果直接传递my_list给mod_list函数，mod_list函数对my_list的修改会影响源list，如果不希望修改源list，推荐使用该方式将list传递给函数，需要特别之处，这里实际还是传递一个浅拷贝，如果list中还有list，通过该方式传递list还是会修改源list。
+由示例中可以看到，如果传递my_list[:]给mod_list函数，源list不会受到影响，如果直接传递my_list给mod_list函数，mod_list函数对my_list的修改会影响源list，如果不希望修改源list，推荐使用该方式将list传递给函数，需要特别指出，这里实际还是传递一个浅拷贝，如果list中还有list，通过该方式传递list还是会修改源list。
