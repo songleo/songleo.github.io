@@ -70,5 +70,7 @@ date: 2018-11-17 00:12:05
 - 尽可能的“懒”
 - 多总结
 
-shell技巧分享：https://www.jianshu.com/c/b16afef15196
-我的bash配置：https://github.com/songleo/bashrc/blob/master/my_bashrc.sh
+### 9 附录
+
+- shell技巧分享：https://www.jianshu.com/c/b16afef15196
+- 我的bash配置：https://github.com/songleo/bashrc/blob/master/my_bashrc.sh
