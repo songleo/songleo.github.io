@@ -3,6 +3,18 @@
     <meta content='{{ site.title }}' property='og:title' />
     <title>{{ site.title }}</title>
     {% include head.html %}
+
+    <!-- google analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135902158-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-135902158-1');
+    </script>
+    <!-- google analytics -->
+
   </head>
   <body>
     {% include header.html %}
