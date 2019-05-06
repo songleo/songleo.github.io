@@ -4,9 +4,7 @@ title: kubernetes学习之节点组件
 date: 2019-05-06 00:12:05
 ---
 
-最近开始学习kubernetes，于是想把学习到的知识点记录下来，当成自己的学习输出。
-
-本文主要介绍kubernetes节点中的相关组件。在kubernetes集群中，存在2种节点，master节点和node节点，master节点主要是管理节点，作为集群管理的入口，负责管理集群。node节点是计算节点，主要用于运行用户的应用程序。一般在ha环境需要配置多个master节点，防止单点故障导致集群不可用。node节点可以按需扩展。下面分别节点master节点和node节点的组件。
+最近开始学习kubernetes，于是想把学习到的知识点记录下来，当成自己的学习输出。本文主要介绍kubernetes节点中的相关组件。在kubernetes集群中，存在2种节点，master节点和node节点，master节点主要是管理节点，作为集群管理的入口，负责管理集群。node节点是计算节点，主要用于运行用户的应用程序。一般在ha环境需要配置多个master节点，防止单点故障导致集群不可用。node节点可以按需扩展。下面分别节点master节点和node节点的组件。
 
 ## 1 master节点
 
