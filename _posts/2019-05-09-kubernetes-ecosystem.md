@@ -34,9 +34,9 @@ date: 2019-05-09 00:12:05
 
 - kube-controller-manager：kubernetes的控制器管理系统，负责管理运行的各种控制器
 
-- kubelet：主要用于和master节点及各种接口通信，例如与container runtime interface通信，将容器在node节点创建并运行起来。与container storage interface通信，为容器提供存储功能。与container networking interface通信为容器配置网络功能。这里提到的interface主要是为了方便第三方提供具体的实现方案，kubernetes定义接口，方便满足不通的容器、存储和网络需求
+- kubelet：主要用于和master节点及各种接口通信，例如与container runtime interface通信，将容器在node节点创建并运行起来
 
-- kube-proxy：网络代理服务，在kubernetes中负责service的具体实现，维护节点上的网络规则和执行网络转发，实现网络代理和负载均衡功能。如pod到service的通信，节点到service的访问等
+- kube-proxy：网络代理服务，在kubernetes中负责service的具体实现，维护节点上的网络规则和执行网络转发，实现网络代理和负载均衡功能
 
 - istio：微服务治理系统，提供服务发现、服务注册、服务追踪、服务拓扑结构展示、限流、分流、熔断等功能
 
