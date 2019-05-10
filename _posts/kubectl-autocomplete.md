@@ -34,3 +34,11 @@ kube-prompt v1.0.3 (rev-ba1a338)
 Please use `exit` or `Ctrl-D` to exit this program..
 >>>
 ```
+
+设置iterm2一键登录。
+
+```
+brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+
+/usr/local/bin/sshpass -f "/Users/ssli/Box Sync/iterm2/ssh_passwd/icp-env" ssh -p 22 root@9.30.100.245
+```
