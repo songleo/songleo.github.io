@@ -54,6 +54,8 @@ date: 2019-05-09 00:12:05
 
 - logstash：日志收集，提供分析过滤功能
 
+- operator：是由coreos开发的，用来扩展kubernetes api，特定的应用程序控制器，它用来创建、配置和管理复杂的有状态应用，如数据库、缓存和监控系统。
+
 - prometheus：容器监控服务，设置告警策略，将告警信息发送给alertmanager
 
 - service catalog：kubernetes的api扩展，方便kubernetes集群内部应用访问第三方提供的服务
