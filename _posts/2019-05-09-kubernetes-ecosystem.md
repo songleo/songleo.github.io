@@ -50,6 +50,8 @@ date: 2019-05-09 00:12:05
 
 - kubernetes：容器管理、编排系统
 
+- kubebuilder：是一个基于crd来构建kubernetes api的框架，可以使用crd来构建api、controller和 admission webhook
+
 - logstash：日志收集，提供分析过滤功能
 
 - prometheus：容器监控服务，设置告警策略，将告警信息发送给alertmanager
