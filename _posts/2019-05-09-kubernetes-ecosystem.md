@@ -4,7 +4,9 @@ title: kubernetes生态系统
 date: 2019-05-09 00:12:05
 ---
 
-本文主要简单介绍kubernetes生态系统中的相关软件及组件，持续更新中。
+本文主要简单介绍kubernetes生态系统中的相关软件、组件及缩写，持续更新中。
+
+## 1 软件及组件
 
 - alertmanager：展示告警信息，支持集成第三方通知系统，如email、slack等
 
@@ -56,6 +58,8 @@ date: 2019-05-09 00:12:05
 
 - operator：是由coreos开发的，用来扩展kubernetes api，特定的应用程序控制器，它用来创建、配置和管理复杂的有状态应用，如数据库、缓存和监控系统。
 
+- operatorhub：operator仓库，详见https://www.operatorhub.io
+
 - prometheus：容器监控服务，设置告警策略，将告警信息发送给alertmanager
 
 - service catalog：kubernetes的api扩展，方便kubernetes集群内部应用访问第三方提供的服务
@@ -63,5 +67,11 @@ date: 2019-05-09 00:12:05
 - terraform：iaas层接口
 
 - tiller：helm的服务端
+
+## 2 缩写
+
+- crd：custom resource definition
+
+- tpr：third party resource
 
 > 未完待续 ......
