@@ -8,6 +8,4 @@
 
 - sidebarenhancements：边框功能增强，很有用的一个插件
 
-
 > 未完待续 ......
-
