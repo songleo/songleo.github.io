@@ -12,6 +12,8 @@ date: 2019-05-09 00:12:05
 
 - calico：提供容器网络服务
 
+- chart：用于描述创建一个kubernetes应用实例需要的信息
+
 - docker：容器运行时，提供容器创建、运行等功能
 
 - elasticsearch：分布式搜索引擎
