@@ -4,7 +4,7 @@ title: kubernetes生态系统
 date: 2019-05-09 00:12:05
 ---
 
-本文主要简单介绍kubernetes生态系统中的相关软件、组件及缩写，持续更新中。
+本文主要简单介绍kubernetes生态系统中的相关软件、组件、特性及缩写，持续更新中。
 
 ## 1 软件及组件
 
@@ -58,7 +58,7 @@ date: 2019-05-09 00:12:05
 
 - logstash：日志收集，提供分析过滤功能
 
-- operator：是由coreos开发的，用来扩展kubernetes api，特定的应用程序控制器，它用来创建、配置和管理复杂的有状态应用，如数据库、缓存和监控系统。
+- operator：是由coreos开发的，用来扩展kubernetes api，特定的应用程序控制器，它用来创建、配置和管理复杂的有状态应用，如数据库、缓存和监控系统，可以认为是crd + controller，crd实现资源的定义，而需要通过controller监控crd实例的增删改查事件，从而实现相应的业务逻辑
 
 - operatorhub：operator仓库，详见https://www.operatorhub.io
 
@@ -70,10 +70,20 @@ date: 2019-05-09 00:12:05
 
 - tiller：helm的服务端，用于管理应用发布
 
+- validation：基于openapi v3 schema的验证机制，检验用户提交的资源定义是否符合规范
+
+- finalizer：crd中的用于实现控制器的异步删除钩子
+
+- subresources：crd的子资源定义功能
+
+- categories：对crd进行分组
+
+- aggregation：一种扩展kubernetes api的方法，实现不修改kubernetes核心代码的同时扩展kubernetes api，将第三方服务注册到 kubernetes api中，实现通过kubernetes api访问外部服务
+
 ## 2 缩写
 
-- crd：custom resource definition
+- crd：custom resource definition，新版tpr，
 
-- tpr：third party resource
+- tpr：third party resource，老版本的crd
 
 > 未完待续 ......
