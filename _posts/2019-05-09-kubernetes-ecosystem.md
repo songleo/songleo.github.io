@@ -12,9 +12,9 @@ date: 2019-05-09 00:12:05
 
 - calico：提供容器网络服务
 
-- chart：用于描述创建一个kubernetes应用实例需要的信息
+- chart：用于描述创建kubernetes应用实例所需要的相关信息
 
-- docker：容器运行时，提供容器创建、运行等功能
+- docker：容器运行时的具体实现，提供容器创建、运行等功能
 
 - elasticsearch：分布式搜索引擎
 
@@ -68,7 +68,7 @@ date: 2019-05-09 00:12:05
 
 - terraform：iaas层接口
 
-- tiller：helm的服务端
+- tiller：helm的服务端，用于管理应用发布
 
 ## 2 缩写
 
