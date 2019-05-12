@@ -72,6 +72,8 @@ date: 2019-05-12 00:12:05
 
 - sublime分屏：cmd+alt+2
 
+- sublime打开关闭的文件：cmd+shift+t
+
 - 回到上层目录：cmd+up
 
 - 输入法切换：ctrl+space
@@ -79,6 +81,8 @@ date: 2019-05-12 00:12:05
 - 打开/关闭dock：opt+cmd+d
 
 - 回到桌面：f11
+
+- 有道词典：coc+y
 
 - 微信截屏：cmd+ctrl+a
 
