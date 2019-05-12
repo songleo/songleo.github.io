@@ -86,4 +86,6 @@ date: 2019-05-09 00:12:05
 
 - tpr：third party resource，老版本的crd
 
+- dac：dynamic admission control，也称initializer
+
 > 未完待续 ......

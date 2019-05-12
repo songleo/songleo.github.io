@@ -70,6 +70,8 @@ date: 2019-05-12 00:12:05
 
 - sublime大小写转换：cmd+k+u/l
 
+- sublime字体调整：cmd++/-
+
 - sublime分屏：cmd+alt+2
 
 - sublime打开关闭的文件：cmd+shift+t
