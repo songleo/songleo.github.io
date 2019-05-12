@@ -58,12 +58,26 @@ date: 2019-05-12 00:12:05
 
 - 切换window：cmd+~
 
-- 大小写转换：cmd+k+u/l
+- 关闭window：cmd+w
 
-- 分屏：cmd+alt+2
+- 关闭window：cmd+w
+
+- 切换window：cmd+tab
+
+- sublime复制上一行：cmd+shift+d
+
+- sublime在当前行前添加空行：cmd+shift+enter
+
+- sublime大小写转换：cmd+k+u/l
+
+- sublime分屏：cmd+alt+2
 
 - 回到上层目录：cmd+up
 
 - 输入法切换：ctrl+space
+
+- 打开/关闭dock：opt+cmd+d
+
+- 回到桌面：f11
 
 > 未完待续 ......
