@@ -4,7 +4,7 @@ title: kubernetes生态系统
 date: 2019-05-09 00:12:05
 ---
 
-本文主要简单介绍kubernetes生态系统中的相关软件、组件、特性及缩写，持续更新中。
+本文主要简单介绍kubernetes生态系统中的相关软件、组件、特性及缩写，持续更新中，更新的原则就是：我在学习kubernetes过程觉得重要或者不好记住。
 
 ## 1 软件、组件及特性
 
@@ -86,6 +86,8 @@ date: 2019-05-09 00:12:05
 
 - tpr：third party resource，老版本的crd
 
-- dac：dynamic admission control，也称initializer
+- dac：dynamic admission control，也称initializer，一种控制器
+
+- cidr：classless inter-domain routing，无类域内路由选择
 
 > 未完待续 ......
