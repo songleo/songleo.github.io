@@ -56,6 +56,8 @@ date: 2019-05-09 00:12:05
 
 - kubebuilder：是一个基于crd来构建kubernetes api的框架，可以使用crd来构建api、controller和 admission webhook
 
+- admission：kubernetes中的一种控制器，用于对api对象进行一些初始化性质的工作，对象被创建之后立即调用，支持默认（admission）和动态（dac/initializer）2种方式，istio就是通过dac功能自动注入sidecar到pod，和应用一起在同一个pod工作
+
 - logstash：日志收集，提供分析过滤功能
 
 - operator：是由coreos开发的，用来扩展kubernetes api，特定的应用程序控制器，它用来创建、配置和管理复杂的有状态应用，如数据库、缓存和监控系统，可以认为是crd + controller，crd实现资源的定义，而需要通过controller监控crd实例的增删改查事件，从而实现相应的业务逻辑
@@ -86,8 +88,10 @@ date: 2019-05-09 00:12:05
 
 - tpr：third party resource，老版本的crd
 
-- dac：dynamic admission control，也称initializer，一种控制器
+- dac：dynamic admission control，也称initializer，一种控制器，用于对创建的api对象进行一些初始化的工作
 
 - cidr：classless inter-domain routing，无类域内路由选择
+
+- cc：customer controller，自定义控制器，一个死循环，通过不断对比api对象的实际状态和期望状态，以此为依据实现相应的业务逻辑
 
 > 未完待续 ......
