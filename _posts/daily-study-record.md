@@ -1,4 +1,5 @@
-# 05-13
+
+05-13
 
 ## kubernetes api扩展学习
 
@@ -11,9 +12,7 @@ kubernetes目前只支持2中方式扩展api：
 - api aggregation：独立的api server，由主api server委托该独立的api server处理自定义的资源，更加灵活，但是不支持kubectl，和kubernetes不够统一，适用于命令模式
 
 声明式api:
-kubectl apply命令（声明式请求），可以实现多个客户端同时写一个api对象，借助类似git merge的功能，kubernetes自动merge对api对象的修改，实现一种类似patch的操作，如果出现merge冲突，才需要人为干扰。如果使用replace之类的命令式请求，就不能实现多个客户端同时写一个api对象（api server实现）。
-
-yaml配置文件，用于描述api对象的期望状态。
+kubectl apply命令（声明式请求），可以实现多个客户端同时写一个api对象，借助类似git merge的功能，kubernetes自动merge对api对象的修改，实现一种类似patch的操作，如果出现merge冲突，才需要人为干扰。如果使用replace之类的命令式请求，就不能实现多个客户端同时写一个api对象（api server实现）。yaml配置文件，用于描述api对象的期望状态。
 
 
 编写自定义控制器步骤：
@@ -37,3 +36,6 @@ control loop：控制循环，一个死循环，不断的通过lister从informer
 faq:
 
 - 在自定义控制器中，如何同时使用kubernetes默认的api对象的informer工厂，例如deployment的informer？done
+
+05-14
+
