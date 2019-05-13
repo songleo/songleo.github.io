@@ -8,4 +8,6 @@
 
 - sidebarenhancements：边框功能增强，很有用的一个插件
 
+- gitgutter：配合git显示文件被修改后的标识
+
 > 未完待续 ......
