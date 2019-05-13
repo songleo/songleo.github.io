@@ -2,6 +2,14 @@
 
 ## kubernetes api扩展学习
 
+crd定义，需要描述资源的组、版本、资源类型、资源的作用范围（namespace和cluster级别）。
+
+kubernetes目前只支持2中方式扩展api：
+
+- crd：简单且和kubernetes高度集成，适用于声明式api，它的controller是单独运行，通过client-go和api server交互，而内置的controller统一由kube-controller管理，类似外挂和内置的关系
+
+- api aggregation：独立的api server，由主api server委托该独立的api server处理自定义的资源，更加灵活，但是不支持kubectl，和kubernetes不够统一，适用于命令模式
+
 声明式api:
 kubectl apply命令（声明式请求），可以实现多个客户端同时写一个api对象，借助类似git merge的功能，kubernetes自动merge对api对象的修改，实现一种类似patch的操作，如果出现merge冲突，才需要人为干扰。如果使用replace之类的命令式请求，就不能实现多个客户端同时写一个api对象（api server实现）。
 

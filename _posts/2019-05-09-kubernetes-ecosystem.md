@@ -14,6 +14,8 @@ date: 2019-05-09 00:12:05
 
 - chart：用于描述创建kubernetes应用实例所需要的相关信息
 
+- cronjob：定时执行的批处理作业，kubernetes中一种资源对象
+
 - docker：容器运行时的具体实现，提供容器创建、运行等功能
 
 - elasticsearch：分布式搜索引擎
@@ -54,6 +56,10 @@ date: 2019-05-09 00:12:05
 
 - kubernetes：容器管理、编排系统
 
+- knative：是谷歌开源的一套serverless架构方案，它扩展了kubernetes，提供了一组中间件，提高了构建可在本地、云和第三方数据中心等地方运行的现代化、以源为中心且基于容器的应用的能力
+
+- serverless：指的是由开发者实现的服务端逻辑运行在无状态的计算容器中，它由事件触发， 完全被第三方管理，其业务层面的状态则被开发者使用的数据库和存储资源所记录
+
 - kubebuilder：是一个基于crd来构建kubernetes api的框架，可以使用crd来构建api、controller和 admission webhook
 
 - admission：kubernetes中的一种控制器，用于对api对象进行一些初始化性质的工作，对象被创建之后立即调用，支持默认（admission）和动态（dac/initializer）2种方式，istio就是通过dac功能自动注入sidecar到pod，和应用一起在同一个pod工作
@@ -68,11 +74,15 @@ date: 2019-05-09 00:12:05
 
 - service catalog：kubernetes的api扩展，方便kubernetes集群内部应用访问第三方提供的服务
 
+- super version：kubernetes中表示一种资源类型的所有版本字段全集，用于描述用户提交的yaml配置文件，通过它可以实现用一种对象管理不同版本的yaml文件
+
 - terraform：iaas层接口
 
 - tiller：helm的服务端，用于管理应用发布
 
-- validation：基于openapi v3 schema的验证机制，检验用户提交的资源定义是否符合规范
+- validation：基于openapi v3 schema的验证机制，检验用户提交的资源定义是否符合规范，检验通过的api对象就是一个有效的kubernetes api对象
+
+- registry：kubernetes中的一种数据结构，用于存储validation通过的api对象 
 
 - finalizer：crd中的用于实现控制器的异步删除钩子
 
@@ -80,18 +90,25 @@ date: 2019-05-09 00:12:05
 
 - categories：对crd进行分组
 
-- aggregation：一种扩展kubernetes api的方法，实现不修改kubernetes核心代码的同时扩展kubernetes api，将第三方服务注册到 kubernetes api中，实现通过kubernetes api访问外部服务
+- aggregation：一种扩展kubernetes api的方法，实现不修改kubernetes核心代码的同时扩展kubernetes api，将第三方服务注册到 kubernetes api中，实现通过kubernetes api访问外部服务，另外一种扩展kubernetes api的方法是crd
+
+- global tags：kubernetes代码中用于控制全局的代码生成功能
+
+- k8s.io/code-generator：kubernetes提供的代码生成工具，用于为crd自动生成clientset、informer、lister，用于实现crd的controller
 
 ## 2 缩写
 
-- crd：custom resource definition，新版tpr，
+- crd：custom resource definition，自定义api资源，新版tpr，kubernetes的一种api插件机制，用户提交的新类型定义的yaml就是crd的实例，叫cr（customer resource），借助crd，kubernetes才能识别用户提交的cr
 
 - tpr：third party resource，老版本的crd
 
-- dac：dynamic admission control，也称initializer，一种控制器，用于对创建的api对象进行一些初始化的工作
+- dac：dynamic admission control，也称initializer，一种控制器，用于对创建的api对象进行一些初始化的工作，kubernetes默认就提供了一些initializer
 
 - cidr：classless inter-domain routing，无类域内路由选择
 
 - cc：customer controller，自定义控制器，一个死循环，通过不断对比api对象的实际状态和期望状态，以此为依据实现相应的业务逻辑
+
+- mvcc：多版本并发控制，kubectl apply的实现机制
+
 
 > 未完待续 ......
