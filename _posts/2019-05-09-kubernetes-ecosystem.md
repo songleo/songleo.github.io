@@ -100,6 +100,8 @@ date: 2019-05-09 00:12:05
 
 - crd：custom resource definition，自定义api资源，新版tpr，kubernetes的一种api插件机制，用户提交的新类型定义的yaml就是crd的实例，叫cr（customer resource），借助crd，kubernetes才能识别用户提交的cr
 
+-cr：crd实例
+
 - tpr：third party resource，老版本的crd
 
 - dac：dynamic admission control，也称initializer，一种控制器，用于对创建的api对象进行一些初始化的工作，kubernetes默认就提供了一些initializer
@@ -110,5 +112,6 @@ date: 2019-05-09 00:12:05
 
 - mvcc：多版本并发控制，kubectl apply的实现机制
 
+- rabc：role based access control，基于角色的访问控制
 
 > 未完待续 ......
