@@ -96,6 +96,10 @@ date: 2019-05-09 00:12:05
 
 - k8s.io/code-generator：kubernetes提供的代码生成工具，用于为crd自动生成clientset、informer、lister，用于实现crd的controller
 
+- kiali：istio的可观察性工具，可视化服务网格拓扑、断路器、请求率和分布式追踪功能
+
+- service graph：和kiali功能差不多的istio服务观察工具
+
 ## 2 缩写
 
 - crd：custom resource definition，自定义api资源，新版tpr，kubernetes的一种api插件机制，用户提交的新类型定义的yaml就是crd的实例，叫cr（customer resource），借助crd，kubernetes才能识别用户提交的cr
@@ -113,5 +117,9 @@ date: 2019-05-09 00:12:05
 - mvcc：多版本并发控制，kubectl apply的实现机制
 
 - rabc：role based access control，基于角色的访问控制
+
+- poc： proof of concept，概念验证
+
+- uas：user aggregated apiserver，一种扩展kubernetes api的机制，类似crd
 
 > 未完待续 ......

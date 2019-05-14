@@ -39,3 +39,19 @@ faq:
 
 05-14
 
+## rabc
+
+通过kubernetes api动态配置策略。
+
+operator是一个可以处理某种类型的自定义资源的自定义控制器，开发和部署分布式应用的事实标准。operator本身在实现上，其实是在kubernetes声明式api基础上的一种“微创新”。它合理的利用了kubernetes api可以添加自定义api类型的能力，然后又巧妙的通过kubernetes原生的“控制器模式”，完成了一个面向分布式应用终态的调谐过程。诞生于2016秋天。围绕kubernetes api对象的“终态”进行调谐的一个控制器（controller）而已。
+
+
+
+
+
+
+
+
+
+
+
