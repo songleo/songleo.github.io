@@ -43,8 +43,24 @@ faq:
 
 通过kubernetes api动态配置策略。
 
-operator是一个可以处理某种类型的自定义资源的自定义控制器，开发和部署分布式应用的事实标准。operator本身在实现上，其实是在kubernetes声明式api基础上的一种“微创新”。它合理的利用了kubernetes api可以添加自定义api类型的能力，然后又巧妙的通过kubernetes原生的“控制器模式”，完成了一个面向分布式应用终态的调谐过程。诞生于2016秋天。围绕kubernetes api对象的“终态”进行调谐的一个控制器（controller）而已。
+operator是一个可以处理某种类型的自定义资源的自定义控制器，开发和部署分布式应用的事实标准。operator本身在实现上，其实是在kubernetes声明式api基础上的一种“微创新”。它合理的利用了kubernetes api可以添加自定义api类型的能力，然后又巧妙的通过kubernetes原生的“控制器模式”，完成了一个面向分布式应用终态的调谐过程。诞生于2016秋天。operator只是一个围绕kubernetes api对象的“终态”进行调谐的一个控制器（controller）而已。
 
+05-15
+
+## istio operator design
+
+
+## helm
+
+c/s架构，由helm cli（客户端）和tiller（服务端）组成。helm就是一个可执行文件，
+
+核心概念：
+
+- helm：kubernetes的包管理工具，类似rhel的yum或者ubuntu的apt-get
+
+- chart：helm管理的应用安装包，也可以称为kubernetes的资源包描述，结构固定的目录或者压缩文件，多个chart之间可以相互依赖，类似rhel中的rpm一样
+
+- release：部署一个chart后的实例，即执行helm install后生成一个release
 
 
 

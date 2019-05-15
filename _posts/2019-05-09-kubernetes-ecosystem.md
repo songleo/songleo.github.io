@@ -100,11 +100,19 @@ date: 2019-05-09 00:12:05
 
 - service graph：和kiali功能差不多的istio服务观察工具
 
+- cadvisor：一种用于监控资源使用情况，并分析容器性能的开源代理
+
+- liveness probe：主动监控容器是否存活的机制
+
+- readiness probe：主动监控容器是否健康或者提供的服务的机制
+
+- horizontal pod autoscaler：通过分析不同的指标信息，动态调整集群pod的数量
+
 ## 2 缩写
 
 - crd：custom resource definition，自定义api资源，新版tpr，kubernetes的一种api插件机制，用户提交的新类型定义的yaml就是crd的实例，叫cr（customer resource），借助crd，kubernetes才能识别用户提交的cr
 
--cr：crd实例
+- cr：crd实例
 
 - tpr：third party resource，老版本的crd
 
