@@ -28,6 +28,7 @@ date: 2019-05-12 00:12:05
 - vim全选复制：gg ggyG
 - vim全部删除：gg dG
 - window关闭：cmd+w
+- 关闭应用：cmd+q
 - window切换：cmd+tab
 - window切换：cmd+~
 - window隐藏：cmd+m
