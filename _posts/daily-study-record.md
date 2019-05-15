@@ -115,8 +115,45 @@ https://jimmysong.io/kubernetes-handbook/practice/helm.html
 ```
 
 
+## kustomize
+
+不用维护多份yaml配置文件，比如，已经有一份v1的yaml，现在需要修改成v2，一般需要复制v1，然后修改成v2，就存在2份配置文件，这样维护多分配置文件不合理。应该通过类似diff和patch的机制，简化yaml配置文件。
+
+```
+~/someApp
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   └── service.yaml
+└── overlays
+    ├── development
+    │   ├── cpu_count.yaml
+    │   ├── kustomization.yaml
+    │   └── replica_count.yaml
+    └── production
+        ├── cpu_count.yaml
+        ├── kustomization.yaml
+        └── replica_count.yaml
+```
+
+- base：基础的配置文件
+- overlays：用于存储不同的配置文件，需要和base部分存在一定diff，部署时结合base，生成不同的配置文件
+
+安装：
+
+```
+$ OP_SYSTEM=linux
+$ curl -s https://api.github.com/repos/kubernetes-sigs/kustomize/releases/latest | \
+  grep browser_download | \
+  grep ${OP_SYSTEM} | \
+  cut -d '"' -f 4 | \
+  xargs curl -O -L
+$ mv kustomize_*_${OP_SYSTEM}_amd64 /usr/local/bin/kustomize
+$ chmod u+x /usr/local/bin/kustomize
+```
 
 
+ref:
 
-
+https://ellis-wu.github.io/2018/07/26/kustomize-introduction/
 
