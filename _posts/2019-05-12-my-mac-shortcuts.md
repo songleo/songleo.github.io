@@ -15,27 +15,28 @@ date: 2019-05-12 00:12:05
 - iterm2 tab switch：ctrl+tab
 - iterm2 删除一行：ctrl+u
 - sublime分屏：cmd+alt+2
+- sublime回到上次光标：ctrl+-
 - sublime在当前行前添加空行：cmd+shift+enter
 - sublime复制上一行：cmd+shift+d
 - sublime大小写转换：cmd+k+u/l
-- sublime回到上次光标：ctrl+-
-- 字体调整：cmd++/-
-- sublime排序：fn+f5
 - sublime打开关闭的文件：cmd+shift+t
+- sublime排序：fn+f5
 - sublime移动行：alt+cmd+up/down
 - vim全选复制：gg ggyG
 - vim全部删除：gg dG
-- 全选：cmd+a
-- window关闭：cmd+w
 - window关闭：cmd+w
 - window切换：cmd+tab
 - window切换：cmd+~
+- window隐藏：cmd+m
+- 全选：cmd+a
 - 删除一行：cmd+del
 - 去格式粘贴：shift+opt+cmd+v
+- 反向删除：fn+del
 - 回到上层目录：cmd+up
 - 回到桌面：cmd+f3
 - 回到桌面：f11
 - 复制：cmd+c
+- 字体调整：cmd++/-
 - 微信截屏：cmd+ctrl+a
 - 微信面板：cmd+ctrl+w
 - 快速启动app：cmd+space
@@ -45,12 +46,11 @@ date: 2019-05-12 00:12:05
 - 文首尾：fn+up/down
 - 有道词典：coc+y
 - 移动光标到顶部：fn+<-
-- 反向删除：fn+del
 - 移动文件：cmd+opt+v
 - 粘贴：cmd+v
 - 行首尾：cmd+<-/->
 - 输入法切换：ctrl+space
-- 锁屏：cmd+ctrl+q
 - 选择一行：cmd+shift+->/<-
+- 锁屏：cmd+ctrl+q
 
 > 未完待续 ......
