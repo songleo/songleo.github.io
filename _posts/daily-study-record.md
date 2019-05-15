@@ -52,18 +52,67 @@ operator是一个可以处理某种类型的自定义资源的自定义控制器
 
 ## helm
 
-c/s架构，由helm cli（客户端）和tiller（服务端）组成。helm就是一个可执行文件，
+主要功能是封装kubernetes原因应用，并对应用进行版本管理、依赖管理、升级回滚，方便对kubernetes应用部署。通过helm部署应用时，实际是将templates渲染成kubernetes能是别的yaml格式的文件。
+
+安装：
+
+提前安装kubernetes集群
+
+```
+# brew install kubernetes-helm
+# helm init --upgrade
+
+# curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh
+# chmod 700 get_helm.sh
+# ./get_helm.sh
+# kubectl create serviceaccount --namespace kube-system tiller
+# kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+# helm init --upgrade
+# kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+# kubectl -n kube-system get pods|grep tiller
+```
+
+c/s架构，由helm cli（客户端）和tiller（服务端）组成。helm cl就是一个可执行文件，方便对应用进行配置、部署、升级和回滚。
 
 核心概念：
 
-- helm：kubernetes的包管理工具，类似rhel的yum或者ubuntu的apt-get
+- helm：kubernetes的包管理工具，类似rhel的yum或者ubuntu的apt-get，chart管理器，负责create、pull、search和verify chart，并通过helm安装tiller，调用tiller执行相应操作，如根据chart创建一个release
 
-- chart：helm管理的应用安装包，也可以称为kubernetes的资源包描述，结构固定的目录或者压缩文件，多个chart之间可以相互依赖，类似rhel中的rpm一样
+- tiller：helm的服务端，由helm安装（helm init --upgrade）在kubernetes集群中的一个pod，用来执行helm cli发送的命令，管理release
 
-- release：部署一个chart后的实例，即执行helm install后生成一个release
+- chart：helm管理的应用安装包，也可以称为kubernetes的资源包描述，结构固定的目录或者压缩文件，多个chart之间可以相互依赖，类似rhel中的rpm一样，是一组配置好的kubernetes资源定义组合，至少包含自描述文件chart.yaml，和一个模板文件values.yaml
+
+- release：部署一个chart后的实例，即执行helm install后生成一个release，是一组已经部署到kubernetes集群的资源集合
+
+chart文件结构：
+
+- chart.yaml：chart本身的版本和配置信息
+- charts：依赖的chart
+- templates：配置模板目录，按照go template语法
+- notes.txt：helm的提示信息
+- _helpers.tpl：用于修改kubernetes api对象的配置模板
+- deployment.yaml：kubernetes的deployment对象配置
+- service.yaml：kubernetes的service对象配置
+- valus.yaml：kubernetes对象的配置
+
+faq：
+
+- Error: no available release name found
+
+```
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
+```
+
+tiller没有正确的角色权限导致。
 
 
-
+ref：
+```
+https://ezmo.me/2017/09/24/helm-quick-toturial/
+https://jimmysong.io/kubernetes-handbook/practice/helm.html
+```
 
 
 

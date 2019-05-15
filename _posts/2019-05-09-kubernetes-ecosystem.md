@@ -106,7 +106,7 @@ date: 2019-05-09 00:12:05
 
 - readiness probe：主动监控容器是否健康或者提供的服务的机制
 
-- horizontal pod autoscaler：通过分析不同的指标信息，动态调整集群pod的数量
+- horizontal pod autoscaler（hpa）：通过分析不同的指标信息，动态调整集群pod的数量
 
 ## 2 缩写
 
