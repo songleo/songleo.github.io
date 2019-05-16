@@ -4,8 +4,9 @@ title: helm学习（一）
 date: 2019-05-16 00:12:05
 ---
 
-helm主要功能是封装kubernetes原生应用，并对应用进行版本管理、依赖管理、升级回滚，方便对kubernetes应用部署。通过helm部署kubernetes应用时，实际是将templates渲染成kubernetes能识别的yaml格式的资源描述文件。
-helm采用c/s架构，由helm cli（客户端）和tiller（服务端）组成。helm cl就是一个可执行文件，方便对应用进行配置、部署、升级和回滚。核心概念如下：
+helm的主要功能是封装kubernetes应用，并对应用进行版本管理、依赖管理、升级回滚，方便部署kubernetes应用。通过helm部署kubernetes应用时，实际是将templates渲染成kubernetes能识别的yaml格式的资源描述文件。helm采用c/s架构，由helm cli（客户端）和tiller（服务端）组成，helm cl就是一个可执行文件，方便对应用进行配置、部署、升级和回滚。
+
+核心概念如下：
 
 - helm：kubernetes的包管理工具，类似rhel的yum或者ubuntu的apt-get，chart管理器，负责create、pull、search和verify chart，并通过helm安装tiller，调用tiller执行相应操作，如根据chart创建一个release
 
@@ -39,7 +40,6 @@ chart文件结构：
 # kubectl -n kube-system get pods|grep tiller
 ```
 
-
 如果安装过程中出现该错误：
 
 ```
@@ -56,5 +56,6 @@ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"templat
 
 
 ### 参考
+
 - https://ezmo.me/2017/09/24/helm-quick-toturial/
 - https://jimmysong.io/kubernetes-handbook/practice/helm.html
