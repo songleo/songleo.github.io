@@ -15,24 +15,24 @@ date: 2019-05-12 00:12:05
 - iterm2 tab switch：ctrl+tab
 - iterm2 删除一行：ctrl+u
 - sublime分屏：cmd+alt+2
+- sublime命令界面：cmd+shift+p
 - sublime回到上次光标：ctrl+-
 - sublime在当前行前添加空行：cmd+shift+enter
 - sublime复制上一行：cmd+shift+d
 - sublime大小写转换：cmd+k+u/l
-- sublime命令界面：cmd+shift+p
-- sublime查找文件：cmd+p
-- sublime查找函数定义：cmd+r
 - sublime打开关闭的文件：cmd+shift+t
 - sublime排序：fn+f5
+- sublime查找函数定义：cmd+r
+- sublime查找文件：cmd+p
 - sublime移动行：alt+cmd+up/down
 - vim全选复制：gg ggyG
 - vim全部删除：gg dG
 - window关闭：cmd+w
-- 关闭应用：cmd+q
 - window切换：cmd+tab
 - window切换：cmd+~
 - window隐藏：cmd+m
 - 全选：cmd+a
+- 关闭应用：cmd+q
 - 删除一行：cmd+del
 - 去格式粘贴：shift+opt+cmd+v
 - 反向删除：fn+del
