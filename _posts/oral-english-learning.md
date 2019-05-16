@@ -33,7 +33,7 @@ the sound is cutting in and out.
 let's see...is this better?
 > 我看看，这样好点了吗？
 
-oh, I can hear you now.
+oh, i can hear you now.
 > 嗯，现在我能听到你们说话了。
 
 - 会议临近尾声
@@ -61,8 +61,41 @@ here you go
 
 - 共享ppt
 
-as we wrap up this part, I'd like to check in with you, are there any questions?
+as we wrap up this part, i'd like to check in with you, are there any questions?
 > 结束这一部分前，我想确认一下，你们有问题要问么？
+
+will this presentation be online?
+> ppt会上传吧？
+
+yes, i believe it will.
+> 嗯，应该会。
+
+thank you, that would be helpful
+> 谢谢，那会对我们很有帮助。
+
+before we finish, i'd like to take your e-mail addresses.
+> 散会前，我记一下你们的邮箱吧。
+
+here is mine
+> 这是我的。
+
+- 情态动词can
+
+can i pet you dog?
+> 我能摸你的狗么？（表示请求）
+
+yes, you can, he does't bite.
+> 可以，他不咬人。(表示允许)
+
+look, a cat is swimming!
+> 看，有只猫在游泳！
+
+it can't be a cat, cats can't swim
+> 不可能是猫吧，猫不会游泳。（表示推测和能力）
+
+i don't think so, lily's cat can swim
+> 我不认为，丽丽家的猫就会游泳。（表示能力）
+
 
 
 
