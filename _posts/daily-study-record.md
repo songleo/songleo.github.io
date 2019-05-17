@@ -94,6 +94,7 @@ https://ellis-wu.github.io/2018/07/26/kustomize-introduction/
 
 may-16
 
+### push docker
 
 ## travis
 
@@ -109,6 +110,10 @@ may-17
 
 ref:
 https://www.cnblogs.com/wanqieddy/archive/2011/09/21/2184257.html
+docker build -f Dockerfile.install-cni -t istio-cni .
+docker tag istio-cni songleo/istio-cni
+docker push songleo/istio-cni
+docker pull songleo/istio-cni
 
 
 
