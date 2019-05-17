@@ -99,10 +99,16 @@ may-16
 
 may-17
 
+### makefile
+
+= 是最基本的赋值
+:= 是覆盖之前的值
+?= 是如果没有被赋值过就赋予等号后面的值
++= 是添加等号后面的值
 
 
-
-
+ref:
+https://www.cnblogs.com/wanqieddy/archive/2011/09/21/2184257.html
 
 
 
