@@ -20,7 +20,7 @@ chart文件结构：
 
 - chart.yaml：chart本身的版本和配置信息
 - charts：依赖的chart
-- templates：配置模板目录，按照go template语法
+- templates：配置模板目录，按照go template语法，按照不通的配置安装release
 - notes.txt：helm的提示信息
 - _helpers.tpl：用于修改kubernetes api对象的配置模板
 - deployment.yaml：kubernetes的deployment对象配置
@@ -39,6 +39,27 @@ chart文件结构：
 # kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
 # kubectl -n kube-system get pods|grep tiller
 ```
+
+常用命令如下：
+
+release管理：
+
+- install：安装一个release
+- delete：删除一个release
+- upgrade/rollback：升级和回滚
+- list：查询安装的release
+- history：查询release的历史信息
+- status：查询release的状态
+
+chart管理：
+
+- create：创建一个chart
+- fetch：获取一个chart
+- search：查询chart
+- inspect：查看chart信息
+- package：打包一个chart
+- verify：验证一个chart
+- lint：查看chart是否存在问题
 
 如果安装过程中出现该错误：
 
