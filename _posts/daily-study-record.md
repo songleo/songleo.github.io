@@ -94,13 +94,13 @@ https://ellis-wu.github.io/2018/07/26/kustomize-introduction/
 
 may-16
 
-### push docker
+## push docker
 
 ## travis
 
 may-17
 
-### makefile
+## makefile
 
 = 是最基本的赋值
 := 是覆盖之前的值
@@ -162,6 +162,10 @@ https://github.com/nukc/how-to-use-travis-ci
 May 20, 2019
 
 
+## dockerfile
+
+FROM
+支持变量
 
 
 
