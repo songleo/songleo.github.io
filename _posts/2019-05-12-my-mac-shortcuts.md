@@ -26,6 +26,7 @@ date: 2019-05-12 00:12:05
 - sublime查找文件：cmd+p
 - sublime移动行：alt+cmd+up/down
 - vim全选复制：gg ggyG
+- vim全部替换：%s/foo/bar/g
 - vim全部删除：gg dG
 - window关闭：cmd+w
 - window切换：cmd+tab
