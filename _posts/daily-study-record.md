@@ -102,10 +102,7 @@ may-17
 
 ## makefile
 
-= 是最基本的赋值
-:= 是覆盖之前的值
-?= 是如果没有被赋值过就赋予等号后面的值
-+= 是添加等号后面的值
+
 
 
 ref:
@@ -166,6 +163,71 @@ May 20, 2019
 
 FROM
 支持变量
+
+
+May 22, 2019
+
+语法规则如下：
+
+```
+target:prerequisites
+  command
+```
+
+target为需要生成的目标，prerequisites为依赖项，command为make需要执行的命令（任意的Shell命令），command前必须以tab键开始。也就是说，target这一个或多个的目标文件依赖于prerequisites中的文件，其生成规则定义在command中。prerequisites中如果有一个以上的文件比target文件要新的话，command所定义的命令就会被执行。这就是makefile的规则。也就是makefile中最核心的内容。
+
+make命令将makefile中第一个出现的目标作为最终目标。
+
+$$ 在makefile中表示$，引用变量时可以使用${VAR}或者$(VAR)。
+使用shell的方式：
+
+cur_dir=$(shell pwd)
+
+或者在规则下面直接写，每行shell命令都是一个单独的进程，所以上一行的变量在下一行是无效的。所以最好写在一行。通过;或者\连接，否则变量就不能共享。
+
+如果在命令前加上@符号，这不显示命令，只显示命令的执行结果。如果在命令前加上-，命令出错后make也会继续运行。
+
+
+shell在target里面才能生效。
+
+= 是最基本的赋值，会覆盖以前的赋值，以makefile中最后赋值为准
+:= 是覆盖之前的值，但以当前赋值为准
+?= 是如果没有被赋值过就赋予等号后面的值
++= 是添加等号后面的值
+
+$@ 表示目标文件
+$^ 表示所有的依赖文件
+$< 表示第一个依赖文件
+$? 表示比目标还要新的依赖文件列表
+
+
+patsubst：
+
+res=$(patsubst %.c,%.o,$(var) )
+
+将变量$(var)中所有以.c结尾的字符串变成.o结尾
+
+foo:=a.c b.c
+bar=$(foo:%.c=%.o)
+
+bar变成a.o b.o
+
+faq:
+
+make时makefile报下面错误：
+
+```
+/bin/sh: 1: Syntax error: word unexpected (expecting ")")
+```
+
+一般是因为shell类型不一致导致或者空格和tab的错误使用导致。
+可以在makefile中添加SHELL := /bin/bash解决
+
+ref:
+
+https://blog.csdn.net/ruglcc/article/details/7814546
+https://blog.csdn.net/K346K346/article/details/50222577
+
 
 
 
