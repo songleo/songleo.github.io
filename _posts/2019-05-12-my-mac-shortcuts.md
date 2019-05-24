@@ -27,7 +27,7 @@ date: 2019-05-12 00:12:05
 - sublime移动行：alt+cmd+up/down
 - vim全选复制：gg ggyG
 - vim全部替换：%s/foo/bar/g
-- vim多行编辑：ctrl+v，然后移动修改范围，I或者A编辑后，esc
+- vim多行编辑：ctrl+v，然后移动修改范围，I或者A或者s编辑后，esc
 - vim全部删除：gg dG
 - window关闭：cmd+w
 - window切换：cmd+tab
