@@ -50,4 +50,4 @@ Status: Image is up to date for golang:latest
 - layerid：是docker的每个层的所有文件的sha256sum
 - digest：是manifest文件的sha256sum
 
-所以，在构建跨平台的docker镜像时，不需要在dockerfile中处理多平台问题，docker会自动按照manifest中的配置，下载和平台向匹配的镜像。
+所以，在构建跨平台的docker镜像时，不需要在dockerfile中处理多平台问题，docker会自动按照manifest中的配置，下载和平台向匹配的镜像。具体可以参考：https://docs.docker.com/engine/reference/commandline/manifest/
