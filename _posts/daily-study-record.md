@@ -266,76 +266,98 @@ May 24, 2019
 执行git log查看提交记录：
 
 ```
-ssli@sslis-mbp-4:songleo.github.io$ git log
-commit 2944f3d8903cda7bcb14f49e752889a431a93532 (HEAD -> master, origin/master, origin/HEAD)
-Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Fri May 24 13:21:06 2019 +0800
+commit 9238096b62d5d2f8f02d88b3c019756aa3087cf9 (HEAD -> master, origin/master, origin/HEAD)
+Author: ssli <ssli@deepnorth.cn>
+Date:   Tue Apr 2 08:06:35 2019 +0800
 
     auto commit
 
-commit 195e6f9399c157a1489522a3c5bd198e7f1ca477
-Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Fri May 24 11:19:45 2019 +0800
+commit 0865d59799337716d3cc6f74efae0a1c3cb101db
+Author: ssli <ssli@deepnorth.cn>
+Date:   Wed Mar 20 15:51:54 2019 +0800
 
     auto commit
 
-commit 5e8219ebd43cc6abdb8faade63335f266d21a12a
-Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Fri May 24 09:37:12 2019 +0800
+commit 72dae88a2dcc059ba64b1978822f03adeee586ad
+Author: ssli <ssli@deepnorth.cn>
+Date:   Wed Mar 13 10:30:42 2019 +0800
 
     auto commit
 
-commit 01e7c1d9e2b22f1a4feb4c41c7bd09537d2ce6f6
-Merge: cdf09c8 3070a54
-Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Fri May 24 09:32:44 2019 +0800
+commit eb5eca3677c77d9cfdc49cffd083107d3ba905f2
+Author: ssli <ssli@deepnorth.cn>
+Date:   Wed Mar 13 10:23:00 2019 +0800
 
-    Merge branch 'master' of github.com:songleo/songleo.github.io
+    auto commit
+
+commit 42325d7ddb78fcc94e2a84e5fb4db1d057707123
+Author: ssli <ssli@deepnorth.cn>
+Date:   Tue Mar 5 16:41:01 2019 +0800
+
+    auto commit
 ```
 
-选择要合并的提交，比如这里合并前3个提交，即：
+选择要合并的提交，比如这里合并前4个提交，即：
+
+- 9238096b62d5d2f8f02d88b3c019756aa3087cf9
+- 0865d59799337716d3cc6f74efae0a1c3cb101db
+- 72dae88a2dcc059ba64b1978822f03adeee586ad
+- eb5eca3677c77d9cfdc49cffd083107d3ba905f2
+
+那么选择第5个提交，执行以下命令：
 
 ```
-2944f3d8903cda7bcb14f49e752889a431a93532
-195e6f9399c157a1489522a3c5bd198e7f1ca477
-5e8219ebd43cc6abdb8faade63335f266d21a12a
-```
-
-那么选择第4个提交，执行以下命令：
-
-```
-git rebase -i 01e7c1d9e2b22f1a4feb4c41c7bd09537d2ce6f6
+git rebase -i 42325d7ddb78fcc94e2a84e5fb4db1d057707123
 ```
 
 按照要求，将除第一个以外的pick修改成s，保持退出。
 
 ```
-
+pick eb5eca3 auto commit
+s 72dae88 auto commit
+s 0865d59 auto commit
+s 9238096 auto commit
 ```
 
-然后提示修改本次提交的信息，按要求修改保持退出即可。
+然后提示修改本次提交的信息，这里将4次的提交信息都合并，使用了第一句作为本次提交信息。保持退出即可。
 
 ```
+This is a combination of 4 commits.
+# This is the 1st commit message:
+
+# auto commit
+
+# This is the commit message #2:
+
+# auto commit
+
+# This is the commit message #3:
+
+# auto commit
+
+# This is the commit message #4:
+
+# auto commit
 ```
 
 执行git log查看已经合并:
 
 ```
-ssli@sslis-mbp-4:k8s_practice$ glg
-commit 230c9fa1bf85ce0293aca57d19e12675e39a88ab (HEAD -> master)
-Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Tue May 14 10:00:55 2019 +0800
+ssli@sslis-mbp-4:k8s_practice$ git log
+commit 1e645af54bcb4fd1e8dc7ec4e40e6474cc95fcbd (HEAD -> master)
+Author: ssli <ssli@deepnorth.cn>
+Date:   Wed Mar 13 10:23:00 2019 +0800
 
-    This is a combination of 3 commits.
+    This is a combination of 4 commits.
 
-commit 2637dfa64997d73567020bb53b133fde59634fcf
-Author: Song Song Li <lisong1205@gmail.com>
-Date:   Tue May 14 09:54:30 2019 +0800
+commit 42325d7ddb78fcc94e2a84e5fb4db1d057707123
+Author: ssli <ssli@deepnorth.cn>
+Date:   Tue Mar 5 16:41:01 2019 +0800
 
-    Initial commit
+    auto commit
 ```
 
-然后执行git push -f即可。
+这里记住不能再pull远程仓库，否则就会被合并，直接执行git push -f强制推送即可。
 
 
 放弃本次合并执行以下命令：
@@ -352,3 +374,14 @@ git rebase --edit-todo
 
 ref:
 https://segmentfault.com/a/1190000007748862
+
+
+
+
+
+
+
+
+
+
+
