@@ -266,75 +266,66 @@ May 24, 2019
 执行git log查看提交记录：
 
 ```
-commit dae8dd98d8a7be530ec5f7b3347b4dd19d111dcd (HEAD -> master, origin/master, origin/HEAD)
+ssli@sslis-mbp-4:k8s_practice$ git log
+commit 0c270281b0b79a68ba54239da3d9662211e68707 (HEAD -> master, origin/master, origin/HEAD)
 Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Fri May 24 10:44:20 2019 +0800
+Date:   Wed May 15 14:08:36 2019 +0800
 
     auto commit
 
-commit e98085b439938d843fa7be05db23f4fb206b8b41
+commit 330159eb6e6ed8fc645acf3eab0fa5396f4c906d
 Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Fri May 24 09:33:26 2019 +0800
+Date:   Wed May 15 13:51:15 2019 +0800
 
     auto commit
 
-commit 6773a899dc893ea05b69a685e7c055b463568dc5
+commit 9cebc9a32783b8d37cbecd8734057370a053e204
 Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Thu May 23 09:55:22 2019 +0800
+Date:   Tue May 14 10:00:55 2019 +0800
 
     auto commit
 
-commit b27c38e6f7b090c547dec104f6482044fa0ac3ba
-Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Tue May 21 14:12:03 2019 +0800
+commit 2637dfa64997d73567020bb53b133fde59634fcf
+Author: Song Song Li <lisong1205@gmail.com>
+Date:   Tue May 14 09:54:30 2019 +0800
 
-    auto commit
-
-commit b0b7a1e5d168cb3c0259bcfbe4120a444c966b19
-Merge: 1f09315 c812712
-Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Tue May 21 14:10:22 2019 +0800
-
-    auto commit
-
-commit 1f09315ecd9e0d38b8484fe96bd3ac312359fd3c
-Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Tue May 21 14:07:46 2019 +0800
-
-    auto commit
+    Initial commit
 ```
 
 选择要合并的提交，比如这里合并前3个提交，即：
 
 ```
-dae8dd98d8a7be530ec5f7b3347b4dd19d111dcd
-e98085b439938d843fa7be05db23f4fb206b8b41
-6773a899dc893ea05b69a685e7c055b463568dc5
+0c270281b0b79a68ba54239da3d9662211e68707
+330159eb6e6ed8fc645acf3eab0fa5396f4c906d
+9cebc9a32783b8d37cbecd8734057370a053e204
 ```
 
 那么选择第4个提交，执行以下命令：
 
 ```
-git rebase -i b27c38e6f7b090c547dec104f6482044fa0ac3ba
+git rebase -i 2637dfa64997d73567020bb53b133fde59634fcf
 ```
 
-按照要求将pick修改成s，保持退出后会看到合并的信息，修改后再次保存即可。
+按照要求，将除第一个以外的pick修改成s，保持退出后会看到合并的信息，修改后再次保存即可。
 
 执行git log查看已经合并:
 
 ```
-commit ea8840f774663f6a77b4f4857f302697b26df298
+ssli@sslis-mbp-4:k8s_practice$ glg
+commit 230c9fa1bf85ce0293aca57d19e12675e39a88ab (HEAD -> master)
 Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Thu May 23 09:55:22 2019 +0800
+Date:   Tue May 14 10:00:55 2019 +0800
 
-    auto commit 1
+    This is a combination of 3 commits.
 
-    auto commit 2
+commit 2637dfa64997d73567020bb53b133fde59634fcf
+Author: Song Song Li <lisong1205@gmail.com>
+Date:   Tue May 14 09:54:30 2019 +0800
 
-    auto commit 3
+    Initial commit
 ```
 
-然后执行git pull和git push即可。
+然后执行git push -f即可。
 
 
 放弃本次合并执行以下命令：
@@ -349,3 +340,5 @@ git rebase --abort
 git rebase --edit-todo
 ```
 
+ref:
+https://segmentfault.com/a/1190000007748862
