@@ -229,9 +229,30 @@ https://blog.csdn.net/ruglcc/article/details/7814546
 https://blog.csdn.net/K346K346/article/details/50222577
 
 
+May 23, 2019
 
 
+root@ibmz:/share/apps# docker run --rm golang go version
+go version go1.12.5 linux/s390x
+root@ibmz:/share/apps# docker pull golang
+Using default tag: latest
+latest: Pulling from library/golang
+Digest: sha256:cf0b9f69ad1edd652a7f74a1586080b15bf6f688c545044407e28805066ef2cb
+Status: Image is up to date for golang:latest
 
+root@power:/share/apps# docker run --rm golang go version
+go version go1.12.5 linux/ppc64le
+root@power:/share/apps# docker pull golang
+Using default tag: latest
+latest: Pulling from library/golang
+Digest: sha256:cf0b9f69ad1edd652a7f74a1586080b15bf6f688c545044407e28805066ef2cb
+Status: Image is up to date for golang:latest
 
+Digest是manifest文件的sha256sum
+image id是所有层的文件的sha256sum，可以直接使用来下载镜像
+layerid是docker的每个层的所有文件的sha256sum
 
+docker的镜像主要由一组有序的层（创建容器后所有文件来之这些层）和配置参数构成，
 
+ref:
+https://yq.aliyun.com/articles/57752
