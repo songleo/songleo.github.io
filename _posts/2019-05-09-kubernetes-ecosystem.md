@@ -90,6 +90,8 @@ date: 2019-05-09 00:12:05
 
 - categories：对crd进行分组
 
+- moby：docker的开源实现
+
 - aggregation：一种扩展kubernetes api的方法，实现不修改kubernetes核心代码的同时扩展kubernetes api，将第三方服务注册到 kubernetes api中，实现通过kubernetes api访问外部服务，另外一种扩展kubernetes api的方法是crd
 
 - global tags：kubernetes代码中用于控制全局的代码生成功能
@@ -115,6 +117,8 @@ date: 2019-05-09 00:12:05
 - crd：custom resource definition，自定义api资源，新版tpr，kubernetes的一种api插件机制，用户提交的新类型定义的yaml就是crd的实例，叫cr（customer resource），借助crd，kubernetes才能识别用户提交的cr
 
 - cr：crd实例
+
+- oci：开放容器计划，负责制定容器基础架构中的基础组件的标准
 
 - tpr：third party resource，老版本的crd
 

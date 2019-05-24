@@ -102,9 +102,6 @@ may-17
 
 ## makefile
 
-
-
-
 ref:
 https://www.cnblogs.com/wanqieddy/archive/2011/09/21/2184257.html
 docker build -f Dockerfile.install-cni -t istio-cni .
@@ -149,7 +146,6 @@ after_script用于script阶段之后执行
 before_install -> install -> before_script -> script ->
 after_failure|after_success -> before_deploy -> deploy ->
 after_deploy -> after_script
-
 
 
 ref:
@@ -257,131 +253,58 @@ docker的镜像主要由一组有序的层（创建容器后所有文件来之�
 ref:
 https://yq.aliyun.com/articles/57752
 
-
-
 May 24, 2019
 
 ## git合并多个commit
 
-执行git log查看提交记录：
+
+## chart安装istio
+
+## kind安装
+
+
+安装：
 
 ```
-commit 9238096b62d5d2f8f02d88b3c019756aa3087cf9 (HEAD -> master, origin/master, origin/HEAD)
-Author: ssli <ssli@deepnorth.cn>
-Date:   Tue Apr 2 08:06:35 2019 +0800
-
-    auto commit
-
-commit 0865d59799337716d3cc6f74efae0a1c3cb101db
-Author: ssli <ssli@deepnorth.cn>
-Date:   Wed Mar 20 15:51:54 2019 +0800
-
-    auto commit
-
-commit 72dae88a2dcc059ba64b1978822f03adeee586ad
-Author: ssli <ssli@deepnorth.cn>
-Date:   Wed Mar 13 10:30:42 2019 +0800
-
-    auto commit
-
-commit eb5eca3677c77d9cfdc49cffd083107d3ba905f2
-Author: ssli <ssli@deepnorth.cn>
-Date:   Wed Mar 13 10:23:00 2019 +0800
-
-    auto commit
-
-commit 42325d7ddb78fcc94e2a84e5fb4db1d057707123
-Author: ssli <ssli@deepnorth.cn>
-Date:   Tue Mar 5 16:41:01 2019 +0800
-
-    auto commit
+$ apt install golang-go
+$ apt install docker.io
+$ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+$ chmod +x kubectl
+$ mv kubectl /usr/local/bin/
+$ echo "source <(kubectl completion bash)" >> ~/.bashrc
+$ wget -O /usr/local/bin/kind https://github.com/kubernetes-sigs/kind/releases/download/v0.3.0/kind-linux-amd64 && chmod +x /usr/local/bin/kind
 ```
 
-选择要合并的提交，比如这里合并前4个提交，即：
-
-- 9238096b62d5d2f8f02d88b3c019756aa3087cf9
-- 0865d59799337716d3cc6f74efae0a1c3cb101db
-- 72dae88a2dcc059ba64b1978822f03adeee586ad
-- eb5eca3677c77d9cfdc49cffd083107d3ba905f2
-
-那么选择第5个提交，执行以下命令：
+创建集群：
 
 ```
-git rebase -i 42325d7ddb78fcc94e2a84e5fb4db1d057707123
+$ kind create cluster
+Creating cluster "kind" ...
+ ✓ Ensuring node image (kindest/node:v1.14.2) 🖼
+ ✓ Preparing nodes 📦
+ ✓ Creating kubeadm config 📜
+ ✓ Starting control-plane 🕹️
+ ✓ Installing CNI 🔌
+ ✓ Installing StorageClass 💾
+Cluster creation complete. You can now use the cluster with:
+
+export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
+kubectl cluster-info
+
+$ export KUBECONFIG="$(kind get kubeconfig-path --name="kind")"
+$ kubectl cluster-info
+Kubernetes master is running at https://localhost:56734
+KubeDNS is running at https://localhost:56734/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 ```
 
-按照要求，将除第一个以外的pick修改成s，保持退出。
+使用：
 
 ```
-pick eb5eca3 auto commit
-s 72dae88 auto commit
-s 0865d59 auto commit
-s 9238096 auto commit
+$ k run --image=nginx nginx-app --port=80
+deployment.apps "nginx-app" created
+$ k get po
+NAME                         READY     STATUS    RESTARTS   AGE
+nginx-app-5dd4f9fd4d-55hp8   1/1       Running   0          34s
 ```
-
-然后提示修改本次提交的信息，这里将4次的提交信息都合并，使用了第一句作为本次提交信息。保持退出即可。
-
-```
-This is a combination of 4 commits.
-# This is the 1st commit message:
-
-# auto commit
-
-# This is the commit message #2:
-
-# auto commit
-
-# This is the commit message #3:
-
-# auto commit
-
-# This is the commit message #4:
-
-# auto commit
-```
-
-执行git log查看已经合并:
-
-```
-ssli@sslis-mbp-4:k8s_practice$ git log
-commit 1e645af54bcb4fd1e8dc7ec4e40e6474cc95fcbd (HEAD -> master)
-Author: ssli <ssli@deepnorth.cn>
-Date:   Wed Mar 13 10:23:00 2019 +0800
-
-    This is a combination of 4 commits.
-
-commit 42325d7ddb78fcc94e2a84e5fb4db1d057707123
-Author: ssli <ssli@deepnorth.cn>
-Date:   Tue Mar 5 16:41:01 2019 +0800
-
-    auto commit
-```
-
-这里记住不能再pull远程仓库，否则就会被合并，直接执行git push -f强制推送即可。
-
-
-放弃本次合并执行以下命令：
-
-```
-git rebase --abort
-```
-
-再次编辑输入以下命令：
-
-```
-git rebase --edit-todo
-```
-
-ref:
-https://segmentfault.com/a/1190000007748862
-
-
-
-
-
-
-
-
-
-
-
