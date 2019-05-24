@@ -266,47 +266,57 @@ May 24, 2019
 执行git log查看提交记录：
 
 ```
-ssli@sslis-mbp-4:k8s_practice$ git log
-commit 0c270281b0b79a68ba54239da3d9662211e68707 (HEAD -> master, origin/master, origin/HEAD)
+ssli@sslis-mbp-4:songleo.github.io$ git log
+commit 2944f3d8903cda7bcb14f49e752889a431a93532 (HEAD -> master, origin/master, origin/HEAD)
 Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Wed May 15 14:08:36 2019 +0800
+Date:   Fri May 24 13:21:06 2019 +0800
 
     auto commit
 
-commit 330159eb6e6ed8fc645acf3eab0fa5396f4c906d
+commit 195e6f9399c157a1489522a3c5bd198e7f1ca477
 Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Wed May 15 13:51:15 2019 +0800
+Date:   Fri May 24 11:19:45 2019 +0800
 
     auto commit
 
-commit 9cebc9a32783b8d37cbecd8734057370a053e204
+commit 5e8219ebd43cc6abdb8faade63335f266d21a12a
 Author: Song Song Li <lssongg@cn.ibm.com>
-Date:   Tue May 14 10:00:55 2019 +0800
+Date:   Fri May 24 09:37:12 2019 +0800
 
     auto commit
 
-commit 2637dfa64997d73567020bb53b133fde59634fcf
-Author: Song Song Li <lisong1205@gmail.com>
-Date:   Tue May 14 09:54:30 2019 +0800
+commit 01e7c1d9e2b22f1a4feb4c41c7bd09537d2ce6f6
+Merge: cdf09c8 3070a54
+Author: Song Song Li <lssongg@cn.ibm.com>
+Date:   Fri May 24 09:32:44 2019 +0800
 
-    Initial commit
+    Merge branch 'master' of github.com:songleo/songleo.github.io
 ```
 
 选择要合并的提交，比如这里合并前3个提交，即：
 
 ```
-0c270281b0b79a68ba54239da3d9662211e68707
-330159eb6e6ed8fc645acf3eab0fa5396f4c906d
-9cebc9a32783b8d37cbecd8734057370a053e204
+2944f3d8903cda7bcb14f49e752889a431a93532
+195e6f9399c157a1489522a3c5bd198e7f1ca477
+5e8219ebd43cc6abdb8faade63335f266d21a12a
 ```
 
 那么选择第4个提交，执行以下命令：
 
 ```
-git rebase -i 2637dfa64997d73567020bb53b133fde59634fcf
+git rebase -i 01e7c1d9e2b22f1a4feb4c41c7bd09537d2ce6f6
 ```
 
-按照要求，将除第一个以外的pick修改成s，保持退出后会看到合并的信息，修改后再次保存即可。
+按照要求，将除第一个以外的pick修改成s，保持退出。
+
+```
+
+```
+
+然后提示修改本次提交的信息，按要求修改保持退出即可。
+
+```
+```
 
 执行git log查看已经合并:
 
