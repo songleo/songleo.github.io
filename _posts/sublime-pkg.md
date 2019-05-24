@@ -10,4 +10,10 @@
 
 - gitgutter：配合git显示文件被修改后的标识
 
+- golangbuild：sublime的官方go编译
+
+- gotools：go语言工具整合
+
+- golang tools integration：go语言工具整合，自动格式化和调用goimports
+
 > 未完待续 ......
