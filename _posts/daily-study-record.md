@@ -256,3 +256,96 @@ docker的镜像主要由一组有序的层（创建容器后所有文件来之�
 
 ref:
 https://yq.aliyun.com/articles/57752
+
+
+
+May 24, 2019
+
+## git合并多个commit
+
+执行git log查看提交记录：
+
+```
+commit dae8dd98d8a7be530ec5f7b3347b4dd19d111dcd (HEAD -> master, origin/master, origin/HEAD)
+Author: Song Song Li <lssongg@cn.ibm.com>
+Date:   Fri May 24 10:44:20 2019 +0800
+
+    auto commit
+
+commit e98085b439938d843fa7be05db23f4fb206b8b41
+Author: Song Song Li <lssongg@cn.ibm.com>
+Date:   Fri May 24 09:33:26 2019 +0800
+
+    auto commit
+
+commit 6773a899dc893ea05b69a685e7c055b463568dc5
+Author: Song Song Li <lssongg@cn.ibm.com>
+Date:   Thu May 23 09:55:22 2019 +0800
+
+    auto commit
+
+commit b27c38e6f7b090c547dec104f6482044fa0ac3ba
+Author: Song Song Li <lssongg@cn.ibm.com>
+Date:   Tue May 21 14:12:03 2019 +0800
+
+    auto commit
+
+commit b0b7a1e5d168cb3c0259bcfbe4120a444c966b19
+Merge: 1f09315 c812712
+Author: Song Song Li <lssongg@cn.ibm.com>
+Date:   Tue May 21 14:10:22 2019 +0800
+
+    auto commit
+
+commit 1f09315ecd9e0d38b8484fe96bd3ac312359fd3c
+Author: Song Song Li <lssongg@cn.ibm.com>
+Date:   Tue May 21 14:07:46 2019 +0800
+
+    auto commit
+```
+
+选择要合并的提交，比如这里合并前3个提交，即：
+
+```
+dae8dd98d8a7be530ec5f7b3347b4dd19d111dcd
+e98085b439938d843fa7be05db23f4fb206b8b41
+6773a899dc893ea05b69a685e7c055b463568dc5
+```
+
+那么选择第4个提交，执行以下命令：
+
+```
+git rebase -i b27c38e6f7b090c547dec104f6482044fa0ac3ba
+```
+
+按照要求将pick修改成s，保持退出后会看到合并的信息，修改后再次保存即可。
+
+执行git log查看已经合并:
+
+```
+commit ea8840f774663f6a77b4f4857f302697b26df298
+Author: Song Song Li <lssongg@cn.ibm.com>
+Date:   Thu May 23 09:55:22 2019 +0800
+
+    auto commit 1
+
+    auto commit 2
+
+    auto commit 3
+```
+
+然后执行git pull和git push即可。
+
+
+放弃本次合并执行以下命令：
+
+```
+git rebase --abort
+```
+
+再次编辑输入以下命令：
+
+```
+git rebase --edit-todo
+```
+
