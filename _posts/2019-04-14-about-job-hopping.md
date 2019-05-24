@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ibm之缘
+title: 跳槽随笔
 date: 2019-04-14 00:12:05
 ---
 
