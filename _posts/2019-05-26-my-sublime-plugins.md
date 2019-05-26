@@ -1,7 +1,7 @@
 ---
 layout: post
 title: sublime常用插件
-date: 2019-05-24 00:12:05
+date: 2019-05-26 00:12:05
 ---
 
 本文主要记录我经常使用的sublime插件，持续更新中。
