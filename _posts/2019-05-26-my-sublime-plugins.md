@@ -1,5 +1,10 @@
+---
+layout: post
+title: sublime常用插件
+date: 2019-05-24 00:12:05
+---
 
-本文主要记录我经常使用的sublime安装包，持续更新中。
+本文主要记录我经常使用的sublime插件，持续更新中。
 
 
 - auto-save：自动保存修改的问文件
