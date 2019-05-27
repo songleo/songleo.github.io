@@ -302,6 +302,14 @@ May 27, 2019
 - Develop a demo of Kubernetes operator
 
 
+一些总结：
+
+share Travis demo/git merge mutil-commits/docker mutil-arch
+
+
+
+
+
 
 
 
