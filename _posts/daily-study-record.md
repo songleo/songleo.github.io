@@ -3,7 +3,7 @@ May 27, 2019 3:11 PM
 
 ## helm install istio
 
-需要提前部署好kind和helm
+需要提前部署好kind和helm (v2.14)
 
 创建集群：
 
