@@ -75,6 +75,7 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'
 ```
 
+若由于某些不能描述的原因导致镜像下载失败，更换国内镜像源就可以了。
 
 ### 参考
 
