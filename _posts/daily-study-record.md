@@ -120,7 +120,6 @@ code -> build -> integrate -> test -> deliver -> deploy
 所有阶段叫CD，持续部署
 
 
-
 关联travis和github。
 
 .travis.yml语法：
@@ -283,3 +282,34 @@ $ k get po
 NAME                         READY     STATUS    RESTARTS   AGE
 nginx-app-5dd4f9fd4d-55hp8   1/1       Running   0          34s
 ```
+
+
+May 27, 2019
+
+- Build Istio-cni PowerPC/IBM Z docker image by Travis
+
+- Build Istio-coredns-plugin and Istio-zipkin docker image by Travis
+  - x86_64
+  - PowerPC
+  - IBM Z
+
+==========
+
+- Test Istio component, such as Istio-cni, Istio-zipin and Istio-coredns-plugin
+
+- Learn Istio operator design doc
+
+- Develop a demo of Kubernetes operator
+
+
+
+
+
+
+
+
+
+
+
+
+
