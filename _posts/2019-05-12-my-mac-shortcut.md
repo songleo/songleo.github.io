@@ -22,6 +22,7 @@ date: 2019-05-12 00:12:05
 - sublime在当前行前添加空行：cmd+shift+enter
 - sublime复制上一行：cmd+shift+d
 - sublime大小写转换：cmd+k+u/l
+- sublime选中光标前和光标后：cmd+shift+up/down
 - sublime打开关闭的文件：cmd+shift+t
 - sublime排序：fn+f5
 - sublime查找函数定义：cmd+r
@@ -33,7 +34,8 @@ date: 2019-05-12 00:12:05
 - vim全部删除：gg dG
 - window关闭：cmd+w
 - window切换：cmd+tab
-- window切换：cmd+~
+- window切换：cmd+<-/->
+- 顶部或者尾部：cmd+up/down 
 - window隐藏：cmd+m
 - 全选：cmd+a
 - 关闭应用：cmd+q
