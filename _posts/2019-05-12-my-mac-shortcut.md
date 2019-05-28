@@ -34,7 +34,6 @@ date: 2019-05-12 00:12:05
 - vim全部删除：gg dG
 - window关闭：cmd+w
 - window切换：cmd+tab
-- window切换：cmd+<-/->
 - 顶部或者尾部：cmd+up/down 
 - window隐藏：cmd+m
 - 全选：cmd+a
