@@ -42,3 +42,6 @@ brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Librar
 
 /usr/local/bin/sshpass -f "/Users/ssli/Box Sync/iterm2/ssh_passwd/icp-env" ssh -p 22 root@9.30.100.245
 ```
+
+
+sshpass https://linux.cn/article-8086-1.html
