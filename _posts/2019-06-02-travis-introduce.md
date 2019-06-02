@@ -34,7 +34,6 @@ code -> build -> integrate -> test -> deliver -> deploy
 - after_deploy：用于deploy步骤之后执行
 - after_script：用于script阶段之后执行
 
-
 完整的流程如下：
 
 ```
