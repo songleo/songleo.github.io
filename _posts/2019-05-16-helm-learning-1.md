@@ -18,6 +18,20 @@ helm的主要功能是封装kubernetes应用，并对应用进行版本管理、
 
 chart文件结构：
 
+```
+├── Chart.yaml
+├── README.md
+├── templates
+│   ├── NOTES.txt
+│   ├── _helpers.tpl
+│   ├── deployment.yaml
+│   ├── pvc.yaml
+│   ├── secrets.yaml
+│   └── svc.yaml
+└── values.yaml
+```
+
+
 - chart.yaml：chart本身的版本和配置信息
 - charts：依赖的chart
 - templates：配置模板目录，按照go template语法，按照不通的配置安装release
