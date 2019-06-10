@@ -31,7 +31,6 @@ chart文件结构：
 └── values.yaml
 ```
 
-
 - chart.yaml：chart本身的版本和配置信息
 - charts：依赖的chart
 - templates：配置模板目录，按照go template语法，按照不通的配置安装release
@@ -74,6 +73,26 @@ chart管理：
 - package：打包一个chart
 - verify：验证一个chart
 - lint：查看chart是否存在问题
+
+卸载tiller:
+
+```
+kubectl delete deployment tiller-deploy --namespace kube-system
+```
+
+或者
+
+```
+helm reset
+```
+
+## faq:
+
+```
+Error: context deadline exceeded
+```
+
+卸载再次安装tiller一般可以解决。
 
 如果安装过程中出现该错误：
 
