@@ -4,7 +4,7 @@ title: 通过kind部署istio
 date: 2019-06-10 00:12:05
 ---
 
-需要提前部署好kind和helm。下面简单介绍kind和helm的安装。
+需要提前部署好kind和helm。
 
 ## kind的安装
 
@@ -99,7 +99,7 @@ kubectl get services
 kubectl get pods
 ```
 
-> 如果是mac，请把docker的内存限制设置到8g，否则会因为内存不足导致pod启动失败。
+> 如果是mac，请把docker的内存限制设置到8g，否则会因为内存不足导致pod启动失败
 
 验证bookinfo是否正常工作：
 
