@@ -16,3 +16,9 @@ git reset --hard ID
 ## 提交一个空commit
 
 $ git commit --allow-empty -m "retest" && git push
+
+## 回退到某次提交
+
+git reset --hard ID
+git push -f
+
