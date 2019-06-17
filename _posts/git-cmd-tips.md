@@ -17,7 +17,7 @@ git reset --hard ID
 
 $ git commit --allow-empty -m "retest" && git push
 
-## 回退到某次提交
+## 回退到某次提交并覆盖远端
 
 git reset --hard ID
 git push -f
