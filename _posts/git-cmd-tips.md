@@ -5,6 +5,10 @@ git fetch upstream
 git checkout master
 git merge upstream/master
 
+或者
+
+git rebase upstream/master
+
 ## 删除远程分支
 
 git push origin --delete BRANCH_NAME
