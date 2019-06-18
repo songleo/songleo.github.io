@@ -13,3 +13,4 @@ docker cp 5ed19cf131d5:/bin/clusterctl ./
 ## 启动docker并执行命令
 
 docker run -it --entrypoint "" -v ${PWD}:/tmp  quay.io/cluster-api-provider-ibmcloud/clusterctl /bin/sh -c "cp /bin/clusterctl /tmp"
+
