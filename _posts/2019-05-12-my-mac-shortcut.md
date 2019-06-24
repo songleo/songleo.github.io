@@ -11,11 +11,13 @@ date: 2019-05-12 00:12:05
 - dock：将光标放置到底部自动出现
 - iterm2 new tab: cmd+t
 - iterm2 new win: cmd+n
-- iterm2 删除光标前/后单词: ctrl+w/k
+- iterm2删除光标前/后单词: ctrl+w/k
 - iterm2 new win: cmd+n
 - iterm2 switch tab: cmd+<-
 - iterm2 tab switch：ctrl+tab
-- iterm2 删除一行：ctrl+u
+- iterm2删除光标前所有：ctrl+u
+- iterm2删除光标前单词：ctrl+w
+- iterm2删除光标后单词：ctrl+k
 - sublime分屏：cmd+alt+2
 - sublime命令界面：cmd+shift+p
 - sublime回到上次光标：ctrl+-
