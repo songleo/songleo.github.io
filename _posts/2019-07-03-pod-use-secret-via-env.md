@@ -4,7 +4,9 @@ title: pod通过环境变量方式使用secret
 date: 2019-07-02 00:12:05
 ---
 
-以base64编码格式生成secret信息。
+在pod中需要使用一些敏感信息，如passwd、apitoken等，一般通过secret将这些敏感信息传递给pod，本文主要介绍如何通过环境变量方式传递secret给pod使用，传递的secret主要有2个值，id和key，下面是详细的步骤：
+
+# 1 以base64编码格式生成secret信息。
 
 ```
 $ echo -n id-for-test | base64
@@ -13,7 +15,7 @@ $ echo -n key-for-test | base64
 a2V5LWZvci10ZXN0
 ```
 
-将上一步生成的字符串替换到secret-env-demo.yaml文件，内容如下：
+# 2 将上一步生成的字符串替换到secret-env-demo.yaml文件，内容如下：
 
 ```
 apiVersion: v1
@@ -26,7 +28,7 @@ data:
   key: a2V5LWZvci10ZXN0
 ```
 
-创建secret：
+# 3 创建secret：
 
 ```
 $ k apply -f secret-env-demo.yaml
@@ -47,7 +49,7 @@ id:   11 bytes
 key:  12 bytes
 ```
 
-创建pod，并通过环境变量方式使用该secret:
+# 4 创建pod，并通过环境变量方式使用该secret:
 
 ```
 apiVersion: v1
@@ -75,7 +77,7 @@ spec:
   restartPolicy: Never
 ```
 
-在pod中通过环境变量获取secret：
+# 5 在pod中通过环境变量获取secret：
 
 ```
 $ k apply -f pod-use-secret-via-env.yaml
