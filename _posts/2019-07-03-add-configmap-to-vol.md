@@ -7,17 +7,9 @@ date: 2019-07-01 00:12:05
 config.yaml如下：
 
 ```
-environments:
-    dev:
-        url: http://dev.bar.com
-        name: Developer Setup
-    prod:
-        url: http://foo.bar.com
-        name: My Cool App
-my:
-    servers:
-        - dev.bar.com
-        - foo.bar.com
+$ cat config.yaml
+config:
+  foo: bar
 ```
 
 从config.yaml文件创建configmap:
@@ -27,7 +19,7 @@ $ kubectl create configmap demo-from-file --from-file=./config.yaml
 configmap "demo-from-file" created
 $ kubectl get configmaps demo-from-file
 NAME             DATA      AGE
-demo-from-file   1         9s
+demo-from-file   1         8s
 $ kubectl describe configmaps demo-from-file
 Name:         demo-from-file
 Namespace:    default
@@ -38,17 +30,8 @@ Data
 ====
 config.yaml:
 ----
-environments:
-    dev:
-        url: http://dev.bar.com
-        name: Developer Setup
-    prod:
-        url: http://foo.bar.com
-        name: My Cool App
-my:
-    servers:
-        - dev.bar.com
-        - foo.bar.com
+config:
+  foo: bar
 
 Events:  <none>
 ```
@@ -71,31 +54,19 @@ spec:
   volumes:
     - name: config-volume
       configMap:
-        # Provide the name of the ConfigMap containing the files you want
-        # to add to the container
         name: demo-from-file
   restartPolicy: Never
 ```
 
-查看pod的日志，确实输出了文件的相关内容：
+这里将configmap挂载到/etc/config目录，然后在容器中运行命令查看该文件内容，最后查看pod的日志，确实输出了文件的内容：
 
 ```
 $ k apply -f pod-use-configmap-via-vol.yaml
 pod "test-pod" created
 $ k get po
-NAME            READY     STATUS      RESTARTS   AGE
-test-pod   0/1       Completed   0          8s
+NAME       READY     STATUS      RESTARTS   AGE
+test-pod   0/1       Completed   0          6s
 $ k logs test-pod
-environments:
-    dev:
-        url: http://dev.bar.com
-        name: Developer Setup
-    prod:
-        url: http://foo.bar.com
-        name: My Cool App
-my:
-    servers:
-        - dev.bar.com
-        - foo.bar.com
+config:
+  foo: bar
 ```
-
