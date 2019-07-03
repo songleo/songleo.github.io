@@ -4,7 +4,7 @@ title: 添加configmap数据到卷
 date: 2019-07-01 00:12:05
 ---
 
-config.yaml如下：
+### 1 config.yaml如下：
 
 ```
 $ cat config.yaml
@@ -12,7 +12,7 @@ config:
   foo: bar
 ```
 
-从config.yaml文件创建configmap:
+### 2 从config.yaml文件创建configmap:
 
 ```
 $ kubectl create configmap demo-from-file --from-file=./config.yaml
@@ -36,7 +36,7 @@ config:
 Events:  <none>
 ```
 
-创建pod使用创建的configmap：
+### 3 创建pod使用创建的configmap：
 
 ```
 apiVersion: v1
