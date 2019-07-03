@@ -20,7 +20,6 @@ my:
         - foo.bar.com
 ```
 
-
 从config.yaml文件创建configmap:
 
 ```
