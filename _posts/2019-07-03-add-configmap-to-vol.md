@@ -54,7 +54,6 @@ my:
 Events:  <none>
 ```
 
-
 创建pod使用创建的configmap：
 
 ```
