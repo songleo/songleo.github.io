@@ -1,12 +1,12 @@
 ---
 layout: post
 title: pod通过环境变量方式使用secret
-date: 2019-07-02 00:12:05
+date: 2019-07-01 00:12:05
 ---
 
-在pod中需要使用一些敏感信息，如passwd、apitoken等，一般通过secret将这些敏感信息传递给pod，本文主要介绍如何通过环境变量方式传递secret给pod使用，传递的secret主要有2个值，id和key，下面是详细的步骤：
+在pod中需要使用一些敏感信息，如passwd、apitoken等，一般通过secret将这些敏感信息传递给pod，本文主要介绍如何通过环境变量方式传递secret给pod使用，传递的secret主要有2个值，id和key，下面是详细步骤：
 
-### 1 以base64编码格式生成secret信息。
+### 1 以base64编码格式生成secret信息
 
 ```
 $ echo -n id-for-test | base64
