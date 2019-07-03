@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 添加configmap数据到卷
-date: 2019-07-01 00:12:05
+date: 2019-07-02 00:12:05
 ---
 
 ### 1 config.yaml如下：
