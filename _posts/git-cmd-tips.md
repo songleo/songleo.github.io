@@ -26,3 +26,6 @@ $ git commit --allow-empty -m "retest" && git push
 git reset --hard ID
 git push -f
 
+## 修改最近一次提交信息
+
+git commit --amend
