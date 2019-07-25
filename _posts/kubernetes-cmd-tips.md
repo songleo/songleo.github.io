@@ -13,3 +13,7 @@ export KUBECONFIG=path/to/kubeconfig
 ## 删除所有po
 
 kubectl delete po --all
+
+## 查询所有ns下pod
+
+kubectl get pods --all-namespaces
