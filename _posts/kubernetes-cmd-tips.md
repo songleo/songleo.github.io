@@ -17,3 +17,8 @@ kubectl delete po --all
 ## 查询所有ns下pod
 
 kubectl get pods --all-namespaces
+
+## 修改对象
+
+kubectl edit deploy nginx-test
+
