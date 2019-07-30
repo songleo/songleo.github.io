@@ -29,3 +29,11 @@ git push -f
 ## 修改最近一次提交信息
 
 git commit --amend
+
+## 撤销上次提交
+
+git reset --soft HEAD^
+
+## 撤销上次add
+
+git reset HEAD
