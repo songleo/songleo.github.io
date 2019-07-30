@@ -21,4 +21,3 @@ kubectl get pods --all-namespaces
 ## 修改对象
 
 kubectl edit deploy nginx-test
-
