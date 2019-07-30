@@ -63,5 +63,6 @@ date: 2019-05-12 00:12:05
 - 输入法切换：ctrl+space
 - 选择一行：cmd+shift+->/<-
 - 锁屏：cmd+ctrl+q
+- alfred搜索文件：space+file-name
 
 > 未完待续 ......
