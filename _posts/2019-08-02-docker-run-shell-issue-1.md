@@ -4,7 +4,7 @@ title: docker运行shell脚本问题
 date: 2019-08-02 20:04:01
 ---
 
-这里有2个文件，分别是dockerfile和shell脚本，dockerfile的主要功能就是将shell脚本复制到容器中运行。shell脚本只有一个echo语句，表示脚本运行完毕。
+这里有2个文件，分别是dockerfile和shell脚本，dockerfile的主要功能就是将shell脚本复制到容器中运行，shell脚本只有一个echo语句，表示脚本运行完毕。
 
 ```
 $ cat Dockerfile
