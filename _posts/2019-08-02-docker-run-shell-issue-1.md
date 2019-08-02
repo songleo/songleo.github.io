@@ -4,7 +4,7 @@ title: docker运行shell脚本问题
 date: 2019-08-02 20:04:01
 ---
 
-这里有2个文件，分别是一个dockerfile和shell脚本，dockerfile的主要功能就是将shell脚本复制到容器中运行。shell脚本只有一个echo语句，表示脚本运行完毕。
+这里有2个文件，分别是dockerfile和shell脚本，dockerfile的主要功能就是将shell脚本复制到容器中运行。shell脚本只有一个echo语句，表示脚本运行完毕。
 
 ```
 $ cat Dockerfile
@@ -79,7 +79,7 @@ standard_init_linux.go:207: exec user process caused "exec format error"
 
 ```
 
-这时候，发现容器运行失败，打印了一个错误信息：`standard_init_linux.go:207: exec user process caused "exec format error"`，如果对docker比较熟悉的话，大概知道这句话原因一般都是因为平台不兼容导致，比如在amd64上面运行了一个arm程序，会打印这种错误。但是我们发现，这里并没有什么二进制文件，只有一个shell脚本。于是，我使用指定的cmd再次运行docker：
+这时候发现容器运行失败，打印了一个错误信息：`standard_init_linux.go:207: exec user process caused "exec format error"`，如果对docker比较熟悉的话，大概知道这句话原因一般都是因为平台不兼容导致，比如在amd64上面运行了一个arm程序，会打印这种错误。但是我们发现，这里并没有什么二进制文件，只有一个shell脚本。于是，我使用指定的cmd再次运行docker：
 
 ```
 $ docker run -it demo sh
@@ -88,7 +88,7 @@ run test.sh done
 / #
 ```
 
-发现脚本也能正常运行，到这里，大家应该能猜测到问题所在了，就是顶部的注释导致的。如果docker直接运行shell脚本，且脚本顶行不是正确的shebang的话，就会出现这种错误。这是最近工作中遇到的一个小问题，当时由于环境复杂，没有及时定位出原因。因为在顶行写了一些license信息，导致这个问题。正确的使用方式如下：
+发现脚本也能正常运行，到这里，大家应该能猜测到问题所在了，就是顶部的注释导致的。如果docker直接运行shell脚本，且脚本顶部不是正确的shebang的话，就会出现这种错误。这是最近工作中遇到的一个小问题，当时由于环境复杂，没有及时定位出原因。因为在顶部写了一些license信息，导致这个问题，正确的使用方式如下：
 
 ```
 $ cat Dockerfile
@@ -124,4 +124,4 @@ run test.sh done
 
 ```
 
-或者将shebang写在顶行，这才是标准的写法。
+即在dockerfile中的cmd部分指定shell类型，或者将shebang写在顶部，这才是标准的写法。
