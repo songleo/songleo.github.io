@@ -24,7 +24,7 @@ run test.sh done
 
 ```
 
-继续build镜像，然后运行容器：
+build镜像，然后运行容器：
 
 ```
 $ docker build -t demo .
@@ -43,7 +43,7 @@ $ docker run demo
 run test.sh done
 ```
 
-可以看到，容器运行后正常运行shell脚本，没有任何问题。下面我修改一下shell脚本，在顶部添加一句注释，然后再build镜像，并运行容器：
+可以看到，容器启动后正常运行shell脚本，没有任何问题。下面我修改一下shell脚本，在顶部添加一句注释，然后再build镜像并运行容器：
 
 ```
 $ cat Dockerfile
@@ -79,7 +79,7 @@ standard_init_linux.go:207: exec user process caused "exec format error"
 
 ```
 
-这时候，发现容器运行失败，打印了一个错误信息：`standard_init_linux.go:207: exec user process caused "exec format error"`，如果对docker比较熟悉的话，大概知道这句话原因一般都是因为平台不兼容情况导致，比如在amd64上面运行了一个arm程序，会打印这种错误。但是我们发现，这里并没有什么二进制文件，只有一个shell脚本。于是，我们使用指定的cmd再次运行docker：
+这时候，发现容器运行失败，打印了一个错误信息：`standard_init_linux.go:207: exec user process caused "exec format error"`，如果对docker比较熟悉的话，大概知道这句话原因一般都是因为平台不兼容导致，比如在amd64上面运行了一个arm程序，会打印这种错误。但是我们发现，这里并没有什么二进制文件，只有一个shell脚本。于是，我使用指定的cmd再次运行docker：
 
 ```
 $ docker run -it demo sh
@@ -88,7 +88,7 @@ run test.sh done
 / #
 ```
 
-发现脚本也能正常运行，到这里，大家应该能猜测到问题所在了，就是顶部的注释导致的。如果docker直接运行shell脚本，且脚本顶行不是正确的shebang的话，就会出现这种错误。这是最近工作中遇到的一个小问题，当时由于环境复杂，没有及时定位出原因。因为在顶行写了一些license信息，导致这问题。正确的使用方式如下：
+发现脚本也能正常运行，到这里，大家应该能猜测到问题所在了，就是顶部的注释导致的。如果docker直接运行shell脚本，且脚本顶行不是正确的shebang的话，就会出现这种错误。这是最近工作中遇到的一个小问题，当时由于环境复杂，没有及时定位出原因。因为在顶行写了一些license信息，导致这个问题。正确的使用方式如下：
 
 ```
 $ cat Dockerfile
