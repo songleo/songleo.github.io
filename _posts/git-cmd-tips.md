@@ -36,4 +36,4 @@ git reset --soft HEAD^
 
 ## 撤销上次add
 
-git reset HEADgbr
+git reset HEAD
