@@ -21,3 +21,7 @@ kubectl get pods --all-namespaces
 ## 修改对象
 
 kubectl edit deploy nginx-test
+
+## 给节点加标签
+
+kubectl label nodes node-name key=value

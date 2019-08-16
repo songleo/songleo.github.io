@@ -13,7 +13,7 @@ git rebase upstream/master
 
 git push origin --delete BRANCH_NAME
 
-## 回滚之之前的某次提交
+## 回滚之前的某次提交
 
 git reset --hard ID
 
