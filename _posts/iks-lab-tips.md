@@ -11,7 +11,6 @@ ibmcloud login --sso
 
 获取集群信息：
 
-
 ```
 lssongg@cloudshell-1-7b94c8d8f-fdlhr:~$ export MYCLUSTER=ssli-iks-demo
 lssongg@cloudshell-1-7b94c8d8f-fdlhr:~$ ibmcloud ks cluster-get $MYCLUSTER
@@ -64,6 +63,8 @@ NAME            STATUS   ROLES    AGE   VERSION
 
 如果没有登陆到ibmcloud，执行`ibmcloud login --sso`命令登陆（非联邦账户省略--sso）。
 
+主要完成容器镜像的build和push，并kubernetes集群中将镜像运行起来。
+
 ```
 wget https://github.com/IBM/container-service-getting-started-wt/archive/master.zip
 unzip master.zip
@@ -71,7 +72,7 @@ cd container-service-getting-started-wt-master/
 cd Lab\ 1/
 ibmcloud cr login
 ibmcloud cr namespace-add ssli-iks-demo
-docker build --tag us.icr.io/ssli-iks-demo/hello-world . # cloudshell上面编译镜像有问题
+ibmcloud cr build --tag us.icr.io/ssli-iks-demo/hello-world . # cloudshell上面编译镜像有问题
 docker pull songleo/hello-world
 docker tag songleo/hello-world us.icr.io/ssli-iks-demo/hello-world
 docker images
@@ -110,3 +111,26 @@ kube-bl3rp9gd07g2n97e4d80-ssliiksdemo-default-000000d8   184.172.242.146   10.76
 lssongg@cloudshell-1-7b94c8d8f-fdlhr:~/container-service-getting-started-wt-master/Lab 1$ curl 184.172.242.146:30541
 Hello world from hello-world-86854bf45c-4vvj9! Your app is up and running in a cluster!
 ```
+
+# lab2
+
+修改replicas为10。
+
+```
+lssongg@cloudshell-1-7b94c8d8f-fdlhr:~/container-service-getting-started-wt-master/Lab 1$ kubectl edit deployment/hello-world && kubectl rollout status deployment/hello-world
+deployment.extensions/hello-world edited
+Waiting for deployment "hello-world" rollout to finish: 1 of 10 updated replicas are available...
+Waiting for deployment "hello-world" rollout to finish: 2 of 10 updated replicas are available...
+Waiting for deployment "hello-world" rollout to finish: 3 of 10 updated replicas are available...
+Waiting for deployment "hello-world" rollout to finish: 4 of 10 updated replicas are available...
+Waiting for deployment "hello-world" rollout to finish: 5 of 10 updated replicas are available...
+Waiting for deployment "hello-world" rollout to finish: 6 of 10 updated replicas are available...
+Waiting for deployment "hello-world" rollout to finish: 7 of 10 updated replicas are available...
+Waiting for deployment "hello-world" rollout to finish: 8 of 10 updated replicas are available...
+Waiting for deployment "hello-world" rollout to finish: 9 of 10 updated replicas are available...
+deployment "hello-world" successfully rolled out
+kubectl get pods
+```
+
+
+
