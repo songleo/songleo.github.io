@@ -233,6 +233,7 @@ name   service         plan       bound apps   last operation
 tone   tone_analyzer   standard                create succeeded
 
 ibmcloud cs cluster-service-bind ssli-iks-demo default tone
+ibmcloud cs cluster-service-bind jtc-workshop02 default tone
 ibmcloud cs clusters
 ibmcloud ks cluster-config ssli-iks-demo
 kubectl apply -f watson-deployment.yml

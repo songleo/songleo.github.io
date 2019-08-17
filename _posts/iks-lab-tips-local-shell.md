@@ -195,6 +195,8 @@ docker push us.icr.io/ssli-iks-demo/watson-talk
 ibmcloud account org-create ssli-iks-demo
 ibmcloud account space-create ssli-iks-demo
 ibmcloud cf create-service tone_analyzer standard tone
+ibmcloud service list
+
 ssli@sslis-mbp-4:Lab 3$ ibmcloud cf services
 Invoking 'cf services'...
 
