@@ -217,12 +217,34 @@ curl: (7) Failed to connect to 168.1.192.68 port 30072: Connection refused
 
 # lab3
 
-修改镜像为songleo/watson和songleo/watson-talk。
+修改镜像为songleo/watson和songleo/watson-talk（必须使用自己的免费集群才可以做该实验）
 
 ```
+ibmcloud target --cf
 ibmcloud account org-create jtc-workshop02
-ibmcloud account space-create jtc-workshop02
+ibmcloud account space-create jtc-workshop02 -o jtc-workshop02
 ibmcloud cf create-service tone_analyzer standard tone
+lssongg@cloudshell-1-7b94c8d8f-fdlhr:~$ ibmcloud cf services
+Invoking 'cf services'...
+
+Getting services in org jtc-workshop02 / space jtc-workshop02 as lssongg@cn.ibm.com...
+
+name   service         plan       bound apps   last operation
+tone   tone_analyzer   standard                create succeeded
+
+ibmcloud cs cluster-service-bind ssli-iks-demo default tone
+ibmcloud cs clusters
+ibmcloud ks cluster-config ssli-iks-demo
+kubectl apply -f watson-deployment.yml
+
+kubectl get pods
+kubectl get deployments
+kubectl get services
+
+ibmcloud cs workers ssli-iks-demo
+
+http://184.172.242.146:30080/analyze/"Today is a beautiful day"
+http://184.172.242.146:30080/analyze/"Today is a terrible day"
 ```
 
 
