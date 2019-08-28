@@ -217,7 +217,8 @@ curl: (7) Failed to connect to 168.1.192.68 port 30072: Connection refused
 
 # lab3
 
-修改镜像为songleo/watson和songleo/watson-talk（必须使用自己的免费集群才可以做该实验）
+修改镜像为songleo/watson和songleo/watson-talk。
+必须使用自己的免费集群创建好watson服务才可以。或者直接在免费集群上做该实验。
 
 ```
 ibmcloud target --cf
