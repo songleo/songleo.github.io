@@ -63,3 +63,12 @@ Events:
   Normal   Killing    65s (x3 over 3m35s)    kubelet, kind-control-plane  Killing container with id docker://liveness:Container failed liveness probe.. Container will be killed and recreated.
 ```
 
+运行一段时间后，再次查看pod状态，如下：
+
+```
+$ k get po
+NAME            READY   STATUS    RESTARTS   AGE
+liveness-exec   1/1     Running   9          18m
+```
+
+可以看到，pod被不断重启了9次，目前处于running状态。
