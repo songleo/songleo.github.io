@@ -62,3 +62,4 @@ Events:
   Normal   Pulling    65s (x4 over 4m47s)    kubelet, kind-control-plane  pulling image "k8s.gcr.io/busybox"
   Normal   Killing    65s (x3 over 3m35s)    kubelet, kind-control-plane  Killing container with id docker://liveness:Container failed liveness probe.. Container will be killed and recreated.
 ```
+
