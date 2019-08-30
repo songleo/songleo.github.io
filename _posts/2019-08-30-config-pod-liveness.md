@@ -4,10 +4,10 @@ title: 配置pod的存活探针
 date: 2019-08-30 20:04:01
 ---
 
-存活探针（livenessProbe）主要功能是确定何时重启容器。例如，当应用程序处于运行状态但无法做进一步操作，存活探针将捕获到deadlock，重启处于该状态下的容器，使应用程序在存在bug的情况下依然能够继续运行下去。yaml文件如下：
+存活探针（livenessProbe）主要功能是确定何时重启容器，yaml文件如下：
 
 ```
-ssli@sslis-mbp-4:demo$ cat exec-liveness.yaml
+$ cat exec-liveness.yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -30,7 +30,7 @@ spec:
       initialDelaySeconds: 5
       periodSeconds: 5
 
-ssli@sslis-mbp-4:demo$ k apply -f exec-liveness.yaml
+$ k apply -f exec-liveness.yaml
 pod/liveness-exec created
 ```
 
@@ -39,7 +39,7 @@ pod/liveness-exec created
 容器运行后，会自动创建/tmp/healthy文件，然后30秒后，会删除该文件。所以会导致cat /tmp/healthy命令执行失败。通过查看pod的状态可以看到：
 
 ```
-ssli@sslis-mbp-4:demo$ k get po
+$ k get po
 NAME            READY   STATUS    RESTARTS   AGE
 liveness-exec   1/1     Running   1          98s
 ```
@@ -47,7 +47,7 @@ liveness-exec   1/1     Running   1          98s
 pod重启次数变成1。查看pod的events可以看到，由于存活性检测失败，所以导致pod重启：
 
 ```
-ssli@sslis-mbp-4:demo$ k describe po liveness-exec
+$ k describe po liveness-exec
 
 ···
 
