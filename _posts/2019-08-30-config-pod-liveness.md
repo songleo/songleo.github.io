@@ -72,3 +72,7 @@ liveness-exec   1/1     Running   9          18m
 ```
 
 可以看到，pod被不断重启了9次，目前处于running状态。
+
+## 参考文档：
+
+https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
