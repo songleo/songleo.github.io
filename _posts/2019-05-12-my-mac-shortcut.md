@@ -29,14 +29,14 @@ date: 2019-05-12 00:12:05
 - sublime排序：fn+f5
 - sublime查找函数定义：cmd+r
 - sublime查找文件：cmd+p
-- sublime移动行：alt+cmd+up/down
+- sublime移动行：ctrl+cmd+up/down
 - vim全选复制：gg ggyG
 - vim全部替换：%s/foo/bar/g
 - vim多行编辑：ctrl+v，然后移动修改范围，I或者A或者s编辑后，esc
 - vim全部删除：gg dG
 - window关闭：cmd+w
 - window切换：cmd+tab
-- 顶部或者尾部：cmd+up/down 
+- 顶部或者尾部：cmd+up/down
 - window隐藏：cmd+m
 - 全选：cmd+a
 - 关闭应用：cmd+q
