@@ -14,7 +14,7 @@
 - 传输层：tcp/udp，会话连接机制，四层（有端口号）
 - 网络层：ip/imcp/bgp，路由作用，三层（有ip地址）
 - 链路层：arp/vlan/stp，定位作用，二层（有mac地址）
-- 物理层：网络跳线，连接作用，网线、接线头、集线器等等，一层，（有数据）
+- 物理层：网络跳线，连接作用，网线、接线头、集线器等等，一层，由数据构成数据帧
 
 网络包结构
 
@@ -61,7 +61,7 @@ ip scope：
 
 给网卡设置ip：ifconfig eth0 192.169.1.100 && ifconfig eth0 up
 
-网关要和当前网络至少一个网卡的ip在同一个网段。
+网关要和当前网络至少一个网卡的ip在同一个网段。网关往往是一个路由器，是一个三层转发的设备。一般根据mac头和ip头中的内容，将数据包转发到相应的设备，
 
 dhcp：动态主机配置协议，自动分配可用的ip地址
 
@@ -83,6 +83,27 @@ STP：将网络中环路问题，将一个图中的环破坏，生成一个树�
 - priority vector：优先级向量，值越低优先级越高
 
 ## 7
+
+ping命令：基于icmp协议，即互联网控制报文协议，icmp报文是封装在ip包里面。可以使用命令tcpdump -i en0 icmp查看某个网口执行ping命令时的信息。例如：
+
+```
+$ tcpdump -i en0 icmp
+listening on en0, link-type EN10MB (Ethernet), capture size 262144 bytes
+13:34:23.240772 IP sslis-mbp-4.cn.ibm.com > 220.181.38.150: ICMP echo request, id 803, seq 0, length 64
+13:34:23.269615 IP 220.181.38.150 > sslis-mbp-4.cn.ibm.com: ICMP echo reply, id 803, seq 0, length 64
+13:34:24.243375 IP sslis-mbp-4.cn.ibm.com > 220.181.38.150: ICMP echo request, id 803, seq 1, length 64
+13:34:24.268921 IP 220.181.38.150 > sslis-mbp-4.cn.ibm.com: ICMP echo reply, id 803, seq 1, length 64
+13:34:25.247872 IP sslis-mbp-4.cn.ibm.com > 220.181.38.150: ICMP echo request, id 803, seq 2, length 64
+13:34:25.273297 IP 220.181.38.150 > sslis-mbp-4.cn.ibm.com: ICMP echo reply, id 803, seq 2, length 64
+```
+
+需要注意的是，有些设备是禁止ping的，所以有时候ping不通，不代表网络不通。
+
+数据包传输到一个新的局域网时，即只要通过网关，mac地址都是要变的，因为已经换了局域网，但是ip地址不变。
+
+不改变ip地址的网关，叫转发网关，改变ip地址的nat网关
+
+
 
 
 
