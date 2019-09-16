@@ -37,3 +37,7 @@ git reset --soft HEAD^
 ## 撤销上次add
 
 git reset HEAD
+
+## 基于别人的pr修改
+
+git commit --amend

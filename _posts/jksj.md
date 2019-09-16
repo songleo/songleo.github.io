@@ -99,11 +99,42 @@ listening on en0, link-type EN10MB (Ethernet), capture size 262144 bytes
 
 需要注意的是，有些设备是禁止ping的，所以有时候ping不通，不代表网络不通。
 
+## 8
+
 数据包传输到一个新的局域网时，即只要通过网关，mac地址都是要变的，因为已经换了局域网，但是ip地址不变。
 
-不改变ip地址的网关，叫转发网关，改变ip地址的nat网关
+不改变ip地址的网关，叫转发网关，改变ip地址的nat网关，nat全称network address translation，网络地址转换。
+
+## 9
+
+查看路由规则：
+
+```
+root@ssli-dev:~# \ip route show
+default via 9.30.182.1 dev ens7
+9.30.182.0/23 dev ens7  proto kernel  scope link  src 9.30.183.245
+172.16.0.0/16 dev ens3  proto kernel  scope link  src 172.16.193.33
+172.17.0.0/16 dev docker0  proto kernel  scope link  src 172.17.0.1 linkdown
+```
+
+添加路由规则：
+
+```
+ip route add 10.176.48.0/20 via 10.173.32.1 dev eth0
+```
+
+添加路由表：
+
+```
+ip rule add from 192.168.1.0/24 table 10
+ip rule add from 192.168.2.0/24 table 20
+```
+
+igp：内部网关协议
+bgp：边界网关协议
 
 
+## 10
 
 
 
