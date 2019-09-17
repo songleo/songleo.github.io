@@ -203,6 +203,7 @@ openssl x509 -in cliu8sitecertificate.pem -noout -text
 视频是一系列快速播放的图片，每一张图片称为一帧。帧率表示每秒钟播放的帧数。每个图片由像素构成，每个像素由rgb组成，每个8位，共24位。
 
 
+## 18
 
 
 
