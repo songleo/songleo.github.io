@@ -206,7 +206,33 @@ openssl x509 -in cliu8sitecertificate.pem -noout -text
 ## 18
 
 
+## 29
 
+
+创建网络namespace：
+
+```
+ip netns add routerns
+```
+
+打开某个网络namespace下的forward开关：
+
+```
+ip netns exec routerns sysctl -w net.ipv4.ip_forward=1
+```
+
+初始化iptables:
+
+```
+ip netns exec routerns iptables-save -c
+ip netns exec routerns iptables-restore -c
+```
+
+创建veth pair：
+
+```
+ip link add name veth1 mtu 1500 type veth peer name veth2 mtu 1500
+```
 
 
 
