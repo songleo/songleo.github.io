@@ -145,3 +145,70 @@ bgp：边界网关协议
 
 tcp包结构：端口号、序号、确认序号、状态标志（ack/rst/fin）、发送窗口大小、校验和、紧急指针
 三次握手：保存一发一收都能正常收到的情况下，建立连接，开始传输数据
+四次挥手：确保发送端和接收端都能正常结束
+
+
+## 12 13 14
+
+
+URL：统一资源定位符，如https://www.163.com/
+
+http请求报文分为三大部分：请求行、首部和正文实体。
+http返回报文分为三大部分：状态行、首部和正文实体。
+
+http方法：
+
+- get: 获取资源
+- post：发送数据，创建资源
+- put：修改资源
+- delete：删除资源
+
+quic协议：基于udp，定义了类似tcp的链接、重试、多路复用和流量控制，提高了性能和效率
+
+## 15
+
+创建私钥：
+
+```
+openssl genrsa -out cliu8siteprivate.key 1024
+```
+
+创建公钥：
+
+```
+openssl rsa -in cliu8siteprivate.key -pubout -out cliu8sitepublic.pem
+```
+
+创建证书请求：
+
+```
+openssl req -key cliu8siteprivate.key -new -out cliu8sitecertificate.req
+```
+
+给证书签名：
+
+```
+openssl x509 -req -in cliu8sitecertificate.req -CA cacertificate.pem -CAkey caprivate.key -out cliu8sitecertificate.pem
+```
+
+查看证书内容：
+
+```
+openssl x509 -in cliu8sitecertificate.pem -noout -text
+```
+
+
+## 16
+
+视频是一系列快速播放的图片，每一张图片称为一帧。帧率表示每秒钟播放的帧数。每个图片由像素构成，每个像素由rgb组成，每个8位，共24位。
+
+
+
+
+
+
+
+
+
+
+
