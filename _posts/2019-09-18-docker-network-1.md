@@ -4,7 +4,7 @@ title: 容器网络（一）
 date: 2019-09-18 00:12:05
 ---
 
-容器提供了以下4种网络方式：
+容器提供了以下4种网络模式：
 
 - bridge模式：通过虚拟网络设备对（veth pair）实现，总是以2张虚拟网卡形式存在，其中一张网卡发出的数据包，会直接出现在另一张网卡上，即使不在一个network namespace中，所以将veth pair当成连接不同网络命名空间的”网线”
 - host模式：和宿主机共用网络和端口，不开启network namespace，例如docker run -d --net=host --name nginx-host nginx
