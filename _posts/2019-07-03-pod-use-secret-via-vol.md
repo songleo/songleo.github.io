@@ -4,7 +4,7 @@ title: pod通过vol方式使用secret
 date: 2019-09-18 00:12:05
 ---
 
-在pod中需要使用一些敏感信息，如passwd、apitoken等，一般通过secret将这些敏感信息传递给pod，本文主要介绍如何通过vol方式传递secret给pod使用，传递的secret主要有2个值，id和key，下面是详细步骤：
+在pod中需要使用一些敏感信息，如passwd、token等，一般通过secret将这些敏感信息传递给pod，本文主要介绍如何通过vol方式传递secret给pod使用，传递的secret主要有2个值，id和key，下面是详细步骤：
 
 ### 1 以base64编码格式生成secret信息
 
@@ -15,7 +15,7 @@ $ echo -n key-for-test | base64
 a2V5LWZvci10ZXN0
 ```
 
-### 2 将上一步生成的字符串替换到secret-env-demo.yaml文件，内容如下：
+### 2 将上一步生成的字符串替换到secret-vol-demo.yaml文件，内容如下：
 
 ```
 apiVersion: v1
