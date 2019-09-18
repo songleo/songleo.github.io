@@ -1,7 +1,7 @@
 ---
 layout: post
 title: pod通过vol方式使用secret
-date: 2019-09-18 00:12:05
+date: 2019-09-17 00:12:05
 ---
 
 在pod中需要使用一些敏感信息，如passwd、token等，一般通过secret将这些敏感信息传递给pod，本文主要介绍如何通过vol方式传递secret给pod使用，传递的secret主要有2个值，id和key，下面是详细步骤：
