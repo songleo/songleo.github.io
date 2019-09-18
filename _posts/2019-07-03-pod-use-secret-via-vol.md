@@ -52,7 +52,7 @@ metadata:
 type: Opaque
 ```
 
-### 4 创建pod，并通过环境变量方式使用该secret:
+### 4 创建pod，并通过vol方式使用该secret:
 
 ```
 apiVersion: v1
@@ -90,7 +90,7 @@ id-for-test
 key-for-test
 ```
 
-可以看到，在pod中正确获取到secret。当然，也可以挂载secret中某个key到指定目录，修改后的pod-use-secret-via-vol.yaml：
+可以看到，在pod中正确获取到secret。当然，也可以挂载secret中某个key到指定目录，如下：
 
 ```
 apiVersion: v1
