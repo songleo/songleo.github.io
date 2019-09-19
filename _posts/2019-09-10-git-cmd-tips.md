@@ -1,3 +1,9 @@
+---
+layout: post
+title: git命令tips
+date: 2019-09-10 00:12:05
+---
+
 ## 和上游同步
 
 git remote add upstream __FORK_URL__
@@ -41,3 +47,5 @@ git reset HEAD
 ## 基于别人的pr修改
 
 git commit --amend
+
+> :) 未完待续......

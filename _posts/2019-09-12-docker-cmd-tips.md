@@ -1,3 +1,9 @@
+---
+layout: post
+title: docker命令tips
+date: 2019-09-12 00:12:05
+---
+
 ## docker覆盖entrypoint
 
 docker run --rm --entrypoint /bin/sh -it -d quay.io/cluster-api-provider-ibmcloud/clusterctl
@@ -14,3 +20,4 @@ docker cp 5ed19cf131d5:/bin/clusterctl ./
 
 docker run --rm --entrypoint "" -v ${PWD}:/tmp  quay.io/cluster-api-provider-ibmcloud/clusterctl /bin/sh -c "cp /bin/clusterctl /tmp"
 
+> :) 未完待续......
