@@ -16,7 +16,7 @@ kubectl --kubeconfig /path/to/kubeconfig get no
 kubectl exec -it  -n ns pod-name /bin/sh
 ```
 
-- 设置KUBECONFIG对进行访问
+- 设置KUBECONFIG
 
 ```
 export KUBECONFIG=path/to/kubeconfig
