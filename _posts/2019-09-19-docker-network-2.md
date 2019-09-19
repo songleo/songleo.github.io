@@ -138,7 +138,20 @@ docker0   8000.02423f57ce4b no
 ]
 ```
 
-可以看到该网络下面的Containers部分有相应的c1容器和容器的网络信息。
+可以看到该网络下面的Containers部分有相应的c1容器和容器的网络信息。并且也可以看到宿主机的路由规则中添加了对应的路由规则：
+
+```
+root@ssli-dev:~# route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+default         9-30-182-0-gw.s 0.0.0.0         UG    0      0        0 ens7
+9.30.182.0      *               255.255.254.0   U     0      0        0 ens7
+172.16.0.0      *               255.255.0.0     U     0      0        0 ens3
+172.17.0.0      *               255.255.0.0     U     0      0        0 docker0
+172.18.0.0      *               255.255.0.0     U     0      0        0 br-7832a50ead43
+```
+
+最后2条分别是默认的docker0网桥和新建的local-br网桥的路由规则。
 
 c）创建c2容器连接到local-br并ping c1容器
 
