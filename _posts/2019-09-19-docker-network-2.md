@@ -76,9 +76,9 @@ docker0   8000.02423f57ce4b no
 a) 创建单机桥接网络local-br
 
 ```
-root@ssli-dev:~# d network create -d bridge local-br
+# d network create -d bridge local-br
 7832a50ead433b85b502fa650206fbf31ac3dc562187af43b9312c7a753dcf0c
-root@ssli-dev:~# brctl show
+# brctl show
 bridge name bridge id   STP enabled interfaces
 br-7832a50ead43   8000.0242c78ac61b no
 docker0   8000.02423f57ce4b no
@@ -87,8 +87,8 @@ docker0   8000.02423f57ce4b no
 b) 创建容器并连接到创建的local-br
 
 ```
-root@ssli-dev:~# d container run -d --name c1 --network local-br alpine sleep 1d
-root@ssli-dev:~# brctl show
+# d container run -d --name c1 --network local-br alpine sleep 1d
+# brctl show
 bridge name bridge id   STP enabled interfaces
 br-7832a50ead43   8000.0242c78ac61b no    vethbc7275e
 docker0   8000.02423f57ce4b no
@@ -97,7 +97,7 @@ docker0   8000.02423f57ce4b no
 可以看到c1容器的网络vethbc7275e已经连接到桥接网络local-br，也可以通过以下命令确认：
 
 ```
-root@ssli-dev:~# d network inspect local-br
+# d network inspect local-br
 [
     {
         "Name": "local-br",
@@ -143,7 +143,7 @@ root@ssli-dev:~# d network inspect local-br
 c）创建c2容器连接到local-br并ping c1容器
 
 ```
-root@ssli-dev:~# d container run -it --name c2 --network local-br alpine sh
+# d container run -it --name c2 --network local-br alpine sh
 / # ping c1
 PING c1 (172.18.0.2): 56 data bytes
 64 bytes from 172.18.0.2: seq=0 ttl=64 time=0.179 ms
@@ -204,7 +204,7 @@ Commercial support is available at
 上面示例中将容器的80端口映射到宿主机的5000端口，所以访问宿主机的5000端口时，所有的流量都会被转发到容器的80端口，可以通过以下命令确认端口映射关系：
 
 ```
-root@ssli-dev:~# docker port web
+# docker port web
 80/tcp -> 0.0.0.0:5000
 ```
 
