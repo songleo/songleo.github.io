@@ -11,6 +11,15 @@ date: 2019-09-18 00:12:05
 - container模式：和其他容器共用一个网络
 - none模式：不创建任何网络
 
+
+```
+# d network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+e7640bc6abc4        bridge              bridge              local
+cad152881e00        host                host                local
+334b1cdfc438        none                null                local
+```
+
 网络栈：包括网卡、回环设备、路由表和iptables规则
 网桥：虚拟交换机角色，工作在数据链路层，根据mac地址将数据包转发到网桥的各接口上，docker会默认在宿主机创建一个docker0的网桥
 路由规则：如果网关部分是0.0.0.0，那么这是一条直连路由规则，匹配到该规则的ip包，直接通过二层网络mac地址发送到目的主机
