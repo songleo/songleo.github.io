@@ -57,7 +57,7 @@ cad152881e00        host                host                local
 ]
 ```
 
-bridge网络在主机内核中映射为docker0网桥。所以默认情况下docker创建的容器都会链接到docker0网络，由docker0负责本机所有容器之间的通信。如：
+bridge网络在主机内核中映射为docker0网桥。所以默认情况下docker创建的容器都会连接到docker0网络，由docker0负责本机所有容器之间的通信。如：
 
 ```
 # ip link show docker0
@@ -84,7 +84,7 @@ br-7832a50ead43   8000.0242c78ac61b no
 docker0   8000.02423f57ce4b no
 ```
 
-b) 创建容器并链接到创建的local-br
+b) 创建容器并连接到创建的local-br
 
 ```
 root@ssli-dev:~# d container run -d --name c1 --network local-br alpine sleep 1d
