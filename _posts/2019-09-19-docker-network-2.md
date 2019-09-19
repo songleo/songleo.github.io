@@ -4,7 +4,7 @@ title: 容器网络（二）
 date: 2019-09-19 00:12:05
 ---
 
-单机docker的容器是通过docker0网桥实现通信。如下：
+单机docker的容器是通过docker0网桥（虚拟交换机或者虚拟网桥）实现通信。如下：
 
 ```
 # d network ls
