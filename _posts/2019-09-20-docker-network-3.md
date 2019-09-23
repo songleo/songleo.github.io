@@ -50,6 +50,7 @@ outer ethernet header | outer ip header | udp header | vxlan header | inner ethe
 ```
 
 > 数据封装：[data] -> [tcp/udp | data] -> [ip | tcp/udp | data] -> [mac | ip | tcp/udp | data] -> 01010101...
+
 > 数据解封装：01010101... -> [mac | ip | tcp/udp | data] -> [ip | tcp/udp | data] -> [tcp/udp | data] -> [data]
 
 - c1访问c2时，ip包首先出现在docker0
