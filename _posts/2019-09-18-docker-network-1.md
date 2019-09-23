@@ -6,11 +6,12 @@ date: 2019-09-18 00:12:05
 
 容器提供了以下4种网络模式：
 
-- bridge模式：通过虚拟网络设备对（veth pair）实现，总是以2张虚拟网卡形式存在，其中一张网卡发出的数据包，会直接出现在另一张网卡上，即使不在一个network namespace中，所以将veth pair当成连接不同网络命名空间的”网线”
+- bridge模式：通过虚拟网络设备对（veth pair）实现，veth pair总是以2张虚拟网卡形式存在，其中一张网卡发出的数据包，会直接出现在另一张网卡上，即使不在一个network namespace中，所以将veth pair当成连接不同网络命名空间的”网线”
 - host模式：和宿主机共用网络和端口，不开启network namespace，例如docker run -d --net=host --name nginx-host nginx
 - container模式：和其他容器共用一个网络
 - none模式：不创建任何网络
 
+通过以下命令查看各网络模式：
 
 ```
 # d network ls
@@ -20,8 +21,8 @@ cad152881e00        host                host                local
 334b1cdfc438        none                null                local
 ```
 
-- 网络栈：包括网卡、回环设备、路由表和iptables规则
-- 网桥：虚拟交换机角色，工作在数据链路层，根据mac地址将数据包转发到网桥的各接口上，docker会默认在宿主机创建一个docker0的网桥
+- 网络栈：包括网卡、回环设备lo、路由表和iptables规则
+- 网桥：虚拟交换机角色，二层网络设备，工作在数据链路层，根据mac地址将数据包转发到网桥的各接口上，docker会默认在宿主机创建一个docker0的网桥
 - 路由规则：如果网关部分是0.0.0.0，那么这是一条直连路由规则，匹配到该规则的ip包，直接通过二层网络mac地址发送到目的主机
 
 在宿主机上查看网桥设备docker0和路由规则:
