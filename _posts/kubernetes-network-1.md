@@ -73,3 +73,33 @@ root@garish1:net.d$ cat 10-calico.conflist
     ]
 }
 ```
+
+> 参考文档：https://github.com/containernetworking/cni/blob/master/SPEC.md#network-configuration
+
+kubernetes会通过相应的cni配置文件配置容器网络方案。根据配置的plugins字段，调用多个插件进行网络配置。例如这里的配置文件中，会先调用calico完成容器网络配置，然后调用portmap完成端口映射配置。
+
+cni插件调用需要2部分参数，第一部分是cni环境变量add/del，cni插件唯一需要实现的2个方法，分别实现将容器加入/移除cni网络，对于网桥类型的cni插件，add/del负责将veth pair连接/移除到网桥上。add操作需要的参数包括容器网卡名字eth0、容器id、pod的network namespace文件路径等。第二部分参数是上面的cni配置文件，其中定义了默认的插件的配置（配置的第一个插件为默认插件，例如这里是calico），然后根据这2部分配置调用相应的插件完成容器网络的配置。
+
+例如网桥类的cni插件，会先检测是否存在cni网桥cni0，如果不存在则创建相应的cni0，类似在宿主机执行一下命令：
+
+```
+$ ip link add cni0 type bridge
+$ ip link set cni0 up
+```
+
+然后进入infra容器的network namespace中创建相应的veth pair设备，分别连接到cni0和容器的eth0，类型在容器中执行以下命令：
+
+```
+# 容器中执行
+$ ip link add eth0 type veth peer name vethxxx # 创建veth pair设备对
+$ ip link set eth0 up # 启动eth0设备
+$ ip link set vethxxx netns $HOST_NS # 将veth pair的另一端加入宿主机network namespace
+$ ip netns exec $HOST_NS ip link set vethxxx up # 在宿主机的network namespace中启动vethxxx设备
+
+# 宿主机执行
+$ ip link set vethxxx master cni0 # 将vethxxx连接到cni0网桥
+```
+
+
+
+
