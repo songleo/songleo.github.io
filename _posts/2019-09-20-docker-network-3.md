@@ -58,3 +58,5 @@ outer ethernet header | outer ip header | udp header | vxlan header | inner ethe
 - flannel.1设备将原始ip包封装成一个udp包发送到c2宿主机，这个udp包内部是一个完整的二层数据帧
 - c2宿主机的flannel.1设备收到数据包后，取出原始ip包，发送给docker0网桥
 - docker0网桥将ip数据包发送给c2
+
+以上两种网络方案都是通过网络插件在宿主机创建特殊设备（tun和vtep），然后借助路由表和docker0进行协作，完成容器跨主通信。
