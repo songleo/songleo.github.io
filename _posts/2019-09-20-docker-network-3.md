@@ -49,9 +49,9 @@ flannel.1设备：vxlan模式下的vtep（vxlan tunnel end point 虚拟机隧道
 outer ethernet header | outer ip header | udp header | vxlan header | inner ethernet header | inner ip header | data
 ```
 
-> 数据封装：[`data`] -> [`tcp/udp` | `data`] -> [`ip` | `tcp/udp` | `data`] -> [`mac` | `ip` | `tcp/udp` | `data`] -> [`01010101...`]
+> 数据封装：[data] -> [tcp/udp | data] -> [ip | tcp/udp | data] -> [mac | ip | tcp/udp | data] -> [01010101...]
 
-> 数据解封装：[`01010101...`] -> [`mac` | `ip` | `tcp/udp` | `data`] -> [`ip` | `tcp/udp` | `data`] -> [`tcp/udp` | `data`] -> [data]
+> 数据解封装：[01010101...] -> [mac | ip | tcp/udp | data] -> [ip | tcp/udp | data] -> [tcp/udp | data] -> [data]
 
 - c1访问c2时，ip包首先出现在docker0
 - 然后docker0上的ip包会被路由到本机的flannel.1设备
