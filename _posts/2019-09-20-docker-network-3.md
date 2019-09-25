@@ -6,7 +6,7 @@ date: 2019-09-20 00:12:05
 
 默认配置下，docker在不同宿主机上创建的容器无法通过ip地址相互访问。而相同宿主机上的容器借助docker0网桥模式可以通过ip相互访问。网桥设备转发数据包的依据，是来自转发数据库（forwarding database FDB），FDB记录了二层数据帧应该通过那个接口设备发送到目的主机，通过命令bridge fdb show可以查询。
 
-flannel容器网络方案支持三种后端实现，分别是vxlan（virtual extensible lan 虚拟机可扩展局域网）、host-gw和udp，udp模式性能最差，现在已经被弃用，vxlan模式通过在现用的三层网络之上，构建一个由内核vxlan模块维护的虚拟二层网络，使连接到这个二层网络的主机可以向在一个局域网中自由通信。host-gw模式是将每个flannel子网的下一跳，设置成该子网对应的宿主机的ip地址，是一种纯三层容器网络方案。
+flannel容器网络方案支持三种后端实现，分别是vxlan（virtual extensible lan 虚拟机可扩展局域网）、host-gw和udp，udp模式性能最差，现在已经被弃用，vxlan模式通过在现用的三层网络之上，构建一个由内核vxlan模块维护的虚拟二层网络，使连接到这个二层网络的主机可以向在一个局域网中自由通信。host-gw模式是将每个flannel子网的下一跳，设置成该子网对应的宿主机的ip地址，是一种纯三层容器网络方案。且要求集群主机之间必须是二层连通的，因为需要通过路由表的下一跳来设置目的主机的mac地址。
 
 udp模式下，会创建相应的路由规则，将宿主机上容器的数据包从docker0转发到flannel0设备，然后由flannel0设备将ip包转发到flanneld进程，即ip包由内核态（flannel0设备）向用户态（flanneld进程）传递。如果flanneld进程往flannel0设备发送一个ip包，那么该ip包会进入宿主机的网络栈，然后根据路由规则进行处理，即ip包由用户态到内核态传递。
 
