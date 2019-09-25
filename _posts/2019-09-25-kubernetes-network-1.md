@@ -9,9 +9,9 @@ flannel的vxlan模式中，kubernetes借助cni接口，维护了一个类似dock
 cni插件所需的可执行文件一般位于宿主机的/opt/cni/bin目录，当安装好kubernetes-cni包后，可以在该目录查看相应的二进制文件，例如：
 
 ```
-root@garish1:bin$ pwd
+$ pwd
 /opt/cni/bin
-root@garish1:bin$ ll
+$ ll
 total 76M
 drwxr-xr-x 2 root root  117 Sep 15 19:15 .
 drwxr-xr-x 3 root root   17 Aug  5 18:50 ..
@@ -38,9 +38,9 @@ drwxr-xr-x 3 root root   17 Aug  5 18:50 ..
 在/etc/cni/net.d目录下，会有相应的cni配置文件，例如：
 
 ```
-root@garish1:net.d$ pwd
+$ pwd
 /etc/cni/net.d
-root@garish1:net.d$ cat 10-calico.conflist
+$ cat 10-calico.conflist
 {
     "name": "k8s-pod-network",
     "cniVersion": "0.3.0",
@@ -83,8 +83,9 @@ cni插件调用需要2部分参数，第一部分是cni环境变量add/del，cni
 例如网桥类的cni插件，会先检测是否存在cni网桥cni0，如果不存在则创建相应的cni0，类似在宿主机执行一下命令：
 
 ```
-$ ip link add cni0 type bridge
-$ ip link set cni0 up
+$ ip link add cni0 type bridge # 创建cni0网桥
+$ ip link set cni0 up # 启动cni0
+$ ip addr add 10.244.0.1/24 dev cni0 # 给cni0配置ip
 ```
 
 然后进入infra容器的network namespace中创建相应的veth pair设备，分别连接到cni0和容器的eth0，类型在容器中执行以下命令：
@@ -95,11 +96,9 @@ $ ip link add eth0 type veth peer name vethxxx # 创建veth pair设备对
 $ ip link set eth0 up # 启动eth0设备
 $ ip link set vethxxx netns $HOST_NS # 将veth pair的另一端加入宿主机network namespace
 $ ip netns exec $HOST_NS ip link set vethxxx up # 在宿主机的network namespace中启动vethxxx设备
+$ ip addr add 10.244.0.2/24 dev eth0 # 给容器分配ip
+$ ip route add default via 10.244.0.1 dev eth0 # 添加路由规则
 
 # 宿主机执行
 $ ip link set vethxxx master cni0 # 将vethxxx连接到cni0网桥
 ```
-
-
-
-
