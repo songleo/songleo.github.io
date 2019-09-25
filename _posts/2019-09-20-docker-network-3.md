@@ -6,7 +6,7 @@ date: 2019-09-20 00:12:05
 
 默认配置下，docker在不同宿主机上创建的容器无法通过ip地址相互访问。而相同宿主机上的容器借助docker0网桥模式可以通过ip相互访问。网桥设备转发数据包的依据，是来自转发数据库（forwarding database FDB），FDB记录了二层数据帧应该通过那个接口设备发送到目的主机，通过命令bridge fdb show可以查询。
 
-flannel容器网络方案支持三种后端实现，分别是vxlan（virtual extensible lan 虚拟机可扩展局域网）、host-gw和udp，udp模式性能最差，现在已经被弃用，vxlan模式通过在现用的三层网络之上，构建一个由内核vxlan模块维护的虚拟二层网络，使连接到这个二层网络的主机可以向在一个局域网中自由通信。
+flannel容器网络方案支持三种后端实现，分别是vxlan（virtual extensible lan 虚拟机可扩展局域网）、host-gw和udp，udp模式性能最差，现在已经被弃用，vxlan模式通过在现用的三层网络之上，构建一个由内核vxlan模块维护的虚拟二层网络，使连接到这个二层网络的主机可以向在一个局域网中自由通信。host-gw模式是将每个flannel子网的下一跳，设置成该子网对应的宿主机的ip地址，是一种纯三层容器网络方案。
 
 udp模式下，会创建相应的路由规则，将宿主机上容器的数据包从docker0转发到flannel0设备，然后由flannel0设备将ip包转发到flanneld进程，即ip包由内核态（flannel0设备）向用户态（flanneld进程）传递。如果flanneld进程往flannel0设备发送一个ip包，那么该ip包会进入宿主机的网络栈，然后根据路由规则进行处理，即ip包由用户态到内核态传递。
 
@@ -17,7 +17,7 @@ flannel子网：在flannel管理的容器网络中，一台宿主机上的所有
 flannel udp模式下跨主机通信流程如下：
 
 ```
-c1 -> docker0 -> flannel0 -> flanneld -> eth0 <----> eth0 -> flanneld -> flannel0 -> docker0 -> c2
+c1 -> docker0 (cni0) -> flannel0 -> flanneld -> eth0 <----> eth0 -> flanneld -> flannel0 -> docker0 (cni0) -> c2
 ```
 
 - c1访问c2时，ip包首先出现在docker0
@@ -34,13 +34,13 @@ flannel udp模式相当于提供了一个三层的overlay网络，将发送的ip
 由于发送数据是频繁的用户态和内核态数据拷贝，性能较差，已经被弃用。用户态和内核态的切换示意图如下：
 
 ```
-c1 -> docker0 -> flannel0 -> flanneld -> eth0
+c1 -> docker0 (cni0) -> flannel0 -> flanneld -> eth0
 ```
 
 flannel vxlan模式下跨主机通信流程如下：
 
 ```
-c1 -> docker0 -> flannel.1 -> eth0 <----> eth0 -> flannel.1 -> docker0 -> c2
+c1 -> docker0 (cni0) -> flannel.1 -> eth0 <----> eth0 -> flannel.1 -> docker0 (cni0) -> c2
 ```
 
 flannel.1设备：vxlan模式下的vtep（vxlan tunnel end point 虚拟机隧道端点）设备，有相应的ip地址和mac地址，负责在内核态完成二层数据帧的封装和解封装，所以和udp模式相比，性能更好。每个新节点启动后加入flannel网络后，所有节点的flanneld会添加相应的路由规则，并记录新节点的flannel.1的ip地址和mac地址，方便其他节点的flannel.1能访问到自己的flannel.1。vxlan模式下发送的数据包格式如下：
@@ -60,4 +60,18 @@ outer ethernet header | outer ip header | udp header | vxlan header | inner ethe
 - docker0网桥将ip数据包发送给c2
 
 以上两种网络方案都是通过网络插件在宿主机创建特殊设备（tun和vtep），然后借助路由表和docker0进行协作，完成容器跨主通信。在kubernetes中，flannel通过cni接口，创建一个类似docker0的网桥cni0完成类似的功能。
+
+host-gw模式下跨主机通信流程如下：
+
+```
+c1 -> docker0 (cni0) -> eth0 <----> eth0 -> docker0 (cni0) -> c2
+```
+
+- c1访问c2，ip包首先出现在docker0
+- flannel会在每个宿主机创建一条相应的路由规则，将c2所在网段的ip包的下一跳设置成c2宿主机的ip
+- 于是该ip包会根据下一跳被路由到c2宿主机
+- ip包进入c2宿主机后，有相应的路由规则将ip包路由到docker0网桥
+- docker0网桥将ip包发送给c2
+
+host-gw模式的主要工作原理就是将每个节点上的flannel子网的下一跳，设置成该子网对应的宿主机ip，即每个节点（host）在容器通信的过程中扮演网关（gateway）角色，将数据包正确的转发到容器，所以叫host-gw模式。
 
