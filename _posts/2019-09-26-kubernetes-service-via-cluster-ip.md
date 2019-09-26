@@ -79,5 +79,5 @@ hostnames-85bc9c579-dsmh9
 hostnames-85bc9c579-zndz2
 ```
 
-这里的cluster ip是10.0.91.192，所以可以通过该ip访问部署的hostnames，可以看到每次返回的主机名不同，这是service默认就提供的轮询（round robin）负载均衡方式，并且查看service的endpoints，可以看到其后端代理的pod的ip，当某个pod出现问题时，kubernetes会将其从service的endpoints中移除，确保应用能正常的被访问。以上就是cluster ip模式的service。
+这里的cluster ip是10.0.91.192，所以可以通过该ip访问部署的hostnames，可以看到每次返回的主机名不同，这是service默认就提供的轮询（round robin）负载均衡方式，并且查看service的endpoints，可以看到其后端代理的pod的ip，当某个pod出现问题时，kubernetes会将其从service的endpoints中移除，确保应用能正常的被访问，以上就是cluster ip模式的service。
 
