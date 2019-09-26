@@ -81,3 +81,28 @@ hostnames-85bc9c579-zndz2
 
 这里的cluster ip是10.0.91.192，所以可以通过该ip访问部署的hostnames，可以看到每次返回的主机名不同，这是service默认就提供的轮询（round robin）负载均衡方式，并且查看service的endpoints，可以看到其后端代理的pod的ip，当某个pod出现问题时，kubernetes会将其从service的endpoints中移除，确保应用能正常的被访问，以上就是cluster ip模式的service。
 
+service其实是由kube-proxy和iptables共同实现，查看iptables规则可以看到：
+
+```
+# iptables-save | grep hostnames
+-A KUBE-SERVICES ! -s 10.1.0.0/16 -d 10.0.91.192/32 -p tcp -m comment --comment "default/hostnames:default cluster IP" -m tcp --dport 80 -j KUBE-MARK-MASQ
+-A KUBE-SERVICES -d 10.0.91.192/32 -p tcp -m comment --comment "default/hostnames:default cluster IP" -m tcp --dport 80 -j KUBE-SVC-ODX2UBAZM7RQWOIU
+# iptables-save | grep KUBE-SVC-ODX2UBAZM7RQWOIU
+:KUBE-SVC-ODX2UBAZM7RQWOIU - [0:0]
+-A KUBE-SERVICES -d 10.0.91.192/32 -p tcp -m comment --comment "default/hostnames:default cluster IP" -m tcp --dport 80 -j KUBE-SVC-ODX2UBAZM7RQWOIU
+-A KUBE-SVC-ODX2UBAZM7RQWOIU -m statistic --mode random --probability 0.33332999982 -j KUBE-SEP-I2HJPDDJL5BQFM6K
+-A KUBE-SVC-ODX2UBAZM7RQWOIU -m statistic --mode random --probability 0.50000000000 -j KUBE-SEP-ZGC4PHJJE7XNKWAH
+-A KUBE-SVC-ODX2UBAZM7RQWOIU -j KUBE-SEP-KGA3ZAVJ5MEPXEK5
+# iptables-save | grep KUBE-SVC-ODX2UBAZM7RQWOIU
+:KUBE-SVC-ODX2UBAZM7RQWOIU - [0:0]
+-A KUBE-SERVICES -d 10.0.91.192/32 -p tcp -m comment --comment "default/hostnames:default cluster IP" -m tcp --dport 80 -j KUBE-SVC-ODX2UBAZM7RQWOIU
+-A KUBE-SVC-ODX2UBAZM7RQWOIU -m statistic --mode random --probability 0.33332999982 -j KUBE-SEP-I2HJPDDJL5BQFM6K
+-A KUBE-SVC-ODX2UBAZM7RQWOIU -m statistic --mode random --probability 0.50000000000 -j KUBE-SEP-ZGC4PHJJE7XNKWAH
+-A KUBE-SVC-ODX2UBAZM7RQWOIU -j KUBE-SEP-KGA3ZAVJ5MEPXEK5
+# iptables-save | grep KUBE-SEP-I2HJPDDJL5BQFM6K
+:KUBE-SEP-I2HJPDDJL5BQFM6K - [0:0]
+-A KUBE-SEP-I2HJPDDJL5BQFM6K -s 10.1.161.47/32 -j KUBE-MARK-MASQ
+-A KUBE-SEP-I2HJPDDJL5BQFM6K -p tcp -m tcp -j DNAT --to-destination 10.1.161.47:9376
+-A KUBE-SVC-ODX2UBAZM7RQWOIU -m statistic --mode random --probability 0.33332999982 -j KUBE-SEP-I2HJPDDJL5BQFM6K
+```
+
