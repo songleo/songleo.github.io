@@ -12,7 +12,7 @@ date: 2019-09-27 00:12:05
 calico提供的网络解决方案，基本和flannel的host-gw模式相同，不同的地方在flannel通过etcd和宿主机上的flanneld维护路由信息，而calico是使用bgp（border gateway protocol 边界网关协议）自动的在集群中维护路由信息。如：
 
 ```
-目标容器ip段 via 容器所在节点ip或者router ip或者网关ip dev eth0
+目标容器ip段 via 容器所在节点ip或者网关ip dev eth0
 ```
 
 > bgp：大规模网络中实现节点路由信息共享的一种协议
