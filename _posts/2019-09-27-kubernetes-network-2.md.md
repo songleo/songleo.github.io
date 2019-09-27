@@ -41,7 +41,7 @@ c1 -> calixxx -> tunl0 -> eth0 <----> eth0 -> calixxx -> tunl0 -> c2
 
 - c1访问c2时，ip包会出现在calixxx
 - 根据c1宿主机中的路由规则中的下一跳，使用tunl0设备将ip包发送到c2的宿主机
-- tunl0是一种ip隧道设备，当ip包进入该设备后，会被Linux中的ipip驱动将该ip包直接封装在宿主机网络的ip包中
+- tunl0是一种ip隧道设备，当ip包进入该设备后，会被Linux中的ipip驱动将该ip包直接封装在宿主机网络的ip包中，然后发送到c2的宿主机
 - 进入c2的宿主机后，该ip包会由ipip驱动解封装，获取原始的ip包，然后根据c2宿主机中的路由规则发送到calixxx
 - 进而进入c2容器
 
