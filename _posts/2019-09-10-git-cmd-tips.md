@@ -54,6 +54,12 @@ git commit --amend
 git reset --soft HEAD^
 ```
 
+- 删除远程分支
+
+```
+git push origin --delete br-name
+``
+
 - 撤销上次add
 
 ```
