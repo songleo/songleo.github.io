@@ -7,6 +7,8 @@
 - ibmcloud cr build 替代 docker build
 - ibmcloud cr images 替代 docker images
 
+
+
 获取集群信息：
 
 ```
