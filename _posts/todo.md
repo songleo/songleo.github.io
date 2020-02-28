@@ -1,3 +1,9 @@
+
+- prometheus book
+- ocp4.3 doc
+- k8s features
+- english
+
 # 1
 
 https://www.youtube.com/watch?reload=9&v=zuh3JFtNbeU&feature=youtu.be
