@@ -1,5 +1,5 @@
 
-ocp 4自带的prometheus是由openshift cluster monitoring operator管理，且默认就开始抓取ocp集群的指标信息。一般情况下，我们不能修改集群自带的prometheus。借助prometheus联邦功能，用户可以通过安装自己的prometheus去收集集群指标信息。
+ocp 4自带的prometheus是由openshift cluster monitoring operator管理，安装在openshift-monitoring命名空间，且默认就开始抓取ocp集群的指标信息。一般情况下，我们不能修改集群自带的prometheus。借助prometheus联邦功能，用户可以通过安装自己的prometheus去收集集群指标信息。
 
 
 prometheus通过remote_write功能，将所有指标数据发送给thanos receiver。thanos receiver负责从不同的prometheus实例中接收指标数据，并将这些指标数据备份到云存储如s3。然后通过部署thanos store gateway去查询存储在云端的指标数据。thanos querier负责响应用户的查询请求，从thanos receiver和thanos store gateway获取用户请求的指标数据。
@@ -48,6 +48,8 @@ oc -n thanos create secret generic thanos-receive-proxy --from-literal=session_s
 oc -n thanos annotate serviceaccount thanos-receive serviceaccounts.openshift.io/oauth-redirectreference.thanos-receive='{"kind":"OAuthRedirectReference","apiVersion":"v1","reference":{"kind":"Route","name":"thanos-receive"}}'
 ```
 
+这里使用了oauth proxy当反向代理验证用户身份和授权。
+
 3）给service account添加用户权限以便进行身份验证和授权，如下：
 
 ```
@@ -61,6 +63,35 @@ oc -n thanos create -f thanos-receive.yaml
 oc -n thanos get pods -l "app=thanos-receive"
 oc -n thanos create route reencrypt thanos-receive --service=thanos-receive --port=web-proxy --insecure-policy=Redirect
 ```
+
+### 创建service account进行身份验证
+
+```
+oc -n thanos create serviceaccount west2-metrics
+oc -n thanos adm policy add-role-to-user view -z west2-metrics
+oc -n thanos create serviceaccount east1-metrics
+oc -n thanos adm policy add-role-to-user view -z east1-metrics
+```
+
+并赋予service account相应的view权限。
+
+### 部署prometheus
+
+1) 进入ocp的ui中安装prometheus operator。
+
+2）创建serving ca以便和自带的prometheus通信获取指标数据。
+
+```
+oc -n openshift-monitoring get configmap serving-certs-ca-bundle --export -o yaml | oc -n thanos apply -f -
+```
+
+这里是将系统自带的证书复制过来创建相应的serving ca。
+
+3）为prometheus创建相应的cluster role。
+
+4）
+
+
 
 ### ref
 
