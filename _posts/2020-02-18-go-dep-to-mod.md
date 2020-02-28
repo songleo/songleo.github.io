@@ -9,9 +9,9 @@ date: 2020-02-18 00:12:05
 ```
 $ export GO111MODULE=on
 $ pwd
-/share/git/src/sigs.k8s.io/cluster-api-provider-gke
+/share/git/src/sigs.k8s.io/cluster-api
 $ go mod init
-go: creating new go.mod: module sigs.k8s.io/cluster-api-provider-gke
+go: creating new go.mod: module sigs.k8s.io/cluster-api
 go: copying requirements from Gopkg.lock
 ```
 
@@ -30,9 +30,9 @@ go: error loading module requirements
 
 ```
 $ pwd
-/share/git/src/sigs.k8s.io/cluster-api-provider-gke
+/share/git/src/sigs.k8s.io/cluster-api
 $ cat go.mod
-module sigs.k8s.io/cluster-api-provider-gke
+module sigs.k8s.io/cluster-api
 
 go 1.12
 
