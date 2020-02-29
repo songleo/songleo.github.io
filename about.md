@@ -3,7 +3,7 @@ layout: page
 title: about me
 ---
 
-我叫李松松，1988年出生于贵州安顺，2015年毕业于西安科技大学电子与通信工程专业，目前就职于ibm，主要从事分布式计算、集群作业调度系统、kubernetes及云原生相关的研发工作。
+我叫李松松，1988年出生于贵州安顺，2015年毕业于西安科技大学电子与通信工程专业，目前就职于red hat，主要从事kubernetes及云原生相关的研发工作。
 
 喜欢读书，尤其软件相关书籍；
 
@@ -13,7 +13,7 @@ title: about me
 
 使用语言：c/python/go
 
-Email：lisong1205@gmail.com
+email：lisong1205@126.com
 
 微博：俊采LEo
 

@@ -1,6 +1,6 @@
 ## topic
 
-- architecture zh/
+- architecture
 - monitoring zh/
 
 
