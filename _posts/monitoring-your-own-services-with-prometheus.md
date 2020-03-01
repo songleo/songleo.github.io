@@ -97,6 +97,55 @@ oc apply -f prometheus-example-app.yaml
 oc -n ns1 get pod
 ```
 
+### 创建相应的role
+
+相应的yaml文件custom-metrics-role.yaml如下：
+
+```
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: monitor-crd-edit
+rules:
+- apiGroups: ["monitoring.coreos.com"]
+  resources: ["prometheusrules", "servicemonitors", "podmonitors"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+```
+
+创建role：
+
+```
+oc apply -f custom-metrics-role.yaml
+```
+
+### 设置指标收集
+
+创建相应的service monitor，相应的example-app-service-monitor.yaml如下
+
+```
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    k8s-app: prometheus-example-monitor
+  name: prometheus-example-monitor
+  namespace: ns1
+spec:
+  endpoints:
+  - interval: 30s
+    port: web
+    scheme: http
+  selector:
+    matchLabels:
+      app: prometheus-example-app
+```
+
+创建service monitor：
+
+```
+```
+
+
 ref:
 
 https://docs.openshift.com/container-platform/4.3/monitoring/monitoring-your-own-services.html
