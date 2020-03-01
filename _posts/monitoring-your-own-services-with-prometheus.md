@@ -41,7 +41,7 @@ prometheus-user-workload-1            5/5     Running   1          43s
 
 ### 部署用户应用
 
-应用yaml文件prometheus-example-app.yaml如下：
+相应的yaml如下：
 
 ```
 apiVersion: v1
@@ -99,7 +99,7 @@ oc -n ns1 get pod
 
 ### 创建相应的role
 
-相应的yaml文件custom-metrics-role.yaml如下：
+相应的yaml如下：
 
 ```
 kind: ClusterRole
@@ -118,9 +118,13 @@ rules:
 oc apply -f custom-metrics-role.yaml
 ```
 
+### 创建相应的role binding
+
+通过ocp门户，进入role里面创建相应的role binding。
+
 ### 设置指标收集
 
-创建相应的service monitor，相应的example-app-service-monitor.yaml如下
+创建相应的service monitor，相应的yaml如下：
 
 ```
 apiVersion: monitoring.coreos.com/v1
@@ -143,8 +147,40 @@ spec:
 创建service monitor：
 
 ```
+oc apply -f example-app-service-monitor.yaml
+oc -n ns1 get servicemonitor
 ```
 
+### 创建告警规则
+
+相应的yaml如下：
+
+```
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: example-alert
+  namespace: ns1
+spec:
+  groups:
+  - name: example
+    rules:
+    - alert: VersionAlert
+      expr: version{job="prometheus-example-app"} == 0
+```
+
+创建告警规则：
+
+```
+oc apply -f example-app-alerting-rule.yaml
+```
+
+### 赋予用户view权限
+
+
+```
+oc policy add-role-to-user view ssli-test1 -n ns1
+```
 
 ref:
 
