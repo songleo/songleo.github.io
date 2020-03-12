@@ -8,8 +8,8 @@ date: 2020-03-10 00:12:05
 ### 创建project
 
 ```
-$ oc new-project svc-via-nodeport
-Now using project "svc-via-nodeport" on server "https://api.host.com:6443".
+$ oc new-project nodeport-demo
+Now using project "nodeport-demo" on server "https://api.ssli-ocp1.os.fyre.ibm.com:6443".
 
 You can add applications to this project with the 'new-app' command. For example, try:
 
@@ -40,6 +40,12 @@ $ oc new-app openshift/hello-openshift
     Application is not exposed. You can expose services to the outside world by executing one or more of the commands below:
      'oc expose svc/hello-openshift'
     Run 'oc status' to view your app.
+$ oc get po
+NAME                       READY   STATUS              RESTARTS   AGE
+hello-openshift-1-deploy   0/1     ContainerCreating   0          8s
+$ oc get svc
+NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)             AGE
+hello-openshift   ClusterIP   172.30.168.25   <none>        8080/TCP,8888/TCP   14s
 ```
 
 ### 修改service type为NodePort
@@ -47,19 +53,18 @@ $ oc new-app openshift/hello-openshift
 ```
 $ oc edit svc hello-openshift
 $ oc get svc hello-openshift
-NAME              TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)                         AGE
-hello-openshift   NodePort   172.30.159.191   <none>        8080:32694/TCP,8888:32588/TCP   41s
+NAME              TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)                         AGE
+hello-openshift   NodePort   172.30.168.25   <none>        8080:32624/TCP,8888:31823/TCP   71s
 ```
 
-### 访问应用
+### 通过node-ip:node-port访问应用
 
 ```
-$ oc describe no worker0.host.com | grep InternalIP
-  InternalIP:  10.16.46.190
-
-$ curl 10.16.46.190:32694
+$ oc describe no worker0.ssli-ocp1.os.fyre.ibm.com | grep InternalIP
+  InternalIP:  10.16.60.170
+$ curl 10.16.60.170:32624
 Hello OpenShift!
-$ curl 10.16.46.190:32588
+$ curl 10.16.60.170:31823
 Hello OpenShift!
 ```
 
