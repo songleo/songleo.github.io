@@ -1,7 +1,7 @@
 ---
 layout: post
 title: nodeport方式访问ocp应用
-date: 2020-02-29 00:12:05
+date: 2020-03-10 00:12:05
 ---
 
 
