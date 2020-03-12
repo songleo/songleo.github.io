@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ingress方式访问ocp应用
-date: 2020-03-10 00:12:05
+date: 2020-03-13 12:12:05
 ---
 
 ### 创建project
