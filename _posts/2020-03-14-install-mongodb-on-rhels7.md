@@ -43,6 +43,18 @@ $ rpm -i mongodb-org-4.2.3-1.el7.x86_64.rpm \
 Created symlink from /etc/systemd/system/multi-user.target.wants/mongod.service to /usr/lib/systemd/system/mongod.service.
 ```
 
+或者你也可以直接通过container启动mongodb，然后使用：
+
+```
+$ mkdir -p data
+mkdir: created directory 'data'
+$ docker run -d -p 27017:27017 -v ~/data:/data/db mongo
+5c3421a0c4a780609c528b828b4fd067e84c4cd77f54683ea7b47079aab4cf73
+$ mongo localhost/db0
+```
+
+这里需要提前安装mongodb client，否则无法通过mongo命令操作mongodb。
+
 
 ### 启动并测试mongodb
 
