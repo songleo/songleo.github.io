@@ -145,7 +145,7 @@ secret/openshift-monitoring-grafana-datasource created
             defaultMode: 420
 ```
 
-待grafana的pod待重启完毕，访问grafana的dashboard，使用以下命令获取grafana的dashboard的url：
+待grafana的pod重启完毕，访问grafana的dashboard，使用以下命令获取grafana的dashboard的url：
 
 ```
 # oc get route -n ssli-monitoring
@@ -163,7 +163,7 @@ admin_user: root
 在dashboard中找到创建的datasources，然后点击save & test，配置正常的话会提示一下信息：
 
 ```
-Data source is working
+data source is working
 ```
 
 然后就可以添加自己的grafana dashboard。
