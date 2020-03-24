@@ -17,7 +17,7 @@ $ docker run -d -p 9000:9000 --rm \
 
 ### 登录minio的dashboard
 
-浏览器打开http://localhost:9000/minio/login，默认access key和secret key如下：
+浏览器打开http://localhost:9000/minio/login， 默认access key和secret key如下：
 
 ```
 minioadmin
