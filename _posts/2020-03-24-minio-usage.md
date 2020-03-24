@@ -60,6 +60,20 @@ mc config host add <alias> <your-s3-endpoint> <your-access-key> <your-secret-key
 - your-secret-key：访问s3的secret key
 - api-signature：api签名，比如s3的s3v4，gcs的S3v2
 
+你也可以直接使用docker版的客户端命令行mc，如下所示：
+
+```
+$ docker run -it --entrypoint=/bin/sh minio/mc
+/ # mc config host add local http://172.17.0.4:9000 minioadmin minioadmin S3v4
+mc: Configuration written to `/root/.mc/config.json`. Please update your access credentials.
+mc: Successfully created `/root/.mc/share`.
+mc: Initialized share uploads `/root/.mc/share/uploads.json` file.
+mc: Initialized share downloads `/root/.mc/share/downloads.json` file.
+Added `local` successfully.
+/ # mc ls local
+[2020-03-24 05:32:30 UTC]      0B test/
+```
+
 ### ref
 
 - https://docs.min.io/cn/minio-client-quickstart-guide.html
