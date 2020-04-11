@@ -35,8 +35,6 @@ tar -xzf openshift-client-linux.tar.gz
 mv kubectl oc /usr/local/bin/
 ```
 
-
-
 ## tool list
 
 - dash
