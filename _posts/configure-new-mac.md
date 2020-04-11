@@ -48,6 +48,7 @@ mv kubectl oc /usr/local/bin/
 	- filediffs
 	- golang build
 	- auto-save: 需要打开自动保存功能
+	- gitgutter
 - wechat
 - slack
 - docker
