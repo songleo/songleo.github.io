@@ -1,3 +1,7 @@
+
+## install tool from cmd
+
+```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 brew install wget
@@ -11,10 +15,10 @@ chmod +x ./kind
 mv kind /usr/local/bin
 
 curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl"
-
 chmod +x ./kubectl
 mv kubectl /usr/local/bin
 
+```
 
 ## tool list
 
@@ -23,6 +27,8 @@ mv kubectl /usr/local/bin
 - chrome
 - iterm
 - sublime
+	- sidebarenhancements
+	- package control
 - wechat
 - slack
 - docker
