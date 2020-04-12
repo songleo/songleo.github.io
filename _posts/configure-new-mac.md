@@ -54,5 +54,6 @@ mv kubectl oc /usr/local/bin/
 - slack
 - docker
 - bluejeans
+- alfred
 
 
