@@ -33,6 +33,8 @@ wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp-dev-previe
 
 tar -xzf openshift-client-linux.tar.gz
 mv kubectl oc /usr/local/bin/
+
+xcode-select --install
 ```
 
 ## tool list
@@ -49,11 +51,11 @@ mv kubectl oc /usr/local/bin/
 	- golang build
 	- auto-save: 需要打开自动保存功能
 	- gitgutter
+	- git
+	- markdownediting
 	- 取消自动删除tab：defaults write com.googlecode.iterm2 AboutToPasteTabsWithCancel 0
 - wechat
 - slack
 - docker
 - bluejeans
-- alfred
-
-
+- alfred：设置只搜索share目录下文件
