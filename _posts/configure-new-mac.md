@@ -53,3 +53,6 @@ mv kubectl oc /usr/local/bin/
 - wechat
 - slack
 - docker
+- bluejeans
+
+
