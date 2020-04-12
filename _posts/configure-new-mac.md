@@ -52,6 +52,11 @@ xcode-select --install
 	- markdownlivepreview
 	- package control
 	- sidebarenhancements
+	- terminalprojectfolder
+	- terminalview
+	```
+	[{ "keys": ["ctrl+alt+t"], "command": "terminal_view_open" }]
+	```
 	- 取消自动删除tab：defaults write com.googlecode.iterm2 AboutToPasteTabsWithCancel 0
 - wechat
 - slack
