@@ -44,14 +44,14 @@ xcode-select --install
 - iterm
 	- 设置顶层显示：keys -> configure hotkey window -> floating window
 - sublime
+	- auto-save: 需要打开自动保存功能
+	- filediffs
+	- git
+	- gitgutter
+	- golang build
+	- markdownlivepreview
 	- package control
 	- sidebarenhancements
-	- filediffs
-	- golang build
-	- auto-save: 需要打开自动保存功能
-	- gitgutter
-	- git
-	- markdownlivepreview
 	- 取消自动删除tab：defaults write com.googlecode.iterm2 AboutToPasteTabsWithCancel 0
 - wechat
 - slack
