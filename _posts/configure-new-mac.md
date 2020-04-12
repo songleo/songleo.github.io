@@ -49,6 +49,7 @@ mv kubectl oc /usr/local/bin/
 	- golang build
 	- auto-save: 需要打开自动保存功能
 	- gitgutter
+	- 取消自动删除tab：defaults write com.googlecode.iterm2 AboutToPasteTabsWithCancel 0
 - wechat
 - slack
 - docker
