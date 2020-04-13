@@ -9,10 +9,10 @@ date: 2020-03-13 12:12:05
 
 ### bookmark search
 
-这是一个chrome浏览器的插件，安装该插件后，
+这是一个chrome浏览器插件，安装该插件后，
 
 ### markdown here
 
-这是一个chrome浏览器的插件，安装该插件后，
+这是一个chrome浏览器插件，安装该插件后，
 
 ### alfred 4
