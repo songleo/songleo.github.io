@@ -28,12 +28,16 @@ $ chmod 400 soli-aws-ec2.pem
 
 wget -O /usr/local/bin/jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64 && chmod +x /usr/local/bin/jq
 
-wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp-dev-preview/latest-4.4/openshift-client-linux.tar.gz
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp-dev-preview/latest-4.4/openshift-client-mac.tar.gz
 
-tar -xzf openshift-client-linux.tar.gz
+tar -xzf openshift-client-mac.tar.gz
 mv kubectl oc /usr/local/bin/
 
 xcode-select --install
+
+brew install helm
+
+cp -rf ~/share/aws/soli-acmcluster01/auth/kubeconfig ~/.kube/config
 ```
 
 ## tool list
