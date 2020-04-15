@@ -42,6 +42,11 @@ cp -rf ~/share/aws/soli-acmcluster01/auth/kubeconfig ~/.kube/config
 ## install tools
 https://github.com/mikefarah/yq/releases/download/2.1.1/yq_darwin_amd64
 http://storage.googleapis.com/kubernetes-helm/helm-v2.13.1-darwin-amd64.tar.gz
+
+brew cask install chromedriver
+sudo go get -u github.com/onsi/ginkgo/ginkgo
+
+brew install bash
 ```
 
 ## tool list
