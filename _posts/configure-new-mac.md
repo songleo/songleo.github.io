@@ -47,6 +47,12 @@ brew cask install chromedriver
 sudo go get -u github.com/onsi/ginkgo/ginkgo
 
 brew install bash
+
+sudo vim /etc/shells
+# add this line
+/usr/local/bin/bash
+
+
 ```
 
 ## tool list
