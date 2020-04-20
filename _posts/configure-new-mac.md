@@ -54,6 +54,8 @@ sudo vim /etc/shells
 
 
 curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s v2.2.0
+
+brew install minio/stable/mc
 ```
 
 ## tool list
@@ -83,3 +85,4 @@ curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | s
 - docker
 - bluejeans
 - alfred：设置只搜索share目录下文件
+- aws cli: https://aws.amazon.com/cli/
