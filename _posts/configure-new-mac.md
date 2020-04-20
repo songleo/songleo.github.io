@@ -53,6 +53,7 @@ sudo vim /etc/shells
 /usr/local/bin/bash
 
 
+curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s v2.2.0
 ```
 
 ## tool list
