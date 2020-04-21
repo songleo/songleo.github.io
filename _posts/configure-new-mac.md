@@ -56,6 +56,13 @@ sudo vim /etc/shells
 curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh | sh -s v2.2.0
 
 brew install minio/stable/mc
+
+brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+
+ssh-keygen -t rsa -b 4096 -C "ssli@redhat.com"
+cat ~/.ssh/id_rsa.pub
+git config --global user.email "ssli@redhat.com"
+git config --global user.name "Song Song Li"
 ```
 
 ## tool list
