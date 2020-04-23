@@ -63,6 +63,13 @@ ssh-keygen -t rsa -b 4096 -C "ssli@redhat.com"
 cat ~/.ssh/id_rsa.pub
 git config --global user.email "ssli@redhat.com"
 git config --global user.name "Song Song Li"
+git config --global color.ui auto
+
+
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-4.4/openshift-install-mac.tar.gz
+
+
+curl -L https://github.com/operator-framework/operator-sdk/releases/download/v0.16.0/operator-sdk-v0.16.0-x86_64-apple-darwin -o operator-sdk && chmod a+x operator-sdk && mv operator-sdk /usr/local/bin/
 ```
 
 ## tool list
