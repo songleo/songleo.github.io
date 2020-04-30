@@ -70,6 +70,10 @@ wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-4.4
 
 
 curl -L https://github.com/operator-framework/operator-sdk/releases/download/v0.16.0/operator-sdk-v0.16.0-x86_64-apple-darwin -o operator-sdk && chmod a+x operator-sdk && mv operator-sdk /usr/local/bin/
+
+go get golang.org/x/tools/cmd/goimports
+
+brew install bash-completion
 ```
 
 ## tool list
@@ -84,6 +88,7 @@ curl -L https://github.com/operator-framework/operator-sdk/releases/download/v0.
 	- filediffs
 	- git
 	- gitgutter
+	- gofmt (go get golang.org/x/tools/cmd/goimports)
 	- golang build
 	- markdownlivepreview
 	- package control

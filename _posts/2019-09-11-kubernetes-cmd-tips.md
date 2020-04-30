@@ -46,4 +46,17 @@ kubectl edit deploy nginx-test
 kubectl label nodes node-name key=value
 ```
 
+- 查看详细的请求和响应信息
+
+```
+kubectl get pods --v=8
+```
+
+- 使用本地代理转发请求到api server
+
+```
+oc proxy --port=8001
+curl -X GET http://localhost:8001
+```
+
 > :) 未完待续......
