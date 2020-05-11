@@ -74,6 +74,8 @@ curl -L https://github.com/operator-framework/operator-sdk/releases/download/v0.
 go get golang.org/x/tools/cmd/goimports
 
 brew install bash-completion
+
+brew install tree
 ```
 
 ## tool list
@@ -103,5 +105,7 @@ brew install bash-completion
 - slack
 - docker
 - bluejeans
+- vscode
+	- go
 - alfred：设置只搜索share目录下文件
 - aws cli: https://aws.amazon.com/cli/
