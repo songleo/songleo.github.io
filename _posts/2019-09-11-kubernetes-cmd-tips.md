@@ -16,6 +16,12 @@ kubectl --kubeconfig /path/to/kubeconfig get no
 kubectl exec -it  -n ns pod-name /bin/sh
 ```
 
+- apply当前目录下的所有yaml
+
+```
+kubectl apply -f .
+```
+
 - 设置KUBECONFIG
 
 ```
