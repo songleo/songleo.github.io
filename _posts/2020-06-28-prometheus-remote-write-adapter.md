@@ -82,7 +82,7 @@ func main() {
 
 ```
 remote_write:
-  - url: "http://localhost:1234/receive"
+  - url: "http://192.168.1.105:1234/receive"
 ```
 
 完整的prometheus.yml如下：
