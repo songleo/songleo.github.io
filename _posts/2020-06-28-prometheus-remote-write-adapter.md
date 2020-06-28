@@ -134,7 +134,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ```
 
-输入http://localhost:9090/graph，可以看到prometheus的ui界面。
+输入 http://localhost:9090/graph 可以看到prometheus的ui界面。
 
 2 启动remote write adapter
 
