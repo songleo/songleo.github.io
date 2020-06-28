@@ -63,10 +63,10 @@ func main() {
 			for _, l := range ts.Labels {
 				m[model.LabelName(l.Name)] = model.LabelValue(l.Value)
 			}
-			fmt.Println(m)
+			fmt.Printf("time series data = <%v> ", m)
 
 			for _, s := range ts.Samples {
-				fmt.Printf("  %f %d\n", s.Value, s.Timestamp)
+				fmt.Printf("samples.Value = <%f> samples.Timestamp = <%d> seconds\n", s.Value, s.Timestamp/1000)
 			}
 		}
 	})
@@ -85,24 +85,37 @@ remote_write:
   - url: "http://192.168.1.105:1234/receive"
 ```
 
-完整的prometheus.yml如下：
+这里仅保留go_info指标数据，完整的prometheus.yml如下：
 
 ```
 # my global config
 global:
-  scrape_interval:     90s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  scrape_interval:     60s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
   evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
   # scrape_timeout is set to the global default (10s).
 
 # send all data to url
 remote_write:
   - url: "http://192.168.1.105:1234/receive"
-
+    write_relabel_configs:
+        - action: keep
+          source_labels: [__name__]
+          regex: go_info
+    # Configures the queue used to write to remote storage.
+    queue_config:
+      # Number of samples to buffer per shard before we start dropping them.
+      capacity: 1
+      # Maximum number of shards, i.e. amount of concurrency.
+      max_shards: 1
+      # Maximum number of samples per send.
+      max_samples_per_send: 1
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'ssli-prometheus'
+    # scrape_interval: 20s
+    scrape_interval: 5s
 
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
@@ -132,20 +145,15 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 2 启动remote write adapter
 
-remote write adapter会接收到prometheus发送的监控数据。
+remote write adapter会接收到prometheus发送的监控数据，可以看到每隔5s收到一条指标数据。
 
 ```
-$ go run remote-write-adapter.go
+$ grn remote-write-adapter.go
 start remote write http server ...
-go_gc_duration_seconds{instance="192.168.1.105:9090", job="ssli-prometheus", quantile="0"}
-  0.000012 1593332190824
-go_gc_duration_seconds{instance="192.168.1.105:9090", job="ssli-prometheus", quantile="0.25"}
-  0.000016 1593332190824
-go_gc_duration_seconds{instance="192.168.1.105:9090", job="ssli-prometheus", quantile="0.5"}
-  0.000334 1593332190824
-go_gc_duration_seconds{instance="192.168.1.105:9090", job="ssli-prometheus", quantile="0.75"}
-  0.000361 1593332190824
-go_gc_duration_seconds{instance="192.168.1.105:9090", job="ssli-prometheus", quantile="1"}
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593350133> seconds
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593350138> seconds
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593350143> seconds
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593350148> seconds
 
 ...
 ```
