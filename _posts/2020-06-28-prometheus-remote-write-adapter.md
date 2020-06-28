@@ -6,7 +6,7 @@ date: 2020-06-28 12:12:05
 
 ## remote write adapter
 
-以下代码是我参考prometheus官方给出的remote write adapter修改的，
+以下代码是我参考prometheus官方给出的remote write adapter修改的：
 
 ```golang
 // Copyright 2016 The Prometheus Authors
@@ -101,14 +101,7 @@ remote_write:
         - action: keep
           source_labels: [__name__]
           regex: go_info
-    # Configures the queue used to write to remote storage.
-    queue_config:
-      # Number of samples to buffer per shard before we start dropping them.
-      capacity: 1
-      # Maximum number of shards, i.e. amount of concurrency.
-      max_shards: 1
-      # Maximum number of samples per send.
-      max_samples_per_send: 1
+
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
 scrape_configs:
