@@ -151,6 +151,8 @@ time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus"
 ...
 ```
 
+如果remote write配置了queue_config，且batch_send_deadline配置的时间比job级的scrape_interval小，那么每隔scrape_interval，remote write adapter会接收到prometheus发送的一条监控数据，监控数据之间的时间戳相差scrape_interval秒。如果batch_send_deadline配置的时间比job级的scrape_interval大，那么每隔batch_send_deadline，remote write adapter会接收到prometheus发送的多条监控数据，同样每条数据之间的时间戳相差scrape_interval秒。我理解当batch_send_deadline小于scrape_interval时，即使达到了batch_send_deadline，由于prometheus没有采集到数据，所以没有数据可发送。只有batch_send_deadline大于scrape_interval时，当达到了batch_send_deadline，prometheus会将采集的多条数据一次性发送出去。
+
 ##  ref
 
 - https://github.com/prometheus/prometheus/tree/master/documentation/examples/remote_storage/example_write_adapter
