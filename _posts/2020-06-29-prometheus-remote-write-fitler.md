@@ -102,7 +102,7 @@ remote_write:
 
 scrape_configs:
   - job_name: 'ssli-prometheus'
-    scrape_interval: 3s
+    scrape_interval: 5s
     static_configs:
     - targets: ['192.168.1.105:9090']
 
@@ -163,12 +163,12 @@ remote_write:
 
 scrape_configs:
   - job_name: 'ssli-prometheus'
-    scrape_interval: 3s
+    scrape_interval: 5s
     static_configs:
     - targets: ['192.168.1.105:9090']
 
   - job_name: 'new-job'
-    scrape_interval: 3s
+    scrape_interval: 5s
     static_configs:
     - targets: ['192.168.1.105:9090']
 ```
