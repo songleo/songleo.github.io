@@ -127,7 +127,7 @@ b4bbb85ae846        prom/prometheus     "/bin/prometheus --c…"   4 seconds ago
 
 2 启动remote write adapter
 
-remote write adapter会接收到prometheus发送的监控数据，可以看到每隔3s收到2条指标数据，分别是go_info和go_goroutines。其他指标数据都没有被发送到remote write adapter，实现了发送指定指标数据到remote write adapter的功能。
+remote write adapter会接收到prometheus发送的监控数据，可以看到每隔5s收到2条指标数据，分别是go_info和go_goroutines。其他指标数据都没有被发送到remote write adapter，实现了发送指定指标数据到remote write adapter的功能。
 
 ```
 $ go run remote-write-adapter.go
