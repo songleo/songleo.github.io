@@ -134,10 +134,10 @@ $ go run remote-write-adapter.go
 start remote write http server ...
 time series data = <go_goroutines{instance="192.168.1.105:9090", job="ssli-prometheus"}> samples.Value = <47.000000> samples.Timestamp = <1593428516> seconds
 time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593428516> seconds
-time series data = <go_goroutines{instance="192.168.1.105:9090", job="ssli-prometheus"}> samples.Value = <45.000000> samples.Timestamp = <1593428519> seconds
-time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593428519> seconds
-time series data = <go_goroutines{instance="192.168.1.105:9090", job="ssli-prometheus"}> samples.Value = <47.000000> samples.Timestamp = <1593428522> seconds
-time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593428522> seconds
+time series data = <go_goroutines{instance="192.168.1.105:9090", job="ssli-prometheus"}> samples.Value = <45.000000> samples.Timestamp = <1593428521> seconds
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593428521> seconds
+time series data = <go_goroutines{instance="192.168.1.105:9090", job="ssli-prometheus"}> samples.Value = <47.000000> samples.Timestamp = <1593428526> seconds
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593428526> seconds
 
 ...
 ```
