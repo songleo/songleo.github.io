@@ -175,6 +175,40 @@ scrape_configs:
 
 使用以上配置，prometheus只会将ssli-prometheus的go_info和go_goroutines指标数据发送到remote write adapter。而忽略new-job采集的指标数据。
 
+若需要往发送的数据上添加一些自定义的label，可以在write_relabel_configs配置相应的replacement，例如以下配置会在发送的数据中添加owner="ssli"标签数据：
+
+```
+global:
+  scrape_interval:     60s
+  evaluation_interval: 15s
+
+remote_write:
+  - url: "http://192.168.1.105:1234/receive"
+    write_relabel_configs:
+        - replacement: ssli
+          source_labels:
+          - __name__
+          target_label: owner
+        - action: keep
+          source_labels:
+          - __name__
+          regex: go_info
+
+scrape_configs:
+  - job_name: 'ssli-prometheus'
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['192.168.1.105:9090']
+```
+
+remote write adapter收到的数据如下：
+
+```
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", owner="ssli", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593429888> seconds
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", owner="ssli", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593429893> seconds
+time series data = <go_info{instance="192.168.1.105:9090", job="ssli-prometheus", owner="ssli", version="go1.14.4"}> samples.Value = <1.000000> samples.Timestamp = <1593429898> seconds
+```
+
 ##  ref
 
 - https://prometheus.io/docs/prometheus/latest/configuration/configuration/#remote_write
