@@ -173,6 +173,8 @@ scrape_configs:
     - targets: ['192.168.1.105:9090']
 ```
 
+使用以上配置，prometheus只会将ssli-prometheus的go_info和go_goroutines指标数据发送到remote write adapter。而忽略new-job采集的指标数据。
+
 ##  ref
 
 - https://prometheus.io/docs/prometheus/latest/configuration/configuration/#remote_write
