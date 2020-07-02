@@ -1,7 +1,7 @@
 ---
 layout: post
 title: prometheus remote write filter
-date: 2020-06-28 12:12:05
+date: 2020-06-29 12:12:05
 ---
 
 ## remote write adapter
