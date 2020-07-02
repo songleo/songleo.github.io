@@ -76,3 +76,12 @@ she never wants to oversleep again.
 
 # bus schedule
 
+here are the bus schedule at a bus stop.
+
+on most days the buses come on schedule, but sometimes they don't.
+
+yestoday for example several buses were late.
+
+this is because the traffic was much heavier than usual.
+
+bus no 38 was supposed to come at 8:40, but it was 15 minutes late, it didn't come util 8:45.
