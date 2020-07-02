@@ -12,13 +12,13 @@ they usually leave home at 7:30, but today they left at 7:15.
 
 they left early because they had to buy breakfast on their way to school.
 
-it usually takes 45 minuts to drive her kids to school, but today it took longer.
+it usually takes 45 minutes to drive her kids to school, but today it took longer.
 
 it took them longer because they stopped for breakfast along the way.
 
 it took 45 minutes for them to have breakfast.
 
-they ate at a litte coffee shop along the side of the road.
+they ate at a little coffee shop along the side of the road.
 
 after eating breakfast, they go back into their car.
 
@@ -64,7 +64,7 @@ kathy bought a new tie for her husband.
 
 it's now 3 o'clock, and everything is going as usual.
 
-kathy dosn't want anything else to go wrong.
+kathy doesn't want anything else to go wrong.
 
 she wants the rest of the day to go as usual.
 
