@@ -22,7 +22,6 @@ scrape_configs:
       - __name__
       regex: go_info
 
-
     - action: drop
       source_labels:
       - __name__
