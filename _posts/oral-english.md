@@ -76,12 +76,75 @@ she never wants to oversleep again.
 
 # bus schedule
 
-here are the bus schedule at a bus stop.
+here is a bus schedule at a bus stop.
 
-on most days the buses come on schedule, but sometimes they don't.
+on most days, the buses come on schedule, but sometimes they don't.
 
-yestoday for example several buses were late.
+yesterday, for example, several buses were late.
 
-this is because the traffic was much heavier than usual.
+this is because the traffic yesterday was much heavier (worse) than usual.
 
-bus no 38 was supposed to come at 8:40, but it was 15 minutes late, it didn't come util 8:45.
+bus no.38 was supposed to come at 8:40, but it was 5 minutes late, it didn't come until 8:45.
+
+bus no.60 was supposed to come at 8:30, but yesterday it didn't come until 8:40. it was 10 minutes late.
+
+not one bus came early.
+
+as a result of the delays, one man got on the wrong bus.
+
+he wanted to go to the airport, so he wanted to get on bus no.38
+
+he expected it to come at 8:40.
+
+instead, he gets on bus no.60, which comes at 8:40.
+
+he didn't notice that it was the wrong bus.
+
+it didn't go to the airport, as a result, he missed his flight.
+
+# activities & food
+
+weddings are where two people get married.
+
+this man and woman are getting married.
+
+the building in the middle is an office building.
+
+many people come to work here during the week.
+
+these people are at a dance party.
+
+the waman in the green dress is dancing with her boyfrind.
+
+these two people are meeting for the first time.
+
+they are shaking hands.
+
+this young boy is brushing his teeth.
+
+he bruchs his teeth serveral times a day.
+
+candies and cakes are sweet, because they are made with a lot of suger.
+
+eating too many sweets isn't good for your teeth.
+
+lemons and green fruits tasts a little sour, so some people don't like them.
+
+some sour of tasting foods have a lot of vitamin c.
+
+these red -- are very hot and --.
+
+eating hot or -- foods resizes body tempture, so don't eat them before going to bed.
+
+these foods are -- flat and --
+
+-- foods have a lot of carnuries, so don't eat them if you want to lose you weight.
+
+-- foods are usually nature, and don't including dangerous
+
+
+
+
+
+
+
