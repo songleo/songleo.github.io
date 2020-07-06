@@ -114,7 +114,7 @@ many people come to work here during the week.
 
 these people are at a dance party.
 
-the waman in the green dress is dancing with her boyfrind.
+the woman in the green dress is dancing with her boyfriend.
 
 these two people are meeting for the first time.
 
@@ -122,29 +122,24 @@ they are shaking hands.
 
 this young boy is brushing his teeth.
 
-he bruchs his teeth serveral times a day.
+he brushes his teeth several times a day.
 
-candies and cakes are sweet, because they are made with a lot of suger.
+candies and cakes are sweet because they are made with lots of surges.
 
 eating too many sweets isn't good for your teeth.
 
-lemons and green fruits tasts a little sour, so some people don't like them.
+lemons and grapefruits taste a little sour, so some people don't like them.
 
-some sour of tasting foods have a lot of vitamin c.
+some sour tasting foods have a lot of vitamin c.
 
-these red -- are very hot and --.
+these red peppers are very hot and spicy.
 
-eating hot or -- foods resizes body tempture, so don't eat them before going to bed.
+eating hot or spicy foods raises body temperature, so don't eat them before going to bed.
 
-these foods are -- flat and --
+these foods are deep-fried and greasy.
 
--- foods have a lot of carnuries, so don't eat them if you want to lose you weight.
+greasy foods have a lot of calories, so don't eat them if you want to lose weight.
 
--- foods are usually nature, and don't including dangerous
+healthy foods are usually natural and don't include dangerous chemicals.
 
-
-
-
-
-
-
+fruits and vegetables are examples of healthy foods.
