@@ -1,3 +1,67 @@
+# staying up late
+
+what's the matter? tom.
+
+i don't feel well.
+
+are you sick?
+
+no, i don't think so, i am just tired.
+
+did you get to stay up?
+
+no, i didn't.
+
+i went to bed later than usual last night.
+
+what time did you get to bed?
+
+i didn't get to bed until 12:00.
+
+why did you stay up so late?
+
+i was watching some videos online.
+
+what's the type of videos?
+
+music videos from all over the world.
+
+really?
+
+sure, i'll send you some links if you like.
+
+thanks,  i like music videos too.
+
+that really fine.
+
+just don't stay up too late.
+
+don't worry, i won't stay up too late.
+
+i need my sleep.
+
+# meeting at the airport
+
+hi, where are you? i don't see you anywhere.
+
+i am on the subway.
+
+my flight arrived early and i am tired.
+
+i'm sorry to be late, i'll be there as fast as i can.
+
+where are you now?
+
+there are 3 more stops. i'll be there in 10 minutes.
+
+i'll meet you at a bus stop in front of terminal 2.
+
+then we can get a taxi.
+
+ok, i'll look for you in front of terminal 2.
+
+see you soon.
+
 # spatial relations
 
 the triangle is inside the square.
