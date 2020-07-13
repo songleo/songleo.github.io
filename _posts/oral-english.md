@@ -1,3 +1,40 @@
+# time zones
+
+our planet the earth is sear planet from the sun.
+
+it is a beautiful roatings sphere.
+
+the side facing the sun is in daylight.
+
+the side facing away from the sun is in darkness.
+
+for example, when it's daytime in the us, it's nigthtime in china.
+
+in fact, there is 12 hour time difference between boston and shanghai.
+
+when it is midnight in shanghai, it is noon in boston.
+
+the earth rotates from west to east.
+
+to know whick dirction is west or east, watch the sun.
+
+the sun travels to the sky from east to west.
+
+the sun comes up in the east, and gose down in the west.
+
+again, this is because the earth rotates.
+
+it takes 24 hours for the earth to make a complete rotation.
+
+and that it's lenth of 1 day.
+
+because the earth rotation, the earth is divided into time zones.
+
+some contries such as the us have servral time zones.
+
+when it's ten in newyork, it's 7 in scanfransico.
+
+
 # staying up late
 
 what's the matter? tom.
@@ -8,7 +45,7 @@ are you sick?
 
 no, i don't think so, i am just tired.
 
-did you get to stay up?
+did you get enough sleep?
 
 no, i didn't.
 
