@@ -1,6 +1,54 @@
+# kim's movie star dream
+
+kim is a popular crim actress.
+
+she is 28 years old, slim and beautiful.
+
+she has a large fan club and her movies are very popular.
+
+everywhere she goes, her fans want her autograph.
+
+but kim wants more. she wants to be popular all over the world.
+
+tomorrow is the special day for her. she is living for holly wood.
+
+she is going to holly wood to meet with some top of movie directors.
+
+the meeting is schedule from day to the day after tomorrow.
+
+if the meeting goes well, she will be in a hollywood movie.
+
+this is her chance to become a star.
+
+she met the movie's director last year. he came to korean and saw her latest movie.
+
+the movie's director wants to use her in his new movie.
+
+her english is excellent.
+
+the director wants to her play a major role in the movie.
+
+the movie's story will take place in the future.
+
+at that time, the world will be a very difference place.
+
+unfortunately, much of the world will be polluted.
+
+-
+-
+
+the ending of the movie is still a secret.
+
+even kim doesn't know how it will end.
+
+but she hopes we have a happy ending.
+
+she wants people have hope for a better future.
+
+
 # time zones
 
-our planet, the earth, is third planet from the sun.
+our planet, the earth, is the third planet from the sun.
 
 it is a beautiful, rotating sphere.
 
@@ -10,7 +58,7 @@ the side facing away from the sun is in darkness.
 
 for example, when it's daytime in the us, it's nighttime in china.
 
-in fact, there's 12-hour time difference between boston and shanghai.
+in fact, there's a 12-hour time difference between boston and shanghai.
 
 when it's midnight in shanghai, it is noon in boston.
 
@@ -26,7 +74,7 @@ again, this is because the earth rotates.
 
 it takes 24 hours for the earth to make a complete rotation.
 
-and that it's length of 1 day.
+and that it's the length of 1 day.
 
 because of the earth's rotation, the earth is divided into time zones.
 
@@ -34,15 +82,15 @@ some countries, such as the us, have several time zones.
 
 when it's 10 am in new york, it's 7 am in san francisco.
 
-europe and the us are seperated by several time zones.
+europe and the us are separated by several time zones.
 
 when it is 5 pm in paris, it 11 am in boston.
 
-so there is 6-hour difference between paris and boston.
+so there is a 6-hour difference between paris and boston.
 
 one large country, china, has just one time zone for the whole country.
 
-as a result, at the same time. some parts of country can be dark and other parts can be light.
+as a result, at the same time. some parts of the country can be dark and other parts can be light.
 
 as you travel around the earth, the time changes.
 
