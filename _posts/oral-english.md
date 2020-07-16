@@ -1,39 +1,64 @@
 # time zones
 
-our planet the earth is sear planet from the sun.
+our planet, the earth, is third planet from the sun.
 
-it is a beautiful roatings sphere.
+it is a beautiful, rotating sphere.
 
 the side facing the sun is in daylight.
 
 the side facing away from the sun is in darkness.
 
-for example, when it's daytime in the us, it's nigthtime in china.
+for example, when it's daytime in the us, it's nighttime in china.
 
-in fact, there is 12 hour time difference between boston and shanghai.
+in fact, there's 12-hour time difference between boston and shanghai.
 
-when it is midnight in shanghai, it is noon in boston.
+when it's midnight in shanghai, it is noon in boston.
 
 the earth rotates from west to east.
 
-to know whick dirction is west or east, watch the sun.
+to know which direction is west or east, watch the sun.
 
-the sun travels to the sky from east to west.
+the sun travels through the sky from east to west.
 
-the sun comes up in the east, and gose down in the west.
+the sun comes up in the east and goes down in the west.
 
 again, this is because the earth rotates.
 
 it takes 24 hours for the earth to make a complete rotation.
 
-and that it's lenth of 1 day.
+and that it's length of 1 day.
 
-because the earth rotation, the earth is divided into time zones.
+because of the earth's rotation, the earth is divided into time zones.
 
-some contries such as the us have servral time zones.
+some countries, such as the us, have several time zones.
 
-when it's ten in newyork, it's 7 in scanfransico.
+when it's 10 am in new york, it's 7 am in san francisco.
 
+europe and the us are seperated by several time zones.
+
+when it is 5 pm in paris, it 11 am in boston.
+
+so there is 6-hour difference between paris and boston.
+
+one large country, china, has just one time zone for the whole country.
+
+as a result, at the same time. some parts of country can be dark and other parts can be light.
+
+as you travel around the earth, the time changes.
+
+the time of day depends on your location on the planet.
+
+when your travel east or west, you may cross several time zones.
+
+for example, if you travel from beijing to los angeles, you cross 8 time zones.
+
+that means when it is noon on sunday in china, it is 8 pm on saturday in los angeles.
+
+for travelers, this means it can be very difficult to sleep after a long flight.
+
+the clock may say at 8 pm, but for your body it is noon.
+
+this is called jet lag.
 
 # staying up late
 
