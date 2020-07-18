@@ -1,8 +1,8 @@
 # kim's movie star dream
 
-kim is a popular crim actress.
+kim is a popular korean actress.
 
-she is 28 years old, slim and beautiful.
+she‘s 28 years old, slim and beautiful.
 
 she has a large fan club and her movies are very popular.
 
@@ -10,41 +10,39 @@ everywhere she goes, her fans want her autograph.
 
 but kim wants more. she wants to be popular all over the world.
 
-tomorrow is the special day for her. she is living for holly wood.
+tomorrow is a special day for her. she's leaving for hollywood.
 
-she is going to holly wood to meet with some top of movie directors.
+she is going to hollywood to meet with some top movie executives.
 
-the meeting is schedule from day to the day after tomorrow.
+the meeting is scheduled for the day after tomorrow.
 
-if the meeting goes well, she will be in a hollywood movie.
+if the meeting goes well, she'll be in a hollywood movie.
 
 this is her chance to become a star.
 
-she met the movie's director last year. he came to korean and saw her latest movie.
+she met the movie's director last year. he came to korea and saw her latest movie.
 
-the movie's director wants to use her in his new movie.
+after that, he decided to use her in his new movie.
 
-her english is excellent.
+fortunately, kim's english is excellent, so she can play the role.
 
 the director wants to her play a major role in the movie.
 
 the movie's story will take place in the future.
 
-at that time, the world will be a very difference place.
+at that time, the world will be a very different place.
 
 unfortunately, much of the world will be polluted.
 
--
--
+robots will do much of the work, and only the very rich can have a good life.
 
 the ending of the movie is still a secret.
 
 even kim doesn't know how it will end.
 
-but she hopes we have a happy ending.
+but she hopes it will have a happy ending.
 
-she wants people have hope for a better future.
-
+she wants people to have hope for a better future.
 
 # time zones
 
