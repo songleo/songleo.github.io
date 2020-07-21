@@ -38,7 +38,7 @@ metadata:
 spec:
   groups:
   - system:authenticated
-  request: LS0tLS1CRUdlE2cEV0 # cat ssli.csr | base64 | tr -d "\n"
+  request: __REPLACE_IT__ # cat ssli.csr | base64 | tr -d "\n"
   usages:
   - client auth
 EOF
