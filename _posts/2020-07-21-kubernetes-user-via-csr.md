@@ -1,3 +1,11 @@
+---
+layout: post
+title: 通过csr创建kubernetes用户
+date: 2020-07-21 12:12:05
+---
+
+## 创建私钥和csr
+
 ```
 $ openssl genrsa -out ssli.key 2048
 $ openssl req -new -key ssli.key -out ssli.csr
@@ -22,7 +30,6 @@ A challenge password []:123456
 An optional company name []:rh
 
 $ cat ssli.csr | base64 | tr -d "\n"
-
 $ cat <<EOF | kubectl apply -f -
 apiVersion: certificates.k8s.io/v1beta1
 kind: CertificateSigningRequest
@@ -41,15 +48,26 @@ NAME   AGE   REQUESTOR    CONDITION
 ssli   6s    kube:admin   Pending
 $ k certificate approve ssli
 certificatesigningrequest.certificates.k8s.io/ssli approved
+```
 
+## 从csr中获取签发的证书
+
+```
 $ kubectl get csr/ssli -o yaml
 
 $ kubectl get csr ssli -o jsonpath='{.status.certificate}' | base64 -d > ssli.crt
+```
 
+## 给用户相应的权限
+
+```
 $ kubectl create role developer --verb=create --verb=get --verb=list --verb=update --verb=delete --resource=pods
-
 $ kubectl create rolebinding developer-binding-ssli --role=developer --user=ssli
+```
 
+## 使用新用户访问集群
+
+```
 $ kubectl config set-credentials ssli --client-key=/share/git/k8s_practice/authn-authz/ssli.key --client-certificate=/share/git/k8s_practice/authn-authz/ssli.crt --embed-certs=true
 
 $ kubectl config set-context ssli --cluster=soli-acm-hub --user=ssli
