@@ -1,3 +1,42 @@
+# actions and comparisons
+
+these people are having a meeting.
+
+the women is giving a presentation.
+
+this person is having a scare dream.
+
+in his dream, something is chasing him, so he is running as fast as he can.
+
+this old man is tourist, he is looking on the window of his tour bus.
+
+this yang couple is at a art museum, they are look a famous paining.
+
+the sun is sidding behind mountains.
+
+-
+
+the longest line is one on the top.
+
+the top line is the longest of the three lines
+
+the shortest line is one in the middle.
+
+the line in the middle is shorter than other two.
+
+the bottom line is the shortest, the shortest these three line is one on the bottom.
+
+the shirt on the left is more expensive than the shirt on the right.
+
+the shirt on the right costs less expensive than the shirt on the left.
+
+the shirt on the left isn't expensive as the one on the right.
+
+-
+
+
+
+
 # kim's movie star dream
 
 kim is a popular korean actress.

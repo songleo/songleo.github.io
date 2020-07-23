@@ -58,6 +58,18 @@ kubectl label nodes node-name key=value
 kubectl get pods --v=8
 ```
 
+- 查看kubectl的http请求流程
+
+```
+kubectl get po -v 10
+```
+
+- 查看当前用户权限
+
+```
+kubectl auth can-i get po
+```
+
 - 使用本地代理转发请求到api server
 
 ```
