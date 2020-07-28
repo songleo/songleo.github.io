@@ -31,7 +31,6 @@ the shirt on the left is more expensive than the shirt on the right.
 the shirt on the right costs less expensive than the shirt on the left.
 
 the shirt on the left isn't expensive as the one on the right.
-
 -
 
 
