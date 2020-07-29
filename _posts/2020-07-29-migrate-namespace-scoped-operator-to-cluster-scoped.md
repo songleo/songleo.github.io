@@ -1,3 +1,9 @@
+---
+layout: post
+title: 将namespace-scoped的operator修改成cluster-scoped
+date: 2020-07-29 12:12:05
+---
+
 ## 修改main函数
 
 在main.go中，创建manager时，将namespace参数修改成空。
