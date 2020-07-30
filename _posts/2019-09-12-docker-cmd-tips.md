@@ -22,6 +22,12 @@ docker exec -it 5ed19cf131d5 /bin/sh
 docker cp 5ed19cf131d5:/bin/clusterctl ./
 ```
 
+- 清理docker的空间
+
+```
+rm -rf /var/lib/docker/volumes/ ; service docker restart
+```
+
 - 启动docker并执行命令
 
 ```
