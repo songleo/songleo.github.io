@@ -6,7 +6,7 @@ date: 2020-07-29 12:12:05
 
 ## 修改main函数
 
-在main.go中，创建manager时，将namespace参数修改成空。
+在main.go中，manager.New时，将namespace参数修改成空。
 
 ## 修改api的scope
 
@@ -23,6 +23,10 @@ operator-sdk generate crds
 ## 修改operator.yaml
 
 将operator.yaml中的WATCH_NAMESPACE修改成空，然后就可以重新编译测试了。需要注意，代码中使用WATCH_NAMESPACE的地方都需要修改。并确保修改获取cluster-scoped的obj的相关代码。
+
+## 修改cr.Namespace
+
+当crd是cluster-scoped时，cr.Namespace会变成空，这部分需要特殊处理。
 
 ## ref
 
