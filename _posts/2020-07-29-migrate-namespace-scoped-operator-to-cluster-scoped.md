@@ -22,7 +22,7 @@ operator-sdk generate crds
 
 ## 修改operator.yaml
 
-将operator.yaml中的WATCH_NAMESPACE修改成空，然后就可以重新编译测试了。
+将operator.yaml中的WATCH_NAMESPACE修改成空，然后就可以重新编译测试了。需要注意，代码中使用WATCH_NAMESPACE的地方都需要修改。并确保修改获取cluster-scoped的obj的相关代码。
 
 ## ref
 
