@@ -64,6 +64,18 @@ kubectl get pods --v=8
 kubectl get po -v 10
 ```
 
+- 端口转发
+
+```
+kubectl port-forward pod/minio-5cd8b89db8-rz2jk 9000:9000
+```
+
+- 创建deployment
+
+```
+kubectl create deployment nginx --image=nginx
+```
+
 - 查看当前用户权限
 
 ```
