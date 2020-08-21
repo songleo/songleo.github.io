@@ -67,7 +67,15 @@ kubectl get po -v 10
 - 端口转发
 
 ```
+kubectl port-forward minio-5cd8b89db8-rz2jk 9000:9000
 kubectl port-forward pod/minio-5cd8b89db8-rz2jk 9000:9000
+```
+
+- 节点污点
+
+```
+kubectl taint nodes node1 key=value:NoSchedule
+kubectl taint nodes node1 key:NoSchedule-
 ```
 
 - 创建deployment
