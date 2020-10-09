@@ -74,9 +74,10 @@ kubectl port-forward pod/minio-5cd8b89db8-rz2jk 9000:9000
 - 删除ns
 
 ```
-export NAMESPACE=open-cluster-management
+export NAMESPACE=open-cluster-management-hub
 kubectl get namespace $NAMESPACE -o json > tmp.json
-curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json https://api.soli-ocp45-acm.dev05.red-chesterfield.com/api/v1/namespaces/$NAMESPACE/finalize
+curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json https://api.soli-ocp44-acm.dev05.red-chesterfield.com/api/v1/namespaces/$NAMESPACE/finalize
+kubectl replace --raw "/api/v1/namespaces/$NAMESPACE/finalize" -f ./tmp.json
 ```
 
 - 节点污点
