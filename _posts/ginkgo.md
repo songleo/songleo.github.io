@@ -3,11 +3,11 @@
 $ go get github.com/onsi/ginkgo/ginkgo
 $ go get github.com/onsi/gomega/...
 
-$ cd /Users/ssli/share/git/go_practice/ginkgo-demo/books
-ssli@sslis-MacBook-Pro-4:books$ ginkgo bootstrap
+$ cd ginkgo-demo/books
+$ ginkgo bootstrap
 Generating ginkgo test suite bootstrap for books in:
 	books_suite_test.go
-ssli@sslis-MacBook-Pro-4:books$ cat books.go
+$ cat books.go
 package books
 
 type Book struct {
@@ -25,7 +25,7 @@ func (b *Book) CategoryByLength() string {
 	return "SHORT STORY"
 }
 
-ssli@sslis-MacBook-Pro-4:books$ ginkgo
+$ ginkgo
 Running Suite: Books Suite
 ==========================
 Random Seed: 1585724103
@@ -39,11 +39,11 @@ PASS
 Ginkgo ran 1 suite in 2.861956292s
 Test Suite Passed
 
-ssli@sslis-MacBook-Pro-4:books$ ginkgo generate book
+$ ginkgo generate book
 Generating ginkgo test for Book in:
   book_test.go
 
-ssli@sslis-MacBook-Pro-4:books$ cat book_test.go
+$ cat book_test.go
 package books_test
 
 import (
@@ -88,7 +88,7 @@ var _ = Describe("Book", func() {
 	})
 })
 
-ssli@sslis-MacBook-Pro-4:books$ ginkgo
+$ ginkgo
 Running Suite: Books Suite
 ==========================
 Random Seed: 1585724693
@@ -102,9 +102,6 @@ PASS
 Ginkgo ran 1 suite in 1.192859137s
 Test Suite Passed
 ```
-
-
-
 
 ### ref
 

@@ -25,7 +25,7 @@ date: 2019-05-26 00:12:05
 
 ### 1 package control安装
 
-手动下载[Package Control.sublime-package](https://packagecontrol.io/Package%20Control.sublime-package)到本地，打开Preferences -> Browse Packages，找到移本地包安装目录`Installed Packages/`，将下载的文件复制到该目录，重启sublime即可。
+手动下载[Package Control.sublime-package](https://packagecontrol.io/Package%20Control.sublime-package)到本地，打开Preferences -> Browse Packages，在上层目录找到本地包安装目录`Installed Packages/`，将下载的文件复制到该目录，重启sublime即可。
 
 ### 2 安装插件报错`There are no packages available for installation`
 
