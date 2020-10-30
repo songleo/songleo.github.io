@@ -1,14 +1,72 @@
+---
+layout: post
+title: ginkgo学习（一）
+date: 2020-10-30 00:12:05
+---
+
+### 创建测试套件
 
 ```
-$ go get github.com/onsi/ginkgo/ginkgo
-$ go get github.com/onsi/gomega/...
-
-$ cd ginkgo-demo/books
+$ mkdir books
+$ cd books/
 $ ginkgo bootstrap
 Generating ginkgo test suite bootstrap for books in:
 	books_suite_test.go
-$ cat books.go
-package books
+$ cat books_suite_test.go
+package books_test
+
+import (
+	"testing"
+
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+)
+
+func TestBooks(t *testing.T) {
+	RegisterFailHandler(Fail)
+	RunSpecs(t, "Books Suite")
+}
+```
+
+### 验证测试套件
+
+```
+$ go mod init books
+go: creating new go.mod: module books
+$ ginkgo
+go: finding module for package github.com/onsi/ginkgo
+go: finding module for package github.com/onsi/gomega
+go: found github.com/onsi/ginkgo in github.com/onsi/ginkgo v1.14.2
+go: found github.com/onsi/gomega in github.com/onsi/gomega v1.10.3
+
+Running Suite: Books Suite
+==========================
+Random Seed: 1604039540
+Will run 0 of 0 specs
+
+
+Ran 0 of 0 Specs in 0.000 seconds
+SUCCESS! -- 0 Passed | 0 Failed | 0 Pending | 0 Skipped
+PASS
+
+Ginkgo ran 1 suite in 5.449229856s
+Test Suite Passed
+```
+
+### 添加测试用例
+
+```
+$ ginkgo generate book
+Generating ginkgo test for Book in:
+  book_test.go
+
+$ cat book_test.go
+package books_test
+
+import (
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+)
 
 type Book struct {
 	Title  string
@@ -24,34 +82,6 @@ func (b *Book) CategoryByLength() string {
 
 	return "SHORT STORY"
 }
-
-$ ginkgo
-Running Suite: Books Suite
-==========================
-Random Seed: 1585724103
-Will run 0 of 0 specs
-
-
-Ran 0 of 0 Specs in 0.000 seconds
-SUCCESS! -- 0 Passed | 0 Failed | 0 Pending | 0 Skipped
-PASS
-
-Ginkgo ran 1 suite in 2.861956292s
-Test Suite Passed
-
-$ ginkgo generate book
-Generating ginkgo test for Book in:
-  book_test.go
-
-$ cat book_test.go
-package books_test
-
-import (
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
-
-	. "github.com/songleo/go_practice/ginkgo-demo/books"
-)
 
 var _ = Describe("Book", func() {
 	var (
@@ -87,11 +117,15 @@ var _ = Describe("Book", func() {
 		})
 	})
 })
+```
 
+### 运行测试用例
+
+```
 $ ginkgo
 Running Suite: Books Suite
 ==========================
-Random Seed: 1585724693
+Random Seed: 1604040377
 Will run 2 of 2 specs
 
 ••
@@ -99,11 +133,10 @@ Ran 2 of 2 Specs in 0.000 seconds
 SUCCESS! -- 2 Passed | 0 Failed | 0 Pending | 0 Skipped
 PASS
 
-Ginkgo ran 1 suite in 1.192859137s
+Ginkgo ran 1 suite in 1.65225881s
 Test Suite Passed
 ```
 
 ### ref
 
-https://www.ginkgo.wiki/
-https://blog.csdn.net/Goodboynihaohao/article/details/79392500
+http://onsi.github.io/ginkgo/#getting-started-writing-your-first-test
