@@ -80,6 +80,12 @@ curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json https
 kubectl replace --raw "/api/v1/namespaces/$NAMESPACE/finalize" -f ./tmp.json
 ```
 
+- 强制删除pod
+
+```
+kubectl delete pod --grace-period=0 --force --namespace [NAMESPACE] [POD_NAME]
+```
+
 - 节点污点
 
 ```
