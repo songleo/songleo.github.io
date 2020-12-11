@@ -11,6 +11,12 @@ shift + alt + down
 alt + down/up
 ```
 
+- 删除当前到行尾
+
+```
+ctrl + k
+```
+
 - 删除当前行
 
 ```
