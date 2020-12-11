@@ -17,4 +17,11 @@ alt + down/up
 cmd + shift + k
 ```
 
+- 在当前行前后插入新行
+
+```
+cmd + shift + enter
+cmd + enter
+```
+
 > :) 未完待续......
