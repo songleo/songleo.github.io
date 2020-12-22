@@ -46,10 +46,11 @@ kubectl get pods --all-namespaces
 kubectl edit deploy nginx-test
 ```
 
-- 给节点加标签
+- 给节点增加/删除标签
 
 ```
 kubectl label nodes node-name key=value
+kubectl label nodes node-name key-
 ```
 
 - 查看详细的请求和响应信息
