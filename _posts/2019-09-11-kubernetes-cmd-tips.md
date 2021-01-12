@@ -75,7 +75,7 @@ kubectl port-forward pod/minio-5cd8b89db8-rz2jk 9000:9000
 - 删除ns
 
 ```
-export NAMESPACE=local-cluster
+export NAMESPACE=open-cluster-management-hub
 kubectl get namespace $NAMESPACE -o json > tmp.json
 sed -i '/kubernetes/d' ./tmp.json
 kubectl replace --raw "/api/v1/namespaces/$NAMESPACE/finalize" -f ./tmp.json
@@ -118,6 +118,12 @@ kubectl auth can-i get po
 ```
 oc proxy --port=8001
 curl -X GET http://localhost:8001
+```
+
+- 登录到节点
+
+```
+oc debug node/worker001
 ```
 
 > :) 未完待续......
