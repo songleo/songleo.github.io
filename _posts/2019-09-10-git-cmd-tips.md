@@ -72,4 +72,10 @@ git reset HEAD
 git commit --amend
 ```
 
+- merge某次提交
+
+```
+git cherry-pick ID
+```
+
 > :) 未完待续......
