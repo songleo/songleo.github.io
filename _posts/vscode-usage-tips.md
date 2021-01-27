@@ -71,4 +71,10 @@ cmd + shift + enter
 cmd + enter
 ```
 
+- 函数定义
+
+```
+cmd + click + func
+```
+
 > :) 未完待续......
