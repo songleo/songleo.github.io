@@ -82,7 +82,7 @@ kubectl replace --raw "/api/v1/namespaces/$NAMESPACE/finalize" -f ./tmp.json
 
 curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json https://api.soli-ocp44-acm.dev05.red-chesterfield.com/api/v1/namespaces/$NAMESPACE/finalize
 
-oc patch -n open-cluster-management-observability project/open-cluster-management-observability --type=merge -p '{"metadata": {"finalizers":null}}'
+oc patch -n local-cluster project/local-cluster --type=merge -p '{"metadata": {"finalizers":null}}'
 ```
 
 - 强制删除pod
