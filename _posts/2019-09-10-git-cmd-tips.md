@@ -78,4 +78,10 @@ git commit --amend
 git cherry-pick ID
 ```
 
+- 查看修改的文件列表
+
+```
+git whatchanged
+```
+
 > :) 未完待续......
