@@ -1,7 +1,7 @@
 - 多行选择
 
 ```
-cmd + alt + up
+alt + shift
 ```
 
 - 分屏
