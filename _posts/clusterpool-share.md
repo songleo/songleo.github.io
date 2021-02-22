@@ -59,6 +59,7 @@ spec:
 从相应的ClusterDeployment中获取kubeconfig，ClusterDeployment位于ClusterClaim.Spec.Namespace中。
 
 ```
+k get clusterclaim ssli-demo -o yaml
 k get clusterdeployment -n obs-china-aws-4616-s2vzx obs-china-aws-4616-s2vzx -o yaml
 
 oc get secret obs-china-aws-4616-s2vzx-1-d9skg-admin-kubeconfig -n obs-china-aws-4616-s2vzx -o yaml
