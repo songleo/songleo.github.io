@@ -76,3 +76,11 @@ To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
 - 手动休眠集群，修改ClusterDeployment：Hibernating -> Running
 - 指定时间删除集群，修改ClusterClaim.Spec.Lifetime
 - 定时休眠和唤醒集群：https://github.com/open-cluster-management/hibernate-cronjob
+
+
+### Ref
+
+- Preparing to Use ACM CICD Shared Infrastructure for ClusterPools: https://docs.google.com/document/d/1rnddo967c3OfSDksIIYddLsRLX6ArEcsLBxzl3lgs4s/edit#heading=h.66y4kqbj468a
+- Creating and Using Clusterpools: https://docs.google.com/document/d/194q-8r8x9KpfiUEIWObqDMBwTUvmPGLGeYPuj5mBAtg/edit#
+- Cluster Pools: https://github.com/openshift/hive/blob/master/docs/clusterpools.md
+- https://github.com/open-cluster-management/hibernate-cronjob
