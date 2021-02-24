@@ -1,7 +1,7 @@
 - 多行选择
 
 ```
-alt + shift
+alt + shift + move click
 ```
 
 - 分屏

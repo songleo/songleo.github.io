@@ -129,4 +129,10 @@ curl -X GET http://localhost:8001
 oc debug node/worker001
 ```
 
+- 切换namespace
+  
+```
+kubectl config set-context --current --namespace=open-cluster-management-observability
+```
+
 > :) 未完待续......
