@@ -135,4 +135,10 @@ oc debug node/worker001
 kubectl config set-context --current --namespace=open-cluster-management-observability
 ```
 
+- 修改object
+
+```
+kubectl -n acm-observability-china patch clusterpool obs-china-aws-4616 --patch '{"spec":{"size":3}}' --type=merge
+```
+
 > :) 未完待续......
