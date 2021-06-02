@@ -48,6 +48,12 @@ git push -f
 git commit --amend
 ```
 
+- 添加signoff
+
+```
+git commit --amend --signoff
+```
+
 - 撤销上次提交
 
 ```

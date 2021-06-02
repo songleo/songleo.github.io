@@ -53,6 +53,13 @@ kubectl label nodes node-name key=value
 kubectl label nodes node-name key-
 ```
 
+- 通过标签获取或者删除对象
+
+```
+oc -n acm-observability-china get clusterclaim.hive -l do-not-delete=true
+oc -n acm-observability-china delete clusterclaim.hive -l do-not-delete=true
+```
+
 - 查看详细的请求和响应信息
 
 ```
@@ -75,14 +82,14 @@ kubectl port-forward pod/minio-5cd8b89db8-rz2jk 9000:9000
 - 删除ns
 
 ```
-export NAMESPACE=open-cluster-management-hub
+export NAMESPACE=open-cluster-management-observability
 kubectl get namespace $NAMESPACE -o json > tmp.json
 sed -i '/kubernetes/d' ./tmp.json
 kubectl replace --raw "/api/v1/namespaces/$NAMESPACE/finalize" -f ./tmp.json
 
 curl -k -H "Content-Type: application/json" -X PUT --data-binary @tmp.json https://api.soli-ocp44-acm.dev05.red-chesterfield.com/api/v1/namespaces/$NAMESPACE/finalize
 
-oc patch -n local-cluster project/local-cluster --type=merge -p '{"metadata": {"finalizers":null}}'
+oc patch -n open-cluster-management-observability project/open-cluster-management-observability --type=merge -p '{"metadata": {"finalizers":null}}'
 ```
 
 - 强制删除pod
