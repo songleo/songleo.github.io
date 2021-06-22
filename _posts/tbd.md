@@ -23,6 +23,7 @@ http://dockerone.com/article/9561
 
 - https://faun.pub/quick-start-and-debugging-in-jsonnet-28a711da6d7f#59cb
 - https://juejin.cn/post/6859620871269056526
+- https://faun.pub/quick-start-and-debugging-in-jsonnet-28a711da6d7f#59cb
 
 # 1
 
