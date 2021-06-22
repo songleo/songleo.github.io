@@ -1,5 +1,6 @@
 # https://github.com/junegunn/fzf
 
+# ownerReferences
 # gosec & nancy: golang src scan tools
 
 # https://github.com/jimmidyson/configmap-reload
@@ -18,7 +19,10 @@ https://docs.bitnami.com/tutorials/configure-rbac-in-your-kubernetes-cluster/
 http://dockerone.com/article/9561
 
 
+## jsonnet
+
 - https://faun.pub/quick-start-and-debugging-in-jsonnet-28a711da6d7f#59cb
+- https://juejin.cn/post/6859620871269056526
 
 # 1
 

@@ -70,6 +70,7 @@ git push origin --delete br-name
 
 ```
 git reset HEAD
+git revert HEAD
 ```
 
 - 基于别人的pr修改
