@@ -32,7 +32,7 @@ git reset --hard ID
 - 提交一个空commit
 
 ```
-git commit --allow-empty -m "retest" && git push
+git commit --allow-empty --signoff -m "rebuild img" && git push
 ```
 
 - 回退到某次提交并覆盖远端
