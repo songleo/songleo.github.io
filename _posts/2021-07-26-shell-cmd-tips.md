@@ -8,6 +8,7 @@ date: 2021-07-26 00:12:05
 
 ```
 curl -Lo /usr/local/bin/cmd https://url/to/cmd
+chmod +x /usr/local/bin/cmd
 ```
 
 > :) 未完待续......
