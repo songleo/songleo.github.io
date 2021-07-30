@@ -23,6 +23,12 @@ git rebase upstream/master
 git push origin --delete BRANCH_NAME
 ```
 
+- 基于tag创建分支
+
+```
+git branch <new-branch-name> <tag-name>
+```
+
 - 回滚之前的某次提交
 
 ```
