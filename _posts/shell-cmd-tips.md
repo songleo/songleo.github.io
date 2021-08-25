@@ -12,6 +12,15 @@ brew install fzf
 $(brew --prefix)/opt/fzf/install
 ```
 
+- 判断cmd是否存在
 
+```
+#! /bin/bash
+if command -v cmd >/dev/null 2>&1; then
+  echo 'exists cmd'
+else 
+  echo 'no exists cmd'
+fi
+```
 
 > :) 未完待续......
