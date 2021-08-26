@@ -60,6 +60,12 @@ oc -n acm-observability-china get clusterclaim.hive -l do-not-delete=true
 oc -n acm-observability-china delete clusterclaim.hive -l do-not-delete=true
 ```
 
+- 更换deploy的img
+
+```
+kubectl set image deployment/deployment_name container_name=img
+```
+
 - 查看详细的请求和响应信息
 
 ```
