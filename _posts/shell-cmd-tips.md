@@ -15,11 +15,25 @@ $(brew --prefix)/opt/fzf/install
 - 判断cmd是否存在
 
 ```
-#! /bin/bash
+
 if command -v cmd >/dev/null 2>&1; then
   echo 'exists cmd'
 else 
   echo 'no exists cmd'
+fi
+```
+
+- 判断变量是否存在
+
+```
+if [[ -z "${var}" ]]; then
+  echo "var is not set"
+fi
+
+or 
+
+if [[ -n "${var}" ]]; then
+  echo "var is set"
 fi
 ```
 
