@@ -29,6 +29,12 @@ git push origin --delete BRANCH_NAME
 git branch <new-branch-name> <tag-name>
 ```
 
+- clone时指定名字
+
+```
+git clone url.git new_name
+```
+
 - 回滚之前的某次提交
 
 ```

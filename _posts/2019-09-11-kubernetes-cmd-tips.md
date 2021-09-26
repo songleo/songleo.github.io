@@ -81,7 +81,7 @@ kubectl get po -v 10
 - 端口转发
 
 ```
-kubectl port-forward minio-5cd8b89db8-rz2jk 9000:9000
+kubectl port-forward grafana-test-6877dd694c-bp862 3001:3001
 kubectl port-forward pod/minio-5cd8b89db8-rz2jk 9000:9000
 ```
 
