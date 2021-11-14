@@ -60,6 +60,12 @@ oc -n acm-observability-china get clusterclaim.hive -l do-not-delete=true
 oc -n acm-observability-china delete clusterclaim.hive -l do-not-delete=true
 ```
 
+- 更换deploy的img
+
+```
+kubectl set image deployment/deployment_name container_name=img
+```
+
 - 查看详细的请求和响应信息
 
 ```
@@ -75,7 +81,7 @@ kubectl get po -v 10
 - 端口转发
 
 ```
-kubectl port-forward minio-5cd8b89db8-rz2jk 9000:9000
+kubectl port-forward grafana-test-6877dd694c-bp862 3001:3001
 kubectl port-forward pod/minio-5cd8b89db8-rz2jk 9000:9000
 ```
 
