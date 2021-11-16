@@ -31,7 +31,7 @@ sonar-scanner \
   -Dsonar.login=$TOKEN
 ```
 
-运行该命令后，ui会自动打开扫描结果，分析扫描结果。
+运行该命令后，ui会自动打开扫描结果，分析扫描结果即可。
 
 ### ref
 
