@@ -735,3 +735,5 @@ date: 2016-01-30 15:40:31
 - 深入浅出docker 2019-04-23
 
 - service mesh实战：用istio软负载实现服务网格 2019-05-17
+
+- cka/ckad应试指南：从docker到kubernetes完全攻略 2021-11-18
