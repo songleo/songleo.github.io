@@ -6,14 +6,14 @@ date: 2021-11-19 12:12:05
 
 ## 1 查看当前系统有多少镜像
 
-```
+```shell
 $ docker images | grep nginx
 nginx                                                       latest              ea335eea17ab        42 hours ago        141MB
 ```
 
 ## 2 给镜像打标签并导出镜像为nginx.tar
 
-```
+```shell
 $ docker images | grep nginx
 nginx                                                       latest              ea335eea17ab        42 hours ago        141MB
 $ docker tag nginx:latest nginx:v1
@@ -27,15 +27,15 @@ nginx.tar
 
 ## 3 创建容器nginx，并满足以下要求：
 
-    - 名字为web
-    - 重启策略为always
-    - 容器端口80映射到物理机8080
-    - 物理机/web目录挂载到容器/usr/share/nginx/html
-    - 在容器/usr/share/nginx/html目录中创建index.html，内容为hello docker
-    - 打开浏览器查看是否看到hello docker
-    - 删除容器web和镜像
+- 名字为web
+- 重启策略为always
+- 容器端口80映射到物理机8080
+- 物理机/web目录挂载到容器/usr/share/nginx/html
+- 在容器/usr/share/nginx/html目录中创建index.html，内容为hello docker
+- 打开浏览器查看是否看到hello docker
+- 删除容器web和镜像
 
-```
+```shell
 $ docker run -d -it --name web --restart=always -p 8080:80 -v /web:/usr/share/nginx/html nginx:v1
 129b64eb82ccdd3c574a307de50eb49ef35292cc7f301ac8e3cdefb380cba904
 $ docker exec -it web /bin/bash
