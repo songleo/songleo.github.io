@@ -11,7 +11,7 @@ $ docker images | grep nginx
 nginx                                                       latest              ea335eea17ab        42 hours ago        141MB
 ```
 
-## 2 给镜像打标签并导出镜像为nginx.tar
+## 2 给nginx:latest镜像打标签并导出镜像为nginx.tar
 
 ```shell
 $ docker images | grep nginx
