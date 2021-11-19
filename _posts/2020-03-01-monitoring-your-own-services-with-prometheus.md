@@ -1,3 +1,9 @@
+---
+layout: post
+title: 在ocp上使用prometheus监控用户应用
+date: 2020-03-01 12:12:05
+---
+
 ### 启用监控用户应用的功能
 
 在[cluster-monitoring-config](https://docs.openshift.com/container-platform/4.3/monitoring/cluster_monitoring/configuring-the-monitoring-stack.html#configuring-the-monitoring-stack)中添加以下字段：
