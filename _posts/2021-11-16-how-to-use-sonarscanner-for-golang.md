@@ -20,7 +20,7 @@ docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000
 
 ## 创建go项目并扫描code
 
-在sonarqube的ui中创建新的project，并选择locally，然后生成相应的token，选择相应go和相应的os，然后就可以得到扫描命令，进入go项目的根目录，执行扫描命令即可：
+在sonarqube的ui中创建新的project，并选择locally，然后生成相应的token，选择golang和相应的os，然后就可以得到扫描命令，进入go项目的根目录，执行扫描命令即可：
 
 ```
 cd /your/golang/dir
