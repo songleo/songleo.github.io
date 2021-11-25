@@ -13,7 +13,7 @@ cmd + \
 - 选中所有
 
 ```
-shift + cmd + l
+shift + cmd + l or shift + cmd + g
 ```
 
 - 鼠标多选
