@@ -59,5 +59,10 @@ set -o pipefail # 适用于管道命令
 set -x
 ```
 
+- xargs传递变量
+
+```
+cat file | xargs -I line grep -r line /path/to/file
+```
 
 > :) 未完待续......
