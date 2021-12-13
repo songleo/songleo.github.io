@@ -24,45 +24,15 @@ my-dep-69479b8955-mwl9v   1/1     Running   0          9s
 my-dep-69479b8955-r48hr   1/1     Running   0          9s
 ```
 
-## 2 创建svc
+## 2 配置网络策略
 
 ```shell
 $ k create deploy front-end  --image=nginx
 ```
 
-## 3 调度pod到指定节点
+## 3 etcd备份和还原
 
 ```shell
-$ k get no
-NAME                           STATUS                     ROLES    AGE   VERSION
-ip-10-0-128-182.ec2.internal   Ready,SchedulingDisabled   master   47h   v1.21.1+f36aa36
-ip-10-0-129-62.ec2.internal    Ready                      worker   47h   v1.21.1+f36aa36
-ip-10-0-144-211.ec2.internal   Ready                      worker   47h   v1.21.1+f36aa36
-ip-10-0-158-94.ec2.internal    Ready                      master   47h   v1.21.1+f36aa36
-ip-10-0-167-32.ec2.internal    Ready                      worker   47h   v1.21.1+f36aa36
-ip-10-0-171-215.ec2.internal   Ready                      master   47h   v1.21.1+f36aa36
-$ k label no ip-10-0-167-32.ec2.internal disktype=ssd
-node/ip-10-0-167-32.ec2.internal labeled
-$ cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-  labels:
-    env: test
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    imagePullPolicy: IfNotPresent
-  nodeSelector:
-    disktype: ssd
-EOF
-$ k get po
-NAME        READY   STATUS    RESTARTS   AGE
-myapp-pod   2/2     Running   0          13m
-nginx       1/1     Running   0          10s
-$ kd po nginx | grep ip-10-0-167-32.ec2.internal
-Node:         ip-10-0-167-32.ec2.internal/10.0.167.32
-  Normal  Scheduled       27s   default-scheduler  Successfully assigned ssli/nginx to ip-10-0-167-32.ec2.internal
+$ ETCDCTL_API=3 etcdctl --endpoints 127.0.0.1:2379 --cert /etc/kubernetes/pki/etcd/server.crt --key /etc/kubernetes/pki/etcd/server.key --cacert /etc/kubernetes/pki/etcd/ca.crt snapshot save /tmp/etcd_snampshot.db
+$ ETCDCTL_API=3 etcdctl --endpoints 127.0.0.1:2379 --cert /etc/kubernetes/pki/etcd/server.crt --key /etc/kubernetes/pki/etcd/server.key --cacert /etc/kubernetes/pki/etcd/ca.crt snapshot restore /tmp/etcd_snampshot.db
 ```

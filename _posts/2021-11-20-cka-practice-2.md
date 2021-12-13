@@ -116,6 +116,9 @@ node/gke-ssli-demo-default-pool-0cba9a7c-rbff evicted
 ```shell
 $ kubeadm upgrade plan
 $ k drain master --ignore-daemonsets
+$ apt-mark unhold kubeadm kubectl kubelet
+$ apt-get update & apt-get install -y kubeadm=1.20.1-00  kubectl=1.20.1-00 kubelet=1.20.1-00
+$ apt-mark hold kubeadm kubectl kubelet
 $ kubeadm upgrade apply v1.21.1 --etcd-upgrade=false
 $ k uncordon master
 ```
