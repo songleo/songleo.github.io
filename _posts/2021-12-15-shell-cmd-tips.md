@@ -90,6 +90,8 @@ apt install ansible
 
 ```
 # centos
+# 阿里镜像源
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 yum remove docker \
                   docker-client \
                   docker-client-latest \
@@ -103,8 +105,12 @@ yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 yum install docker-ce docker-ce-cli containerd.io -y
+systemctl start docker
 
 # ubuntu
+# 阿里镜像源
+curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 apt-get remove docker docker-engine docker.io containerd runc
 apt-get update
 apt-get install \
@@ -118,6 +124,7 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io -y
+service docker start
 ```
 
 - ssh免密登录
