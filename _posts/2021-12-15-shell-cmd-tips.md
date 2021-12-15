@@ -72,4 +72,18 @@ apt-get install virtualbox-guest-utils
 mount -t vboxsf -o uid=0,gid=0 share /share
 ```
 
+- 安装ansible
+
+```
+# centos
+yum install epel-release
+yum install ansible
+
+# ubuntu
+apt update
+apt install software-properties-common
+add-apt-repository --yes --update ppa:ansible/ansible
+apt install ansible
+```
+
 > :) 未完待续......
