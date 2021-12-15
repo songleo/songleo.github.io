@@ -88,6 +88,9 @@ spec:
       targetPort: 80
       nodePort: 30000
 EOF
+$ k get svc svc-web
+NAME      TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+svc-web   NodePort   10.96.151.118   <none>        80:30000/TCP   14m
 $ curl http://node-ip:30000
 ```
 
