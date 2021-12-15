@@ -86,6 +86,40 @@ add-apt-repository --yes --update ppa:ansible/ansible
 apt install ansible
 ```
 
+- 安装docker
+
+```
+# centos
+yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+yum install -y yum-utils
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+yum install docker-ce docker-ce-cli containerd.io -y
+
+# ubuntu
+apt-get remove docker docker-engine docker.io containerd runc
+apt-get update
+apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release -y
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt-get update
+apt-get install docker-ce docker-ce-cli containerd.io -y
+```
+
 - ssh免密登录
 
 ```
@@ -102,6 +136,13 @@ cat ~/.ssh/id_rsa.pub
 git config --global user.email "ssli@redhat.com"
 git config --global user.name "Song Song Li"
 git config --global color.ui auto
+```
+
+- curl从指定的url安装cmd
+
+```
+curl -Lo /usr/local/bin/cmd https://url/to/cmd
+chmod +x /usr/local/bin/cmd
 ```
 
 > :) 未完待续......
