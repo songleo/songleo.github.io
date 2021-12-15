@@ -84,6 +84,9 @@ apt update
 apt install software-properties-common
 add-apt-repository --yes --update ppa:ansible/ansible
 apt install ansible
+
+# mac
+brew install ansible
 ```
 
 - 安装docker
