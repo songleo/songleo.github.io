@@ -1,7 +1,7 @@
 ---
 layout: post
 title: shell命令tips
-date: 2020-01-08 00:12:05
+date: 2021-12-15 00:12:05
 ---
 
 - 命令查找
@@ -63,6 +63,13 @@ set -x
 
 ```
 cat file | xargs -I line grep -r line /path/to/file
+```
+
+- virtual box在mac上共享文件夹设置
+  
+```
+apt-get install virtualbox-guest-utils
+mount -t vboxsf -o uid=0,gid=0 share /share
 ```
 
 > :) 未完待续......
