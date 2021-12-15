@@ -86,4 +86,12 @@ add-apt-repository --yes --update ppa:ansible/ansible
 apt install ansible
 ```
 
+- ssh免密登录
+
+```
+ssh-keygen
+ssh-copy-id root@192.168.0.130
+ssh root@192.168.0.130
+```
+
 > :) 未完待续......
