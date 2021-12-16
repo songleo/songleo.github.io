@@ -63,4 +63,4 @@ $ docker images | grep ngnix
 
 ## 参考
 
-- cka/ckad应试指南：从docker到kubernetes完全攻略
+- cka/ckad应试指南：从docker到kubernetes完全攻略 ch-1
