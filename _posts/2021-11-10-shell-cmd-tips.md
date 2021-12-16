@@ -1,7 +1,7 @@
 ---
 layout: post
 title: shell命令tips
-date: 2021-12-15 00:12:05
+date: 2021-11-10 00:12:05
 ---
 
 - 命令查找

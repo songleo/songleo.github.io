@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在kind中使用nodeport
-date: 2021-12-16 12:12:05
+date: 2021-11-17 12:12:05
 ---
 
 ## 1 使用配置文件创建kind：
