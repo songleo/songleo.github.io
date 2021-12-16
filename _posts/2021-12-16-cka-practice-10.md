@@ -31,6 +31,10 @@ EOF
 $ kgp
 NAME            READY   STATUS    RESTARTS   AGE
 liveness-exec   1/1     Running   1          58s
+$ k exec liveness-exec -- ls /tmp
+healthy
+$ k exec liveness-exec -- rm -rf /tmp/healthy
+$ k exec liveness-exec -- ls /tmp
 $ kdp
 Name:         liveness-exec
 Namespace:    ch10
