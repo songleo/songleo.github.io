@@ -32,15 +32,13 @@ spec:
       maxSurge: 1
       maxUnavailable: 1
 EOF
-root@bashrc(master)$ k get po
+$ k get po
 NAME                    READY   STATUS    RESTARTS   AGE
 web1-778bc6fd85-5ktx9   1/1     Running   0          8s
 web1-778bc6fd85-g5jct   1/1     Running   0          8s
-[soli.hosts.dev.upshift.rdu2.redhat.com] [07:33:46 PM]
-root@bashrc(master)$ kubectl scale deployment/web1 --replicas=6
+$ kubectl scale deployment/web1 --replicas=6
 deployment.apps/web1 scaled
-[soli.hosts.dev.upshift.rdu2.redhat.com] [07:34:46 PM]
-root@bashrc(master)$ k get po
+$ k get po
 NAME                    READY   STATUS    RESTARTS   AGE
 web1-778bc6fd85-5ktx9   1/1     Running   0          73s
 web1-778bc6fd85-7gzxw   1/1     Running   0          5s
@@ -48,10 +46,9 @@ web1-778bc6fd85-8s5jn   1/1     Running   0          5s
 web1-778bc6fd85-g5jct   1/1     Running   0          73s
 web1-778bc6fd85-nwd48   1/1     Running   0          5s
 web1-778bc6fd85-x9bjz   1/1     Running   0          5s
-root@bashrc(master)$ kubectl set image deployment/web1 nginx=quay.io/songleo/nginx --record=true
+$ kubectl set image deployment/web1 nginx=quay.io/songleo/nginx --record=true
 deployment.apps/web1 image updated
-[soli.hosts.dev.upshift.rdu2.redhat.com] [07:36:21 PM]
-root@bashrc(master)$ k get po
+$ k get po
 NAME                    READY   STATUS              RESTARTS   AGE
 web1-6db6d5457c-2btmw   0/1     ContainerCreating   0          2s
 web1-6db6d5457c-8bktg   1/1     Running             0          5s
@@ -65,14 +62,14 @@ web1-778bc6fd85-8s5jn   0/1     Terminating         0          100s
 web1-778bc6fd85-g5jct   1/1     Terminating         0          2m48s
 web1-778bc6fd85-nwd48   1/1     Terminating         0          100s
 web1-778bc6fd85-x9bjz   0/1     Terminating         0          100s
-root@bashrc(master)$ kubectl rollout history deployment/web1
+$ kubectl rollout history deployment/web1
 deployment.apps/web1
 REVISION  CHANGE-CAUSE
 1         <none>
 2         kubectl set image deployment/web1 nginx=quay.io/songleo/nginx --record=true
 $ kubectl rollout undo deployment/web1 --to-revision=1
 deployment.apps/web1 rolled back
-root@bashrc(master)$ kgp
+$ kgp
 NAME                    READY   STATUS        RESTARTS   AGE
 web1-6db6d5457c-lnqq6   0/1     Terminating   0          3m51s
 web1-778bc6fd85-9gkrg   1/1     Running       0          12s
@@ -81,8 +78,7 @@ web1-778bc6fd85-lkc47   1/1     Running       0          11s
 web1-778bc6fd85-pc9lt   1/1     Running       0          12s
 web1-778bc6fd85-q29cd   1/1     Running       0          10s
 web1-778bc6fd85-wg2s5   1/1     Running       0          9s
-[soli.hosts.dev.upshift.rdu2.redhat.com] [07:40:12 PM]
-root@bashrc(master)$ kdp web1-778bc6fd85-9gkrg
+$ kdp web1-778bc6fd85-9gkrg
 Name:         web1-778bc6fd85-9gkrg
 Namespace:    ch8
 Priority:     0
