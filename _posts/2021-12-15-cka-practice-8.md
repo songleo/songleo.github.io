@@ -44,7 +44,7 @@ spec:
   type: ClusterIP
 status:
   loadBalancer: {}
-$ k get po -n kube-system -lk8s-app=kube-dns
+$ k get po -n kube-system -l k8s-app=kube-dns
 NAME                      READY   STATUS    RESTARTS   AGE
 coredns-74ff55c5b-dgk6m   1/1     Running   0          46h
 coredns-74ff55c5b-hg46l   1/1     Running   0          46h
