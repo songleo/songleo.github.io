@@ -10,9 +10,9 @@ date: 2021-12-17 00:12:05
 - 修改节点名字和/etc/hosts文件：
 
 ```
-root@~$ hostname
+$ hostname
 master
-root@~$ cat /etc/hosts
+$ cat /etc/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 
@@ -25,10 +25,10 @@ root@~$ cat /etc/hosts
 
 ```
 $ systemctl stop firewalld && systemctl disable firewalld && setenforce 0
-root@~$ cat /etc/selinux/config | grep -v \#
+$ cat /etc/selinux/config | grep -v \#
 SELINUX=disabled
 SELINUXTYPE=targeted
-root@~$ cat /etc/fstab | grep swap
+$ cat /etc/fstab | grep swap
 # /dev/mapper/centos-swap swap                    swap    defaults        0 0
 $ swapoff -a
 ```
@@ -38,7 +38,7 @@ $ swapoff -a
 ```
 $ yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 $ yum install docker-ce docker-ce-cli containerd.io -y
-root@~$ cat /etc/docker/daemon.json
+$ cat /etc/docker/daemon.json
 {
   "exec-opts": ["native.cgroupdriver=systemd"],
   "registry-mirrors": [
@@ -101,18 +101,18 @@ $ kubeadm join 192.168.0.150:6443 --token cdqcsf.4ukbz8iyia89i1rw --discovery-to
 ### 集群搭建成功
 
 ```
-root@~$ k get no
+$ k get no
 NAME     STATUS   ROLES                  AGE   VERSION
 master   Ready    control-plane,master   92m   v1.23.1
 node1    Ready    node                   50m   v1.23.1
 node2    Ready    node                   14m   v1.23.1
-root@~$k get ns
+$k get ns
 NAME              STATUS   AGE
 default           Active   92m
 kube-node-lease   Active   92m
 kube-public       Active   92m
 kube-system       Active   92m
-root@~$ k get po --all-namespaces
+$ k get po --all-namespaces
 NAMESPACE     NAME                             READY   STATUS    RESTARTS   AGE
 kube-system   coredns-6d8c4cb4d-7jcd6          1/1     Running   0          92m
 kube-system   coredns-6d8c4cb4d-gfxtd          1/1     Running   0          92m
@@ -126,7 +126,7 @@ kube-system   kube-proxy-k8spt                 1/1     Running   0          92m
 kube-system   kube-proxy-kdbvh                 1/1     Running   0          14m
 kube-system   kube-proxy-wfngx                 1/1     Running   0          50m
 kube-system   kube-scheduler-master            1/1     Running   0          92m
-root@~$ k cluster-info
+$ k cluster-info
 Kubernetes control plane is running at https://192.168.0.150:6443
 CoreDNS is running at https://192.168.0.150:6443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 
