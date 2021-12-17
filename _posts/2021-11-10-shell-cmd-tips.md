@@ -155,4 +155,10 @@ curl -Lo /usr/local/bin/cmd https://url/to/cmd
 chmod +x /usr/local/bin/cmd
 ```
 
+- 查看某个端口被某进程使用
+
+```
+lsof -i:22
+```
+
 > :) 未完待续......
