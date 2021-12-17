@@ -1,7 +1,7 @@
 ---
 layout: post
 title: centos7安装kubernetes
-date: 2021-12-19 12:12:05
+date: 2021-12-17 12:12:05
 ---
 
 
