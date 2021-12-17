@@ -5,13 +5,13 @@ date: 2021-12-19 12:12:05
 ---
 
 
-### 在所有节点执行以下操作
+### 所有节点执行以下操作
 
 - 修改节点名字和/etc/hosts文件：
 
 ```
 root@~$ hostname
-node2
+master
 root@~$ cat /etc/hosts
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
@@ -74,7 +74,7 @@ $ yum install -y kubelet kubeadm kubectl
 $ systemctl enable kubelet
 ```
 
-### master节点执行的命令
+### master节点执行以下操作
 
 - 使用阿里云源安装kubernetes：
 
@@ -90,7 +90,7 @@ $ chown $(id -u):$(id -g) $HOME/.kube/config
 $ k apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 ```
 
-### node节点执行的命令
+### node节点执行以下操作
 
 将节点加入集群，若忘记了该命令，在master节点执行`kubeadm token create --print-join-command`获取。
 
