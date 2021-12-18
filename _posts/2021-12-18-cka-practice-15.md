@@ -97,6 +97,7 @@ ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELE
 $ cd /etc/kubernetes/manifests
 $ ls
 tmp.yaml
+$ systemctl status kubelet
 $ cat /var/lib/kubelet/config.yaml | grep static
 staticPodPath: /etc/kubernetes/manifests
 $ cat tmp.yaml
