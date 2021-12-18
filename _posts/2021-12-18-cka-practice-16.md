@@ -12,7 +12,7 @@ $ yum list --showduplicates kubeadm --disableexcludes=kubernetes
 $ yum install -y kubeadm-1.23.x-0 --disableexcludes=kubernetes
 $ kubeadm version
 $ kubeadm upgrade plan
-$ k drain master ----ignore-daemonsets
+$ k drain master --ignore-daemonsets
 $ kubeadm upgrade apply v1.23.1
 $ kubeadm upgrade node
 $ yum install -y kubelet-1.23.1-0 kubectl-1.23.1-0 --disableexcludes=kubernetes
@@ -24,7 +24,7 @@ $ systemctl daemon-reload && systemctl restart kubelet
 
 ```
 $ yum install -y kubeadm-1.23.x-0 --disableexcludes=kubernetes
-$ k drain node1 ----ignore-daemonsets
+$ k drain node1 --ignore-daemonsets
 $ ubeadm upgrade node
 $ yum install -y kubelet-1.23.x-0 kubectl-1.23.x-0 --disableexcludes=kubernetes
 $ systemctl daemon-reload && systemctl restart kubelet
