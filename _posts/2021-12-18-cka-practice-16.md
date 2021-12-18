@@ -67,8 +67,8 @@ NAME                           CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
 ip-10-0-128-142.ec2.internal   1344m        8%     19652Mi         65%
 $ kubeadm token create --print-join-command
 kubeadm join 192.168.0.150:6443 --token nm5gf3.tg0mtx78i9d3sp54 --discovery-token-ca-cert-hash sha256:a848db8b509cbaa0c75d8fd5ab806bc09dd0293e3ed739a6cbad8b78dd863cc4
-source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
-echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
+$ source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
+$ echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
 ```
 
 ## 参考
