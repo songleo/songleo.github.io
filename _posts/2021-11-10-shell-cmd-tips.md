@@ -151,7 +151,7 @@ git config --global color.ui auto
 - curl从指定的url安装cmd
 
 ```
-curl -Lo /usr/local/bin/cmd https://url/to/cmd
+curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 chmod +x /usr/local/bin/cmd
 ```
 

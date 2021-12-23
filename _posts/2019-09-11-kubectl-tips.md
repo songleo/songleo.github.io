@@ -88,7 +88,7 @@ kubectl port-forward pod/minio-5cd8b89db8-rz2jk 9000:9000
 - 删除ns
 
 ```
-export NAMESPACE=local-cluster
+export NAMESPACE=devops
 kubectl get namespace $NAMESPACE -o json > tmp.json
 sed -i '/kubernetes/d' ./tmp.json
 kubectl replace --raw "/api/v1/namespaces/$NAMESPACE/finalize" -f ./tmp.json
