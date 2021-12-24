@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ocp4安装argocd
+title: argocd学习（一）
 date: 2021-12-23 00:12:05
 ---
 
