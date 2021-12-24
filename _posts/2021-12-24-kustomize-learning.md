@@ -29,6 +29,14 @@ date: 2021-12-24 00:12:05
     - configurations
     - crds
 
+## faq
+
+- `kubectl kustomize ./`会遇到错误，可以使用`kustomize build .`解决
+
+    ```
+    Error: json: unknown field "envs"
+    ```
+
 ## ref
 
 - https://kubernetes.io/zh/docs/tasks/manage-kubernetes-objects/kustomization/
