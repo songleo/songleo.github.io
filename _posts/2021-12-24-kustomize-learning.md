@@ -4,6 +4,8 @@ title: kustomize学习
 date: 2021-12-24 00:12:05
 ---
 
+通过kustomize使用kustomization文件定制kubernetes对象
+
 - 支持生成cm和secret，可以通过env文件、properties文件和literals
 - 支持直接在其他对象中引用cm和secret
 - 支持对生成对象定制，比如ns、名字的后缀、前缀、标签及注解等
