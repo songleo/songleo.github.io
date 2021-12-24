@@ -75,7 +75,7 @@ ui展示应用如下：
 
 ![](/images/argocd-hostname.png)
 
-## 使用applicationset调用应用到多集群
+## 使用applicationset在多集群创建应用
 
 - 添加集群
 
