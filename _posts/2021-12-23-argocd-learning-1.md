@@ -126,4 +126,3 @@ ui展示多集群应用如下：
 
 - https://argo-cd.readthedocs.io/en/stable/getting_started/
 - https://argocd-applicationset.readthedocs.io/en/stable/Getting-Started/
-- https://argocd-applicationset.readthedocs.io/en/stable/
