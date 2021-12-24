@@ -45,11 +45,35 @@ argocd login argocd-server-argocd.apps.demo-aws-495-hdgv2.demo.red-chesterfield.
 ## 创建应用
 
 ```
-argocd app create guestbook --repo https://github.com/argoproj/argocd-example-apps.git --path guestbook --dest-server https://kubernetes.default.svc --dest-namespace default
-argocd app get guestbook
-argocd app sync guestbook
-oc expose svc guestbook-ui
+$ cat hostname.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hostname
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: hostname
+    repoURL: https://github.com/songleo/argocd-demo.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
+$ k apply -f hostname.yaml
+$ k get route
+NAME       HOST/PORT                                                            PATH   SERVICES   PORT   TERMINATION   WILDCARD
+hostname   hostname-default.apps.demo-aws-495-hdgv2.demo.red-chesterfield.com          hostname   8080                 None
+$ curl hostname-default.apps.demo-aws-495-hdgv2.demo.red-chesterfield.com
+hostname: hostname-54fcb96656-k2lxx
+app version: v1.0
 ```
+
+ui展示应用如下：
+
+![](/images/argocd-hostname.png)
 
 ## ref
 
