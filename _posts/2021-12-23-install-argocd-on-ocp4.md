@@ -25,7 +25,7 @@ oc -n argocd patch deployment argocd-server -p '{"spec":{"template":{"spec":{"$s
 oc -n argocd create route edge argocd-server --service=argocd-server --port=http --insecure-policy=Redirect
 k get route
 NAME            HOST/PORT                                                                PATH   SERVICES        PORT   TERMINATION     WILDCARD
-argocd-server   argocd-server-argocd.apps.demo-aws-495-hdgv2.demo.red-chesterfield.com          argocd-server   http   edge/Redirect   None
+argocd-server   argocd-server-argocd.apps.demo.com          argocd-server   http   edge/Redirect   None
 ```
 
 ## 登录argocd
@@ -36,10 +36,10 @@ argocd-server   argocd-server-argocd.apps.demo-aws-495-hdgv2.demo.red-chesterfie
 k get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"| base64 -d
 ```
 
-进入 https://argocd-server-argocd.apps.demo-aws-495-hdgv2.demo.red-chesterfield.com 登录。或者通过argocd cli登录：
+进入 https://argocd-server-argocd.apps.demo.com 登录。或者通过argocd cli登录：
 
 ```
-argocd login argocd-server-argocd.apps.demo-aws-495-hdgv2.demo.red-chesterfield.com
+argocd login argocd-server-argocd.apps.demo.com
 ```
 
 ## 创建应用
@@ -65,8 +65,8 @@ spec:
 $ k apply -f hostname.yaml
 $ k get route
 NAME       HOST/PORT                                                            PATH   SERVICES   PORT   TERMINATION   WILDCARD
-hostname   hostname-default.apps.demo-aws-495-hdgv2.demo.red-chesterfield.com          hostname   8080                 None
-$ curl hostname-default.apps.demo-aws-495-hdgv2.demo.red-chesterfield.com
+hostname   hostname-default.apps.demo.com          hostname   8080                 None
+$ curl hostname-default.apps.demo.com
 hostname: hostname-54fcb96656-k2lxx
 app version: v1.0
 ```
