@@ -33,7 +33,7 @@ argocd-server   argocd-server-argocd.apps.demo.com          argocd-server   http
 通过一下命令获取登录密码：
 
 ```
-k get secret argocd-initial-admin-secret -o jsonpath="{.data.password}"| base64 -d
+k get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
 
 进入 https://argocd-server-argocd.apps.demo.com 登录。或者通过argocd cli登录：
@@ -75,6 +75,55 @@ ui展示应用如下：
 
 ![](/images/argocd-hostname.png)
 
+## 使用applicationset调用应用到多集群
+
+- 添加集群
+
+```
+$ kubectl config get-contexts -o name
+$ argocd cluster add admin --name soli-mc
+$ argocd cluster list
+SERVER                                                         NAME        VERSION  STATUS  MESSAGE  PROJECT
+https://api.demo.com:6443                                      soli-mc
+https://kubernetes.default.svc                                 in-cluster
+```
+
+- 创建applicationset
+
+```
+$ cat appset.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: hostname
+spec:
+  generators:
+  - list:
+      elements:
+      - cluster: in-cluster
+        url: https://kubernetes.default.svc
+      - cluster: soli-mc
+        url: https://api.demo.com:6443
+  template:
+    metadata:
+      name: '{{cluster}}-hostname'
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/songleo/argocd-demo.git
+        targetRevision: HEAD
+        path: hostname-no-route
+      destination:
+        server: '{{url}}'
+        namespace: hostname
+$ k apply -f appset.yaml
+```
+
+ui展示多集群应用如下：
+
+![](/images/argocd-appset.png)
 ## ref
 
 - https://argo-cd.readthedocs.io/en/stable/getting_started/
+- https://argocd-applicationset.readthedocs.io/en/stable/Getting-Started/
+- https://argocd-applicationset.readthedocs.io/en/stable/
