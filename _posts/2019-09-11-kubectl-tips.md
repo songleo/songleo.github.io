@@ -154,4 +154,17 @@ kubectl config set-context --current --namespace=open-cluster-management-observa
 kubectl -n acm-observability-china patch clusterpool obs-china-aws-4616 --patch '{"spec":{"size":3}}' --type=merge
 ```
 
+- kubectl自动补齐
+
+```
+yum -y install bash-completion
+source <(kubectl completion bash)
+echo "source <(kubectl completion bash)" >> ~/.bashrc
+
+## mac
+brew install bash
+brew install bash-completion@2
+chsh -s /usr/local/bin/bash
+```
+
 > :) 未完待续......
