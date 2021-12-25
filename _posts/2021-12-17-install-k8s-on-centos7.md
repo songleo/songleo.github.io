@@ -45,7 +45,7 @@ $ cat /etc/docker/daemon.json
     "https://mirror.ccs.tencentyun.com"
   ]
 }
-$ systemctl enable docker && systemctl start docker
+$ systemctl enable docker && systemctl restart docker
 ```
 
 - 修改内核参数
