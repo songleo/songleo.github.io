@@ -1,0 +1,40 @@
+package main
+
+import (
+	"crypto/tls"
+	"crypto/x509"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+)
+
+type myhandler struct {
+}
+
+func (h *myhandler) ServeHTTP(w http.ResponseWriter,
+	r *http.Request) {
+	fmt.Fprintf(w, "I am user1\n")
+}
+
+func main() {
+	pool := x509.NewCertPool()
+	caCertPath := "ca.crt"
+	caCrt, err := ioutil.ReadFile(caCertPath)
+	if err != nil {
+		fmt.Println("ReadFile err:", err)
+		return
+	}
+	pool.AppendCertsFromPEM(caCrt)
+	s := &http.Server{
+		Addr:    ":8080",
+		Handler: &myhandler{},
+		TLSConfig: &tls.Config{
+			ClientCAs:  pool,
+			ClientAuth: tls.RequireAndVerifyClientCert,
+		},
+	}
+	err = s.ListenAndServeTLS("user1.crt", "user1.key")
+	if err != nil {
+		fmt.Println("ListenAndServeTLS err:", err)
+	}
+}
