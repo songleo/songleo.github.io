@@ -1,4 +1,8 @@
-
+---
+layout: post
+title: go实现https认证
+date: 2021-12-25 00:12:05
+---
 
 ## 创建ca
 
@@ -29,7 +33,7 @@ user2-client.go user2.crt       user2.csr       user2.key
 
 ## 使用创建的证书实现https单向认证
 
-user1作为server端，user2作为client端，client端需要验证server端证书。
+user1作为server端，user2作为client端，即client端需要验证server端证书。
 
 ```
 $ go run user1-server.go
@@ -48,6 +52,8 @@ $ go run user1-dual-server.go
 $ go run user2-dual-client.go
 I am user1
 ```
+
+所有相关代码和证书：https://github.com/songleo/songleo.github.io/tree/main/src/https
 
 ## ref
 
