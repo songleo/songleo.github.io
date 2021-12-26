@@ -88,4 +88,18 @@ spec:
 EOF
 # curl -k https://www.ssli.com
 hello nginx
+# curl -kv https://www.ssli.com
+
+...
+
+* Server certificate:
+*  subject: C=CN; ST=SX; L=XA; O=SSLI; OU=CKS; CN=ssli.com
+*  start date: Dec 26 09:28:00 2021 GMT
+*  expire date: Dec 26 09:28:00 2022 GMT
+*  issuer: C=CN; ST=SX; L=XA; O=SSLI; OU=CKS; CN=ssli.com
+
+...
+
 ```
+
+可以看到ingress使用了我们创建的自签名证书。
