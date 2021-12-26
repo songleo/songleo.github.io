@@ -58,7 +58,7 @@ hello nginx
 ```
 ## 启用https
 
-参考我之前的文章：[]()创建好自己的证书，在ingress添加证书信息：
+参考我之前的文章：[使用cfssl创建自签名证书](http://reborncodinglife.com/2021/12/26/create-ca-via-cfssl/)创建好自己的证书，在ingress添加证书信息：
 
 ```
 # k create secret tls ssli-tls --key=./ssli-key.pem --cert=ssli.pem
