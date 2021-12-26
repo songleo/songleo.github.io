@@ -4,8 +4,9 @@ title: 使用cfssl创建自签名证书
 date: 2021-12-26 00:12:05
 ---
 
-
 ## 创建ca配置文件
+
+可以通过执行`cfssl print-defaults config`创建默认的配置文件，然后再修改。
 
 ```
 # cat ca-config.json
@@ -29,6 +30,8 @@ date: 2021-12-26 00:12:05
 ```
 
 ## 创建ca csr配置文件
+
+可以通过执行`cfssl print-defaults csr`创建默认的csr配置文件，然后再修改。
 
 ```
 # cat ca-csr.json
