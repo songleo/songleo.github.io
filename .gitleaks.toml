@@ -6,5 +6,8 @@
   files = [
     '''*.crt''',
     '''*.key''',
+    '''ca.key''',
+    '''user2.key''',
+    '''user1.key''',
     '''*.csr''',
   ]
