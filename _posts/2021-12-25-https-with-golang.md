@@ -31,7 +31,7 @@ $ ls user2*
 user2-client.go user2.crt       user2.csr       user2.key
 ```
 
-## 使用创建的证书实现https单向认证
+## 使用创建的证书实现https(tls)单向认证
 
 user1作为server端，user2作为client端，即client端需要验证server端证书。
 
@@ -42,7 +42,7 @@ $ go run user2-client.go
 I am user1
 ```
 
-## 使用创建的证书实现https双向认证
+## 使用创建的证书实现https(mtls)双向认证
 
 client和server端双向认证。
 
