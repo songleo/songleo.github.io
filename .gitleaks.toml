@@ -1,0 +1,10 @@
+[allowlist]
+  description = "Allowlist"
+  paths = [
+    '''src/https''',
+  ]
+  files = [
+    '''*.crt''',
+    '''*.key''',
+    '''*.csr''',
+  ]
