@@ -4,6 +4,7 @@ title: kuben-bench使用
 date: 2021-12-26 00:12:05
 ---
 
+kube-bench是一个go应用程序，它通过运行[cis kubernetes benchmark](https://www.cisecurity.org/benchmark/kubernetes/)中记录的规则来检查kubernetes是否安全部署。
 ## 安装kuben-bench
 
 ```
