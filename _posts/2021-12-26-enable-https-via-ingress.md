@@ -5,7 +5,7 @@ date: 2021-12-26 00:12:05
 ---
 ## 创建web应用
 
-创建一个nginx deployment并修改了默认页面（/usr/share/nginx/html/index.html）为hello nginx。默认是http。
+创建一个nginx deployment并修改了默认页面 `/usr/share/nginx/html/index.html`为`hello nginx`，这里先通过http方式创建ingress：
 
 ```
 # k create deployment nginx --image=nginx
