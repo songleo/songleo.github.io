@@ -34,4 +34,11 @@ rm -rf /var/lib/docker/volumes/ ; service docker restart
 docker run --rm --entrypoint "" -v ${PWD}:/tmp  quay.io/cluster-api-provider-ibmcloud/clusterctl /bin/sh -c "cp /bin/clusterctl /tmp"
 ```
 
+- 导出多个img
+
+```
+docker save -o images.tar img1:9.6 img2:3.4
+docker load -i images.tar
+```
+
 > :) 未完待续......
