@@ -4,7 +4,7 @@ title: cert-manager签发证书
 date: 2021-12-27 00:12:05
 ---
 
-## 创建自签名ca
+## 创建自签名证书的ca
 
 ca的创建参考：<[使用cfssl创建自签名证书](http://reborncodinglife.com/2021/12/26/create-ca-via-cfssl/)>
 
@@ -62,7 +62,7 @@ ssli-cert   kubernetes.io/tls   3      26s
 
 ## 在ingress中使用该证书
 
-创建一个nginx deployment并修改了默认页面 `/usr/share/nginx/html/index.html`为`hello nginx`，这里先通过http方式创建ingress：
+创建一个nginx deployment并修改了默认页面 `/usr/share/nginx/html/index.html`为`hello nginx`，在ingress中使用创建的证书：
 
 ```
 # k create deployment nginx --image=nginx
