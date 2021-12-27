@@ -122,6 +122,7 @@ $ k apply -f appset.yaml
 ui展示多集群应用如下：
 
 ![](/images/argocd-appset.png)
+
 ## ref
 
 - https://argo-cd.readthedocs.io/en/stable/getting_started/
