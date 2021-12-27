@@ -11,6 +11,16 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
+或者直接通过ocp的operatorhub安装，ocp的gitops实际是通过argocd实现，在operatorhub查找openshift gitops后，按照默认配置安装到ocp：
+
+![](/images/install-ocp-gitops.png)
+
+安装成功后如下：
+
+![](/images/installed-ocp-gitops.png)
+
+直接从ocp的ui中就可以登录到argocd。
+
 ## 安装argocd cli
 
 ```
