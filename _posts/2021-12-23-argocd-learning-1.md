@@ -11,6 +11,16 @@ kubectl create namespace argocd
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
+## expose svc
+
+```
+oc -n argocd patch deployment argocd-server -p '{"spec":{"template":{"spec":{"$setElementOrder/containers":[{"name":"argocd-server"}],"containers":[{"command":["argocd-server","--insecure","--staticassets","/shared/app"],"name":"argocd-server"}]}}}}'
+oc -n argocd create route edge argocd-server --service=argocd-server --port=http --insecure-policy=Redirect
+k get route
+NAME            HOST/PORT                                                                PATH   SERVICES        PORT   TERMINATION     WILDCARD
+argocd-server   argocd-server-argocd.apps.demo.com          argocd-server   http   edge/Redirect   None
+```
+
 或者直接通过ocp的operatorhub安装，ocp的gitops实际是通过argocd实现，在operatorhub查找openshift gitops后，按照默认配置安装到ocp：
 
 ![](/images/install-ocp-gitops.png)
@@ -27,17 +37,6 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 chmod +x /usr/local/bin/argocd
 ```
-
-## expose svc
-
-```
-oc -n argocd patch deployment argocd-server -p '{"spec":{"template":{"spec":{"$setElementOrder/containers":[{"name":"argocd-server"}],"containers":[{"command":["argocd-server","--insecure","--staticassets","/shared/app"],"name":"argocd-server"}]}}}}'
-oc -n argocd create route edge argocd-server --service=argocd-server --port=http --insecure-policy=Redirect
-k get route
-NAME            HOST/PORT                                                                PATH   SERVICES        PORT   TERMINATION     WILDCARD
-argocd-server   argocd-server-argocd.apps.demo.com          argocd-server   http   edge/Redirect   None
-```
-
 ## 登录argocd
 
 通过以下命令获取登录密码：
