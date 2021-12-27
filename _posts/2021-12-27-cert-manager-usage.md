@@ -142,3 +142,61 @@ hello nginx
 ```
 
 可以看到自动生成了证书secret，并且服务也正常。
+
+## 创建selfSigned类型的issuer
+
+```
+$ cat <<EOF | kubectl apply -f -
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: ssli-selfsigned
+spec:
+  selfSigned: {}
+EOF
+# cat <<EOF | kubectl apply -f -
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: nginx
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "ssli-selfsigned"
+spec:
+  tls:
+  - hosts:
+      - www.ssli.com
+    secretName: selfsigned-ssli-cert
+  rules:
+  - host: www.ssli.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nginx
+            port:
+              number: 80
+EOF
+# k get secret selfsigned-ssli-cert-s7s78
+NAME                         TYPE     DATA   AGE
+selfsigned-ssli-cert-s7s78   Opaque   1      19s
+# curl -k https://www.ssli.com
+hello nginx
+# curl -kv https://www.ssli.com
+
+...
+
+* Server certificate:
+*  subject: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*  start date: Dec 26 09:16:01 2021 GMT
+*  expire date: Dec 26 09:16:01 2022 GMT
+*  issuer: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+
+...
+
+```
+
+可以看到ingress使用了ingress controller自签名的证书。
