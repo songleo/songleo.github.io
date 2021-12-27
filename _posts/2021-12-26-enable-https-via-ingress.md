@@ -9,17 +9,17 @@ date: 2021-12-26 00:12:05
 
 ```
 # k create deployment nginx --image=nginx
-root@master:/share/git/k8s_practice/cfssl# k -it  exec nginx-6799fc88d8-nbs4h -- bash
-root@nginx-6799fc88d8-nbs4h:/# echo "hello nginx" > /usr/share/nginx/html/index.html
-root@nginx-6799fc88d8-nbs4h:/# cat /usr/share/nginx/html/index.html
+# k -it  exec nginx-6799fc88d8-nbs4h -- bash
+# echo "hello nginx" > /usr/share/nginx/html/index.html
+# cat /usr/share/nginx/html/index.html
 hello nginx
 # kubectl expose deployment nginx --port=80 --name=nginx
 service/nginx exposed
-root@master:/share/git/k8s_practice/cfssl# k get svc
+# k get svc
 NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
 kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP   41h
 nginx        ClusterIP   10.102.140.200   <none>        80/TCP    16s
-root@master:/share/git/k8s_practice/cfssl# curl 10.102.140.200
+# curl 10.102.140.200
 hello nginx
 # cat <<EOF | kubectl apply -f -
 apiVersion: networking.k8s.io/v1
@@ -47,7 +47,7 @@ EOF
 
 ```
 # cat /etc/hosts | grep www.ssli.com
-192.168.0.141 node1.ssli.com node1 www.ssli.com
+192.168.0.141 www.ssli.com
 ```
 
 访问服务：
@@ -58,7 +58,7 @@ hello nginx
 ```
 ## 启用https
 
-参考我之前的文章：[使用cfssl创建自签名证书](http://reborncodinglife.com/2021/12/26/create-ca-via-cfssl/)创建好自己的证书，在ingress添加证书信息：
+参考我之前的文章：<[使用cfssl创建自签名证书](http://reborncodinglife.com/2021/12/26/create-ca-via-cfssl/)>创建好自己的证书，在ingress添加证书信息：
 
 ```
 # k create secret tls ssli-tls --key=./ssli-key.pem --cert=ssli.pem
@@ -102,4 +102,4 @@ hello nginx
 
 ```
 
-可以看到ingress使用了我们创建的自签名证书。
+可以看到ingress使用了我们创建的自签名证书。后面会介绍如何通过cert-manager在ingress中自动签发证书。

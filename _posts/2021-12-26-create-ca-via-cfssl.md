@@ -83,12 +83,10 @@ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 }
 ```
 
-## 创建证书
+## 创建自签名证书
 
 ```
 # cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=www ssli-csr.json | cfssljson -bare ssli
-# ls *.pem
-ca-key.pem  ca.pem  ssli-key.pem  ssli.pem
 ```
 
 ## ca和证书
@@ -97,3 +95,5 @@ ca-key.pem  ca.pem  ssli-key.pem  ssli.pem
 # ls *.pem
 ca-key.pem  ca.pem  ssli-key.pem  ssli.pem
 ```
+
+下篇文章中会介绍如何在ingress中使用这个证书。
