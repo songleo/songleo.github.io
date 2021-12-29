@@ -45,6 +45,12 @@ or
 set -o nounset
 ```
 
+- sed替换文件中字符
+
+```
+sed -i 's/old/new/' file
+```
+
 - 脚本执行发生错误就终止执行
 
 ```
@@ -153,6 +159,9 @@ git config --global color.ui auto
 ```
 curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 chmod +x /usr/local/bin/cmd
+
+wget -O /usr/local/bin/yq https://github.com/mikefarah/yq/releases/download/3.3.0/yq_linux_amd64
+chmod +x /usr/local/bin/yq
 ```
 
 - 查看某个端口被某进程使用

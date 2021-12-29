@@ -66,10 +66,7 @@ ssli-cert   kubernetes.io/tls   3      26s
 
 ```
 # k create deployment nginx --image=nginx
-# k -it  exec nginx-6799fc88d8-nbs4h -- bash
-# echo "hello nginx" > /usr/share/nginx/html/index.html
-# cat /usr/share/nginx/html/index.html
-hello nginx
+# k exec nginx-6799fc88d8-nbs4h -- sh -c "echo hello nginx > /usr/share/nginx/html/index.html"
 # kubectl expose deployment nginx --port=80 --name=nginx
 service/nginx exposed
 # k get svc
