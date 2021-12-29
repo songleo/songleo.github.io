@@ -45,14 +45,8 @@ Error from server (Forbidden): pods is forbidden: User "token-user1" cannot list
 
 ```
 # openssl genrsa -out csr-user1.key 2048
-Generating RSA private key, 2048 bit long modulus (2 primes)
-.........+++++
-.........................................................+++++
-e is 65537 (0x010001)
 # openssl req -new -key csr-user1.key -out csr-user1.csr -subj "/CN=csr-user1/O=ssli"
-Can't load /root/.rnd into RNG
-140083293127104:error:2406F079:random number generator:RAND_load_file:Cannot open file:../crypto/rand/randfile.c:88:Filename=/root/.rnd
-cat <<EOF | kubectl apply -f -
+# cat <<EOF | kubectl apply -f -
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
@@ -67,7 +61,7 @@ spec:
 EOF
 ```
 
-## approve证书并创建用户证书
+## approve csr并创建证书
 
 ```
 # k get certificatesigningrequests.certificates.k8s.io
