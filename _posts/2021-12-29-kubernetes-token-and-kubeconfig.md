@@ -30,12 +30,12 @@ clusterrole.rbac.authorization.k8s.io/token-user1 created
 clusterrolebinding.rbac.authorization.k8s.io/token-user1 created
 
 # 在其他节点执行以下命令访问集群
-root@node1:~# kubectl -s="https://192.168.0.140:6443" --insecure-skip-tls-verify=true --token="d6a1ce8e27e69f093293" get nodes
+# kubectl -s="https://192.168.0.140:6443" --insecure-skip-tls-verify=true --token="d6a1ce8e27e69f093293" get nodes
 NAME     STATUS   ROLES                  AGE     VERSION
 master   Ready    control-plane,master   4d13h   v1.22.2
 node1    Ready    <none>                 4d13h   v1.22.2
 node2    Ready    <none>                 4d13h   v1.22.2
-root@node1:~# kubectl -s="https://192.168.0.140:6443" --insecure-skip-tls-verify=true --token="d6a1ce8e27e69f093293" get po
+# kubectl -s="https://192.168.0.140:6443" --insecure-skip-tls-verify=true --token="d6a1ce8e27e69f093293" get po
 Error from server (Forbidden): pods is forbidden: User "token-user1" cannot list resource "pods" in API group "" in the namespace "default"
 ```
 
