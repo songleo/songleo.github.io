@@ -48,7 +48,8 @@ set -o nounset
 - sed替换文件中字符
 
 ```
-sed -i 's/old/new/' file
+sed -i 's/old/new/g' file # 全部替换
+sed -i 's/old/new/' file # 仅替换每行第一次出现的字符串
 ```
 
 - 脚本执行发生错误就终止执行
