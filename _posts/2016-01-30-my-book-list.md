@@ -66,7 +66,7 @@ date: 2016-01-30 15:40:31
 
 - git教程（廖雪峰）
 
-- [the way to go （中文版）](https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md)
+- [the way to go （中文版）](https://github.com/unknwon/the-way-to-go_zh_cn/blob/master/ebook/directory.md)
 
 - [a tour of go (中文版）](https://tour.go-zh.org/welcome/1)
 
@@ -74,7 +74,7 @@ date: 2016-01-30 15:40:31
 
 - 程序员修炼之道-从小工到专家
 
-- [how to be a programmer 中文版](https://github.com/braydie/HowToBeAProgrammer/blob/master/zh/README.md) 2016-05-03
+- [how to be a programmer 中文版](https://github.com/braydie/howtobeaprogrammer/blob/master/zh/readme.md) 2016-05-03
 
 - 盖茨是这样培养的 2016-05-21
 
@@ -188,29 +188,29 @@ date: 2016-01-30 15:40:31
 
 - 好好说话 2017-03-19
 
-- 算法神探：一部谷歌首席工程师写的CS小说 2017-03-24
+- 算法神探：一部谷歌首席工程师写的cs小说 2017-03-24
 
 - 养眼就是养精神 2017-03-30
 
 - 算法图解 2017-04-03
 
-- 可能与不可能的边界：PNP问题趣史 2017-04-13
+- 可能与不可能的边界：pnp问题趣史 2017-04-13
 
-- [买个好房子](https://www.amazon.cn/%E4%B9%B0%E4%B8%AA%E5%A5%BD%E6%88%BF%E5%AD%90-%E7%9F%A5%E4%B9%8E%E5%BE%90%E6%96%8C%E4%BD%9C%E5%93%81-%E5%BE%90%E6%96%8C/dp/B01EH0JKFY/ref=sr_1_10?s=digital-text&ie=UTF8&qid=1493863705&sr=1-10) 2017-04-16
+- [买个好房子](https://www.amazon.cn/%e4%b9%b0%e4%b8%aa%e5%a5%bd%e6%88%bf%e5%ad%90-%e7%9f%a5%e4%b9%8e%e5%be%90%e6%96%8c%e4%bd%9c%e5%93%81-%e5%be%90%e6%96%8c/dp/b01eh0jkfy/ref=sr_1_10?s=digital-text&ie=utf8&qid=1493863705&sr=1-10) 2017-04-16
 
 - 牛奶可乐经济学 2017-04-17
 
-- [买个好房子](https://www.amazon.cn/%E4%B9%B0%E4%B8%AA%E5%A5%BD%E6%88%BF%E5%AD%90-%E7%9F%A5%E4%B9%8E%E5%BE%90%E6%96%8C%E4%BD%9C%E5%93%81-%E5%BE%90%E6%96%8C/dp/B01EH0JKFY/ref=sr_1_10?s=digital-text&ie=UTF8&qid=1493863705&sr=1-10)（二次阅读） 2017-04-24
+- [买个好房子](https://www.amazon.cn/%e4%b9%b0%e4%b8%aa%e5%a5%bd%e6%88%bf%e5%ad%90-%e7%9f%a5%e4%b9%8e%e5%be%90%e6%96%8c%e4%bd%9c%e5%93%81-%e5%be%90%e6%96%8c/dp/b01eh0jkfy/ref=sr_1_10?s=digital-text&ie=utf8&qid=1493863705&sr=1-10)（二次阅读） 2017-04-24
 
 - 程序员的自我修养 2017-05-02
 
-- [以色列：一个国家的诞生](https://www.amazon.cn/%E4%BB%A5%E8%89%B2%E5%88%97-%E4%B8%80%E4%B8%AA%E5%9B%BD%E5%AE%B6%E7%9A%84%E8%AF%9E%E7%94%9F-%E5%8D%81%E4%B8%80%E7%82%B9%E5%8D%8A/dp/B01C30EMLC/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1493863638&sr=1-1) 2017-05-04
+- [以色列：一个国家的诞生](https://www.amazon.cn/%e4%bb%a5%e8%89%b2%e5%88%97-%e4%b8%80%e4%b8%aa%e5%9b%bd%e5%ae%b6%e7%9a%84%e8%af%9e%e7%94%9f-%e5%8d%81%e4%b8%80%e7%82%b9%e5%8d%8a/dp/b01c30emlc/ref=sr_1_1?s=digital-text&ie=utf8&qid=1493863638&sr=1-1) 2017-05-04
 
-- [以色列2：在危机中生存](https://www.amazon.cn/%E4%BB%A5%E8%89%B2%E5%88%97-2-%E5%9C%A8%E5%8D%B1%E6%9C%BA%E4%B8%AD%E7%94%9F%E5%AD%98-%E5%8D%81%E4%B8%80%E7%82%B9%E5%8D%8A/dp/B01JI1LQAE/ref=sr_1_2?s=digital-text&ie=UTF8&qid=1493863638&sr=1-2) 2017-05-04
+- [以色列2：在危机中生存](https://www.amazon.cn/%e4%bb%a5%e8%89%b2%e5%88%97-2-%e5%9c%a8%e5%8d%b1%e6%9c%ba%e4%b8%ad%e7%94%9f%e5%ad%98-%e5%8d%81%e4%b8%80%e7%82%b9%e5%8d%8a/dp/b01ji1lqae/ref=sr_1_2?s=digital-text&ie=utf8&qid=1493863638&sr=1-2) 2017-05-04
 
-- [以色列3：赎罪日](https://www.amazon.cn/%E4%BB%A5%E8%89%B2%E5%88%97-3-%E8%B5%8E%E7%BD%AA%E6%97%A5-%E5%8D%81%E4%B8%80%E7%82%B9%E5%8D%8A/dp/B0716HQPM9/ref=sr_1_3?s=digital-text&ie=UTF8&qid=1493949827&sr=1-3) 2017-05-04
+- [以色列3：赎罪日](https://www.amazon.cn/%e4%bb%a5%e8%89%b2%e5%88%97-3-%e8%b5%8e%e7%bd%aa%e6%97%a5-%e5%8d%81%e4%b8%80%e7%82%b9%e5%8d%8a/dp/b0716hqpm9/ref=sr_1_3?s=digital-text&ie=utf8&qid=1493949827&sr=1-3) 2017-05-04
 
-- [迷思印度：七座圣城和她们的神话故事](https://www.amazon.cn/%E8%BF%B7%E6%80%9D%E5%8D%B0%E5%BA%A6-%E4%B8%83%E5%BA%A7%E5%9C%A3%E5%9F%8E%E5%92%8C%E5%A5%B9%E4%BB%AC%E7%9A%84%E7%A5%9E%E8%AF%9D%E6%95%85%E4%BA%8B-%E7%9F%A5%E4%B9%8E/dp/B06WVD6YTN/ref=sr_1_25?s=digital-text&ie=UTF8&qid=1493949856&sr=1-25) 2017-05-05
+- [迷思印度：七座圣城和她们的神话故事](https://www.amazon.cn/%e8%bf%b7%e6%80%9d%e5%8d%b0%e5%ba%a6-%e4%b8%83%e5%ba%a7%e5%9c%a3%e5%9f%8e%e5%92%8c%e5%a5%b9%e4%bb%ac%e7%9a%84%e7%a5%9e%e8%af%9d%e6%95%85%e4%ba%8b-%e7%9f%a5%e4%b9%8e/dp/b06wvd6ytn/ref=sr_1_25?s=digital-text&ie=utf8&qid=1493949856&sr=1-25) 2017-05-05
 
 - 面试加分项 2017-05-06
 
@@ -236,27 +236,27 @@ date: 2016-01-30 15:40:31
 
 - 生命中最美好的事都是免费的 2017-06-24
 
-- [阿米尔·汗：我行我素](https://www.amazon.cn/%E9%98%BF%E7%B1%B3%E5%B0%94-%E6%B1%97-%E6%88%91%E8%A1%8C%E6%88%91%E7%B4%A0-%E5%85%8B%E9%87%8C%E6%96%AF%E8%92%82%E5%A8%9C-%E4%B8%B9%E5%B0%BC%E5%B0%94%E6%96%AF/dp/B071KKNFGJ/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1498715630&sr=1-1) 2017-06-28
+- [阿米尔·汗：我行我素](https://www.amazon.cn/%e9%98%bf%e7%b1%b3%e5%b0%94-%e6%b1%97-%e6%88%91%e8%a1%8c%e6%88%91%e7%b4%a0-%e5%85%8b%e9%87%8c%e6%96%af%e8%92%82%e5%a8%9c-%e4%b8%b9%e5%b0%bc%e5%b0%94%e6%96%af/dp/b071kknfgj/ref=sr_1_1?s=digital-text&ie=utf8&qid=1498715630&sr=1-1) 2017-06-28
 
-- [mactalk人生元编程](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00ID5UV30/ref=sr_1_2?s=books&ie=UTF8&qid=1499089857&sr=1-2) 2017-07-03
+- [mactalk人生元编程](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b00id5uv30/ref=sr_1_2?s=books&ie=utf8&qid=1499089857&sr=1-2) 2017-07-03
 
-- [mactalk跨越边界](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B018R5L1UC/ref=sr_1_3?s=books&ie=UTF8&qid=1499651092&sr=1-3) 2017-07-07
+- [mactalk跨越边界](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b018r5l1uc/ref=sr_1_3?s=books&ie=utf8&qid=1499651092&sr=1-3) 2017-07-07
 
-- [鱼羊野史·第1卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00IZSPDRY/ref=sr_1_4?ie=UTF8&qid=1500344370&sr=8-4&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-12
+- [鱼羊野史·第1卷](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b00izspdry/ref=sr_1_4?ie=utf8&qid=1500344370&sr=8-4&keywords=%e9%b1%bc%e7%be%8a%e9%87%8e%e5%8f%b2) 2017-07-12
 
-- [鱼羊野史·第2卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00M2E55HU/ref=sr_1_9?ie=UTF8&qid=1500344370&sr=8-9&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-17
+- [鱼羊野史·第2卷](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b00m2e55hu/ref=sr_1_9?ie=utf8&qid=1500344370&sr=8-9&keywords=%e9%b1%bc%e7%be%8a%e9%87%8e%e5%8f%b2) 2017-07-17
 
 - [http小书](http://www.ituring.com.cn/book/1791) 2017-07-18
 
-- [鱼羊野史·第3卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00VDOJH1U/ref=sr_1_8?ie=UTF8&qid=1500549227&sr=8-8&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-20
+- [鱼羊野史·第3卷](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b00vdojh1u/ref=sr_1_8?ie=utf8&qid=1500549227&sr=8-8&keywords=%e9%b1%bc%e7%be%8a%e9%87%8e%e5%8f%b2) 2017-07-20
 
-- [半小时漫画中国史](https://www.amazon.cn/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2-%E4%BA%8C%E6%B7%B7%E5%AD%90/dp/B072ZVV8CK/ref=sr_1_1?ie=UTF8&qid=1501045665&sr=8-1&keywords=%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2) 2017-07-26
+- [半小时漫画中国史](https://www.amazon.cn/%e5%8d%8a%e5%b0%8f%e6%97%b6%e6%bc%ab%e7%94%bb%e4%b8%ad%e5%9b%bd%e5%8f%b2-%e4%ba%8c%e6%b7%b7%e5%ad%90/dp/b072zvv8ck/ref=sr_1_1?ie=utf8&qid=1501045665&sr=8-1&keywords=%e6%bc%ab%e7%94%bb%e4%b8%ad%e5%9b%bd%e5%8f%b2) 2017-07-26
 
-- [鱼羊野史·第4卷](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B013SE3JRK/ref=sr_1_7?ie=UTF8&qid=1501121012&sr=8-7&keywords=%E9%B1%BC%E7%BE%8A%E9%87%8E%E5%8F%B2) 2017-07-27
+- [鱼羊野史·第4卷](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b013se3jrk/ref=sr_1_7?ie=utf8&qid=1501121012&sr=8-7&keywords=%e9%b1%bc%e7%be%8a%e9%87%8e%e5%8f%b2) 2017-07-27
 
-- [半小时漫画中国史](https://www.amazon.cn/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2-%E4%BA%8C%E6%B7%B7%E5%AD%90/dp/B072ZVV8CK/ref=sr_1_1?ie=UTF8&qid=1501045665&sr=8-1&keywords=%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2)（二次阅读） 2017-07-28
+- [半小时漫画中国史](https://www.amazon.cn/%e5%8d%8a%e5%b0%8f%e6%97%b6%e6%bc%ab%e7%94%bb%e4%b8%ad%e5%9b%bd%e5%8f%b2-%e4%ba%8c%e6%b7%b7%e5%ad%90/dp/b072zvv8ck/ref=sr_1_1?ie=utf8&qid=1501045665&sr=8-1&keywords=%e6%bc%ab%e7%94%bb%e4%b8%ad%e5%9b%bd%e5%8f%b2)（二次阅读） 2017-07-28
 
-- [像计算机科学家一样思考java](https://www.amazon.cn/%E5%9B%BE%E4%B9%A6/dp/B00D36S64K/ref=sr_1_1?ie=UTF8&qid=1501424506&sr=8-1&keywords=%E5%83%8F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E5%AE%B6%E4%B8%80%E6%A0%B7%E6%80%9D%E8%80%83java) 2017-07-29
+- [像计算机科学家一样思考java](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b00d36s64k/ref=sr_1_1?ie=utf8&qid=1501424506&sr=8-1&keywords=%e5%83%8f%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%a7%91%e5%ad%a6%e5%ae%b6%e4%b8%80%e6%a0%b7%e6%80%9d%e8%80%83java) 2017-07-29
 
 - 劲羽飞凌：羽毛球 2017-07-31
 
@@ -266,11 +266,11 @@ date: 2016-01-30 15:40:31
 
 - 给孩子讲量子力学：大科学家讲给小朋友的前沿物理学 2017-08-05
 
-- [万万没想到：用理工科思维理解世界](https://www.amazon.cn/%E4%B8%87%E4%B8%87%E6%B2%A1%E6%83%B3%E5%88%B0-%E7%94%A8%E7%90%86%E5%B7%A5%E7%A7%91%E6%80%9D%E7%BB%B4%E7%90%86%E8%A7%A3%E4%B8%96%E7%95%8C-%E4%B8%87%E7%BB%B4%E9%92%A2/dp/B015DLP55A/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1502432648&sr=1-1) 2017-08-10
+- [万万没想到：用理工科思维理解世界](https://www.amazon.cn/%e4%b8%87%e4%b8%87%e6%b2%a1%e6%83%b3%e5%88%b0-%e7%94%a8%e7%90%86%e5%b7%a5%e7%a7%91%e6%80%9d%e7%bb%b4%e7%90%86%e8%a7%a3%e4%b8%96%e7%95%8c-%e4%b8%87%e7%bb%b4%e9%92%a2/dp/b015dlp55a/ref=sr_1_1?s=digital-text&ie=utf8&qid=1502432648&sr=1-1) 2017-08-10
 
-- [活着](https://www.amazon.cn/%E6%B4%BB%E7%9D%80-%E4%BD%99%E5%8D%8E/dp/B01ARNQKG2/ref=sr_1_1?ie=UTF8&qid=1502676601&sr=8-1&keywords=%E6%B4%BB%E7%9D%80) 2017-08-12
+- [活着](https://www.amazon.cn/%e6%b4%bb%e7%9d%80-%e4%bd%99%e5%8d%8e/dp/b01arnqkg2/ref=sr_1_1?ie=utf8&qid=1502676601&sr=8-1&keywords=%e6%b4%bb%e7%9d%80) 2017-08-12
 
-- [哲学家们都干了些什么？](https://www.amazon.cn/%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88-%E6%9E%97%E6%AC%A3%E6%B5%A9/dp/B0123MCPXM/ref=sr_1_1?ie=UTF8&qid=1502948615&sr=8-1&keywords=%E5%93%B2%E5%AD%A6%E5%AE%B6%E4%BB%AC%E9%83%BD%E5%B9%B2%E4%BA%86%E4%BA%9B%E4%BB%80%E4%B9%88) 2017-08-17
+- [哲学家们都干了些什么？](https://www.amazon.cn/%e5%93%b2%e5%ad%a6%e5%ae%b6%e4%bb%ac%e9%83%bd%e5%b9%b2%e4%ba%86%e4%ba%9b%e4%bb%80%e4%b9%88-%e6%9e%97%e6%ac%a3%e6%b5%a9/dp/b0123mcpxm/ref=sr_1_1?ie=utf8&qid=1502948615&sr=8-1&keywords=%e5%93%b2%e5%ad%a6%e5%ae%b6%e4%bb%ac%e9%83%bd%e5%b9%b2%e4%ba%86%e4%ba%9b%e4%bb%80%e4%b9%88) 2017-08-17
 
 - 黄金时代 2017-08-24
 
@@ -292,7 +292,7 @@ date: 2016-01-30 15:40:31
 
 - 漫步到宇宙尽头 2017-11-18
 
-- [半小时漫画中国史](https://www.amazon.cn/%E5%8D%8A%E5%B0%8F%E6%97%B6%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2-%E4%BA%8C%E6%B7%B7%E5%AD%90/dp/B072ZVV8CK/ref=sr_1_1?ie=UTF8&qid=1501045665&sr=8-1&keywords=%E6%BC%AB%E7%94%BB%E4%B8%AD%E5%9B%BD%E5%8F%B2)（三次阅读） 2017-11-23
+- [半小时漫画中国史](https://www.amazon.cn/%e5%8d%8a%e5%b0%8f%e6%97%b6%e6%bc%ab%e7%94%bb%e4%b8%ad%e5%9b%bd%e5%8f%b2-%e4%ba%8c%e6%b7%b7%e5%ad%90/dp/b072zvv8ck/ref=sr_1_1?ie=utf8&qid=1501045665&sr=8-1&keywords=%e6%bc%ab%e7%94%bb%e4%b8%ad%e5%9b%bd%e5%8f%b2)（三次阅读） 2017-11-23
 
 ### 2018年
 
@@ -324,7 +324,7 @@ date: 2016-01-30 15:40:31
 
 - 架构师（2017年5月）2018-04-05
 
-- 化茧成蝶：Go在FreeWheel服务化中的实践 2018-04-05
+- 化茧成蝶：go在freewheel服务化中的实践 2018-04-05
 
 - 好好说话：新鲜有趣的话术精进技巧 2018-04-13
 
@@ -382,7 +382,7 @@ date: 2016-01-30 15:40:31
 
 - 小学问（解决你的7种人生焦虑） 2018-08-28
 
-- 维权常识：知乎DoonnerDie作品（知乎「一小时」系列 14） 2018-08-28
+- 维权常识：知乎doonnerdie作品（知乎「一小时」系列 14） 2018-08-28
 
 - 编写可读代码的艺术 2018-09-19
 
@@ -446,7 +446,7 @@ date: 2016-01-30 15:40:31
 
 - python编程无师自通：专业程序员的养成 2019-03-04
 
-- 架构师特刊：微服务与DevOps技术内参 2019-04-16
+- 架构师特刊：微服务与devops技术内参 2019-04-16
 
 - 半小时漫画唐诗 2019-06-01
 
@@ -510,7 +510,7 @@ date: 2016-01-30 15:40:31
 
 - prometheus监控实战 2020-03-15
 
-- 深入浅出Prometheus：原理、应用、源码与拓展详解 2020-03-20
+- 深入浅出prometheus：原理、应用、源码与拓展详解 2020-03-20
 
 - 开放式组织 2020-03-22
 
@@ -529,6 +529,12 @@ date: 2016-01-30 15:40:31
 - cka/ckad应试指南：从docker到kubernetes完全攻略 2021-11-27
 
 - 每天5分钟玩转kubernetes 2021-12-16
+
+- 半小时漫画《论语》 2021-12-21
+
+- 零基础学好英语语法 2021-12-30
+
+- aws助理架构师认证备考宝典 2021-12-30
 
 > :) 未完待续......
 
