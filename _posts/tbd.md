@@ -81,3 +81,4 @@ https://kubernetes.io/zh/docs/tasks/administer-cluster/manage-resources/quota-me
 https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/
 https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/#accessing-the-api-from-within-a-pod
 
+# develop process: github + cicd + auto scan + PR + canary + push img
