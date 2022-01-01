@@ -540,7 +540,7 @@ date: 2016-01-30 15:40:31
 
 ## 2022年
 
-- 光速入门Prometheus+Grafana 2022-01-01
+- [光速入门Prometheus+Grafana](https://tkedocs.finops.cc/#/prome) 2022-01-01
 
 > :) 未完待续......
 
