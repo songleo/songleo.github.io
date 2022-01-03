@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 云原生之docker使用技巧
+title: 云原生之docker使用
 date: 2022-01-03 12:12:05
 ---
 
