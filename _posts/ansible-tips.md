@@ -22,6 +22,10 @@ $ ansible all --list-hosts
 ```
 ANSIBLE_CONFIG -> ./ansible.cfg -> ~/.ansible.cfg -> /etc/ansible/ansible.cfg
 ```
-- 
-
+- ansible运行命令格式如下：
+```
+ansible host-pattern -m module [-a 'module arguments'] [-i inventory]
+```
+-
+ ansible all -m copy -a 'content="Managed by Ansible\n" dest=/etc/motd' -u ssli --become
 > :) 未完待续......
