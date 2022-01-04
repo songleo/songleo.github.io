@@ -1,7 +1,7 @@
 ---
 layout: post
-title: ansible tips
-date: 2021-12-15 00:12:05
+title: ansible学习
+date: 2022-01-04 00:12:05
 ---
 
 - all表示所有host
