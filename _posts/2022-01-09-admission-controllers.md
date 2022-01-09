@@ -13,7 +13,7 @@ date: 2022-01-04 00:12:05
     - --enable-admission-plugins=NodeRestriction
 ```
 
-这里创建ResourceQuota准入控制器，限制只能创建1个pod，演示其工作过程：
+默认情况下ResourceQuota已经启用，这里通过配置ResourceQuota准入控制器，限制只能创建1个pod，演示其工作过程：
 
 ```
 # cat <<EOF | kubectl apply -f -
