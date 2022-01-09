@@ -63,7 +63,7 @@ This message shows that your installation appears to be working correctly.
 ...
 ```
 
-可以看到，如果运行的容器没有启用seccomp，就会无法运行。
+可以看到，如果运行的容器没有启用seccomp，就会无法运行。还可以定义其他规则，比如检查user的权限等，都可以通过策略文件实现精确控制。
 
 ### 参考
 
