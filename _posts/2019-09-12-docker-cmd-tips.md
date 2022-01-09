@@ -41,4 +41,10 @@ docker save -o images.tar img1:9.6 img2:3.4
 docker load -i images.tar
 ```
 
+- 扫描docker漏洞
+
+```
+trivy registry.access.redhat.com/ubi8/ubi-minimal:latest
+```
+
 > :) 未完待续......

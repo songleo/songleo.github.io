@@ -39,7 +39,7 @@ chmod +x /usr/local/bin/argocd
 ```
 ## 登录argocd
 
-通过以下命令获取登录密码：
+通过以下命令获取admin用户的登录密码：
 
 ```
 k get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
