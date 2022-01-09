@@ -42,23 +42,23 @@ Error from server (Forbidden): pods "pod2" is forbidden: exceeded quota: pod-lim
 配置api-server的启动参数，关闭ResourceQuota准入控制器，再次运行之前的命令：
 
 ```
-root@master:/etc/kubernetes/manifests# pwd
+# pwd
 /etc/kubernetes/manifests
-root@master:/etc/kubernetes/manifests# grep admission-plugins kube-apiserver.yaml
+# grep admission-plugins kube-apiserver.yaml
     - --enable-admission-plugins=NodeRestriction
     - --disable-admission-plugins=ResourceQuota
-root@master:/etc/kubernetes/manifests# systemctl daemon-reload ; systemctl restart kubelet
-root@master:/etc/kubernetes/manifests# k get quota
+# systemctl daemon-reload ; systemctl restart kubelet
+# k get quota
 NAME        AGE   REQUEST     LIMIT
 pod-limit   14m   pods: 1/1
-root@master:/etc/kubernetes/manifests# k get po
+# k get po
 NAME   READY   STATUS    RESTARTS   AGE
 pod1   1/1     Running   0          13m
-root@master:/etc/kubernetes/manifests# k run pod2 --image=nginx
+# k run pod2 --image=nginx
 pod/pod2 created
-root@master:/etc/kubernetes/manifests# k run pod3 --image=nginx
+# k run pod3 --image=nginx
 pod/pod3 created
-root@master:/etc/kubernetes/manifests# k get po
+# k get po
 NAME   READY   STATUS              RESTARTS   AGE
 pod1   1/1     Running             0          14m
 pod2   1/1     Running             0          14s
