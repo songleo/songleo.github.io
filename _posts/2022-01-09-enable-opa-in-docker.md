@@ -29,7 +29,7 @@ seccomp_unconfined {
 }
 ```
 
-该策略会拒绝disable seccomp的容器运行，策略文件rego语言定义规则。
+该策略会拒绝disable seccomp的容器运行，策略文件使用rego语言定义规则。
 
 ### 安装opa插件
 
@@ -48,7 +48,7 @@ $ docker info | grep opa
   Authorization: openpolicyagent/opa-docker-authz-v2:0.4
 ```
 
-这里需要注意的时，安装的插件默认会mount宿主机的/etc/docker/目录到插件中的/opa目录，这就是为什么我们创建的策略文件authz.rego是位于/etc/docker/目录，安装插件指定的策略文件目录却是/opa。
+这里需要注意的是，安装插件默认会mount宿主机的/etc/docker/目录到插件中的/opa目录，这就是为什么我们创建的策略文件authz.rego是位于/etc/docker/目录，安装插件指定的策略文件目录却是/opa。
 
 ### 测试策略是否生效
 
