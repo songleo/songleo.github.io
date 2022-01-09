@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在docker上启用opa
+title: 在docker上启用open policy agent
 date: 2022-01-09 00:12:05
 ---
 
