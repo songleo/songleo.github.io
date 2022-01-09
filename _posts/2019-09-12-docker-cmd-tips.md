@@ -44,6 +44,7 @@ docker load -i images.tar
 - 扫描docker漏洞
 
 ```
+# 需要安装trivy
 trivy registry.access.redhat.com/ubi8/ubi-minimal:latest
 ```
 
