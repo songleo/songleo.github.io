@@ -34,7 +34,6 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    name: ''
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
@@ -55,6 +54,8 @@ hostname-54fcb96656-f5rk4   1/1     Running   0          10s
 ```
 
 可以看到，deployment启动后只有一个pod，实现在部署app前修改参数的目的。
+
+还可以通过添加sidecar方式配置插件，build自己的image和argo server一起运行，实现更复杂的配置管理功能。
 
 ### 参考文档
 
