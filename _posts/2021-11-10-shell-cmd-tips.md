@@ -66,6 +66,12 @@ set -o pipefail # 适用于管道命令
 set -x
 ```
 
+- curl直接运行脚本
+
+```
+curl https://raw.githubusercontent.com/stolostron/multicluster-observability-operator/main/tools/switch-to-grafana-admin.sh | bash -s -- kube:admin
+```
+
 - xargs传递变量
 
 ```
