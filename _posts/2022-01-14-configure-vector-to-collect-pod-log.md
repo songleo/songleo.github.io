@@ -7,7 +7,7 @@ date: 2022-01-14 00:12:05
 
 ### 安装vector
 
-使用helm方式安装vector。
+使用helm方式安装vector，这里只安装Agent，Agent主要负责收集kubernetes集群节点上的所有日志。
 
 ```
 $ helm repo add vector https://helm.vector.dev
