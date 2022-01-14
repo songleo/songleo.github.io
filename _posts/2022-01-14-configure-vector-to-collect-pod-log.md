@@ -70,7 +70,7 @@ data:
           codec: json
 ...
 ```
-### 修改vector配置文件收集特定pod日志
+### 修改vector配置文件收集指定pod日志
 
 删除其他配置，最终配置如下：
 
@@ -103,9 +103,11 @@ data:
 找到pod运行节点，这里看到运行节点是aks-agentpool-35516588-vmss000001：
 
 ```
-$ k get po -o wide
-NAME                                              READY   STATUS    RESTARTS   AGE   IP            NODE                                NOMINATED NODE   READINESS GATES
-metrics-collector-deployment-5487dd7f6d-r9dt2     1/1     Running   0          12m   10.244.2.24   aks-agentpool-35516588-vmss000001   <none>           <none>
+$ k get po -l component=metrics-collector -o wide
+NAME                                            READY   STATUS    RESTARTS   AGE   IP            NODE                                NOMINATED NODE   READINESS GATES
+metrics-collector-deployment-5487dd7f6d-r9dt2   1/1     Running   0          72m   10.244.2.24   aks-agentpool-35516588-vmss000001   <none>           <none>
+$ k logs metrics-collector-deployment-5487dd7f6d-r9dt2 | grep 'Metrics pushed successfully'
+level=info caller=logger.go:45 ts=2022-01-14T08:32:16.784534925Z component=forwarder component=metricsclient msg="Metrics pushed successfully"
 ```
 
 然后查看运行在该节点的vector的pod日志：
