@@ -208,7 +208,7 @@ metadata:
         source: . = parse_apache_log!(.message, "combined")
 ```
 
-过滤状态码不是200的日志：
+只保留状态码不等于200的日志：
 
 ```
       non_2xx_log:
