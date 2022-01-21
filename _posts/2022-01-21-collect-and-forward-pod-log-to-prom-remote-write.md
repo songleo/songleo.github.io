@@ -236,7 +236,11 @@ metadata:
               status: "{{status}}"
 ```
 
-这里使用的是counter类型的指标。最后可以从vector pod中查看打印的日志，如下：
+这里使用的是counter类型的指标。
+
+## 验证收集的日志
+
+可以从vector pod中查看打印的日志，如下：
 
 - 装换成apache标准格式日志
 
@@ -297,7 +301,9 @@ automation_controller_web_response_total{
 }
 ```
 
-可以基于上面的metric定义相应的alert rule，如果pod打印非200的日志，就可以触发一条alert，知道某个集群上的服务出现问题，在ACM Hub端创建相应的alert rule：
+## 创建alert
+
+基于上面的metric定义相应的alert rule，如果pod打印非200的日志，就可以触发一条alert，知道某个集群上的服务出现问题，在ACM Hub端创建相应的alert rule：
 
 ```
 kind: ConfigMap
