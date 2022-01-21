@@ -303,7 +303,7 @@ automation_controller_web_response_total{
 
 ## 创建alert
 
-基于上面的metric定义相应的alert rule，如果pod打印非200的日志，就可以触发一条alert，知道某个集群上的服务出现问题，在ACM Hub端创建相应的alert rule：
+基于上面的metric定义相应的alert rule，如果收集到状态码为500的日志，就可以触发一条alert，知道某个集群上的服务出现问题，在ACM Hub端创建相应的alert rule：
 
 ```
 kind: ConfigMap
