@@ -99,4 +99,22 @@ $ match("GET /api/v2/metrics/ HTTP/1.1", r'GET /api/v2/metrics[/]? HTTP/1.1')
 true
 ```
 
+- vrl错误列表
+
+```
+https://vector.dev/docs/reference/vrl/errors/
+```
+
+- vrl函数列表
+
+```
+https://vector.dev/docs/reference/vrl/functions/
+```
+
+- vrl示例
+
+```
+https://vector.dev/docs/reference/vrl/examples/
+```
+
 > :) 未完待续......
