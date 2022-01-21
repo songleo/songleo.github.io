@@ -17,7 +17,7 @@ date: 2022-01-21 00:12:05
 
 - 将日志转发到prometheus remote write
 
-需要讲日志先装换成metric类型。
+需要将日志先装换成metric类型。
 
 ```
     sinks:
