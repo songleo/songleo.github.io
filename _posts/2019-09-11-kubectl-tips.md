@@ -154,6 +154,18 @@ kubectl config set-context --current --namespace=open-cluster-management-observa
 kubectl -n acm-observability-china patch clusterpool obs-china-aws-4616 --patch '{"spec":{"size":3}}' --type=merge
 ```
 
+- 获取指定字段
+
+```
+oc get route observatorium-api -o jsonpath="{.spec.host}"
+```
+
+- 获取secret的value
+
+```
+oc get secret client-cert -o jsonpath="{.data.tls\.key}" | base64 -d > tls.key
+```
+
 - kubectl自动补齐
 
 ```

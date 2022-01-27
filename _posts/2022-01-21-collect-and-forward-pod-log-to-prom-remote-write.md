@@ -75,7 +75,7 @@ data:
         type: prometheus_remote_write
         inputs:
           - log_to_metric_id
-        endpoint: endpoint: https://prometheus_remote_write_url/v1/receive
+        endpoint: https://prometheus_remote_write_url/v1/receive
         default_namespace: automation_controller_web
         tls:
           ca_file: /tlscerts/ca/ca.crt
