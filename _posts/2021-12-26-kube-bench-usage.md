@@ -1,6 +1,6 @@
 ---
 layout: post
-title: kuben-bench使用
+title: kube-bench使用
 date: 2021-12-26 00:12:05
 ---
 

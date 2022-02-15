@@ -166,6 +166,12 @@ oc get route observatorium-api -o jsonpath="{.spec.host}"
 oc get secret client-cert -o jsonpath="{.data.tls\.key}" | base64 -d > tls.key
 ```
 
+- configmap替换换行符
+
+```
+k get cm prometheus-k8s-config -o json | jq '.data."prometheus.yaml"' -r
+```
+
 - kubectl自动补齐
 
 ```
