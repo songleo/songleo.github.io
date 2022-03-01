@@ -22,4 +22,14 @@ amtool --alertmanager.url=http://localhost:9093 silence
 amtool check-config alert.yaml
 ```
 
+- alert解决后需要通知
+
+```
+receivers：
+- name: slack
+  slack_configs:
+    - channel: '#monitoring'
+      send_resolved: true
+```
+
 > :) 未完待续......
