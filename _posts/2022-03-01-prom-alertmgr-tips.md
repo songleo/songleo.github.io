@@ -1,7 +1,7 @@
 ---
 layout: post
 title: prometheus&alertmanager tips
-date: 2022-03-01 12:12:05
+date: 2022-03-01 00:12:05
 ---
 
 - 查看warning级别的alert
