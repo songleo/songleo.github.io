@@ -93,11 +93,35 @@ amtool check-config alert.yaml
 - alert解决后需要通知
 
 ```
-receivers：
-- name: slack
-  slack_configs:
-    - channel: '#monitoring'
-      send_resolved: true
+send_resolved: true
+```
+
+- alert匹配配置
+
+```
+match // alert按标签完全匹配
+match_re // alert按标签正则匹配
+```
+
+- alert分组
+
+```
+group_by: ['alertname', 'cluster', 'service'] // 具有这些标签的alerts被分为一个组，聚合多条alerts成一条alert发送
+group_by: [...] // 禁用分组
+```
+
+- 相同alert发送间隔
+
+```
+group_interval: 5m
+repeat_interval: 3h // 收到告警后，一个分组被创建，等待5分钟发送组内告警，如果后续组内的告警信息相同，这些告警会在3小时后发送，但是3小时内这些告警不会被发送。
+```
+
+- 是否继续匹配子路由
+
+```
+continue: false // 匹配到就发送
+continue: true // 继续匹配子路由，alert会被发送到多个receiver
 ```
 
 > :) 未完待续......
