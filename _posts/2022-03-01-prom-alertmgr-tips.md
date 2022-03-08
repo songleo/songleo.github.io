@@ -17,7 +17,7 @@ groups:
   - name: example
     rules:
     - record: job:http_inprogress_requests:sum
-      expr: sum(http_inprogress_requests) by (job)
+      expr: sum(http_inprogress_requests) bysc (job)
 ```
 
 - histogram_quantile使用：从bucket类型的向量b中计算φ(0 ≤ φ ≤ 1)分位数的样本的最大值
@@ -55,6 +55,29 @@ cpu温度在2个小时之间的差异。
 ```
 topk(10, http_requests_total)
 ```
+
+- increase使用：计算2分钟的增长量
+
+```
+increase(kube_pod_container_status_restarts_total[2m])
+
+increase(kube_pod_container_status_restarts_total[2m]) / 120 // rate(kube_pod_container_status_restarts_total[2m])
+```
+
+- xxx_over_time：计算指定时间范围内区间向量内每个度量指标
+
+  - avg_over_time(range-vector)：平均值
+  - min_over_time(range-vector)：最小值
+  - max_over_time(range-vector)：最大值
+  - sum_over_time(range-vector)：求和
+  - count_over_time(range-vector)：样本数据个数
+  - quantile_over_time(scalar, range-vector)：样本数据值分位数，φ-quantile (0 ≤ φ ≤ 1)
+  - stddev_over_time(range-vector)：总体标准差
+  - stdvar_over_time(range-vector)：总体标准方差
+
+- 时间范围：[15m:1m]
+
+表示取15分钟内的样本数据，按每分钟分为1断，例如max_over_time(kube_pod_container_status_restarts_total{namespace="ansible-automation-platform"}[15m:1m])
 
 - rate使用：过去5分钟请求增长率
 
@@ -122,6 +145,18 @@ repeat_interval: 3h // 收到告警后，一个分组被创建，等待5分钟�
 ```
 continue: false // 匹配到就发送
 continue: true // 继续匹配子路由，alert会被发送到多个receiver
+```
+
+- awesome prometheus alets
+
+```
+https://awesome-prometheus-alerts.grep.to/rules.html
+```
+
+- 在线验证relabeling
+
+```
+https://relabeler.promlabs.com/
 ```
 
 > :) 未完待续......
