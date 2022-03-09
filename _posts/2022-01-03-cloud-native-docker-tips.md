@@ -14,7 +14,7 @@ date: 2022-01-03 12:12:05
 
 - 指定特定的image标签，比如commit id或者v1.0等，尽量不要使用latest标签，会导致不一致行为
 
-- 尽量减小容器镜像的体积，方便部署是快速运行，更小的体积也以为着更少的依赖和漏洞，只在镜像中包含必要的文件，一般建议通过docker分阶段build减少不必要的文件，或者使用体积更小的base image比如alpine
+- 尽量减小容器镜像的体积，方便部署且快速运行，更小的体积也以为着更少的依赖和漏洞，只在镜像中包含必要的文件，一般建议通过docker分阶段build减少不必要的文件，或者使用体积更小的base image比如alpine
 
 - 在kubernetes中尽量将image pull policy设置成ifnotpresent，加快应用运行速度，也确保在非联网环境pod能正常启动
 
