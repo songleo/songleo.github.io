@@ -20,4 +20,10 @@ date: 2022-03-09 00:12:05
 
 - ROSA (Red Hat OpenShift Service on AWS)
 
+- SLI (Service Level Indicator)
+
+- SLO (Service Level Object)
+
+- SLA (Service Level Agreement)
+
 > :) 未完待续......
