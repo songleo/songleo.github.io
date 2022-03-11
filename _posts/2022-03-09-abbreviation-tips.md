@@ -26,6 +26,6 @@ date: 2022-03-09 00:12:05
 
 - SLA (Service Level Agreement)
 
-- IDP (Identify provider)
+- IDP (IDentify Provider)
 
 > :) 未完待续......
