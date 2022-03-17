@@ -126,6 +126,18 @@ match // alert按标签完全匹配
 match_re // alert按标签正则匹配
 ```
 
+- alertmanager receiver代理配置
+
+```
+receivers:
+  - name: default-receiver
+    slack_configs:
+    - channel: alerts
+      http_config:
+        proxy_url: http://proxy.com:1234
+```
+
+
 - alert分组
 
 ```
