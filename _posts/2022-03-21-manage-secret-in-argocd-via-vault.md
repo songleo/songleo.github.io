@@ -122,7 +122,7 @@ passwd      admin
 username    user1
 ```
 
-## 以gitop方式部署secret
+## 以gitop方式部署[secret](https://github.com/songleo/argocd-demo/blob/main/vault/vault-secret.yaml)
 
 部署secret到argo，并启用vault插件：
 
