@@ -146,7 +146,6 @@ spec:
       name: argocd-vault-plugin
   syncPolicy:
     automated: {}
-[soli.hosts.dev.upshift.rdu2.redhat.com] [10:10:45 AM]
 $ k apply -f vault-demo.yaml
 application.argoproj.io/vault-demo created
 ```
