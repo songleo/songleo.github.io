@@ -137,7 +137,6 @@ receivers:
         proxy_url: http://proxy.com:1234
 ```
 
-
 - alert分组
 
 ```
