@@ -66,7 +66,7 @@ data:
         args: ["generate", "./"]
 ```
 
-这里需要特别将vault的连接信息已环境变量的方式传递给argocd，vault插件提供了3中方式连接vault，这里以token方式连接vault获取secret信息：
+这里需要将vault的连接信息以环境变量的方式传递给argocd，vault插件提供了3中方式连接vault，这里以token方式连接vault：
 
 ```
 $ cat vault-secret.yaml
@@ -83,7 +83,7 @@ metadata:
 type: Opaque
 ```
 
-确保将该连接信息已环境变量形式传递给argocd-repo-server容器，配置如下：
+确保将该连接信息以环境变量形式传递给argocd-repo-server容器，配置如下：
 
 ```
         envFrom:
