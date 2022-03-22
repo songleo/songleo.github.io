@@ -178,7 +178,7 @@ $ echo  dXNlcjE= | base64 -d
 user1
 ```
 
-可以看到，secret已经被成功替换成在vault中设置的机密信息。如果提示一下错误，有可能是没有启用vault插件或者vault插件不能正常工作，导致没有替换secret信息：
+可以看到，secret已经被成功替换成在vault中设置的机密信息。如果提示以下错误，有可能是没有启用vault插件或者vault插件不能正常工作，导致没有替换secret信息：
 
 ```
 Invalid value: "<secret contents redacted>": invalid character ''<'' lookingfor beginning of value'
