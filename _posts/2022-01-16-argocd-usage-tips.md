@@ -52,4 +52,12 @@ data:
 ...
 ```
 
+- 资源同步顺序
+
+```
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+```
+
 > :) 未完待续......
