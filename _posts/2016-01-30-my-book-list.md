@@ -6,7 +6,7 @@ date: 2016-01-30 15:40:31
 
 ### 2022年
 
-- [光速入门Prometheus+Grafana](https://tkedocs.finops.cc/#/prome) 2022-01-01
+- [光速入门prometheus+grafana](https://tkedocs.finops.cc/#/prome) 2022-01-01
 
 - 云原生：运用容器、函数计算和数据构建下一代应用 2022-01-03
 
