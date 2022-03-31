@@ -170,4 +170,11 @@ https://awesome-prometheus-alerts.grep.to/rules.html
 https://relabeler.promlabs.com/
 ```
 
+
+- 判断某个prometheus job down
+
+```
+absent(up{job="kube-controller-manager"} == 1)
+```
+
 > :) 未完待续......
