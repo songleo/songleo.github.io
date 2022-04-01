@@ -13,5 +13,6 @@ date: 2022-03-25 12:12:05
 - i will book the meeting room that is available for 10 people.
 - i hope the report can be brief and to the point.
 - i'll do it right now.
+- we will be away on business on saturday.
 
 > :) 未完待续......
