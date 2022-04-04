@@ -16,7 +16,7 @@ playback就是将你上一个sprint（一般2周一个sprint）做的事情给�
 
 ## knowledge sharing
 
-knowledge sharing就是小组内定期举行的知识分享，比如你最近学了什么东西，做了那些feature，有什么好用的工具，读了什么书等等，都可以去share，这个和playback不同，playback一定是和产品、用户或者项目相关，knowledge sharing就没有这个规定，你只要觉得这个东西对别人有用，就可以去分享。大家相互学习，相互分享，不管是对个人成长，还是对整个team文化塑造，都很有意义。很多东西你自己学了是一回事，能给别人讲明白又是另外一回事，我一直很喜欢knowledge sharing，觉得share这个词太有意义了。
+knowledge sharing就是小组内定期举行的知识分享，比如你最近学了什么东西，做了哪些feature，有什么好用的工具，读了什么书等等，都可以去share，这个和playback不同，playback一定是和产品、用户或者项目相关，knowledge sharing就没有这个规定，你只要觉得这个东西对别人有用，就可以去分享。大家相互学习，相互分享，不管是对个人成长，还是对整个team文化塑造，都很有意义。很多东西你自己学了是一回事，能给别人讲明白又是另外一回事，我一直很喜欢knowledge sharing，觉得share这个词太有意义了。
 
 ## team building
 

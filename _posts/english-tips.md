@@ -14,5 +14,6 @@ date: 2022-03-25 12:12:05
 - i hope the report can be brief and to the point.
 - i'll do it right now.
 - we will be away on business on saturday.
+- where can i get the customers' information?
 
 > :) 未完待续......
