@@ -15,5 +15,8 @@ date: 2022-03-25 12:12:05
 - i'll do it right now.
 - we will be away on business on saturday.
 - where can i get the customers' information?
+- what time did you arrive at the airport?
+- what is the rate (how much is that)? 
+- you get 10% off if you book online.
 
 > :) 未完待续......
