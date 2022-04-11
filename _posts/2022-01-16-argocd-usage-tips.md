@@ -37,6 +37,14 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj-labs/appli
 ...
 ```
 
+- 忽略app生成的resouce
+
+```
+...
+argocd.argoproj.io/compare-options: IgnoreExtraneous
+...
+```
+
 - 修改argocd cm配置plugin
 
 ```
