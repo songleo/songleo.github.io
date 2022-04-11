@@ -99,6 +99,12 @@ amtool --alertmanager.url=http://localhost:9093 silence
 amtool check-config alert.yaml
 ```
 
+- 模拟一个alert
+
+```
+curl -d '[{"labels": {"Alertname": "Test"}}]' http://localhost:9093/api/v1/alerts
+```
+
 - 抑制规则例子
 
 ```
