@@ -45,6 +45,13 @@ argocd.argoproj.io/compare-options: IgnoreExtraneous
 ...
 ```
 
+- 从vault读取数据
+
+```
+    avp.kubernetes.io/path: "/path/data/key"
+    avp.kubernetes.io/secret-version: "5"
+```
+
 - 修改argocd cm配置plugin
 
 ```
