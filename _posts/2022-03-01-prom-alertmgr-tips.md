@@ -176,6 +176,16 @@ https://awesome-prometheus-alerts.grep.to/rules.html
 https://relabeler.promlabs.com/
 ```
 
+- 配置错误信息汇总
+
+  - url配置格式不对
+  ```
+  $ amtool check-configt tmp.yaml
+  Checking 'tmp.yaml'  FAILED: unsupported scheme "" for URL
+
+  amtool: error: failed to validate 1 file(s)
+
+  ```
 
 - 判断某个prometheus job down
 
