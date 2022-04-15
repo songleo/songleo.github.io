@@ -140,6 +140,7 @@ curl -X GET http://localhost:8001
 
 ```
 oc debug node/worker001
+chroot /host
 ```
 
 - 切换namespace
