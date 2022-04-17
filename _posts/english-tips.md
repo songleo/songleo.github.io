@@ -18,5 +18,7 @@ date: 2022-03-25 12:12:05
 - what time did you arrive at the airport?
 - what is the rate (how much is that)? 
 - you get 10% off if you book online.
+- i will return to work on monday/16 september 2016
+- could i take a leave on nexe Monday for medical reason?
 
 > :) 未完待续......
