@@ -130,6 +130,12 @@ send_resolved: true
 ```
 match // alert按标签完全匹配
 match_re // alert按标签正则匹配
+
+routes:
+  - matchers:
+      - severity =~ "warning|critical"
+      - alertname !~ "Watchdog|UpdateAvailable|ViolatedPolicyReport|AlertmanagerReceiversNotConfigured"
+    receiver: default-receiver
 ```
 
 - alertmanager receiver代理配置
