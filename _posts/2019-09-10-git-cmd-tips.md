@@ -41,6 +41,12 @@ git clone url.git new_name
 git reset --hard ID
 ```
 
+- 回滚之前的某次提交，保留本地修改
+
+```
+git reset ID
+```
+
 - 提交一个空commit
 
 ```

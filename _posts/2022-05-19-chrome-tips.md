@@ -1,7 +1,7 @@
 ---
 layout: post
 title: chrome使用tips
-date: 2022-01-04 00:12:05
+date: 2022-05-19 00:12:05
 ---
 
 - cmd + shift + t：恢复关闭的tab
