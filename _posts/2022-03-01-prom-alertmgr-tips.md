@@ -156,12 +156,14 @@ group_by: ['alertname', 'cluster', 'service'] // 具有这些标签的alerts被�
 group_by: [...] // 禁用分组
 ```
 
-- 相同alert发送间隔
+- alert发送间隔
+
+如果按一下配置，alert触发后，一个分组被创建，会等待5分钟才会发送给receiver，然后每隔2分钟检查group中的alert状态，如果有新的alert，则发送给receiver，如果没有新的alert，后续就会每隔6分钟发送一次alert，因为每个2分钟检查一次alert状态，检查2次alert状态才4分钟，没有大于repeat_interval，所以经过3次检查后，6分钟发送一次重复的alert。
 
 ```
-group_wait: 5m // alert触发后，会等待5分钟再发送给receiver
-group_interval: 2m // 然后每隔2分钟检查group中的alert状态
-repeat_interval: 4m // 收到告警后，一个分组被创建，等待5分钟发送组内告警，如果后续组内的告警信息相同，这些告警会在6分钟后发送，但是6分钟内这些告警不会被发送，后续就会按每6（2 + 4）分钟发送一次警告
+group_wait: 5m
+group_interval: 2m
+repeat_interval: 4m
 ```
 
 - 是否继续匹配子路由
