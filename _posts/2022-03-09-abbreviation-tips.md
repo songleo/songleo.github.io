@@ -17,5 +17,7 @@ date: 2022-03-09 00:12:05
 - SLA (Service Level Agreement)
 - SLI (Service Level Indicator)
 - SLO (Service Level Object)
+- RHODF (Red Hat OpenShift Data Foundation)
+- RHOCS (Red Hat OpenShift Container Storage)
 
 > :) 未完待续......
