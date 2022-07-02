@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 家用运行手册
+title: 家庭运行手册
 date: 2022-07-02 12:12:05
 ---
 
