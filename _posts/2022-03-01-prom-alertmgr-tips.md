@@ -85,7 +85,7 @@ increase(kube_pod_container_status_restarts_total[2m]) / 120 // rate(kube_pod_co
 rate(http_requests_total[5m])
 ```
 
-例如过去5分钟样本值是：[1, 2, 3, 10, 31]，则rate(http_requests_total[5m])为31 - 1/(5*60) = 0.1，即平均每秒钟增长0.1，300秒钟增加了30次（31-1)，rate一般用于counter类指标。和聚合相关函数使用时，先调用rate，否则rate不知道计数器是否被重置。
+例如过去5分钟样本值是：[1, 2, 3, 10, 31]，则rate(http_requests_total[5m])为(31 - 1)/(5*60) = 0.1，即平均每秒钟增长0.1，300秒钟增加了30次（31-1)，rate一般用于counter类指标。和聚合相关函数使用时，先调用rate，否则rate不知道计数器是否被重置。
 
 - 查看静默的alert
 
