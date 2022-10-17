@@ -26,6 +26,18 @@ $ ansible all --list-hosts
 ANSIBLE_CONFIG -> ./ansible.cfg -> ~/.ansible.cfg -> /etc/ansible/ansible.cfg
 ```
 
+- 查看facts变量
+
+```
+ansible <hostname> -m ansible.builtin.setup
+```
+
+- 使用magic变量
+
+```
+{{ hostvars['test.example.com']['ansible_facts']['distribution'] }}
+```
+
 - ansible运行命令格式如下：
 
 ```
