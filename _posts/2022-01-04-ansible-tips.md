@@ -33,6 +33,33 @@ ANSIBLE_CONFIG -> ./ansible.cfg -> ~/.ansible.cfg -> /etc/ansible/ansible.cfg
    become: yes
    vars:
      share_path: /mnt/nfsroot
+     nfs_ip: "{{ hostvars['nfs']['ansible_default_ipv4']['address'] }}"
+     nfs_hostname: "{{ hostvars['nfs']['ansible_hostname'] }}"
+
+
+   vars_files:
+     - /home/ansible/user-list.txt
+
+```
+
+- 定义handler
+
+```
+     - name: configure exports
+       template:
+         src: /home/ansible/exports.j2
+         dest: /etc/exports
+       notify: update nfs
+   handlers:
+     - name: update nfs exports
+       command: exportfs -a
+       listen: update nfs
+```
+
+- 加密文件
+
+```
+ansible-vault encrypt /home/ansible/confidential
 ```
 
 - 查看facts变量
@@ -97,6 +124,34 @@ ansible-doc -s service # 仅输出示例
          path: /etc/hosts
          line: "ansible.xyzcorp.com 169.168.0.1"
 
+       // manage service
+       service:
+         name: nfs-server
+         state: started
+         enabled: yes
+
+       // use template
+       template:
+         src: /home/ansible/exports.j2
+         dest: /etc/exports
+
+       // check file status
+       stat:
+         path: /opt/user-agreement.txt
+         register: filestat
+
+       // run cmd
+       command: /opt/data-job.sh
+       async: 600
+       poll: 0
+       tags:
+         - data-job
+
+       // create user when file exist
+       user:
+         name: "{{ item }}"
+       when:  filestat.stat.exists
+       loop: "{{ users }}"
 ```
 
 > :) 未完待续......
