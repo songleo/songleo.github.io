@@ -26,6 +26,15 @@ $ ansible all --list-hosts
 ANSIBLE_CONFIG -> ./ansible.cfg -> ~/.ansible.cfg -> /etc/ansible/ansible.cfg
 ```
 
+- playbook中定义变量
+
+```
+ - hosts: nfs
+   become: yes
+   vars:
+     share_path: /mnt/nfsroot
+```
+
 - 查看facts变量
 
 ```
@@ -58,6 +67,36 @@ ansible host-pattern -m module [-a 'module arguments'] [-i inventory]
 ansible-doc -l # 列出所有模块
 ansible-doc service
 ansible-doc -s service # 仅输出示例
+```
+
+- 常见模块
+
+```
+       // copy file
+       copy:
+         src: /home/ansible/scripts.tgz
+         dest: /mnt/storage/
+       
+       // create user
+       user:
+         name: xyzcorp_network
+         state: present
+
+       // install pkg
+       yum:
+         name: nmap-ncat
+         state: latest
+
+       // install pkg
+       package:
+         name: elinks
+         state: latest
+
+       // update fine
+       lineinfile:
+         path: /etc/hosts
+         line: "ansible.xyzcorp.com 169.168.0.1"
+
 ```
 
 > :) 未完待续......
