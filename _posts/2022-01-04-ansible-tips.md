@@ -42,6 +42,16 @@ ANSIBLE_CONFIG -> ./ansible.cfg -> ~/.ansible.cfg -> /etc/ansible/ansible.cfg
 
 ```
 
+- 命令行调用module
+
+```
+ansible host-pattern -m module [-a 'module arguments'] [-i inventory]
+
+ansible qa-servers -b -m unarchive -a "src=/tmp/enigma.tgz dest=/opt/ remote_src=yes"
+
+ansible qa-servers -b -m lineinfile -a "regexp=DEPLOY_CODE line=CODE_RED path=/opt/enigma/details.txt"
+```
+
 - 定义handler
 
 ```
@@ -72,12 +82,6 @@ ansible <hostname> -m ansible.builtin.setup
 
 ```
 {{ hostvars['test.example.com']['ansible_facts']['distribution'] }}
-```
-
-- ansible运行命令格式如下：
-
-```
-ansible host-pattern -m module [-a 'module arguments'] [-i inventory]
 ```
 
 - 检查playbook语法
@@ -129,6 +133,14 @@ ansible-doc -s service # 仅输出示例
          name: nfs-server
          state: started
          enabled: yes
+
+       // create file or dir
+       file:
+         state: directory
+         path: /home/noc/.ssh
+         mode: 0600
+         owner: noc
+         group: noc
 
        // use template
        template:
