@@ -28,6 +28,10 @@ date: 2016-01-30 15:40:31
 
 - 手把手教你买基金 2022-05-30
 
+- 半小时漫画经济学4：理财篇 2022-10-29
+
+- Red Hat Ansible Automation Platform on Microsoft Azure Guide 2022-12-09
+
 > :) 未完待续......
 
 ### 2021年

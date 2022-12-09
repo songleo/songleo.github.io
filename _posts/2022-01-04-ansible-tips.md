@@ -8,6 +8,12 @@ date: 2022-01-04 00:12:05
 
 - ungrouped表示未分组的host
 
+- 常用选项
+  - -m：指定module
+  - -a：指定module参数
+  - -b：提升权限运行命令
+  - -e：指定变量
+
 - 列出所有host
 
 ```
@@ -40,6 +46,19 @@ ANSIBLE_CONFIG -> ./ansible.cfg -> ~/.ansible.cfg -> /etc/ansible/ansible.cfg
    vars_files:
      - /home/ansible/user-list.txt
 
+```
+
+- 循环使用
+
+```
+tasks:
+  - name: Ensure users are present
+    user:
+      name: “{{item}}” state: present
+      loop:
+        - dev_user
+        - qa_user
+        - prod_user
 ```
 
 - 命令行调用module
