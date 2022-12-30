@@ -20,5 +20,7 @@ az ad app create --display-name ssli-aap-test --web-redirect-uris https://app.us
 
 ```
 az monitor metrics list --resource resource_id  --metric "Percentage CPU"
-az monitor metrics list --resource /subscriptions/3f7e29ba-24e0-42f6-8d9c-5149a14bda37/resourceGroups/mrg-aap-market-preview-20220906083014/providers/Microsoft.DBforPostgreSQL/flexibleServers/psql-aaps4rq3muq37ubq-eastus --metric "IOPS"
+az monitor metrics list --resource /ID/psql-aaps4rq3muq37ubq-eastus --metric "IOPS"
 ```
+
+> :) 未完待续......
