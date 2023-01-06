@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ansible学习
+title: ansible使用tips
 date: 2022-01-04 00:12:05
 ---
 
