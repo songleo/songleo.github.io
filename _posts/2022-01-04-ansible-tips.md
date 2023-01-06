@@ -185,4 +185,24 @@ ansible-doc -s service # 仅输出示例
        loop: "{{ users }}"
 ```
 
+- ansible-navigator运行playbook
+
+需要设置.ansible-navigator.yml文件和build相应的execution environment
+
+```
+ansible-navigator run playbook.yml -i inv --limit hostname -e "api_key=xxx ansible_python_interpreter=/usr/bin/python"
+```
+
+- 安装collection
+
+```
+ansible-galaxy collection install azure.azcollection
+```
+
+- 安装ansible
+
+```
+pip3 install ansible
+```
+
 > :) 未完待续......
