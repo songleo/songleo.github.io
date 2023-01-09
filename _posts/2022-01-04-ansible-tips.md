@@ -193,6 +193,12 @@ ansible-doc -s service # 仅输出示例
 ansible-navigator run playbook.yml -i inv --limit hostname -e "api_key=xxx ansible_python_interpreter=/usr/bin/python"
 ```
 
+- ansible-navigator列出host
+
+```
+ansible-navigator inventory -i inv.yml --list
+```
+
 - 安装collection
 
 ```

@@ -109,4 +109,20 @@ git cherry-pick ID
 git whatchanged
 ```
 
+- 配置github
+
+```
+ssh-keygen -t rsa -b 4096 -C "ssli@redhat.com"
+cat ~/.ssh/id_rsa.pub
+git config --global user.email "ssli@redhat.com"
+git config --global user.name "Song Song Li"
+git config --global color.ui auto
+```
+
+- 设置代理
+
+```
+git config --global http.proxy http://proxyUsername:proxyPassword@proxy.server.com:port
+```
+
 > :) 未完待续......

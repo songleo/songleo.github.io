@@ -7,13 +7,14 @@ date: 2022-12-30 00:12:05
 - 检查agent配置
 
 ```
-kubectl exec -it datadog-agent-78hq4 agent configcheck
+kubectl exec -it datadog-agent-zqlxh agent configcheck
 ```
 
 - 检查agent日志
 
 ```
-kubectl exec -it datadog-agent-78hq4 tail -f /var/log/datadog/agent.log
+kubectl exec -it datadog-agent-zqlxh -- bash
+tail -f /var/log/datadog/agent.log
 ```
 
 - helm安装agent
