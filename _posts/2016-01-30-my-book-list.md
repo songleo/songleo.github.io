@@ -30,7 +30,7 @@ date: 2016-01-30 15:40:31
 
 - 半小时漫画经济学4：理财篇 2022-10-29
 
-- Red Hat Ansible Automation Platform on Microsoft Azure Guide 2022-12-09
+- red hat ansible automation platform on microsoft azure guide 2022-12-09
 
 > :) 未完待续......
 
