@@ -1,14 +1,24 @@
 ---
 layout: post
-title: git best practices
+title: git最佳实践
 date: 2022-12-08 00:12:05
 ---
 
-- 创建不同的环境分支，比如dev，test，prod。一般使用main分支作为开发分支
+- 创建不同的环境分支，比如dev，test，prod。一般使用main分支作为开发分支，对默认分支执行相应的保护策略，防止误操作
 
 - 确保环境分支始终稳定，方便快速构建开发或者测试环境
 
-- 对新的需求或者修改创建新分支，然后在merge到main分之
+- 对新的需求或者修改创建新分支，通过PR合并到相应分支
+
+- PR中一定要关联相应的issue或者task
+
+- 提交信息尽量一致，清晰
+
+- 分支命名遵循一致的规则，比如release-1.0，release-1.1
+
+- 机密信息不能提交到仓库，比如token
+
+- 仓库结构遵循相应的规范，比如有相应的README，CONTRIBUTING和LICENSE等
 
 - 经常push代码，防止本地crash代码丢失
 
