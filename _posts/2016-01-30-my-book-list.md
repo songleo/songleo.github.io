@@ -4,6 +4,12 @@ title: 我的书单
 date: 2016-01-30 15:40:31
 ---
 
+### 2023年
+
+- [深入浅出可观察性](https://time.geekbang.org/column/intro/100121701?tab=intro) 2023-11-13
+
+> :) 未完待续......
+
 ### 2022年
 
 - [光速入门prometheus+grafana](https://tkedocs.finops.cc/#/prome) 2022-01-01
@@ -31,8 +37,6 @@ date: 2016-01-30 15:40:31
 - 半小时漫画经济学4：理财篇 2022-10-29
 
 - red hat ansible automation platform on microsoft azure guide 2022-12-09
-
-> :) 未完待续......
 
 ### 2021年
 
