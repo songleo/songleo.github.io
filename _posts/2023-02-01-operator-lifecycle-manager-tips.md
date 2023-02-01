@@ -100,9 +100,18 @@ keycloak-operator                              Community Operators   5h7m
 $ k describe packagemanifests keycloak-operator
 ```
 
-创建订阅subscription：
+创建订阅operatorgroup和subscription：
 
 ```
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: keycloak-operator-group
+  namespace: keycloak
+spec:
+  targetNamespaces:
+  - keycloak
+---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
