@@ -26,6 +26,7 @@ date: 2023-02-08 00:12:05
 - [ ] 支持集成常见的通知系统如slack、pagerduty和email
 - [ ] 提供webhook方便收到alert或event后做二次开发，如收到alert后自动创建issue
 - [ ] 支持常见的metric endpoint，如prometheus和opentelemetry collector
+- [ ] 根据用户的配置和使用给出相应的建议，例如推荐启用相应功能、安装某些扩展
 - [ ] 对于saas类可观察性平台，用户能方便快速知道所有开支
 
 > :) 未完待续......
