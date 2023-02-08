@@ -16,6 +16,7 @@ date: 2023-02-08 00:12:05
 
 - [ ] 能提供免费的试用账户，方便用户快速搭建poc
 - [ ] 提供内置的alert，能快速和现有的服务和应用集成，比如提供一些常见数据库的alert，当收集到metrics后，可以一键启用这些内置的alert，快速搭建一个可用的监控系统
+- [ ] 提供一些推荐的alert，方便用户参考定义alert
 - [ ] 提供内置的dashboard，能及时展示收集到的数据如metrics、log和events
 - [ ] 支持config as code，方便维护配置、alert和dashboard等
 - [ ] 提供丰富的api和文档支持，最好在页面端自动生成调用api所需的数据，方便用户做自动化集成
@@ -24,7 +25,7 @@ date: 2023-02-08 00:12:05
 - [ ] 支持常见的公有云平台如azure、aws和gcp，能一键集成并收集到相应的监控数据
 - [ ] 支持集成常见的通知系统如slack、pagerduty和email
 - [ ] 提供webhook方便收到alert或event后做二次开发
-- [ ] 支持常见的metric格式，如prometheus和opentelemetry collector
+- [ ] 支持常见的metric endpoint，如prometheus和opentelemetry collector
 - [ ] 对于saas类可观察性平台，用户能方便快速知道所有开支
 
 > :) 未完待续......
