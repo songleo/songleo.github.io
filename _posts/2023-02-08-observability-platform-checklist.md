@@ -24,7 +24,7 @@ date: 2023-02-08 00:12:05
 - [ ] 支持屏蔽日志中的敏感数据，如配置相应的rule去替换铭感数据
 - [ ] 支持常见的公有云平台如azure、aws和gcp，能一键集成并收集到相应的监控数据
 - [ ] 支持集成常见的通知系统如slack、pagerduty和email
-- [ ] 提供webhook方便收到alert或event后做二次开发
+- [ ] 提供webhook方便收到alert或event后做二次开发，如收到alert后自动创建issue
 - [ ] 支持常见的metric endpoint，如prometheus和opentelemetry collector
 - [ ] 对于saas类可观察性平台，用户能方便快速知道所有开支
 
