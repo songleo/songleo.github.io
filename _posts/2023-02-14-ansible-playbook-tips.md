@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ansible playbook使用tips
-date: 2022-01-04 00:12:05
+date: 2023-02-14 00:12:05
 ---
 
 - playbook中定义变量
