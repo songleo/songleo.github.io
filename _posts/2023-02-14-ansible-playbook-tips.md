@@ -26,7 +26,8 @@ date: 2023-02-14 00:12:05
 tasks:
   - name: Ensure users are present
     user:
-      name: “{{item}}” state: present
+      name: {{item}}
+      state: present
       loop:
         - dev_user
         - qa_user
