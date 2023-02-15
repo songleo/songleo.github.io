@@ -16,7 +16,7 @@ NAME                   DISPLAY        VERSION   REPLACES               PHASE
 cert-manager.v1.10.2   cert-manager   1.10.2    cert-manager.v1.10.1   Succeeded
 ```
 
-- catalogsource (cs)：是用于存放csv中各种元数据如crd等，olm通过cs来查询是否有可用的operator及已安装 operator是否有升级版本，在cs中，operator被组织成安装包和channel，可以通过订阅指定安装包和channel，属于catalog
+- catalogsource (cs)：是用于存放csv中各种元数据如crd等，olm通过cs来查询是否有可用的operator及已安装operator是否有升级版本，在cs中，operator被组织成安装包和channel，可以通过订阅指定安装包和channel，属于catalog
 
 ```
 $ k get catalogsources -n olm
@@ -25,7 +25,7 @@ certified-operators     Certified Operators   grpc   aap-build-team   127m
 operatorhubio-catalog   Community Operators   grpc   OperatorHub.io   130m
 redhat-operators        Red Hat Operators     grpc   aap-build-team   127m
 
-$ k get Subscription
+$ k get subscription
 NAME                PACKAGE             SOURCE                  CHANNEL
 keycloak-operator   keycloak-operator   operatorhubio-catalog   alpha
 ```
