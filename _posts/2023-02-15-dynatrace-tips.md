@@ -32,12 +32,18 @@ date: 2023-02-15 00:12:05
 - 调用api创建alert
 
 ```
-curl 'https://ahq77148.live.dynatrace.com/api/v2/settings/objects' \
+curl 'https://test.live.dynatrace.com/api/v2/settings/objects' \
 -X POST \
 -H 'Accept: application/json; charset=utf-8' \
 -H 'Content-Type: application/json; charset=utf-8' \
 -H 'Authorization: Api-Token ACCESS_TOKEN' \
 -d $'[{"schemaId":"builtin:anomaly-detection.metric-events","scope":"tenant","value":{"enabled":true,"summary":"Azure DB for PostgreSQL (Flexible) active connections [Azure]","queryDefinition":{"type":"METRIC_KEY","metricKey":"ext:cloud.azure.microsoft_dbforpostgresql.flexibleservers.active_connections","aggregation":"AVG","queryOffset":null,"entityFilter":{"dimensionKey":"dt.entity.custom_device","conditions":[]},"dimensionFilter":[]},"modelProperties":{"type":"STATIC_THRESHOLD","threshold":688,"alertOnNoData":false,"alertCondition":"ABOVE","violatingSamples":3,"samples":5,"dealertingSamples":5},"eventTemplate":{"title":"Azure DB for PostgreSQL (Flexible) has too many connections (> 80%).","description":"Found {severity} active connections in Azure DB for PostgreSQL (Flexible) {entityname}.","eventType":"CUSTOM_ALERT","davisMerge":true,"metadata":[]},"eventEntityDimensionKey":"dt.entity.custom_device","legacyId":null}}]'
+```
+
+- 获取所有alert
+
+```
+curl 'https://test.live.dynatrace.com/api/v2/settings/objects?schemaIds=builtin%3Aanomaly-detection.metric-events&scopes=tenant&fields=objectId%2Cvalue' -X GET -H 'Accept: application/json; charset=utf-8' -H 'Content-Type: application/json; charset=utf-8' -H 'Authorization: Api-Token ACCESS_TOKEN' | jq '. > all-alerts.json
 ```
 
 > :) 未完待续......
