@@ -6,7 +6,9 @@ date: 2016-01-30 15:40:31
 
 ### 2023年
 
-- [深入浅出可观察性](https://time.geekbang.org/column/intro/100121701?tab=intro) 2023-11-13
+- [深入浅出可观察性](https://time.geekbang.org/column/intro/100121701?tab=intro) 2023-01-13
+
+- kubernetes操作器 2023-02-20
 
 > :) 未完待续......
 
