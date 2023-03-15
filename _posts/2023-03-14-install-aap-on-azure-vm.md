@@ -6,7 +6,7 @@ date: 2023-03-014 00:12:05
 
 ## 在azure创建vm
 
-在azure中创建2个rhel 8.7 vm，一个用于安装controller，一个用于安装hub，并开发相应的端口。具体要求参考：https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/planning-installation#red_hat_ansible_automation_platform_system_requirements
+在azure中创建2个rhel 8.7 vm，一个用于安装controller，一个用于安装hub，并开放相应的端口。具体要求参考：https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/planning-installation#red_hat_ansible_automation_platform_system_requirements
 
 ## 连接vm配置ssh免登录
 
