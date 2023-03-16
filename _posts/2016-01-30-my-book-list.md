@@ -10,6 +10,8 @@ date: 2016-01-30 15:40:31
 
 - kubernetes操作器 2023-02-20
 
+- [云原生架构与gitops实战](https://time.geekbang.org/column/intro/100312001?tab=intro) 2023-03-14
+
 > :) 未完待续......
 
 ### 2022年
