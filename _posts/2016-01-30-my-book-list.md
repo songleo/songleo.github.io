@@ -12,6 +12,8 @@ date: 2016-01-30 15:40:31
 
 - [云原生架构与gitops实战](https://time.geekbang.org/column/intro/100312001?tab=intro) 2023-03-14
 
+- [运维监控系统实战笔记](https://time.geekbang.org/column/intro/100522501?tab=intro) 2023-03-20
+
 > :) 未完待续......
 
 ### 2022年
