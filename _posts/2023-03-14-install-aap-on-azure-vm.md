@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 在azure vm中安装aap
-date: 2023-03-014 00:12:05
+date: 2023-03-14 00:12:05
 ---
 
 ## 在azure创建vm
