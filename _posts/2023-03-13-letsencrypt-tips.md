@@ -56,6 +56,15 @@ tower.cert: OK
 openssl rsa -noout -text -in tower.key
 ```
 
+- 确保证书和秘钥一致
+
+```
+# openssl x509 -noout -modulus -in tower.cert | openssl md5
+(stdin)= 3da996241erv07b0ebe1a99123aa0544
+# openssl rsa -noout -modulus -in tower.key | openssl md5
+(stdin)= 3da996241erv07b0ebe1a99123aa0544
+```
+
 ## ref
 
 - https://certbot-dns-azure.readthedocs.io/en/latest/
