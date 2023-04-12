@@ -14,6 +14,8 @@ date: 2016-01-30 15:40:31
 
 - [运维监控系统实战笔记](https://time.geekbang.org/column/intro/100522501?tab=intro) 2023-03-20
 
+- kubernetes修炼手册 2023-03-23
+
 - learning ansible 2.7 2023-03-24
 
 > :) 未完待续......
