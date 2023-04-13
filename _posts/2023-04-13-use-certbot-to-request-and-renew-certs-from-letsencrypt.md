@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用certbot申请和更新letencrypt证书
+title: 使用certbot申请和更新letsencrypt证书
 date: 2023-04-13 00:12:05
 ---
 
