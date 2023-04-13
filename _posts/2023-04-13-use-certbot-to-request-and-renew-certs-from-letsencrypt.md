@@ -10,7 +10,6 @@ date: 2023-04-13 00:12:05
 pip install certbot certbot-dns-azure
 ```
 
-
 ### 创建[azure配置文件](https://docs.certbot-dns-azure.co.uk/en/latest/#configuration)
 
 在home目录创建`.azure.ini`文件，替换成你的azure service principal：
@@ -26,7 +25,6 @@ dns_azure_zone1 = example.com:/subscriptions/c135abce-d87d-48df-936c-15596c6968a
 ```
 
 ### 申请证书
-
 
 ```
 certbot certonly \
