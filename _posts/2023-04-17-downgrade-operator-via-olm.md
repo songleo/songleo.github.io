@@ -70,8 +70,6 @@ aca-operator.v2.2.1-0.1669768483   Ansible Cloud Addons          2.2.1+0.1669768
 cert-manager.v1.11.0               cert-manager                  1.11.0               cert-manager.v1.10.2   Succeeded
 ```
 
-可以看到csv正在安装，成功后状态会显示succeeded
-
 ### 升级operator
 
 将之前对subscription的修改revert回去，然后修改最新的installplan，operator就会升级到高版本。
