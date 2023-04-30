@@ -46,4 +46,25 @@ curl 'https://test.live.dynatrace.com/api/v2/settings/objects' \
 curl 'https://test.live.dynatrace.com/api/v2/settings/objects?schemaIds=builtin%3Aanomaly-detection.metric-events&scopes=tenant&fields=objectId%2Cvalue' -X GET -H 'Accept: application/json; charset=utf-8' -H 'Content-Type: application/json; charset=utf-8' -H 'Authorization: Api-Token ACCESS_TOKEN' | jq '. > all-alerts.json
 ```
 
+- 获取某个实体的tag
+
+```
+curl -L -X GET 'https://test.live.dynatrace.com/api/v2/tags?entitySelector=type(%22CUSTOM_DEVICE%22),entityName.startsWith(%22psql-%22)' -H 'Authorization: Api-Token TOKEN'
+```
+
+- 给某个实体加tag
+
+```
+curl -L -X POST 'https://test.live.dynatrace.com/api/v2/tags?entitySelector=type(%22CUSTOM_DEVICE%22),entityName.startsWith(%22psql%22)' \
+-H 'Authorization: Api-Token TOKEN' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "tags": [
+  {
+    "key": "testing-tag"
+  }
+  ]
+}'
+```
+
 > :) 未完待续......
