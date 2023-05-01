@@ -17,8 +17,8 @@ aap提前创建好，但是vnet不能和hub以及spoke有地址重叠，否则�
 
 ## 创建hub-spoke peering
 
-在hub端选择：use this virtual network's gateway or route server
-在spoke端选择：use the remote virtual network's gateway or route server
+- 在hub端选择：use this virtual network's gateway or route server
+- 在spoke端选择：use the remote virtual network's gateway or route server
 
 创建成功后确保hub端的peering的gateway transit是enabled状态。
 
