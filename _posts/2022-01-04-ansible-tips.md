@@ -76,4 +76,13 @@ ansible-galaxy collection install azure.azcollection
 pip3 install ansible
 ```
 
+- 查询最新一个作业
+
+```
+curl -X GET \
+  -H "Authorization: Bearer TOKEN" \
+  -H "Content-Type: application/json" \
+  "https://controller.ansiblecloud.com/api/v2/jobs/?order_by=-id&page_size=1&search=Demo+Job+Template"
+```
+
 > :) 未完待续......
