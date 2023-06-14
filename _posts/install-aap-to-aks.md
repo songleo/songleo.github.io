@@ -17,7 +17,8 @@ az_aks_command() { CMD=$1; CMDOPTS=$2; az aks command invoke --resource-group ${
 export RESOURCE_GROUP=ssli-test-rg
 export AKS_NAME=ssli-aks
 
-az_aks_command "kubectl get no -o wide"
+$ az_aks_command "kubectl get no -o wide"
+
 ```
 
 ## install olm to aks
