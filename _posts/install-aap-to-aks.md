@@ -11,7 +11,6 @@ date: 2023-06-08 00:12:05
 - private cluster: enabled
 - application gateway ingress controller: enabled
 
-
 ```
 az_aks_command() { CMD=$1; CMDOPTS=$2; az aks command invoke --resource-group ${RESOURCE_GROUP} --name ${AKS_NAME} --command "${CMD}" ${CMDOPTS}; }
 export RESOURCE_GROUP=ssli-test-rg
@@ -39,6 +38,12 @@ kubectl create -f https://github.com/operator-framework/operator-lifecycle-manag
 kubectl create -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.24.0/olm.yaml
 
 kubectl get po -n olm && kubectl get po -n operators
+```
+
+## install aap operator
+
+```
+
 ```
 
 ### ref
