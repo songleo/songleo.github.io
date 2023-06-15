@@ -16,7 +16,7 @@ NAME                   DISPLAY        VERSION   REPLACES               PHASE
 cert-manager.v1.10.2   cert-manager   1.10.2    cert-manager.v1.10.1   Succeeded
 ```
 
-- catalogsource (cs)：是用于存放csv中各种元数据如crd等，olm通过cs来查询是否有可用的operator及已安装operator是否有升级版本，在cs中，operator被组织成安装包和channel，可以通过订阅指定安装包和channel，属于catalog
+- catalogsource (cs)：是用于存放csv中各种元数据如crd等，olm通过cs来查询是否有可用的operator及已安装operator是否有升级版本，在cs中，operator被组织成安装包和channel，可以通过订阅指定安装包和channel，属于catalog，catalogsource在olm中扮演了软件目录的角色，它让olm和用户可以发现和管理operators。
 
 ```
 $ k get catalogsources -n olm
