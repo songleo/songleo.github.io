@@ -18,18 +18,28 @@ export RESOURCE_GROUP=ssli-test-rg
 export AKS_NAME=ssli-aks
 
 $ az_aks_command "kubectl get no -o wide"
+```
 
+## prepare the jump vm to access the aks
+
+Create the vm with the same venet whick is aks using.
+
+Create a VM in the same VNet as the AKS cluster, then we can login this vm and access the aks.
+
+```
+# kubectl get no
+NAME                                STATUS   ROLES   AGE   VERSION
+aks-agentpool-34673761-vmss000000   Ready    agent   14h   v1.25.5
 ```
 
 ## install olm to aks
 
 ```
-az_aks_command "kubectl create -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.24.0/crds.yaml"
-az_aks_command "kubectl create -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.24.0/olm.yaml"
+kubectl create -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.24.0/crds.yaml
+kubectl create -f https://github.com/operator-framework/operator-lifecycle-manager/releases/download/v0.24.0/olm.yaml
 
-az_aks_command "kubectl get po -n olm && kubectl get po -n operators"
+kubectl get po -n olm && kubectl get po -n operators
 ```
-
 
 ### ref
 
