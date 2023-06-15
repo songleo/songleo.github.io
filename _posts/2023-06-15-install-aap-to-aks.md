@@ -150,10 +150,10 @@ spec:
 check all installed operator:
 
 ```
-root@~$ k get po -n keycloak
+$ k get po -n keycloak
 NAME                                READY   STATUS    RESTARTS   AGE
 keycloak-operator-548dd798f-lhpcm   1/1     Running   0          3m40s
-root@~$ k get po -n operators
+$ k get po -n operators
 NAME                                                              READY   STATUS    RESTARTS   AGE
 aap-billing-operator-controller-manager-75649cc456-t85lc          2/2     Running   0          2m23s
 aap-ui-operator-controller-manager-9bfd86686-jpx9v                2/2     Running   0          2m23s
