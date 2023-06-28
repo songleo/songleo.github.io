@@ -165,6 +165,80 @@ cert-manager-webhook-b84d54d8c-kbvh5                              1/1     Runnin
 resource-operator-controller-manager-67c8958c8d-k2zd7             2/2     Running   0          3m4s
 ```
 
+## install controller
+
+```
+$ k create ns ansible-automation-platform
+
+$ cat <<EOF | kubectl apply -f -
+apiVersion: automationcontroller.ansible.com/v1beta1
+kind: AutomationController
+metadata:
+  name: automation-controller
+  namespace: ansible-automation-platform
+spec:
+  replicas: 1
+EOF
+```
+
+## configure the ingress for controller
+
+```
+$ cat <<EOF | kubectl apply -f -
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: automation-controller-ingress
+  namespace: ansible-automation-platform
+spec:
+  ingressClassName: azure-application-gateway
+  tls:
+  - secretName: mycert-secret
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: automation-controller-service
+            port:
+              number: 80
+EOF
+```
+
+access the controller console: `http://you_appgw_public_ip/#/home`
+
+## enable https for controller
+
+```
+$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.crt
+$ kubectl create secret tls mycert-secret --key mykey.key --cert mycert.crt
+
+$ cat <<EOF | kubectl apply -f -
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: automation-controller-ingress
+  namespace: ansible-automation-platform
+spec:
+  ingressClassName: azure-application-gateway
+  tls:
+  - secretName: mycert-secret
+  rules:
+  - http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: automation-controller-service
+            port:
+              number: 80
+EOF
+```
+
+access the controller console: `https://you_appgw_public_ip/#/home`
 
 ### ref
 
