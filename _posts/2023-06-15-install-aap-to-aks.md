@@ -192,8 +192,6 @@ metadata:
   namespace: ansible-automation-platform
 spec:
   ingressClassName: azure-application-gateway
-  tls:
-  - secretName: mycert-secret
   rules:
   - http:
       paths:
