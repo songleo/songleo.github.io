@@ -238,8 +238,18 @@ EOF
 
 access the controller console: `https://you_appgw_public_ip/#/home`
 
+## prepare the external database for controller
+
+### azure postgres
+
+- private access: vnet integration
+- create a new subnet from aks vnet for postgres
+- postgres version: 13
+- prepare the database for controller: awx
+
 ### ref
 
 - https://learn.microsoft.com/en-us/azure/aks/private-clusters#options-for-connecting-to-the-private-cluster
 - https://github.com/operator-framework/operator-lifecycle-manager/blob/master/doc/install/install.md
 - https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.3/html/deploying_the_red_hat_ansible_automation_platform_operator_on_openshift_container_platform/installing-aap-operator-cli
+- https://github.com/ansible/awx-operator/tree/2.3.0
