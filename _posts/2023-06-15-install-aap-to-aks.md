@@ -224,7 +224,8 @@ spec:
   tls:
   - secretName: mycert-secret
   rules:
-  - http:
+  - host: controller.ssli-aks.com
+    http:
       paths:
       - pathType: Prefix
         path: "/"
