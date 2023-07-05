@@ -268,6 +268,131 @@ spec:
 EOF
 ```
 
+create keycloak realm
+
+
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  name: aap-realm
+  labels:
+    app: sso
+spec:
+  instanceSelector:
+    matchLabels:
+      app: sso
+  realm:
+    enabled: true
+    displayName: Ansible Automation Platform
+    realm: ansible-automation-platform
+    id: ansible-automation-platform
+---
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakClient
+metadata:
+  name: automation-hub
+  labels:
+    app: sso
+spec:
+  client:
+    adminUrl: https://sso.ssli-aks.com/
+    enabled: true
+    clientAuthenticatorType: client-secret
+    redirectUris:
+      - https://sso.ssli-aks.com/*
+    clientId: automation-hub
+    optionalClientScopes:
+      - address
+      - microprofile-jwt
+      - offline_access
+      - phone
+    defaultClientScopes:
+      - email
+      - profile
+      - roles
+      - web-origins
+    name: Ansible Automation Hub
+    rootUrl: https://sso.ssli-aks.com/
+    secret: NJrxkPiZO3A407myA0rMLwUt9AaJ8C8LhIpd0ImO
+    webOrigins:
+      - https://sso.ssli-aks.com/
+    useTemplateMappers: false
+    standardFlowEnabled: true
+    serviceAccountsEnabled: true
+    protocol: openid-connect
+    directAccessGrantsEnabled: true
+    protocolMappers:
+      - name: Client ID
+        protocol: openid-connect
+        protocolMapper: oidc-usersessionmodel-note-mapper
+        consentRequired: false
+        config:
+          user.session.note: clientId
+          id.token.claim: 'true'
+          access.token.claim: 'true'
+          claim.name: clientId
+          jsonType.label: String
+      - name: Client IP Address
+        protocol: openid-connect
+        protocolMapper: idc-usersessionmodel-note-mapper
+        consentRequired: false
+        config:
+          user.session.note: clientAddress
+          id.token.claim: 'true'
+          access.token.claim: 'true'
+          claim.name: clientAddress
+          jsonType.label: String
+      - name: Client Host
+        protocol: openid-connect
+        protocolMapper: oidc-usersessionmodel-note-mapper
+        consentRequired: false
+        config:
+          user.session.note: clientHost
+          id.token.claim: 'true'
+          access.token.claim: 'true'
+          claim.name: clientHost
+          jsonType.label: String
+      - name: Audience Mapper
+        protocol: openid-connect
+        protocolMapper: oidc-audience-mapper
+        consentRequired: false
+        config:
+          included.client.audience: automation-hub
+          id.token.claim: 'true'
+          access.token.claim: 'true'
+      - name: client_roles
+        protocol: openid-connect
+        protocolMapper: oidc-usermodel-client-role-mapper
+        consentRequired: false
+        config:
+          multivalued: 'true'
+          userinfo.token.claim: 'true'
+          id.token.claim: 'true'
+          access.token.claim: 'true'
+          claim.name: client_roles
+          usermodel.clientRoleMapping.clientId: automation-hub
+      - name: group
+        protocol: openid-connect
+        protocolMapper: oidc-group-membership-mapper
+        config:
+          full.path: "true"
+          id.token.claim: "true"
+          access.token.claim: "true"
+          claim.name: "group"
+          userinfo.token.claim: "true"
+
+  realmSelector:
+    matchLabels:
+      app: sso
+  roles:
+    - clientRole: true
+      description: An administrator role for Automation Hub
+      name: hubadmin
+EOF
+```
+
 create the ingress for keycloak
 
 ```
@@ -318,6 +443,51 @@ spec:
         path: /auth
         pathType: Prefix
 EOF
+```
+
+## install hub
+
+```
+apiVersion: automationhub.ansible.com/v1beta1
+kind: AutomationHub
+metadata:
+  name: private-ah
+  namespace: ansible-automation-platform
+spec:
+  sso_secret: automation-hub-sso
+  pulp_settings:
+    verify_ssl: false
+  route_tls_termination_mechanism: Edge
+  ingress_type: Route
+  loadbalancer_port: 80
+  file_storage_size: 100Gi
+  image_pull_policy: IfNotPresent
+  web:
+    replicas: 1
+  file_storage_access_mode: ReadWriteMany
+  content:
+    log_level: INFO
+    replicas: 2
+  postgres_storage_requirements:
+    limits:
+      storage: 50Gi
+    requests:
+      storage: 8Gi
+  api:
+    log_level: INFO
+    replicas: 1
+  postgres_resource_requirements:
+    limits:
+      cpu: 1000m
+      memory: 8Gi
+    requests:
+      cpu: 500m
+      memory: 2Gi
+  loadbalancer_protocol: http
+  resource_manager:
+    replicas: 1
+  worker:
+    replicas: 2
 ```
 
 ### ref
