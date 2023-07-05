@@ -248,6 +248,78 @@ access the controller console: `https://you_appgw_public_ip/#/home`
 - postgres version: 13
 - prepare the database for controller: awx
 
+## create keycloak
+
+- prepare the db connection secret
+
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: keycloak.org/v1alpha1
+kind: Keycloak
+metadata:
+  labels:
+    app: sso
+  name: ansible-automation-keycloak
+  namespace: ansible-automation-platform
+spec:
+  externalDatabase:
+    enabled: true
+  instances: 1
+EOF
+```
+
+create the ingress for keycloak
+
+```
+$ cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: keycloak
+  name: keycloak-service
+  namespace: ansible-automation-platform
+spec:
+  ports:
+  - name: keycloak
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: keycloak
+    component: keycloak
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: keycloak-ingress
+  namespace: ansible-automation-platform
+spec:
+  ingressClassName: azure-application-gateway
+  tls:
+  - secretName: mycert-secret
+  rules:
+  - host: sso.ssli-aks.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: keycloak-service
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+      - backend:
+          service:
+            name: keycloak-service
+            port:
+              number: 8080
+        path: /auth
+        pathType: Prefix
+EOF
+```
+
 ### ref
 
 - https://learn.microsoft.com/en-us/azure/aks/private-clusters#options-for-connecting-to-the-private-cluster
