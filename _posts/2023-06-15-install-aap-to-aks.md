@@ -447,6 +447,8 @@ EOF
 
 ## install hub
 
+- prepare the secret
+
 ```
 apiVersion: automationhub.ansible.com/v1beta1
 kind: AutomationHub
@@ -488,6 +490,34 @@ spec:
     replicas: 1
   worker:
     replicas: 2
+```
+
+## create ingress for hub
+
+```
+$ cat <<EOF | kubectl apply -f -
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: automation-hub-ingress
+spec:
+  ingressClassName: azure-application-gateway
+  tls:
+  - hosts:
+    - hub.ssli-aks.com
+    secretName: mycert-secret
+  rules:
+  - host: hub.ssli-aks.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: automation-hub-service
+            port:
+              number: 80
+EOF
 ```
 
 ### ref
