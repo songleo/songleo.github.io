@@ -25,6 +25,13 @@ certbot certonly \
     --dns-azure-config /root/azure.ini
 ```
 
+如果想申请通配符的证书，将--domains选项修改为：
+
+```
+--domains 'reborncodinglife.com,*.reborncodinglife.com'
+```
+生成的证书可以给子域名比如sub1.reborncodinglife.com或者sub2.reborncodinglife.com使用。
+
 - certbot查看证书
 
 ```
