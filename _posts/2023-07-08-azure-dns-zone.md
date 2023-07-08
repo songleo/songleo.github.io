@@ -26,18 +26,16 @@ azure dns zone支持多种dns记录类型，包括但不限于：
 
 添加a记录：a记录将你的域名映射到一个ipv4地址。你可以点击“记录集”，然后在“新建记录集”窗口中填写：
 
-- 名称：可以填写"www"，这将创建一个指向`www.reborncodinglife.com`的a记录。
-- 类型：选择"a"。
-- ttl：可以填写3600（单位为秒），这表示dns服务器在刷新此记录前将缓存此记录1小时。
-- ip地址：填写你的网站服务器的ipv4地址。
-然后，点击“确定”。
+- 名称：可以填写"www"，这将创建一个指向`www.reborncodinglife.com`的a记录
+- 类型：选择"a"
+- ttl：可以填写3600（单位为秒），这表示dns服务器在刷新此记录前将缓存此记录1小时
+- ip地址：填写你的网站服务器的ipv4地址
 
 添加cname记录：cname记录将一个域名映射到另一个域名。比如，你可能希望让用户访问`blog.reborncodinglife.com`时能够跳转到你的博客主页。
 
-- 名称：可以填写"blog"。
-- 类型：选择"cname"。
-- ttl：可以填写3600。
-- 别名：填写你的博客主页的域名。
-然后，点击“确定”。
+- 名称：可以填写"blog"
+- 类型：选择"cname"
+- ttl：可以填写3600
+- 别名：填写你的博客主页的域名
 
-现在azure dns区域已经配置完毕，成功地将你的域名`reborncodinglife.com`托管在azure dns zone上，并且创建了a记录和cname记录。如果你的网站服务器和dns设置都配置正确的话，现在你的用户就应该能够通过输入`www.reborncodinglife.com`或者`blog.reborncodinglife.com`来访问你的网站了。
+azure dns区域配置完毕，会成功地将域名`reborncodinglife.com`托管在azure dns zone上，并且创建了a记录和cname记录。如果你的网站服务器和dns设置都配置正确的话，现在你的用户就应该能够通过输入`www.reborncodinglife.com`或者`blog.reborncodinglife.com`来访问你的网站了。
