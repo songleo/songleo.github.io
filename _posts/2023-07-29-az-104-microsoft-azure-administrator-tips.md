@@ -1,6 +1,6 @@
 ---
 layout: post
-title: az-104-microsoft-azure-administrator-tips
+title: az-104 microsoft azure administrator tips
 date: 2023-07-29 00:12:05
 ---
 
@@ -60,4 +60,27 @@ expressroute也提供了其他一些特性，包括：
 站点到站点（site-to-site, s2s）vpn：这是一种vpn连接方式，其中一个完整的网络（例如，一个公司的整个办公室或一个分支机构）会连接到另一个网络或站点，例如云环境。在azure环境中，这可能意味着公司的整个本地网络（站点）连接到azure虚拟网络（站点）。站点到站点vpn需要一个vpn设备（可能是物理设备或软件设备），该设备在本地网络中创建一个vpn隧道到azure的vpn网关。通过这种方式，网络中的所有设备都可以通过vpn访问azure虚拟网络，就好像它们都直接连接到虚拟网络一样。
 
 简单来说，点到站vpn是单个设备到网络的连接，而站点到站点vpn是整个网络到另一个网络的连接。
+```
+
+- 使用Azure Site Recovery（ASR）服务来执行灾难恢复解决方案。ASR允许你从源区域复制工作负载到目标区域，以确保在源区域出现故障时，你可以迅速切换到目标区域进行运行。
+
+- Packet Capture可以捕获在VM1和VM2之间的流量，以便你可以对其进行分析。Packet Capture支持创建用于捕获流量的会话，这些会话可以在一定时间内（最多达4小时）或者达到一定大小后自动结束。你可以根据需要创建多个会话来覆盖五个小时的监控需求
+
+- Connection Monitor可以设置对网络连接的定期测试，比如每隔一定时间进行一次ping或HTTP请求等。Connection Monitor将会记录这些测试的结果，包括网络延迟、数据包丢失率等信息
+
+- Azure Recovery Services和要备份的虚拟机应该位于相同的区域
+
+- Log Analytics workspace是Azure Monitor日志的基本组件，用于收集、聚合和存储数据，并从中进行查询、分析和可视化。在Azure中，您可以将各种类型的数据（如事件日志、性能数据、应用程序日志、安全或审计日志等）发送到Log Analytics工作区
+
+- 常见azure内置角色
+
+```
+Owner：在其可以分配访问权限的任何范围内具有完全管理权限，包括对资源的完全访问和权限管理。
+Contributor：在任何范围内拥有创建和管理所有类型资源的权限，但无法授予其他用户访问管理权。
+Reader：可查看所有资源，但无法进行任何修改。
+User Access Administrator：在任何范围内可以管理用户访问权限。
+Virtual Machine Contributor：可以管理虚拟机，但不能访问虚拟机内部，也不能管理虚拟网络或存储帐户。
+Network Contributor：具有创建和管理网络资源的权限，但不包括访问资源或其他操作。
+Storage Account Contributor：具有创建和管理存储帐户的权限，但不包括访问数据或其他操作。
+Security Reader：可以查看安全策略，但不能更改。
 ```
