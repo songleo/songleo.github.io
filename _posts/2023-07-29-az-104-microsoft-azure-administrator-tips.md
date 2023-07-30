@@ -22,7 +22,7 @@ date: 2023-07-29 00:12:05
 
 - azcopy命令可以将s3 bucket复制到azure storage container，例如：azcopy copy 'https://s3.amazonaws.com/mys3bucket' 'https://consiliumdata.blob.core.windows.net/container1' --recursive=true
 
-- 关于azure subscription
+- azure subscription
 
 在azure中，订阅（subscription）是一个逻辑单位，它用于为使用azure的服务进行计费。你可以在一个订阅下创建、使用和管理azure资源。每个订阅都与一个azure帐户关联，并由azure帐户的所有者或服务管理员进行管理。
 
@@ -32,7 +32,7 @@ date: 2023-07-29 00:12:05
 2) 提供计费的基础。azure的所有使用费都是基于订阅的。你可以为每个订阅设置不同的付款方法，例如信用卡、发票支付等。
 3) 提供管理边界。你可以使用订阅来组织和控制对azure资源的访问。你可以为每个订阅设置不同的访问策略和权限。
 
-- 关于expressroute
+- expressroute
 
 expressroute是microsoft azure提供的一种服务，允许你在你的本地网络和azure之间创建一条私有连接。这条连接并不经过公共互联网，因此可以提供更高的带宽、更低的延迟，以及更稳定的网络性能。
 
@@ -48,7 +48,7 @@ expressroute也提供了其他一些特性，包括：
 
 总的来说，如果你需要在azure和本地网络之间传输大量数据，或者需要非常高的网络性能和稳定性，expressroute可能是一个很好的选择。
 
-- 关于p2s和s2s
+- p2s和s2s
 
 点到站（point-to-site, p2s）vpn：这是一种vpn连接方式，其中单个设备（例如，远程工作的员工的笔记本电脑或家庭办公室的台式机）会连接到特定的网络或站点，如公司的企业网络。在azure环境中，这通常意味着单个设备（点）会连接到azure虚拟网络（站点）。这种连接方式使用的是安全的隧道协议，例如sstp（安全套接字隧道协议）或ikev2。点到站vpn不需要任何特殊的设备或vpn设备，因为连接是直接从用户设备（例如pc或笔记本）到azure虚拟网络建立的。
 
@@ -77,7 +77,7 @@ network contributor：具有创建和管理网络资源的权限，但不包括�
 storage account contributor：具有创建和管理存储帐户的权限，但不包括访问数据或其他操作。
 security reader：可以查看安全策略，但不能更改。
 
-- 关于数据冗余
+- 数据冗余
 
 本地冗余存储 (lrs, locally redundant storage): 这是最基本的复制选项，它会在同一数据中心中创建数据的三个副本。如果某个硬件设备失败，azure可以从其它副本中恢复数据。这种方式的耐久性相对较低，因为如果整个数据中心出现故障（例如火灾或洪水），可能会丢失所有的数据。
 
@@ -87,7 +87,7 @@ security reader：可以查看安全策略，但不能更改。
 
 读取访问地理冗余存储 (ra-grs, read-access geo-redundant storage): 这是grs的一个变体，它在第二个地理区域提供了读取访问权限。这样，在主要地理区域出现故障时，应用程序可以从备用地理区域读取数据，提供了更高的可用性。
 
-- 关于azure file
+- azure file
 
 共享访问：azure files可以为多个应用程序或多个虚拟机提供同时访问同一文件集的能力，这使得它非常适合于协作应用程序和并行计算工作负载。
 
@@ -102,13 +102,47 @@ security reader：可以查看安全策略，但不能更改。
 高可伸缩性：azure files可以在需要时自动扩展，你无需预先为文件共享分配存储空间。你只需为使用的存储空间付费。
 
 
-- 关于shared access signature
+- shared access signature
 
 共享访问签名（shared access signature，简称sas）是一种提供对azure storage服务安全直接访问权限的方式，包括blob存储、队列、表和文件。sas是一种url，其中包含特殊的查询参数，用于表示对存储资源的访问权限和访问期限。
 
 sas有两种类型：服务级别的sas和帐户级别的sas。服务级别的sas提供对特定资源（如一个blob或一个文件）的访问权限，而帐户级别的sas提供对在指定时间内可在帐户中的所有存储服务上执行的操作的访问权限。
 
 
-- 关于custom data
+- custom data
 
 自定义数据是一种在创建azure虚拟机时提供的功能，它允许你将最多64kb的数据传递给虚拟机。这些数据可以是一个shell脚本、云初始化指令或其他元数据。这些自定义数据会在虚拟机首次启动时作为一个文件注入到虚拟机中，文件的位置取决于操作系统类型。
+
+- vm创建后不能移动到其他区域，不能再次启用availability zone
+
+- availability sets
+
+可用性集是确保在azure中部署的应用程序有高可用性和冗余的一个方法。可用性集通过将您的虚拟机资源分布到不同的故障域（fault domains，fd）和更新域（update domains，ud）来实现这一点。
+
+故障域（fd）是物理上独立的，它们有自己的网络、电源和冷却解决方案，以防止硬件故障的影响范围扩大。例如，如果一个服务器或网络设备出现故障，只有在该故障域内的虚拟机会受到影响。
+
+更新域（ud）则是为了应对计划性的维护或升级，比如微软需要更新其azure平台的底层基础设施时，只有一个更新域内的虚拟机会被同时影响。这样可以确保在维护期间，至少有一部分应用程序的实例仍然可用。
+
+- scale sets
+
+虚拟机规模集（vm scale sets）是azure的另一个服务，它用于管理和扩展一组相同的虚拟机。规模集可以根据定义的规则自动或手动增加或减少vm的数量。例如，你可以根据cpu负载、网络流量或自定义的度量标准来自动扩展或收缩虚拟机的数量。
+
+这种自动扩展和收缩的能力可以使你的应用程序在高峰时间能够处理更大的工作负载，并在需求减少时节省资源和成本。
+
+虚拟机规模集和可用性集可以一起使用，以实现高可用性和可伸缩性。虚拟机规模集可以在多个故障域和更新域之间分布vm实例，就像在可用性集中一样。
+
+- azure network watcher
+
+connection monitor：connection monitor 提供了端到端的连接监控，帮助你识别连接性问题，以及在虚拟机和多个终端（包括公共终端和ip地址）之间的网络通信问题。connection monitor 提供的数据包括延迟，网络流量等。
+
+ip flow verify：ip flow verify可以帮助你验证ip包是否可以从一个虚拟机的源ip和端口，到达目标ip和端口。这个工具可以帮助你诊断虚拟机的入站和出站连接问题。
+
+next hop：这个功能可以帮助你诊断路由问题。通过指定虚拟机和目标ip地址，next hop可以告诉你下一跳的类型和地址。
+
+network packet capture：这个功能可以让你在虚拟机上捕获入站和出站流量的数据包，类似于网络嗅探器。这对于深入分析和诊断网络问题非常有用。
+
+nsg flow logs：这个功能提供了网络安全组（network security group）的流量日志，这可以帮助你分析和查找虚拟网络的流量模式和其他统计数据。
+
+vpn troubleshoot：vpn troubleshoot工具提供了有关vpn网关的详细信息，如连接状态、连接时间、连接数据包的传入和传出等，这对于诊断vpn连接问题非常有用。
+
+network watcher agent：可以用于运行 network watcher 的一些诊断工具，比如网络包捕获（packet capture）和 ip 流验证（ip flow verify）。对于一些特定的诊断任务，比如捕获虚拟机的网络流量，或者验证 ip 数据包的流向，可能需要在虚拟机上安装 network watcher agent。
