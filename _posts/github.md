@@ -4,7 +4,6 @@ title: todo list
 date: 2023-03-13 00:12:05
 ---
 
-- https://media.licdn.com/dms/image/D5622AQH6btxT0rmAAA/feedshare-shrink_800/0/1694322332694?e=1700697600&v=beta&t=ejk7rgL0xkemhYEks0V4PjDK8OhyBgys1Lp0YEsF8XI
 - https://media.licdn.com/dms/image/D5622AQFS4YY_9lYTdQ/feedshare-shrink_1280/0/1697444954712?e=1700092800&v=beta&t=2WdfeRRgUrsokXiFtxHP3xY9Ib7AmLj3qksfpZ9hCYw
 - https://media.licdn.com/dms/image/D4E22AQHoYMZjS4rWXQ/feedshare-shrink_1280/0/1697298328213?e=1700697600&v=beta&t=GNPmaqi1XWcFjAqwBCXFxBKox1pfQZOcuk7hD7NJpoo
 
@@ -47,4 +46,20 @@ Step 10: SRE (Site Reliability Engineering) team is responsible for prod monitor
 
 𝐒𝐡𝐚𝐝𝐨𝐰 𝐝𝐞𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭: A new version of the software is run in parallel with the existing version, without impacting users. This allows for real-world simulation, performance monitoring, and data collection.
 
+```
+
+- https://media.licdn.com/dms/image/D5622AQE3mGHWKVQ_6Q/feedshare-shrink_1280/0/1696678303781?e=1701302400&v=beta&t=0i9SGb3q3bkykhce3AjpkvGIe7YjGrJJU8DyIA9hSn4
+
+```
+𝐀𝐏𝐈 𝐆𝐚𝐭𝐞𝐰𝐚𝐲 𝐯𝐬 𝐋𝐨𝐚𝐝 𝐁𝐚𝐥𝐚𝐧𝐜𝐞𝐫 𝐯𝐬 𝐑𝐞𝐯𝐞𝐫𝐬𝐞 𝐏𝐫𝐨𝐱𝐲
+
+API Gateway, Load Balancer, and Reverse Proxy are three important technologies that work together to make our online experiences smooth and secure.
+
+𝐀𝐏𝐈 𝐆𝐚𝐭𝐞𝐰𝐚𝐲: An API Gateway is like a gatekeeper for APIs. It manages who can access the APIs, how often they can access them, and how they can use them. It also helps to make the APIs work better together.
+
+𝐋𝐨𝐚𝐝 𝐁𝐚𝐥𝐚𝐧𝐜𝐞𝐫: A Load Balancer is like a traffic cop for websites. It distributes traffic across multiple servers to ensure that websites are always available and run smoothly, even when there is a lot of traffic.
+
+𝐑𝐞𝐯𝐞𝐫𝐬𝐞 𝐏𝐫𝐨𝐱𝐲: A Reverse Proxy is like a bodyguard for websites. It sits in front of websites and handles security tasks such as encrypting data and preventing attacks. It also helps to improve performance by caching frequently accessed content.
+
+These three technologies can work together to create a powerful infrastructure for web applications. For example, an API Gateway can be used to manage and secure APIs, while a Load Balancer can be used to distribute traffic across multiple servers. A Reverse Proxy can be used to add additional security and performance features.
 ```
