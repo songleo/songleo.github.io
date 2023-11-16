@@ -85,4 +85,13 @@ curl -X GET \
   "https://controller.ansiblecloud.com/api/v2/jobs/?order_by=-id&page_size=1&search=Demo+Job+Template"
 ```
 
+- 启动一个作业
+
+```
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -u "admin:admin" \
+     "https://controller..ansiblecloud.com/api/v2/job_templates/12/launch/"
+```
+
 > :) 未完待续......
