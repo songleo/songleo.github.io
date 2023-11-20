@@ -4,6 +4,11 @@ title: todo list
 date: 2023-03-13 00:12:05
 ---
 
+- cache
+
+    - https://www.linkedin.com/posts/alexxubyte_systemdesign-coding-interviewtips-activity-7132041993706201088-o6mz/?utm_source=share&utm_medium=member_desktop
+    - https://media.licdn.com/dms/image/D4E22AQGIkKGcm9jRkg/feedshare-shrink_800/0/1700411316862?e=1703116800&v=beta&t=xApDFj-FlrqnhbB14npoFPzZSlQBPL-OmFLlS4xEuic
+
 - sso:
     - https://media.licdn.com/dms/image/D4E22AQFhtND12RqLKw/feedshare-shrink_800/0/1700066713756?e=1703116800&v=beta&t=419amzm57vXc2A2RW9mk3N94gDRf378O9e-gjvimAaQ
     - https://chat.openai.com/c/a8043da3-cae8-4ee0-a080-a629387fecb2
