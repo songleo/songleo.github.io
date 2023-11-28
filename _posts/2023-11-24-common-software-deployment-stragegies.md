@@ -31,4 +31,5 @@ a/b测试策略通过对不同用户群体释出不同版本的功能或设计�
 在影子部署中，新版本的软件会与现有版本并行运行，但不影响用户。这允许实现真实世界的模拟、性能监控以及数据收集，而用户并不知情。例如一个在线交通导航服务正在尝试一个新的路线优化算法。他们通过影子部署运行新版本的算法，同时将实时流量复制到新旧系统。这样他们可以比较两个版本在处理相同流量时的表现，而用户则完全不会被干扰。
 
 ### 参考
+
 - https://www.linkedin.com/posts/isharanimicrosoftleader_top-6-%3F%3F%3F%3F%3F%3F%3F%3F-deployment-strategies-activity-7117841863394410496-3q2N?utm_source=share&utm_medium=member_desktop
