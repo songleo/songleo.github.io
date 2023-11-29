@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 常见crobjob时间例子
+title: 常见cronjob时间例子
 date: 2023-03-22 00:12:05
 ---
 
