@@ -13,7 +13,7 @@ date: 2021-12-24 00:12:05
 - 支持patch，通过patchesStrategicMerge和patchesJson6902实现
 - 支持vars注入名称到对象中
 - 支持bases和overlays，类似docker中img的原理，bases大家都可以使用，通过overlays定制不同环境的对象
-- 目前主要支持一下参数
+- 目前主要支持以下参数
     - namespace
     - namePrefix
     - nameSuffix
