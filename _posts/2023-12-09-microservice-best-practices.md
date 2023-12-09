@@ -41,3 +41,7 @@ date: 2023-12-09 00:12:05
 ### 微服务编排
 
 使用工具（如kubernetes）来管理微服务之间的交互和依赖。在云基础设施上运行的大型数据分析平台，利用微服务编排工具来管理数据采集、处理和可视化服务。这种编排确保了服务间高效的通信和资源使用，同时提高了系统的可靠性和弹性。
+
+### 参考
+
+- https://www.linkedin.com/posts/bytebytego_systemdesign-coding-interviewtips-activity-7138404561739804674-8MwI/?utm_source=share&utm_medium=member_desktop
