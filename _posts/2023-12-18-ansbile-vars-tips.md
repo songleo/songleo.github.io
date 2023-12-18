@@ -95,8 +95,8 @@ ansible-playbook playbook.yml -e "http_port=80 max_clients=200"
 使用 set_fact模块在ansible中动态设置变量，例如：
 
 ```
-- name: set db vm and storage size
+- name: set var
   ansible.builtin.set_fact:
-    db_storage_size_gb: 512
-    db_vm_size: "standard_d4s_v3"
+    http_port: 80
+    max_clients: 200
 ```
