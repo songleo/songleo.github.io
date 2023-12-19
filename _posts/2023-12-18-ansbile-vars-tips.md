@@ -72,7 +72,7 @@ ansible-playbook playbook.yml -e "http_port=80 max_clients=200"
 ```
 - hosts: webservers
   tasks:
-    - shell: echo $home
+    - shell: echo $HOME
       environment:
         home: /home/user
 ```
