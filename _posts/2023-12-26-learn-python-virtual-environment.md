@@ -48,6 +48,13 @@ pip install requests
 ```
 pip install -r requirements.txt
 ```
+
+也可以指定相应的pip源：
+
+```
+pip install -r requirements.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
 #### 离开虚拟环境
 
 工作完成后，输入deactivate命令退出虚拟环境。
@@ -57,3 +64,6 @@ pip install -r requirements.txt
 - 多项目开发：同时管理多个项目，尤其是当它们有不同依赖时
 - 学习实验：尝试新库或实验新代码，而不影响主环境
 - 部署准备：确保你的开发环境与生产环境保持一致
+
+### 修改pip的源
+
