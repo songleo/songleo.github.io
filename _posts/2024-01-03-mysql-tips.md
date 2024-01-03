@@ -82,7 +82,7 @@ mysql> describe ssli.test;
 4 rows in set (0.00 sec)
 ```
 
-### 向表中添加数据
+### 向table中添加数据
 
 ```
 mysql> insert into ssli.test ( barcode, goodsname, price ) values ('001', 'demo', 4);
