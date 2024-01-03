@@ -10,7 +10,7 @@ date: 2024-01-03 00:12:05
 docker run --name ssli -e MYSQL_ROOT_PASSWORD=admin -d mysql
 ```
 
-### 链接mysql
+### 连接mysql
 
 ```
 docker exec -it ssli bash
