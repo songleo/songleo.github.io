@@ -1,6 +1,6 @@
 ---
 layout: post
-title: mysql tips
+title: mysql学习
 date: 2024-01-03 00:12:05
 ---
 
