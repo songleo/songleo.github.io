@@ -7,13 +7,13 @@ date: 2024-01-03 00:12:05
 ### docker启动mysql
 
 ```
-docker run --name ssli -e MYSQL_ROOT_PASSWORD=admin -d mysql
+docker run --rm --name mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql
 ```
 
 ### 连接mysql
 
 ```
-docker exec -it ssli bash
+docker exec -it mysql bash
 mysql -u root -p'admin'
 ```
 
@@ -27,7 +27,7 @@ Bye
 ### 创建db
 
 ```
-mysql> create database ssli;
+mysql> create database testdb;
 mysql> show databases;
 +--------------------+
 | Database           |
@@ -35,7 +35,7 @@ mysql> show databases;
 | information_schema |
 | mysql              |
 | performance_schema |
-| ssli               |
+| testdb               |
 | sys                |
 +--------------------+
 5 rows in set (0.00 sec)
@@ -44,8 +44,8 @@ mysql> show databases;
 ### 创建table
 
 ```
-mysql> create table ssli.test ( barcode text, goodsname text, price int );
-mysql> describe ssli.test;
+mysql> create table testdb.test ( barcode text, goodsname text, price int );
+mysql> describe testdb.test;
 +-----------+------+------+-----+---------+-------+
 | Field     | Type | Null | Key | Default | Extra |
 +-----------+------+------+-----+---------+-------+
@@ -54,10 +54,10 @@ mysql> describe ssli.test;
 | price     | int  | YES  |     | NULL    |       |
 +-----------+------+------+-----+---------+-------+
 3 rows in set (0.00 sec)
-mysql> use ssli;
+mysql> use testdb;
 mysql> show tables;
 +----------------+
-| Tables_in_ssli |
+| Tables_in_testdb |
 +----------------+
 | test           |
 +----------------+
@@ -67,10 +67,10 @@ mysql> show tables;
 ### 添加主键
 
 ```
-mysql> alter table ssli.test add column id int primary key auto_increment;
+mysql> alter table testdb.test add column id int primary key auto_increment;
 Query OK, 0 rows affected (0.03 sec)
 Records: 0  Duplicates: 0  Warnings: 0
-mysql> describe ssli.test;
+mysql> describe testdb.test;
 +-----------+------+------+-----+---------+----------------+
 | Field     | Type | Null | Key | Default | Extra          |
 +-----------+------+------+-----+---------+----------------+
@@ -85,19 +85,19 @@ mysql> describe ssli.test;
 ### 向table中添加数据
 
 ```
-mysql> insert into ssli.test ( barcode, goodsname, price ) values ('001', 'demo', 4);
+mysql> insert into testdb.test ( barcode, goodsname, price ) values ('001', 'demo', 4);
 Query OK, 1 row affected (0.00 sec)
-mysql> select * from ssli.test;
+mysql> select * from testdb.test;
 +---------+-----------+-------+----+
 | barcode | goodsname | price | id |
 +---------+-----------+-------+----+
 | 001     | demo      |     4 |  1 |
 +---------+-----------+-------+----+
 1 row in set (0.00 sec)
-mysql> insert into ssli.test ( barcode, goodsname, price ) values ('002', 'demo2', 2);
+mysql> insert into testdb.test ( barcode, goodsname, price ) values ('002', 'demo2', 2);
 Query OK, 1 row affected (0.00 sec)
 
-mysql> select * from ssli.test;
+mysql> select * from testdb.test;
 +---------+-----------+-------+----+
 | barcode | goodsname | price | id |
 +---------+-----------+-------+----+
