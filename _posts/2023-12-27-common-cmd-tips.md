@@ -9,3 +9,9 @@ date: 2023-12-27 00:12:05
 ```
 curl -o /dev/null -s -w "%{http_code}\n" www.baidu.com
 ```
+
+- git修改上次提交信息
+
+```
+git commit --amend -m "new msg"
+```
