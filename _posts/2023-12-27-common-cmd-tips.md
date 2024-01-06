@@ -15,3 +15,17 @@ curl -o /dev/null -s -w "%{http_code}\n" www.baidu.com
 ```
 git commit --amend -m "new msg"
 ```
+
+- pip安装时指定国内源
+
+```
+pip install -r requirements.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+- 验证集群网络
+
+```
+kubectl run curl-test --image=curlimages/curl:latest -- sleep 3600
+kubectl exec -it curl-test -- /bin/sh
+curl -I https://www.google.com
+```
