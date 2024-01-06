@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在kind中使用nodeport
+title: 在kind中通过nodeport访问应用
 date: 2021-11-17 12:12:05
 ---
 
