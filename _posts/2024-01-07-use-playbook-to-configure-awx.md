@@ -12,6 +12,7 @@ date: 2024-01-07 00:12:05
 
 - ansible
 - docker
+- jq
 
 ### 准备vm加入awx
 
@@ -31,7 +32,7 @@ $ ssh admin@192.168.0.106 -p 22222
 
 ### 使用playbook配置awx
 
-克隆仓库，使用playbooks/configure_awx.yml配置organization、project、inventory、machine credential、host和job template，配置好以后就可以运行新建的job template。
+克隆仓库，使用playbooks/configure_awx.yml配置organization、project、inventory、machine credential、host和job template，配置好以后就可以运行新建的job template。详细的配置参数请直接查看playbooks/configure_awx.yml。
 
 ```
 $ git clone git@github.com:songleo/automation-system.git
@@ -119,7 +120,7 @@ vm1                        : ok=1    changed=0    unreachable=0    failed=0    s
 vm2                        : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-可以看到playbook已经成功运行在vm1和vm2。awx基本配置完成。
+可以看到playbook已经成功运行在vm1和vm2。awx的基本配置完成。
 
 ### 参考
 
