@@ -121,7 +121,7 @@ $ curl -s http://www.automation-system.com/awx/api/v2/ping/ | jq .
 }
 ```
 
-至此，部署完成，后面会介绍如何通过ansible playbook配置awx，然后运行playbook。
+至此，基于awx构建的自动化系统完成，后面会介绍如何通过ansible playbook配置awx，然后运行playbook。
 
 ### 参考
 
