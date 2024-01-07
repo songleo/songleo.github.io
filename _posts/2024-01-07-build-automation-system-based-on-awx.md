@@ -16,6 +16,7 @@ date: 2024-01-07 00:12:05
 
 ```
 $ git clone git@github.com:songleo/automation-system.git
+$ git checkout 1.0.0
 $ cd automation-system
 $ ./install.sh
 ```
