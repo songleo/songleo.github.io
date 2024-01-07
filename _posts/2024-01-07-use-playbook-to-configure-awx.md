@@ -30,6 +30,8 @@ $ ssh admin@192.168.0.106 -p 11111
 $ ssh admin@192.168.0.106 -p 22222
 ```
 
+这个image是提前设定好用户名和密码，具体参考：http://reborncodinglife.com/2024/01/06/use-container-to-simulate-vm-as-ssh-server/
+
 ### 使用playbook配置awx
 
 克隆仓库，使用playbooks/configure_awx.yml配置organization、project、inventory、machine credential、host和job template，配置好以后就可以运行新建的job template。详细的配置参数请直接查看playbooks/configure_awx.yml。
