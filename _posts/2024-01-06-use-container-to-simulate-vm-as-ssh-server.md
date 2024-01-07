@@ -28,8 +28,8 @@ ENTRYPOINT service ssh start && sleep 36000
 ### 构建镜像
 
 ```
-$ docker build -t songleo/ubuntu-ssh .
-$ docker push songleo/ubuntu-ssh
+docker build -t songleo/ubuntu-ssh .
+docker push songleo/ubuntu-ssh
 ```
 
 ### 运行docker模拟ssh服务器

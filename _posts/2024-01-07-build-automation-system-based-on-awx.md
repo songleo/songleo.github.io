@@ -24,11 +24,11 @@ $ ./install.sh
 install.sh脚本使用kind创建一个k8s集群，部署ingress-nginx和awx operator v2.10.0，然后安装awx。如果kind中下载pod镜像很慢，可以先在本地下载好镜像，然后使用kind将本地镜像导入kind集群，方便pod快速创建启动，命令如下：
 
 ```
-$ kind load docker-image quay.io/ansible/awx-operator:2.10.0 --name awx
-$ kind load docker-image postgres:13 --name awx
-$ kind load docker-image docker.io/redis:7 --name awx
-$ kind load docker-image quay.io/ansible/awx:23.6.0 --name awx
-$ kind load docker-image quay.io/ansible/awx-ee:latest --name awx
+kind load docker-image quay.io/ansible/awx-operator:2.10.0 --name awx
+kind load docker-image postgres:13 --name awx
+kind load docker-image docker.io/redis:7 --name awx
+kind load docker-image quay.io/ansible/awx:23.6.0 --name awx
+kind load docker-image quay.io/ansible/awx-ee:latest --name awx
 ```
 
 ### 查看部署的awx

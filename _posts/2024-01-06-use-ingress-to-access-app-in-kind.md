@@ -29,7 +29,7 @@ awx-control-plane   Ready    control-plane   4h4m   v1.27.3
 ## 2 安装nginx ingress controller
 
 ```
-$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 ```
 ## 3 部署应用和ingress
 

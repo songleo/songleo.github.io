@@ -19,15 +19,15 @@ date: 2024-01-07 00:12:05
 通过以下方式创建2个docker模拟的vm：
 
 ```
-$ docker run -d -p 11111:22 --name vm1 songleo/ubuntu-ssh
-$ docker run -d -p 22222:22 --name vm2 songleo/ubuntu-ssh
+docker run -d -p 11111:22 --name vm1 songleo/ubuntu-ssh
+docker run -d -p 22222:22 --name vm2 songleo/ubuntu-ssh
 ```
 
 你可以在本地通过一下方式验证，登录这个2个vm：
 
 ```
-$ ssh admin@192.168.0.106 -p 11111
-$ ssh admin@192.168.0.106 -p 22222
+ssh admin@192.168.0.106 -p 11111
+ssh admin@192.168.0.106 -p 22222
 ```
 
 这个image已经提前设定好用户名和密码，具体参考：http://reborncodinglife.com/2024/01/06/use-container-to-simulate-vm-as-ssh-server/
