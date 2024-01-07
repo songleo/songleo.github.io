@@ -30,7 +30,7 @@ $ ssh admin@192.168.0.106 -p 11111
 $ ssh admin@192.168.0.106 -p 22222
 ```
 
-这个image是提前设定好用户名和密码，具体参考：http://reborncodinglife.com/2024/01/06/use-container-to-simulate-vm-as-ssh-server/
+这个image已经提前设定好用户名和密码，具体参考：http://reborncodinglife.com/2024/01/06/use-container-to-simulate-vm-as-ssh-server/
 
 ### 使用playbook配置awx
 
