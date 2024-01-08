@@ -7,7 +7,7 @@ date: 2024-01-03 00:12:05
 ### docker启动mysql
 
 ```
-docker run --rm -v /Users/ssli/share/db_data:/var/lib/mysql --name mysql -e MYSQL_ROOT_PASSWORD=admin -d mysql
+docker run --rm -p 3306:3306 -v /Users/ssli/share/db_data:/var/lib/mysql --name test -e MYSQL_ROOT_PASSWORD=admin -d mysql
 ```
 
 ### 连接mysql
