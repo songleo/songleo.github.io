@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 基于awx构建自动化系统
+title: 自动化学习之基于awx构建自动化系统
 date: 2024-01-07 00:12:05
 ---
-
+automation-learning-building-an-automation-system-based-on-awx
 ### 前提条件
 
 需要提前安装以下软件：

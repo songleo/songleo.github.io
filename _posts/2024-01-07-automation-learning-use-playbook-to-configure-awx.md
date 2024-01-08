@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用playbook配置awx
+title: 自动化学习之使用playbook配置awx
 date: 2024-01-07 00:12:05
 ---
 
