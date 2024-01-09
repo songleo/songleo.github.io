@@ -12,3 +12,5 @@ date: 2024-03-13 00:12:05
     - https://media.licdn.com/dms/image/D4E22AQFhtND12RqLKw/feedshare-shrink_800/0/1700066713756?e=1703116800&v=beta&t=419amzm57vXc2A2RW9mk3N94gDRf378O9e-gjvimAaQ
     - https://chat.openai.com/c/a8043da3-cae8-4ee0-a080-a629387fecb2
 - https://media.licdn.com/dms/image/D5622AQFS4YY_9lYTdQ/feedshare-shrink_1280/0/1697444954712?e=1700092800&v=beta&t=2WdfeRRgUrsokXiFtxHP3xY9Ib7AmLj3qksfpZ9hCYw
+
+- https://www.zeng.dev/post/2023-kubeadm-enable-kubelet-serving-certs/
