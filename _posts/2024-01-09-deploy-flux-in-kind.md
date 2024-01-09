@@ -99,7 +99,7 @@ $ curl www.private-cloud.com/podinfo
 }
 ```
 
-应用已经成功部署，可以成功访问。现在就可以修改https://github.com/songleo/podinfo中应用配置，flux回自动检查并更新应用。比如你可以修改deployment的replicas为1，然后提交修改到repo，flux回自动更新应用deployment。
+应用已经成功部署，可以成功访问。现在就可以修改 https://github.com/songleo/podinfo 中应用配置，flux会自动检查并更新应用。比如你可以修改deployment的replicas为1，然后提交修改到repo，flux回自动更新应用deployment。
 
 ```
 $ git add -A && git commit -m "change replicas to 1"
