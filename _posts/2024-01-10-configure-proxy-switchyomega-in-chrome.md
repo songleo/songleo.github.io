@@ -21,6 +21,7 @@ http you_proxy_server 8080
 127.0.0.1
 ::1
 localhost
+localhost.com
 www.private-cloud.com
 192.168.0.106
 ```
