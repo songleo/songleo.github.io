@@ -94,4 +94,16 @@ curl -X POST \
      "https://controller..ansiblecloud.com/api/v2/job_templates/12/launch/"
 ```
 
+- ansible ping一个host
+
+```
+ansible all -m ping -i '192.168.0.106,'
+```
+
+- 指定ip运行playbook
+
+```
+ansible-playbook -i '192.168.0.106,' playbook.yml
+```
+
 > :) 未完待续......
