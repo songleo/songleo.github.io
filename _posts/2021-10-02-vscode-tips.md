@@ -83,4 +83,11 @@ cmd + enter
 cmd + click + func
 ```
 
+- 打开setting
+
+```
+cmd + shift + p
+Preferences: Open User Settings (JSON)
+```
+
 > :) 未完待续......
