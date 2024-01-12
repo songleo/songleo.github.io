@@ -1,6 +1,6 @@
 ---
 layout: post
-title: flux tips
+title: flux学习之flux常用命令
 date: 2024-01-08 00:12:05
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: awx rest api tips
+title: 自动化学习之awx rest api
 date: 2024-01-07 00:12:05
 ---
 

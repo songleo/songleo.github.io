@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在kind中部署flux
+title: flux学习之在kind中部署flux
 date: 2024-01-09 00:12:05
 ---
 
