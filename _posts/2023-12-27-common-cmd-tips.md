@@ -29,3 +29,9 @@ kubectl run curl-test --image=curlimages/curl:latest -- sleep 3600
 kubectl exec -it curl-test -- /bin/sh
 curl -I https://www.google.com
 ```
+
+- 查找当前目录下特别文件名
+
+```
+find . -type f -name "*ingress*"
+```
