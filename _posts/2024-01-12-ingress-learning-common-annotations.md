@@ -22,7 +22,7 @@ date: 2024-01-12 00:12:05
 
 ### nginx.ingress.kubernetes.io/rewrite-target: /$1
 
-使用捕获的url路径部分重写目标路径。对于路径"/oldpath/(.*)"，若需将捕获的部分重写到"/$1"，不使用此注解将无法实现路径的正确重写。
+使用捕获的url路径部分重写目标路径。对于路径"/oldpath/(.*)"，若需将捕获的部分重写到"/newpath/$1"，不使用此注解将无法实现路径的正确重写。
 
 ### nginx.ingress.kubernetes.io/use-regex: "true"
 
