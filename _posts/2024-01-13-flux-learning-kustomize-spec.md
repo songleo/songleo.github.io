@@ -4,11 +4,11 @@ title: flux学习之kustomization spec
 date: 2024-01-13 00:12:05
 ---
 
-- commonmetadata
+- commonMetadata
 
 定义通用的元数据，如标签和注释，会覆盖已存在的元数据。
 
-- dependson
+- dependsOn
 
 指定当前kustomization依赖的其他资源。
 
@@ -20,11 +20,11 @@ date: 2024-01-13 00:12:05
 
 指定同步源的时间间隔。
 
-- retryinterval
+- retryInterval
 
 部署失败后重试的时间间隔，不指定时使用interval。
 
-- kubeconfig
+- kubeConfig
 
 指定用于访问kubernetes集群的kubeconfig。
 
@@ -32,7 +32,7 @@ date: 2024-01-13 00:12:05
 
 指定git仓库中kustomization.yaml或者应用yaml的路径，默认就是根目录。
 
-- postbuild
+- postBuild
 
 定义构建kustomize渲染后的操作。
 
@@ -40,7 +40,7 @@ date: 2024-01-13 00:12:05
 
 是否自动删除不再由文件声明的kubernetes资源。
 
-- healthchecks
+- healthChecks
 
 定义部署资源后的健康检查。
 
@@ -52,11 +52,11 @@ date: 2024-01-13 00:12:05
 
 定义用于替换的镜像源。
 
-- serviceaccountname
+- serviceAccountName
 
 指定执行kustomization的服务账户。
 
-- sourceref
+- sourceRef
 
 指定资源同步的源引用。
 
@@ -64,7 +64,7 @@ date: 2024-01-13 00:12:05
 
 暂停或恢复kustomization的同步。
 
-- targetnamespace
+- targetNamespace
 
 指定资源部署的命名空间。
 
@@ -83,6 +83,30 @@ date: 2024-01-13 00:12:05
 - components
 
 指定要包含的其他kustomization组件。
+
+举例：
+
+```
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: argocd
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  path: ./argocd
+  prune: true
+  retryInterval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: kubernetes-apps
+  targetNamespace: argocd
+  timeout: 3m0s
+  wait: true
+```
+
+主要用于自动从名为kubernetes-apps的git存储库同步argocd目录下的kubernetes 配置。它设定了每分钟检查一次更新，自动清理不再需要的资源，并确保所有更新在argocd命名空间中应用。此配置还包括在失败时重试同步以及等待所有资源就绪的功能。
 
 ### ref
 
