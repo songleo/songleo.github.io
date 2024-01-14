@@ -126,4 +126,4 @@ vm2                        : ok=1    changed=0    unreachable=0    failed=0    s
 
 ### 参考
 
-- https://github.com/songleo/automation-system
+- https://github.com/songleo/private-cloud

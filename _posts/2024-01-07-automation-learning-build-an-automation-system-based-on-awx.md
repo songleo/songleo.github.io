@@ -126,4 +126,4 @@ $ curl -s http://www.automation-system.com/awx/api/v2/ping/ | jq .
 
 ### 参考
 
-- https://github.com/songleo/automation-system
+- https://github.com/songleo/private-cloud

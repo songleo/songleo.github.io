@@ -112,5 +112,3 @@ podinfo-664f9748d8-98tvt   1/1     Running   1 (33m ago)   13h
 ### 参考
 
 - https://github.com/songleo/private-cloud
-- https://github.com/songleo/fleet-infra
-- https://github.com/songleo/podinfo
