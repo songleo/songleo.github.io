@@ -1,7 +1,7 @@
 ---
 layout: post
 title: flux学习之部署flux ui
-date: 2024-01-09 00:12:05
+date: 2024-01-15 00:12:05
 ---
 
 ### 前置条件
