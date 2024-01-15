@@ -26,7 +26,7 @@ gitops create dashboard ww-gitops \
   --export > ./clusters/private-cloud/weave-gitops/weave-gitops-dashboard.yaml
 ```
 
-设置默认登录密码为admin，执行这个命令，会自动生成一个包含HelmRepository和HelmRelease的yaml文件。将这个文件提交到集群，flux会自动部署。
+设置默认登录密码为admin，执行这个命令，会自动生成一个包含helmrepository和helmrelease的yaml文件。将这个文件提交flux管理的git repo，flux会自动部署。
 
 ```
 git add -A && git commit -m "Add Weave GitOps Dashboard"
