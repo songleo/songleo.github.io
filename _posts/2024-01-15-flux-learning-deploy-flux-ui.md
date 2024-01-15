@@ -38,7 +38,7 @@ kubectl port-forward svc/weave-gitops -n flux-system 9001:9001
 
 ### yaml文件
 
-也可以直接clone仓库，自己生成部署需要的yaml，然后按照flux的方式创建相应的kustomization和gitrepository部署。
+也可以直接clone [weave-gitops](https://github.com/weaveworks/weave-gitops)仓库，自己生成部署需要的yaml，然后按照flux的方式创建相应的kustomization和gitrepository部署。
 
 ```
 $ cd weave-gitops/
