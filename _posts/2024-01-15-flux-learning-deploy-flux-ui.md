@@ -45,6 +45,10 @@ $ cd weave-gitops/
 $ helm template charts/gitops-server/ > flux-ui.yaml
 ```
 
+具体配置参考：
+- https://github.com/songleo/private-cloud/blob/main/apps/weave-gitops/weave-gitops.yaml
+- https://github.com/songleo/private-cloud/blob/main/clusters/private-cloud/weave-gitops/weave-gitops-dashboard.yaml
+
 ### 参考
 
 - https://github.com/songleo/private-cloud
