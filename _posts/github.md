@@ -15,3 +15,4 @@ date: 2024-01-13 00:12:05
 
 - https://www.zeng.dev/post/2023-kubeadm-enable-kubelet-serving-certs/
 - https://www.linkedin.com/posts/bytebytego_systemdesign-coding-interviewtips-activity-7153280311315865603-Vhf1?utm_source=share&utm_medium=member_desktop
+- https://devopscube.com/prometheus-architecture
