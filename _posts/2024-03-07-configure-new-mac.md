@@ -1,0 +1,51 @@
+---
+layout: post
+title: 配置新mac
+date: 2024-03-07 00:12:05
+---
+
+### 软件
+
+- chrome
+- dash
+- docker desktop
+- iterm
+- mysql workbench
+- qq music
+- redis insight
+- slack
+- visual studio code
+- vmware fusion
+- wechat
+- youdao dictionary
+
+### 命令行工具
+
+- ansible
+- aws
+- awx-cli
+- az
+- flux
+- git
+- helm
+- jq
+- kubectl
+- kustomize
+- oc
+- operator-sdk
+- pulp
+- rosa
+- terraform
+- yq
+
+### 配置
+
+#### git
+
+```
+ssh-keygen -t rsa -b 4096 -C "ssli@redhat.com"
+cat ~/.ssh/id_rsa.pub
+git config --global user.email "ssli@redhat.com"
+git config --global user.name "Song Song Li"
+git config --global color.ui auto
+```

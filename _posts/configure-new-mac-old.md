@@ -59,11 +59,7 @@ brew install minio/stable/mc
 
 brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
 
-ssh-keygen -t rsa -b 4096 -C "ssli@redhat.com"
-cat ~/.ssh/id_rsa.pub
-git config --global user.email "ssli@redhat.com"
-git config --global user.name "Song Song Li"
-git config --global color.ui auto
+
 git config --global --add url."git@github.com:".insteadOf "https://github.com/"
 
 wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable-4.4/openshift-install-mac.tar.gz
