@@ -25,17 +25,26 @@ date: 2024-03-07 00:12:05
 - aws
 - awx-cli
 - az
+- certbot
 - flux
 - git
+- gitops
+- grafana-cli
 - helm
 - jq
+- jsonnet
 - kubectl
 - kustomize
+- node_exporter
 - oc
 - operator-sdk
+- prometheus
+- promtool
 - pulp
 - rosa
+- sops
 - terraform
+- tower-cli
 - yq
 
 ### 配置
