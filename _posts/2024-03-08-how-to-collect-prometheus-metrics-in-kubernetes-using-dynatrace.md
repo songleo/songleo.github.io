@@ -6,7 +6,7 @@ date: 2024-03-08 00:12:05
 
 ### 前提条件
 
-需要kubernetes集群已经被dynatrace监控，即已经安装了dynatrace组件比如activegate、oneagent等。
+需要确保kubernetes集群已经被dynatrace监控，即已经安装了dynatrace组件比如activegate、oneagent等。
 
 ### 详细步骤
 
@@ -42,7 +42,7 @@ $ curl -s http://localhost:8080/metrics
 
 #### 创建service暴露指标给dynatrace
 
-在service的annotations中配置相应参数，比如端口、路径等，dynatrace会自动收集该端口和路径暴露的指标，这里通过使用过滤器，只收集clusterexternalsecret_status_condition和clustersecretstore_status_condition指标。
+在service的annotations中配置相应参数，比如端口、路径等，dynatrace会自动收集该端口和路径暴露的指标，这里使用过滤器，只收集clusterexternalsecret_status_condition和clustersecretstore_status_condition指标。
 
 ```
 $ kubectl apply -f - <<EOF
