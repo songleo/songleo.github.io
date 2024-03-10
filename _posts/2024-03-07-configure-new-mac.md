@@ -58,3 +58,20 @@ git config --global user.email "ssli@redhat.com"
 git config --global user.name "Song Song Li"
 git config --global color.ui auto
 ```
+
+### /etc/hosts
+
+```
+# local vm
+192.168.0.121 h1
+192.168.0.122 h2
+192.168.0.133 h3
+
+# private-cloud
+192.168.0.107 www.private-cloud.com
+
+# github
+192.30.255.112 github.com
+```
+
+### ~/.bash_profile

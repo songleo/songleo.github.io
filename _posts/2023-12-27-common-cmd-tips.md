@@ -35,3 +35,9 @@ curl -I https://www.google.com
 ```
 find . -type f -name "*ingress*"
 ```
+
+- docker image国内镜像
+
+```
+docker pull ghcr.m.daocloud.io/fluxcd/source-controller:v1.2.4
+```
