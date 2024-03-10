@@ -74,4 +74,8 @@ git config --global color.ui auto
 192.30.255.112 github.com
 ```
 
-### ~/.bash_profile
+### cmd
+
+```
+mkdir -p ~/share/git
+```
