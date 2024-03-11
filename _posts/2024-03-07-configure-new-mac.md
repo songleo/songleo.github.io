@@ -49,6 +49,7 @@ date: 2024-03-07 00:12:05
 - tower-cli
 - yq
 - kind
+- python: brew install python
 
 ### 配置
 
@@ -86,7 +87,7 @@ mkdir -p ~/share/git
 ### bash
 
 ```
-brew reinstall bash-completion@2
+brew install bash-completion@2
 echo "/opt/homebrew/bin/bash" >> /etc/shells
 chsh -s /usr/local/bin/bash
 ```
