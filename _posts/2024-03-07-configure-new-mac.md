@@ -18,6 +18,7 @@ date: 2024-03-07 00:12:05
 - vmware fusion
 - wechat
 - youdao dictionary
+- sogou
 
 ### 命令行工具
 
@@ -30,6 +31,7 @@ date: 2024-03-07 00:12:05
 - git
 - gitops
 - grafana-cli
+- golang
 - helm
 - jq
 - jsonnet
@@ -46,6 +48,7 @@ date: 2024-03-07 00:12:05
 - terraform
 - tower-cli
 - yq
+- kind
 
 ### 配置
 
@@ -78,4 +81,12 @@ git config --global color.ui auto
 
 ```
 mkdir -p ~/share/git
+```
+
+### bash
+
+```
+brew reinstall bash-completion@2
+echo "/opt/homebrew/bin/bash" >> /etc/shells
+chsh -s /usr/local/bin/bash
 ```
