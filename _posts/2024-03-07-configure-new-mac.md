@@ -74,7 +74,7 @@ git config --global color.ui auto
 192.168.0.107 www.private-cloud.com
 
 # github
-192.30.255.112 github.com
+# 192.30.255.112 github.com
 ```
 
 ### cmd
