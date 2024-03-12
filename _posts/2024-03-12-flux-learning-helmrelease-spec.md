@@ -56,7 +56,6 @@ reconcile helmrelease时使用的sa。
 
 定义helmrelease的helm升级操作的配置。
 
-
 ### test
 
 定义helmrelease的helm测试操作的配置。
@@ -65,11 +64,9 @@ reconcile helmrelease时使用的sa。
 
 定义helmrelease的helm回滚操作的配置。
 
-
 ### uninstall
 
 定义helmrelease的helm卸载操作的配置。
-
 
 ### valuesFrom
 
@@ -78,7 +75,6 @@ reconcile helmrelease时使用的sa。
 ### values
 
 定义helm的values。
-
 
 ### 举例
 
