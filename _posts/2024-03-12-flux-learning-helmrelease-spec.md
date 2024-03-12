@@ -68,10 +68,6 @@ reconcile helmrelease时使用的sa。
 
 定义helmrelease的helm卸载操作的配置。
 
-### valuesFrom
-
-包含了指向包含此 HelmRelease Helm 值的资源的引用，以及如何合并这些值的信息。
-
 ### values
 
 定义helm的values。
