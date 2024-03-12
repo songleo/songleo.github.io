@@ -50,6 +50,7 @@ date: 2024-03-07 00:12:05
 - yq
 - kind
 - python: brew install python
+- sshpass: brew install sshpass
 
 ### 配置
 
@@ -91,3 +92,7 @@ brew install bash-completion@2
 echo "/opt/homebrew/bin/bash" >> /etc/shells
 chsh -s /usr/local/bin/bash
 ```
+
+### jumpvm
+
+更新public key到authorized_key。
