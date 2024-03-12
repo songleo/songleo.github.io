@@ -110,7 +110,7 @@ spec:
       enabled: true
 ```
 
-定义了如何通过helm安装vault。
+定义了如何通过helm安装vault。这里定制了版本、helm repo和想要的value值。
 
 ### ref
 
