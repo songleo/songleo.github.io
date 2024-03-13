@@ -84,6 +84,12 @@ flux resume kustomization argocd
 flux get all
 ```
 
+- 查看flux版本
+
+```
+flux version
+```
+
 ### ref
 
 - https://fluxcd.io/flux/get-started/
