@@ -9,6 +9,7 @@ date: 2024-03-07 00:12:05
 - chrome
 - dash
 - docker desktop
+- podman desktop
 - iterm
 - mysql workbench
 - qq music
