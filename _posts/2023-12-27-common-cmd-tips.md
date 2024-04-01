@@ -41,3 +41,11 @@ find . -type f -name "*ingress*"
 ```
 docker pull ghcr.m.daocloud.io/fluxcd/source-controller:v1.2.4
 ```
+
+- 登录aks节点
+
+```
+kubectl debug node/aks-nodepool1-37663765-vmss000000 -it --image=mcr.microsoft.com/cbl-mariner/busybox:2.0
+
+chroot /host
+```
