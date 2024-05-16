@@ -140,6 +140,89 @@ aws-load-balancer-controller-cluster-58cf55c64c-cqhdq            1/1     Running
 aws-load-balancer-operator-controller-manager-746c4cf4cc-94dcn   2/2     Running   0          5m30s
 ```
 
+### 部署app
+
+```
+oc new-app --docker-image=docker.io/openshift/hello-openshift
+
+oc patch service hello-openshift -p '{"spec":{"type":"NodePort"}}'
+
+cat << EOF | oc apply -f -
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-openshift-alb
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+spec:
+  ingressClassName: alb
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: hello-openshift
+                port:
+                  number: 8080
+EOF
+
+
+INGRESS=$(oc get ingress hello-openshift-alb -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+
+curl "http://${INGRESS}"
+```
+
+### 部署waf
+
+```
+cat << EOF > ${SCRATCH}/waf-rules.json
+[
+    {
+      "Name": "AWS-AWSManagedRulesCommonRuleSet",
+      "Priority": 0,
+      "Statement": {
+        "ManagedRuleGroupStatement": {
+          "VendorName": "AWS",
+          "Name": "AWSManagedRulesCommonRuleSet"
+        }
+      },
+      "OverrideAction": {
+        "None": {}
+      },
+      "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "AWS-AWSManagedRulesCommonRuleSet"
+      }
+    },
+    {
+      "Name": "AWS-AWSManagedRulesSQLiRuleSet",
+      "Priority": 1,
+      "Statement": {
+        "ManagedRuleGroupStatement": {
+          "VendorName": "AWS",
+          "Name": "AWSManagedRulesSQLiRuleSet"
+        }
+      },
+      "OverrideAction": {
+        "None": {}
+      },
+      "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "AWS-AWSManagedRulesSQLiRuleSet"
+      }
+    }
+]
+EOF
+
+WAF_ARN=$(aws wafv2 create-web-acl --name ${CLUSTER_NAME}-waf --region ${REGION} --default-action Allow={} --scope REGIONAL --visibility-config SampledRequestsEnabled=true,CloudWatchMetricsEnabled=true,MetricName=${CLUSTER_NAME}-waf-metrics --rules file://${SCRATCH}/waf-rules.json --query 'Summary.ARN' --output text)
+
+oc annotate ingress.networking.k8s.io/hello-openshift-alb alb.ingress.kubernetes.io/wafv2-acl-arn=${WAF_ARN}
+```
+
 ### ref
 
 - https://docs.openshift.com/rosa/cloud_experts_tutorials/cloud-experts-using-alb-and-waf.html
