@@ -223,6 +223,12 @@ WAF_ARN=$(aws wafv2 create-web-acl --name ${CLUSTER_NAME}-waf --region ${REGION}
 oc annotate ingress.networking.k8s.io/hello-openshift-alb alb.ingress.kubernetes.io/wafv2-acl-arn=${WAF_ARN}
 ```
 
+### 验证waf
+
+```
+curl -X POST "http://${INGRESS}" -F "user='<script><alert>Hello></alert></script>'"
+```
+
 ### ref
 
 - https://docs.openshift.com/rosa/cloud_experts_tutorials/cloud-experts-using-alb-and-waf.html
