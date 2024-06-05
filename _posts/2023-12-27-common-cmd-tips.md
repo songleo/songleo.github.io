@@ -49,3 +49,9 @@ kubectl debug node/aks-nodepool1-37663765-vmss000000 -it --image=mcr.microsoft.c
 
 chroot /host
 ```
+
+- nc链接db
+
+```
+nc -vz psql.database.azure.com 5432
+```
