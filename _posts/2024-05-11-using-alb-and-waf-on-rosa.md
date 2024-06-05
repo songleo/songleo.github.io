@@ -220,7 +220,7 @@ EOF
 
 WAF_ARN=$(aws wafv2 create-web-acl --name ${CLUSTER_NAME}-waf --region ${REGION} --default-action Allow={} --scope REGIONAL --visibility-config SampledRequestsEnabled=true,CloudWatchMetricsEnabled=true,MetricName=${CLUSTER_NAME}-waf-metrics --rules file://${SCRATCH}/waf-rules.json --query 'Summary.ARN' --output text)
 
-oc annotate ingress.networking.k8s.io/hello-openshift-alb alb.ingress.kubernetes.io/wafv2-acl-arn=${WAF_ARN}
+oc annotate ingress.networking.k8s.io/hello-openshift-alb alb.ingress.kubernetes.io/wafv2-acl-arn=${WAF_ARN} --overwrite
 ```
 
 ### 验证waf
