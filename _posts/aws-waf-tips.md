@@ -39,3 +39,9 @@ export AWS_ACCESS_KEY_ID=RoleAccessKeyID
 export AWS_SECRET_ACCESS_KEY=RoleSecretKey
 export AWS_SESSION_TOKEN=RoleSessionToken
 ```
+
+### 获取waf logging的policy
+
+```
+aws logs describe-resource-policies
+```
