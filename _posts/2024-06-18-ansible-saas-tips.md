@@ -10,6 +10,18 @@ date: 2024-06-16 00:12:05
 ansible-saas customer create -b new-br
 ```
 
+### rosa删除集群
+
+```
+rosa delete cluster -c cus-wub898 --best-effort
+```
+
+### 登录集群
+
+```
+ansible-saas cluster login cluster_name
+```
+
 ### 获取集群
 
 ```
@@ -20,6 +32,7 @@ ansible-saas customer list
 
 ```
 ansible-saas customer delete SUBSCRIPTION_ID
+
 or
 
 ansible-saas cluster list --tracer-id TRACER_ID
