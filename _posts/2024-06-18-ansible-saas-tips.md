@@ -58,6 +58,6 @@ aws logs describe-resource-policies
 ### waf启用和禁用日志
 
 ```
-aws wafv2 put-logging-configuration --logging-configuration ResourceArn={{ waf_acl_arn }},LogDestinationConfigs=log_group_arn
+aws wafv2 put-logging-configuration --logging-configuration ResourceArn={{ waf_acl_arn }},LogDestinationConfigs={{ log_group_arn }}
 aws wafv2 delete-logging-configuration --resource-arn {{ waf_acl_arn }}
 ```
