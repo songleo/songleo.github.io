@@ -53,6 +53,7 @@ export AWS_SESSION_TOKEN=RoleSessionToken
 
 ```
 aws logs describe-resource-policies
+aws logs delete-resource-policy --policy-name NAME
 ```
 
 ### waf启用和禁用日志
