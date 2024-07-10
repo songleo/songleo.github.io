@@ -55,3 +55,9 @@ chroot /host
 ```
 nc -vz psql.database.azure.com 5432
 ```
+
+- psql链接数据库
+
+```
+psql -h xxx.rds.amazonaws.com -U username awx
+```
