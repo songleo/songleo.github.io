@@ -61,3 +61,9 @@ nc -vz psql.database.azure.com 5432
 ```
 psql -h xxx.rds.amazonaws.com -U username awx
 ```
+
+- 查看数据库的当前活动连接数
+
+```
+select count(*) from pg_stat_activity where datname ='subsection'
+```
