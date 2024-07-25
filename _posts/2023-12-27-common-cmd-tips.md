@@ -28,6 +28,9 @@ pip install -r requirements.txt --index-url https://pypi.tuna.tsinghua.edu.cn/si
 kubectl run curl-test --image=curlimages/curl:latest -- sleep 3600
 kubectl exec -it curl-test -- /bin/sh
 curl -I https://www.google.com
+
+kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh
+nslookup google.com
 ```
 
 - 查找当前目录下特别文件名
