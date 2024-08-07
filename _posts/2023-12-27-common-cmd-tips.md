@@ -20,6 +20,8 @@ git commit --amend -m "new msg"
 
 ```
 pip install -r requirements.txt --index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+pip install -r requirements.txt --force-reinstall --index-url http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
 ```
 
 - 验证集群网络
