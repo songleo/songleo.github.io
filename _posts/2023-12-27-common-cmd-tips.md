@@ -33,6 +33,22 @@ curl -I https://www.google.com
 
 kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh
 nslookup google.com
+
+nc -zv 10.175.134.143 80
+
+kubectl run -i --tty --rm debug --image=quay.io/aoc/netshoot:latest --restart=Never -- sh
+
+kubectl run -i --tty --rm debug --image=nicolaka/netshoot --restart=Never -- sh
+kubectl run -i --tty --rm debug --image=quay.io/aoc/ee-aap-azure-sre:latest --restart=Never -- sh
+```
+
+- rhel 8.7扩展目录
+
+```
+podman info |egrep 'graphRoot|overlay'
+sudo lvextend -L +1G /dev/mapper/rootvg-homelv
+sudo xfs_growfs /home
+df -hP /home/ansible/
 ```
 
 - 查找当前目录下特别文件名
