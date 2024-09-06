@@ -37,6 +37,7 @@ or
 
 ansible-saas cluster list --tracer-id TRACER_ID
 ansible-saas cluster delete INVENTORY_ID
+ansible-saas customer delete -f SUBSCRIPTION_ID
 ```
 
 ### 获取权限
