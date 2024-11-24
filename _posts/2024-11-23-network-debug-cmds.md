@@ -65,6 +65,8 @@ traceroute to 192.168.0.1 (192.168.0.1), 64 hops max, 40 byte packets
 
 ### curl
 
+测试api、下载文件、查看网页内容和调试网络问题。
+
 - 获取网页
 
 ```
@@ -81,4 +83,44 @@ curl -O http://www.example.com/file.txt
 
 ```
 curl -o /dev/null -s -w "%{http_code}\n" http://www.example.com
+```
+
+### host
+
+简洁高效的dns查询工具，用于解析域名和ip地址，或检查特定类型的dns记录。
+
+- 查询域名的a记录
+
+```
+$ host www.example.com
+www.example.com has address 93.184.215.14
+www.example.com has IPv6 address 2606:2800:21f:cb07:6820:80da:af6b:8b2c
+```
+
+- 显示域名的权威dns服务器
+
+```
+$ host -t ns example.com
+example.com name server a.iana-servers.net.
+example.com name server b.iana-servers.net.
+```
+
+- 反向解析ip地址
+
+```
+$ host 1.1.1.1
+1.1.1.1.in-addr.arpa domain name pointer one.one.one.one.
+```
+
+- 指定dns服务器
+
+```
+$ host www.example.com 1.1.1.1
+Using domain server:
+Name: 1.1.1.1
+Address: 1.1.1.1#53
+Aliases:
+
+www.example.com has address 93.184.215.14
+www.example.com has IPv6 address 2606:2800:21f:cb07:6820:80da:af6b:8b2c
 ```
