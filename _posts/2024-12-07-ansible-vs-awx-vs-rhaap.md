@@ -4,8 +4,6 @@ title: ansbile和awx和rhaap
 date: 2024-12-07 00:12:05
 ---
 
-# 深入了解 Ansible、AWX、Tower 和 RH AAP 的区别与联系
-
 随着自动化技术在 IT 运维中的普及，Ansible 及其相关项目和产品成为许多组织的首选工具。本文将深入介绍 Ansible、AWX、Tower 和 Red Hat Ansible Automation Platform (RH AAP) 的基本概念、功能及其区别。
 
 ---
