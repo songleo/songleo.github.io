@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ansbile和awx和rhaap
-date: 2024-12-06 00:12:05
+date: 2024-12-07 00:12:05
 ---
 
 在现代 IT 环境中，自动化工具的使用已经成为企业提高效率、降低错误率和优化运维管理的重要手段。Ansible 是一款被广泛采用的自动化工具，它的家族成员 AWX 和 Red Hat Ansible Automation Platform (AAP) 提供了不同层次的功能，以满足用户从个人到企业级的需求。本文将全面解析 Ansible、AWX 和 AAP 的特点，并通过对比帮助大家选择适合自己的方案。
