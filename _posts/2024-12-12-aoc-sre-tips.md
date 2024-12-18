@@ -8,6 +8,7 @@ date: 2024-12-12 00:12:05
 
 - https://github.com/nginxinc/nginx-ingress-helm-operator/releases
 - https://github.com/Dynatrace/dynatrace-operator/releases/tag/v1.4.0
+- https://releases.aks.azure.com/#tabus
 
 ## 检查aap job status
 
@@ -18,4 +19,10 @@ date: 2024-12-12 00:12:05
 
 ```
 az resource update --ids <aks-resource-id>
+```
+
+## 修改aap gw admin password
+
+```
+aap-gateway-manage update_password --username=admin --password=changeme
 ```
