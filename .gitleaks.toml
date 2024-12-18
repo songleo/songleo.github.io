@@ -6,6 +6,7 @@
   files = [
     '''*.crt''',
     '''*.key''',
+    '''secret''',
     '''ca.key''',
     '''user2.key''',
     '''user1.key''',
