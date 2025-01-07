@@ -26,3 +26,13 @@ az resource update --ids <aks-resource-id>
 ```
 aap-gateway-manage update_password --username=admin --password=changeme
 ```
+
+## aap无法登录
+
+密码正确时候，检查CSRF配置。
+
+## 从pfx中提取所有证书
+
+```
+openssl pkcs12 -in ssli.pfx -nokeys -out allcerts.crt -legacy
+```
