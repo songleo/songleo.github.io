@@ -36,3 +36,9 @@ aap-gateway-manage update_password --username=admin --password=changeme
 ```
 openssl pkcs12 -in ssli.pfx -nokeys -out allcerts.crt -legacy
 ```
+
+## 查看证书包含的域名
+
+```
+openssl x509 -in cert.pem -text -noout | grep DNS
+```
