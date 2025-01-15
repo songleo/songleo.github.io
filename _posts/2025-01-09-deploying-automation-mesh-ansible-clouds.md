@@ -41,7 +41,7 @@ ssh-copy-id -i ~/.ssh/id_rsa.pub ssli@exec_node
 
 - aap到hop node的双向peering
 - hop node到exec node的双向peering
-- 网络安全组中打开相应的端口443、22和27199
+- hop node到exec node的网络安全组中打开相应的端口22和27199
 
 ## 故障排查
 
