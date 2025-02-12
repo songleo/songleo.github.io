@@ -17,6 +17,7 @@ date: 2025-01-09 00:12:05
 sudo subscription-manager register --auto-attach
 sudo subscription-manager repos --enable ansible-automation-platform-2.4-for-rhel-9-x86_64-rpms
 sudo dnf install -y ansible-core
+ansible-galaxy collection install ansible.receptor
 sudo firewall-cmd --permanent --zone=public --add-port=27199/tcp
 ```
 - 配置hop node ssh免登录到exec node
