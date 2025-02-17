@@ -42,3 +42,13 @@ openssl pkcs12 -in ssli.pfx -nokeys -out allcerts.crt -legacy
 ```
 openssl x509 -in cert.pem -text -noout | grep DNS
 ```
+
+## 进入aap db
+
+```
+awx-manage dbshell
+```
+
+## debug rds connection issue
+
+https://repost.aws/knowledge-center/rds-mysql-max-connections
