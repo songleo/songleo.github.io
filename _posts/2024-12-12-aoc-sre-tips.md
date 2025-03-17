@@ -52,3 +52,12 @@ awx-manage dbshell
 ## debug rds connection issue
 
 https://repost.aws/knowledge-center/rds-mysql-max-connections
+
+
+## 获取aks kubeconfig失败
+
+如果报错如下：
+```
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ValueError: API version 2024-08-01 does not have operation group 'managed_clusters'
+```
+降级azure-mgmt-containerservice模块到33.0.0。
