@@ -61,3 +61,9 @@ https://repost.aws/knowledge-center/rds-mysql-max-connections
 An exception occurred during task execution. To see the full traceback, use -vvv. The error was: ValueError: API version 2024-08-01 does not have operation group 'managed_clusters'
 ```
 降级azure-mgmt-containerservice模块到33.0.0。
+
+## az查询appgw信息
+
+```
+az network application-gateway show --name applicationgateway --resource-group MC_rg_name_aks_name_location
+```
