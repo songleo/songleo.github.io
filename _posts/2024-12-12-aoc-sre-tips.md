@@ -67,3 +67,9 @@ An exception occurred during task execution. To see the full traceback, use -vvv
 ```
 az network application-gateway show --name applicationgateway --resource-group MC_rg_name_aks_name_location
 ```
+
+## 查询证书是否过期
+
+```
+openssl x509 -in cert.crt -noout -enddate
+```

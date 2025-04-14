@@ -23,4 +23,26 @@ az monitor metrics list --resource resource_id  --metric "Percentage CPU"
 az monitor metrics list --resource /ID/psql-aaps4rq3muq37ubq-eastus --metric "IOPS"
 ```
 
+- 获取当前ip
+
+```
+curl -s ifconfig.me
+```
+
+- 禁止访问aks
+
+```
+az aks create \
+  --resource-group $RESOURCE_GROUP \
+  --name $AKS_NAME \
+  --location $LOCATION \
+  --api-server-authorized-ip-ranges ""
+
+az aks update \
+  --resource-group $RESOURCE_GROUP \
+  --name $AKS_NAME \
+  --api-server-authorized-ip-ranges "$MY_IP/32"
+```
+除非将你的ip添加到--api-server-authorized-ip-ranges，否则无法访问aks。
+
 > :) 未完待续......
