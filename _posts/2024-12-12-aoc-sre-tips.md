@@ -73,3 +73,9 @@ az network application-gateway show --name applicationgateway --resource-group M
 ```
 openssl x509 -in cert.crt -noout -enddate
 ```
+
+## aap gw修改密码
+
+```
+aap-gateway-manage update_password --username=admin --password=password
+```

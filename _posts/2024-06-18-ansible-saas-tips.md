@@ -63,3 +63,12 @@ aws logs delete-resource-policy --policy-name NAME
 aws wafv2 put-logging-configuration --logging-configuration ResourceArn={{ waf_acl_arn }},LogDestinationConfigs={{ log_group_arn }}
 aws wafv2 delete-logging-configuration --resource-arn {{ waf_acl_arn }}
 ```
+
+### 获取权限
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+python3 aws-saml.py
+aws --profile saml sts get-caller-identity
+```
