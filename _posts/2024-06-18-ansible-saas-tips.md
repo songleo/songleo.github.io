@@ -69,6 +69,8 @@ aws wafv2 delete-logging-configuration --resource-arn {{ waf_acl_arn }}
 ```
 python3 -m venv .venv
 source .venv/bin/activate
+lkinit
 python3 aws-saml.py
 aws --profile saml sts get-caller-identity
+INSTANCE_NAME=cus-sslidev4 AWS_REGION=us-east-1 make login-to-instance
 ```
