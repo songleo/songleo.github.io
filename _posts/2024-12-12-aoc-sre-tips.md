@@ -4,6 +4,19 @@ title: aoc sre tips
 date: 2024-12-12 00:12:05
 ---
 
+## saas login
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+lkinit
+python3 aws-saml.py
+aws --profile saml sts get-caller-identity
+
+
+INSTANCE_NAME=cus-sslidev2 AWS_REGION=us-east-2 make login-to-instance
+```
+
 ## 订阅组件的release信息
 
 - https://github.com/nginxinc/nginx-ingress-helm-operator/releases
