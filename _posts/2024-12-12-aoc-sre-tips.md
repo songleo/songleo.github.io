@@ -14,7 +14,7 @@ python3 aws-saml.py
 aws --profile saml sts get-caller-identity
 
 
-INSTANCE_NAME=cus-sslidev2 AWS_REGION=us-east-2 make login-to-instance
+INSTANCE_NAME=cus-sslidev1 AWS_REGION=us-east-1 make login-to-instance
 ```
 
 ## 订阅组件的release信息
