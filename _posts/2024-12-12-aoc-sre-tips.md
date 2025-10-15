@@ -142,3 +142,10 @@ Type "help" for help.
 
 postgres=>
 ```
+
+- 验证dns server
+
+```
+kubectl run -i --tty --rm debug --image=quay.io/aoc/netshoot:latest --restart=Never -- sh
+host test.com
+```
