@@ -99,4 +99,5 @@ date: 2025-11-01 00:12:05
 - 护照原件
 - 最近6个月工资卡流水
 - 最近6个月工资单
-- DS-160: https://ceac.state.gov/genniv/
+- ds-160: https://ceac.state.gov/genniv/
+  - ds-160 faq: https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html#doclist
