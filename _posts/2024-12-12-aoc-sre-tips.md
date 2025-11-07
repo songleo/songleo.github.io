@@ -149,3 +149,15 @@ postgres=>
 kubectl run -i --tty --rm debug --image=quay.io/aoc/netshoot:latest --restart=Never -- sh
 host test.com
 ```
+
+- adastra tips
+
+```
+source venv/bin/activate
+adastra config set --env production
+adastra customer list
+
+adastra access request cus-xxx
+adastra access status
+adastra access login cus-xxx
+```
