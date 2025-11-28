@@ -161,3 +161,9 @@ adastra access request cus-xxx
 adastra access status
 adastra access login cus-xxx
 ```
+
+- 验证receptor
+
+```
+receptorctl --socket /var/run/receptor/receptor.sock ping 10.65.55.57
+```
