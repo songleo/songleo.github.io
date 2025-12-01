@@ -101,3 +101,7 @@ date: 2025-11-01 00:12:05
 - 最近6个月工资单
 - ds-160: https://ceac.state.gov/genniv/
   - ds-160 faq: https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html#doclist
+- 结婚证/房产证/户口本/学位/学历/机动车证/旅行计划
+  - 纽约
+  - 10-13号 f2f meeting
+  - 14-19 or 20 回
