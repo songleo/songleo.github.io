@@ -74,4 +74,5 @@ lkinit
 python3 aws-saml.py
 aws --profile saml sts get-caller-identity
 INSTANCE_NAME=cus-sslidev4 AWS_REGION=us-east-1 make login-to-instance
+aws s3 ls --profile saml
 ```
