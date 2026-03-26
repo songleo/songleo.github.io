@@ -67,6 +67,7 @@ aws wafv2 delete-logging-configuration --resource-arn {{ waf_acl_arn }}
 ### 获取权限
 
 ```
+cd aws-automation/
 python3 -m venv .venv
 source .venv/bin/activate
 lkinit

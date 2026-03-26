@@ -39,3 +39,7 @@ terraform {
   }
 }
 ```
+
+### 安装terraform
+
+- https://developer.hashicorp.com/terraform/install
