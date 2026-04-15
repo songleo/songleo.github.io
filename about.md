@@ -17,8 +17,6 @@ email：lisong1205@126.com
 
 微博：俊采LEo
 
-微信公众号：reborncodinglife
-
 ![](/images/wechat.jpg)
 
 ## don't repeat yourself
