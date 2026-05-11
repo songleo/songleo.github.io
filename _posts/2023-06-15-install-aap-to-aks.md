@@ -1,6 +1,6 @@
 ---
  layout: post
- title: install aap on aks
+ title: 在aks上部署ansible-automation-platform
  date: 2023-06-15 00:12:05
  ---
 
