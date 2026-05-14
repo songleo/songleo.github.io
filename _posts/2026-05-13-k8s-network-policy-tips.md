@@ -1,6 +1,6 @@
 ---
 layout: post
-title: k8s network policy总结
+title: k8s network policy tips
 date: 2026-05-14 00:12:05
 ---
 
