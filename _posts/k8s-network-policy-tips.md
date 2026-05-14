@@ -1249,17 +1249,3 @@ spec:
     - protocol: UDP
       port: 53
 ```
-
-### 下一步
-
-- 🔗 学习 Service Mesh（Istio/Linkerd）实现 L7 网络策略
-- 🔗 探索 Cilium 的高级网络功能（基于 eBPF）
-- 🔗 结合 OPA 实现策略即代码
-- 🔗 学习 NetworkPolicy 的审计和合规检查
-
----
-
-**参考资源**：
-- [Kubernetes 官方文档](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
-- [Network Policy Recipes](https://github.com/ahmetb/kubernetes-network-policy-recipes)
-- [Calico Network Policy 教程](https://docs.projectcalico.org/security/tutorials/kubernetes-policy-basic)
