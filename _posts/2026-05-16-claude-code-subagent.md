@@ -43,7 +43,7 @@ subagent是主 agent 可以调用的独立 ai 实例。与 skill 不同，subage
 
 subagent 需要一个明确且独立的任务描述。这个描述应该包含：
 
-```python
+```
 # 伪代码示例
 agent_description = """
 分析这个代码库中的性能瓶颈。具体任务：
@@ -96,7 +96,7 @@ result = Agent(
 
 对于独立的任务，可以并行启动多个 subagent：
 
-```python
+```
 # 并行探索多个区域
 Agent(
     prompt="分析前端代码",
