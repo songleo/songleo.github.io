@@ -2,7 +2,7 @@
 ---
 layout: post
 title: k8s多租户学习
-date: 2026-05-16 00:12:05
+date: 2026-05-10 00:12:05
 ---
 
 ## namespace级别隔离

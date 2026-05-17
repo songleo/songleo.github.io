@@ -1,7 +1,7 @@
 ---
 layout: post
 title: prometheus查询优化
-date: 2026-05-16 00:12:05
+date: 2026-05-15 00:12:05
 ---
 
 ## recording rules
