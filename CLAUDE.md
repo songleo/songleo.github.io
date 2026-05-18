@@ -50,5 +50,3 @@ No test suite exists for this project.
 - Nav links defined under `links:` (about, blog, github)
 - `url: http://reborncodinglife.com`
 - Note: `highlighter` is misspelled as `highlighter` — Jekyll silently tolerates this but if Rouge highlighting stops working, check spelling.
-
-**`src/https/`** — Go TLS client/server examples with test certificates (allowlisted in `.gitleaks.toml` since these are example keys, not real secrets).
