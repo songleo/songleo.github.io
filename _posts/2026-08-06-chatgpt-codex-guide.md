@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ChatGPT + Codex 程序员实用指南
+title: chatgpt + codex 程序员实用指南
 date: 2026-08-06 00:12:05
 ---
 
