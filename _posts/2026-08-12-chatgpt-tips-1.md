@@ -1,5 +1,6 @@
 ---
-layout: postttitle: chatgpt小贴士（一）
+layout: post
+title: chatgpt小贴士（一）
 date: 2026-08-12 00:12:05
 ---
 
