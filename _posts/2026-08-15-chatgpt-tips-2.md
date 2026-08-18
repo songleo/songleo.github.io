@@ -8,7 +8,7 @@ date: 2026-08-15 00:12:05
 
 ### 1 codex和issue管理系统集成
 
-如果公司使用redmine、jira这类issue管理系统，可以尝试把它和codex连接起来，让codex直接读取和处理自己的issue，减少来回复制需求和更新进度的工作。比如redmine提供rest api和个人api key，可以让codex读取issue的标题、描述、评论等信息，然后结合本地代码完成分析、修改和测试，最后还可以把处理结果、评论回写到issue中。这样以后可以直接告诉codex：“处理redmine #9417，先分析问题并修改代码，不要提交。” codex自己获取issue信息并开始工作。还可以设置相应的定时任务，每天扫描自己open的issue，然后按优先级排序，尝试解决，等第二天直接review结果。
+如果公司使用redmine、jira这类issue管理系统，可以尝试把它和codex连接起来，让codex直接读取和处理自己的issue，减少来回复制需求和更新进度的工作。比如redmine提供rest api和个人api key，可以让codex读取issue的标题、描述、评论等信息，然后结合本地代码完成分析、修改和测试，最后还可以把处理结果、评论回写到issue中。这样以后可以直接告诉codex：“处理redmine #9417，先分析问题并修改代码，不要提交。” codex自己获取issue信息并开始工作。还可以设置相应的定时任务，每天扫描自己new状态的issue，然后按优先级排序，尝试解决，等第二天直接review结果。
 
 ### 2 分支到新聊天
 
