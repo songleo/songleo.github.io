@@ -1,8 +1,8 @@
 ---
- layout: post
- title: 在aks上部署ansible-automation-platform
- date: 2023-06-15 00:12:05
- ---
+layout: post
+title: 在aks上部署ansible-automation-platform
+date: 2023-06-15 00:12:05
+---
 
  ## create the aks
 
