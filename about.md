@@ -11,8 +11,6 @@ title: about me
 
 热衷分享，好东西，当然要分享。
 
-使用语言：c/python/go
-
 email：lisong1205@126.com
 
 微博：俊采LEo
