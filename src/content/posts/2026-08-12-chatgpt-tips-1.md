@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（一）"
 description: "这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。"
 pubDatetime: 2026-08-12T00:12:05+08:00
-tags: ["chatgpt", "自动化", "computer use"]
+tags: ["chatgpt", "自动化"]
 ---
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。
 
