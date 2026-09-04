@@ -1,0 +1,22 @@
+---
+title: "缩写词提示"
+description: "AAP (Ansible Automation Platform) AKS (Azure Kubernetes Service) ARO (Azure Red Hat OpenShift) EKS (Amazon Elastic Kubernetes Service)"
+pubDatetime: 2022-03-09T00:12:05+08:00
+---
+- AAP (Ansible Automation Platform)
+- AKS (Azure Kubernetes Service)
+- ARO (Azure Red Hat OpenShift)
+- EKS (Amazon Elastic Kubernetes Service)
+- GKE (Google Kubernetes Engine)
+- IDP (IDentify Provider)
+- IKS (IBM Kubernetes Service) and ROKS (Red Hat OpenShift - Kubernetes Service)
+- OSD on AWS (OpenShift Dedicated on AWS)
+- OSD on GCP (OpenShift Dedicated on Google Cloud)
+- ROSA (Red Hat OpenShift Service on AWS)
+- SLA (Service Level Agreement)
+- SLI (Service Level Indicator)
+- SLO (Service Level Object)
+- RHODF (Red Hat OpenShift Data Foundation)
+- RHOCS (Red Hat OpenShift Container Storage)
+
+> :) 未完待续......

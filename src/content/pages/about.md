@@ -1,0 +1,20 @@
+---
+title: "关于"
+description: "关于 LEo 和这个博客。"
+---
+
+我叫李松松，1988年出生于贵州安顺，2015年毕业于西安科技大学电子与通信工程专业，目前就职于[联科集团](https://www.clustertech.com/zh-hans/hk/welcome)。
+
+喜欢阅读，尤其软件相关书籍；
+
+喜欢羽毛球，西安可以约；
+
+热衷分享，好东西，当然要分享。
+
+email：lisong1205@126.com
+
+微博：俊采LEo
+
+![](/images/wechat.jpg)
+
+## don't repeat yourself

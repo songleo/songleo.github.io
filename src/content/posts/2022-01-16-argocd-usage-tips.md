@@ -1,0 +1,77 @@
+---
+title: "argocd使用tips"
+description: "添加集群"
+pubDatetime: 2022-01-16T00:12:05+08:00
+---
+- 添加集群
+
+```
+kubectl config get-contexts -o name
+argocd cluster add admin --name soli-mc
+```
+
+- 查看集群
+
+```
+argocd cluster list
+```
+
+- 在argocd中安装applicationset
+
+```
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj-labs/applicationset/v0.3.0/manifests/install.yaml
+```
+
+- 忽略repo中某些文件
+
+```
+...
+  source:
+    path: ignore-files
+    repoURL: 'https://github.com/songleo/argocd-demo.git'
+    targetRevision: HEAD
+    directory:
+      recurse: true
+      exclude: 'svc.yaml'
+...
+```
+
+- 忽略app生成的resouce
+
+```
+...
+argocd.argoproj.io/compare-options: IgnoreExtraneous
+...
+```
+
+- 从vault读取数据
+
+```
+    avp.kubernetes.io/path: "/path/data/key"
+    avp.kubernetes.io/secret-version: "5"
+```
+
+- 修改argocd cm配置plugin
+
+```
+...
+data:
+  configManagementPlugins: |
+    - name: updateReplicas
+      init:
+        command: [sh, -c, 'sed -i "s/replicas: 2/replicas: 1/" hostname.yaml']
+      generate:
+        command: [sh, -c, 'cat hostname.yaml']
+      lockRepo: true
+...
+```
+
+- 资源同步顺序
+
+```
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
+```
+
+> :) 未完待续......
