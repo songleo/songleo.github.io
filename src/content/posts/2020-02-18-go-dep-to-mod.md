@@ -2,6 +2,7 @@
 title: "将go dep转换成go mod"
 description: "从go.mod中将相应的行删除。"
 pubDatetime: 2020-02-18T00:12:05+08:00
+tags: ["golang", "学习笔记"]
 ---
 ### 初始化module
 

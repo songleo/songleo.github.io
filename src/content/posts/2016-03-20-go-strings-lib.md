@@ -2,6 +2,7 @@
 title: "go语言strings库总结"
 description: "最近由于用go做字符串处理，用到了go的strings库，借此对go strings库做个总结，将go strings中所有函数的功能做一个简单的说明，当然，这是一个重复造轮子的过程，因为go语言标准库已经有中文版了。"
 pubDatetime: 2016-03-20T00:28:32+08:00
+tags: ["golang", "最佳实践", "开发"]
 ---
 最近由于用go做字符串处理，用到了go的strings库，借此对go strings库做个总结，将go strings中所有函数的功能做一个简单的说明，当然，这是一个重复造轮子的过程，因为go语言标准库已经有中文版了。
 

@@ -2,6 +2,7 @@
 title: "自动化学习之使用playbook配置awx"
 description: "当部署完awx后，一般需要配置awx以运行playbook执行各种自动化任务。参考这篇文章部署awx：http://reborncodinglife.com/2024/01/07/build-automation-system-based-on-awx/"
 pubDatetime: 2024-01-07T00:12:05+08:00
+tags: ["ansible", "自动化", "学习笔记"]
 ---
 当部署完awx后，一般需要配置awx以运行playbook执行各种自动化任务。参考这篇文章部署awx：http://reborncodinglife.com/2024/01/07/build-automation-system-based-on-awx/
 

@@ -2,6 +2,7 @@
 title: "添加configmap数据到卷"
 description: "这里将configmap挂载到/etc/config目录，然后在容器中运行命令查看该文件内容，最后查看pod的日志，确实输出了文件的内容："
 pubDatetime: 2019-07-02T00:12:05+08:00
+tags: ["kubernetes", "学习笔记"]
 ---
 ### 1 config.yaml如下：
 

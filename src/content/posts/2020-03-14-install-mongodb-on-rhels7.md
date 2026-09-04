@@ -2,6 +2,7 @@
 title: "在rhels7安装mongodb"
 description: "这里会分别安装以下包："
 pubDatetime: 2020-03-13T12:12:05+08:00
+tags: ["linux", "数据库", "部署"]
 ---
 ### 添加yum源
 

@@ -2,6 +2,7 @@
 title: "flux学习之在kind中部署flux"
 description: "kubectl kind v0.20.0 docker flux version 2.2.2 $GITHUBUSER $GITHUBTOKEN"
 pubDatetime: 2024-01-09T00:12:05+08:00
+tags: ["kubernetes", "flux", "部署", "学习笔记"]
 ---
 ### 前置条件
 

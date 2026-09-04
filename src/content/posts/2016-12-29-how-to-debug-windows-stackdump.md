@@ -2,6 +2,7 @@
 title: "如何调试windows的stackdump文件"
 description: "在windows上，通过cygwin编译的c程序在运行时，若有内存错误也会产生类似linux上的core文件，但是该文件一般是以stackdump为后缀的文本文件，且文件提供的信息有限，只包含了程序coredump时函数调用的栈信息，不能像linux一样使用gdb调试。所以，在windows平..."
 pubDatetime: 2016-12-29T20:52:32+08:00
+tags: ["windows", "故障排查"]
 ---
 在windows上，通过cygwin编译的c程序在运行时，若有内存错误也会产生类似linux上的core文件，但是该文件一般是以stackdump为后缀的文本文件，且文件提供的信息有限，只包含了程序coredump时函数调用的栈信息，不能像linux一样使用gdb调试。所以，在windows平台调试cygwin编译的c程序不太方便。本文介绍一种方法，通过反汇编c程序，结合程序coredump时生成的stackdump文件，可以快速定位出程序的coredump位置。
 

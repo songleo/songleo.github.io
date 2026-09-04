@@ -2,6 +2,7 @@
 title: "kubernetes网络（二）"
 description: "纯三层的网络解决方案：flannel的host-gw模式和calico模式。"
 pubDatetime: 2019-09-27T00:12:05+08:00
+tags: ["kubernetes", "网络", "云原生"]
 ---
 纯三层的网络解决方案：[flannel的host-gw模式](http://reborncodinglife.com/2019/09/20/docker-network-3/)和calico模式。
 

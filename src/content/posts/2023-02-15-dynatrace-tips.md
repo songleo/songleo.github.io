@@ -2,6 +2,7 @@
 title: "dynatrace使用tips"
 description: "定义alert时可用的特殊变量 {alertcondition}：表示alert的条件，大于（above）或者小于（below） {baseline}：基线的违反值 {dims}：指标的所有维度数据，比如dt.entity.customdevice.name和dt.entity.customd..."
 pubDatetime: 2023-02-15T00:12:05+08:00
+tags: ["dynatrace", "可观测性", "最佳实践"]
 ---
 - [定义alert时可用的特殊变量](https://www.dynatrace.com/support/help/observe-and-explore/davis-ai/anomaly-detection/metric-events/metric-key-events)
   - {alert_condition}：表示alert的条件，大于（above）或者小于（below）

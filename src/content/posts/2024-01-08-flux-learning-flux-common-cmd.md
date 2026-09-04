@@ -2,6 +2,7 @@
 title: "flux学习之flux常用命令"
 description: "启用自动补全功能"
 pubDatetime: 2024-01-08T00:12:05+08:00
+tags: ["flux", "最佳实践", "学习笔记", "工具"]
 ---
 - 启用自动补全功能
 

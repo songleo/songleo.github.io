@@ -2,6 +2,7 @@
 title: "aws waf tips"
 description: "aws waf tips"
 pubDatetime: 2024-06-16T00:12:05+08:00
+tags: ["aws", "最佳实践"]
 ---
 ### 创建acl
 

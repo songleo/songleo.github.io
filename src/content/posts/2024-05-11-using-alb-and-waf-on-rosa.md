@@ -2,6 +2,7 @@
 title: "在rosa部署alb和waf"
 description: "在rosa部署alb和waf"
 pubDatetime: 2024-05-11T00:12:05+08:00
+tags: ["openshift", "aws", "部署"]
 ---
 ### 准备环境变量
 

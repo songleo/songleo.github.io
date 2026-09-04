@@ -2,6 +2,7 @@
 title: "prometheus过滤指标数据"
 description: "打开prometheus ui: http://localhost:9090/graph 查看指标数据，可以看到goinfo和gogcdurationseconds指标数据都不存在。通过配置metricrelabelconfigs可以将匹配的指标数据丢弃。"
 pubDatetime: 2020-07-03T12:12:05+08:00
+tags: ["prometheus", "可观测性"]
 ---
 ## prometheus配置文件如下
 

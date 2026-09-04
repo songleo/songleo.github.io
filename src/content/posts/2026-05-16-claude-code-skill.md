@@ -2,6 +2,7 @@
 title: "claude code skill学习"
 description: "claude code 中的 skill 是一种可复用、可调用的程序化任务处理器。当用户输入特定命令或满足触发条件时，skill 会被自动加载并执行预定义的任务。skill 就像是给 claude 配备的\"专业技能包\"，让它能够以一致、可靠的方式处理特定类型的工作，可以理解成是ai工具的sop..."
 pubDatetime: 2026-05-16T00:00:00+08:00
+tags: ["claude code", "学习笔记", "skills"]
 ---
 ## 什么是 skill
 

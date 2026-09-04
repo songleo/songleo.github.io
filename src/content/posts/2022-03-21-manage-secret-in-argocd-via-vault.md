@@ -2,6 +2,7 @@
 title: "在argocd中使用vault管理secret"
 description: "secret如下："
 pubDatetime: 2022-03-21T00:12:05+08:00
+tags: ["argocd", "vault", "安全"]
 ---
 secret如下：
 

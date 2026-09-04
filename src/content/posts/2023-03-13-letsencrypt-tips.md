@@ -2,6 +2,7 @@
 title: "let’s encrypt使用tips"
 description: "在域名提供商处添加a记录指向public ip，才能通过域名访问web"
 pubDatetime: 2023-03-13T00:12:05+08:00
+tags: ["安全", "最佳实践"]
 ---
 - 在域名提供商处添加a记录指向public ip，才能通过域名访问web
 

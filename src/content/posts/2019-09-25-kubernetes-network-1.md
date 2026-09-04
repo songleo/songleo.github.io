@@ -2,6 +2,7 @@
 title: "kubernetes网络（一）"
 description: "flannel的vxlan模式中，kubernetes借助cni接口，维护了一个类似docker0的网桥，即cni网桥cni0。完成容器的跨主通信。cni网桥只会接管由其创建的容器之间的容器。cni主要功能是kubernetes启动infra容器后，调用相应的cni插件，为infra容器的ne..."
 pubDatetime: 2019-09-25T00:12:05+08:00
+tags: ["kubernetes", "网络", "云原生"]
 ---
 flannel的vxlan模式中，kubernetes借助cni接口，维护了一个类似docker0的网桥，即cni网桥cni0。完成容器的跨主通信。cni网桥只会接管由其创建的容器之间的容器。cni主要功能是kubernetes启动infra容器后，调用相应的cni插件，为infra容器的network namespace配置网络栈，如网卡、回环设备、路由表和iptables规则。
 

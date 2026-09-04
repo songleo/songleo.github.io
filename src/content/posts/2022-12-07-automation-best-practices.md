@@ -2,6 +2,7 @@
 title: "automation best practices"
 description: "一定要有备份的习惯，就算手动修改一个文件，也要先备份再修改"
 pubDatetime: 2022-12-07T00:12:05+08:00
+tags: ["自动化", "最佳实践"]
 ---
 - 一定要有备份的习惯，就算手动修改一个文件，也要先备份再修改
 

@@ -2,6 +2,7 @@
 title: "cert-manager签发证书"
 description: "ca的创建参考："
 pubDatetime: 2021-12-27T00:12:05+08:00
+tags: ["cert-manager", "安全"]
 ---
 ## 创建自签名证书的ca
 

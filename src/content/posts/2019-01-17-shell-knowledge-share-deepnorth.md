@@ -2,6 +2,7 @@
 title: "shell相关知识分享"
 description: "cdpkg cdpython cdmatching cdsched cdd cdm cds"
 pubDatetime: 2019-01-17T00:12:05+08:00
+tags: ["shell", "学习笔记"]
 ---
 ### 1 频繁进入目录
 

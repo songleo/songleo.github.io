@@ -2,6 +2,7 @@
 title: "使用容器模拟虚拟机作为ssh服务器"
 description: "在学习ansible时，需要添加一些远程host测试playbook，所以想通过docker模拟一个vm，然后安装ssh服务，方便测试运行playbook。"
 pubDatetime: 2024-01-06T00:12:05+08:00
+tags: ["docker", "云原生"]
 ---
 在学习ansible时，需要添加一些远程host测试playbook，所以想通过docker模拟一个vm，然后安装ssh服务，方便测试运行playbook。
 

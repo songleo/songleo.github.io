@@ -2,6 +2,7 @@
 title: "scrum master随笔"
 description: "之前在我们squad担任过一段时间的scrum master，于是想把当scrum master期间的一些职责和想法记录下来，当然不同的组织有不同的scrum文化和方式，这里仅供参考："
 pubDatetime: 2021-12-31T12:12:05+08:00
+tags: ["工作流", "随笔"]
 ---
 之前在我们squad担任过一段时间的scrum master，于是想把当scrum master期间的一些职责和想法记录下来，当然不同的组织有不同的scrum文化和方式，这里仅供参考：
 

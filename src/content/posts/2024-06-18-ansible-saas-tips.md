@@ -2,6 +2,7 @@
 title: "ansible saas tips"
 description: "ansible saas tips"
 pubDatetime: 2024-06-16T00:12:05+08:00
+tags: ["ansible", "自动化", "最佳实践"]
 ---
 ### 创建集群
 

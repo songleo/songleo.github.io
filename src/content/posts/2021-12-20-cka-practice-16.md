@@ -2,6 +2,7 @@
 title: "cka练习（十六）"
 description: "cka练习（十六）"
 pubDatetime: 2021-12-20T00:12:05+08:00
+tags: ["kubernetes", "cka", "考试认证"]
 ---
 ```shell
 cat <<EOF | kubectl apply -f -

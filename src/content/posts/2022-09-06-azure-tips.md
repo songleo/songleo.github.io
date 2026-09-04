@@ -2,6 +2,7 @@
 title: "azure使用tips"
 description: "通过service principle登录"
 pubDatetime: 2022-09-06T00:12:05+08:00
+tags: ["azure", "最佳实践"]
 ---
 - 通过service principle登录
 

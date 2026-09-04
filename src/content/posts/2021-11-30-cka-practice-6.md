@@ -2,6 +2,7 @@
 title: "cka练习（六）"
 description: "cka/ckad应试指南：从docker到kubernetes完全攻略 ch-13"
 pubDatetime: 2021-11-30T12:12:05+08:00
+tags: ["kubernetes", "cka", "考试认证"]
 ---
 ```shell
 $ cat <<EOF | kubectl apply -f -

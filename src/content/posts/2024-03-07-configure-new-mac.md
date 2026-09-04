@@ -2,6 +2,7 @@
 title: "配置新mac"
 description: "chrome dash docker desktop podman desktop iterm mysql workbench qq music redis insight slack visual studio code vmware fusion wechat"
 pubDatetime: 2024-03-07T00:12:05+08:00
+tags: ["macos", "学习笔记"]
 ---
 ### 软件
 

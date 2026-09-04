@@ -2,6 +2,7 @@
 title: "chatgpt + codex 程序员实用指南"
 description: "面向程序员和技术团队，介绍 ChatGPT、ChatGPT Work、Codex 桌面端、Codex CLI、IDE 扩展和 Codex Cloud 的区别、用法与协作方式。 本文依据 OpenAI 官方文档重新整理，最后核对日期：2026-08-06。产品处于持续更新中，账号套餐、组织策略和..."
 pubDatetime: 2026-08-06T00:12:05+08:00
+tags: ["chatgpt", "codex", "开发", "最佳实践"]
 ---
 > 面向程序员和技术团队，介绍 ChatGPT、ChatGPT Work、Codex 桌面端、Codex CLI、IDE 扩展和 Codex Cloud 的区别、用法与协作方式。  
 > 本文依据 OpenAI 官方文档重新整理，最后核对日期：2026-08-06。产品处于持续更新中，账号套餐、组织策略和灰度发布可能导致界面略有不同。

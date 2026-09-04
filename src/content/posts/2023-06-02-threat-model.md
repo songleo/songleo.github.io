@@ -2,6 +2,7 @@
 title: "threat model介绍"
 description: "threat model是一种结构化的方法，旨在识别和量化在某种环境中的潜在威胁。这是一个重要的方法，可以帮助我们了解并改进系统的安全性。接下来我们将深入了解threat model的目标，流程，以及一些主动控制方法。"
 pubDatetime: 2023-06-02T00:12:05+08:00
+tags: ["安全", "学习笔记"]
 ---
 ### threat model的介绍
 

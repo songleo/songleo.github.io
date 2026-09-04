@@ -2,6 +2,7 @@
 title: "datadog使用tips"
 description: "检查agent配置"
 pubDatetime: 2022-12-30T00:12:05+08:00
+tags: ["可观测性", "最佳实践"]
 ---
 - 检查agent配置
 

@@ -2,6 +2,7 @@
 title: "git命令tips"
 description: "和上游同步"
 pubDatetime: 2019-09-10T00:12:05+08:00
+tags: ["git", "最佳实践", "工具"]
 ---
 - 和上游同步
 

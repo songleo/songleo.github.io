@@ -2,6 +2,7 @@
 title: "centos安装openmpi"
 description: "通过官方网站提供的下载地址：https://download.open-mpi.org/release/open-mpi/v3.1/openmpi-3.1.0.tar.gz，下载3.1版的openmpi，在命令行执行如下命令，会将openmpi-3.1.0.tar.gz文件下载到当前目录："
 pubDatetime: 2018-06-25T00:05:00+08:00
+tags: ["linux", "部署"]
 ---
 ### 1 下载openmpi源码
 

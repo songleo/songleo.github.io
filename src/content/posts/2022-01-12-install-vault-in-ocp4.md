@@ -2,6 +2,7 @@
 title: "openshift安装vault"
 description: "将vault的helm repo克隆到本地，并checkout到最新版本v0.18.0："
 pubDatetime: 2022-01-12T00:12:05+08:00
+tags: ["openshift", "vault", "部署", "云原生"]
 ---
 ### 安装helm
 

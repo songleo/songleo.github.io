@@ -2,6 +2,7 @@
 title: "在chrome中配置proxy switchyomega"
 description: "可以添加自己的代理服务器，比如："
 pubDatetime: 2024-01-10T00:12:05+08:00
+tags: ["chrome", "网络"]
 ---
 ### 配置proxy servers
 

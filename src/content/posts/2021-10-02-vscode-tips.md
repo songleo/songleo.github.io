@@ -2,6 +2,7 @@
 title: "vscode使用tips"
 description: "多行选择"
 pubDatetime: 2021-10-02T12:12:05+08:00
+tags: ["工具", "最佳实践"]
 ---
 - 多行选择
 

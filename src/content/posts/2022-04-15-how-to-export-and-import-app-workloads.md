@@ -2,6 +2,7 @@
 title: "导出和导入aap资源"
 description: "获取aap controller管理员密码:"
 pubDatetime: 2022-04-15T00:12:05+08:00
+tags: ["ansible", "自动化"]
 ---
 - 获取aap controller管理员密码:
 

@@ -2,6 +2,7 @@
 title: "inno setup功能函数合集"
 description: "1 检测系统是否win7"
 pubDatetime: 2016-01-10T09:11:31+08:00
+tags: ["windows", "开发"]
 ---
 1 检测系统是否win7
 

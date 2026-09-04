@@ -2,6 +2,7 @@
 title: "windows平台使用pyinstaller将python脚本打包成可执行文件"
 description: "平时工作中，有时候需要将自己写的python脚本在windows运行，但是若windows没有安装python，那么就不能直接运行python脚本。本文介绍一种方法，通过pyinstaller工具将python脚本打包成一个可执行文件，可以直接在windows运行，不管windows是否安装p..."
 pubDatetime: 2016-12-02T20:00:32+08:00
+tags: ["python", "windows", "部署"]
 ---
 平时工作中，有时候需要将自己写的python脚本在windows运行，但是若windows没有安装python，那么就不能直接运行python脚本。本文介绍一种方法，通过pyinstaller工具将python脚本打包成一个可执行文件，可以直接在windows运行，不管windows是否安装python都可以运行该可执行文件，详细步骤如下：
 

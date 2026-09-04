@@ -2,6 +2,7 @@
 title: "自动化学习之基于awx构建自动化系统"
 description: "automation-learning-building-an-automation-system-based-on-awx"
 pubDatetime: 2024-01-07T00:12:05+08:00
+tags: ["ansible", "自动化", "学习笔记"]
 ---
 automation-learning-building-an-automation-system-based-on-awx
 ### 前提条件

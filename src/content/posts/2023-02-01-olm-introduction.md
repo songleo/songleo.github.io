@@ -2,6 +2,7 @@
 title: "olm简介"
 description: "operator lifecycle manager (olm)可帮助用户安装、更新和管理所有operator以及在用户集群中运行的关联服务的生命周期。operator lifecycle manager是operator framework的一部分，后者是一个开源工具包，用于以有效、自动化且..."
 pubDatetime: 2023-02-01T00:12:05+08:00
+tags: ["kubernetes", "学习笔记"]
 ---
 operator lifecycle manager (olm)可帮助用户安装、更新和管理所有operator以及在用户集群中运行的关联服务的生命周期。operator lifecycle manager是operator framework的一部分，后者是一个开源工具包，用于以有效、自动化且可扩展的方式管理kubernetes operator。
 

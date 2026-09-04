@@ -2,6 +2,7 @@
 title: "go语言坑之list删除所有元素"
 description: "go提供了一个list包，类似python的list，可以存储任意类型的数据，并提供了相应的API，如下："
 pubDatetime: 2017-03-30T21:05:32+08:00
+tags: ["golang", "最佳实践"]
 ---
 go提供了一个[list包](https://golang.org/pkg/container/list/)，类似python的list，可以存储任意类型的数据，并提供了相应的API，如下：
 

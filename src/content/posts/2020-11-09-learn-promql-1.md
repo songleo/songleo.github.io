@@ -2,6 +2,7 @@
 title: "promql学习（一）"
 description: "至少包含一个指标名称或者一个标签。"
 pubDatetime: 2020-11-09T12:12:05+08:00
+tags: ["prometheus", "可观测性", "学习笔记"]
 ---
 ### 即时向量选择器
 

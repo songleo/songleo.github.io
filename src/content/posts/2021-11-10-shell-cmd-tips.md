@@ -2,6 +2,7 @@
 title: "shell命令tips"
 description: "命令查找"
 pubDatetime: 2021-11-10T00:12:05+08:00
+tags: ["shell", "最佳实践", "工具"]
 ---
 - 命令查找
 

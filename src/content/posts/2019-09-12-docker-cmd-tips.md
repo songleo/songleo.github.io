@@ -2,6 +2,7 @@
 title: "docker命令tips"
 description: "docker覆盖entrypoint"
 pubDatetime: 2019-09-12T00:12:05+08:00
+tags: ["docker", "最佳实践", "工具", "云原生"]
 ---
 - docker覆盖entrypoint
 

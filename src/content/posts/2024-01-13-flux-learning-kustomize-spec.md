@@ -2,6 +2,7 @@
 title: "flux学习之kustomization spec"
 description: "定义通用的元数据，如标签和注释，会覆盖已存在的元数据。"
 pubDatetime: 2024-01-13T00:12:05+08:00
+tags: ["kubernetes", "flux", "kustomize", "学习笔记"]
 ---
 ### commonMetadata
 

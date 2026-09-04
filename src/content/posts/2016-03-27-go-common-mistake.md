@@ -2,6 +2,7 @@
 title: "go常见错误总结"
 description: "最近为了学习go语言，花了点时间翻译《the way to go》这本书相关章节："
 pubDatetime: 2016-03-26T23:11:32+08:00
+tags: ["golang", "故障排查", "最佳实践"]
 ---
 最近为了学习go语言，花了点时间翻译《the way to go》这本书相关章节：
 

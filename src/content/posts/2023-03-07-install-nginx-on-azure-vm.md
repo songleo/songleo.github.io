@@ -2,6 +2,7 @@
 title: "在azure vm中安装nginx"
 description: "我创建的是ubuntu，记得打开80和443端口，如果你需要支持https的话。给vm设置相应的域名，如yourvm.eastus.cloudapp.azure.com"
 pubDatetime: 2023-03-07T00:12:05+08:00
+tags: ["azure", "网络", "部署"]
 ---
 ## 在azure创建vm
 

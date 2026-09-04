@@ -2,6 +2,7 @@
 title: "自动化学习之awx rest api"
 description: "查看api版本信息"
 pubDatetime: 2024-01-07T00:12:05+08:00
+tags: ["ansible", "自动化", "学习笔记"]
 ---
 - 查看api版本信息
 

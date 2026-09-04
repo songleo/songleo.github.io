@@ -2,6 +2,7 @@
 title: "使用playbook从dynatrace删除k8s集群"
 description: "在删除被dynatrace监控的集群时，需要及时将集群从dynatrace删除，以免遇到下面错误："
 pubDatetime: 2024-05-23T00:12:05+08:00
+tags: ["kubernetes", "ansible", "dynatrace", "可观测性"]
 ---
 在删除被dynatrace监控的集群时，需要及时将集群从dynatrace删除，以免遇到下面错误：
 

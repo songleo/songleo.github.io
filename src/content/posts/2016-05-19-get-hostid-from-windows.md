@@ -2,6 +2,7 @@
 title: "go获取windows的hostid"
 description: "在类unix系统中可以通过hostid命令获取到一个十六进制数，称为hostid，在大多数情况下可以作为该机器的唯一标识符。例如在我的ubuntu系统上执行如下："
 pubDatetime: 2016-05-19T23:44:32+08:00
+tags: ["golang", "windows"]
 ---
 在类unix系统中可以通过hostid命令获取到一个十六进制数，称为hostid，在大多数情况下可以作为该机器的唯一标识符。例如在我的ubuntu系统上执行如下：
 

@@ -2,6 +2,7 @@
 title: "kustomize学习"
 description: "通过kustomize使用kustomization文件定制kubernetes对象"
 pubDatetime: 2021-12-24T00:12:05+08:00
+tags: ["kubernetes", "kustomize", "学习笔记"]
 ---
 通过kustomize使用kustomization文件定制kubernetes对象
 

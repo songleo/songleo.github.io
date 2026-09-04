@@ -2,6 +2,7 @@
 title: "k8s多租户学习"
 description: "为每个租户创建独立namespace，并创建相应的resourcequota和limitrange限制资源使用。"
 pubDatetime: 2026-05-10T00:12:05+08:00
+tags: ["kubernetes", "最佳实践", "学习笔记", "云原生"]
 ---
 ## namespace级别隔离
 

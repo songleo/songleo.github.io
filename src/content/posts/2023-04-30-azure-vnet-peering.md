@@ -2,6 +2,7 @@
 title: "azure vnet peering"
 description: "azure vnet peering是一种用于azure虚拟网络之间互相连接的技术。它可以将两个虚拟网络通过虚拟网络之间的vnet peering，使它们之间可以直接通信，就像它们在同一个虚拟网络中一样。vnet peering允许虚拟机、负载均衡器、应用程序和其他资源之间进行高速和安全的通信。"
 pubDatetime: 2023-04-30T00:12:05+08:00
+tags: ["azure", "网络"]
 ---
 azure vnet peering是一种用于azure虚拟网络之间互相连接的技术。它可以将两个虚拟网络通过虚拟网络之间的vnet peering，使它们之间可以直接通信，就像它们在同一个虚拟网络中一样。vnet peering允许虚拟机、负载均衡器、应用程序和其他资源之间进行高速和安全的通信。
 

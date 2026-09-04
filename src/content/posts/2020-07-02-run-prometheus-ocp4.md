@@ -2,6 +2,7 @@
 title: "在ocp4上运行prometheus"
 description: "deployment"
 pubDatetime: 2020-07-02T12:12:05+08:00
+tags: ["openshift", "prometheus", "可观测性", "云原生"]
 ---
 ## prometheus部署yaml
 

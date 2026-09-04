@@ -2,6 +2,7 @@
 title: "flux学习之helmrelease spec"
 description: "定义需要安装的chart。"
 pubDatetime: 2024-03-12T00:12:05+08:00
+tags: ["flux", "helm", "学习笔记"]
 ---
 ### chart
 

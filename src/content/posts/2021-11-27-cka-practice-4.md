@@ -2,6 +2,7 @@
 title: "cka练习（四）"
 description: "cka练习（四）"
 pubDatetime: 2021-11-27T12:12:05+08:00
+tags: ["kubernetes", "cka", "考试认证"]
 ---
 ## 1 pod日志监控
 

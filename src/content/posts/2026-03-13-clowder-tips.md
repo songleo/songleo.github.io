@@ -2,6 +2,7 @@
 title: "clowder tips"
 description: "假设要部署一个hello-api app,目录结构如下："
 pubDatetime: 2026-03-13T00:12:05+08:00
+tags: ["ai", "最佳实践"]
 ---
 假设要部署一个hello-api app,目录结构如下：
 

@@ -2,6 +2,7 @@
 title: "使用certbot申请和更新letsencrypt证书"
 description: "在home目录创建.azure.ini文件，替换成你的azure service principal："
 pubDatetime: 2023-04-13T00:12:05+08:00
+tags: ["安全", "学习笔记"]
 ---
 ### 使用pip安装certbot和azure dns插件
 

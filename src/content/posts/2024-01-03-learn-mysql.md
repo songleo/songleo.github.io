@@ -2,6 +2,7 @@
 title: "mysql学习"
 description: "mysql学习"
 pubDatetime: 2024-01-03T00:12:05+08:00
+tags: ["数据库", "学习笔记"]
 ---
 ### docker启动mysql
 

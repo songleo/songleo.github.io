@@ -2,6 +2,7 @@
 title: "go获取机器的mac地址和ip"
 description: "开发中常需要获取机器的mac地址或者ip，本文通过go获取机器上所有mac地址和ip，详细代码如下："
 pubDatetime: 2016-05-20T23:44:32+08:00
+tags: ["golang", "macos", "网络"]
 ---
 开发中常需要获取机器的mac地址或者ip，本文通过go获取机器上所有mac地址和ip，详细代码如下：
 

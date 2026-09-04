@@ -2,6 +2,7 @@
 title: "在ocp上使用prometheus监控用户应用"
 description: "在cluster-monitoring-config中添加以下字段："
 pubDatetime: 2020-03-01T12:12:05+08:00
+tags: ["prometheus", "可观测性", "云原生"]
 ---
 ### 启用监控用户应用的功能
 

@@ -2,6 +2,7 @@
 title: "k8s network policy tips"
 description: "Network Policy 是 Kubernetes 中实现网络隔离和安全控制的核心机制。本文通过大量实例，帮助你快速掌握 Network Policy 的使用。"
 pubDatetime: 2026-05-14T00:12:05+08:00
+tags: ["kubernetes", "网络", "安全", "最佳实践"]
 ---
 Network Policy 是 Kubernetes 中实现网络隔离和安全控制的核心机制。本文通过大量实例，帮助你快速掌握 Network Policy 的使用。
 

@@ -2,6 +2,7 @@
 title: "prometheus查询优化"
 description: "通过 recording rules 预计算常用查询或聚合表达式，可以将复杂的实时计算转移到后台提前完成，大幅减少查询时遍历的时间序列数量。这不仅能降低 prometheus 的查询负载，还能让 grafana 仪表盘响应更快。合理设置规则也能为后续的降采样和长期存储打下基础。"
 pubDatetime: 2026-05-15T00:12:05+08:00
+tags: ["prometheus", "可观测性", "最佳实践"]
 ---
 ## recording rules
 

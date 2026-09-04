@@ -2,6 +2,7 @@
 title: "将namespace-scoped的operator修改成cluster-scoped"
 description: "在main.go中，manager.New时，将namespace参数修改成空。"
 pubDatetime: 2020-07-29T12:12:05+08:00
+tags: ["kubernetes", "学习笔记"]
 ---
 ## 修改main函数
 

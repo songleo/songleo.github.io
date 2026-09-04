@@ -2,6 +2,7 @@
 title: "使用external-secrets访问aws secrets manager"
 description: "在安装 external-secrets 并创建 clustersecretstore 后，状态一直不是 ready，日志中出现了以下的错误："
 pubDatetime: 2026-01-15T00:12:05+08:00
+tags: ["aws", "external-secrets", "安全"]
 ---
 ## 遇到的错误
 

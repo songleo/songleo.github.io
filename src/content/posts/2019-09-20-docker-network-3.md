@@ -2,6 +2,7 @@
 title: "容器网络（三）"
 description: "默认配置下，docker在不同宿主机上创建的容器无法通过ip地址相互访问。而相同宿主机上的容器借助docker0网桥模式可以通过ip相互访问。网桥设备转发数据包的依据，是来自转发数据库（forwarding database FDB），FDB记录了二层数据帧应该通过那个接口设备发送到目的主机，..."
 pubDatetime: 2019-09-20T00:12:05+08:00
+tags: ["docker", "网络", "云原生"]
 ---
 默认配置下，docker在不同宿主机上创建的容器无法通过ip地址相互访问。而相同宿主机上的容器借助docker0网桥模式可以通过ip相互访问。网桥设备转发数据包的依据，是来自转发数据库（forwarding database FDB），FDB记录了二层数据帧应该通过那个接口设备发送到目的主机，通过命令bridge fdb show可以查询。
 

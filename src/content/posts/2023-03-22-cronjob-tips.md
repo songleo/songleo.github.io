@@ -2,6 +2,7 @@
 title: "常见cronjob时间例子"
 description: "查看cronjob"
 pubDatetime: 2023-03-22T00:12:05+08:00
+tags: ["职场", "最佳实践"]
 ---
 - 查看cronjob
 

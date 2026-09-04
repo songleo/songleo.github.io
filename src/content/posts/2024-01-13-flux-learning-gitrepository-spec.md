@@ -2,6 +2,7 @@
 title: "flux学习之gitrepository spec"
 description: "git repo的url。"
 pubDatetime: 2024-01-13T00:12:05+08:00
+tags: ["flux", "学习笔记"]
 ---
 ### url
 

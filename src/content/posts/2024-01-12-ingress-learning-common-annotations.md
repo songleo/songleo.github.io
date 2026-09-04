@@ -2,6 +2,7 @@
 title: "ingress学习之常用annotations"
 description: "指定与后端服务的通信协议。如果后端服务配置为只接受https连接，不使用此注解会导致连接失败，因为ingress默认使用http。"
 pubDatetime: 2024-01-12T00:12:05+08:00
+tags: ["kubernetes", "最佳实践", "学习笔记"]
 ---
 ### nginx.ingress.kubernetes.io/backend-protocol: "https"
 

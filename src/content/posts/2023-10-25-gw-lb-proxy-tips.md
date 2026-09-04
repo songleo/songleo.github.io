@@ -2,6 +2,7 @@
 title: "gateway和load balancer和proxy总结"
 description: "工作中经常遇到gateway和load balancer和proxy，有时候实在搞不清楚他们之间的区别和使用场景，所以想花点时间查阅下资料，权当学习记录。"
 pubDatetime: 2023-10-25T00:12:05+08:00
+tags: ["网络", "最佳实践"]
 ---
 工作中经常遇到gateway和load balancer和proxy，有时候实在搞不清楚他们之间的区别和使用场景，所以想花点时间查阅下资料，权当学习记录。
 

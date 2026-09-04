@@ -2,6 +2,7 @@
 title: "用于监控pod的alerts"
 description: "最近需要使用prometheus监控kubernetes环境下的一些pod状态，定义了一些alert，分享一下："
 pubDatetime: 2022-03-08T00:12:05+08:00
+tags: ["kubernetes", "prometheus", "可观测性"]
 ---
 最近需要使用prometheus监控kubernetes环境下的一些pod状态，定义了一些alert，分享一下：
 

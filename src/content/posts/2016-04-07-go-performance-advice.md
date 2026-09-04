@@ -2,6 +2,7 @@
 title: "go语言性能建议"
 description: "最近为了学习go语言，花了点时间翻译《the way to go》这本书相关章节："
 pubDatetime: 2016-04-07T21:40:32+08:00
+tags: ["golang", "最佳实践"]
 ---
 最近为了学习go语言，花了点时间翻译《the way to go》这本书相关章节：
 

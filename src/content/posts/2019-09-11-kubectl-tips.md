@@ -2,6 +2,7 @@
 title: "kubernetes命令tips"
 description: "kubectl使用指定的配置文件"
 pubDatetime: 2019-09-11T00:12:05+08:00
+tags: ["kubernetes", "最佳实践", "云原生"]
 ---
 - kubectl使用指定的配置文件
 

@@ -2,6 +2,7 @@
 title: "valgrind使用：检测非法读写内存"
 description: "本文简单介绍如何通过valgrind检测c语言中的非法读写内存，避免发生不可预测行为。"
 pubDatetime: 2016-11-14T21:47:32+08:00
+tags: ["valgrind", "故障排查"]
 ---
 本文简单介绍如何通过valgrind检测c语言中的非法读写内存，避免发生不可预测行为。
 
