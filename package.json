@@ -2,6 +2,7 @@
   "name": "reborn-coding-life",
   "type": "module",
   "version": "6.1.0",
+  "packageManager": "pnpm@11.3.0",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -13,7 +14,8 @@
     "astro": "astro",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "check:content": "python -m unittest discover -s scripts -p test_content.py && python scripts/check_content.py"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.0",

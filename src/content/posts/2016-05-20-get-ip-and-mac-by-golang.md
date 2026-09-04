@@ -73,6 +73,6 @@ func main() {
 
 go语言在获取机器的mac地址和ip时，windows和linux输出格式不一样，比如windows获取的mac地址是8个字节，而linux获取的mac是6个字节，ip异同可以参考这篇博客:
 
-[go获取windows的hostid](http://reborncodinglife.com/2016/05/19/get-hostid-from-windows/)
+[go获取windows的hostid](https://reborncodinglife.com/2016/05/19/get-hostid-from-windows/)
 
 所以不同平台需做不同处理。

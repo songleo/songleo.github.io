@@ -178,7 +178,7 @@ tags: ["git", "最佳实践", "工具"]
 
 ## 参考
 
-http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
-http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
 
 ps：最近在看一本书：《写给大家看的设计书》，貌似排版有点改进了Orz

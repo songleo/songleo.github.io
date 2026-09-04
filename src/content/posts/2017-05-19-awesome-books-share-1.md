@@ -69,4 +69,4 @@ tags: ["读书", "生活"]
 
 本次书籍分享到此，如果你也喜欢阅读，请记得分享给身边的人，谢谢！
 
-> 我的书单：[http://reborncodinglife.com/2016/01/30/my-book-list/](http://reborncodinglife.com/2016/01/30/my-book-list/)
+> 我的书单：[https://reborncodinglife.com/2016/01/30/my-book-list/](https://reborncodinglife.com/2016/01/30/my-book-list/)

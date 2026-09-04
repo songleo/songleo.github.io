@@ -187,5 +187,5 @@ Invalid value: "<secret contents redacted>": invalid character ''<'' lookingfor 
 ## ref
 
 - argocd安装vault插件：https://argocd-vault-plugin.readthedocs.io/en/stable/installation/
-- argocd安装：http://reborncodinglife.com/2021/12/23/argocd-learning-1/
-- vault安装：http://reborncodinglife.com/2022/01/12/install-vault-in-ocp4/
+- argocd安装：https://reborncodinglife.com/2021/12/23/argocd-learning-1/
+- vault安装：https://reborncodinglife.com/2022/01/12/install-vault-in-ocp4/

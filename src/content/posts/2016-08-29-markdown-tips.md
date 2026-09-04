@@ -21,8 +21,8 @@ tags: ["工具", "最佳实践", "学习笔记"]
 使用markdown一段时间以后，才发现markdown原来那么有用，比如：
 
 - [github](https://github.com/songleo)
-- [stackoverflow](http://stackoverflow.com/users/3839487/leo)
-- [写博客](http://reborncodinglife.com/)
+- [stackoverflow](https://stackoverflow.com/users/3839487/leo)
+- [写博客](https://reborncodinglife.com/)
 - 编辑微信公众号文章
 - 技术论坛
 - 编辑日常技术文章
@@ -191,11 +191,11 @@ tags: ["工具", "最佳实践", "学习笔记"]
 如果需要插入链接，可以使用以下语法：
 
 ```
-[这是链接](http://note.youdao.com/)
+[这是链接](https://note.youdao.com/)
 ```
 效果如下：
 
-[这是链接](http://note.youdao.com/)
+[这是链接](https://note.youdao.com/)
 
 ### 11 插入图片
 

@@ -54,7 +54,7 @@ nginx-app-5dd4f9fd4d-55hp8   1/1       Running   0          34s
 
 ## helm的安装
 
-参考：http://reborncodinglife.com/2019/05/16/helm-learning-1/
+参考：https://reborncodinglife.com/2019/05/16/helm-learning-1/
 
 
 ## istio安装

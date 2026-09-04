@@ -55,7 +55,7 @@ root@master:dist$ ./hello_world
 hello, world!
 ```
 
-我解释下上面命令行，首先使用python直接运行需要编译成独立二进制文件的hello_world.py，程序正常打印hello, world!，然后使用pip安装pyinstaller，通过pyinstaller将hello_world.py打包成独立的二进制文件，然后进入当前目录下的dist目录，运行打包成功的二进制文件hello_world，程序正常打印hello, world!。除了pyinstaller，还有其他工具可以实现类似功能，比如[py2exe](http://www.py2exe.org/)和[cx_Freeze](https://anthony-tuininga.github.io/cx_Freeze/)，如果感兴趣，可以看看。
+我解释下上面命令行，首先使用python直接运行需要编译成独立二进制文件的hello_world.py，程序正常打印hello, world!，然后使用pip安装pyinstaller，通过pyinstaller将hello_world.py打包成独立的二进制文件，然后进入当前目录下的dist目录，运行打包成功的二进制文件hello_world，程序正常打印hello, world!。除了pyinstaller，还有其他工具可以实现类似功能，比如[py2exe](https://www.py2exe.org/)和[cx_Freeze](https://anthony-tuininga.github.io/cx_Freeze/)，如果感兴趣，可以看看。
 
 ### 3 如何自动格式化python代码
 

@@ -482,7 +482,7 @@ tags: ["读书", "个人成长"]
 
 - 八卦微积分 2017-05-07
 
-- [人类简史：从动物到上帝](http://item.jd.com/11549140.html) 2017-05-11
+- [人类简史：从动物到上帝](https://item.jd.com/11549140.html) 2017-05-11
 
 - 计算机：一部历史 2017-05-15
 
@@ -512,7 +512,7 @@ tags: ["读书", "个人成长"]
 
 - [鱼羊野史·第2卷](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b00m2e55hu/ref=sr_1_9?ie=utf8&qid=1500344370&sr=8-9&keywords=%e9%b1%bc%e7%be%8a%e9%87%8e%e5%8f%b2) 2017-07-17
 
-- [http小书](http://www.ituring.com.cn/book/1791) 2017-07-18
+- [http小书](https://www.ituring.com.cn/book/1791) 2017-07-18
 
 - [鱼羊野史·第3卷](https://www.amazon.cn/%e5%9b%be%e4%b9%a6/dp/b00vdojh1u/ref=sr_1_8?ie=utf8&qid=1500549227&sr=8-8&keywords=%e9%b1%bc%e7%be%8a%e9%87%8e%e5%8f%b2) 2017-07-20
 

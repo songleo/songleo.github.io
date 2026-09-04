@@ -23,11 +23,11 @@ argocd-server   argocd-server-argocd.apps.demo.com          argocd-server   http
 
 或者直接通过ocp的operatorhub安装，ocp的gitops实际是通过argocd实现，在operatorhub查找openshift gitops后，按照默认配置安装到ocp：
 
-![](/images/install-ocp-gitops.png)
+![通过 operatorhub 安装 openshift gitops](/images/install-ocp-gitops.png)
 
 安装成功后如下：
 
-![](/images/installed-ocp-gitops.png)
+![openshift gitops 安装成功界面](/images/installed-ocp-gitops.png)
 
 直接从ocp的ui中就可以登录到argocd。
 
@@ -82,7 +82,7 @@ app version: v1.0
 
 ui展示应用如下：
 
-![](/images/argocd-hostname.png)
+![argocd hostname 应用界面](/images/argocd-hostname.png)
 
 ## 使用applicationset在多集群创建应用
 
@@ -130,7 +130,7 @@ $ k apply -f appset.yaml
 
 ui展示多集群应用如下：
 
-![](/images/argocd-appset.png)
+![argocd applicationset 应用界面](/images/argocd-appset.png)
 
 ## ref
 

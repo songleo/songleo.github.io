@@ -139,4 +139,4 @@ Test Suite Passed
 
 ### ref
 
-http://onsi.github.io/ginkgo/#getting-started-writing-your-first-test
+https://onsi.github.io/ginkgo/#getting-started-writing-your-first-test

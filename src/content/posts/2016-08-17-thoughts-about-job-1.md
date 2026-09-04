@@ -62,4 +62,4 @@ tags: ["职场", "随笔"]
 
 #### 本次荐书：软技能
 
-![image](http://img11.360buyimg.com/n1/s200x200_jfs/t2881/175/3274538444/621411/160003a4/57873348Nf36a3ecd.jpg)
+![image](https://img11.360buyimg.com/n1/s200x200_jfs/t2881/175/3274538444/621411/160003a4/57873348Nf36a3ecd.jpg)

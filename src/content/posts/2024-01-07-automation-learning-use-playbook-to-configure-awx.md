@@ -1,10 +1,10 @@
 ---
 title: "自动化学习之使用playbook配置awx"
-description: "当部署完awx后，一般需要配置awx以运行playbook执行各种自动化任务。参考这篇文章部署awx：http://reborncodinglife.com/2024/01/07/build-automation-system-based-on-awx/"
+description: "当部署完awx后，一般需要配置awx以运行playbook执行各种自动化任务。参考这篇文章部署awx：https://reborncodinglife.com/2024/01/07/automation-learning-build-an-automation-system-based-on-awx/"
 pubDatetime: 2024-01-07T00:12:05+08:00
 tags: ["ansible", "自动化", "学习笔记"]
 ---
-当部署完awx后，一般需要配置awx以运行playbook执行各种自动化任务。参考这篇文章部署awx：http://reborncodinglife.com/2024/01/07/build-automation-system-based-on-awx/
+当部署完awx后，一般需要配置awx以运行playbook执行各种自动化任务。参考这篇文章部署awx：https://reborncodinglife.com/2024/01/07/automation-learning-build-an-automation-system-based-on-awx/
 
 ### 前提条件
 
@@ -30,7 +30,7 @@ ssh admin@192.168.0.106 -p 11111
 ssh admin@192.168.0.106 -p 22222
 ```
 
-这个image已经提前设定好用户名和密码，具体参考：http://reborncodinglife.com/2024/01/06/use-container-to-simulate-vm-as-ssh-server/
+这个image已经提前设定好用户名和密码，具体参考：https://reborncodinglife.com/2024/01/06/use-container-to-simulate-vm-as-ssh-server/
 
 ### 使用playbook配置awx
 

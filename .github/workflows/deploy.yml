@@ -17,12 +17,19 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - name: Install, build, and upload site
         uses: withastro/action@v6
+        with:
+          node-version: "24"
+          # pnpm version comes from packageManager in package.json, as in CI.
+          build-cmd: pnpm run lint && pnpm run format:check && pnpm run build && pnpm run check:content
 
   deploy:
     needs: build

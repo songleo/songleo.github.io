@@ -10,7 +10,7 @@ tags: ["linux", "数据库", "部署"]
 $ cat <<EOF >/etc/yum.repos.d/mongodb.repo
 [MongoDB]
 name=MongoDB Repository
-baseurl=http://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/
+baseurl=https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/
 gpgcheck=1
 enabled=1
 gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
@@ -31,7 +31,7 @@ $ yum install mongodb-org -y
 - mongodb-org-shell-4.2.3-1.el7.x86_64.rpm
 - mongodb-org-tools-4.2.3-1.el7.x86_64.rpm
 
-也可以直接下载这些[rpm包](http://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/RPMS/)安装mongodb，例如：
+也可以直接下载这些[rpm包](https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.2/x86_64/RPMS/)安装mongodb，例如：
 
 ```
 $ rpm -i mongodb-org-4.2.3-1.el7.x86_64.rpm \
