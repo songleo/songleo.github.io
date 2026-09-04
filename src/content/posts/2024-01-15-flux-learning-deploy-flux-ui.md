@@ -15,7 +15,7 @@ tags: ["flux", "部署", "学习笔记"]
 
 ### 部署flux
 
-参考这篇文章部署flux：http://reborncodinglife.com/2024/01/09/flux-learning-deploy-flux-in-kind/
+参考这篇文章部署flux：https://reborncodinglife.com/2024/01/09/flux-learning-deploy-flux-in-kind/
 
 ### helm方式
 

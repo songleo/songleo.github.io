@@ -53,7 +53,9 @@ $ go run user2-dual-client.go
 I am user1
 ```
 
-所有相关代码和证书：https://github.com/songleo/songleo.github.io/tree/main/src/https
+配套示例代码与运行说明：https://github.com/songleo/songleo.github.io/tree/main/src/https
+
+证书和私钥需按上面的命令在本地生成，不再随仓库提供。历史版本中的证书已过期，私钥也已公开，不能复用。上述 `<(...)` 命令需要在 bash（例如 wsl）中运行。
 
 ## ref
 

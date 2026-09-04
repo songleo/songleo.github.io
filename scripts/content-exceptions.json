@@ -1,0 +1,134 @@
+[
+  {
+    "kind": "http-link",
+    "file": "posts/2016-03-11-python-i18n/index.html",
+    "value": "http://underthehood.blog.51cto.com/2531780/1663604",
+    "reason": "Historical reference. HTTPS hostname mismatch verified 2026-09-05; replacement article not confirmed. Owner: site publisher. Manually verify a canonical replacement before changing."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2018-03-01-python-tricks-8/index.html",
+    "value": "http://localhost:8080/",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2018-05-09-golang-tricks-1/index.html",
+    "value": "http://localhost:6060",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2018-05-19-badminton-backhand-low-service-in-doubles/index.html",
+    "value": "http://m.v.qq.com/play/play.html?vid=w01469paeqb&ptag=4_6.1.1.21692_copy",
+    "reason": "Historical badminton video. HTTPS timed out on 2026-09-05; matching replacement not confirmed. Owner: site publisher. Verify the same video before changing."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2019-09-10-git-cmd-tips/index.html",
+    "value": "http://proxyUsername:proxyPassword@proxy.server.com:port",
+    "reason": "Example HTTP proxy syntax with placeholder username, password, host and port."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-02-17-thanos-1/index.html",
+    "value": "http://dockone.io/article/6019",
+    "reason": "Historical reference. HTTPS certificate chain failed validation on 2026-09-05. Owner: site publisher. Recheck valid TLS and matching article before migrating."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-02-17-thanos-1/index.html",
+    "value": "http://your-local-ip:29090/stores",
+    "reason": "Placeholder for local Thanos endpoints served over HTTP in this tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-02-17-thanos-1/index.html",
+    "value": "http://your-local-ip:9090/graph",
+    "reason": "Placeholder for local Thanos endpoints served over HTTP in this tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-02-17-thanos-1/index.html",
+    "value": "http://your-local-ip:9091/graph",
+    "reason": "Placeholder for local Thanos endpoints served over HTTP in this tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-02-17-thanos-1/index.html",
+    "value": "http://your-local-ip:9092/graph",
+    "reason": "Placeholder for local Thanos endpoints served over HTTP in this tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-03-17-prometheus-grafana-via-docker/index.html",
+    "value": "http://localhost:3000/",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-03-17-prometheus-grafana-via-docker/index.html",
+    "value": "http://localhost:9090/",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-03-24-minio-usage/index.html",
+    "value": "http://localhost:9000",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-06-28-prometheus-remote-write-adapter/index.html",
+    "value": "http://localhost:9090/graph",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-06-29-prometheus-remote-write-fitler/index.html",
+    "value": "http://localhost:9090/graph",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-07-02-run-prometheus-ocp4/index.html",
+    "value": "http://prometheus-service-ssli.apps.soli-acm-hub.dev05.red-chesterfield.com/graph",
+    "reason": "Historical lab route example. The article configures HTTP; do not probe the lab or assume TLS is enabled."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2020-07-03-prometheus-filter-metrics/index.html",
+    "value": "http://localhost:9090/graph",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2021-11-16-how-to-use-sonarscanner-for-golang/index.html",
+    "value": "http://localhost:9000",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2024-01-07-automation-learning-build-an-automation-system-based-on-awx/index.html",
+    "value": "http://www.automation-system.com/awx/#/home",
+    "reason": "Locally configured hosts/Ingress example for the AWX tutorial, not a public service recommendation."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2024-01-12-ingress-learning-common-annotations/index.html",
+    "value": "http://yourwebsite.com/",
+    "reason": "Placeholder illustrating HTTP ingress path rewrites, not a public reference."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2024-01-12-ingress-learning-common-annotations/index.html",
+    "value": "http://yourwebsite.com/test",
+    "reason": "Placeholder illustrating HTTP ingress path rewrites, not a public reference."
+  },
+  {
+    "kind": "http-link",
+    "file": "posts/2024-01-15-flux-learning-deploy-flux-ui/index.html",
+    "value": "http://localhost:9001/",
+    "reason": "Local HTTP development/service example; changing the protocol would contradict the tutorial."
+  }
+]

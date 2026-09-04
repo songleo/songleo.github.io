@@ -68,4 +68,4 @@ tags: ["读书", "职场"]
 
 ##### 本次荐书：重来：更为简单有效的商业思维
 
-![image](http://img10.360buyimg.com/n1/19044/a5d3483a-deb0-420d-83c5-39a54035992e.jpg)
+![image](https://img10.360buyimg.com/n1/19044/a5d3483a-deb0-420d-83c5-39a54035992e.jpg)

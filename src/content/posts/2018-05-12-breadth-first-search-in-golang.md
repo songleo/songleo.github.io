@@ -10,7 +10,7 @@ tags: ["golang", "算法"]
 
 下面介绍详细的实现过程。首先，调用createFriendCircle函数创建一个模拟的朋友圈，朋友圈如下图所示：
 
-![](/images/bfs_graph.jpg)
+![用于广度优先搜索的朋友圈关系图](/images/bfs_graph.jpg)
 
 <center>图1 参考《算法图解》</center>
 

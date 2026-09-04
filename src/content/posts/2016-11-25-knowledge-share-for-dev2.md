@@ -169,7 +169,7 @@ fi
 
 ### 7 文件查询
 
-最后分享一个小插件[listary](http://www.listary.com/)（极力推荐），在Windows上能快速定位某个文件。比如每次我需要打开我们的管理员手册时，我只需要在桌面输入glysc，即管理员手册汉字的首字母，listary就马上定位到我经常打开的管理员手册，回车就直接打开。不需要打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考http://www.iplaysoft.com/listary.html。
+最后分享一个小插件[listary](https://www.listary.com/)（极力推荐），在Windows上能快速定位某个文件。比如每次我需要打开我们的管理员手册时，我只需要在桌面输入glysc，即管理员手册汉字的首字母，listary就马上定位到我经常打开的管理员手册，回车就直接打开。不需要打开我的电脑，然后进入svn目录，然后一层一层寻找该文件。具体使用可以参考https://www.iplaysoft.com/listary.html。
 
 ### 8 总结
 

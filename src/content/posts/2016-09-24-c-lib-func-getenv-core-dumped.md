@@ -59,9 +59,9 @@ RETURN VALUE
        match.
 ```
 
-通过使用文档，可以了解到getenv()函数主要功能是在系统的环境变量列表中查找参数`name`指定的环境变量。如果找到相应的环境变量，那么返回一个指向该环境变量值的字符串指针。如果没有找到，返回`NULL`。原谅我的智商，看完这个解释我还是没明白为什么我的代码会`core dumped`。直到我打开浏览器，谷歌了一下，然后看到http://stackoverflow.com/上也有人问同样的问题，问题链接如下：
+通过使用文档，可以了解到getenv()函数主要功能是在系统的环境变量列表中查找参数`name`指定的环境变量。如果找到相应的环境变量，那么返回一个指向该环境变量值的字符串指针。如果没有找到，返回`NULL`。原谅我的智商，看完这个解释我还是没明白为什么我的代码会`core dumped`。直到我打开浏览器，谷歌了一下，然后看到[stackoverflow](https://stackoverflow.com/) 上也有人问同样的问题，问题链接如下：
 
-> http://stackoverflow.com/questions/27348009/getenv-segmentation-fault
+> https://stackoverflow.com/questions/27348009/getenv-segmentation-fault
 
 看完别人的解答，我当时想说牛话，还好忍住了，原来是因为没有添加头文件`#include <stdlib.h>`，我又想，没有添加头文件为什么能编译过。这就是gcc在搞鬼了，因为gcc提供了一些内置函数，如果在代码中没有添加相应函数的头文件，那么gcc会使用内置函数，所以能编译通过。但是由于函数没有提供头文件，即没有声明，默认返回值是`int`型。其实问题就出在这里，因为`getenv()`没有声明，它返回的整数被当成一个地址使用，但是由于这个地址是一个不可访问的地址，所以访问该地址就会导致`core dumped`，到此，问题解决。
 

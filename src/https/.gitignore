@@ -1,0 +1,6 @@
+# Each reader generates their own disposable TLS materials locally.
+*.key
+*.crt
+*.csr
+*.srl
+*.pem

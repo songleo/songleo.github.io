@@ -6,7 +6,7 @@ tags: ["cert-manager", "安全"]
 ---
 ## 创建自签名证书的ca
 
-ca的创建参考：<[使用cfssl创建自签名证书](http://reborncodinglife.com/2021/12/26/create-ca-via-cfssl/)>
+ca的创建参考：<[使用cfssl创建自签名证书](https://reborncodinglife.com/2021/12/26/create-ca-via-cfssl/)>
 
 ```
 kubectl create secret tls ca-key --cert=ca.pem --key=ca-key.pem --namespace=cert-manager

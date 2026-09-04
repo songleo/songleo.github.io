@@ -186,5 +186,5 @@ tags: ["golang", "最佳实践", "开发"]
 
 ## 参考文献
 
-- http://docs.studygolang.com/pkg/strings/
+- https://pkg.go.dev/strings
 - https://studygolang.com/pkgdoc

@@ -42,7 +42,7 @@ Preferences -> Package Settings -> Package Control -> Settings - User
 "channels":
     [
         "https://packagecontrol.io/channel_v3.json",
-        "http://cst.stu.126.net/u/json/cms/channel_v3.json",
+        "https://cst.stu.126.net/u/json/cms/channel_v3.json",
         "https://web.archive.org/web/20150905194312/https://packagecontrol.io/channel_v3.json"
     ]
 }

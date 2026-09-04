@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import { getPostUrl } from "@/utils/getPostPaths";
+import { postFilter } from "@/utils/postFilter";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
 
-  return posts.flatMap(post => {
+  return posts.filter(postFilter).flatMap(post => {
     const filename = post.filePath?.split(/[\\/]/).pop() ?? "";
     const match = filename.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)\.(?:md|mdx)$/i);
     if (!match) return [];

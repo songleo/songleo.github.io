@@ -1,14 +1,3 @@
-[allowlist]
-  description = "Allowlist"
-  paths = [
-    '''src/https''',
-  ]
-  files = [
-    '''*.crt''',
-    '''*.key''',
-    '''secret''',
-    '''ca.key''',
-    '''user2.key''',
-    '''user1.key''',
-    '''*.csr''',
-  ]
+# Use the built-in rules. No directory or certificate/key exemptions.
+[extend]
+useDefault = true

@@ -1,52 +1,25 @@
-# CLAUDE.md
+# Repository guidance
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Read [AGENTS.md](AGENTS.md) for repository rules and [README.md](README.md) for setup, validation, troubleshooting, and publishing.
 
-## Project Overview
+This is the astro 7 / astropaper 6.1 source for <https://reborncodinglife.com/>. Active posts live in `src/content/posts/`; standalone pages live in `src/content/pages/`. `_posts/` is a historical jekyll archive. Do not edit it for normal publishing or run the one-time migration script over curated content.
 
-This is a Jekyll-based GitHub Pages personal blog (LEo的网络日志) at [reborncodinglife.com](http://reborncodinglife.com), built on the Scribble theme. ~305 blog posts dating back to 2016.
-
-## Commands
+Use node.js 24 for parity with CI (minimum 22.12), the pnpm version in `package.json`, and the committed lockfile:
 
 ```bash
-# Install dependencies
-bundle install
-
-# Build the site (output in _site/)
-bundle exec jekyll build
-
-# Dev server with live reload
-bundle exec jekyll server
-
-# Full dev mode: Jekyll + SCSS watch + CoffeeScript watch (see Rakefile)
-bundle exec rake
+pnpm install --frozen-lockfile
+pnpm dev
+pnpm lint
+pnpm format:check
+pnpm build
+pnpm check:content
+pnpm preview
 ```
 
-No test suite exists for this project.
+The content checker also requires python 3.10 or newer, with no third-party packages. Build first: it inspects the generated site in `dist/`.
 
-## Architecture
+Configuration lives in `astro-paper.config.ts` and `astro.config.ts`. Keep legacy date-based redirects working. Do not commit `dist/`, `.astro/`, `node_modules/`, or generated pagefind data.
 
-**Templates (Jekyll Liquid):**
-- `_layouts/` — Three layouts: `index.html` (homepage with post list), `page.html` (static pages like /about), `post.html` (individual blog posts with Disqus, prev/next links)
-- `_includes/` — Reusable fragments: `head.html` (CSS, JS, OG metadata), `header.html`, `footer.html` (RSS link), `links.html` (nav from `_config.yml`), `pages.html` (prev/next post navigation), `disqus.html`, `ga.html` (legacy GA, unused), `signoff.html`
-- `index.html` (root) — Iterates `site.posts`, renders post list with pretty dates
+Work on a `codex/` branch when requested. Preserve unrelated changes; leave review work uncommitted and unpushed. Publishing requires explicit user authorization: the `main` push triggers `.github/workflows/deploy.yml`, which builds and deploys a GitHub Pages artifact. Never publish by committing build output.
 
-**Frontend assets:**
-- SCSS sources in `_assets/` (uses Bourbon mixin library, compiled to `stylesheets/`)
-- CoffeeScript in `_assets/` (compiled to `javascripts/basics.js`)
-- `javascripts/pd.js` — Pretty-date rendering ("Today", "Yesterday", "3 days ago")
-- `javascripts/ruby-cm.js` — CodeMirror-based syntax highlighting
-- Arrow key navigation in `pd.js`: left/right arrows navigate between posts via `.paging` links
-
-**Content:**
-- All blog posts are in `_posts/` with filenames matching `YYYY-MM-DD-slug.md`
-- Post frontmatter: `layout: post`, `title`, `date`, and optionally `disqus: y`, `share: y`
-- `about.md` — Static about page (layout: page)
-- `feed.xml` — RSS feed (last 10 posts)
-- `CNAME` — Custom domain: `reborncodinglife.com`
-
-**Configuration (`_config.yml`):**
-- `highlighter: rouge`, `markdown: kramdown`, `permalink: pretty`
-- Nav links defined under `links:` (about, blog, github)
-- `url: http://reborncodinglife.com`
-- Note: `highlighter` is misspelled as `highlighter` — Jekyll silently tolerates this but if Rouge highlighting stops working, check spelling.
+Use https for public resources and references. Preserve protocol-sensitive examples; document exceptions in [docs/content-quality.md](docs/content-quality.md). Do not add private keys or broaden `.gitleaks.toml` exemptions. `src/https/` contains teaching code; readers generate disposable credentials locally.

@@ -59,6 +59,6 @@ array: [3 2 1 0]
 bubble sort: [0 1 2 3]
 ```
 
-##### 本次荐书：[人类简史：从动物到上帝](http://item.jd.com/11549140.html)
+##### 本次荐书：[人类简史：从动物到上帝](https://item.jd.com/11549140.html)
 
-![人类简史：从动物到上帝](http://img10.360buyimg.com/n1/jfs/t5674/65/2075427697/106269/649a4ea2/592bf160N04f05f25.jpg)
+![人类简史：从动物到上帝](https://img10.360buyimg.com/n1/jfs/t5674/65/2075427697/106269/649a4ea2/592bf160N04f05f25.jpg)
