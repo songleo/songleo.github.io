@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import { getPostUrl } from "@/utils/getPostPaths";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.flatMap(post => {
+    const filename = post.filePath?.split(/[\\/]/).pop() ?? "";
+    const match = filename.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)\.(?:md|mdx)$/i);
+    if (!match) return [];
+
+    return [
+      {
+        params: {
+          year: match[1],
+          month: match[2],
+          day: match[3],
+          slug: match[4],
+        },
+        props: {
+          title: post.data.title,
+          destination: getPostUrl(post.id, post.filePath),
+        },
+      },
+    ];
+  });
+}
+
+type Props = {
+  title: string;
+  destination: string;
+};
+
+const { title, destination } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL(destination, Astro.site)} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <p>文章地址已更新，<a href={destination}>点击这里继续阅读</a>。</p>
+  </body>
+</html>
