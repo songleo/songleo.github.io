@@ -2,6 +2,7 @@
 title: "helm学习（一）"
 description: "helm的主要功能是封装kubernetes应用，并对应用进行版本管理、依赖管理、升级回滚，方便部署kubernetes应用。通过helm部署kubernetes应用时，实际是将templates渲染成kubernetes能识别的yaml格式的资源描述文件。helm采用c/s架构，由helm..."
 pubDatetime: 2019-05-16T00:12:05+08:00
+tags: ["helm", "学习笔记"]
 ---
 helm的主要功能是封装kubernetes应用，并对应用进行版本管理、依赖管理、升级回滚，方便部署kubernetes应用。通过helm部署kubernetes应用时，实际是将templates渲染成kubernetes能识别的yaml格式的资源描述文件。helm采用c/s架构，由helm cli（客户端）和tiller（服务端，在最新版已经移除）组成，helm cl就是一个可执行文件，方便对应用进行配置、部署、升级和回滚。
 

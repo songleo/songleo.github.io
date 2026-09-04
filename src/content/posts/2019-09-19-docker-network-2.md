@@ -2,6 +2,7 @@
 title: "容器网络（二）"
 description: "单机docker的容器是通过docker0网桥（虚拟交换机或者虚拟网桥）实现通信。如下："
 pubDatetime: 2019-09-19T00:12:05+08:00
+tags: ["docker", "网络", "云原生"]
 ---
 单机docker的容器是通过docker0网桥（虚拟交换机或者虚拟网桥）实现通信。如下：
 

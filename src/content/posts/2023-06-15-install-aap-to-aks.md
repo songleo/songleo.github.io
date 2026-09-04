@@ -2,6 +2,7 @@
 title: "在aks上部署ansible-automation-platform"
 description: "aks version: 1.25.5 network type (plugin): kubenet private cluster: enabled application gateway ingress controller: enabled"
 pubDatetime: 2023-06-15T00:12:05+08:00
+tags: ["ansible", "azure", "自动化", "部署"]
 ---
  ## create the aks
 

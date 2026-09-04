@@ -2,6 +2,7 @@
 title: "cka练习（二）"
 description: "cka练习（二）"
 pubDatetime: 2021-11-20T12:12:05+08:00
+tags: ["kubernetes", "cka", "考试认证"]
 ---
 ## 1 clusterrole/serviceaccount/rolebinding的创建
 

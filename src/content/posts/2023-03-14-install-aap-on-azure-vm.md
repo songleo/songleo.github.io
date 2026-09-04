@@ -2,6 +2,7 @@
 title: "在azure vm中安装aap"
 description: "在azure中创建2个rhel 8.7 vm，一个用于安装controller，一个用于安装hub，并开放相应的端口。具体要求参考：https://access.redhat.com/documentation/en-us/redhatansibleautomationplatform/2.2..."
 pubDatetime: 2023-03-14T00:12:05+08:00
+tags: ["ansible", "azure", "自动化", "部署"]
 ---
 ## 在azure创建vm
 

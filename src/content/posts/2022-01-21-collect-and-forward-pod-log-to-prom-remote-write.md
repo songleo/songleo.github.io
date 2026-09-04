@@ -2,6 +2,7 @@
 title: "使用vector收集pod日志并转发到prometheus remote write"
 description: "ACM Hub：启用了observability service AKS cluster：将AKS导入到ACM"
 pubDatetime: 2022-01-21T00:12:05+08:00
+tags: ["kubernetes", "prometheus", "vector", "可观测性"]
 ---
 ## 集群环境介绍
 

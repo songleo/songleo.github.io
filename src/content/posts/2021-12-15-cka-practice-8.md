@@ -2,6 +2,7 @@
 title: "cka练习（八）"
 description: "cka/ckad应试指南：从docker到kubernetes完全攻略 ch-12"
 pubDatetime: 2021-12-15T12:12:05+08:00
+tags: ["kubernetes", "cka", "考试认证"]
 ---
 ```shell
 $ k get svc kube-dns -n kube-system -o yaml

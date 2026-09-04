@@ -2,6 +2,7 @@
 title: "在kind中通过nodeport访问应用"
 description: "在kind中通过nodeport访问应用"
 pubDatetime: 2021-11-17T12:12:05+08:00
+tags: ["kubernetes", "学习笔记"]
 ---
 ## 1 使用配置文件创建kind：
 

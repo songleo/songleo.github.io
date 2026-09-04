@@ -2,6 +2,7 @@
 title: "使用external-secrets访问azure keyvault"
 description: "记录oidc issuer url。"
 pubDatetime: 2026-01-20T00:12:05+08:00
+tags: ["azure", "external-secrets", "安全"]
 ---
 ## 查看aks是否启用oidc
 

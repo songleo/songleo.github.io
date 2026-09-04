@@ -2,6 +2,7 @@
 title: "argocd使用tips"
 description: "添加集群"
 pubDatetime: 2022-01-16T00:12:05+08:00
+tags: ["argocd", "最佳实践"]
 ---
 - 添加集群
 

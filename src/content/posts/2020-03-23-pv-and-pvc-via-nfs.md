@@ -2,6 +2,7 @@
 title: "通过nfs方式创建pv/pvc"
 description: "在/etc/exports中添加一下内容："
 pubDatetime: 2020-03-23T12:12:05+08:00
+tags: ["kubernetes", "存储", "部署"]
 ---
 ### 搭建nfs server
 

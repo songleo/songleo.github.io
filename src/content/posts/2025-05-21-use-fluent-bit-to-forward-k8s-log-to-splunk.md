@@ -2,6 +2,7 @@
 title: "使用fluent-bit将k8s日志转发到splunk"
 description: "使用fluent-bit将k8s日志转发到splunk"
 pubDatetime: 2025-05-21T00:12:05+08:00
+tags: ["kubernetes", "日志"]
 ---
 ## 安装fluent-bit
 

@@ -2,6 +2,7 @@
 title: "如何在kubernetes使用dynatrace收集prometheus指标"
 description: "需要确保kubernetes集群已经被dynatrace监控，即已经安装了dynatrace组件比如activegate、oneagent等。"
 pubDatetime: 2024-03-08T00:12:05+08:00
+tags: ["kubernetes", "prometheus", "dynatrace", "可观测性"]
 ---
 ### 前提条件
 

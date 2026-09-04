@@ -2,6 +2,7 @@
 title: "valgrind使用：检测内存泄漏"
 description: "本文简单介绍c开发中的内存泄漏和动态内存分配函数，并使用valgrind分析c程序的内存泄漏问题。"
 pubDatetime: 2016-11-07T20:30:32+08:00
+tags: ["valgrind", "故障排查"]
 ---
 本文简单介绍c开发中的内存泄漏和动态内存分配函数，并使用valgrind分析c程序的内存泄漏问题。
 

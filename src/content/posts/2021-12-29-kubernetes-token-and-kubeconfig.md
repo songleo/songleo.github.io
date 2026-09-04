@@ -2,6 +2,7 @@
 title: "kubernetes静态token认证和kubeconfig认证"
 description: "这里仅创建了一个用户token-user1。"
 pubDatetime: 2021-12-29T00:12:05+08:00
+tags: ["kubernetes", "安全", "云原生"]
 ---
 ## 启用静态token的功能
 

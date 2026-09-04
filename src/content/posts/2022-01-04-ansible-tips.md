@@ -2,6 +2,7 @@
 title: "ansible使用tips"
 description: "all表示所有host"
 pubDatetime: 2022-01-04T00:12:05+08:00
+tags: ["ansible", "自动化", "最佳实践"]
 ---
 - all表示所有host
 

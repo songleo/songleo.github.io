@@ -2,6 +2,7 @@
 title: "route方式访问ocp应用"
 description: "这里需要注意，如果你是通过手动方式创建route，那么需要在你的/etc/hosts文件中添加相应的ip和host映射，例如："
 pubDatetime: 2020-03-12T12:12:05+08:00
+tags: ["openshift", "云原生"]
 ---
 ### 创建project
 

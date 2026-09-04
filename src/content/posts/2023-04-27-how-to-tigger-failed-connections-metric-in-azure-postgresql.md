@@ -2,6 +2,7 @@
 title: "如何在azure postgresql中触发failed connections指标数据"
 description: "工作中遇到一个需求，需要定义alert去监控azure postgresql的连接失败次数，但是默认情况下，azure postgresql的这个指标数据是没有值的。所以如果想触发定义的alert，需要想办法触发这指标产生数据，以下是一些可能导致连接失败的常见情况："
 pubDatetime: 2023-04-27T00:12:05+08:00
+tags: ["azure", "数据库", "可观测性"]
 ---
 工作中遇到一个需求，需要定义alert去监控azure postgresql的连接失败次数，但是默认情况下，azure postgresql的这个指标数据是没有值的。所以如果想触发定义的alert，需要想办法触发这指标产生数据，以下是一些可能导致连接失败的常见情况：
 

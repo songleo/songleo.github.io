@@ -2,6 +2,7 @@
 title: "kubernetes service之cluster ip"
 description: "deployment和service定义如下："
 pubDatetime: 2019-09-26T00:12:05+08:00
+tags: ["kubernetes", "云原生"]
 ---
 deployment和service定义如下：
 

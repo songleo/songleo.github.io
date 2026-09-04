@@ -2,6 +2,7 @@
 title: "go实现https认证"
 description: "user1作为server端，user2作为client端，即client端需要验证server端证书。"
 pubDatetime: 2021-12-25T00:12:05+08:00
+tags: ["golang", "安全"]
 ---
 ## 创建ca
 

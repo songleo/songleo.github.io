@@ -2,6 +2,7 @@
 title: "在pod中调试和测试playbook"
 description: "我的playbook是在pod中运行的，因此每次修改playbook后，需要将代码更新到镜像，再将镜像推送到镜像仓库，最后启动pod来测试修改。"
 pubDatetime: 2024-11-13T00:12:05+08:00
+tags: ["kubernetes", "ansible", "故障排查", "测试"]
 ---
 我的playbook是在pod中运行的，因此每次修改playbook后，需要将代码更新到镜像，再将镜像推送到镜像仓库，最后启动pod来测试修改。
 

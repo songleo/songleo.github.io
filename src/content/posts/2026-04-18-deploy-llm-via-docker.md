@@ -2,6 +2,7 @@
 title: "docker部署llm"
 description: "gpu驱动版本需要更新，否则vllm不支持 参数需要调整，否则gpu oom 大模型通过国内镜像下载 vllm通过国内镜像下载"
 pubDatetime: 2026-04-18T00:12:05+08:00
+tags: ["ai", "docker", "部署", "云原生"]
 ---
 ## docker image准备
 

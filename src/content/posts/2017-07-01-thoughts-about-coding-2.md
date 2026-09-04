@@ -2,6 +2,7 @@
 title: "coding感想（二）"
 description: "继coding感想（一）之后，有了这篇coding感想（二），主要是因为最近几天接触了一些比较“生猛”的代码，所以想借助本文总结下，本次分享主要有以下4个方面："
 pubDatetime: 2017-07-01T19:56:32+08:00
+tags: ["随笔", "开发"]
 ---
 继[coding感想（一）](http://reborncodinglife.com/2016/12/13/thoughts-about-coding/)之后，有了这篇coding感想（二），主要是因为最近几天接触了一些比较“生猛”的代码，所以想借助本文总结下，本次分享主要有以下4个方面：
 

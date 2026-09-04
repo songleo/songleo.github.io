@@ -2,6 +2,7 @@
 title: "docker运行shell脚本问题"
 description: "这里有2个文件，分别是dockerfile和shell脚本，dockerfile的主要功能就是将shell脚本复制到容器中运行，shell脚本只有一个echo语句，表示脚本运行完毕。"
 pubDatetime: 2019-08-02T20:04:01+08:00
+tags: ["docker", "shell", "故障排查", "云原生"]
 ---
 这里有2个文件，分别是dockerfile和shell脚本，dockerfile的主要功能就是将shell脚本复制到容器中运行，shell脚本只有一个echo语句，表示脚本运行完毕。
 

@@ -2,6 +2,7 @@
 title: "通过kind部署istio"
 description: "需要提前部署好kind和helm。"
 pubDatetime: 2019-06-10T00:12:05+08:00
+tags: ["kubernetes", "部署"]
 ---
 需要提前部署好kind和helm。
 

@@ -2,6 +2,7 @@
 title: "在kind中通过ingress访问应用"
 description: "创建ingress选择path为/nginx，访问的时候直接跟上本地ip或者localhost就可以。"
 pubDatetime: 2024-01-06T00:12:05+08:00
+tags: ["kubernetes", "学习笔记"]
 ---
 ## 1 使用配置文件创建kind：
 

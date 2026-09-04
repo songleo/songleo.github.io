@@ -2,6 +2,7 @@
 title: "nodeport方式访问ocp应用"
 description: "nodeport方式访问ocp应用"
 pubDatetime: 2020-03-10T12:12:05+08:00
+tags: ["kubernetes", "openshift", "云原生"]
 ---
 ### 创建project
 

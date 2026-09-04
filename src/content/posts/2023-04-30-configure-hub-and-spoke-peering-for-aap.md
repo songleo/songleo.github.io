@@ -2,6 +2,7 @@
 title: "给aap on azure配置hub-spoke peering"
 description: "hub: 10.3.0.0/16 spoke：10.2.0.0/16"
 pubDatetime: 2023-04-30T00:12:05+08:00
+tags: ["ansible", "azure", "网络", "自动化"]
 ---
 ## 创建2个vnet
 

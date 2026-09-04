@@ -2,6 +2,7 @@
 title: "prometheus remote write filter"
 description: "以下代码是我参考prometheus官方给出的remote write adapter修改的："
 pubDatetime: 2020-06-29T12:12:05+08:00
+tags: ["prometheus", "可观测性"]
 ---
 ## remote write adapter
 

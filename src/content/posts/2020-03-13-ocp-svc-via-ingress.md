@@ -2,6 +2,7 @@
 title: "ingress方式访问ocp应用"
 description: "这里需要注意，需要在你的/etc/hosts文件中添加相应的ip和host映射，例如："
 pubDatetime: 2020-03-13T12:12:05+08:00
+tags: ["kubernetes", "openshift", "云原生"]
 ---
 ### 创建project
 

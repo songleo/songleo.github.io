@@ -2,6 +2,7 @@
 title: "vector使用tips"
 description: "收集指定的pod日志"
 pubDatetime: 2022-01-21T00:12:05+08:00
+tags: ["vector", "最佳实践"]
 ---
 - 收集指定的pod日志
 

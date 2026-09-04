@@ -2,6 +2,7 @@
 title: "azure application gateway"
 description: "azure application gateway是一个专用的应用程序负载均衡器服务。它在应用程序层即第七层提供各种关键功能，帮助用户在创建、配置、管理和监控他们的应用程序流量路由时有着极大的便利。主要有以下的功能："
 pubDatetime: 2023-06-02T00:12:05+08:00
+tags: ["azure", "网络"]
 ---
 azure application gateway是一个专用的应用程序负载均衡器服务。它在应用程序层即第七层提供各种关键功能，帮助用户在创建、配置、管理和监控他们的应用程序流量路由时有着极大的便利。主要有以下的功能：
 

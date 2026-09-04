@@ -2,6 +2,7 @@
 title: "go语言简介"
 description: "编译型语言，编译速度快"
 pubDatetime: 2018-11-22T00:12:05+08:00
+tags: ["golang", "学习笔记"]
 ---
 ## 1 基础知识
 

@@ -2,6 +2,7 @@
 title: "在kind中部署metrics-server"
 description: "你会发现不work，需要在metrics-server的deployment中args部分添加一行- --kubelet-insecure-tls，让kubelet忽略tls证书验证，这样才能正常工作。"
 pubDatetime: 2024-01-09T00:12:05+08:00
+tags: ["kubernetes", "可观测性", "部署"]
 ---
 ### 使用kind创建k8s集群
 

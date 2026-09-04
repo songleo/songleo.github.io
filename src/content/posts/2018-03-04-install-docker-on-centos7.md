@@ -2,6 +2,7 @@
 title: "centos7安装docker总结"
 description: "最近工作中需要用到docker，所以决定自己搭建一个docker环境，于是选择在virtualbox上安装centos7虚拟机，并在虚拟机上安装docker，没搭建环境之前，觉得应该很简单，没想到折腾了好长时间。比如安装的centos7版本不支持docker，最后导致重装，所以特此记录下安装步..."
 pubDatetime: 2018-03-04T23:55:00+08:00
+tags: ["docker", "linux", "部署", "最佳实践"]
 ---
 最近工作中需要用到docker，所以决定自己搭建一个docker环境，于是选择在virtualbox上安装centos7虚拟机，并在虚拟机上安装docker，没搭建环境之前，觉得应该很简单，没想到折腾了好长时间。比如安装的centos7版本不支持docker，最后导致重装，所以特此记录下安装步骤及注意事项。
 

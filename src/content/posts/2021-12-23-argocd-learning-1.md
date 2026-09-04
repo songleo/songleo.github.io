@@ -2,6 +2,7 @@
 title: "argocd学习（一）"
 description: "或者直接通过ocp的operatorhub安装，ocp的gitops实际是通过argocd实现，在operatorhub查找openshift gitops后，按照默认配置安装到ocp："
 pubDatetime: 2021-12-23T00:12:05+08:00
+tags: ["argocd", "学习笔记"]
 ---
 ## 安装argocd
 

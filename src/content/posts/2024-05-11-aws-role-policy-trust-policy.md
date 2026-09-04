@@ -2,6 +2,7 @@
 title: "aws上role和policy学习"
 description: "在aws中，管理和配置访问权限是保证云资源安全的关键步骤。理解iam的三个核心组件——role、policy和trust policy至关重要。本文将详细介绍这些组件，并通过配置alb的示例来具体说明它们的应用。"
 pubDatetime: 2024-05-11T00:12:05+08:00
+tags: ["aws", "安全", "学习笔记"]
 ---
 在aws中，管理和配置访问权限是保证云资源安全的关键步骤。理解iam的三个核心组件——role、policy和trust policy至关重要。本文将详细介绍这些组件，并通过配置alb的示例来具体说明它们的应用。
 

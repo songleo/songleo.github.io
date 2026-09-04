@@ -2,6 +2,7 @@
 title: "git将多次提交合并"
 description: "执行git log查看提交记录："
 pubDatetime: 2019-05-24T00:12:05+08:00
+tags: ["git", "学习笔记"]
 ---
 执行git log查看提交记录：
 

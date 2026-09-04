@@ -2,6 +2,7 @@
 title: "在docker上启用open policy agent"
 description: "docker可以启用很多插件，这里主要介绍opa插件，用于做策略控制。"
 pubDatetime: 2022-01-09T00:12:05+08:00
+tags: ["docker", "安全", "agents"]
 ---
 docker可以启用很多插件，这里主要介绍opa插件，用于做策略控制。
 

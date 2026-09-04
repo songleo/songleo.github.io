@@ -2,6 +2,7 @@
 title: "在kubernetes中配置vector收集pod日志"
 description: "使用helm方式安装vector，这里只安装Agent，Agent主要负责收集kubernetes集群节点上的所有日志。"
 pubDatetime: 2022-01-14T00:12:05+08:00
+tags: ["kubernetes", "vector", "日志", "云原生"]
 ---
 ### 安装vector
 

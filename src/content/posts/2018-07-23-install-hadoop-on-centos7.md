@@ -2,6 +2,7 @@
 title: "centos安装hadoop"
 description: "1）如果系统已经安装java，通过以下方式设置java相关环境变量："
 pubDatetime: 2018-07-23T19:05:00+08:00
+tags: ["linux", "hadoop", "部署"]
 ---
 1）如果系统已经安装java，通过以下方式设置java相关环境变量：
 

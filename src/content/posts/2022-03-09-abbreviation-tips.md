@@ -2,6 +2,7 @@
 title: "缩写词提示"
 description: "AAP (Ansible Automation Platform) AKS (Azure Kubernetes Service) ARO (Azure Red Hat OpenShift) EKS (Amazon Elastic Kubernetes Service)"
 pubDatetime: 2022-03-09T00:12:05+08:00
+tags: ["最佳实践", "学习笔记"]
 ---
 - AAP (Ansible Automation Platform)
 - AKS (Azure Kubernetes Service)

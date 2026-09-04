@@ -2,6 +2,7 @@
 title: "sublime常用插件"
 description: "本文主要记录我经常使用的sublime插件，持续更新中。"
 pubDatetime: 2019-05-26T00:12:05+08:00
+tags: ["工具", "最佳实践"]
 ---
 本文主要记录我经常使用的sublime插件，持续更新中。
 

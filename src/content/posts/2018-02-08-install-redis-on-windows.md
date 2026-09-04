@@ -2,6 +2,7 @@
 title: "windows安装redis"
 description: "redis官方网站专门说明了，redis不支持windows平台，但是Microsoft Open Tech开发并维护了一个windows版的redis，如下："
 pubDatetime: 2018-02-08T00:05:00+08:00
+tags: ["windows", "数据库", "部署"]
 ---
 [redis官方网站](https://redis.io/download)专门说明了，redis不支持windows平台，但是Microsoft Open Tech开发并维护了一个windows版的redis，如下：
 

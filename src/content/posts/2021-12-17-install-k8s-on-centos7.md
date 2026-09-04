@@ -2,6 +2,7 @@
 title: "centos7安装kubernetes"
 description: "修改节点名字和/etc/hosts文件："
 pubDatetime: 2021-12-17T00:12:05+08:00
+tags: ["kubernetes", "linux", "部署", "云原生"]
 ---
 ### 所有节点执行以下操作
 

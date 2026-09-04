@@ -2,6 +2,7 @@
 title: "cert-manager管理和签发证书"
 description: "ClusterIssuer 是 cert-manager 中用于定义如何签发证书的全局资源。它可以定义多个颁发证书的方式，如通过 ACME (Let's Encrypt)、自签名证书或内部 CA。"
 pubDatetime: 2024-12-06T00:12:05+08:00
+tags: ["cert-manager", "安全"]
 ---
 ### 创建 ClusterIssuer 或 Issuer 资源
 

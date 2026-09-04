@@ -2,6 +2,7 @@
 title: "ginkgo学习（一）"
 description: "ginkgo学习（一）"
 pubDatetime: 2020-10-30T00:12:05+08:00
+tags: ["测试", "学习笔记"]
 ---
 ### 创建测试套件
 

@@ -2,6 +2,7 @@
 title: "常用命令tips"
 description: "curl命令只需返回状态码"
 pubDatetime: 2023-12-27T00:12:05+08:00
+tags: ["最佳实践", "工具"]
 ---
 - curl命令只需返回状态码
 

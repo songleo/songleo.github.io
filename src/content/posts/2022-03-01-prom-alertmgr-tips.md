@@ -2,6 +2,7 @@
 title: "prometheus&alertmanager tips"
 description: "查看warning级别的alert"
 pubDatetime: 2022-03-01T00:12:05+08:00
+tags: ["prometheus", "可观测性", "最佳实践"]
 ---
 - 查看warning级别的alert
 

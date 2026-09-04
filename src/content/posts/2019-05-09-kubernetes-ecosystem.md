@@ -2,6 +2,7 @@
 title: "kubernetes生态系统"
 description: "本文主要简单介绍kubernetes生态系统中的相关软件、组件、特性及缩写，持续更新中，更新的原则就是：我在学习kubernetes过程觉得重要或者记不住。"
 pubDatetime: 2019-05-09T00:12:05+08:00
+tags: ["kubernetes", "架构", "云原生"]
 ---
 本文主要简单介绍kubernetes生态系统中的相关软件、组件、特性及缩写，持续更新中，更新的原则就是：我在学习kubernetes过程觉得重要或者记不住。
 

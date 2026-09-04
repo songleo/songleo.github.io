@@ -2,6 +2,7 @@
 title: "在ingress中启用https"
 description: "创建一个nginx deployment并修改了默认页面 /usr/share/nginx/html/index.html为hello nginx，这里先通过http方式创建ingress："
 pubDatetime: 2021-12-26T00:12:05+08:00
+tags: ["kubernetes", "安全"]
 ---
 ## 创建web应用
 

@@ -2,6 +2,7 @@
 title: "docker的manifest特性"
 description: "一直都是在x8664平台下编译docker镜像，最近因为需要在powerpc和z上面编译docker镜像，发现同一个镜像在不同的平台运行，结果竟然不一样，因为按docker的镜像机制，同一个镜像不应该出现不同行为，仔细分析后发现是docker提供了manifest功能，进而支持多平台，用户不需..."
 pubDatetime: 2019-05-24T00:12:05+08:00
+tags: ["docker", "云原生"]
 ---
 一直都是在x86_64平台下编译docker镜像，最近因为需要在powerpc和z上面编译docker镜像，发现同一个镜像在不同的平台运行，结果竟然不一样，因为按docker的镜像机制，同一个镜像不应该出现不同行为，仔细分析后发现是docker提供了manifest功能，进而支持多平台，用户不需要根据平台不同而下载不同镜像，而是通过一个镜像就能覆盖各种平台。
 

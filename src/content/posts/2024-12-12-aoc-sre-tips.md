@@ -2,6 +2,7 @@
 title: "aoc sre tips"
 description: "密码正确时候，检查CSRF配置。"
 pubDatetime: 2024-12-12T00:12:05+08:00
+tags: ["sre", "最佳实践"]
 ---
 ## saas login
 

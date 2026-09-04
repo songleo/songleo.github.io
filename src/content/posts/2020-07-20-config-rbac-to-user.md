@@ -2,6 +2,7 @@
 title: "通过rbac给用户配置权限"
 description: "这里给viewer用户查看default namespace pod的权限，如下："
 pubDatetime: 2020-07-20T12:12:05+08:00
+tags: ["安全", "学习笔记"]
 ---
 ## rbac配置如下：
 

@@ -2,6 +2,7 @@
 title: "使用cfssl创建自签名证书"
 description: "可以通过执行cfssl print-defaults config创建默认的配置文件，然后再修改。"
 pubDatetime: 2021-12-26T00:12:05+08:00
+tags: ["安全", "学习笔记"]
 ---
 ## 创建ca配置文件
 

@@ -2,6 +2,7 @@
 title: "羽毛球之双打反手发网前小球后的注意事项"
 description: "上次分享了双打如何反手发网前小球，这次主要分享反手发网前小球后的注意事项。"
 pubDatetime: 2018-06-02T12:36:00+08:00
+tags: ["羽毛球", "生活"]
 ---
 上次分享了[双打如何反手发网前小球](http://reborncodinglife.com/2018/05/19/badminton-backhand-low-service-in-doubles/)，这次主要分享反手发网前小球后的注意事项。
 

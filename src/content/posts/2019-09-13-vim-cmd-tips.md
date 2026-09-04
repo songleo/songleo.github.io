@@ -2,6 +2,7 @@
 title: "vim命令tips"
 description: "删除全部"
 pubDatetime: 2019-09-13T00:12:05+08:00
+tags: ["最佳实践", "工具"]
 ---
 - 删除全部
 

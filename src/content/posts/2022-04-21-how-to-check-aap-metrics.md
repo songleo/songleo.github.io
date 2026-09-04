@@ -2,6 +2,7 @@
 title: "检查aap的指标数据"
 description: "获取aap controller管理员密码:"
 pubDatetime: 2022-04-21T00:12:05+08:00
+tags: ["ansible", "可观测性", "自动化"]
 ---
 - 获取aap controller管理员密码:
 

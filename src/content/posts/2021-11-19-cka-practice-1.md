@@ -2,6 +2,7 @@
 title: "cka练习（一）"
 description: "名字为web 重启策略为always 容器端口80映射到物理机8080 物理机/web目录挂载到容器/usr/share/nginx/html 在容器/usr/share/nginx/html目录中创建index.html，内容为hello docker"
 pubDatetime: 2021-11-19T12:12:05+08:00
+tags: ["kubernetes", "cka", "考试认证"]
 ---
 ## 1 查看当前系统有多少镜像
 

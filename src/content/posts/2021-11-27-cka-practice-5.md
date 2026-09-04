@@ -2,6 +2,7 @@
 title: "cka练习（五）"
 description: "cka练习（五）"
 pubDatetime: 2021-11-27T12:12:05+08:00
+tags: ["kubernetes", "cka", "考试认证"]
 ---
 ## 1 pod包含多个container
 

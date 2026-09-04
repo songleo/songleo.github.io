@@ -2,6 +2,7 @@
 title: "在ansible on clouds部署mesh"
 description: "选择public模式，方便访问aap"
 pubDatetime: 2025-01-09T00:12:05+08:00
+tags: ["ansible", "自动化", "部署"]
 ---
 ## 在azure创建aap 2.4
 

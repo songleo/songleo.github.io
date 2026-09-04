@@ -2,6 +2,7 @@
 title: "通过csr创建kubernetes用户"
 description: "通过csr创建kubernetes用户"
 pubDatetime: 2020-07-21T12:12:05+08:00
+tags: ["kubernetes", "云原生"]
 ---
 ## 创建私钥和csr
 

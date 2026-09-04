@@ -2,6 +2,7 @@
 title: "claude code subagent学习"
 description: "subagent是主 agent 可以调用的独立 ai 实例。与 skill 不同，subagent 拥有独立的对话上下文、独立的工具访问权限，甚至可以运行在不同的隔离环境中。subagent 就像是主 agent 的\"助手\"或\"专家顾问\"，可以独立处理复杂任务并返回结果。"
 pubDatetime: 2026-05-16T00:00:00+08:00
+tags: ["claude code", "学习笔记", "agents"]
 ---
 ## 什么是 subagent？
 

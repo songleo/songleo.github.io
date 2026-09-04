@@ -2,6 +2,7 @@
 title: "http状态码tips"
 description: "这类状态码表示请求已被服务器接收，并继续处理。"
 pubDatetime: 2023-12-22T00:12:05+08:00
+tags: ["最佳实践", "学习笔记"]
 ---
 ### 1xx 信息性状态码（informational responses）
 

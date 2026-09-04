@@ -2,6 +2,7 @@
 title: "sonarscanner扫描go项目"
 description: "打开浏览器，进入 http://localhost:9000 ， 默认用户名和密码是：admin:admin ，初次登录需要修改用户名和密码。"
 pubDatetime: 2021-11-16T12:12:05+08:00
+tags: ["golang", "测试"]
 ---
 ## 在本地启动server
 

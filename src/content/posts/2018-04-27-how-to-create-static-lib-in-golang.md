@@ -2,6 +2,7 @@
 title: "go语言静态库的编译和使用"
 description: "本文主要介绍go语言静态库的编译和使用方法，以windows平台为例，linux平台步骤一样，具体环境如下："
 pubDatetime: 2018-04-27T22:30:00+08:00
+tags: ["golang", "开发"]
 ---
 本文主要介绍go语言静态库的编译和使用方法，以windows平台为例，linux平台步骤一样，具体环境如下：
 

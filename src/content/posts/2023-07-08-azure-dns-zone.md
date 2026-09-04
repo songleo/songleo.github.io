@@ -2,6 +2,7 @@
 title: "azure dns zone"
 description: "azure dns zone是azure提供的一项托管服务，用于托管dns域名。dns即“域名系统”，是用于将易于理解的域名转换为机器可理解的ip地址的互联网系统。如果把互联网看作一座巨大的城市，那么dns就像是城市中的路标，而azure dns zone就像是管理这些路标的服务机构。azur..."
 pubDatetime: 2023-07-08T00:12:05+08:00
+tags: ["azure", "网络"]
 ---
 azure dns zone是azure提供的一项托管服务，用于托管dns域名。dns即“域名系统”，是用于将易于理解的域名转换为机器可理解的ip地址的互联网系统。如果把互联网看作一座巨大的城市，那么dns就像是城市中的路标，而azure dns zone就像是管理这些路标的服务机构。azure dns支持两种类型的dns zone：公有和私有。公有dns zone主要用于在internet上公开你的dns名称。这是dns最常见的用途。任何internet上的用户都可以解析公有dns zone中的dns名称。私有dns zone主要用于在azure虚拟网络内部解析dns名称。只有你的虚拟网络内的用户才能解析私有dns zone中的dns名称。这可以帮助你在虚拟网络内部创建自定义的dns名称，而无需担心这些名称会被internet上的其他用户解析。
 

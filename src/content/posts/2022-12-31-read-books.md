@@ -2,6 +2,7 @@
 title: "2022年阅读书单"
 description: "光速入门prometheus+grafana 2022-01-01"
 pubDatetime: 2022-12-31T15:40:31+08:00
+tags: ["读书", "个人成长"]
 ---
 ### 2022年阅读书单
 

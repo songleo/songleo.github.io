@@ -2,6 +2,7 @@
 title: "docker运行grafana和prometheus"
 description: "使用docker方式启动prometheus："
 pubDatetime: 2020-03-17T18:23:05+08:00
+tags: ["docker", "prometheus", "grafana", "可观测性"]
 ---
 ### 启动prometheus
 

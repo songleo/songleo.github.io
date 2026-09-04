@@ -2,6 +2,7 @@
 title: "配置pod的存活探针"
 description: "存活探针（livenessProbe）主要功能是确定何时重启容器，yaml文件如下："
 pubDatetime: 2019-08-30T20:04:01+08:00
+tags: ["kubernetes", "学习笔记"]
 ---
 存活探针（livenessProbe）主要功能是确定何时重启容器，yaml文件如下：
 

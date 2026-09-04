@@ -2,6 +2,7 @@
 title: "ansible playbook使用tips"
 description: "playbook中定义变量"
 pubDatetime: 2023-02-14T00:12:05+08:00
+tags: ["ansible", "自动化", "最佳实践"]
 ---
 - playbook中定义变量
 

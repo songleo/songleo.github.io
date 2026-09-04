@@ -2,6 +2,7 @@
 title: "语义版本控制"
 description: "语义化版本控制（semantic versioning），通常表示为：主版本号.次版本号.修订号，即 major.minor.patch。下面是每个组成部分的含义和例子："
 pubDatetime: 2023-12-28T00:12:05+08:00
+tags: ["开发", "最佳实践"]
 ---
 语义化版本控制（semantic versioning），通常表示为：主版本号.次版本号.修订号，即 major.minor.patch。下面是每个组成部分的含义和例子：
 

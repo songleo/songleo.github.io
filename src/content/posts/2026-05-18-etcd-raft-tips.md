@@ -2,6 +2,7 @@
 title: "etcd raft学习"
 description: "raft通过leader选举和日志复制来保证一致性。选举靠随机超时和多数投票，保证一任一个leader，日志复制要求过半节点确认才提交，保证数据不丢。"
 pubDatetime: 2026-05-18T00:12:05+08:00
+tags: ["kubernetes", "最佳实践", "学习笔记"]
 ---
 raft通过leader选举和日志复制来保证一致性。选举靠随机超时和多数投票，保证一任一个leader，日志复制要求过半节点确认才提交，保证数据不丢。
 

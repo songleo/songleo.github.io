@@ -2,6 +2,7 @@
 title: "使用grafana访问ocp4.3的prometheus"
 description: "ocp4.3自带了prometheus和grafana，默认在openshift-monitoring namespace下面，但是用户不能修改openshift-monitoring namespace下的资源，比如你无法修改系统自带的grafana的dashboard。如果你修改了相应的资..."
 pubDatetime: 2020-03-23T12:12:05+08:00
+tags: ["openshift", "prometheus", "grafana", "可观测性"]
 ---
 ocp4.3自带了prometheus和grafana，默认在openshift-monitoring namespace下面，但是用户不能修改openshift-monitoring namespace下的资源，比如你无法修改系统自带的grafana的dashboard。如果你修改了相应的资源，会被集群重置成默认状态。本文介绍如何通过安装自己的grafana访问ocp4.3自带的prometheus数据。
 
