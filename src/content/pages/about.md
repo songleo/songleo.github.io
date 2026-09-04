@@ -13,8 +13,4 @@ description: "关于 LEo 和这个博客。"
 
 email：lisong1205@126.com
 
-微博：俊采LEo
-
-![](/images/wechat.jpg)
-
 ## don't repeat yourself
