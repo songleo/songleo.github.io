@@ -89,6 +89,114 @@ function runScript(environment, path) {
   vm.runInContext(outputText, environment.context);
 }
 
+function loadSearch(environment, rememberBackUrl, PagefindUI) {
+  const page = readFileSync(
+    new URL("../src/pages/search.astro", import.meta.url),
+    "utf8"
+  );
+  const source = page.match(/<script>([\s\S]*?)<\/script>/)[1];
+  const { outputText } = ts.transpileModule(
+    source.replaceAll("import.meta.env.DEV", "false"),
+    {
+      compilerOptions: {
+        target: ts.ScriptTarget.ES2022,
+        module: ts.ModuleKind.CommonJS,
+      },
+    }
+  );
+  Object.assign(environment.context, {
+    URLSearchParams,
+    exports: {},
+    require: id => {
+      if (id === "@/utils/backUrl") return { rememberBackUrl };
+      if (id === "@pagefind/default-ui") return { PagefindUI };
+      throw new Error(`Unexpected import: ${id}`);
+    },
+  });
+  vm.runInContext(outputText, environment.context);
+}
+
+test("search clearing accepts button clicks and keeps return URLs in sync", async () => {
+  const env = browser();
+  const input = new Element();
+  input.value = "astro";
+  const clear = new Element();
+  const search = new Element();
+  Object.assign(search, {
+    dataset: { bundlePath: "/pagefind/", backurl: "/search/" },
+    isConnected: true,
+    querySelector: () => null,
+  });
+  env.elements.set("#pagefind-search", search);
+  env.elements.set(".pagefind-ui__search-input", input);
+  env.elements.set(".pagefind-ui__search-clear", clear);
+  const idle = [];
+  env.window.location = { pathname: "/search/", search: "?q=astro&sort=date" };
+  env.window.requestIdleCallback = callback => idle.push(callback);
+  const urls = [];
+  const returns = [];
+  const state = { marker: "preserve-router-state" };
+  env.context.history = {
+    state,
+    replaceState: (nextState, _, url) => {
+      assert.equal(nextState, state);
+      urls.push(url);
+    },
+  };
+  let processTerm;
+  class PagefindUI {
+    constructor(options) {
+      processTerm = options.processTerm;
+    }
+    triggerSearch(term) {
+      processTerm(term);
+    }
+  }
+  loadSearch(env, url => returns.push(url), PagefindUI);
+  await idle.shift()();
+  assert.equal(urls.at(-1), "/search/?q=astro&sort=date");
+  // A button has no input value; this used to throw when reading e.target.value.
+  clear.dispatchEvent(new Event("click"));
+  assert.equal(urls.at(-1), "/search/?sort=date");
+  assert.equal(returns.at(-1), "/search/?sort=date");
+  processTerm(""); // A delayed search callback must not resurrect q=.
+  assert.equal(urls.at(-1), "/search/?sort=date");
+  processTerm("new term");
+  assert.equal(urls.at(-1), "/search/?sort=date&q=new+term");
+  input.value = "";
+  input.dispatchEvent(new Event("input"));
+  assert.equal(urls.at(-1), "/search/?sort=date");
+});
+
+test("deferred search initialization stops after navigation or prior initialization", async () => {
+  for (const existingForm of [false, true]) {
+    const env = browser();
+    const search = new Element();
+    Object.assign(search, {
+      dataset: { bundlePath: "/pagefind/" },
+      isConnected: true,
+      querySelector: () => (existingForm ? new Element() : null),
+    });
+    env.elements.set("#pagefind-search", search);
+    env.window.location = { pathname: "/search/", search: "" };
+    const idle = [];
+    env.window.requestIdleCallback = callback => idle.push(callback);
+    let initializations = 0;
+    loadSearch(
+      env,
+      () => {},
+      class {
+        constructor() {
+          initializations++;
+        }
+      }
+    );
+    if (!existingForm) search.isConnected = false;
+    await idle.shift()();
+    assert.equal(initializations, 0);
+  }
+});
+
 test("scroll progress initializes restored positions and clamps edge cases", () => {
   const env = browser();
   env.root.scrollTop = 250;

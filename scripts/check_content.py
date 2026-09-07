@@ -10,6 +10,40 @@ from urllib.parse import unquote, urljoin, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://reborncodinglife.com/"
 HOSTS = {"reborncodinglife.com", "www.reborncodinglife.com", "songleo.github.io"}
+ASCII_WHITESPACE = " \t\n\r\f"
+
+
+def srcset_urls(value):
+    """Extract candidates without splitting commas inside URLs (including data:).
+
+    Follow the HTML srcset URL/descriptor tokenization rules. Descriptor validity
+    and browser source selection are outside this resource-existence check.
+    https://html.spec.whatwg.org/multipage/images.html#parsing-a-srcset-attribute
+    """
+    position = 0
+    while position < len(value):
+        while position < len(value) and value[position] in ASCII_WHITESPACE + ",":
+            position += 1
+        start = position
+        while position < len(value) and value[position] not in ASCII_WHITESPACE:
+            position += 1
+        url = value[start:position]
+        if not url:
+            return
+        yield url.rstrip(",")
+        if url.endswith(","):
+            continue
+        # Consume descriptors until the next comma outside parentheses.
+        in_parens = False
+        while position < len(value):
+            char = value[position]
+            position += 1
+            if char == ")":
+                in_parens = False
+            elif char == "(" and not in_parens:
+                in_parens = True
+            elif char == "," and not in_parens:
+                break
 
 
 class Page(HTMLParser):
@@ -50,6 +84,10 @@ def check(dist, exceptions):
     titles = collections.defaultdict(list)
     for file, page in pages.items():
         route = "/" + file.removesuffix("index.html")
+        og_types = [attrs.get("content", "") for tag, attrs in page.elements
+                    if tag == "meta" and attrs.get("property") == "og:type"]
+        if len(og_types) > 1:
+            findings.add(("duplicate-og-type", file, ", ".join(og_types)))
         if any(tag == "meta" and attrs.get("property") == "og:type" and attrs.get("content") == "article" for tag, attrs in page.elements):
             titles[" ".join(page.title.split()).casefold()].append(file)
         for tag, attrs in page.elements:
@@ -69,10 +107,17 @@ def check(dist, exceptions):
                 refs.append((attrs["poster"], True))
             if tag == "object" and attrs.get("data"):
                 refs.append((attrs["data"], True))
-            if attrs.get("srcset") and not attrs["srcset"].startswith("data:"):
-                refs.extend((part.strip().split()[0], True) for part in attrs["srcset"].split(",") if part.strip())
+            for attribute in ("srcset", "imagesrcset"):
+                if attrs.get(attribute):
+                    refs.extend((url, True) for url in srcset_urls(attrs[attribute]))
             for value, resource in refs:
-                parsed = urlsplit(urljoin(SITE.rstrip("/") + route, value))
+                try:
+                    parsed = urlsplit(urljoin(SITE.rstrip("/") + route, value))
+                    # urlsplit defers validation of malformed ports until access.
+                    parsed.port
+                except ValueError:
+                    findings.add(("invalid-url", file, value))
+                    continue
                 if parsed.scheme not in {"http", "https"}:
                     continue
                 if parsed.scheme == "http":

@@ -1,6 +1,7 @@
 import type { CollectionEntry } from "astro:content";
 import { postFilter } from "./postFilter";
 import { slugifyStr } from "./slugify";
+import config from "@/config";
 
 type Tag = {
   tag: string;
@@ -15,14 +16,14 @@ type Tag = {
  * - Uniqueness is based on the slug (so differently-cased labels collapse)
  */
 export function getUniqueTags(posts: CollectionEntry<"posts">[]) {
-  const tags: Tag[] = posts
-    .filter(postFilter)
-    .flatMap(post => post.data.tags)
-    .map(tag => ({ tag: slugifyStr(tag), tagName: tag }))
-    .filter(
-      (value, index, self) =>
-        self.findIndex(tag => tag.tag === value.tag) === index
-    )
-    .sort((tagA, tagB) => tagA.tag.localeCompare(tagB.tag));
-  return tags;
+  const tags = new Map<string, Tag>();
+  for (const post of posts.filter(postFilter)) {
+    for (const tagName of post.data.tags) {
+      const tag = slugifyStr(tagName);
+      if (!tags.has(tag)) tags.set(tag, { tag, tagName });
+    }
+  }
+  return [...tags.values()].sort((tagA, tagB) =>
+    tagA.tag.localeCompare(tagB.tag, config.site.lang)
+  );
 }

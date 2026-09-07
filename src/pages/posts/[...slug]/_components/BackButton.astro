@@ -25,11 +25,13 @@ const t = useTranslations(locale);
 }
 
 <script>
+  import { readBackUrl } from "@/utils/backUrl";
+
   function updateGoBackUrl() {
     const backButton: HTMLAnchorElement | null =
       document.querySelector("#back-button");
 
-    const backUrl = sessionStorage.getItem("backUrl");
+    const backUrl = readBackUrl();
 
     if (backUrl && backButton) {
       backButton.href = backUrl;

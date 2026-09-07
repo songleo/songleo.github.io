@@ -16,13 +16,14 @@ pnpm dev
 
 ```bash
 pnpm lint
+pnpm check:unit
 pnpm format:check
 pnpm build
 pnpm check:content
 pnpm preview
 ```
 
-`build` 先运行 `astro check`，再生成 `dist/`；`preview` 预览已构建的生产结果，不会自动重新构建。`check:content` 检查构建后的链接、资源、alt、新标签页语义和重复文章标题，具体范围及历史例外见 [内容质量说明](docs/content-quality.md)。
+`check:unit` 运行浏览器交互和内容工具的回归测试，不依赖构建产物。`build` 先运行 `astro check`，再生成 `dist/`；`preview` 预览已构建的生产结果，不会自动重新构建。`check:content` 检查构建后的链接、资源、alt、新标签页语义和重复文章标题，具体范围及历史例外见 [内容质量说明](docs/content-quality.md)。
 
 ## 写作与目录
 

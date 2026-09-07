@@ -111,12 +111,14 @@ const homePath = getRelativeLocaleUrl(locale, "");
 </Layout>
 
 <script>
+  import { rememberBackUrl } from "@/utils/backUrl";
+
   document.addEventListener("astro:page-load", () => {
     const indexLayout = (document.querySelector("#main-content") as HTMLElement)
       ?.dataset;
     const baseRoot = import.meta.env.BASE_URL.replace(/\/?$/, "/");
     if (indexLayout?.layout) {
-      sessionStorage.setItem("backUrl", indexLayout.homePath ?? baseRoot);
+      rememberBackUrl(indexLayout.homePath ?? baseRoot);
     }
   });
 </script>

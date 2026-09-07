@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from check_content import check
+from check_content import check, srcset_urls
 
 
 class ContentChecks(unittest.TestCase):
@@ -67,6 +67,53 @@ class ContentChecks(unittest.TestCase):
         ''')
         self.assertEqual({"unsafe-blank", "missing-alt"}, {i[0] for i in self.issues()})
         self.assertEqual(2, len(self.issues()))
+
+    def test_srcset_data_urls_do_not_hide_following_resources(self):
+        self.write("images/a,b.png", "image")
+        self.write("index.html", '''
+            <img alt="Diagram" srcset="data:image/png;base64,AAAA 1x,
+                 http://example.com/insecure.png 2x, /images/missing.png 3x">
+            <img alt="Diagram" srcset="/images/a,b.png 1x,
+                 data:image/png;base64,BBBB 2x">
+            <link rel="preload" as="image"
+                  imagesrcset="/images/a,b.png 1x, /images/missing-preload.png 2x">
+        ''')
+        self.assertEqual([
+            ("broken-local", "index.html", "/images/missing-preload.png"),
+            ("broken-local", "index.html", "/images/missing.png"),
+            ("http-resource", "index.html", "http://example.com/insecure.png"),
+        ], self.issues())
+
+    def test_srcset_tokenization_preserves_url_commas_and_skips_descriptors(self):
+        self.assertEqual(
+            ["/one.png", "data:image/png;base64,AAAA", "/three,a.png", "/four.png"],
+            list(srcset_urls(" , /one.png,\n data:image/png;base64,AAAA 2x, "
+                             "/three,a.png 3x, /four.png 4x")),
+        )
+        self.assertEqual(
+            ["/one.png", "/two.png"],
+            list(srcset_urls("/one.png future(a,b), /two.png 2x")),
+        )
+        self.assertEqual([], list(srcset_urls(" \t,\n")))
+
+    def test_invalid_urls_are_reported_without_stopping_other_checks(self):
+        self.write("index.html", '''
+            <a href="http://[broken/">Malformed host</a>
+            <a href="https://example.com:bad/path">Malformed port</a>
+            <a href="/missing/">Missing page</a>
+        ''')
+        self.assertEqual(3, len(self.issues()))
+        self.assertEqual(2, sum(i[0] == "invalid-url" for i in self.issues()))
+        self.assertEqual(1, sum(i[0] == "broken-local" for i in self.issues()))
+
+    def test_duplicate_open_graph_type_is_rejected(self):
+        self.write("index.html", '''
+            <meta property="og:type" content="website">
+            <meta property="og:type" content="article">
+        ''')
+        self.assertEqual(
+            [("duplicate-og-type", "index.html", "website, article")], self.issues()
+        )
 
     def test_duplicate_titles_only_apply_to_articles(self):
         for name in ("one", "two"):

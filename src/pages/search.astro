@@ -46,6 +46,8 @@ const t = useTranslations(locale);
 </Layout>
 
 <script>
+  import { rememberBackUrl } from "@/utils/backUrl";
+
   function initSearch() {
     const pageFindSearch: HTMLElement | null =
       document.querySelector("#pagefind-search");
@@ -57,11 +59,28 @@ const t = useTranslations(locale);
 
     const params = new URLSearchParams(window.location.search);
 
+    function updateSearchUrl() {
+      const query = params.toString();
+      const suffix = query ? `?${query}` : "";
+      history.replaceState(
+        history.state,
+        "",
+        `${window.location.pathname}${suffix}`
+      );
+      rememberBackUrl(
+        `${pageFindSearch?.dataset.backurl ?? window.location.pathname}${suffix}`
+      );
+    }
+
     const onIdle = window.requestIdleCallback || (cb => setTimeout(cb, 1));
 
     onIdle(async () => {
       // @ts-expect-error — Missing types for @pagefind/default-ui package.
       const { PagefindUI } = await import("@pagefind/default-ui");
+
+      // Navigation may finish while the idle callback or module import waits.
+      if (!pageFindSearch.isConnected || pageFindSearch.querySelector("form"))
+        return;
 
       // Display warning inn dev mode
       if (import.meta.env.DEV) {
@@ -80,12 +99,9 @@ const t = useTranslations(locale);
         showImages: false,
         showSubResults: true,
         processTerm: function (term: string) {
-          params.set("q", term); // Update the `q` parameter in the URL
-          history.replaceState(history.state, "", "?" + params.toString()); // Push the new URL without reloading
-
-          const backUrl =
-            pageFindSearch?.dataset?.backurl ?? window.location.pathname;
-          sessionStorage.setItem("backUrl", `${backUrl}?${params.toString()}`);
+          if (term.trim()) params.set("q", term);
+          else params.delete("q");
+          updateSearchUrl();
 
           return term;
         },
@@ -104,8 +120,10 @@ const t = useTranslations(locale);
       clearButton?.addEventListener("click", resetSearchParam);
 
       function resetSearchParam(e: Event) {
-        if ((e.target as HTMLInputElement)?.value.trim() === "") {
-          history.replaceState(history.state, "", window.location.pathname);
+        const input = searchInput as HTMLInputElement | null;
+        if (e.currentTarget === clearButton || input?.value.trim() === "") {
+          params.delete("q");
+          updateSearchUrl();
         }
       }
     });

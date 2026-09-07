@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: "24"
           # pnpm version comes from packageManager in package.json, as in CI.
-          build-cmd: pnpm run lint && pnpm run check:browser && pnpm run format:check && pnpm run build && pnpm run check:content
+          build-cmd: pnpm run lint && pnpm run check:unit && pnpm run format:check && pnpm run build && pnpm run check:content
 
   deploy:
     needs: build
