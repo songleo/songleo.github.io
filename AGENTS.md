@@ -89,7 +89,7 @@ Use Node.js 22.12 or newer and the committed pnpm lockfile.
 - `pnpm lint` checks TypeScript, JavaScript, and Astro source.
 - `pnpm format:check` checks formatting without rewriting files.
 
-Validation should match the change:
+Validation should match the change. The explicit direct-publish exception below takes precedence:
 
 - For post-only changes, inspect front matter, links, images, Markdown fences,
   and the resulting article and tag routes.
@@ -122,7 +122,10 @@ Validation should match the change:
   until explicit approval.
 - When the user explicitly requests a direct publish, synchronize with the
   latest `origin/main`, retain intervening remote changes, commit only the
-  approved files, and push to `main`.
+  approved files, and push to `main`. Do not add builds, format/static/link/diff
+  checks, CI polling, or post-push page opening unless requested or a concrete
+  error blocks that publication. Ordinary development/review validation above
+  remains applicable when direct publication was not requested.
 - A push to `main` triggers the GitHub Pages workflow. Do not manually commit
   build output as a deployment mechanism.
 - Pull requests for visual changes should include before/after evidence and note
