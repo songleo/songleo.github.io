@@ -150,8 +150,8 @@ const isActive = (path: string) => {
                 id="theme-btn"
                 class="focus-outline hover:[&>svg]:stroke-accent relative size-12 p-4 sm:size-8"
                 title={t.a11y.toggleTheme}
-                aria-label="auto"
-                aria-live="polite"
+                aria-label={t.a11y.toggleTheme}
+                aria-pressed="true"
               >
                 <IconMoon class="absolute top-[50%] left-[50%] translate-[-50%] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                 <IconSunHigh class="absolute top-[50%] left-[50%] translate-[-50%] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />

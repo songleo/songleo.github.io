@@ -165,48 +165,18 @@ const ogImage = ogImageUrl
 </PostLayout>
 
 <script is:inline data-astro-rerun>
-  function createProgressBar() {
-    const progressContainer = document.createElement("div");
-    progressContainer.className =
-      "progress-container fixed top-0 z-10 h-1 w-full bg-background";
-
-    const progressBar = document.createElement("div");
-    progressBar.className = "progress-bar h-1 w-0 bg-accent";
-    progressBar.id = "myBar";
-
-    progressContainer.appendChild(progressBar);
-    document.body.appendChild(progressContainer);
-  }
-  createProgressBar();
-
-  function updateScrollProgress() {
-    document.addEventListener("scroll", () => {
-      const winScroll =
-        document.body.scrollTop || document.documentElement.scrollTop;
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      if (document) {
-        const myBar = document.getElementById("myBar");
-        if (myBar) {
-          myBar.style.width = scrolled + "%";
-        }
-      }
-    });
-  }
-  updateScrollProgress();
-
   function addHeadingLinks() {
     const headings = Array.from(
-      document.querySelectorAll("h2, h3, h4, h5, h6")
+      document.querySelectorAll("#article :is(h2, h3, h4, h5, h6)[id]")
     );
     for (const heading of headings) {
+      if (heading.querySelector(".heading-link")) continue;
       heading.classList.add("group");
       const link = document.createElement("a");
       link.className =
         "heading-link ms-2 no-underline opacity-75 md:opacity-0 md:group-hover:opacity-100 md:focus:opacity-100";
-      link.href = "#" + heading.id;
+      link.href = "#" + encodeURIComponent(heading.id);
+      link.setAttribute("aria-label", heading.textContent.trim());
 
       const span = document.createElement("span");
       span.ariaHidden = "true";
@@ -218,10 +188,15 @@ const ogImage = ogImageUrl
   addHeadingLinks();
 
   function attachCopyButtons() {
-    const copyButtonLabel = "Copy";
-    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+    const copyButtonLabel = "复制";
+    const codeBlocks = Array.from(document.querySelectorAll("#article pre"));
 
     for (const codeBlock of codeBlocks) {
+      if (
+        !codeBlock.querySelector("code") ||
+        codeBlock.querySelector(".copy-code")
+      )
+        continue;
       const wrapper = document.createElement("div");
       wrapper.style.position = "relative";
 
@@ -235,7 +210,9 @@ const ogImage = ogImageUrl
 
       const copyButton = document.createElement("button");
       copyButton.className = `copy-code absolute end-3 ${topClass} rounded bg-muted border border-muted px-2 py-1 text-xs leading-4 text-foreground font-medium`;
-      copyButton.innerHTML = copyButtonLabel;
+      copyButton.type = "button";
+      copyButton.textContent = copyButtonLabel;
+      copyButton.setAttribute("aria-live", "polite");
       codeBlock.setAttribute("tabindex", "0");
       codeBlock.appendChild(copyButton);
 
@@ -251,13 +228,18 @@ const ogImage = ogImageUrl
       const code = block.querySelector("code");
       const text = code?.innerText;
 
-      await navigator.clipboard.writeText(text ?? "");
-
-      button.innerText = "Copied";
-
-      setTimeout(() => {
-        button.innerText = copyButtonLabel;
-      }, 700);
+      button.disabled = true;
+      try {
+        await navigator.clipboard.writeText(text ?? "");
+        button.textContent = "已复制";
+      } catch {
+        button.textContent = "复制失败，请手动选择代码";
+      } finally {
+        setTimeout(() => {
+          button.textContent = copyButtonLabel;
+          button.disabled = false;
+        }, 2000);
+      }
     }
   }
   attachCopyButtons();
@@ -527,8 +509,4 @@ const ogImage = ogImageUrl
       window.__closeLightbox?.()
     );
   }
-
-  document.addEventListener("astro:after-swap", () =>
-    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
-  );
 </script>

@@ -8,6 +8,7 @@ const t = useTranslations(Astro.currentLocale);
 
 <div
   id="btt-btn-container"
+  style="visibility: hidden"
   class:list={[
     "fixed inset-e-4 bottom-8 z-50",
     "md:sticky md:inset-e-auto md:float-end md:me-1",
@@ -35,53 +36,13 @@ const t = useTranslations(Astro.currentLocale);
   </button>
 </div>
 
-<script is:inline data-astro-rerun>
-  function backToTop() {
-    const rootElement = document.documentElement;
-    const btnContainer = document.querySelector("#btt-btn-container");
-    const backToTopBtn = document.querySelector("[data-button='back-to-top']");
-    const progressIndicator = document.querySelector("#progress-indicator");
+<div
+  aria-hidden="true"
+  class="progress-container bg-background fixed top-0 left-0 z-10 h-1 w-full"
+>
+  <div id="myBar" class="progress-bar bg-accent h-1 w-0"></div>
+</div>
 
-    if (!rootElement || !btnContainer || !backToTopBtn || !progressIndicator)
-      return;
-
-    backToTopBtn.addEventListener("click", () => {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    });
-
-    let lastVisible = null;
-    function handleScroll() {
-      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
-      const scrollTop = rootElement.scrollTop;
-      const scrollPercent = Math.floor((scrollTop / scrollTotal) * 100);
-
-      progressIndicator.style.setProperty(
-        "background-image",
-        `conic-gradient(var(--accent), var(--accent) ${scrollPercent}%, transparent ${scrollPercent}%)`
-      );
-
-      const isVisible = scrollTop / scrollTotal > 0.3;
-
-      if (isVisible !== lastVisible) {
-        btnContainer.classList.toggle("opacity-100", isVisible);
-        btnContainer.classList.toggle("translate-y-0", isVisible);
-        btnContainer.classList.toggle("opacity-0", !isVisible);
-        btnContainer.classList.toggle("translate-y-14", !isVisible);
-        lastVisible = isVisible;
-      }
-    }
-
-    let ticking = false;
-    document.addEventListener("scroll", () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-  }
-  backToTop();
+<script>
+  import "@/scripts/scroll-progress";
 </script>

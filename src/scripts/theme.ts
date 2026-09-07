@@ -3,8 +3,11 @@ const LIGHT = "light";
 const DARK = "dark";
 
 function getPreferredTheme(): string {
-  const stored = localStorage.getItem(THEME_KEY);
-  return stored ?? DARK;
+  try {
+    return localStorage.getItem(THEME_KEY) === LIGHT ? LIGHT : DARK;
+  } catch {
+    return DARK;
+  }
 }
 
 // Reuse the value already set by the inline FOUC-prevention script if available.
@@ -13,15 +16,21 @@ let themeValue: string =
   getPreferredTheme();
 
 function persist(): void {
-  localStorage.setItem(THEME_KEY, themeValue);
   reflect();
+  try {
+    localStorage.setItem(THEME_KEY, themeValue);
+  } catch {
+    // Keep the theme usable for this session when storage is unavailable.
+  }
 }
 
 function reflect(): void {
   const root = document.firstElementChild;
   root?.setAttribute("data-theme", themeValue);
   root?.classList.toggle("dark", themeValue === DARK);
-  document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
+  document
+    .querySelector("#theme-btn")
+    ?.setAttribute("aria-pressed", String(themeValue === DARK));
 
   // Fill <meta name="theme-color"> with the computed background colour so
   // Android's browser chrome matches the page background.

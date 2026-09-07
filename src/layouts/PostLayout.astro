@@ -33,11 +33,8 @@ const structuredData = {
 };
 ---
 
-<Layout {title} {description} {ogImage} {canonicalURL}>
+<Layout {title} {description} {ogImage} {canonicalURL} ogType="article">
   <Fragment slot="head">
-    <!-- Override og:type for article pages -->
-    <meta property="og:type" content="article" />
-
     {
       pubDatetime && (
         <meta
@@ -58,7 +55,7 @@ const structuredData = {
     <script
       type="application/ld+json"
       is:inline
-      set:html={JSON.stringify(structuredData)}
+      set:html={JSON.stringify(structuredData).replace(/</g, "\\u003c")}
     />
   </Fragment>
 

@@ -39,6 +39,9 @@ jobs:
       - name: "🔎 Lint code"
         run: pnpm run lint
 
+      - name: Check browser behavior
+        run: pnpm run check:browser
+
       - name: "📝 Checking code format"
         run: pnpm run format:check
 
