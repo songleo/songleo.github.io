@@ -1,27 +1,30 @@
 ---
 title: "chatgpt + codex 程序员实用指南"
-description: "面向程序员和技术团队，介绍 ChatGPT、ChatGPT Work、Codex 桌面端、Codex CLI、IDE 扩展和 Codex Cloud 的区别、用法与协作方式。 本文依据 OpenAI 官方文档重新整理，最后核对日期：2026-08-06。产品处于持续更新中，账号套餐、组织策略和..."
+description: "截至 2026-09-07，介绍 chatgpt、work 与 codex 的最新功能，涵盖模型选择、remote、浏览器、长任务、自动化和开发工作流。"
 pubDatetime: 2026-08-06T00:12:05+08:00
+modDatetime: 2026-09-07T12:00:00+08:00
 tags: ["chatgpt", "codex", "开发", "最佳实践"]
 ---
-> 面向程序员和技术团队，介绍 ChatGPT、ChatGPT Work、Codex 桌面端、Codex CLI、IDE 扩展和 Codex Cloud 的区别、用法与协作方式。  
-> 本文依据 OpenAI 官方文档重新整理，最后核对日期：2026-08-06。产品处于持续更新中，账号套餐、组织策略和灰度发布可能导致界面略有不同。
+> 面向程序员和技术团队，介绍 chatgpt、chatgpt work、codex 桌面端、codex cli、ide 扩展和 codex cloud 的区别、用法与协作方式。  
+> 本文依据 openai 官方文档重新整理，最后核对日期：2026-09-07。产品处于持续更新中，账号套餐、组织策略和灰度发布可能导致界面略有不同。
+
+本次更新重点补齐 gpt-6 astra、remote 手机发起任务、linux 桌面预览、事件触发任务、更多浏览器、webmcp、computer history、gitlab 集成和安全审查。以下覆盖程序员日常使用相关的主要功能；套餐、客户端和组织策略决定实际可用范围，以账号中的入口为准。[最新功能动态](https://learn.chatgpt.com/docs/whats-new)
 
 ## 目录
 
 - [1. 先建立正确的产品地图](#1-先建立正确的产品地图)
 - [2. 如何选择：一张表看懂](#2-如何选择一张表看懂)
-- [3. ChatGPT Chat：快速交流与思考](#3-chatgpt-chat快速交流与思考)
-- [4. ChatGPT Work：完成较长的多步骤工作](#4-chatgpt-work完成较长的多步骤工作)
-- [5. ChatGPT 的 Web、桌面和移动端](#5-chatgpt-的-web桌面和移动端)
-- [6. Codex 的产品形态](#6-codex-的产品形态)
-- [7. Codex CLI 入门与常用命令](#7-codex-cli-入门与常用命令)
-- [8. Codex 桌面 App 工作流](#8-codex-桌面-app-工作流)
-- [9. Codex IDE 扩展](#9-codex-ide-扩展)
-- [10. Codex Cloud](#10-codex-cloud)
+- [3. chatgpt chat：快速交流与思考](#3-chatgpt-chat快速交流与思考)
+- [4. chatgpt work：完成较长的多步骤工作](#4-chatgpt-work完成较长的多步骤工作)
+- [5. chatgpt 的 web、桌面和移动端](#5-chatgpt-的-web桌面和移动端)
+- [6. codex 的产品形态](#6-codex-的产品形态)
+- [7. codex cli 入门与常用命令](#7-codex-cli-入门与常用命令)
+- [8. codex 桌面 app 工作流](#8-codex-桌面-app-工作流)
+- [9. codex ide 扩展](#9-codex-ide-扩展)
+- [10. codex cloud](#10-codex-cloud)
 - [11. 提示词写法与实用模板](#11-提示词写法与实用模板)
 - [12. AGENTS.md、配置和长期规则](#12-agentsmd配置和长期规则)
-- [13. Skills、Plugins、MCP、Hooks 与自动化](#13-skillspluginsmcphooks-与自动化)
+- [13. skills、plugins、mcp、hooks 与自动化](#13-skillspluginsmcphooks-与自动化)
 - [14. 权限、沙箱与安全](#14-权限沙箱与安全)
 - [15. 程序员端到端实战](#15-程序员端到端实战)
 - [16. 常见误区](#16-常见误区)
@@ -30,29 +33,29 @@ tags: ["chatgpt", "codex", "开发", "最佳实践"]
 
 ## 1. 先建立正确的产品地图
 
-### 1.1 ChatGPT 不再只有“聊天”一种工作方式
+### 1.1 chatgpt 不再只有“聊天”一种工作方式
 
-按照当前官方产品结构，ChatGPT 中最需要区分的是三种体验：
+按照当前官方产品结构，chatgpt 中最需要区分的是三种体验：
 
 | 体验 | 核心定位 | 典型结果 |
 | --- | --- | --- |
-| **Chat** | 快速问答、搜索、讨论、学习和头脑风暴 | 一段回答、解释、建议或对话 |
-| **Work** | 较长、多步骤、需要工具和最终交付物的工作 | 文档、表格、演示文稿、报告、Site 等 |
-| **Codex** | 软件开发和技术工作 | 仓库修改、测试结果、代码审查、可合并 diff |
+| **chat** | 快速问答、搜索、讨论、学习和头脑风暴 | 一段回答、解释、建议或对话 |
+| **work** | 较长、多步骤、需要工具和最终交付物的工作 | 文档、表格、演示文稿、报告、site 等 |
+| **codex** | 软件开发和技术工作 | 仓库修改、测试结果、代码审查、可合并 diff |
 
 官方的简化选择方式是：
 
-- 想问问题、搜索或讨论想法，选 **Chat**。
-- 想完成研究、分析或制作一份成品，选 **Work**。
-- 想读写代码仓库、运行命令和测试，选 **Codex**。
+- 想问问题、搜索或讨论想法，选 **chat**。
+- 想完成研究、分析或制作一份成品，选 **work**。
+- 想读写代码仓库、运行命令和测试，选 **codex**。
 
-这三个名称描述的是“工作体验”，Web、桌面 App、移动 App、CLI 和 IDE 则是访问这些能力的“产品表面”。二者不要混为一谈。
+这三个名称描述的是“工作体验”，web、桌面 app、移动 app、cli 和 ide 则是访问这些能力的“产品表面”。二者不要混为一谈。
 
-### 1.2 ChatGPT 与 Codex 的根本差别
+### 1.2 chatgpt 与 codex 的根本差别
 
-ChatGPT 更偏向通用知识工作：理解问题、组织信息、研究、沟通和制作内容。
+chatgpt 更偏向通用知识工作：理解问题、组织信息、研究、沟通和制作内容。
 
-Codex 是软件工程代理：它围绕真实开发环境工作，能够检查仓库、编辑文件、运行本机或云端命令、执行测试、检查 diff，并把结果交给开发者审阅。
+codex 是软件工程代理：它围绕真实开发环境工作，能够检查仓库、编辑文件、运行本机或云端命令、执行测试、检查 diff，并把结果交给开发者审阅。
 
 可以把它们类比为：
 
@@ -62,35 +65,51 @@ ChatGPT Work  = 能持续执行多步骤知识工作的项目助理
 Codex         = 能进入开发环境动手工作的工程代理
 ```
 
-### 1.3 OpenAI API 是另一类产品
+### 1.3 openai api 是另一类产品
 
-ChatGPT 和 Codex 是开发者直接使用的成品工具。OpenAI API 则用于把模型能力集成进你自己的程序、服务或产品。
+chatgpt 和 codex 是开发者直接使用的成品工具。openai api 则用于把模型能力集成进你自己的程序、服务或产品。
 
 例如：
 
-- 用 ChatGPT 讨论客服机器人的需求；
-- 用 Codex 在仓库中实现客服系统；
-- 用 OpenAI API 为最终客服产品提供模型能力。
+- 用 chatgpt 讨论客服机器人的需求；
+- 用 codex 在仓库中实现客服系统；
+- 用 openai api 为最终客服产品提供模型能力。
 
-ChatGPT 订阅、Codex 使用权限和 API 计费/凭据不是一回事。登录 ChatGPT 不代表你的服务端程序自动拥有 API Key。
+chatgpt 订阅、codex 使用权限和 api 计费/凭据不是一回事。登录 chatgpt 不代表你的服务端程序自动拥有 api key。
+
+### 1.4 当前模型与推理强度
+
+截至本次核对，work 和 codex 的官方模型目录已经包含以下选择：
+
+| 模型 | 适合的工作 |
+| --- | --- |
+| gpt-6 astra | 复杂代码、跨应用操作、研究与成品交付 |
+| gpt-5.6 sol | 复杂编码、computer use 和研究 |
+| gpt-5.6 terra | 日常开发，平衡能力与成本 |
+| gpt-5.6 luna | 范围明确、偏重速度与成本的任务 |
+| gpt-5.3-codex-spark | 面向 pro 用户的纯文本实时编码研究预览 |
+
+模型和推理强度分开选择。先用默认强度，复杂分析再提高；提高强度通常会增加耗时和用量。work 的 ultra 支持主动委派适合并行的工作；本地 codex 的子代理使用方式还应以当前客户端规则为准。
+
+比如我会把跨模块问题交给 astra，把小范围文案或代码修改交给更轻量的模型。这里是我的选择方式，不代表每个账号都能看到全部模型。[模型与可用范围](https://learn.chatgpt.com/docs/models)
 
 ## 2. 如何选择：一张表看懂
 
 | 你的任务 | 推荐形态 | 为什么 |
 | --- | --- | --- |
-| 解释陌生技术概念 | ChatGPT Chat | 对话快，适合追问和类比 |
-| 查询最新框架用法并引用来源 | Chat + Web 搜索 | 快速检索和核对资料 |
-| 调研多个技术方案并生成正式报告 | ChatGPT Work | 适合多步骤研究和成品交付 |
-| 根据 CSV 生成分析报告或演示文稿 | ChatGPT Work | 能使用文件并创建正式产物 |
-| 随时随地问问题或查看 Work 进度 | ChatGPT 移动端 | 便于跨设备继续云端工作 |
-| 使用本地文件、浏览器和桌面软件 | ChatGPT 桌面 App 的 Work | 可在授权后使用本机上下文 |
-| 在终端里修改当前 Git 仓库 | Codex CLI | 贴合终端、本地命令和脚本习惯 |
-| 对当前选中代码做小修改 | Codex IDE 扩展 | 编辑器上下文已自动带入 |
-| 同时管理多个开发任务并审查 diff | 桌面 App 的 Codex | 任务、文件、终端和审查集中管理 |
-| 让长任务在后台或并行执行 | Codex Cloud | 每个任务有隔离云环境，不占本机 |
-| 在 CI 中做非交互检查 | `codex exec` / GitHub Action | 适合可重复的自动化流程 |
-| 从 GitHub、Linear 或 Slack 委派开发任务 | Codex Cloud 集成 | 工作可从现有协作入口发起 |
-| 在手机上直接新建本地 Codex 任务 | 不适合 | 移动端不能选择完整 Codex 体验，只能远程查看部分任务 |
+| 解释陌生技术概念 | chatgpt chat | 对话快，适合追问和类比 |
+| 查询最新框架用法并引用来源 | chat + web 搜索 | 快速检索和核对资料 |
+| 调研多个技术方案并生成正式报告 | chatgpt work | 适合多步骤研究和成品交付 |
+| 根据 csv 生成分析报告或演示文稿 | chatgpt work | 能使用文件并创建正式产物 |
+| 随时随地问问题或查看 work 进度 | chatgpt 移动端 | 便于跨设备继续云端工作 |
+| 使用本地文件、浏览器和桌面软件 | chatgpt 桌面 app 的 work | 可在授权后使用本机上下文 |
+| 在终端里修改当前 git 仓库 | codex cli | 贴合终端、本地命令和脚本习惯 |
+| 对当前选中代码做小修改 | codex ide 扩展 | 编辑器上下文已自动带入 |
+| 同时管理多个开发任务并审查 diff | 桌面 app 的 codex | 任务、文件、终端和审查集中管理 |
+| 让长任务在后台或并行执行 | codex cloud | 每个任务有隔离云环境，不占本机 |
+| 在 ci 中做非交互检查 | `codex exec` / github action | 适合可重复的自动化流程 |
+| 从 github、linear 或 slack 委派开发任务 | codex cloud 集成 | 工作可从现有协作入口发起 |
+| 从手机发起、继续和审查电脑上的任务 | remote | 手机负责操作，连接的电脑运行代码和命令 |
 
 ### 2.1 一个实用决策树
 
@@ -106,17 +125,17 @@ ChatGPT 订阅、Codex 使用权限和 API 计费/凭据不是一回事。登录
    └─ 需要后台、隔离环境或并行任务？ → Codex Cloud
 ```
 
-## 3. ChatGPT Chat：快速交流与思考
+## 3. chatgpt chat：快速交流与思考
 
 ### 3.1 适合做什么
 
 - 学习语言、框架、协议和算法；
 - 解释代码片段、错误堆栈和日志；
 - 讨论架构方案；
-- 生成伪代码、SQL 草稿或测试思路；
+- 生成伪代码、sql 草稿或测试思路；
 - 快速搜索最新资料；
 - 头脑风暴产品需求和边界情况；
-- 改写技术文档、邮件和 PR 描述。
+- 改写技术文档、邮件和 pr 描述。
 
 示例：
 
@@ -127,7 +146,7 @@ ChatGPT 订阅、Codex 使用权限和 API 计费/凭据不是一回事。登录
 最后指出这种类比在哪些地方不准确。
 ```
 
-告诉 ChatGPT 你已经掌握什么，比单纯说“通俗解释”更容易获得合适的答案。
+告诉 chatgpt 你已经掌握什么，比单纯说“通俗解释”更容易获得合适的答案。
 
 ### 3.2 适合调试，但要提供证据
 
@@ -149,15 +168,15 @@ ChatGPT 订阅、Codex 使用权限和 API 计费/凭据不是一回事。登录
 再给出逐个排除的最小实验。现在不要重写代码。
 ```
 
-当问题依赖整个仓库、构建系统或真实运行环境时，应切换到 Codex。
+当问题依赖整个仓库、构建系统或真实运行环境时，应切换到 codex。
 
-### 3.3 Web 搜索与深度研究
+### 3.3 web 搜索与深度研究
 
 会变化的信息必须联网核对，例如：
 
-- 当前软件版本和 API；
+- 当前软件版本和 api；
 - 云服务规格和价格；
-- 安全公告与 CVE；
+- 安全公告与 cve；
 - 法律、政策和行业标准；
 - 最新模型或产品能力。
 
@@ -172,18 +191,18 @@ ChatGPT 订阅、Codex 使用权限和 API 计费/凭据不是一回事。登录
 
 深度研究可以使用公开网页、上传文件和已连接的数据源。开始前可以检查和修改研究计划，执行中也可以调整方向。
 
-## 4. ChatGPT Work：完成较长的多步骤工作
+## 4. chatgpt work：完成较长的多步骤工作
 
-### 4.1 Work 和 Chat 的区别
+### 4.1 work 和 chat 的区别
 
-Chat 以交流为中心；Work 以“完成一个明确结果”为中心。
+chat 以交流为中心；work 以“完成一个明确结果”为中心。
 
-适合 Work 的任务：
+适合 work 的任务：
 
 - 调研并输出一份有依据的技术选型报告；
 - 分析日志、表格或多份文档；
-- 制作文档、演示文稿、电子表格或 PDF；
-- 创建可交互的 Site、仪表盘或项目跟踪器；
+- 制作文档、演示文稿、电子表格或 pdf；
+- 创建可交互的 site、仪表盘或项目跟踪器；
 - 使用插件从多个系统收集上下文；
 - 运行计划任务或监控变化。
 
@@ -199,9 +218,9 @@ Chat 以交流为中心；Work 以“完成一个明确结果”为中心。
 不要修改源文件。
 ```
 
-### 4.2 Work 的使用原则
+### 4.2 work 的使用原则
 
-给 Work 的请求应明确：
+给 work 的请求应明确：
 
 - 最终交付物是什么；
 - 可以使用哪些文件、网站和插件；
@@ -217,34 +236,48 @@ Chat 以交流为中心；Work 以“完成一个明确结果”为中心。
 使用简洁工程风格，不要编造缺失指标。
 ```
 
-### 4.3 Work 与 Codex 怎么协作
+### 4.3 work 与 codex 怎么协作
 
 一个常见流程是：
 
-1. 用 Work 汇总需求、用户反馈和业务资料，形成 PRD 或技术任务书。
+1. 用 work 汇总需求、用户反馈和业务资料，形成 prd 或技术任务书。
 2. 将任务书放入代码仓库。
-3. 用 Codex 读取任务书，调查代码并实现。
-4. 用 Work 根据最终变更制作发布说明、培训材料或报告。
+3. 用 codex 读取任务书，调查代码并实现。
+4. 用 work 根据最终变更制作发布说明、培训材料或报告。
 
-Work 可以生成代码片段，但“需要在真实仓库中可靠修改和验证”时，应交给 Codex。
+work 可以生成代码片段，但“需要在真实仓库中可靠修改和验证”时，应交给 codex。
 
-## 5. ChatGPT 的 Web、桌面和移动端
+### 4.4 文件、图像和交互产物
 
-### 5.1 ChatGPT Web
+桌面端可以预览生成的文档、表格、演示文稿和 pdf，并对支持的预览添加批注，让下一轮修改落到具体位置。支持时还可直接预览交互 html；cli 生成的文件则需要用对应应用打开。[文件与批注](https://learn.chatgpt.com/docs/artifacts-viewer)
 
-访问 `chatgpt.com` 即可使用。Web 端适合：
+图像生成既能创建素材，也能按参考图修改。展开图片后可在 focused view 和 canvas view 中查看版本，对多张图添加修改意见。比如做前端页面时，先生成插图，再要求保留构图、只调整颜色。[图像生成](https://learn.chatgpt.com/docs/image-generation)
 
-- 快速使用 Chat 或 Work；
-- 使用上传文件、Projects、Skills 和 Plugins；
+sites 用于创建并托管网站、web app 和小游戏，仍处于 public beta。它支持持久数据、分享设置和站点管理；符合条件时可邀请工作区成员共同编辑、修改托管地址。每个部署地址都是实际发布，想先看稿应明确要求“保存版本，先不部署”。[sites](https://learn.chatgpt.com/docs/sites)
+
+### 4.5 语音、文件库与持续研究
+
+语音可以用于讨论文件、项目和正在进行的任务。比如我会一边看方案，一边口述需要修改的部分；在支持的桌面任务中，也可以询问进度或调整方向。现有 codex 任务中的语音入口仍受发布批次影响。[语音](https://learn.chatgpt.com/docs/features/voice)
+
+web 端的 library 可以复用已保存的文件，减少重复上传。需要多来源调查时使用深度研究，并写清允许的来源、时间范围和最终报告要求。上传文件、引用来源和联网研究各有用途，不能把旧附件当作实时信息。
+
+## 5. chatgpt 的 web、桌面和移动端
+
+### 5.1 chatgpt web
+
+访问 `chatgpt.com` 即可使用。web 端适合：
+
+- 快速使用 chat 或 work；
+- 使用上传文件、projects、skills 和 plugins；
 - 调研、分析和制作可下载产物；
 - 跨设备访问云端聊天；
 - 不需要直接访问本机仓库或桌面应用的任务。
 
-Web 端的 Work 在云端运行，不能直接读取你电脑上的任意本地文件。需要通过上传、项目文件或连接器提供上下文。
+web 端的 work 在云端运行，不能直接读取你电脑上的任意本地文件。需要通过上传、项目文件或连接器提供上下文。
 
-### 5.2 ChatGPT 桌面 App
+### 5.2 chatgpt 桌面 app
 
-当前 Windows 和 macOS 桌面 App 把主要体验集中在一起：
+windows 和 macos 桌面 app 把主要体验集中在一起；linux 桌面端现已进入预览：
 
 ```text
 ChatGPT
@@ -255,35 +288,39 @@ Codex
 └─ 软件开发专用视图
 ```
 
-桌面 App 的优势：
+桌面 app 的优势：
 
 - 可打开本地文件夹和项目；
 - 在授权后使用本地文件、浏览器和桌面应用；
 - 同时管理多个聊天和长任务；
 - 创建和检查文档、表格、图片等产物；
-- 在 Codex 视图中使用仓库、终端和开发工具；
+- 在 codex 视图中使用仓库、终端和开发工具；
 - 使用计划任务；
-- Work 或 Codex 在符合账号条件时可使用语音协调任务。
+- work 或 codex 在符合账号条件时可使用语音协调任务。
 
-注意：Chat/Work 的历史记录与 Codex 历史是分开的。切换顶部入口时，要确认自己当前位于哪种体验。
+使用时确认当前体验、项目和执行位置。界面组织方式会更新，不要仅凭旧版侧边栏判断任务在哪里运行。
 
-### 5.3 ChatGPT 移动端
+linux 预览支持 ubuntu 24.04/26.04、debian 13、fedora 43/44，提供 x64 和 arm64 的 deb/rpm 包。它可以处理项目、本地文件和 codex 任务，但 computer use 等功能尚未齐全。[linux 桌面端](https://learn.chatgpt.com/docs/linux/linux-app)
+
+### 5.3 chatgpt 移动端
 
 移动端适合：
 
-- 使用 Chat 进行快速问答；
-- 使用云端 Work；
-- 继续在其他设备开始的云端 Work；
+- 使用 chat 进行快速问答；
+- 使用云端 work；
+- 继续在其他设备开始的云端 work；
 - 查看和回应需要你介入的任务；
-- 通过 Remote 访问部分受支持的桌面 Codex 聊天。
+- 通过 remote 在连接的电脑上新建任务、追加指令、批准操作和审查 diff。
 
-当前官方说明中，完整 Codex 不能像 Chat 或 Work 一样直接在移动端选择。移动端的 Remote 更像远程跟进入口，不等同于完整本地开发环境。
+remote 已经支持从手机发起工作。先在 mac 或 windows 的桌面 app 中设置远程连接，再用同一账号和工作区完成手机配对。电脑需要保持唤醒并联网，仓库和命令仍在电脑上运行。
 
-### 5.4 Projects
+比如我在外面时，可以从手机让电脑上的 codex 修复一个问题，随后查看 diff 和测试结果；电脑离线时，remote 不会自动把它迁移成云端任务。[remote](https://learn.chatgpt.com/docs/remote)
 
-Project 会把相关聊天、文件和项目指令放在一起，适合持续性工作。
+### 5.4 projects
 
-例如为某个后端系统建立 Project：
+project 会把相关聊天、文件和项目指令放在一起，适合持续性工作。
+
+例如为某个后端系统建立 project：
 
 ```text
 项目背景：内部订单系统，Java 21、Spring Boot、PostgreSQL。
@@ -292,34 +329,49 @@ Project 会把相关聊天、文件和项目指令放在一起，适合持续性
 涉及版本的事实必须核对官方文档。
 ```
 
-Project 适合知识和资料上下文；仓库的构建命令、代码规范和测试要求更适合写入 `AGENTS.md`。
+要区分 chatgpt project 和本地 project：前者组织上传文件、聊天和连接来源，后者连接本机一个或多个目录。创建 chatgpt project 并不会自动开放本机文件夹。仓库构建命令和工程规范仍适合写入 `AGENTS.md`。[项目与聊天](https://learn.chatgpt.com/docs/projects)
 
-## 6. Codex 的产品形态
+### 5.5 浏览器与 computer use
 
-Codex 的不同形态使用相同的工程思路，但交互位置和最擅长的场景不同。
+| 入口 | 主要用途 | 需要注意 |
+| --- | --- | --- |
+| 内置 browser | 本地网页调试、网页任务和登录 | 与日常浏览器的个人资料分开 |
+| 浏览器扩展 | 使用已登录的网站、引用打开的标签页 | 支持 chrome、edge、brave、opera、vivaldi；opera 没有 side chat |
+| computer use | 操作 macos/windows 图形应用、复现界面问题 | windows 会占用当前桌面；linux 预览暂不支持 |
+| site tools / webmcp | 调用当前网页主动提供的结构化操作 | 需要网页实现相应工具，不能假设所有网站都有 |
 
-| Codex 形态 | 运行/交互位置 | 最大优势 | 最适合 |
+比如我需要整理已登录网页中的 issue，就提供对应标签页；需要确认前端交互是否正确，就让它打开本地页面实际操作。[浏览器扩展](https://learn.chatgpt.com/docs/chrome-extension)、[computer use](https://learn.chatgpt.com/docs/computer-use)
+
+webmcp 与连接外部服务的 mcp 不同，它让网页直接提供“查找段落”“添加评论”等工具。目前官方要求在桌面内置浏览器中使用 sol 或 terra；luna 未启用，enterprise/edu 不提供。astra 是否支持该功能仍应核对具体页面和账号，不能从模型能力强推断。[site tools](https://learn.chatgpt.com/docs/webmcp)
+
+符合条件的 web/移动端 work 也可以通过云浏览器登录网站。登录应在专门的登录流程中完成，云浏览器不会继承本机浏览器配置；enterprise/edu 当前不支持这项网站登录功能。[近期浏览器更新](https://learn.chatgpt.com/docs/whats-new)
+
+## 6. codex 的产品形态
+
+codex 的不同形态使用相同的工程思路，但交互位置和最擅长的场景不同。
+
+| codex 形态 | 运行/交互位置 | 最大优势 | 最适合 |
 | --- | --- | --- | --- |
-| 桌面 App 的 Codex | Windows/macOS 桌面 | 多任务、可视化 diff、本机工具 | 综合开发和长任务管理 |
-| Codex CLI | 终端 | 本地仓库、命令、脚本与 CI | 终端用户、自动化 |
-| IDE 扩展 | VS Code 等编辑器 | 自动利用打开文件和选区 | 聚焦编辑、边写边问 |
-| Codex Cloud | 隔离云环境 | 后台运行、并行、可复现环境 | 长任务、多个尝试、异步委派 |
-| GitHub/Linear/Slack 集成 | 协作工具 | 从问题发生的位置发起任务 | 团队委派和异步协作 |
-| SDK / App Server / GitHub Action | 自建工具或流水线 | 把 Codex 嵌入工程系统 | 高级自动化和平台集成 |
+| 桌面 app 的 codex | windows/macos，linux 预览 | 多任务、可视化 diff、本机工具 | 综合开发和长任务管理 |
+| codex cli | 终端 | 本地仓库、命令、脚本与 ci | 终端用户、自动化 |
+| ide 扩展 | vs code 等编辑器 | 自动利用打开文件和选区 | 聚焦编辑、边写边问 |
+| codex cloud | 隔离云环境 | 后台运行、并行、可复现环境 | 长任务、多个尝试、异步委派 |
+| github/linear/slack 集成 | 协作工具 | 从问题发生的位置发起任务 | 团队委派和异步协作 |
+| sdk / app server / github action | 自建工具或流水线 | 把 codex 嵌入工程系统 | 高级自动化和平台集成 |
 
 ### 6.1 这些形态并不是互斥的
 
-可以在 IDE 中开始调查，在任务变大时委派到 Cloud；也可以从 CLI 查看云任务，再回桌面 App 审查结果。
+可以在 ide 中开始调查，在任务变大时委派到 cloud；也可以从 cli 查看云任务，再回桌面 app 审查结果。
 
 推荐组合：
 
-- 个人快速开发：IDE + CLI；
-- 多仓库和多任务：桌面 App + worktree；
-- 长任务和团队委派：Cloud + GitHub；
-- CI 自动检查：`codex exec` 或 GitHub Action；
-- 技术负责人：桌面 App 管理任务，IDE 做精细修订，Cloud 做并行探索。
+- 个人快速开发：ide + cli；
+- 多仓库和多任务：桌面 app + worktree；
+- 长任务和团队委派：cloud + github；
+- ci 自动检查：`codex exec` 或 github action；
+- 技术负责人：桌面 app 管理任务，ide 做精细修订，cloud 做并行探索。
 
-## 7. Codex CLI 入门与常用命令
+## 7. codex cli 入门与常用命令
 
 ### 7.1 安装
 
@@ -329,7 +381,9 @@ Codex 的不同形态使用相同的工程思路，但交互位置和最擅长�
 npm install -g @openai/codex
 ```
 
-macOS/Linux 可使用官方安装脚本：
+安装或更新前可查看[官方 cli 入口](https://learn.chatgpt.com/docs/codex/cli)。不要把旧文章中的固定版本号当作最新版本。
+
+macos/linux 也可使用官方安装脚本：
 
 ```bash
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
@@ -348,11 +402,13 @@ cd /path/to/project
 codex
 ```
 
-首次运行会要求登录，可按界面选择 ChatGPT 登录或当前版本提供的其他认证方式。
+首次运行会要求登录，可按界面选择 chatgpt 登录或当前版本提供的其他认证方式。
+
+本次核对时，官方 changelog 最新列出的 cli 版本为 0.153.4（2026-09-04），修复了 astra 的模型选择器可见性；没有显式模型配置时，它是该版本内置的默认选择。已有配置、登录方式和组织策略仍可能影响实际模型。[版本记录](https://learn.chatgpt.com/docs/changelog)
 
 ### 7.2 第一次使用
 
-先让 Codex 只读了解项目：
+先让 codex 只读了解项目：
 
 ```text
 介绍这个项目的业务目标、入口、主要模块、数据流、启动方式和测试命令。
@@ -379,11 +435,15 @@ codex
 | `/permissions` | 查看或调整沙箱与权限 |
 | `/model` | 选择模型和推理强度 |
 | `/plan` | 先调查和制定计划 |
+| `/goal` | 按明确完成条件持续推进任务 |
+| `/agent` | 查看或切换子代理任务 |
+| `/import` | 导入支持的其他代理配置和近期聊天 |
+| `/recap` | 获取任务回顾 |
 | `/review` | 审查未提交改动、提交或分支 |
-| `/mcp` | 查看可用 MCP 工具和连接 |
+| `/mcp` | 查看可用 mcp 工具和连接 |
 | `/feedback` | 提交产品反馈 |
 
-### 7.4 常用 CLI 示例
+### 7.4 常用 cli 示例
 
 带初始任务启动：
 
@@ -435,50 +495,50 @@ codex exec --help
 codex review --help
 ```
 
-### 7.5 CLI 最适合的场景
+### 7.5 cli 最适合的场景
 
 - 习惯终端优先的开发；
 - 需要直接使用本机编译器、测试工具和脚本；
 - 提交前做本地审查；
 - 编写可重复的非交互流程；
-- 从终端委派和跟进 Cloud 工作。
+- 从终端委派和跟进 cloud 工作。
 
-## 8. Codex 桌面 App 工作流
+## 8. codex 桌面 app 工作流
 
-### 8.1 为什么选择桌面 Codex
+### 8.1 为什么选择桌面 codex
 
-桌面 App 更像代理任务的控制台：
+桌面 app 更像代理任务的控制台：
 
 - 按项目组织多个任务；
 - 在一个界面中查看进度、命令和文件；
 - 使用 diff 面板逐行审阅；
 - 打开集成终端；
 - 管理长期任务和通知；
-- 通过 Git worktree 隔离并行任务；
-- 使用 Browser、Computer Use、Skills、Plugins 和 MCP；
+- 通过 git worktree 隔离并行任务；
+- 使用 browser、computer use、skills、plugins 和 mcp；
 - 创建计划任务。
 
-### 8.2 Local、worktree 和 Cloud
+### 8.2 local、worktree 和 cloud
 
 | 环境 | 特点 | 使用场景 |
 | --- | --- | --- |
-| Local | 直接在当前本地工作区操作 | 单任务、快速修改、需要本机依赖 |
-| Git worktree | 为任务创建隔离的 Git 工作副本 | 多任务并行、尝试不同方案 |
-| Cloud | 在远程隔离环境中执行 | 后台任务、长任务、不占本机 |
+| local | 直接在当前本地工作区操作 | 单任务、快速修改、需要本机依赖 |
+| git worktree | 为任务创建隔离的 git 工作副本 | 多任务并行、尝试不同方案 |
+| cloud | 在远程隔离环境中执行 | 后台任务、长任务、不占本机 |
 
-如果两个任务会修改同一批文件，不要让它们同时在同一个本地工作区运行。使用独立 worktree 或 Cloud 环境。
+如果两个任务会修改同一批文件，不要让它们同时在同一个本地工作区运行。使用独立 worktree 或 cloud 环境。
 
 ### 8.3 推荐流程
 
-1. 打开仓库，检查当前分支与 Git 状态。
-2. 让 Codex 读取 `AGENTS.md` 和相关代码。
+1. 打开仓库，检查当前分支与 git 状态。
+2. 让 codex 读取 `AGENTS.md` 和相关代码。
 3. 复杂任务先使用 `/plan`。
 4. 确认计划后再实现。
 5. 要求运行测试、lint 和类型检查。
 6. 打开 diff 面板逐文件查看。
 7. 对具体代码行直接提出反馈。
 8. 使用 `/review` 再检查一遍。
-9. 人工确认后才提交、推送或创建 PR。
+9. 人工确认后才提交、推送或创建 pr。
 
 示例：
 
@@ -489,9 +549,37 @@ codex review --help
 在我确认计划之前不要改代码。
 ```
 
-## 9. Codex IDE 扩展
+### 8.4 goal、sub-agent 和 worktree
 
-IDE 扩展的核心优势是“上下文已经在编辑器里”。它可以利用：
+`/plan` 用来决定如何做，`/goal` 用来持续推进可验证的目标。桌面 app、交互 cli 和 ide 扩展支持 goal；web work 则直接在提示词中写出结果、约束和完成标准，并在同一聊天中继续。
+
+比如：“完成这个模块的迁移，保持接口兼容，相关测试通过；先不发布。”目标模式不会扩大权限，也不能替代本机在线、依赖可用等执行条件。[长任务](https://learn.chatgpt.com/docs/long-running-work)
+
+sub-agent 可以并行处理独立的代码阅读、测试分析或方案比较，并把结论返回主任务。本地 codex 通常需要明确要求委派，或由适用的项目规则、skill 要求；每个子代理都会额外消耗用量。
+
+worktree 解决的是文件和工作区隔离，sub-agent 解决的是分工和上下文管理。子代理不应被自动理解为独立 worktree。比如并行分析镜像、依赖和脚本可以用子代理；同时实现两个功能则先规划各自的 worktree 和修改范围。[子代理](https://learn.chatgpt.com/docs/agent-configuration/subagents)
+
+### 8.5 多仓库审查、任务组织和分享
+
+本地 project 可以包含多个文件夹，桌面端可集中展示各仓库变更并审查 diff。activity 视图用于找到最近参与的任务和需要处理的事项。
+
+符合条件的 macos 客户端还支持分享本地任务的只读快照。个人账号的链接可被持有链接的人查看，工作区账号有对应访问限制；分享前应检查快照，自动隐藏已知密钥模式不代表清除了全部敏感信息。[桌面更新记录](https://learn.chatgpt.com/docs/whats-new)
+
+### 8.6 其他值得了解的功能
+
+| 功能 | 用途与当前边界 |
+| --- | --- |
+| [visualizations](https://learn.chatgpt.com/docs/visualizations) | 在聊天中探索图表、计算器和模拟；桌面与移动端逐步开放，cli/ide 不渲染这类交互产物 |
+| [appshots](https://learn.chatgpt.com/docs/appshots) | macos 上把最前方窗口的图像及可获取文本带入聊天，适合提供错误或设计上下文 |
+| [record & replay](https://learn.chatgpt.com/docs/extend/record-and-replay) | 在 macos 演示一次稳定流程后生成可复用 skill，需要启用 computer use |
+| [pets](https://learn.chatgpt.com/docs/pets) | 用浮动伙伴查看运行、完成或待处理状态；外观选择不会改变任务能力 |
+| [codex micro](https://learn.chatgpt.com/docs/features/codex-micro) | 可选硬件控制器，用于切换任务、语音输入和触发常用动作 |
+
+这些功能按需要使用。比如理解并发参数怎样影响吞吐量可以用 visualization，创建需要长期访问和保存数据的工具则使用 sites。
+
+## 9. codex ide 扩展
+
+ide 扩展的核心优势是“上下文已经在编辑器里”。它可以利用：
 
 - 当前打开的文件；
 - 选中的代码；
@@ -505,7 +593,7 @@ IDE 扩展的核心优势是“上下文已经在编辑器里”。它可以利�
 - 生成或补充相邻测试；
 - 在代码旁审查变更；
 - 快速迭代一个小功能；
-- 任务变大后转交 Cloud。
+- 任务变大后转交 cloud。
 
 示例：选中一个重试函数后输入：
 
@@ -516,18 +604,18 @@ IDE 扩展的核心优势是“上下文已经在编辑器里”。它可以利�
 
 ### 9.2 不要依赖“它应该知道我在看哪里”
 
-虽然 IDE 能自动提供编辑器上下文，但仍应说明：
+虽然 ide 能自动提供编辑器上下文，但仍应说明：
 
 - 你要达到的行为；
 - 哪些兼容性不能破坏；
 - 相关但未打开的模块；
 - 测试和完成标准。
 
-大范围跨模块改造更适合桌面 Codex、CLI 计划模式或 Cloud。
+大范围跨模块改造更适合桌面 codex、cli 计划模式或 cloud。
 
-## 10. Codex Cloud
+## 10. codex cloud
 
-Codex Cloud 在隔离的云环境中运行编码任务，可以从专门的 Codex 云端入口、CLI 或集成工具发起。
+codex cloud 在隔离的云环境中运行编码任务，可以从专门的 codex 云端入口、cli 或集成工具发起。
 
 ### 10.1 适合什么
 
@@ -535,28 +623,34 @@ Codex Cloud 在隔离的云环境中运行编码任务，可以从专门的 Code
 - 同时尝试多个实现方向；
 - 不希望占用本机；
 - 需要标准化、可复现的依赖环境；
-- 从 GitHub、Linear 或 Slack 委派工作；
+- 从 github、linear 或 slack 委派工作；
 - 不在开发电脑旁，但需要启动或审阅任务。
 
 ### 10.2 基本流程
 
-1. 使用 ChatGPT 账号登录 Codex Cloud。
-2. 连接 GitHub，并限制可访问仓库。
+1. 使用 chatgpt 账号登录 codex cloud。
+2. 连接 github，并限制可访问仓库。
 3. 为仓库配置环境、依赖、变量和初始化步骤。
 4. 发起任务并观察日志，或让它后台执行。
 5. 审查摘要和 diff。
-6. 继续追问修改，确认后再创建 PR。
+6. 继续追问修改，确认后再创建 pr。
 
-### 10.3 Cloud 不是“自动正确”
+### 10.3 cloud 不是“自动正确”
 
 远程运行不会减少工程审查责任。必须检查：
 
 - 环境与生产/本地是否一致；
 - 依赖安装和网络权限；
-- Secret 的使用范围；
+- secret 的使用范围；
 - 测试是否真正执行；
 - diff 是否包含无关改动；
-- PR 是否需要额外人工验证。
+- pr 是否需要额外人工验证。
+
+### 10.4 gitlab 与安全审查
+
+gitlab 集成已进入 beta，在 codex cloud 中运行，支持 mr 审查和自动审查。连接自建或 dedicated 实例需要工作区管理员配置，不能假设能直接访问公司内网；这也不等于桌面端已经支持全部 github 式仓库操作。[gitlab 集成](https://learn.chatgpt.com/docs/third-party/gitlab)
+
+codex security review 是针对 github pr 的额外安全审查，会结合 diff、仓库上下文和威胁模型深入分析。它仍是研究预览，面向符合条件的 enterprise、business、edu 和 pro，当前不含 plus。普通 code review 和 security review 需要分别看待，启用前核对账号资格与仓库设置。[安全审查](https://learn.chatgpt.com/docs/security/security-review)
 
 ## 11. 提示词写法与实用模板
 
@@ -639,7 +733,7 @@ Codex Cloud 在隔离的云环境中运行编码任务，可以从专门的 Code
 - 仓库结构和关键目录；
 - 安装、构建、测试和 lint 命令；
 - 代码风格与架构约束；
-- PR 和审查要求；
+- pr 和审查要求；
 - 禁止事项；
 - 完成任务前的验证步骤。
 
@@ -692,7 +786,7 @@ Codex Cloud 在隔离的云环境中运行编码任务，可以从专门的 Code
 - 项目配置：`.codex/config.toml`；
 - 命令行临时覆盖：`-c key=value`。
 
-配置可控制模型、推理强度、沙箱、审批、网络、MCP、Hooks 和功能开关等。字段会随版本演进，修改前查看当前官方配置参考。
+配置可控制模型、推理强度、沙箱、审批、网络、mcp、hooks 和功能开关等。字段会随版本演进，修改前查看当前官方配置参考。
 
 ### 12.3 规则应该放在哪里
 
@@ -700,46 +794,54 @@ Codex Cloud 在隔离的云环境中运行编码任务，可以从专门的 Code
 | --- | --- |
 | 只影响当前任务的要求 | 当前提示词/聊天 |
 | 仓库长期工程规范 | `AGENTS.md` |
-| 项目级 Codex 设置 | `.codex/config.toml` |
+| 项目级 codex 设置 | `.codex/config.toml` |
 | 个人跨仓库默认设置 | 用户配置或全局说明 |
-| 可复用任务方法 | Skill |
-| 外部实时数据或操作 | Plugin/MCP |
-| 工具调用前后的机械约束 | Hook |
-| 定时或事件触发工作 | Scheduled Task/Automation |
+| 可复用任务方法 | skill |
+| 外部实时数据或操作 | plugin/mcp |
+| 工具调用前后的机械约束 | hook |
+| 定时或事件触发工作 | scheduled task/automation |
 
-## 13. Skills、Plugins、MCP、Hooks 与自动化
+### 12.4 memory、computer history 与导入
 
-### 13.1 Skills
+memory 用于保留稳定偏好；computer history 用于找回电脑上近期做过的事情。后者需要主动开启，可以限制来源、暂停和删除记录，不能假设它默认知道所有历史。
 
-Skill 把一套可重复的方法封装为说明、模板、参考文件和脚本。
+computer history 当前面向 macos 上符合条件的 pro、business、enterprise，后两者还需要管理员启用。它使用交互事件和辅助功能上下文，不记录音频，也不把截图保存到历史中；私密浏览不纳入记录。比如先找回昨天读过的文档，再让它读取原文核对。[computer history](https://learn.chatgpt.com/docs/customization/computer-history)
+
+桌面端可以导入 claude code、claude cowork 或 cursor 的受支持设置和近期工作，cli 的 `/import` 支持 claude code 与 cursor。导入后检查项目规则、模型和连接授权；需要时可开启自动同步。[导入功能](https://learn.chatgpt.com/docs/import)
+
+## 13. skills、plugins、mcp、hooks 与自动化
+
+### 13.1 skills
+
+skill 把一套可重复的方法封装为说明、模板、参考文件和脚本。
 
 适合：
 
-- 固定清单做 PR 审查；
+- 固定清单做 pr 审查；
 - 生成发布说明；
 - 标准化事故分析；
 - 执行团队迁移流程；
 - 按统一模板生成文档。
 
-当你反复复制同一提示词，或不断纠正同一流程时，就值得做成 Skill。
+当你反复复制同一提示词，或不断纠正同一流程时，就值得做成 skill。
 
-### 13.2 Plugins
+### 13.2 plugins
 
-Plugin 是可安装能力包，可以包含 Skills、工具、MCP 连接器、Hooks 和其他资源。
+plugin 是可安装能力包，可以包含 skills、工具、mcp 连接器、hooks 和其他资源。
 
-例如一个 GitHub Plugin 可以让 ChatGPT/Codex 按授权范围读取 Issue、检查 PR 或执行明确的写操作。
+例如一个 github plugin 可以让 chatgpt/codex 按授权范围读取 issue、检查 pr 或执行明确的写操作。
 
-### 13.3 MCP
+### 13.3 mcp
 
-MCP 用于连接外部工具和实时数据。适合：
+mcp 用于连接外部工具和实时数据。适合：
 
-- GitHub Issue/PR；
+- github issue/pr；
 - 内部知识库；
 - 项目管理系统；
 - 数据库或监控平台；
 - 经授权的组织文档。
 
-CLI 添加远程服务的常见形式：
+cli 添加远程服务的常见形式：
 
 ```bash
 codex mcp add <name> --url <server-url>
@@ -747,35 +849,47 @@ codex mcp add <name> --url <server-url>
 
 从一两个真正消除手工操作的连接开始，不要一次接入所有系统。写操作和删除操作应有更严格的权限。
 
-### 13.4 Hooks
+### 13.4 hooks
 
-Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的机械规则。例如：
+hook 用于在工具调用、命令执行或文件编辑前后实施可重复的机械规则。例如：
 
 - 禁止修改特定路径；
 - 执行命令前做策略检查；
 - 编辑后运行格式化或审计；
 - 记录关键工具调用。
 
-需要“提醒模型遵守”用 `AGENTS.md`；需要“无论模型怎么想都机械执行”才考虑 Hook。
+hook 可以运行脚本或 mcp 工具，覆盖 `PreToolUse`、`PostToolUse`、`Stop` 等生命周期事件。配置可放在 `hooks.json` 或 `config.toml`；非托管 hook 必须先审阅并信任，新建或修改后需要重新确认。
 
-### 13.5 Scheduled Tasks / Automations
+`AGENTS.md` 用于说明规则，hook 用于已配置事件上的检查；真正的权限边界仍应由沙箱和组织策略保障。多个匹配 hook 可能并发执行，不能假设一个 hook 会阻止其他 hook 启动。[hooks](https://learn.chatgpt.com/docs/hooks)
+
+### 13.5 scheduled tasks / automations
 
 适合稳定、重复、输出容易审查的流程：
 
 - 汇总近期提交；
-- 归类 CI 失败；
+- 归类 ci 失败；
 - 起草发布说明；
 - 扫描潜在缺陷；
 - 生成站会摘要；
-- 监控依赖、Issue 或文档变化。
+- 监控依赖、issue 或文档变化。
 
-先手动把流程跑稳定，再调度。可以把 Skill 看作“怎么做”，把计划任务看作“何时做”。
+先手动把流程跑稳定，再调度。可以把 skill 看作“怎么做”，把计划任务看作“何时做”。
+
+### 13.6 定时、同一聊天继续与事件触发
+
+计划任务既可以每次从保存的提示词开始，也可以回到同一聊天继续工作。云端任务需要使用已上传或已连接的资料，不会自动保留你的本地文件夹和 worktree。
+
+我会把不依赖本机的数据汇总放在云端；需要本地仓库、wsl、内网或凭据时，先确认执行环境能够访问，再选择本地任务。监控提示词还会写明：只有有意义的变化、完成或失败时通知。
+
+新增的事件触发支持 gmail 新邮件、指定 slack 频道消息和 github pr 活动。它面向符合条件的 web/移动端账号，桌面 app、cli、ide 当前不提供；一个任务不能同时混用事件触发和时间计划。
+
+比如：“我的 pr 收到 review 意见后，汇总问题并起草修改方案。”先连接相关应用并授权所需范围，再建立任务。[计划任务与事件](https://learn.chatgpt.com/docs/automations)
 
 ## 14. 权限、沙箱与安全
 
 ### 14.1 沙箱与审批是两个层次
 
-- **沙箱**：Codex 技术上可以访问和修改什么。
+- **沙箱**：codex 技术上可以访问和修改什么。
 - **审批策略**：什么操作必须暂停并获得用户允许。
 
 常见沙箱：
@@ -788,7 +902,13 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 
 默认本地模式通常限制写入工作区，并限制命令网络访问。访问工作区外路径或网络时可能请求批准。
 
-### 14.2 批准前检查什么
+### 14.2 auto-review
+
+auto-review 让独立审查代理评估符合条件的越界请求，减少人工处理中断。它不会扩大文件、网络权限，也不覆盖组织策略，更不等于授予所有外部写操作权限。
+
+使用时区分“我授权它完成什么”和“当前环境技术上允许它做什么”。已授权任务可能仍被沙箱拦截；一次批准也不代表后续任意动作都获得许可。[自动审批审查](https://learn.chatgpt.com/docs/sandboxing/auto-review)
+
+### 14.3 批准前检查什么
 
 1. 具体命令是什么；
 2. 为什么必须越过当前限制；
@@ -797,22 +917,22 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 5. 能否使用更小权限完成；
 6. 操作失败后能否恢复。
 
-### 14.3 安全底线
+### 14.4 安全底线
 
-- 不在提示词或源码中粘贴 API Key、私钥和生产凭据；
+- 不在提示词或源码中粘贴 api key、私钥和生产凭据；
 - 不让未知脚本直接获得高权限；
 - 删除、迁移、发布前建立可恢复点；
-- 合并 PR、部署、发消息和生产写入应由人确认；
-- 使用 Git 提交、分支或 worktree 隔离改动；
-- 审查第三方网页、Issue 和 README 中可能存在的提示注入；
-- AI 生成代码仍要测试、代码审查和安全扫描；
-- 只为 Cloud 或插件开放任务确实需要的仓库和系统。
+- 合并 pr、部署、发消息和生产写入应有明确授权，范围变化时重新确认；
+- 使用 git 提交、分支或 worktree 隔离改动；
+- 审查第三方网页、issue 和 readme 中可能存在的提示注入；
+- ai 生成代码仍要测试、代码审查和安全扫描；
+- 只为 cloud 或插件开放任务确实需要的仓库和系统。
 
 ## 15. 程序员端到端实战
 
 假设需求是“为博客系统增加草稿自动保存”。
 
-### 第一步：Chat 澄清需求
+### 第一步：chat 澄清需求
 
 ```text
 帮我把“草稿自动保存”变成可实现的需求。
@@ -820,7 +940,7 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 最后输出验收标准和异常场景，不写代码。
 ```
 
-### 第二步：Work 形成正式任务书
+### 第二步：work 形成正式任务书
 
 ```text
 根据刚才确认的需求和上传的现有 API 文档，制作一份工程任务书。
@@ -828,7 +948,7 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 事实缺失处标记为“待确认”，不要编造。
 ```
 
-### 第三步：Codex 计划
+### 第三步：codex 计划
 
 把任务书放入仓库后：
 
@@ -860,7 +980,7 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 只报告有证据且可操作的问题，不修改文件。
 ```
 
-### 第六步：用 Work 制作交付材料
+### 第六步：用 work 制作交付材料
 
 ```text
 根据任务书、最终 diff 摘要和测试结果，生成发布说明和客服 FAQ。
@@ -875,14 +995,14 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 - 权限、安全、日志和监控合理；
 - 数据迁移可执行、可回滚；
 - 文档和发布说明已更新；
-- PR 描述清楚；
+- pr 描述清楚；
 - 仍有风险时明确记录，而不是默认为已解决。
 
 ## 16. 常见误区
 
-### 误区 1：把 Chat、Work 和 Codex 当成同一种聊天窗口
+### 误区 1：把 chat、work 和 codex 当成同一种聊天窗口
 
-改进：按任务结果选择体验。快速交流用 Chat，成品交付用 Work，仓库开发用 Codex。
+改进：按任务结果选择体验。快速交流用 chat，成品交付用 work，仓库开发用 codex。
 
 ### 误区 2：一句“帮我写完”就期待生产级代码
 
@@ -894,7 +1014,7 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 
 ### 误区 4：只读最终总结，不看 diff 和日志
 
-改进：把 Codex 结果视为同事提交的待审变更。
+改进：把 codex 结果视为同事提交的待审变更。
 
 ### 误区 5：为省事开放全部权限
 
@@ -902,11 +1022,11 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 
 ### 误区 6：把长期规则复制到每个提示词
 
-改进：仓库规范放 `AGENTS.md`，个人默认放配置，重复流程做 Skill。
+改进：仓库规范放 `AGENTS.md`，个人默认放配置，重复流程做 skill。
 
 ### 误区 7：多个代理同时改同一工作区
 
-改进：使用独立 worktree、分支或 Cloud 环境。
+改进：使用独立 worktree、分支或 cloud 环境。
 
 ### 误区 8：让模型凭记忆回答版本问题
 
@@ -914,16 +1034,16 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 
 ### 误区 9：流程还不稳定就自动化
 
-改进：先手动跑通和做成 Skill，再创建计划任务。
+改进：先手动跑通和做成 skill，再创建计划任务。
 
 ## 17. 速查清单
 
 ### 开始前
 
-- [ ] 选择了正确体验：Chat、Work 或 Codex；
-- [ ] Codex 形态适合任务：桌面、CLI、IDE 或 Cloud；
+- [ ] 选择了正确体验：chat、work 或 codex；
+- [ ] codex 形态适合任务：桌面、cli、ide 或 cloud；
 - [ ] 工作目录、仓库和分支正确；
-- [ ] Git 状态清楚并有恢复点；
+- [ ] git 状态清楚并有恢复点；
 - [ ] 提供了关键文件、日志和需求；
 - [ ] 写明禁止修改的范围；
 - [ ] 权限与风险匹配。
@@ -942,30 +1062,26 @@ Hook 用于在工具调用、命令执行或文件编辑前后实施可重复的
 ### 团队沉淀
 
 - [ ] 重复规则是否应加入 `AGENTS.md`；
-- [ ] 重复流程是否应做成 Skill；
-- [ ] 外部上下文是否适合 Plugin/MCP；
-- [ ] 机械约束是否需要 Hook；
+- [ ] 重复流程是否应做成 skill；
+- [ ] 外部上下文是否适合 plugin/mcp；
+- [ ] 机械约束是否需要 hook；
 - [ ] 稳定流程是否适合计划任务；
-- [ ] 多任务是否使用 worktree 或 Cloud 隔离。
+- [ ] 多任务是否使用 worktree 或 cloud 隔离。
 
 ## 18. 官方资料
 
-以下资料均为 OpenAI 官方页面：
+本文保留程序员从需求、实现到交付的使用场景，并在各节附上对应功能文档。持续更新时优先查看以下入口：
 
-- [ChatGPT Work 与 Codex 的区别](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex)
-- [ChatGPT Web](https://learn.chatgpt.com/docs/web)
-- [ChatGPT 桌面 App](https://learn.chatgpt.com/docs/app)
-- [ChatGPT Projects](https://help.openai.com/en/articles/10169521-projects-in-chatgpt)
-- [ChatGPT 深度研究](https://help.openai.com/en/articles/10500283-deep-research)
-- [Codex CLI](https://learn.chatgpt.com/docs/codex/cli)
-- [Codex IDE 扩展](https://learn.chatgpt.com/docs/codex/ide)
-- [Codex Cloud](https://learn.chatgpt.com/docs/cloud)
-- [Codex 开发者命令参考](https://learn.chatgpt.com/docs/developer-commands?surface=cli)
-- [Codex 最佳实践](https://learn.chatgpt.com/guides/best-practices)
-- [Codex 权限、审批与安全](https://learn.chatgpt.com/docs/agent-approvals-security)
-- [Skills 与 Plugins](https://learn.chatgpt.com/docs/skills-and-plugins?surface=cli)
-- [Codex 开源仓库](https://github.com/openai/codex)
+- [chatgpt 与 codex 最新功能](https://learn.chatgpt.com/docs/whats-new)
+- [版本更新记录](https://learn.chatgpt.com/docs/changelog)
+- [模型选择](https://learn.chatgpt.com/docs/models)
+- [项目和聊天](https://learn.chatgpt.com/docs/projects)
+- [remote](https://learn.chatgpt.com/docs/remote)
+- [长任务与 goal](https://learn.chatgpt.com/docs/long-running-work)
+- [计划任务](https://learn.chatgpt.com/docs/automations)
+- [浏览器扩展](https://learn.chatgpt.com/docs/chrome-extension)
+- [site tools / webmcp](https://learn.chatgpt.com/docs/webmcp)
+- [gitlab](https://learn.chatgpt.com/docs/third-party/gitlab)
+- [security review](https://learn.chatgpt.com/docs/security/security-review)
 
----
-
-如果只记住一句话：**Chat 用来快速交流，Work 用来完成多步骤成品，Codex 用来进入开发环境交付可验证的软件变更。**
+可用性发生变化时，同时核对功能页和更新记录。文章中的客户端能力与示例不代表你的账号已获得全部入口，具体模型、额度和权限以当前账号与工作区设置为准。
