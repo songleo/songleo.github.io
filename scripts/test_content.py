@@ -106,6 +106,22 @@ class ContentChecks(unittest.TestCase):
         self.assertEqual(2, sum(i[0] == "invalid-url" for i in self.issues()))
         self.assertEqual(1, sum(i[0] == "broken-local" for i in self.issues()))
 
+    def test_placeholder_urls_in_code_are_not_navigation_links(self):
+        placeholder = "http://proxy.example:port"
+        # Disposable local HTML only: neither this fixture nor check() uses I/O
+        # over the network, and the example contains no authentication details.
+        for markup in (
+            f"<code>{placeholder}</code>",
+            f"<pre><code>{placeholder}</code></pre>",
+        ):
+            with self.subTest(markup=markup):
+                self.write("index.html", markup)
+                self.assertEqual([], self.issues())
+        self.write("index.html", f'<a href="{placeholder}">Proxy</a>')
+        self.assertEqual(
+            [("invalid-url", "index.html", placeholder)], self.issues()
+        )
+
     def test_duplicate_open_graph_type_is_rejected(self):
         self.write("index.html", '''
             <meta property="og:type" content="website">

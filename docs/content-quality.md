@@ -37,7 +37,7 @@ pnpm check:content
 
 普通 `<a href="http://…">` 顶层跳转不等同于混合内容；HTTPS 页面加载 HTTP 子资源才属于混合内容。参见 [mdn 说明](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Mixed_content)。新增公网引用及资源仍应优先使用 HTTPS。
 
-`scripts/content-exceptions.json` 为每条保留的可点击 HTTP 链接记录类型、生成文件、精确 URL 和原因，不使用域名通配或目录级豁免。现有 22 条中，19 条是本地服务、占位地址或历史实验路由，另 3 条为待复核的历史外链。不要给加载资源添加豁免来绕过混合内容检查。
+`scripts/content-exceptions.json` 为每条保留的可点击 HTTP 链接记录类型、生成文件、精确 URL 和原因，不使用域名通配或目录级豁免。现有 21 条中，18 条是本地服务、占位地址或历史实验路由，另 3 条为待复核的历史外链。不要给加载资源添加豁免来绕过混合内容检查。
 
 代码和配置中的 `localhost`、私网 IP、服务名、代理地址、占位变量及 ACME HTTP-01 示例保留其协议语义；nginx 响应原文和 apache 许可证注释也保留原文。不能直接把演示中的 HTTP 服务替换为 HTTPS。若新增可点击示例，人工确认用途后添加精确条目；更改或删除链接时同步删除旧条目。
 

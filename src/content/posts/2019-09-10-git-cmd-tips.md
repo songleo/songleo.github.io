@@ -82,7 +82,7 @@ git reset --soft HEAD^
 
 ```
 git push origin --delete br-name
-``
+```
 
 - 撤销上次add
 

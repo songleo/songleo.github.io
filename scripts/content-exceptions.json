@@ -25,12 +25,6 @@
   },
   {
     "kind": "http-link",
-    "file": "posts/2019-09-10-git-cmd-tips/index.html",
-    "value": "http://proxyUsername:proxyPassword@proxy.server.com:port",
-    "reason": "Example HTTP proxy syntax with placeholder username, password, host and port."
-  },
-  {
-    "kind": "http-link",
     "file": "posts/2020-02-17-thanos-1/index.html",
     "value": "http://dockone.io/article/6019",
     "reason": "Historical reference. HTTPS certificate chain failed validation on 2026-09-05. Owner: site publisher. Recheck valid TLS and matching article before migrating."
