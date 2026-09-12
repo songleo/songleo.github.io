@@ -138,3 +138,15 @@ personal data. Keep secrets in ignored environment files or repository secrets.
 Treat certificate material under `src/https/` as legacy examples, not templates
 for new private keys. Review third-party scripts and dependency changes before
 publishing them.
+
+Before publishing any blog post, review the title, description, filename, body,
+code blocks, images, links, and metadata for sensitive information. Published
+content must not disclose confidential or restricted information, non-public
+company product or project names, internal architecture or business details,
+customer or employee information, intranet domains or IP addresses, internal
+repository and environment paths, account identifiers, credentials, tokens,
+keys, certificates, or other secrets. Replace company-specific names and
+implementation details with neutral examples, and remove any detail that is not
+necessary for the public technical explanation. If it is unclear whether a
+detail is safe to publish, treat it as sensitive and do not publish it until the
+user confirms that it is public information.
