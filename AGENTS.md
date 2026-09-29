@@ -1,152 +1,131 @@
-# Repository Guidelines
+# 仓库指南
 
-## Project Overview and Sources of Truth
+## 执行原则
 
-This is the Astro 7/AstroPaper 6.1 source for `https://reborncodinglife.com/`.
-The production site is built from `main` by `.github/workflows/deploy.yml` and
-deployed with GitHub Pages Actions.
+- 默认使用中文沟通，简洁说明结果、验证证据和未完成项。
+- 只处理本次任务，保留已有和无关修改；不因格式偏好改写其他文件。
+- 分析、审阅请求只做分析；修改请求直接实施。用户要求先看草稿或差异时，停在约定的审批点。
+- 提交、推送、发布和远端审阅须有明确授权；直接提交 `main` 或 `master` 须明确指定。对已授权范围不重复确认。
 
-- Active posts live in `src/content/posts/`; edit these files for site content.
-- `_posts/` is the retained Jekyll source archive. Do not edit it for normal
-  publishing and do not treat it as the active content collection.
-- `scripts/migrate_jekyll_posts.py` is a one-time migration utility, not a normal
-  authoring command. Running it over active posts can overwrite manually curated
-  front matter such as tags.
-- The pre-Astro Jekyll site is recoverable from the
-  `jekyll-before-astro-paper-current-20260904` tag.
-- Upstream theme provenance is recorded in `ASTROPAPER_SOURCE.md`.
+## 项目概览与权威来源
 
-## Project Structure
+本仓库是 `https://reborncodinglife.com/` 的 Astro 7/AstroPaper 6.1 源码。
+生产站点由 `.github/workflows/deploy.yml` 从 `main` 分支构建，并通过 GitHub Pages Actions 部署。
 
-- `src/content/posts/`: canonical Markdown and MDX blog posts.
-- `src/content/pages/`: standalone content such as the About page.
-- `src/pages/`: Astro routes, including posts, tags, archives, RSS, and legacy
-  date-based redirects.
-- `src/components/` and `src/layouts/`: reusable UI and page composition.
-- `src/styles/` and `src/assets/`: source styles and bundled assets.
-- `src/i18n/`: Chinese and English interface strings.
-- `astro-paper.config.ts`: site identity, pagination, features, and social links.
-- `astro.config.ts`: Astro integrations, Markdown behavior, and build settings.
-- `public/`: files copied unchanged to the site, including `CNAME`, images,
-  favicon, and the default social image.
-- `.github/workflows/deploy.yml`: production build and Pages deployment.
+- 当前使用的文章位于 `src/content/posts/`；修改站点文章内容时应编辑这些文件。
+- `_posts/` 是保留的 Jekyll 源码归档。正常发布时不要编辑，也不要将其视为当前使用的内容集合。
+- `scripts/migrate_jekyll_posts.py` 是一次性迁移工具，不是日常写作命令。对当前文章运行该工具可能覆盖手动整理的 front matter（文件头部元数据），例如标签。
+- Astro 迁移前的 Jekyll 站点可通过 `jekyll-before-astro-paper-current-20260904` 标签恢复。
+- 上游主题的来源记录在 `ASTROPAPER_SOURCE.md` 中。
+- 依赖版本与命令以 `package.json` 和 `pnpm-lock.yaml` 为准；内容字段以 `src/content.config.ts` 为准；部署行为以 `.github/workflows/deploy.yml` 为准。修改相关规则前先核对这些文件。
 
-Do not commit generated `dist/`, `.astro/`, `node_modules/`, or
-`public/pagefind/` content.
+## 项目结构
 
-## Post and Front Matter Conventions
+- `src/content/posts/`：Markdown 和 MDX 博客文章的权威源文件。
+- `src/content/pages/`：独立页面内容，例如“关于”页面。
+- `src/pages/`：Astro 路由，包括文章、标签、归档、RSS，以及旧版按日期组织的链接重定向。
+- `src/components/` 和 `src/layouts/`：可复用的界面组件与页面布局。
+- `src/styles/` 和 `src/assets/`：样式源文件与参与构建打包的资源。
+- `src/i18n/`：中英文界面文案。
+- `astro-paper.config.ts`：站点标识、分页、功能和社交链接配置。
+- `astro.config.ts`：Astro 集成、Markdown 行为和构建配置。
+- `public/`：原样复制到站点的文件，包括 `CNAME`、图片、站点图标和默认社交分享图片。
+- `.github/workflows/deploy.yml`：生产构建与 Pages 部署流程。
 
-Published posts should use a lowercase, hyphen-separated
-`YYYY-MM-DD-short-slug.md` filename. The date prefix also powers redirects from
-the former Jekyll URL, so do not rename an existing published post without
-preserving its old route.
+不要提交生成的 `dist/`、`.astro/`、`node_modules/` 或 `public/pagefind/` 内容。
 
-Every post must include schema-valid front matter:
+## 文章与头部元数据规范
+
+已发布文章应使用小写、以连字符分隔的 `YYYY-MM-DD-short-slug.md` 文件名。
+日期前缀也用于支持旧版 Jekyll URL 的重定向，因此重命名已发布文章时必须保留原有路由。
+
+每篇文章都必须包含符合 schema 定义的头部元数据：
 
 ```yaml
 ---
-title: "Concise title"
-description: "A useful summary for listings and metadata."
+title: "简洁的标题"
+description: "用于列表展示和元数据的实用摘要。"
 pubDatetime: 2026-09-04T12:00:00+08:00
 tags: ["kubernetes", "云原生"]
 ---
 ```
 
-- Required fields are `title`, `description`, `pubDatetime`, and `tags`.
-- Use a full ISO 8601 timestamp with an explicit timezone.
-- Use `draft: true` for content that must not appear in production.
-- Use `modDatetime` only for a meaningful published-content update.
-- Optional fields such as `featured`, `ogImage`, `canonicalURL`, and
-  `hideEditPost` must follow `src/content.config.ts`.
-- Keep English product and technology names lowercase in prose and headings,
-  except where code, commands, identifiers, or quoted text are case-sensitive.
-- Preserve the original article's voice and scenario when editing; remove
-  repetition without replacing useful content.
+- 本仓库要求显式填写 `title`、`description`、`pubDatetime` 和 `tags`，不要依赖 schema 的默认标签。
+- 使用完整的 ISO 8601 时间戳，并明确指定时区。
+- 不应出现在生产站点的内容须设置 `draft: true`。
+- 仅在对已发布内容作出实质性更新时使用 `modDatetime`。
+- `featured`、`ogImage`、`canonicalURL` 和 `hideEditPost` 等可选字段必须遵循 `src/content.config.ts` 的定义。
+- 标题、各级小标题和正文中的英文默认使用小写；保留大小写敏感的代码、命令、标识符和引用文本。
+- 编辑时保留原文的表达风格和使用场景；去除重复内容，但不要替换有用内容。
 
-## Tagging Guidelines
+## 标签规范
 
-- Give each post two to four relevant tags.
-- Use lowercase English for products, technologies, languages, and standards,
-  such as `kubernetes`, `golang`, `prometheus`, and `chatgpt`.
-- Use Chinese for themes and content types, such as `云原生`, `故障排查`,
-  `学习笔记`, and `最佳实践`.
-- Search existing front matter before introducing a tag. Reuse the established
-  spelling and prefer a broader existing tag over a one-post synonym.
-- Keep series tags consistent across every entry in the series.
-- Avoid `others`, duplicate meanings, case-only variants, and new singleton tags
-  unless the term is expected to become a recurring topic.
-- When changing tags in bulk, report the unique-tag count and confirm that every
-  post still has two to four tags.
+- 每篇文章设置两到四个相关标签。
+- 产品、技术、语言和标准使用小写英文，例如 `kubernetes`、`golang`、`prometheus` 和 `chatgpt`。
+- 主题和内容类型使用中文，例如 `云原生`、`故障排查`、`学习笔记` 和 `最佳实践`。
+- 新增标签前先搜索现有头部元数据，复用已有拼写，优先选择覆盖范围更广的现有标签。
+- 同一系列的所有文章保持系列标签一致。
+- 避免使用 `others`、含义重复的标签和仅大小写不同的变体；除非预计会持续涉及某个主题，否则不要新增只用于单篇文章的标签。
+- 批量修改标签时，报告去重后的标签总数，并确认每篇文章仍有两到四个标签。
 
-## Development and Validation
+## 开发与验证
 
-Use Node.js 22.12 or newer and the committed pnpm lockfile.
+所有项目测试在 WSL Ubuntu（默认用户 `ssli`）或其 Linux 容器中运行，不以 Windows 测试结果验收。Windows 与 WSL 不共用含原生依赖的 `node_modules`，也不并发安装同一目录。
 
-- `pnpm install --frozen-lockfile` installs the exact dependency graph.
-- `pnpm dev` starts the local development server.
-- `pnpm build` runs `astro check` and produces the static site in `dist/`.
-- `pnpm preview` serves the production build locally.
-- `pnpm lint` checks TypeScript, JavaScript, and Astro source.
-- `pnpm format:check` checks formatting without rewriting files.
+使用 Node.js 22.12 或更新版本；pnpm 版本遵循 `package.json` 的 `packageManager`，依赖遵循已提交的锁文件。当前生产工作流使用 Node.js 24。
 
-Validation should match the change. The explicit direct-publish exception below takes precedence:
+- `pnpm install --frozen-lockfile`：严格按锁文件安装依赖。
+- `pnpm dev`：启动本地开发服务器。
+- `pnpm build`：运行 `astro check`，并在 `dist/` 中生成静态站点。
+- `pnpm preview`：在本地提供生产构建的预览服务。
+- `pnpm lint`：检查 TypeScript、JavaScript 和 Astro 源码。
+- `pnpm format:check`：检查格式，不改写文件。
+- `pnpm check:unit`：运行浏览器辅助逻辑与工具函数的单元测试。
+- `pnpm check:content`：运行内容检查脚本的单元测试，并检查构建产物；须先完成构建。
 
-- For post-only changes, inspect front matter, links, images, Markdown fences,
-  and the resulting article and tag routes.
-- For components, layouts, configuration, or styles, run `pnpm build` and check
-  desktop and narrow layouts locally.
-- Check navigation, syntax highlighting, light/dark mode, RSS, archives, tags,
-  and previous/next links when those areas are affected.
-- Run `git diff --check` before review or commit.
-- Do not rewrite unrelated files solely to satisfy formatting preferences.
+仅执行与改动相关的验证；下文“直接发布例外”优先于常规验证要求：
 
-## Compatibility and Production Configuration
+- 仅修改规则或文档：核对语义、引用路径和命令，无需构建站点。
+- 仅修改文章时，检查头部元数据、链接、图片、Markdown 代码围栏，以及生成的文章和标签路由。
+- 修改组件、布局、配置或样式时，运行 `pnpm build`，并在本地检查桌面和窄屏布局。
+- 导航、语法高亮、浅色/深色模式、RSS、归档、标签以及上一篇/下一篇链接受到影响时，检查对应功能。
+- 审阅或提交前运行 `git diff --check`。
+- 检查通过后不无故扩大或重复验证；无法执行时说明原因，未验证项标为 `UNKNOWN`，不将局部通过表述为整站验证通过。
+- 展示相对本次修改前工作区的差异，包含新增文件，排除已有及无关修改。优先使用内置 Review；仅返回 `queued` 不算展示成功，不可用时提供自包含的本地 HTML diff，不上传源码。
 
-- Keep `src/pages/[year]/[month]/[day]/[slug]/index.astro` working so historical
-  Jekyll links continue to reach the matching `/posts/.../` page.
-- Use HTTPS for new external assets and links; HTTP images, scripts, or styles
-  may be blocked as mixed content.
-- Treat changes to `public/CNAME`, the site URL, analytics, verification values,
-  RSS, redirects, and GitHub Actions as production-impacting changes.
-- Search is currently disabled in `astro-paper.config.ts`; do not commit
-  generated Pagefind data unless search is intentionally enabled and verified.
+## 兼容性与生产配置
 
-## Git and Publishing Workflow
+- 保持 `src/pages/[year]/[month]/[day]/[slug]/index.astro` 正常工作，确保历史 Jekyll 链接仍可跳转到对应的 `/posts/.../` 页面。
+- 新增外部资源和链接时使用 HTTPS；HTTP 图片、脚本或样式可能因混合内容而被浏览器拦截。
+- 对 `public/CNAME`、站点 URL、分析统计、验证值、RSS、重定向和 GitHub Actions 的修改，都应视为影响生产环境的变更。
+- 搜索功能目前在 `astro-paper.config.ts` 中禁用；除非有意启用搜索并完成验证，否则不要提交生成的 Pagefind 数据。
 
-- Preserve unrelated user changes and keep commits limited to the requested
-  scope.
-- Use concise imperative commit subjects; avoid vague subjects such as
-  `auto commit`.
-- Use `codex/` as the default prefix for temporary or review branches.
-- When the user asks to review first, leave the changes uncommitted and unpushed
-  until explicit approval.
-- When the user explicitly requests a direct publish, synchronize with the
-  latest `origin/main`, retain intervening remote changes, commit only the
-  approved files, and push to `main`. Do not add builds, format/static/link/diff
-  checks, CI polling, or post-push page opening unless requested or a concrete
-  error blocks that publication. Ordinary development/review validation above
-  remains applicable when direct publication was not requested.
-- A push to `main` triggers the GitHub Pages workflow. Do not manually commit
-  build output as a deployment mechanism.
-- Pull requests for visual changes should include before/after evidence and note
-  the validation performed.
+## Git 与发布流程
 
-## Security
+- 提交前核对分支、暂存区和文件范围，仅暂存并提交获准文件；不要夹带已有或无关修改。
+- 提交标题应简洁并使用祈使语气；避免使用 `auto commit` 等含糊标题。
+- 临时分支或审阅分支默认使用 `codex/` 前缀。
+- 用户要求先审阅时，在获得明确批准前，保持修改未提交、未推送。
+- 推送后回读远端分支的提交哈希，确认与本次提交一致；推送成功不等于部署成功。
+- 推送到 `main` 会触发 GitHub Pages 工作流。不要通过手动提交构建产物来部署。
+- 涉及视觉变化的拉取请求应包含修改前后的对比证据，并说明已执行的验证。
 
-Never add credentials, private keys, tokens, private environment values, or
-personal data. Keep secrets in ignored environment files or repository secrets.
-Treat certificate material under `src/https/` as legacy examples, not templates
-for new private keys. Review third-party scripts and dependency changes before
-publishing them.
+### 直接发布例外
 
-Before publishing any blog post, review the title, description, filename, body,
-code blocks, images, links, and metadata for sensitive information. Published
-content must not disclose confidential or restricted information, non-public
-company product or project names, internal architecture or business details,
-customer or employee information, intranet domains or IP addresses, internal
-repository and environment paths, account identifiers, credentials, tokens,
-keys, certificates, or other secrets. Replace company-specific names and
-implementation details with neutral examples, and remove any detail that is not
-necessary for the public technical explanation. If it is unclear whether a
-detail is safe to publish, treat it as sensitive and do not publish it until the
-user confirms that it is public information.
+用户明确要求直接发布时，按以下流程执行：
+
+1. 与最新的 `origin/main` 同步，保留期间产生的远端修改。
+2. 完成下文要求的敏感信息审查，仅提交获准文件，并推送到 `main`。
+3. 除非用户要求，或具体错误阻碍了发布，否则不额外执行构建、格式/静态/链接/diff 检查、差异展示、CI 轮询或推送后打开页面。
+
+未明确要求直接发布时，仍适用常规开发与审阅验证要求。
+
+## 安全
+
+严禁添加凭据、私钥、令牌、私有环境配置值或个人数据。敏感信息应保存在已被 Git 忽略的环境文件或仓库机密配置中。
+`src/https/` 下的证书材料仅作为历史示例，不得用作生成新私钥的模板。发布第三方脚本和依赖变更前须进行审查。
+
+- 审查范围：发布前检查文章标题、描述、文件名、正文、代码块、图片、链接和元数据。
+- 禁止公开：机密或受限信息、非公开的公司产品或项目名称、内部架构或业务细节、客户或员工信息、内网域名或 IP 地址、内部仓库和环境路径、账户标识，以及凭据、令牌、密钥、证书等秘密。
+- 处理方式：用中性示例替换公司专有名称和实现细节，删除公开技术说明不需要的细节。
+- 不确定时：按敏感信息处理，在用户确认其属于公开信息前不得发布。直接发布例外不免除本节审查。
