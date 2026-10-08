@@ -3,7 +3,7 @@ title: "适合 AI 平台后端开发的 5 个日常效率工具"
 description: "从重复命令、Kubernetes 排查、接口联调、配置审查和日志分析出发，介绍 just、k9s、Bruno、Difftastic、lnav 的最小使用流程、成本与边界。"
 pubDatetime: 2026-10-07T19:50:00+08:00
 tags: ["开发工具", "工作流", "后端开发", "kubernetes"]
-draft: true
+draft: false
 ---
 
 做 AI 平台后端，除了写 Go、Python 代码，还会碰到部署检查、前后端联调、离线包验证和回归排查。很多小动作反复出现：从聊天里找命令，切换几个终端看 Pod，把请求重新拼一遍，再从大量日志中寻找同一次失败。
