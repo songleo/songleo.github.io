@@ -3,7 +3,6 @@ title: "chatgpt定时任务分享（一）"
 description: "分享三个我设置的 chatgpt 定时任务：监控额度重置信号、每天学习 chatgpt 和 codex 实践技巧，以及提醒重置卡到期。"
 pubDatetime: 2026-10-18T12:00:00+08:00
 tags: ["chatgpt", "codex", "工作流", "最佳实践"]
-draft: true
 ---
 
 这是一个系列文章，主要分享我设置的一些 chatgpt 定时任务，每次分享 3 个，希望你也能找到适合自己的用法。
