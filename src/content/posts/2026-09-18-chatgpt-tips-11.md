@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（十一）"
 description: "分享三个 chatgpt 使用小技巧：分层维护 AGENTS.md、为 ai 部署环境保留上下文和交接文档，以及定期 review 并改进项目规则。"
 pubDatetime: 2026-09-18T17:09:41+08:00
-tags: ["chatgpt", "工作流", "agents"]
+tags: ["chatgpt", "codex", "tips"]
 ---
 
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。

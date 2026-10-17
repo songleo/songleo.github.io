@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（十九）"
 description: "分享三个 chatgpt 使用小技巧：每天学习一个产品功能、建立可查询的 skill 用法目录，以及在相同条件下对比前端修改前后的截图。"
 pubDatetime: 2026-10-17T10:05:00+08:00
-tags: ["chatgpt", "工作流", "agents"]
+tags: ["chatgpt", "codex", "tips"]
 ---
 
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。

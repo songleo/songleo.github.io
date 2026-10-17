@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（十七）"
 description: "分享三个 codex 使用小技巧：用 diff 行内评论反馈修改、检查上下文窗口与压缩阈值，以及为临时任务准备独立工作区。"
 pubDatetime: 2026-10-17T09:05:00+08:00
-tags: ["chatgpt", "工作流", "agents"]
+tags: ["chatgpt", "codex", "tips"]
 ---
 
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。

@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（十八）"
 description: "分享三个 chatgpt 使用小技巧：执行前复述需求、按清单清理缓存和中间文件，以及明确新环境的读写目录与操作权限。"
 pubDatetime: 2026-10-17T10:05:00+08:00
-tags: ["chatgpt", "工作流", "agents"]
+tags: ["chatgpt", "codex", "tips"]
 ---
 
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。

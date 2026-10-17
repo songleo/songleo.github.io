@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（十二）"
 description: "分享三个 chatgpt 使用小技巧：及时清理不用的 worktree、整理项目与对话上下文，以及安全登记常用环境信息。"
 pubDatetime: 2026-09-26T17:09:41+08:00
-tags: ["chatgpt", "工作流", "agents"]
+tags: ["chatgpt", "codex", "tips"]
 ---
 
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。

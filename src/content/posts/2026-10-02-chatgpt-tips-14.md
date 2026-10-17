@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（十四）"
 description: "分享三个前端验收小技巧：用内置浏览器打开真实页面、按明确流程检查状态，以及用页面批注和截图复验修改。"
 pubDatetime: 2026-10-02T09:01:00+08:00
-tags: ["chatgpt", "工作流", "agents"]
+tags: ["chatgpt", "codex", "tips"]
 ---
 
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。

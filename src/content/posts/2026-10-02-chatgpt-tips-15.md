@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（十五）"
 description: "分享三个 codex 权限小技巧：保留沙箱、用小范围 rules 减少重复审批，以及离线测试规则和命令变体。"
 pubDatetime: 2026-10-02T09:03:00+08:00
-tags: ["chatgpt", "工作流", "agents"]
+tags: ["chatgpt", "codex", "tips"]
 ---
 
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。

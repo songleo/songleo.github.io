@@ -2,7 +2,7 @@
 title: "chatgpt小贴士（十三）"
 description: "分享三个 ci 排查小技巧：提取失败步骤的证据、按真实命令本地复现，以及用最小修改和验证结果验收。"
 pubDatetime: 2026-10-02T09:00:00+08:00
-tags: ["chatgpt", "工作流", "agents"]
+tags: ["chatgpt", "codex", "tips"]
 ---
 
 这是一个系列文章，主要分享我最近使用 chatgpt 过程中的一些小技巧，每次分享 3 点，希望你能有所收获。
