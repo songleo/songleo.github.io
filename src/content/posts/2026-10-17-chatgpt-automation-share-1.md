@@ -1,7 +1,7 @@
 ---
 title: "chatgpt定时任务分享（一）"
 description: "分享三个我设置的 chatgpt 定时任务：监控额度重置信号、每天学习 chatgpt 和 codex 实践技巧，以及提醒重置卡到期。"
-pubDatetime: 2026-10-18T12:00:00+08:00
+pubDatetime: 2026-10-17T20:00:00+08:00
 tags: ["chatgpt", "codex", "定时任务"]
 ---
 
