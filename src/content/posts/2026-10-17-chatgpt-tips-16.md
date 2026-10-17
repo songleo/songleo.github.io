@@ -1,8 +1,7 @@
 ---
 title: "chatgpt小贴士（十六）"
 description: "分享三个 chatgpt 使用小技巧：约定常用环境别名、固定文件存放目录，以及让 dots 按明确条件提醒。"
-pubDatetime: 2026-10-13T12:05:00+08:00
-draft: true
+pubDatetime: 2026-10-17T12:05:00+08:00
 tags: ["chatgpt", "工作流", "agents"]
 ---
 
