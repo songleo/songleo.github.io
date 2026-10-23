@@ -30,7 +30,7 @@ tags: ["kubernetes", "部署", "云原生"]
 npu pod： kubelet → containerd → containerd-shim-runc-v2 → 昇腾容器运行时 → 容器
 ```
 
-`containerd-shim-runc-v2` 是两条路径都用到的转接程序。**名字里有 `runc`，不表示它最终一定调用默认的 `runc` 程序。**本次由 containerd 中具名运行配置的 `BinaryName` 决定实际调用哪个程序；不能仅凭这层配置断言昇腾运行时内部完全不涉及 `runc`。[containerd 官方配置说明](https://github.com/containerd/containerd/blob/main/docs/cri/config.md)给出了具名运行时、默认运行时与 `BinaryName` 的关系。
+`containerd-shim-runc-v2` 是两条路径都用到的转接程序。名字里有 `runc`，不表示它最终一定调用默认的 `runc` 程序。本次由 containerd 中具名运行配置的 `BinaryName` 决定实际调用哪个程序；不能仅凭这层配置断言昇腾运行时内部完全不涉及 `runc`。[containerd 官方配置说明](https://github.com/containerd/containerd/blob/main/docs/cri/config.md)给出了具名运行时、默认运行时与 `BinaryName` 的关系。
 
 ## 2 这次怎样部署
 
