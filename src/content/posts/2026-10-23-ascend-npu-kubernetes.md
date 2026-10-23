@@ -36,9 +36,9 @@ npu pod： kubelet → containerd → containerd-shim-runc-v2 → 昇腾容器�
 
 本次按三个步骤完成接入：
 
-1. **准备宿主机。**确认驱动能识别设备、节点已加入 kubernetes；核对 arm64 软件版本、安装包与镜像摘要，并备份原有运行配置。
-2. **接入容器运行时。**在 npu 节点安装昇腾容器运行时；给 containerd 新增 `ascend` handler，保留默认 `runc`。创建同名 runtimeclass，限制到支持 npu 的节点。让 containerd 配置生效时，先核对它与 kubelet 的服务依赖，事后检查原有 pod。[kubernetes runtimeclass 文档](https://kubernetes.io/docs/concepts/containers/runtime-class/)说明了 handler 与节点调度约束。
-3. **部署设备插件。**用 daemonset 只在目标节点运行 ascend device plugin，配好服务账号、必要权限、宿主机驱动与 DCMI 访问，以及 kubelet 的设备插件通信目录；再确认插件 pod 就绪。昇腾的[安装说明](https://github.com/Ascend/mind-cluster/blob/master/docs/zh/scheduling/05_developer_guide/00_installation_deployment/00_manual_installation/04_ascend_device_plugin.md)要求先安装昇腾运行时，再安装设备插件。
+1. 准备宿主机。确认驱动能识别设备、节点已加入 kubernetes；核对 arm64 软件版本、安装包与镜像摘要，并备份原有运行配置。
+2. 接入容器运行时。在 npu 节点安装昇腾容器运行时；给 containerd 新增 `ascend` handler，保留默认 `runc`。创建同名 runtimeclass，限制到支持 npu 的节点。让 containerd 配置生效时，先核对它与 kubelet 的服务依赖，事后检查原有 pod。[kubernetes runtimeclass 文档](https://kubernetes.io/docs/concepts/containers/runtime-class/)说明了 handler 与节点调度约束。
+3. 部署设备插件。用 daemonset 只在目标节点运行 ascend device plugin，配好服务账号、必要权限、宿主机驱动与 DCMI 访问，以及 kubelet 的设备插件通信目录；再确认插件 pod 就绪。昇腾的[安装说明](https://github.com/Ascend/mind-cluster/blob/master/docs/zh/scheduling/05_developer_guide/00_installation_deployment/00_manual_installation/04_ascend_device_plugin.md)要求先安装昇腾运行时，再安装设备插件。
 
 插件启动后，先通过驱动和 DCMI 读取设备编号、数量、健康状态；再用 `Register` 向 kubelet 登记 `huawei.com/Ascend910`，用 `ListAndWatch` 持续上报设备。kubelet 据此更新 node 的资源数量。pod 申请卡并完成调度后，kubelet 通过 `Allocate` 取得具体分配信息，昇腾运行时再将获分配的设备接入容器。这是“主机有卡”变成“pod 能用卡”的核心过程。[昇腾组件说明](https://github.com/Ascend/mind-cluster/blob/master/docs/zh/scheduling/01_introduction/01_component_description.md)和[kubernetes 设备插件文档](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/device-plugins/)分别说明了设备采集及插件接口。
 
