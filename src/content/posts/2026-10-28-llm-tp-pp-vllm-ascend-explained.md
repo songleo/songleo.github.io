@@ -3,7 +3,6 @@ title: "从 tp 和 pp 到 vllm ascend 看懂大模型推理配置"
 description: "用加工线和播放器的例子，讲清张量并行、流水线并行、量化参数，以及 vllm 和昇腾适配插件的关系。"
 pubDatetime: 2026-10-28T00:00:00+08:00
 tags: ["ai", "部署", "学习笔记"]
-draft: true
 ---
 
 第一次创建大模型推理服务时，我看到一组配置：`tp=2`、`pp=1`，运行环境是 `vllm ascend 0.23.0.post1`，后面还跟着 `--quantization ascend --max-num-seqs 1`。
