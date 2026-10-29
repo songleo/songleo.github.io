@@ -14,31 +14,11 @@ draft: true
 
 ## 1 识别模型和完整文档解析有什么不同
 
-可以把一页文档的处理想成几个步骤：
-
-```text
-整页文档
-   ↓
-版面分析：找到文字、表格、图片和公式区域
-   ↓
-VLM 识别：根据区域和任务读取内容
-   ↓
-流水线整理：组织顺序、结构和最终输出
-```
-
-这篇文章部署的是中间的 **VLM 识别服务**。它可以接收图片和任务提示，例如 `OCR:`、`Table Recognition:` 或 `Formula Recognition:`，然后返回识别结果。它不会因为提供了这些接口，就自动完成多页 PDF 的切页、整页版面分析、跨页表格合并和文档输出。
-
-如果需要完整文档解析，可以进一步使用 PaddleOCR 提供的流水线和版面分析组件；官方昇腾指南也明确区分了 VLM 后端与完整服务。[模型卡](https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5)和[昇腾使用指南](https://www.paddleocr.ai/latest/en/version3.x/pipeline_usage/PaddleOCR-VL-Huawei-Ascend-NPU.html)介绍了两种使用方式。
+本文部署的是 **VLM 识别服务**：它接收图片和 `OCR:`、`Table Recognition:` 或 `Formula Recognition:` 等任务提示，返回识别结果。完整文档解析还可能需要切页、版面分析、阅读顺序和输出整理，不能把本服务等同于完整流水线。[模型卡](https://huggingface.co/PaddlePaddle/PaddleOCR-VL-1.5)和[昇腾指南](https://www.paddleocr.ai/latest/en/version3.x/pipeline_usage/PaddleOCR-VL-Huawei-Ascend-NPU.html)介绍了相关能力。
 
 ## 2 一次识别服务需要什么
 
-| 组成 | 作用 |
-| --- | --- |
-| 模型目录 | 提供视觉语言模型权重、配置、处理器和分词器 |
-| vllm 与 vllm ascend | 加载模型并提供图文推理接口 |
-| 驱动、cann、设备插件 | 让容器使用节点上的昇腾设备 |
-| kubernetes | 调度容器、挂载模型并管理服务 |
-| Service | 提供集群内访问入口 |
+模型文件由 vllm ascend 加载，驱动和设备插件提供昇腾设备，kubernetes 管理服务。基础概念见 [vllm 入门](/posts/2026-10-28-vllm-introduction-and-deployment/)。
 
 本次实践使用 ARM64、昇腾 910B 系列单卡，以及 vllm 0.23.0、vllm ascend 0.23.0.post1 相关运行环境；为服务配置了 8 CPU、32 GiB 内存和1张卡。这是本次使用的资源，不是官方最低要求。
 
@@ -256,6 +236,6 @@ PY
 
 三张合成图片只证明本次环境中的基础元素识别。真实拍照、倾斜文档、复杂表格、多页 PDF、阅读顺序、跨页合并、并发、吞吐和长期运行仍需要单独验证。
 
-本次容器的共享内存为64 MiB，小样启动和识别没有出现相关错误；这不是所有图片尺寸或并发场景都足够的保证。如果遇到共享内存错误，应先结合日志、容器配置和环境评估，不要随意修改宿主机或其他服务。
+本次容器的共享内存为 64 MiB，小样没有出现相关错误；不能据此保证大图片或并发场景也足够。出现问题时应结合日志与容器配置评估。
 
 对外提供服务时，还要另行设计身份认证、访问范围、加密、限流和审计；示例中的集群内 Service 不是完整的安全接入方案。
