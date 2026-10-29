@@ -3,7 +3,6 @@ title: "领取 openai api 额度，在 windows 上使用 opencode"
 description: "介绍符合条件的 chatgpt 订阅如何领取 openai api 额度、创建 api key，并在 windows 上连接 opencode 和验证模型。"
 pubDatetime: 2026-10-29T23:00:00+08:00
 tags: ["ai", "chatgpt", "工具", "学习笔记"]
-draft: true
 ---
 
 最近 openai 为符合条件的 chatgpt pro 和 business 订阅提供了 api 额度。我想试试：领取后，能不能用它连接一个自己选择的编程工具？于是，我在 windows 上安装了 opencode，接入 openai，并测试了三个模型。

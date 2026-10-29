@@ -134,12 +134,3 @@ CPU 和内存是容器配置，卡数是本次分配；这些数字不是最低�
 3. 根据显存、上下文、并发和实际数据选择配置；先做小规模试验，再测性能与稳定性。
 4. 不只检查服务是否启动：分别核对回答、图片理解、向量、排序或识别结果，并用业务数据评估质量。
 5. 对外提供服务时，另行设计认证、网络访问、加密、配额、审计和监控。
-
-本系列的验证主要是单次环境中的小样本基础推理；通用化的 kubernetes 清单未逐字独立验证，不能当作生产验收。详细步骤与结果见：
-
-- [qwen3.8-27b 双卡部署](/posts/2026-10-28-deploy-qwen-ascend-kubernetes/)
-- [qwen3-vl-8b 图文部署](/posts/2026-10-28-qwen3-vl-8b-ascend-kubernetes/)
-- [qwen3 embedding 向量部署](/posts/2026-10-28-qwen3-embedding-ascend-kubernetes/)
-- [qwen3 reranker 重排部署](/posts/2026-10-28-qwen3-reranker-ascend-kubernetes/)
-- [paddleocr-vl 文档识别部署](/posts/2026-10-28-paddleocr-vl-15-ascend-kubernetes/)
-- [普通用户身份与算子权限排查](/posts/2026-10-28-vllm-ascend-nonroot-troubleshooting/)
