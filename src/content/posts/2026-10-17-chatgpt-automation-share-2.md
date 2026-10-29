@@ -2,7 +2,7 @@
 title: "chatgpt定时任务分享（二）"
 description: "分享三个我设置的 chatgpt 定时任务：每周额度重置后提醒、每天认识一个产品组件，以及每月检查 chatgpt 和 codex 配置。"
 pubDatetime: 2026-10-17T20:00:00+08:00
-tags: ["chatgpt", "codex", "定时任务"]
+tags: ["chatgpt", "codex", "automation"]
 ---
 
 这是一个系列文章，主要分享我设置的一些 chatgpt 定时任务，每次分享 3 个，希望你也能找到适合自己的用法。

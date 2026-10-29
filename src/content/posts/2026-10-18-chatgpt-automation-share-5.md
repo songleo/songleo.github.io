@@ -2,7 +2,7 @@
 title: "chatgpt定时任务分享（五）"
 description: "分享三个我设置的 chatgpt 定时任务：slurm 每日入门与实战、每周开源工具雷达，以及 ai、hpc 和智算平台每日简报。"
 pubDatetime: 2026-10-18T09:38:15+08:00
-tags: ["chatgpt", "codex", "定时任务"]
+tags: ["chatgpt", "codex", "automation"]
 ---
 
 这是一个系列文章，主要分享我设置的一些 chatgpt 定时任务，每次分享 3 个，希望你也能找到适合自己的用法。
