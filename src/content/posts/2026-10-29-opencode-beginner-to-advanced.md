@@ -2,7 +2,6 @@
 title: "从零开始使用 opencode：安装、实战与进阶"
 description: "从 windows 安装和连接模型开始，通过一个小项目学习 opencode 的对话、代码修改、验收、权限控制与进阶配置。"
 pubDatetime: 2026-10-29T22:55:14+08:00
-draft: true
 tags: ["ai", "工具", "学习笔记", "最佳实践"]
 ---
 
