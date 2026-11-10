@@ -3,7 +3,6 @@ title: "在 kubernetes 上运行 paddleocr-vl 1.5：从图片到文字识别"
 description: "结合昇腾单卡实践，介绍 paddleocr-vl 1.5 识别服务的 kubernetes 部署、图片请求和验证边界。"
 pubDatetime: 2026-10-28T16:01:00+08:00
 tags: ["kubernetes", "ai", "部署", "学习笔记"]
-draft: true
 ---
 
 一张图片里可能同时有文字、表格和公式。想让程序读取这些内容时，除了把字符识别出来，还要根据任务理解表格单元格或数学表达式。

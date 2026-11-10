@@ -3,7 +3,6 @@ title: "在 kubernetes 上运行 qwen3 reranker：让检索结果重新排序"
 description: "从检索重排讲起，结合昇腾单卡实践，介绍 qwen3 reranker 的 kubernetes 部署和接口验证。"
 pubDatetime: 2026-10-28T16:00:00+08:00
 tags: ["kubernetes", "ai", "部署", "学习笔记"]
-draft: true
 ---
 
 搜索知识库时，向量检索通常先找出一批看起来相关的文章片段。但“看起来相近”不一定等于“最能回答问题”：有些片段包含相同的关键词，却没有给出答案。

@@ -3,7 +3,6 @@ title: "在 kubernetes 上运行 qwen3-vl-8b：让模型理解图片与文字"
 description: "结合昇腾单卡实践，介绍 qwen3-vl-8b 的 kubernetes 部署、图文请求和共享内存检查。"
 pubDatetime: 2026-10-28T16:02:00+08:00
 tags: ["kubernetes", "ai", "部署", "学习笔记"]
-draft: true
 ---
 
 普通文本模型可以回答文字问题。如果问题还包含一张图片，模型需要同时处理图片内容和用户的文字指令，例如“图片中有几个红色圆形？”

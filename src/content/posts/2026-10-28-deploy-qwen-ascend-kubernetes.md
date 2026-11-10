@@ -3,7 +3,6 @@ title: "在 kubernetes 和昇腾 npu 上部署 qwen3.8-27b"
 description: "从镜像、模型和双卡配置出发，记录一次使用官方 vllm ascend 镜像部署 qwen3.8-27b 的过程，以及普通用户运行时的权限处理。"
 pubDatetime: 2026-10-28T00:00:00+08:00
 tags: ["kubernetes", "ai", "部署"]
-draft: true
 ---
 
 一台机器上有昇腾 npu，也有大模型文件，接下来怎样让其他程序通过接口向模型提问？

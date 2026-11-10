@@ -3,7 +3,6 @@ title: "在 kubernetes 上运行 qwen3 embedding：从文本到向量服务"
 description: "从文本向量和相似度讲起，结合单卡昇腾实践，说明模型、镜像、kubernetes 部署示例与验证方法。"
 pubDatetime: 2026-10-28T14:00:00+08:00
 tags: ["kubernetes", "ai", "部署", "学习笔记"]
-draft: true
 ---
 
 搜索一篇文章时，我们输入的词可能和文章原文不完全一样。例如，搜索“怎么让机器理解文字”，也许希望找到介绍“文本向量化”的文章。
